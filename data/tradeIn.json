@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Kirby Avalir 2",
+    "basePackage": 1038,
+    "advancedPackage": 1246,
+    "fullPackage": 1319
+  },
+  {
+    "name": "Kirby Avalir",
+    "basePackage": 962,
+    "advancedPackage": 1154,
+    "fullPackage": 1222
+  },
+  {
+    "name": "Kirby Sentria II",
+    "basePackage": 885,
+    "advancedPackage": 1062,
+    "fullPackage": 1124
+  },
+  {
+    "name": "Kirby Sentria",
+    "basePackage": 808,
+    "advancedPackage": 970,
+    "fullPackage": 1027
+  },
+  {
+    "name": "Kirby Diamond Edition",
+    "basePackage": 769,
+    "advancedPackage": 923,
+    "fullPackage": 977
+  },
+  {
+    "name": "Kirby Ultimate G",
+    "basePackage": 754,
+    "advancedPackage": 905,
+    "fullPackage": 958
+  },
+  {
+    "name": "Kirby G6",
+    "basePackage": 731,
+    "advancedPackage": 877,
+    "fullPackage": 929
+  },
+  {
+    "name": "Kirby G5",
+    "basePackage": 677,
+    "advancedPackage": 812,
+    "fullPackage": 860
+  },
+  {
+    "name": "Kirby G4",
+    "basePackage": 631,
+    "advancedPackage": 757,
+    "fullPackage": 802
+  },
+  {
+    "name": "Kirby G3",
+    "basePackage": 577,
+    "advancedPackage": 692,
+    "fullPackage": 733
+  }
+]

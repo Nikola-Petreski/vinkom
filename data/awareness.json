@@ -1,0 +1,79 @@
+{
+  "expert_blocks": [
+    {
+      "id": "hidden-allergen-buildup",
+      "expert": {
+        "name": "John",
+        "surname": "McKeon",
+        "title_mk": "MD, Извршен директор",
+        "organization_mk": "Allergy Standards Ltd.",
+        "image": "images/platinumHTML/awareness/person1.jpg",
+        "source_publication": "Real Simple",
+        "source_link": "https://www.realsimple.com/what-is-slow-vacuuming-11916250"
+      },
+      "quotes_mk": [
+        "„Алергените имаат тенденција да се акумулираат на места каде што прашината се насобира и не се нарушува редовно,“ вели Џон Мекеон, доктор и извршен директор на Allergy Standards. „Спалната соба е особено важна бидејќи приближно една третина од животот ја поминуваме таму. Постелнината, перниците, душеците и просторот под креветот можат да служат како резервоари за остатоци од грини и други честички.“"
+      ]
+    },
+    {
+      "id": "hepa-filtration-benefit-1",
+      "expert": {
+        "name": "Mark",
+        "surname": "Jacobson",
+        "title_mk": "MD, Алерголог",
+        "organization_mk": "Allergy & Asthma Physicians",
+        "image": "images/platinumHTML/awareness/person2.jpg",
+        "source_publication": "Prevention",
+        "source_link": "https://www.prevention.com/life/a19600469/best-hepa-vacuums/"
+      },
+      "quotes_mk": [
+        "Користењето погрешна правосмукалка може привремено да ги влоши симптомите на алергија, особено ако сте алергични на прашина. „Важно е насобраната прашина да не се раздвижи и повторно да се врати во воздухот,“ вели Марк Џејкобсон, доктор по медицина (MD), алерголог во Allergy & Asthma Physicians во Хинсдејл, Илиноис и поранешен претседател на Illinois Society of Allergy, Asthma, and Immunology."
+      ]
+    },
+    {
+      "id": "hepa-filtration-benefit-2",
+      "expert": {
+        "name": "Purvi",
+        "surname": "Parikh",
+        "title_mk": "MD, Алерголог",
+        "organization_mk": "Allergy & Asthma Network",
+        "image": "images/platinumHTML/awareness/person3.jpg",
+        "source_publication": "Prevention",
+        "source_link": "https://www.prevention.com/life/a19600469/best-hepa-vacuums/"
+      },
+      "quotes_mk": [
+        "HEPA правосмукалките може да бидат вистински спас кога станува збор за чистење кај луѓето кои се соочуваат со секаков вид на алергии и разни белодробни болести. „Многу луѓе се алергични на мувла и влакна од мачки и кучиња, кои најдобро може да се филтрираат со HEPA филтри,“ вели Пурви Парих, доктор по медицина (MD) и алерголог во Allergy & Asthma Network."
+      ]
+    },
+    {
+      "id": "sealed-hepa-recommendation",
+      "expert": {
+        "name": "Krikor",
+        "surname": "Manoukian",
+        "title_mk": "MD, Алерголог и имунолог",
+        "organization_mk": "Board-Certified Allergist/Immunologist",
+        "image": "images/platinumHTML/awareness/person4.png",
+        "source_publication": "HeyAllergy.com",
+        "source_link": "https://www.heyallergy.com/blog/hepa-vacuum-guide-what-matters-beyond-hepa"
+      },
+      "quotes_mk": [
+        "HEPA правосмукалките претставуваат едни од најефикасните мерки за контрола на внатрешните алергени. Вистинските HEPA филтри задржуваат 99,97% од честичките со големина од 0,3 микрони и поголеми — ниво на филтрација кое алерголозите го препорачуваат како дел од сеопфатна стратегија за избегнување на секаков вид алергии."
+      ]
+    },
+    {
+      "id": "medical-review-hepa",
+      "expert": {
+        "name": "Carah",
+        "surname": "Santos",
+        "title_mk": "MD, Медицински рецензент",
+        "organization_mk": "National Jewish Health",
+        "image": "images/platinumHTML/awareness/person5.jpg",
+        "source_publication": "National Jewish Health",
+        "source_link": "https://www.nationaljewish.org/conditions/fallergy/overview/lifestyle/hepa-filters"
+      },
+      "quotes_mk": [
+        "HEPA филтрите прикачени на правосмукалките ја намалуваат прашината со задржување на ситни честички, најчесто составени од прашински грини и други иританти, без повторно да ги ослободуваат во воздухот во домот. Многу луѓе со секаков вид на алергии пријавуваат огромно подобрување и намалени симптоми кога HEPA филтрацијата е дел од нивната секојдневна рутина за чистење."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIRBY | Блог</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gidole&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4baf646c88.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://gidole.github.io/GidoleFont/gidoleFont.css">
+    <link rel="icon" type="image/png" href="images/logoW.png">
+
+    <style>
+        @import url('https://gidole.github.io/GidoleFont/gidoleFont.css');
+
+        .font-gidole {
+            font-family: 'Gidole', sans-serif !important;
+        }
+
+        /* Custom scrollbar for the modal popup */
+        #modalScroll::-webkit-scrollbar { width: 10px; }
+        #modalScroll::-webkit-scrollbar-track { background: transparent; }
+        #modalScroll::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.12); border-radius: 9999px; border: 2px solid transparent; background-clip: padding-box; }
+        /* Firefox */
+        #modalScroll { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.12) transparent; }
+    </style>
+</head>
+<body class="overflow-x-hidden font-gidole bg-[#484848]">
+
+    <div class="px-[5%] w-full">
+        <div id="nav" class="w-full h-[10vh] max-h-[110px] rounded-lg justify-between items-center bg-transparent hover:bg-black/40 backdrop-blur-sm hover:backdrop-blur-lg my-[1.5%] px-[2%] text-[#c1c1c1] fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden lg:flex xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
+            <a id="logo" href="index.html" class="text-4xl 2xl:text-5xl font-medium hover:text-white transition-all duration-300 w-1/4 text-start">KIRBY</a>
+            <div class="flex lg:gap-3 3xl:gap-5 items-center justify-center w-1/2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
+                <a href="platinum.html" class="hover:text-white hover:text-lg lg:hover:text-base xl:hover:text-lg 2xl:hover:text-xl 3xl:hover:text-2xl transition-all duration-300">Platinum</a>
+                <a href="models.html"   class="hover:text-white hover:text-lg lg:hover:text-base xl:hover:text-lg 2xl:hover:text-xl 3xl:hover:text-2xl transition-all duration-300">Модели</a>
+                <a href="extras.html"   class="hover:text-white hover:text-lg lg:hover:text-base xl:hover:text-lg 2xl:hover:text-xl 3xl:hover:text-2xl transition-all duration-300">Додатоци</a>
+                <a href="aboutus.html"  class="hover:text-white hover:text-lg lg:hover:text-base xl:hover:text-lg 2xl:hover:text-xl 3xl:hover:text-2xl transition-all duration-300">За Нас</a>
+                <a href="blog.html"     class="hover:text-white hover:text-lg lg:hover:text-base xl:hover:text-lg 2xl:hover:text-xl 3xl:hover:text-2xl transition-all duration-300">Блог</a>
+                <a href="faq.html"      class="hover:text-white hover:text-lg lg:hover:text-base xl:hover:text-lg 2xl:hover:text-xl 3xl:hover:text-2xl transition-all duration-300">FAQ</a>
+            </div>
+            <div class="flex items-center justify-end h-full rounded-full w-1/4 lg:gap-1 3xl:gap-2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
+                <a href="tradeIn.html" class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Замени&nbsp;&nbsp;</a>                    
+                <a href="book.html"    class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Закажи презентација&nbsp;&nbsp;</a>        
+            </div>
+        </div>
+    </div>
+
+    <div id="mobileNav" class="fixed top-0 right-0 h-full w-[80%] bg-[#484848] backdrop-blur-lg z-[9999] transform translate-x-full transition-transform duration-300 lg:hidden">
+        <button id="closeMobileNav" class="absolute top-6 right-6 text-white text-2xl">
+            <i class="fa-solid fa-x"></i>
+        </button>
+        <div class="flex flex-col items-start justify-start h-full text-white">
+            <a href="index.html"    class="text-5xl sm:text-6xl p-[5%] font-medium">KIRBY</a>
+            <a href="index.html"    class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-house"></i>Дома</a>
+            <a href="platinum.html" class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-star"></i>Platinum</a>
+            <a href="book.html"     class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-calendar-days"></i>Закажи презентација</a>
+            <a href="models.html"   class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-grip-vertical"></i>Модели</a>
+            <a href="extras.html"   class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-gear"></i>Додатоци</a>
+            <a href="tradeIn.html"  class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-arrow-right-arrow-left"></i>Замени</a>
+            <a href="aboutus.html"  class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-people-group"></i>За Нас</a>
+            <a href="blog.html"     class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-newspaper"></i>Блог</a>
+            <a href="faq.html"      class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-circle-question"></i>FAQ</a>
+            <div class="w-full h-full bg-gradient-to-b from-transparent to-black"></div>
+            <div class="w-full"><img class="w-full" src="images/footer.png"></div>
+        </div>
+    </div>
+
+    <div id="nav-spacer" class="pt-20 lg:pt-[16vh] bg-[#484848]"></div>
+
+    <button id="hamburger" class="fixed top-3 right-1.5 z-[9990] lg:hidden text-white text-lg bg-white/10 p-2 rounded">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Mobile nav backdrop -->
+    <div id="mobileNavBackdrop" class="fixed inset-0 bg-black/40 backdrop-blur-md z-40 hidden lg:hidden"></div>
+
+    <script>
+    (function(){
+        const nav = document.getElementById('nav');
+        const spacer = document.getElementById('nav-spacer');
+        if(!nav) return;
+
+        // ensure smooth transition
+        nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
+        nav.style.willChange = 'transform, opacity';
+        nav.style.transform = nav.style.transform || 'translateY(0)';
+        nav.style.opacity = nav.style.opacity || '1';
+
+        // compute and set spacer height (px) so layout doesn't jump
+        function recompute(){
+            try{
+                const h = Math.ceil(nav.getBoundingClientRect().height);
+                if(spacer) spacer.style.height = h + 'px';
+            }catch(e){}
+        }
+        recompute();
+        window.addEventListener('resize', recompute, {passive:true});
+
+        let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop + 6) {
+                nav.style.transform = 'translateY(-' + (nav.offsetHeight + 4) + 'px)';
+                nav.style.opacity = '0';
+            } else if (scrollTop < lastScrollTop - 6) {
+                nav.style.transform = 'translateY(0)';
+                nav.style.opacity = '1';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+        const closeMobileNav = document.getElementById('closeMobileNav');
+
+        if (hamburger && mobileNav && mobileNavBackdrop && closeMobileNav) {
+            hamburger.addEventListener('click', () => {
+                mobileNav.classList.remove('translate-x-full');
+                mobileNavBackdrop.classList.remove('hidden');
+            });
+
+            closeMobileNav.addEventListener('click', () => {
+                mobileNav.classList.add('translate-x-full');
+                mobileNavBackdrop.classList.add('hidden');
+            });
+
+            // Close mobile nav on backdrop click
+            mobileNavBackdrop.addEventListener('click', () => {
+                mobileNav.classList.add('translate-x-full');
+                mobileNavBackdrop.classList.add('hidden');
+            });
+
+            // Close mobile nav on link click
+            mobileNav.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    mobileNav.classList.add('translate-x-full');
+                    mobileNavBackdrop.classList.add('hidden');
+                }
+            });
+        }
+    })();
+    </script>
+
+    <div class="px-[5%] w-full"><div id="blogContainer" class="w-full h-full bg-[#484848] grid grid-cols-1 md:grid-cols-2 gap-8 2xl:gap-10 3xl:gap-12 xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto"></div></div>
+
+    <script>
+    (function(){
+        const container = document.getElementById('blogContainer');
+        if(!container) return;
+
+        function createCard(post){
+            const card = document.createElement('div');
+            card.className = 'flex flex-col 2xl:flex-row items-start 2xl:items-center text-sm bg-black/40 p-[5%] shadow-2xl shadow-black rounded-xl gap-2 cursor-pointer';
+
+            const img = document.createElement('img');
+            img.src = post.thumbnail;
+            img.className = 'w-full h-full max-w-max 2xl:max-w-[40%] object-cover object-center rounded-xl';
+            img.alt = post.title;
+
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'flex flex-col justify-between w-full h-full text-base sm:text-lg xl:text-xl 3xl:text-2xl 2xl:px-[2%]';
+
+            const textDiv = document.createElement('div');
+            textDiv.className = 'flex flex-col w-full gap-1';
+
+            const h1 = document.createElement('h1');
+            h1.className = 'text-white font-semibold';
+            h1.textContent = post.title;
+
+            const p = document.createElement('p');
+            p.className = 'text-white/70';
+            p.textContent = post.excerpt;
+
+            textDiv.appendChild(h1);
+            textDiv.appendChild(p);
+
+            const dateP = document.createElement('p');
+            dateP.className = 'text-white/70 py-[1%] self-end';
+            dateP.textContent = post.date;
+
+            contentDiv.appendChild(textDiv);
+            contentDiv.appendChild(dateP);
+
+            card.appendChild(img);
+            card.appendChild(contentDiv);
+
+            if (post.modal !== false) {
+                card.addEventListener('click', () => openModal(post));
+            }
+
+            return card;
+        }
+
+        function openModal(post){
+            document.getElementById('modalImg').src = post.thumbnail;
+            document.getElementById('modalTitle').textContent = post.title;
+            const content = document.getElementById('modalContent');
+            content.innerHTML = '';
+            post.blocks.forEach(block => {
+                if(block.type === 'subtitle'){
+                    const h2 = document.createElement('h2');
+                    h2.className = 'font-semibold text-white';
+                    h2.textContent = block.text;
+                    content.appendChild(h2);
+                } else if(block.type === 'paragraph'){
+                    const p = document.createElement('p');
+                    p.className = 'text-white/70';
+                    p.textContent = block.text;
+                    content.appendChild(p);
+                }
+            });
+            const modal = document.getElementById('blogModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        fetch('data/blog.json')
+            .then(response => response.json())
+            .then(blogData => {
+                blogData.forEach(post => {
+                    const card = createCard(post);
+                    container.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error loading blog data:', error));
+    })();
+    </script>
+    <div class="w-full h-[16vh] bg-gradient-to-b from-[#484848] to-black"></div>
+
+    <div id="blogModal" class="fixed inset-0 backdrop-blur-3xl justify-center items-center hidden z-[9995] px-[5%]">
+        <div id="modalScroll" class="flex flex-col gap-5 3xl:gap-10  p-[3%] max-h-[90vh] bg-black/70 rounded-xl overflow-y-scroll xs:max-w-[480px] sm:max-w-[512px] md:max-w-[614px] lg:max-w-[819px] xl:max-w-[1024px] 2xl:max-w-[1229px] 3xl:max-w-[1536px] mx-auto">
+            <img id="modalImg" src="" class="w-full max-h-[60vh] object-cover object-bottom rounded-xl relative">
+            <button id="closeModalBtn" class="absolute  top-[2wv] right-[2vw] xs:top-[3vw] xs:right-[3vw] text-white text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl hover:text-gray-300 z-10"><i class="fa-solid fa-x"></i></button>
+            <h1 id="modalTitle" class="font-semibold text-white text-base xs:text-lg md:text-xl 2xl:text-2xl 3xl:text-3xl"></h1>
+            <div id="modalContent" class="flex flex-col gap-2 text-sm xs:text-base md:text-lg 2xl:text-xl 3xl:text-2xl"></div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        const modal = document.getElementById('blogModal');
+        if(!modal) return;
+
+        modal.addEventListener('click', (e) => {
+            if(e.target.id === 'blogModal') {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        });
+
+        const closeBtn = document.getElementById('closeModalBtn');
+        if(closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            });
+        }
+    })();
+    </script>
+
+    <div class="px-[5%] w-full bg-black">
+        <div id="footer" class="w-full flex flex-col-reverse lg:flex-row justify-between items-center py-[6%] xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-lg xs:text-2xl md:text-3xl lg:text-sm xl:text-base 2xl:text-lg 3xl:text-2xl">
+          <div class="flex flex-col w-full lg:w-1/4 text-white gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-500 px-[3%] py-[1%] my-[5%] lg:my-0">
+            <a href="platinum.html" class="text-white/70 hover:text-white transition-all duration-300">Platinum</a>
+            <a href="models.html" class="text-white/70 hover:text-white transition-all duration-300">Модели</a>
+            <a href="extras.html" class="text-white/70 hover:text-white transition-all duration-300">Додатоци</a>
+            <a href="aboutus.html" class="text-white/70 hover:text-white transition-all duration-300">За Нас</a>
+            <a href="blog.html" class="text-white/70 hover:text-white transition-all duration-300">Блог</a>
+            <a href="faq.html" class="text-white/70 hover:text-white transition-all duration-300">FAQ</a>
+          </div>
+          <div class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[3%] py-[1%] my-[5%] lg:my-0">
+            <a href="#" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-600 fa-brands fa-facebook"></i>Facebook</a>
+            <a href="#" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-pink-600 fa-brands fa-instagram"></i>Instagram</a>
+            <a href="#" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-white fa-brands fa-x-twitter"></i>Twitter</a>
+            <a href="#" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-red-600 fa-brands fa-youtube"></i>YouTube</a>
+            <a href="#" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-500 fa-brands fa-linkedin"></i>LinkedIn</a>
+          </div>
+          <div class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[3%] py-[1%] my-[5%] lg:my-0">
+            <a href="tradeIn.html" class="text-white/70 hover:text-white transition-all duration-300">Замени</a>
+            <a href="book.html" class="text-white/70 hover:text-white transition-all duration-300">Закажи Презентација</a>
+            <a href="tel+38970123456"                                               class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-phone"></i>+389 70 123 456</a>
+            <a href="mailto:kirby@example.com"                                      class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-envelope"></i>kirby@example.com</a>
+            <a target="_blank" href="https://www.google.com/maps?q=41.9981,21.4254" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-location-dot"></i>Ул. Партизнаска Бр.123</a>
+          </div>
+          <div class="flex flex-col w-full lg:w-1/4 text-white gap-3 justify-center border-l-2 border-transparent hover:border-white transition-all duration-300 px-[3%] py-[1%] my-[5%] lg:my-0">
+            <h1 class="text-white text-4xl sm:text-5xl lg:text-2xl xl:text-4xl 3xl:text-5xl">Дознавај прв</h1>
+            <p class="text-white/70 text-base xs:text-2xl md:text-3xl lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl">Претплати се и добивај новости, совети и ексклузивни понуди директно на е-пошта.</p>
+            <div class="flex gap-2">
+              <form action="https://formsubmit.co/43b21711b46354ed9c0946432e5fe177" method="POST" class="w-full flex flex-row lg:flex-col xl:flex-row gap-2 items-center text-base lg:text-sm">
+                  <input type="hidden" name="_next" value="https://nonscandalously-auroral-jeraldine.ngrok-free.dev/thankyouSub.html">
+                  <input type="hidden" name="_captcha" value="false">
+                  <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off">
+                  <input type="hidden" name="_subject" value="Претплата">
+                  <input id="subscribeEmail" type="email" name="email" required placeholder="E-mail" class="outline-none w-[69%] lg:w-full xl:w-[69%] border border-white/70 rounded-xl px-[4%] py-[3%] bg-transparent text-white my-[5%] lg:my-0"/>      
+                  <button type="submit" class="outline-none w-[29%] lg:w-full xl:w-[69%]  border border-white/70 rounded-xl px-[3%] py-[3%] bg-transparent text-white/70 hover:bg-white/70 hover:text-white transition-all duration-300 my-[5%] lg:my-0">Испрати</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="w-full bg-black px-[5%]">
+        <img src="images/footer.png" class="w-full xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center">
+    </div>
+
+
+</body>
+</html>
+

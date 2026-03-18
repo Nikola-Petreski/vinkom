@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Alan Satchell",
+    "stars": 5,
+    "date": "Jun 12, 2025",
+    "review_mk": "Најдобра перформанса од сите правосмукалки направени. Имам Heritage 2 од 1981 и Avalir 2017, задоволен сум со нив и ќе ги надмине сите други што ги ставам до нив. Дури имам и тест метар за да докажам ова.",
+    "review_en": "Best performance of any vac made. I have a Heritage 2 1981 and an Avalir 2017, happy with them both and will outperform anything I put next to them. I even have the test meter attachment to prove that very point."
+  },
+  {
+    "name": "Craig Simpson",
+    "stars": 5,
+    "date": "Mar 22, 2025",
+    "review_mk": "Моето семејство има Kirby машина уште од памтивек. Иста машина се пренесува од татко ми до брат ми веќе 20+ години и сè уште работи совршено. Гарантира вистинско чистење на килимите и мир во домот.",
+    "review_en": "My family have had a Kirby machine ever since I can remember to this very day 20+ years later the exact same machine has been passed down from my father to my brother and still works like the day it was bought. Ensures truly clean carpets and peace of mind."
+  },
+  {
+    "name": "Unhappy Customer",
+    "stars": 5,
+    "date": "Feb 24, 2025",
+    "review_mk": "Величествени правосмукалки. Надминуваат сè, изгледаат одлично и правењето на чистење е уживање. Висококвалитетен производ што го прави домот со килими поудобен за живеење.",
+    "review_en": "Magnificent vacuums. They outperform everything, look great, and make vacuuming enjoyable. A high-quality item which makes a carpeted house far more pleasant to live in."
+  },
+  {
+    "name": "Fifi May",
+    "stars": 5,
+    "date": "Sep 7, 2024",
+    "review_mk": "Мојата правосмукалка е стара Kirby, веројатно околу 50 години и е супер моќна, далеку подобра од Dyson и Shark. Секогаш произведуваат делови за целиот живот, нема проблеми со поправка.",
+    "review_en": "My vacuum cleaner is an old Kirby, probably about 50 years old & it's super powerful, way better than the Dyson & Shark. They always make the parts for a lifetime, so no problems fixing or replacing broken parts."
+  },
+  {
+    "name": "Julieanne",
+    "stars": 5,
+    "date": "Sep 11, 2023",
+    "review_mk": "Обожавам како Kirby Avalir 2 го исчисти прашината од мрежата на прозорците и нечистотијата од длабочината на мојот тепих. Продажниот персонал беше пријателски.",
+    "review_en": "I love how the Kirby Avalir 2 got the dust off my fly screen and the dirt deep down in my carpet. Also, the sales person was really friendly."
+  },
+  {
+    "name": "Peter Randall",
+    "stars": 5,
+    "date": "Mar 24, 2023",
+    "review_mk": "Купив второ-рачно Kirby Ultimate G Diamond Edition од 2004. Машината сè уште работи одлично 20 години по производство. Ја користам секоја сабота и редовно го користам шампонот за отстранување дамки.",
+    "review_en": "I bought a second-hand Kirby Ultimate G Diamond Edition manufactured in 2004. The machine still works fantastic 20 years from manufacture. I use it every Saturday and regularly use the shampoo unit to remove stains."
+  }
+]
