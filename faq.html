@@ -339,5 +339,13 @@
     });
   })();
   </script>
+<div id="cookieBanner" class="fixed bottom-0 left-0 w-full bg-black text-white p-4 flex flex-col md:flex-row justify-between items-center gap-3 z-50 hidden">
+  <p class="text-sm text-center md:text-left">Оваа веб-страница користи колачиња за анализа и подобрување на искуството.</p>
+  <div class="flex gap-2">
+    <button onclick="acceptCookies()" class="bg-white text-black px-4 py-1 rounded">Прифати</button>
+    <button onclick="rejectCookies()" class="border border-white px-4 py-1 rounded">Одбиј</button>
+  </div>
+</div>
+<script src="cookie.js"></script>
 </body>
 </html>
