@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KIRBY | Замени</title>
+    <title>KIRBY | Политика за приватност</title>
     <link href="./output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,13 +11,13 @@
     <script src="https://kit.fontawesome.com/4baf646c88.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://gidole.github.io/GidoleFont/gidoleFont.css">
     <link rel="icon" type="image/png" href="images/logoW.png">
+
     <style>
         @import url('https://gidole.github.io/GidoleFont/gidoleFont.css');
 
         .font-gidole {
             font-family: 'Gidole', sans-serif !important;
         }
-        /* Modal overlay/content transitions + backdrop blur to match models modal */
         .modal-overlay { transition: opacity 200ms ease; opacity: 0; pointer-events: none; }
         .modal-overlay.visible { opacity: 1; pointer-events: auto; background-color: rgba(0,0,0,0.45); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
         .modal-content { transform: translateY(2vh) scale(0.98); opacity: 0; transition: transform 200ms cubic-bezier(0.2,0,0.2,1), opacity 200ms ease; }
@@ -28,19 +28,11 @@
         .modal-content::-webkit-scrollbar-track { background: transparent; }
         .modal-content::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.12); border-radius: 9999px; border: 2px solid transparent; background-clip: padding-box; }
         .modal-content { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.12) transparent; }
-        /* Remove the clock icon in time inputs */
-        input[type="time"]::-webkit-calendar-picker-indicator {
-            display: none;
-        }
-        .calculation-text {
-            opacity: 1;
-            transition: opacity 0.5s ease;
-            min-height: 3rem; /* Adjust as needed to prevent layout shift */
-        }
-
+        #section-progress-container { position: fixed; bottom: 0; left: 0; width: 100%; height: 4px; background: rgba(255,255,255,0.40); z-index: 9999; pointer-events: none; }
+        #section-progress-bar { width: 0%; height: 100%; background: #fff; transition: width 100ms linear; }
     </style>
 </head>
-<body class="overflow-x-hidden font-gidole bg-[#484848]">
+<body class="overflow-x-hidden font-gidole bg-[#484848] w-full relative">
 
     <div class="px-[5%] w-full">
         <div id="nav" class="w-full h-[10vh] max-h-[110px] rounded-lg justify-between items-center bg-transparent hover:bg-black/40 backdrop-blur-sm hover:backdrop-blur-lg my-[1.5%] px-[2%] text-[#c1c1c1] fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden lg:flex xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
@@ -82,14 +74,12 @@
 
     <div id="nav-spacer" class="pt-20 lg:pt-[16vh] bg-[#484848]"></div>
 
-    <!-- Hamburger button for mobile -->
     <button id="hamburger" class="fixed top-3 right-1.5 z-[9998] lg:hidden text-white text-lg bg-white/10 p-2 rounded">
         <i class="fa-solid fa-bars"></i>
     </button>
 
     <!-- Mobile nav backdrop -->
     <div id="mobileNavBackdrop" class="fixed inset-0 bg-black/40 backdrop-blur-md z-40 hidden lg:hidden"></div>
-
 
     <script>
     (function(){
@@ -113,16 +103,160 @@
         recompute();
         window.addEventListener('resize', recompute, {passive:true});
 
-        let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+        let ticking = false;
 
+        function hideNav(){
+            const h = Math.ceil(nav.getBoundingClientRect().height) + 4;
+            nav.style.transform = 'translateY(-' + h + 'px)';
+            nav.style.opacity = '0';
+        }
+        function showNav(){
+            nav.style.transform = 'translateY(0)';
+            nav.style.opacity = '1';
+        }
+
+        function onScroll(){
+            const current = window.pageYOffset || document.documentElement.scrollTop;
+            if(current > lastScroll + 6){
+                hideNav();
+            } else if(current < lastScroll - 6){
+                showNav();
+            }
+            lastScroll = current <= 0 ? 0 : current;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function(){
+            if(!ticking){ window.requestAnimationFrame(onScroll); ticking = true; }
+        }, {passive:true});
+    })();
+
+    </script>
+
+    <div class="px-[5%] w-full bg-gradient-to-b from-transparent to-black/50">
+        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-white/70 text-sm xs:text-lg md:text-xl xl:text-2xl lg:px-[2%]">
+            <p class="text-2xl xs:text-4xl md:text-5xl xl:text-6xl font-black text-white">Политика за приватност</p><br>
+
+            <p class="text-white">Последно ажурирање: 19.03.2026</p><br>
+            
+            <p>Оваа Политика за приватност објаснува како Винком ДОО ги собира, користи и заштитува личните податоци на посетителите на веб-страницата vinkom.com.mk.</p><br>
+
+            <p>Со користење на оваа веб-страница, се согласувате со практиките опишани во оваа политика.</p><br>
+
+            <p class="text-white">1. Кој сме ние</p><br>
+            <p>Оваа веб-страница е управувана од Винком ДОО</p>
+            <p>Држава: Република Северна Македонија</p>
+            <p>Град: Скопје</p>
+            <p>Адреса: Пратизанска бр. 123</p>
+            <p>Е-пошта: kirby@example.com</p>
+            <p>Телефон: 071-234-567</p>
+            <p>Винком ДОО е официјален дистрибутер на Kirby производи во Северна Македонија.</p><br>
+
+            <p class="text-white">2. Кои податоци ги собираме</p><br>
+            <p>При користење на нашата веб-страница може да ги собираме следните податоци:</p>
+            <p>Податоци од форми</p><br>
+            <p>Во зависност од формата што ја пополнувате, може да ги побараме следните информации:</p><br>
+            <p>Основни контакт податоци:</p>
+            <p>- Име</p>
+            <p>- Презиме</p>
+            <p>- Е-пошта</p>
+            <p>- Телефонски број</p><br>
+
+            <p>Дополнителни информации (замена на стар уред):</p>
+            <p>- Kirby модел</p>
+            <p>- Пакет</p>
+            <p>- Сериски број</p>
+            <p>- Година на купување</p><br>
+
+            <p class="text-white">3. За што ги користиме податоците</p><br>
+
+            <p>Податоците што ги собираме може да се користат за:</p>
+            <p>- Закажување презентација</p>
+            <p>- Одговор на прашања</p>
+            <p>- Обработка на барања за замена на стар уред</p>
+            <p>- Контакт со клиентите</p>
+            <p>- Подобрување на услугите</p>
+            <p>- Испраќање маркетинг пораки (newsletter, промоции, нови понуди)</p><br>
+
+            <p>Корисникот мора експлицитно да се согласи со примање маркетинг пораки преку означување на соодветното поле во формата.</p><br>
+
+            <p>Корисникот може во секое време да се отпише од email листата.</p><br>
+
+            <p class="text-white">4. Email маркетинг</p><br>
+
+            <p>Доколку корисникот даде согласност, неговата е-пошта може да биде додадена во нашата email маркетинг листа.</p><br>
+
+            <p>Овие пораки може да содржат:</p>
+            <p>- промоции</p>
+            <p>- нови производи</p>
+            <p>- информации за Kirby системите</p>
+            <p>- специјални понуди</p><br>
+
+            <p>Корисникот може во секое време да се отпише од листата преку линкот за одјава во самата порака.</p><br>
+
+            <p class="text-white">5. Колачиња (Cookies)</p><br>
+
+            <p>Нашата веб-страница може да користи колачиња и алатки за анализа како Google Analytics со цел:</p>
+            <p>- анализа на сообраќајот</p>
+            <p>- подобрување на корисничкото искуство</p>
+            <p>- разбирање како посетителите ја користат страницата</p><br>
+
+            <p>Овие алатки може да собираат анонимни информации како:</p>
+            <p>- IP адреса</p>
+            <p>- тип на уред</p>
+            <p>- тип на прелистувач</p>
+            <p>- посетени страници</p><br>
+
+            <p class="text-white">6. Споделување на податоци</p><br>
+
+            <p>Винком ДОО не продава и не изнајмува лични податоци на трети лица.</p><br>
+
+            <p>Податоците може да бидат споделени само со:</p>
+            <p>- сервис провајдери кои помагаат во функционирањето на веб-страницата</p>
+            <p>- email маркетинг платформи</p>
+            <p>- аналитички алатки</p><br>
+
+            <p class="text-white">7. Безбедност на податоците</p><br>
+
+            <p>Преземаме разумни технички и организациски мерки за заштита на податоците.</p><br>
+
+            <p>Сепак, ниеден систем на интернет не може да гарантира 100% безбедност.</p><br>
+            <p>Во случај на неовластен пристап, хакерски напад или протекување на податоци, Винком ДОО не може да гарантира апсолутна заштита од такви настани.</p><br>
+
+            <p class="text-white">8. Надворешни сервиси и купување</p><br>
+
+            <p>Веб-страницата може да содржи линкови до надворешни сервиси преку кои се врши процесот на купување.</p><br>
+
+            <p>За обработката на податоци на тие платформи важат нивните политики за приватност, а не оваа политика.</p><br>
+
+            <p class="text-white">9. Права на корисниците</p><br>
+
+            <p>Корисниците имаат право да:</p>
+            <p>- побараат пристап до своите податоци</p>
+            <p>- побараат исправка</p>
+            <p>- побараат бришење на податоци</p>
+            <p>- побараат прекин на маркетинг комуникација</p><br>
+
+            <p>Барањата може да се испратат на:</p>
+            <p>[email]</p><br>
+
+            <p class="text-white">10. Измени на политиката</p><br>
+
+            <p>Винком ДОО го задржува правото да ја измени оваа политика во било кое време.</p><br>
+
+            <p>Секоја измена ќе биде објавена на оваа страница.</p><br>
+        </div>
+    </div>
+
+    <script>
+        // Nav hide/show on scroll
+        let lastScrollTop = 0;
+        const nav = document.getElementById('nav');
         window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop + 6) {
-                nav.style.transform = 'translateY(-' + (nav.offsetHeight + 4) + 'px)';
-                nav.style.opacity = '0';
-            } else if (scrollTop < lastScrollTop - 6) {
-                nav.style.transform = 'translateY(0)';
-                nav.style.opacity = '1';
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                nav.style.transform = 'translateY(-100%)';
             } else {
                 nav.style.transform = 'translateY(0)';
             }
@@ -157,94 +291,10 @@
                 mobileNavBackdrop.classList.add('hidden');
             }
         });
-    })();
-
     </script>
 
-    <div class="w-full px-[5%] bg-gradient-to-b from-[#484848] to-black/60">
-        <div class="w-full h-full lg:h-[400px] xl:h-[460px] 2xl:h-[520px] 3xl:h-[620px] flex flex-col lg:flex-row justify-center items-center text-base xs:text-lg md:text-xl lg:text-sm 2xl:text-base 3xl:text-xl xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto shadow-2xl shadow-black rounded-xl">
-            <form data-formsubmit="true" id="sellForm" method="POST" action="https://formsubmit.co/43b21711b46354ed9c0946432e5fe177" class="w-full lg:w-[75%] h-full bg-black/40 justify-between items-center rounded-t-xl lg:rounded-tr-none lg:rounded-bl-xl flex flex-col lg:flex-row p-[5%] lg:p-[2%] gap-1 lg:gap-0">
-                <div id="info" class="w-full lg:w-[47%] h-full flex flex-col gap-1 justify-start">
-                    <h1 class="text-3xl xs:text-5xl lg:text-4xl md:text-6xl 3xl:text-6xl text-white/70 mb-[9%]">Старо за ново</h1>
-                    <label class="text-white px-[3%]">Име</label>
-                    <input name="name" type="text" required placeholder="Име" class="w-full rounded-xl mb-[2%] px-[5%] xs:px-[3%] py-[3%] bg-black/50 text-white outline-none border-transparent border focus:border-white/20 focus:bg-black/70">
-                    <label class="text-white px-[3%]">Презиме</label>
-                    <input name="surname" type="text" required placeholder="Презиме" class="w-full rounded-xl mb-[2%] px-[5%] xs:px-[3%] py-[3%] bg-black/50 text-white outline-none border-transparent border focus:border-white/20 focus:bg-black/70">
-                    <label class="text-white px-[3%]">Email</label>
-                    <input name="email" type="email" required placeholder="user@example.com" class="w-full rounded-xl mb-[2%] px-[5%] xs:px-[3%] py-[3%] bg-black/50 text-white outline-none border-transparent border focus:border-white/20 focus:bg-black/70">
-                    <label class="text-white px-[3%]">Телефон</label>
-                    <input name="phone" type="tel" required placeholder="07X-XXX-XXX" class="w-full rounded-xl px-[5%] xs:px-[3%] py-[3%] bg-black/50 text-white outline-none border-transparent border focus:border-white/20 focus:bg-black/70">
-                </div>
-                <div id="" class="w-full lg:w-[47%] h-full flex flex-col gap-2 lg:gap-2">
-                    <div class="w-full flex flex-col lg:flex-row justify-between items-center gap-1 lg:gap-0">
-                        <div class="w-full lg:w-[48%] flex flex-col gap-1">
-                            <label class="text-white px-[3%]">Модел</label>
-                            <select name="model" id="modelSelect" required class="w-full px-[5%] xs:px-[3%] py-[3%] bg-black/50 text-white/70 outline-none rounded-xl">
-                                <option class="bg-black/85 lg:w-full w-1/2" disabled selected hidden value="">Избери модел</option>
-                                <option class="bg-black/85 lg:w-full w-1/2" value="Kirby G3">Kirby G3</option>
-                                <option class="bg-black/85 lg:w-full w-1/2" value="Kirby G4">Kirby G4</option>
-                                <option class="bg-black/85 lg:w-full w-1/2" value="Kirby G5">Kirby G5</option>
-                                <option class="bg-black/85 lg:w-full w-1/2" value="Kirby G6">Kirby G6</option>
-                                <option class="bg-black/85 lg:w-full w-1/2" value="Kirby Ultimate G">Kirby Ultimate G</option>
-                                <option class="bg-black/85 lg:w-full w-1/2" value="Kirby Diamond Edition">Kirby Diamond Edition</option>
-                                <option class="bg-black/85 lg:w-full w-1/2" value="Kirby Sentria">Kirby Sentria</option>
-                                <option class="bg-black/85 lg:w-full w-1/2" value="Kirby Sentria">Kirby Sentria II</option>
-                                <option class="bg-black/85 lg:w-full w-1/2" value="Kirby Avalir">Kirby Avalir</option>
-                                <option class="bg-black/85 lg:w-full w-1/2" value="Kirby Avalir 2">Kirby Avalir 2</option>
-                            </select>
-                        </div>
+    <div class="w-full h-[16vh] bg-gradient-to-b from-black/50 to-black"></div>
 
-                        <div class="w-full lg:w-[48%] flex flex-col gap-1">
-                            <label class="text-white px-[3%]">Пакет</label>
-                            <select name="package" id="packageSelect" class="w-full px-[5%] xs:px-[3%] py-[3%] bg-black/50 text-white/70 outline-none rounded-xl">
-                                <option value="" disabled selected hidden class="bg-black/85 text-white" >Избери пакет</option>                            
-                                <option class="bg-black/85 text-white" value="basic">Основен пакет</option>
-                                <option class="bg-black/85 text-white" value="advanced">Напреден пакет</option>
-                                <option class="bg-black/85 text-white" value="full">Full пакет</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="w-full flex flex-col lg:flex-row justify-between items-center gap-1 lg:gap-0">
-                        <div class="w-full lg:w-[48%] flex flex-col gap-1">
-                            <label class="text-white px-[3%]">Година на купување</label>
-                            <input name="purchase_year" placeholder="XXXX" type="text" required class="w-full px-[5%] xs:px-[3%] py-[3%] bg-black/50 text-white outline-none rounded-xl">
-                        </div>
-                        <div class="w-full lg:w-[48%] flex flex-col gap-1">
-                            <label class="text-white px-[3%]">Сериски број</label>
-                            <input name="serial" placeholder="XXXX-XXXX-XXXX" type="text" required class="w-full px-[5%] xs:px-[3%] py-[3%] bg-black/50 text-white outline-none rounded-xl">
-                        </div>
-                    </div>
-                    <label class="text-white px-[3%]">Дополнителен опис</label>
-                    <textarea name="details" required class="w-full h-full p-1 px-3 bg-black/50 text-white outline-none rounded-xl"></textarea>
-
-                    <!-- FormSubmit hidden controls -->
-                    <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Откуп/Замена">
-                    <input type="hidden" name="_next" value="https://vinkom-mu.vercel.app/thankyoutradeIn.html">
-
-                    <div class="flex justify-between w-full gap-[0.5%]">
-                        <div class="flex flex-col justify-center gap-1 w-full text-[8px] xs:text-sm md:text-lg lg:text-[9px] xl:text-[10px] 2xl:text-xs 3xl:text-base text-white/70">
-                            <div class="flex gap-1"><input type="checkbox" required><p>Се согласувам со <a href="privacyPolicy.html" class="text-white">Политиката за Приватност</a> и <a href="termsAndConditions.html" class="text-white">Условите за Користење</a></p></div>
-                            <div class="flex gap-1"><input type="checkbox" name="newsletter_subscription" value="yes"><p>Сакам да добивам информации, новости и промоции преку е-пошта.</p></div>
-                        </div>
-                    </div> 
-
-                    <input type="submit" value="Испрати барање" class="py-[2%] w-full flex justify-center items-center rounded-xl bg-white/25 text-white outline-none hover:bg-white/15 transition-all duration-300">
-                </div>
-            </form>
-
-            <div id="inform" class="w-full h-full lg:w-[25%] gap-3 lg:gap-0 bg-white/50 rounded-b-xl lg:rounded-bl-none lg:rounded-tr-xl  p-[5%] lg:p-[2%] flex flex-col justify-around text-sm xs:text-base sm:text-lg md:text-xl lg:text-sm xl:text-base 2xl:text-xl 3xl:text-2xl">
-                <p class="                 flex items-center gap-3 sm:gap-5 text-black/70 hover:text-black transition-all duration-300"><i class="fa-solid fa-clipboard-list text-lg xs:text-xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl"></i>Пополнете ја формата со ваши информации и информации за вашиот Kirby уред.</p>
-                <p class="calculation-text flex items-center gap-3 sm:gap-5 text-black/70 hover:text-black transition-all duration-300"><i class="fa-solid fa-calculator     text-lg xs:text-xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl"></i>Внесете го вашиот Kirby модел и изберете пакет за да ја видите месечна рата за новиот Avalir Platinum. Цената е информативна и може да варира.</p>
-                <p class="                 flex items-center gap-3 sm:gap-5 text-black/70 hover:text-black transition-all duration-300"><i class="fa-solid fa-phone          text-lg xs:text-xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl"></i>За кратко ќе добиете проценка на вашето Kirby и официјална понуда по телефон или меил.</p>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="h-[10vh] w-full bg-gradient-to-b from-black/60 to-black"></div>
-    
     <div class="px-[5%] w-full bg-black">
         <div id="footer" class="w-full flex flex-col-reverse lg:flex-row justify-between items-center py-[6%] xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-lg xs:text-2xl md:text-3xl lg:text-sm xl:text-base 2xl:text-lg 3xl:text-2xl">
           <div class="flex flex-col w-full lg:w-1/4 text-white gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-500 px-[3%] py-[1%] my-[5%] lg:my-0">
@@ -292,73 +342,65 @@
         <img src="images/footer.png" class="w-full xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center">
     </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const modelSelect = document.getElementById('modelSelect');
-    const packageSelect = document.getElementById('packageSelect');
-    const informP = document.querySelector('#inform .calculation-text');
+    <script>
+    (function(){
+      const target = document.getElementById('2014');
+      if(!target || typeof confetti !== 'function') return;
+      let fired = false;
 
-    let tradeInData = [];
+      function getNormalizedOriginFromLeftBox(section){
+        // select the left column (first direct child)
+        const left = section.querySelector(':scope > div:nth-child(1)');
+        if(!left) return { x: 0.5, y: 0.6 }; // fallback center-ish
+        const r = left.getBoundingClientRect();
+        const cx = r.left + r.width / 2;
+        const cy = r.top + r.height / 2;
+        return { x: Math.max(0, Math.min(1, cx / window.innerWidth)), y: Math.max(0, Math.min(1, cy / window.innerHeight)) };
+      }
 
-    // Fetch trade-in data
-    fetch('data/tradeIn.json')
-        .then(response => response.json())
-        .then(data => {
-            tradeInData = data;
-        })
-        .catch(error => console.error('Error loading trade-in data:', error));
+      const o = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting && !fired){
+            fired = true;
+            const origin = getNormalizedOriginFromLeftBox(target);
+            // main burst (from left image center)
+            confetti({ particleCount: 200, spread: 70, origin });
+            // follow-up softer burst
+            setTimeout(() => confetti({ particleCount: 120, spread: 130, origin }), 350);
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.5 });
 
-    function updateCalculation() {
-        const selectedModel = modelSelect.value;
-        const selectedPackage = packageSelect.value;
+      o.observe(target);
+    })();
+    </script>
+    <script>
+    (function(){
+      const targetSection = Array.from(document.querySelectorAll('div.bg-gradient-to-b')).find(el => el.classList.contains('px-[5%]') && el.classList.contains('w-full') && el.classList.contains('from-transparent') && el.classList.contains('to-black/50'));
+      if(!targetSection) return;
 
-        if (!selectedModel || !selectedPackage) {
-            informP.style.opacity = 0;
-            setTimeout(() => {
-                informP.innerHTML = `<i class="fa-solid fa-calculator text-xl md:text-3xl lg:text-xl"></i> Внесете го вашиот Kirby модел и изберете пакет за да ја видите пресметаната месечна рата за новиот Avalir Platinum. Цената е информативна и може да варира.`;
-                informP.style.opacity = 1;
-            }, 250);
-            return;
-        }
+      const container = document.createElement('div');
+      container.id = 'section-progress-container';
+      const bar = document.createElement('div');
+      bar.id = 'section-progress-bar';
+      container.appendChild(bar);
+      document.body.appendChild(container);
 
-        const modelData = tradeInData.find(item => item.name === selectedModel);
-        if (!modelData) {
-            informP.style.opacity = 0;
-            setTimeout(() => {
-                informP.innerHTML = `<i class="fa-solid fa-calculator text-xl md:text-3xl lg:text-xl"></i> Внесете го вашиот Kirby модел и изберете пакет за да ја видите пресметаната месечна рата за новиот Avalir Platinum. Цената е информативна и може да варира.`;
-                informP.style.opacity = 1;
-            }, 250);
-            return;
-        }
+      function updateProgress(){
+        const sectionTop = targetSection.getBoundingClientRect().top + window.scrollY;
+        const sectionHeight = targetSection.offsetHeight;
+        const maxScroll = Math.max(1, sectionHeight - window.innerHeight);
+        const scrolled = window.scrollY - sectionTop;
+        const percent = Math.max(0, Math.min(100, (scrolled / maxScroll) * 100));
+        bar.style.width = percent + '%';
+      }
 
-        let packagePrice = 0;
-        if (selectedPackage === 'basic') {
-            packagePrice = modelData.basePackage;
-        } else if (selectedPackage === 'advanced') {
-            packagePrice = modelData.advancedPackage;
-        } else if (selectedPackage === 'full') {
-            packagePrice = modelData.fullPackage;
-        }
-
-        const newPrice = 1874; // Avalir Platinum price
-        const remaining = newPrice - packagePrice;
-        const monthly = Math.ceil(remaining / 24);
-
-        const packageText = selectedPackage === 'basic' ? 'основен пакет' : selectedPackage === 'advanced' ? 'напреден пакет' : 'Full пакет';
-
-        informP.style.opacity = 0;
-        setTimeout(() => {
-            informP.innerHTML = `<i class="fa-solid fa-calculator text-xl md:text-3xl lg:text-xl"></i> Врз основа на вашиот ${selectedModel} со ${packageText}, новиот Avalir Platinum може да биде ваш за ${monthly} € месечно во период од 24 месеци, со 0% камата.`;
-            informP.style.opacity = 1;
-        }, 250);
-    }
-
-    modelSelect.addEventListener('change', updateCalculation);
-    packageSelect.addEventListener('change', updateCalculation);
-});
-</script>
-
-
-
+      window.addEventListener('scroll', updateProgress, {passive: true});
+      window.addEventListener('resize', updateProgress);
+      updateProgress();
+    })();
+    </script>
 </body>
 </html>
+
