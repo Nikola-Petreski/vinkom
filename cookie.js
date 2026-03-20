@@ -1,15 +1,37 @@
 // Check consent on page load
 document.addEventListener("DOMContentLoaded", () => {
   const consent = localStorage.getItem("cookieConsent");
+  const banner = document.getElementById("cookieBanner");
+  if (!banner) return;
 
-  if (!consent) {
-    const banner = document.getElementById("cookieBanner");
-    if (banner) banner.classList.remove("hidden");
+  // If already in localStorage, don't show banner
+  if (consent) {
+    banner.classList.add("hidden");
+    if (consent === "accepted") {
+      loadAnalytics();
+    }
+    return;
   }
 
-  if (consent === "accepted") {
-    loadAnalytics();
+  // On index.html, show banner only after scrolling past hero section
+  if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
+    const heroSection = document.getElementById("hero");
+    if (heroSection) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting && !localStorage.getItem("cookieConsent")) {
+            banner.classList.remove("hidden");
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0 });
+      observer.observe(heroSection);
+      return;
+    }
   }
+
+  // On other pages, show banner immediately
+  banner.classList.remove("hidden");
 });
 
 // Accept cookies

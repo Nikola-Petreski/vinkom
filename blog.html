@@ -311,14 +311,19 @@
         <img src="images/footer.png" class="w-full xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center">
     </div>
 
+    <div id="cookieBanner" class="fixed bottom-[5vw] px-[5%] xl:bottom-[3vw] xl:px-[5%] w-full text-white z-50 hidden">
+        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto lg:mx-0 w-auto lg:w-[450px] 3xl:w-[580px] rounded-xl bg-black/40 backdrop-blur-3xl p-[5%] lg:p-[3%] xl:p-[2%] flex flex-col justify-between items-center gap-[3vw] xl:gap-[1vw]">
+            <div class="flex justify-center items-center gap-2 xs:gap-4 md:gap-4">
+                <p class="text-sm xs:text-xl md:text-3xl lg:text-lg 3xl:text-2xl">Оваа веб-страница користи колачиња за анализа и подобрување на искуството.</p> 
+                <i class="fa-solid fa-cookie text-2xl xs:text-4xl md:text-6xl lg:text-3xl 3xl:text-5xl flex justify-center items-center"></i>
+            </div>
+            <div class="flex gap-[6%] w-full text-base xs:text-xl md:text-3xl lg:text-xl 3xl:text-3xl">
+              <button onclick="rejectCookies()" class="border w-[47%] border-white py-[1%] rounded-xl">Одбиј</button>
+              <button onclick="acceptCookies()" class="bg-white w-[47%] text-black py-[1%] rounded-xl">Прифати</button>
+            </div>
+        </div>
+    </div>
 
-<div id="cookieBanner" class="fixed bottom-0 left-0 w-full bg-black text-white p-4 flex flex-col md:flex-row justify-between items-center gap-3 z-50 hidden">
-  <p class="text-sm text-center md:text-left">Оваа веб-страница користи колачиња за анализа и подобрување на искуството.</p>
-  <div class="flex gap-2">
-    <button onclick="acceptCookies()" class="bg-white text-black px-4 py-1 rounded">Прифати</button>
-    <button onclick="rejectCookies()" class="border border-white px-4 py-1 rounded">Одбиј</button>
-  </div>
-</div>
 <script src="cookie.js"></script>
 </body>
 </html>
