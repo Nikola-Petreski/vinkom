@@ -688,6 +688,10 @@ video {
   bottom: 1.5rem;
 }
 
+.bottom-\[5vw\] {
+  bottom: 5vw;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -756,18 +760,6 @@ video {
   top: 60%;
 }
 
-.bottom-1 {
-  bottom: 0.25rem;
-}
-
-.left-1 {
-  left: 0.25rem;
-}
-
-.bottom-\[5vw\] {
-  bottom: 5vw;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -830,16 +822,6 @@ video {
 .my-\[5\%\] {
   margin-top: 5%;
   margin-bottom: 5%;
-}
-
-.mx-\[10vw\] {
-  margin-left: 10vw;
-  margin-right: 10vw;
-}
-
-.mx-\[5vw\] {
-  margin-left: 5vw;
-  margin-right: 5vw;
 }
 
 .mb-1 {
@@ -1139,6 +1121,10 @@ video {
   width: 40%;
 }
 
+.w-\[47\%\] {
+  width: 47%;
+}
+
 .w-\[49\%\] {
   width: 49%;
 }
@@ -1190,22 +1176,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[90\%\] {
-  width: 90%;
-}
-
-.w-\[80vw\] {
-  width: 80vw;
-}
-
-.w-\[45\%\] {
-  width: 45%;
-}
-
-.w-\[47\%\] {
-  width: 47%;
 }
 
 .max-w-\[1024px\] {
@@ -1432,32 +1402,12 @@ video {
   gap: 5vw;
 }
 
-.gap-\[6vw\] {
-  gap: 6vw;
-}
-
-.gap-\[10\%\] {
-  gap: 10%;
-}
-
 .gap-\[6\%\] {
   gap: 6%;
 }
 
-.gap-\[5\%\] {
-  gap: 5%;
-}
-
-.gap-\[1vw\] {
-  gap: 1vw;
-}
-
-.gap-\[10vw\] {
-  gap: 10vw;
-}
-
-.gap-\[4vw\] {
-  gap: 4vw;
+.gap-\[6vw\] {
+  gap: 6vw;
 }
 
 .self-end {
@@ -1663,10 +1613,6 @@ video {
 
 .bg-white\/70 {
   background-color: rgb(255 255 255 / 0.7);
-}
-
-.bg-black\/10 {
-  background-color: rgb(0 0 0 / 0.1);
 }
 
 .bg-\[url\(\'images\/platinumHTML\/attachments\/HEPAfilterKesi\.webp\'\)\] {
@@ -2590,12 +2536,12 @@ video {
     gap: 0.5rem;
   }
 
-  .xs\:gap-5 {
-    gap: 1.25rem;
-  }
-
   .xs\:gap-4 {
     gap: 1rem;
+  }
+
+  .xs\:gap-5 {
+    gap: 1.25rem;
   }
 
   .xs\:p-\[4\%\] {
@@ -2823,22 +2769,6 @@ video {
     width: 75%;
   }
 
-  .md\:w-\[60vw\] {
-    width: 60vw;
-  }
-
-  .md\:w-\[500px\] {
-    width: 500px;
-  }
-
-  .md\:w-\[300px\] {
-    width: 300px;
-  }
-
-  .md\:w-\[400px\] {
-    width: 400px;
-  }
-
   .md\:max-w-\[614px\] {
     max-width: 614px;
   }
@@ -2867,6 +2797,10 @@ video {
     gap: 0.5rem;
   }
 
+  .md\:gap-4 {
+    gap: 1rem;
+  }
+
   .md\:gap-6 {
     gap: 1.5rem;
   }
@@ -2879,18 +2813,6 @@ video {
     gap: 2vh;
   }
 
-  .md\:gap-8 {
-    gap: 2rem;
-  }
-
-  .md\:gap-12 {
-    gap: 3rem;
-  }
-
-  .md\:gap-4 {
-    gap: 1rem;
-  }
-
   .md\:px-\[3\%\] {
     padding-left: 3%;
     padding-right: 3%;
@@ -2899,10 +2821,6 @@ video {
   .md\:py-\[1\%\] {
     padding-top: 1%;
     padding-bottom: 1%;
-  }
-
-  .md\:text-left {
-    text-align: left;
   }
 
   .md\:text-2xl {
@@ -2970,14 +2888,14 @@ video {
     top: 1vw;
   }
 
-  .lg\:my-0 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
   .lg\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
+  }
+
+  .lg\:my-0 {
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   .lg\:block {
@@ -3108,6 +3026,10 @@ video {
     width: 40%;
   }
 
+  .lg\:w-\[450px\] {
+    width: 450px;
+  }
+
   .lg\:w-\[47\%\] {
     width: 47%;
   }
@@ -3150,18 +3072,6 @@ video {
 
   .lg\:w-full {
     width: 100%;
-  }
-
-  .lg\:w-\[500px\] {
-    width: 500px;
-  }
-
-  .lg\:w-\[480px\] {
-    width: 480px;
-  }
-
-  .lg\:w-\[450px\] {
-    width: 450px;
   }
 
   .lg\:max-w-\[1024px\] {
@@ -3460,16 +3370,16 @@ video {
 }
 
 @media (min-width: 1280px) {
+  .xl\:bottom-\[3vw\] {
+    bottom: 3vw;
+  }
+
   .xl\:right-\[2vw\] {
     right: 2vw;
   }
 
   .xl\:top-\[6vh\] {
     top: 6vh;
-  }
-
-  .xl\:bottom-\[3vw\] {
-    bottom: 3vw;
   }
 
   .xl\:h-\[140vh\] {
@@ -3588,17 +3498,12 @@ video {
     gap: 1vw;
   }
 
-  .xl\:p-\[4\%\] {
-    padding: 4%;
-  }
-
   .xl\:p-\[2\%\] {
     padding: 2%;
   }
 
-  .xl\:px-\[3\%\] {
-    padding-left: 3%;
-    padding-right: 3%;
+  .xl\:p-\[4\%\] {
+    padding: 4%;
   }
 
   .xl\:px-\[5\%\] {
@@ -3904,32 +3809,16 @@ video {
     width: 26%;
   }
 
+  .\33xl\:w-\[580px\] {
+    width: 580px;
+  }
+
   .\33xl\:w-\[70\%\] {
     width: 70%;
   }
 
   .\33xl\:w-\[80\%\] {
     width: 80%;
-  }
-
-  .\33xl\:w-\[500px\] {
-    width: 500px;
-  }
-
-  .\33xl\:w-\[520px\] {
-    width: 520px;
-  }
-
-  .\33xl\:w-\[550px\] {
-    width: 550px;
-  }
-
-  .\33xl\:w-\[560px\] {
-    width: 560px;
-  }
-
-  .\33xl\:w-\[580px\] {
-    width: 580px;
   }
 
   .\33xl\:max-w-\[1536px\] {
