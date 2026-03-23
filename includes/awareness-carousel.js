@@ -19,7 +19,15 @@ async function initAwarenessSwiper() {
             await loadScript('https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js');
         }
 
-        const isIndex = window.location.pathname.includes('index.html');
+        // Determine mode explicitly by page attribute when present, else fallback to URL path
+        const awarenessEl = document.querySelector('#awareness') || document.getElementById('awarenessWrapper');
+        const mode = awarenessEl?.dataset?.awarenessCarousel;
+
+        const pathName = window.location.pathname.toLowerCase();
+        const isIndexByPath = pathName.endsWith('/') || pathName.endsWith('/index.html');
+
+        const isIndex = mode === 'index' ? true : mode === 'platinum' ? false : isIndexByPath;
+
         const dataUrl = isIndex ? 'data/carousel.json' : 'data/awareness.json';
         const resp = await fetch(dataUrl);
         let blocks;
@@ -35,7 +43,12 @@ async function initAwarenessSwiper() {
         if (!wrapper) return;
 
         // Inject styles based on page
+        const existingStyle = document.getElementById('awareness-carousel-style');
+        if (existingStyle) existingStyle.remove();
+
         const style = document.createElement('style');
+        style.id = 'awareness-carousel-style';
+
         if (isIndex) {
             style.innerHTML = `
                 #awarenessWrapper .swiper-slide { display:block; box-sizing:border-box; }

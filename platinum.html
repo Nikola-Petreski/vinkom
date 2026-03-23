@@ -57,6 +57,20 @@
         .slide-in:nth-child(1) { transition-delay: 0s; }
         .slide-in:nth-child(2) { transition-delay: 0.15s; }
         .slide-in:nth-child(3) { transition-delay: 0.3s; }
+
+        .metallic-shine h1, .metallic-shine p {
+            background: linear-gradient(270deg, #C0C0C0 0%, #C0C0C0 45%, #ffffff 50%, #C0C0C0 55%, #C0C0C0 100%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 6s infinite linear;
+        }
+
+        @keyframes shine {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
     </style>
 </head>
 <body class="overflow-x-hidden font-gidole bg-[#484848]">
@@ -348,6 +362,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     </script>
 
+    <div id="hero" class="">
+
+    </div>
+
     <div id="powerSystem" class="w-full bg-gradient-to-b from-black to-[#484848] px-[5%]">
         <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col gap-6 py-[10%]">
             <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">Kirby Power System</h1>
@@ -369,7 +387,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 
-    <div id="awareness" class="w-full bg-gradient-to-b from-[#484848] to-black px-[5%]">
+    <div id="awareness" data-awareness-carousel="platinum" class="w-full bg-gradient-to-b from-[#484848] to-black px-[5%]">
         <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col gap-6 py-[10%]">
             <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">Научно заснована заштита</h1>
             <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">Научно заснована заштита</h1>
@@ -440,80 +458,80 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col gap-6 py-[10%]">
             <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">Што вклучува Avalir Platinum</h1>
             <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">Што вклучува Avalir Platinum</h1>
-            <div class="w-full h-full flex flex-col gap-[6vw] lg:gap-[4vw] p-[5%] bg-black/30 rounded-xl">
+            <div class="w-full h-full flex flex-col gap-[6vw] lg:gap-[4vw] p-[5%] bg-black/40 rounded-xl">
                 <div class="w-full h-[35vh] lg:h-[70vh] xl:h-[50vh] 2xl:h-[70vh] flex justify-start lg:justify-end items-start p-[2%] lg:p-[1%] bg-[url('images/platinumHTML/attachments/zip.jpg')] bg-cover bg-left lg:bg-center rounded-xl">
-                    <div id="attachment-container-1" class="backdrop-blur-md bg-black/30 rounded-xl text-white/70 p-[2%] w-auto max-w-[70%] lg:max-w-full xl:max-w-[35%] transition-all duration-300 flex flex-col justify-between items-start">
+                    <div id="attachment-container-1" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[2%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[35%] transition-all duration-300 flex flex-col justify-between items-start">
                         <h1 id="attachment-toggle-1" onclick="toggleAttachment(1)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between w-full"><p>Zipp Четка</p><i id="attachment-chevron-1" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                        <p id="attachment-desc-1" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg">Ротирачка четка со голема брзина специјализирана за мебел, скали и душеци. Со силна агитација ги отстранува длабоко вкоренетите влакна од миленици, прашината и алергените, оставајќи ги ткаенините чисти со еден поминување.</p>
+                        <p id="attachment-desc-1" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Ротирачка четка со голема брзина специјализирана за мебел, скали и душеци. Со силна агитација ги отстранува длабоко вкоренетите влакна од миленици, прашината и алергените, оставајќи ги ткаенините чисти со еден поминување.</p>
                     </div>
                 </div>
                 <div class="w-full justify-between items-center h-[80vh] lg:h-[50vh] xl:h-[70vh] flex flex-col lg:flex-row">
                     <div class="w-full lg:w-[48%] h-[48%] lg:h-full bg-[url('images/platinumHTML/attachments/crevo.jpg')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                        <div id="attachment-container-2" class="backdrop-blur-md bg-black/30 rounded-xl text-white/70 p-[3%] w-auto max-w-[70%] lg:max-w-full xl:max-w-[60%] 2xl:max-w-[45%] transition-all duration-300">
+                        <div id="attachment-container-2" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[60%] 2xl:max-w-[45%] 3xl:max-w-[50%] transition-all duration-300">
                             <h1 id="attachment-toggle-2" onclick="toggleAttachment(2)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Црево</p><i id="attachment-chevron-2" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-2" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg">Флексибилно растегливо црево со должина од 213 см и ротирачки приклучоци за максимална маневрабилност при чистење над подот. Издржливата херметичка конструкција обезбедува постојана и целосна моќ на вшмукување.</p>
+                            <p id="attachment-desc-2" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Флексибилно растегливо црево со должина од 213 см и ротирачки приклучоци за максимална маневрабилност при чистење над подот. Издржливата херметичка конструкција обезбедува постојана и целосна моќ на вшмукување.</p>
                         </div>
                     </div>
                     <div class="w-full lg:w-[48%] h-[48%] lg:h-full bg-[url('images/platinumHTML/attachments/sprayer.jpg')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                        <div id="attachment-container-3" class="backdrop-blur-md bg-black/30 rounded-xl text-white/70 p-[3%] w-auto max-w-[70%] lg:max-w-full xl:max-w-[65%] 2xl:max-w-[50%] transition-all duration-300">
+                        <div id="attachment-container-3" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[90%] lg:max-w-full xl:max-w-[65%] 2xl:max-w-[50%] 3xl:max-w-[60%] transition-all duration-300">
                             <h1 id="attachment-toggle-3" onclick="toggleAttachment(3)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Преносен Шампонер</p><i id="attachment-chevron-3" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-3" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg">Комплетен систем за шампонирање со резервоар за раствор кој извлекува длабинска нечистотија од теписи, мебел, скали и душеци. Обезбедува професионално чистење без потреба од изнајмување скапи машини, оставајќи ги површините свежи и хигиенски чисти.</p>
+                            <p id="attachment-desc-3" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Комплетен систем за шампонирање со резервоар за раствор кој извлекува длабинска нечистотија од теписи, мебел, скали и душеци. Обезбедува професионално чистење без потреба од изнајмување скапи машини, оставајќи ги површините свежи и хигиенски чисти.</p>
                         </div>
                     </div>
                 </div>
                 <div class="w-full justify-between items-center h-[120vh] lg:h-[100vh] xl:h-[140vh] flex flex-col lg:flex-row">
                     <div class="w-full lg:w-[49%] h-[32%] lg:h-full bg-[url('images/platinumHTML/attachments/chetkaZaPrav.webp')] p-[2%] lg:p-[1%] bg-cover bg-top lg:bg-center flex justify-start items-start rounded-xl">
-                        <div id="attachment-container-4" class="backdrop-blur-md bg-black/30 rounded-xl text-white/70 p-[3%] w-auto max-w-[70%] lg:max-w-full xl:max-w-[50%] 2xl:max-w-[40%] transition-all duration-300">
+                        <div id="attachment-container-4" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[50%] 2xl:max-w-[40%] 3xl:max-w-[50%] transition-all duration-300">
                             <h1 id="attachment-toggle-4" onclick="toggleAttachment(4)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Четка за прав</p><i id="attachment-chevron-4" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-4" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg">Меки природни влакна за безбедно чистење на абажури, ролетни, полици за книги, електроника и други осетливи површини. Ја задржува фината прашина без гребење, одржувајќи ги предметите чисти и заштитени.</p>
+                            <p id="attachment-desc-4" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Меки природни влакна за безбедно чистење на абажури, ролетни, полици за книги, електроника и други осетливи површини. Ја задржува фината прашина без гребење, одржувајќи ги предметите чисти и заштитени.</p>
                         </div>
                     </div>
                     <div class="h-[66%] lg:h-full w-full lg:w-[48%] flex flex-col justify-between">
                         <div class="w-full h-[48%] lg:h-[37%] bg-[url('images/platinumHTML/attachments/chetkaZaMebel.jpg')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                            <div id="attachment-container-5" class="backdrop-blur-md bg-black/30 rounded-xl text-white/70 p-[3%] w-auto max-w-[70%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[40%] transition-all duration-300">
+                            <div id="attachment-container-5" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[40%] 3xl:max-w-[50%] transition-all duration-300">
                                 <h1 id="attachment-toggle-5" onclick="toggleAttachment(5)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Четка за мебел</p><i id="attachment-chevron-5" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                                <p id="attachment-desc-5" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg">Четка која ја раздвижува и извлекува нечистотијата од софи, столици, душеци и автомобилски седишта. Ефикасно отстранува алергени, влакна од миленици и дамки, враќајќи свежина на сите ткаенини.</p>
+                                <p id="attachment-desc-5" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Четка која ја раздвижува и извлекува нечистотијата од софи, столици, душеци и автомобилски седишта. Ефикасно отстранува алергени, влакна од миленици и дамки, враќајќи свежина на сите ткаенини.</p>
                             </div>
                         </div>
                         <div class="w-full h-[48%] lg:h-[57%] bg-[url('images/platinumHTML/attachments/chetkaZaPod.jpg')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                            <div id="attachment-container-6" class="backdrop-blur-md bg-black/30 rounded-xl text-white/70 p-[3%] w-auto max-w-[70%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[40%] transition-all duration-300">
+                            <div id="attachment-container-6" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[40%] 3xl:max-w-[50%] transition-all duration-300">
                                 <h1 id="attachment-toggle-6" onclick="toggleAttachment(6)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Четка за под</p><i id="attachment-chevron-6" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                                <p id="attachment-desc-6" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg">Рамна и широка четка наменета за тврди подови, плочки, ламинат и теписи со кратки влакна. Нежно ја собира површинската нечистотија без расфрлање или гребење, идеална за кујни, бањи и влезни простории.</p>
+                                <p id="attachment-desc-6" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Рамна и широка четка наменета за тврди подови, плочки, ламинат и теписи со кратки влакна. Нежно ја собира површинската нечистотија без расфрлање или гребење, идеална за кујни, бањи и влезни простории.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="w-full justify-between items-center h-[120vh] lg:h-[50vh] xl:h-[70vh] flex flex-col lg:flex-row">
                     <div class="w-full lg:w-[31%] h-[32%] lg:h-full bg-[url('images/platinumHTML/attachments/turboSander.jpg')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-start items-start rounded-xl">
-                        <div id="attachment-container-7" class="backdrop-blur-md bg-black/30 rounded-xl text-white/70 p-[3%] w-auto max-w-[70%] lg:max-w-full xl:max-w-[75%] 2xl:max-w-[90%] transition-all duration-300">
+                        <div id="attachment-container-7" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[75%] 2xl:max-w-[90%] transition-all duration-300">
                             <h1 id="attachment-toggle-7" onclick="toggleAttachment(7)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Turbo Sander</p><i id="attachment-chevron-7" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-7" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg">Моќен додаток за полирање кој безбедно ги обновува дрвените подови до огледален сјај. Со микрофибер влошки и контролиран проток на воздух ги отстранува лесните гребнатини и ја враќа природната убавина на дрвото.</p>
+                            <p id="attachment-desc-7" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Моќен додаток за полирање кој безбедно ги обновува дрвените подови до огледален сјај. Со микрофибер влошки и контролиран проток на воздух ги отстранува лесните гребнатини и ја враќа природната убавина на дрвото.</p>
                         </div>
                     </div>
                     <div class="w-full lg:w-[30%] h-[32%] lg:h-full bg-[url('images/platinumHTML/attachments/utilityTool.jpg')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                        <div id="attachment-container-8" class="backdrop-blur-md bg-black/30 rounded-xl text-white/70 p-[3%] w-auto max-w-[70%] lg:max-w-full xl:max-w-[75%] 2xl:max-w-[90%] transition-all duration-300">
+                        <div id="attachment-container-8" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[75%] 2xl:max-w-[90%] transition-all duration-300">
                             <h1 id="attachment-toggle-8" onclick="toggleAttachment(8)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Тимар четка</p><i id="attachment-chevron-8" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-8" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg">Повеќенаменска четка за ефикасно чистење на мебел, завеси и меки површини. Отстранува влакна од миленици, прашина и алергени, додека ги заштитува чувствителните ткаенини при чистење над подот.</p>
+                            <p id="attachment-desc-8" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Повеќенаменска четка за ефикасно чистење на мебел, завеси и меки површини. Отстранува влакна од миленици, прашина и алергени, додека ги заштитува чувствителните ткаенини при чистење над подот.</p>
                         </div>
                     </div>
                     <div class="w-full lg:w-[31%] h-[32%] lg:h-full bg-[url('images/platinumHTML/attachments/alatkaZaTesniProstori.jpg')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-start items-start rounded-xl">
-                        <div id="attachment-container-9" class="backdrop-blur-md bg-black/30 rounded-xl text-white/70 p-[3%] w-auto max-w-[70%] lg:max-w-full xl:max-w-[75%] 2xl:max-w-[90%] transition-all duration-300">
+                        <div id="attachment-container-9" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[75%] 2xl:max-w-[90%] transition-all duration-300">
                             <h1 id="attachment-toggle-9" onclick="toggleAttachment(9)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Четка за тесни простори</p><i id="attachment-chevron-9" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-9" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg">Тесна продолжена млазница од 30 см за пристап зад мебел, радијатори, лајсни и апарати каде што се собира нечистотија. Моќното и насочено вшмукување ги отстранува скриената прашина и остатоци од недостапни места.</p>
+                            <p id="attachment-desc-9" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Тесна продолжена млазница од 30 см за пристап зад мебел, радијатори, лајсни и апарати каде што се собира нечистотија. Моќното и насочено вшмукување ги отстранува скриената прашина и остатоци од недостапни места.</p>
                         </div>
                     </div>
                 </div>
                 <div class="w-full justify-between items-center h-[80vh] lg:h-[50vh] xl:h-[80vh] flex flex-col lg:flex-row">
                     <div class="w-full lg:w-[48%] h-[48%] lg:h-full bg-[url('images/platinumHTML/attachments/HEPAfilterKesi.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                        <div id="attachment-container-10" class="backdrop-blur-md bg-black/30 rounded-xl text-white/70 p-[3%] w-auto max-w-[70%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[50%] transition-all duration-300">
+                        <div id="attachment-container-10" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[50%] 3xl:max-w-[57%] transition-all duration-300">
                             <h1 id="attachment-toggle-10" onclick="toggleAttachment(10)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>HEPA Филтер Кеси</p><i id="attachment-chevron-10" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-10" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg">Пакет од шест премиум заменливи кеси кои задржуваат 99,99% од микроскопските алергени и непријатни мириси. Обезбедуваат врвна филтрација, чист издувен воздух и поедноставно одржување при подолги сесии на чистење.</p>
+                            <p id="attachment-desc-10" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Пакет од шест премиум заменливи кеси кои задржуваат 99,99% од микроскопските алергени и непријатни мириси. Обезбедуваат врвна филтрација, чист издувен воздух и поедноставно одржување при подолги сесии на чистење.</p>
                         </div>
                     </div>
                     <div class="w-full lg:w-[48%] h-[48%] lg:h-full bg-[url('images/platinumHTML/attachments/prenosnaRachka.jpg')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                        <div id="attachment-container-11" class="backdrop-blur-md bg-black/30 rounded-xl text-white/70 p-[3%] w-auto max-w-[70%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[50%] transition-all duration-300">
+                        <div id="attachment-container-11" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[50%] transition-all duration-300">
                             <h1 id="attachment-toggle-11" onclick="toggleAttachment(11)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Преносна Рачка</p><i id="attachment-chevron-11" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-11" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg">Ергономска горна рачка за лесно носење на машината по скали и меѓу простории. Ја претвора Kirby во преносна станица за чистење, идеална за повеќекатни домови, автомобили и работилници.</p>
+                            <p id="attachment-desc-11" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Ергономска горна рачка за лесно носење на машината по скали и меѓу простории. Ја претвора Kirby во преносна станица за чистење, идеална за повеќекатни домови, автомобили и работилници.</p>
                         </div>
                     </div>
                 </div>
@@ -524,11 +542,13 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="bg-gradient-to-b from-transparent to-black h-[30vh] w-full"></div>
 
     <div class="w-full bg-black px-[5%]">
-        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex  justify-between py-[10%]">
-            <div class="">
-                <h1>Kirby</h1>
+        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col-reverse lg:flex-row items-center justify-between py-[10%]">
+            <div class="text-slate-500 h-full flex flex-col justify-center gap-[1vh] metallic-shine text-center lg:text-start">
+                <h1 class="text-2xl xs:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black">Најмоќното чистење досега</h1>
+                <p class="text-sm xs:text-lg md:text-xl xl:text-2xl 2xl:text-3xl">Создаден со внимание кон секој детал и изработен од посветен тим, Kirby поставува нов стандард за длабинско чистење — отстранувајќи ја нечистотијата што другите ја оставаат зад себе.</p>
             </div>
-            <img src="images/platinumHTML/100.jpg" class="max-w-[50%]">
+            <img src="images/platinumHTML/100.jpg" class="max-w-[35%] 3xl:max-w-[45%] hidden lg:block">
+            <img src="images/platinumHTML/black.jpg" class="block lg:hidden w-full">
         </div>
     </div>
 

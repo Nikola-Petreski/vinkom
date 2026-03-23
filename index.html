@@ -171,10 +171,13 @@
     <section id="hero" class="relative w-full h-screen overflow-hidden">
       <!-- Background video -->
       <video
+        id="heroVideo"
         src="images/Create_smooth_cinematic_video_25dbdc398c.mp4"
         autoplay
         muted
+        loop
         playsinline
+        preload="auto"
         class="w-full h-full object-cover"
       ></video>
 
@@ -195,6 +198,57 @@
         </div>
       </div>
     </section>
+
+    <script>
+    (function(){
+      const video = document.getElementById('heroVideo');
+      if (!video) return;
+
+      video.muted = true;
+      video.playsInline = true;
+      video.loop = true;
+
+      function attemptPlay() {
+        const promise = video.play();
+        if (promise !== undefined) {
+          promise.catch(() => {
+            // Autoplay blocked by browser policy; mute+retry on first click
+            if (!document.getElementById('heroPlayHint')) {
+              const hint = document.createElement('button');
+              hint.id = 'heroPlayHint';
+              hint.textContent = 'Touch to play wallpaper video';
+              hint.style.position = 'absolute';
+              hint.style.zIndex = '60';
+              hint.style.left = '50%';
+              hint.style.top = '50%';
+              hint.style.transform = 'translate(-50%, -50%)';
+              hint.style.padding = '0.75rem 1.25rem';
+              hint.style.background = 'rgba(0,0,0,0.65)';
+              hint.style.color = '#FFF';
+              hint.style.border = '1px solid #fff';
+              hint.style.borderRadius = '999px';
+              hint.style.fontSize = '1rem';
+              hint.style.cursor = 'pointer';
+              hint.style.backdropFilter = 'blur(4px)';
+              hint.addEventListener('click', () => {
+                video.muted = true;
+                video.play().finally(() => hint.remove());
+              });
+              document.getElementById('hero')?.appendChild(hint);
+            }
+          });
+        }
+      }
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+          attemptPlay();
+        }
+      });
+
+      attemptPlay();
+    })();
+    </script>
 
 <style>
 /* Backdrop blur animation */
@@ -219,7 +273,7 @@
     <div class="h-[20vh] w-full bg-gradient-to-b from-transparent to-black relative -top-[20vh]"></div>
 
     <div class="w-full h-full bg-gradient-to-b from-black to-[#484848] px-[5%]">
-        <div id="awareness" class="bg-transparent xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto py-[10%] lg:py-[10%] flex flex-col justify-center items-center gap-6">
+        <div id="awareness" data-awareness-carousel="index" class="bg-transparent xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto py-[10%] lg:py-[10%] flex flex-col justify-center items-center gap-6">
             <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">Технологија што трае</h1>
             <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">Технологија што трае</h1>
             <div class="w-full  rounded-xl">
