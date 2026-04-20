@@ -4,3 +4,5 @@
 .modal-content { transform: translateY(2vh) scale(0.98); opacity: 0; transition: transform 200ms cubic-bezier(0.2,0,0.2,1), opacity 200ms ease; }
 .modal-content.show { transform: translateY(0) scale(1); opacity: 1; }
 @media (max-width: 768px){ .modal-content { flex-direction: column; padding: 3% !important; } }
+
+

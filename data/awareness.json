@@ -7,7 +7,7 @@
         "surname": "McKeon",
         "title_mk": "MD, Извршен директор",
         "organization_mk": "Allergy Standards Ltd.",
-        "image": "images/platinumHTML/awareness/person1.jpg",
+        "image": "images_webp/platinumHTML/awareness/person1.webp",
         "source_publication": "Real Simple",
         "source_link": "https://www.realsimple.com/what-is-slow-vacuuming-11916250"
       },
@@ -22,7 +22,7 @@
         "surname": "Jacobson",
         "title_mk": "MD, Алерголог",
         "organization_mk": "Allergy & Asthma Physicians",
-        "image": "images/platinumHTML/awareness/person2.jpg",
+        "image": "images_webp/platinumHTML/awareness/person2.webp",
         "source_publication": "Prevention",
         "source_link": "https://www.prevention.com/life/a19600469/best-hepa-vacuums/"
       },
@@ -37,7 +37,7 @@
         "surname": "Parikh",
         "title_mk": "MD, Алерголог",
         "organization_mk": "Allergy & Asthma Network",
-        "image": "images/platinumHTML/awareness/person3.jpg",
+        "image": "images_webp/platinumHTML/awareness/person3.webp",
         "source_publication": "Prevention",
         "source_link": "https://www.prevention.com/life/a19600469/best-hepa-vacuums/"
       },
@@ -52,7 +52,7 @@
         "surname": "Manoukian",
         "title_mk": "MD, Алерголог и имунолог",
         "organization_mk": "Board-Certified Allergist/Immunologist",
-        "image": "images/platinumHTML/awareness/person4.png",
+        "image": "images_webp/platinumHTML/awareness/person4.webp",
         "source_publication": "HeyAllergy.com",
         "source_link": "https://www.heyallergy.com/blog/hepa-vacuum-guide-what-matters-beyond-hepa"
       },
@@ -67,7 +67,7 @@
         "surname": "Santos",
         "title_mk": "MD, Медицински рецензент",
         "organization_mk": "National Jewish Health",
-        "image": "images/platinumHTML/awareness/person5.jpg",
+        "image": "images_webp/platinumHTML/awareness/person5.webp",
         "source_publication": "National Jewish Health",
         "source_link": "https://www.nationaljewish.org/conditions/fallergy/overview/lifestyle/hepa-filters"
       },
@@ -77,3 +77,4 @@
     }
   ]
 }
+

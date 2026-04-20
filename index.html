@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mk">
 <head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -86,7 +86,7 @@
             <a href="blog.html"     class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-newspaper"></i>Блог</a>
             <a href="faq.html"      class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-circle-question"></i>FAQ</a>
             <div class="w-full h-full bg-gradient-to-b from-transparent to-black"></div>
-            <div class="w-full"><img class="w-full" src="images/footer.png"></div>
+            <div class="w-full"><img class="w-full" src="images_webp/footer.webp" alt=""></div>
         </div>
     </div>
 
@@ -175,9 +175,10 @@
         src="images/Create_smooth_cinematic_video_25dbdc398c.mp4"
         autoplay
         muted
-        loop
         playsinline
         preload="auto"
+        loading="eager"
+        rel="preload"
         class="w-full h-full object-cover"
       ></video>
 
@@ -206,47 +207,31 @@
 
       video.muted = true;
       video.playsInline = true;
-      video.loop = true;
 
       function attemptPlay() {
         const promise = video.play();
         if (promise !== undefined) {
           promise.catch(() => {
-            // Autoplay blocked by browser policy; mute+retry on first click
-            if (!document.getElementById('heroPlayHint')) {
-              const hint = document.createElement('button');
-              hint.id = 'heroPlayHint';
-              hint.textContent = 'Touch to play wallpaper video';
-              hint.style.position = 'absolute';
-              hint.style.zIndex = '60';
-              hint.style.left = '50%';
-              hint.style.top = '50%';
-              hint.style.transform = 'translate(-50%, -50%)';
-              hint.style.padding = '0.75rem 1.25rem';
-              hint.style.background = 'rgba(0,0,0,0.65)';
-              hint.style.color = '#FFF';
-              hint.style.border = '1px solid #fff';
-              hint.style.borderRadius = '999px';
-              hint.style.fontSize = '1rem';
-              hint.style.cursor = 'pointer';
-              hint.style.backdropFilter = 'blur(4px)';
-              hint.addEventListener('click', () => {
-                video.muted = true;
-                video.play().finally(() => hint.remove());
-              });
-              document.getElementById('hero')?.appendChild(hint);
-            }
+            // Autoplay blocked; try again on user interaction
+            const playOnInteraction = () => {
+              video.play();
+              document.removeEventListener('click', playOnInteraction);
+              document.removeEventListener('touchstart', playOnInteraction);
+            };
+            document.addEventListener('click', playOnInteraction);
+            document.addEventListener('touchstart', playOnInteraction);
           });
         }
       }
 
-      document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'visible') {
-          attemptPlay();
-        }
+      video.addEventListener('canplay', () => {
+        attemptPlay();
       });
 
-      attemptPlay();
+      // Force play after a short delay
+      setTimeout(() => {
+        video.play().catch(() => {});
+      }, 100);
     })();
     </script>
 
@@ -309,14 +294,14 @@
                         <h1 class="text-2xl xs:text-3xl md:text-4xl lg:text-3xl 3xl:text-4xl font-bold text-white">Агитација</h1>
                         <p class="text-base xs:text-lg md:text-2xl lg:text-xl 3xl:text-2xl text-[#c1c1c1]">Четките на Kirby ротираат со 3.200 вртежи во минута, нежно раздвижувајќи ги влакната на тепихот. Со тоа, нечистотијата и прашината се ослободуваат и насочуваат во вртлогот на главата, каде што се собираат во филтер кесата.</p>
                     </div>
-                    <img src="images/landingPage/1.png" class="h-full w-full max-h-[40%] 2xl:max-h-max max-w-max 2xl:max-w-[45%] object-contain">
+                    <img src="images_webp/landingPage/1.webp" loading="lazy" class="h-full w-full max-h-[40%] 2xl:max-h-max max-w-max 2xl:max-w-[45%] object-contain" alt="">
                 </div>
                 <div class="w-full lg:w-[48.5%] h-[48.5%] lg:h-full flex flex-col 2xl:flex-row justify-between items-center p-[5%] lg:p-[2%] gap-5 rounded-xl backdrop-blur-3xl bg-white/10 reveal-card translate-x-full opacity-0 transition-all duration-1000 ease-out" data-direction="right">
                     <div class="flex flex-col justify-center gap-5 h-full">
                         <h1 class="text-2xl xs:text-3xl md:text-4xl lg:text-3xl 3xl:text-4xl font-bold text-white">Вибрација</h1>
                         <p class="text-base xs:text-lg md:text-2xl lg:text-xl 3xl:text-2xl text-[#c1c1c1]">Комбинацијата од моторот и протокот на воздух создава силни вибрации што ја вадат вкоренетата нечистотија. Алуминиумската конструкција на Kirby помага вибрациите да продрат длабоко и да ја ослободат насобраната прашина.</p>
                     </div>
-                    <img src="images/landingPage/2.png" class="h-full w-full max-h-[40%] 2xl:max-h-max max-w-max 2xl:max-w-[45%] object-contain">
+                    <img src="images_webp/landingPage/2.webp" loading="lazy" class="h-full w-full max-h-[40%] 2xl:max-h-max max-w-max 2xl:max-w-[45%] object-contain" alt="">
                 </div>
             </div>
             <div class="w-full h-[40%] flex flex-col lg:flex-row justify-between items-center gap-10 lg:gap-0">
@@ -325,14 +310,14 @@
                         <h1 class="text-2xl xs:text-3xl md:text-4xl lg:text-3xl 3xl:text-4xl font-bold text-white">Вшмукување</h1>
                         <p class="text-base xs:text-lg md:text-2xl lg:text-xl 3xl:text-2xl text-[#c1c1c1]">Kirby користи моќно вшмукување дизајнирано со помош на NASA. Со 11 закривени лопатки, создава максимален проток на воздух и извонредна моќ за вадење на прашина, влакна и ситни честички од секој тип на под.</p>
                     </div>
-                    <img src="images/landingPage/3.png" class="h-full w-full max-h-[40%] 2xl:max-h-max max-w-max 2xl:max-w-[45%] object-contain">
+                    <img src="images_webp/landingPage/3.webp" loading="lazy" class="h-full w-full max-h-[40%] 2xl:max-h-max max-w-max 2xl:max-w-[45%] object-contain" alt="">
                 </div>
                 <div class="w-full lg:w-[48.5%] h-[48.5%] lg:h-full flex flex-col 2xl:flex-row justify-between items-center p-[5%] lg:p-[2%] gap-5 rounded-xl backdrop-blur-3xl bg-white/10 reveal-card translate-x-full opacity-0 transition-all duration-1000 ease-out" data-direction="right">
                     <div class="flex flex-col justify-center gap-5 h-full">
                         <h1 class="text-2xl xs:text-3xl md:text-4xl lg:text-3xl 3xl:text-4xl font-bold text-white">Прилагодување на висината</h1>
                         <p class="text-base xs:text-lg md:text-2xl lg:text-xl 3xl:text-2xl text-[#c1c1c1]">Kirby нуди лесно подесување на висината со едно притискање. Може да се изберат 7 позиции за совршено чистење на различни видови подови и теписи, осигурувајќи најдобра ефикасност и резултати при секое користење.</p>
                     </div>
-                    <img src="images/landingPage/4.png" class="h-full w-full max-h-[40%] 2xl:max-h-max max-w-max 2xl:max-w-[45%] object-contain">
+                    <img src="images_webp/landingPage/4.webp" loading="lazy" class="h-full w-full max-h-[40%] 2xl:max-h-max max-w-max 2xl:max-w-[45%] object-contain" alt="">
                 </div>
             </div>
         </div>
@@ -429,7 +414,7 @@
                     </div>
                     <p id="mk">Најдобра перформанса од сите правосмукалки направени. Имам Heritage 2 од 1981 и Avalir 2017, задоволен сум со нив и ќе ги надмине сите други што ги ставам до нив. Дури имам и тест метар за да докажам ова.</p>
                     <p id="en" class="hidden">Best performance of any vac made. I have a Heritage 2 1981 and an Avalir 2017, happy with them both and will outperform anything I put next to them. I even have the test meter attachment to prove that very point.</p>
-                    <p class="flex items-center"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"></p>
+                    <p class="flex items-center"><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""></p>
                 </div>
                 <div class="flex flex-col gap-2 justify-start items-start p-[5%] bg-black/40 rounded-xl">
                     <div class="flex gap-3">
@@ -441,7 +426,7 @@
                     </div>
                     <p id="mk">Моето семејство има Kirby машина уште од памтивек. Иста машина се пренесува од татко ми до брат ми веќе 20+ години и сè уште работи совршено. Гарантира вистинско чистење на килимите и мир во домот.</p>
                     <p id="en" class="hidden">My family have had a Kirby machine ever since I can remember to this very day 20+ years later the exact same machine has been passed down from my father to my brother and still works like the day it was bought. Ensures truly clean carpets and peace of mind.</p>
-                    <p class="flex items-center"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"></p>
+                    <p class="flex items-center"><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""></p>
                 </div>
                 <div class="flex flex-col gap-2 justify-start items-start p-[5%] bg-black/40 rounded-xl">
                     <div class="flex gap-3">
@@ -453,7 +438,7 @@
                     </div>
                     <p id="mk">Величествени правосмукалки. Надминуваат сè, изгледаат одлично и правењето на чистење е уживање. Висококвалитетен производ што го прави домот со килими поудобен за живеење.</p>
                     <p id="en" class="hidden">Magnificent vacuums. They outperform everything, look great, and make vacuuming enjoyable. A high-quality item which makes a carpeted house far more pleasant to live in.</p>
-                    <p class="flex items-center"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"></p>
+                    <p class="flex items-center"><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""></p>
                 </div>
                 <div class="flex flex-col gap-2 justify-start items-start p-[5%] bg-black/40 rounded-xl">
                     <div class="flex gap-3">
@@ -465,7 +450,7 @@
                     </div>
                     <p id="mk">Мојата правосмукалка е стара Kirby, веројатно околу 50 години и е супер моќна, далеку подобра од Dyson и Shark. Секогаш произведуваат делови за целиот живот, нема проблеми со поправка.</p>
                     <p id="en" class="hidden">My vacuum cleaner is an old Kirby, probably about 50 years old & it's super powerful, way better than the Dyson & Shark. They always make the parts for a lifetime, so no problems fixing or replacing broken parts.</p>
-                    <p class="flex items-center"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"></p>
+                    <p class="flex items-center"><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""></p>
                 </div>
                 <div class="flex flex-col gap-2 justify-start items-start p-[5%] bg-black/40 rounded-xl">
                     <div class="flex gap-3">
@@ -477,7 +462,7 @@
                     </div>
                     <p id="mk">Обожавам како Kirby Avalir 2 го исчисти прашината од мрежата на прозорците и нечистотијата од длабочината на мојот тепих. Продажниот персонал беше пријателски.</p>
                     <p id="en" class="hidden">I love how the Kirby Avalir 2 got the dust off my fly screen and the dirt deep down in my carpet. Also, the sales person was really friendly.</p>
-                    <p class="flex items-center"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"></p>
+                    <p class="flex items-center"><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""></p>
                 </div>
                 <div class="flex flex-col gap-2 justify-start items-start p-[5%] bg-black/40 rounded-xl">
                     <div class="flex gap-3">
@@ -489,7 +474,7 @@
                     </div>
                     <p id="mk">Купив второ-рачно Kirby Ultimate G Diamond Edition од 2004. Машината сè уште работи одлично 20 години по производство. Ја користам секоја сабота и редовно го користам шампонот за отстранување дамки.</p>
                     <p id="en" class="hidden">I bought a second-hand Kirby Ultimate G Diamond Edition manufactured in 2004. The machine still works fantastic 20 years from manufacture. I use it every Saturday and regularly use the shampoo unit to remove stains.</p>
-                    <p class="flex items-center"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"><img src="trustpilot-2.svg" class="w-4 h-4"></p>
+                    <p class="flex items-center"><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""><img src="trustpilot-2.svg" class="w-4 h-4" alt=""></p>
                 </div>
 
             </div>
@@ -534,8 +519,8 @@
             <h1 class="text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold block lg:hidden">Направи избор. <p class="text-white/90">Денес</p></h1>
             <h1 class="text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold reveal-letters hidden lg:block">Направи избор. <p class="text-white/90">Денес</p></h1>
             <div class="relative w-full flex justify-center items-center  py-[10%] lg:py-[5%]">
-                <img src="images/phone-vertical.png" class="w-full opacity-0 translate-y-10 transition-all duration-1000 block lg:hidden h-full" data-cta-phone/>
-                <img src="images/phone.png" class="w-full h-full opacity-0 translate-y-10 transition-all duration-1000 hidden lg:block" data-cta-phone/>
+                <img src="images_webp/phone-vertical.webp" loading="lazy" class="w-full opacity-0 translate-y-10 transition-all duration-1000 block lg:hidden h-full" data-cta-phone alt=""/>
+                <img src="images_webp/phone.webp" loading="lazy" class="w-full h-full opacity-0 translate-y-10 transition-all duration-1000 hidden lg:block" data-cta-phone alt=""/>
             </div>
             <div class="flex flex-col text-white/70 text-center justify-center items-center gap-4 lg:gap-2 text-2xl xs:text-4xl md:text-5xl lg:text-lg xl:text-xl 2xl:text-2xl">
                 <h1 class="text-white w-auto text-2xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-6xl 2xl:text-5xl 3xl:text-6xl font-extrabold">Имај го најдоброто</h1>
@@ -687,7 +672,7 @@
     </div>
 
     <div class="w-full bg-black px-[5%]">
-        <img src="images/footer.png" class="w-full xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center">
+        <img src="images_webp/footer.webp" loading="lazy" class="w-full xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center" alt="">
     </div>
 
 
@@ -969,4 +954,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <script src="cookie.js"></script>
 </body>
+
+</body>
 </html>
+
+
+
+

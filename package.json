@@ -4,5 +4,10 @@
   },
   "scripts": {
     "dev": "tailwindcss -i input.css -o output.css --watch"
+  },
+  "dependencies": {
+    "sharp": "^0.34.5"
   }
 }
+
+

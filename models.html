@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gidole&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4baf646c88.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://gidole.github.io/GidoleFont/gidoleFont.css">
-    <link rel="icon" type="image/png" href="images/logoW.png">
+    <link rel="icon" type="image/png" href="images_webp/logoW.webp">
 
     <style>
         @import url('https://gidole.github.io/GidoleFont/gidoleFont.css');
@@ -67,7 +67,7 @@
             <a href="blog.html"     class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-newspaper"></i>Блог</a>
             <a href="faq.html"      class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-circle-question"></i>FAQ</a>
             <div class="w-full h-full bg-gradient-to-b from-transparent to-black"></div>
-            <div class="w-full"><img class="w-full" src="images/footer.png"></div>
+            <div class="w-full"><img class="w-full" src="images_webp/footer.webp" alt=""></div>
         </div>
     </div>
 
@@ -205,7 +205,7 @@
         <div id="popupModel" class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] h-auto mx-auto bg-black/80 rounded-xl p-[5%] lg:p-[3%] flex flex-col lg:flex-row justify-start items-center gap-[1vh] lg:gap-[2vh] overflow-y-hidden">
             <div id="popupBg" class="relative group bg-cover bg-center rounded-lg w-full lg:w-auto lg:max-w-[35%] xl:max-w-[30%] flex justify-center items-center lg:h-full h-[250px] xs:h-[350px] md:h-[380px]">
                 <a id="popupGallery" href="#" class="absolute top-[2vw] right-[2vw] lg:top-[1vw] lg:right-[1vw] opacity-100 lg:opacity-0 lg:group-hover:opacity-100 bg-black/50 backdrop-blur-md text-white text-xs xs:text-lg sm:text-xl md:text-2xl lg:text-base 2xl:text-lg 3xl:text-xl px-3 py-1 rounded-lg hover:bg-black/80 transition flex gap-1 justify-center items-center"><i class="fa-solid fa-photo-film"></i>Галерија</a>
-                <img id="popupImg" src="" class="h-full object-contain">
+                <img id="popupImg" src="" class="h-full object-contain" alt="">
             </div>
             <div class="w-full h-full lg:p-0 flex flex-col justify-around items-start gap-[1vh] lg:gap-[2vh] px-0 lg:px-[3%] 2xl:px-[2%]">
                 <h1 id="popupName" class="text-white pt-1 font-semibold text-xl xs:text-2xl sm:text-4xl md:text-3xl lg:text-5xl xl:text-6xl 3xl:text-7xl"></h1>
@@ -235,7 +235,7 @@
     </div>
     <!-- Image Popup -->
     <div id="imagePopup" class="hidden fixed inset-0 bg-black/90 flex justify-center items-center" style="z-index: 10000;">
-        <img id="popupImage" src="" class="w-[90vw] h-auto max-h-[90vh] object-contain">
+        <img id="popupImage" src="" class="w-[90vw] h-auto max-h-[90vh] object-contain" alt="">
         <i id="closeImage" class="fa-solid fa-x absolute right-[4vw] lg:right-[1vw] xl:right-[2vw] top-[4vh] xs:top-[5vh] md:top-[6vh] xl:top-[6vh] 3xl:top-[10vh] text-base md:text-xl 2xl:text-2xl text-white cursor-pointer"></i>
     </div>
 
@@ -284,7 +284,7 @@
         </div>
     </div>
     <div class="w-full bg-black px-[5%]">
-        <img src="images/footer.png" class="w-full xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center">
+        <img src="images_webp/footer.webp" class="w-full xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center" alt="">
     </div>
 
     <script>
@@ -350,7 +350,7 @@
 
             card.innerHTML = `
                 <div class="relative w-full flex justify-center items-center h-[90%] group-hover:h-full transition-all duration-500 ease-in-out bg-cover bg-center rounded-t-xl" style="background-image: url('${model.bgImage}');">
-                    <img src="${model.productImage}" class="object-contain h-full z-10">
+                    <img src="${model.productImage}" class="object-contain h-full z-10" alt="">
                     <div class="absolute top-0 right-0 h-full w-[95%] 2xl:w-[90%] backdrop-blur-3xl bg-black/40 translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out flex flex-col justify-between px-[5%] py-[17%] text-white z-20 rounded-l-xl">
                         <div class="flex flex-col gap-1 xs:gap-2 xl:gap-1">
                             <h3 class="text-base xs:text-2xl md:text-3xl lg:text-lg xl:text-2xl 2xl:text-2xl 3xl:text-3xl font-semibold mb-[5%]">${model.name}</h3>
@@ -582,3 +582,7 @@
 <script src="cookie.js"></script>
 </body>
 </html>
+
+
+
+

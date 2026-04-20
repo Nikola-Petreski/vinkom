@@ -1,38 +1,40 @@
 [
   {
     "slide": 1,
-    "image": "images/platinumHTML/c1.jpg",
+    "image": "images_webp/platinumHTML/c1.webp",
     "h": "Над 100 години усовршување",
     "p": "Kirby со повеќе од еден век искуство поставува стандарди за квалитет, доверливост и перформанси во домашното чистење."
   },
   {
     "slide": 2,
-    "image": "images/platinumHTML/c3.jpg",
+    "image": "images_webp/platinumHTML/c3.webp",
     "h": "Повеќе од правосмукалка",
     "p": "Avalir Platinum лесно се претвора во систем за шампонирање теписи, чистење мебел, плочки, фуги и полирање дрвени подови."
   },
   {
     "slide": 3,
-    "image": "images/platinumHTML/c2.jpg",
+    "image": "images_webp/platinumHTML/c2.webp",
     "h": "Максимален проток на воздух",
     "p": "Двобрзински, воздушно ладен мотор е дизајниран за максимална ефикасност и постојана моќ при секое чистење."
   },
   {
     "slide": 4,
-    "image": "images/platinumHTML/c4.jpg",
+    "image": "images_webp/platinumHTML/c4.webp",
     "h": "Tech Drive® Power Assist",
     "p": "Интелигентен погон што го минимизира напорот при туркање и овозможува лесно управување на сите површини."
   },
   {
     "slide": 5,
-    "image": "images/platinumHTML/c5.jpg",
+    "image": "images_webp/platinumHTML/c5.webp",
     "h": "Прецизна контрола на висината",
     "p": "Toe-Touch систем со 7 нивоа на висина за совршено прилагодување на теписи, подови и различни услови."
   },
   {
     "slide": 6,
-    "image": "images/platinumHTML/c6.jpg",
+    "image": "images_webp/platinumHTML/c6.webp",
     "h": "Изработена да трае",
     "p": "Произведена во САД од леан алуминиум со полиран метален финиш — стабилност, издржливост и долгорочна вредност."
   }
 ]
+
+
