@@ -50,6 +50,3 @@ This project was developed to create a scalable and maintainable web presence wi
 - output.css is generated from input.css using Tailwind
 - JSON-based content allows updates without modifying core logic
 - The project avoids heavy frameworks to maintain control and performance
-
-## License
-No license specified. Add one if the project is to be publicly distributed.
