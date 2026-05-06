@@ -16,6 +16,10 @@
     <style>
         @import url('https://gidole.github.io/GidoleFont/gidoleFont.css');
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         .font-gidole { font-family: 'Gidole', sans-serif !important; }
 
         .modal-overlay { transition: opacity 200ms ease; opacity: 0; pointer-events: none; }
@@ -58,6 +62,42 @@
         .slide-in:nth-child(2) { transition-delay: 0.15s; }
         .slide-in:nth-child(3) { transition-delay: 0.3s; }
 
+        .hero-push-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .hero-main {
+            width: 100%;
+            height: 100%;
+            transition: transform 1.2s ease 0.1s;
+            transform: translateX(0);
+            will-change: transform;
+        }
+
+        .hero-push-block {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40vw;
+            max-width: 40vw;
+            height: 100%;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: transform 1.2s ease 0.1s, opacity 0.8s ease 0.1s;
+        }
+
+        .hero-pushed .hero-main {
+            transform: translateX(-40vw);
+        }
+
+        .hero-pushed .hero-push-block {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
         .metallic-shine h1, .metallic-shine p {
             background: linear-gradient(270deg, #C0C0C0 0%, #C0C0C0 45%, #ffffff 50%, #C0C0C0 55%, #C0C0C0 100%);
             background-size: 200% 100%;
@@ -73,7 +113,7 @@
         }
     </style>
 </head>
-<body class="overflow-x-hidden font-gidole bg-[#484848]">
+<body class="overflow-x-hidden font-gidole bg-black">
 
     <div class="px-[5%] w-full">
         <div id="nav" class="w-full h-[10vh] max-h-[110px] rounded-lg justify-between items-center bg-transparent hover:bg-black/40 backdrop-blur-sm hover:backdrop-blur-lg my-[1.5%] px-[2%] text-[#c1c1c1] fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden lg:flex xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
@@ -359,17 +399,35 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     </script>
 
-    <div id="hero" class="w-full px-[5%] bg-white h-screen">
-        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex items-center justify-center">
-            <div class="w-full h-screen flex flex-col justify-center items-center gap-4">
-                <h1 class="text-9xl font-black text-black/90 text-center">KIRBY<br>AVALIR<br>PLATINUM</h1>
+    <div id="hero" class="w-full hidden lg:block">
+        <div class="w-screen h-[483px] xl:h-[592px] 2xl:h-[725px] 3xl:h-screen">
+            <div class="hero-push-wrapper" id="heroPushWrapper">
+                <div class="hero-main bg-[url(images/landingPage.jpg)] bg-contain bg-no-repeat bg-center"></div>
+                <div class="hero-push-block flex flex-col justify-center items-center text-white/90 gap-4">
+                    <div class="flex flex-col justify-center items-center gap-1 pr-[7%] xl:pr-[10%]">
+                        <h1 class="text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl font-extrabold">Avalir Platinum</h1>
+                        <p class="text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl">Најмоќниот Kirby досега</p>
+                        <p class="text-sm xl:text-base 2xl:text-xl 3xl:text-2xl text-white/70 text-center">Рачно изработен од нашиот посветен тим и дизајниран за врвно длабинско чистење, Kirby ја отстранува нечистотијата што другите правосмукалки ја оставаат зад себе.</p>
+                    </div>
+                    <div class="w-full flex justify-center items-center gap-[1vw] pr-[7%] xl:pr-[10%] font-medium text-base xl:text-lg 2xl:text-2xl 3xl:text-3xl text-white/70">
+                        <a href="book.html" class="text-black bg-white/70 hover:bg-white/85 transition-all duration-300 rounded-xl px-[8px] py-[3px] 2xl:px-[10px] 2xl:py-[4px]">Закажи Презентација</a>
+                        <a href="#powerSystem" class="rounded-xl px-[8px] py-[2px] 2xl:px-[10px] 2xl:py-[3px] border-2 border-white/70 hover:text-white hover:border-white transition-all duration-300">Дознај Повеќе</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="bg-gradient-to-b from-white to-[#484848] h-[30vh] w-full"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroWrapper = document.getElementById('heroPushWrapper');
+            if (!heroWrapper) return;
+            setTimeout(() => heroWrapper.classList.add('hero-pushed'), 1000);
+        });
+    </script>
 
-    <div id="powerSystem" class="w-full bg-[#484848] px-[5%]">
+
+    <div id="powerSystem" class="w-full bg-gradient-to-b from-black to-[#484848] px-[5%]">
         <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col gap-6 py-[10%]">
             <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">Kirby Power System</h1>
             <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">Kirby Power System</h1>
@@ -384,7 +442,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="bg-white/70 rounded-xl lg:w-[32%] p-[5%] lg:p-[3%] 3xl:p-[2%] flex flex-col gap-[2vw] 2xl:gap-[1vw]">
                     <i class="fa-solid fa-bacterium text-green-600 text-2xl xs:text-3xl md:text-4xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl"></i>
-                    <p class="w-full">Ги еленимира наталожените <span class="text-green-600">прашина и алергени</span> што обичните правосмукалки не можат да ги достигнат. Резултатот е почист и посвеж дом.</p>
+                    <p class="w-full">Ги еленимира наталожените <span class="text-green-600">прашина и алергени</span> што обичните правосмукалки не можат да ги достигнат. Резултатот е чист и посвеж дом.</p>
                 </div>
             </div>
         </div>
@@ -542,7 +600,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 
-    <div class="bg-gradient-to-b from-transparent to-black h-[30vh] w-full"></div>
+    <div class="bg-gradient-to-b from-[#484848] to-black h-[30vh] w-full"></div>
 
     <div class="w-full bg-black px-[5%]">
         <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col-reverse lg:flex-row items-center justify-between py-[10%]">
