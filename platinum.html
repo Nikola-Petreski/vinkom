@@ -98,6 +98,47 @@
             opacity: 1;
         }
 
+        .mobile-hero-wrapper {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .mobile-hero-image {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-position: bottom;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: transform 1s ease;
+            transform: translateY(0);
+            will-change: transform;
+        }
+
+        .mobile-hero-text {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 10;
+            background: rgba(0,0,0,0.95);
+            transform: translateY(100%);
+            transition: transform 1s ease;
+            will-change: transform;
+        }
+
+        .mobile-hero-pushed .mobile-hero-image {
+            transform: translateY(-45%);
+        }
+
+        .mobile-hero-pushed .mobile-hero-text {
+            transform: translateY(0);
+        }
+
         .metallic-shine h1, .metallic-shine p {
             background: linear-gradient(270deg, #C0C0C0 0%, #C0C0C0 45%, #ffffff 50%, #C0C0C0 55%, #C0C0C0 100%);
             background-size: 200% 100%;
@@ -399,10 +440,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     </script>
 
+    <div class="w-full fixed top-0 left-0 h-[15vh] z-50 bg-gradient-to-b from-black to-transparent block lg:hidden"></div>
+
+    <div id="mobileHero" class="w-full block lg:hidden">
+        <div class="mobile-hero-wrapper flex justify-center items-center" id="mobileHeroWrapper">
+            <div class="mobile-hero-image flex flex-col justify-between" style="background-image:url('images/platinum_img/images_webp/studio.webp');">
+                <div class=""></div>
+                <div class="w-full h-[20vh] bg-gradient-to-t from-black to-transparent"></div>
+            </div>
+            <div class="mobile-hero-text flex flex-col justify-center items-center gap-6 px-[5%] py-[10%] text-white">
+                <div class="flex flex-col justify-center items-center gap-0.5 text-center">
+                    <h1 class="text-4xl xs:text-7xl font-extrabold">Avalir Platinum</h1>
+                    <p class="text-xl xs:text-5xl">Најмоќниот Kirby досега</p>
+                    <p class="text-xs xs:text-lg text-white/70 px-[5%] xs:px-[3%]">Рачно изработен од нашиот посветен тим и дизајниран за врвно длабинско чистење, Kirby ја отстранува нечистотијата што другите правосмукалки ја оставаат зад себе.</p>
+                </div>
+                <div class="w-full flex flex-col xs:flex-row justify-center items-center gap-[1vw] font-medium text-sm xs:text-xl text-white/70">
+                    <a href="book.html" class="w-full xs:w-auto text-black bg-white/70 hover:bg-white/85 transition-all duration-300 rounded-xl px-[8px] py-[3px] 2xl:px-[10px] 2xl:py-[4px] text-center">Закажи Презентација</a>
+                    <a href="#powerSystem" class="w-full xs:w-auto rounded-xl px-[8px] py-[2px] 2xl:px-[10px] 2xl:py-[3px] border-2 border-white/70 hover:text-white hover:border-white transition-all duration-300 text-center">Дознај Повеќе</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="hero" class="w-full hidden lg:block">
         <div class="w-screen h-[483px] xl:h-[592px] 2xl:h-[725px] 3xl:h-screen">
             <div class="hero-push-wrapper" id="heroPushWrapper">
-                <div class="hero-main bg-[url(images/landingPage.jpg)] bg-contain bg-no-repeat bg-center"></div>
+                <div class="hero-main bg-[url(images_webp/landingPage.webp)] bg-contain bg-no-repeat bg-top"></div>
                 <div class="hero-push-block flex flex-col justify-center items-center text-white/90 gap-4">
                     <div class="flex flex-col justify-center items-center gap-1 pr-[7%] xl:pr-[10%]">
                         <h1 class="text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl font-extrabold">Avalir Platinum</h1>
@@ -423,6 +486,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const heroWrapper = document.getElementById('heroPushWrapper');
             if (!heroWrapper) return;
             setTimeout(() => heroWrapper.classList.add('hero-pushed'), 1000);
+
+            const mobileHeroWrapper = document.getElementById('mobileHeroWrapper');
+            const mobileHeroText = mobileHeroWrapper?.querySelector('.mobile-hero-text');
+            const mobileHeroImage = mobileHeroWrapper?.querySelector('.mobile-hero-image');
+            if (!mobileHeroWrapper || !mobileHeroText || !mobileHeroImage) return;
+
+            setTimeout(() => {
+                const textHeight = Math.ceil(mobileHeroText.getBoundingClientRect().height);
+                mobileHeroWrapper.classList.add('mobile-hero-pushed');
+                mobileHeroImage.style.transform = `translateY(-${textHeight}px)`;
+            }, 1000);
         });
     </script>
 

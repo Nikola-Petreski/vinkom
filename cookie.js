@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // On index.html, show banner only after scrolling past hero section
-  if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
-    const heroSection = document.getElementById("hero");
+  // On index.html and platinum.html, show banner only after scrolling past hero section
+  if (window.location.pathname.includes("index.html") || window.location.pathname.includes("platinum.html") || window.location.pathname === "/") {
+    const heroSection = document.getElementById("hero") || document.getElementById("mobileHero");
     if (heroSection) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
