@@ -76,7 +76,7 @@ async function initAwarenessSwiper() {
                 slide.classList.add('flex-shrink-0', 'w-full', 'h-full', 'bg-cover', 'bg-center', "bg-no-repeat", 'rounded-xl');
                 slide.style.backgroundImage = `url(${b.image})`;
                 slide.innerHTML = `
-                    <div class="w-full flex flex-col justify-end rounded-xl h-[450px] xs:h-[600px] sm:h-[570px] md:h-[690px] lg:h-[512px] xl:h-[580px] 2xl:h-[700px] 3xl:h-[870px]">
+                    <div class="w-full flex flex-col justify-end rounded-xl h-[450px] xs:h-[600px] sm:h-[570px] md:h-[690px] lg:h-[461px] xl:h-[522px] 2xl:h-[630px] 3xl:h-[783px]">
                         <div class="flex flex-col gap-2 justify-end items-start p-[8%] sm:p-[6%] xl:p-[4%] rounded-b-xl bg-gradient-to-t from-black to-transparent">
                             <h1 class="text-base xs:text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-bold text-white">${b.h}</h1>
                             <p class="text-sm xs:text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl text-white/70">${b.p}</p>
