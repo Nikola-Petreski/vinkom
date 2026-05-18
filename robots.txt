@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /thankyouBook.html
+Disallow: /thankyouFAQ.html
+Disallow: /thankyouSell.html
+Disallow: /thankyouSub.html
+Disallow: /thankyoutradeIn.html
+Disallow: /includes/
+Disallow: /data/
+Disallow: /node_modules/
+Allow: /
+
+Sitemap: https://vinkom.com.mk/sitemap.xml
