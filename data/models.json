@@ -189,7 +189,12 @@
     "color": "#9ba1bb",
     "hoverColor": "#3c4352",
     "galleryUrl": "#",
-    "galleryImages": []
+    "galleryImages": [
+      "images_webp/g4_img/gallery/1.jpg",
+      "images_webp/g4_img/gallery/2.jpg",
+      "images_webp/g4_img/gallery/3.jpg"
+
+    ]
   },
   {
     "name": "Kirby G3",
