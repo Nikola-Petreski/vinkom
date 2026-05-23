@@ -30,71 +30,338 @@
         }
 
     </style>
+        <style>
+.reveal-letters span {
+    opacity: 0;
+    transform: translateY(20px);
+    display: inline-block;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-visible span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#infoDropdownMenu {
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+}
+
+#infoChevron,
+#langChevron {
+    display: inline-block;
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: transform .25s ease, opacity .15s ease;
+}
+
+#infoDropdownButton:hover #infoChevron,
+#langDropdownButton:hover #langChevron {
+    opacity: 1;
+}
+
+#infoChevron.rotated,
+#langChevron.rotated {
+    transform: rotate(180deg);
+}
+
+#mobileInfoChevron {
+    display: inline-block;
+    transition: transform .25s ease;
+}
+
+#mobileInfoChevron.rotated {
+    transform: rotate(180deg);
+}
+
+#mobileInfoDropdownMenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+}
+
+#mobileInfoDropdownMenu.open {
+    max-height: 500px;
+}
+
+#mobileLangDropdownMenu {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px) scaleY(0.98);
+    transform-origin: top;
+    transition: max-height .28s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1);
+}
+
+#mobileLangDropdownMenu.open {
+    max-height: 240px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scaleY(1);
+}
+
+/* Triggered menu (mobile) smooth open/close */
+#triggeredMenu {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: max-height .32s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1);
+}
+
+#triggeredMenu.open {
+    max-height: 800px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#mobileNav.mobile-open {
+    background-color: rgba(0,0,0,0.25) !important;
+}
+        </style>
 </head>
 <body class="overflow-x-hidden font-gidole bg-[#484848]">
 
     <div class="px-[5%] w-full">
-        <div id="nav" class="w-full h-[10vh] max-h-[110px] rounded-lg justify-between items-center bg-transparent hover:bg-black/40 backdrop-blur-sm hover:backdrop-blur-lg my-[1.5%] px-[2%] text-[#c1c1c1] fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden lg:flex xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
-            <a id="logo" href="index.html" class="text-4xl 2xl:text-5xl font-medium hover:text-white transition-all duration-300 w-1/4 text-start">KIRBY</a>
-            <div class="flex lg:gap-3 3xl:gap-5 items-center justify-center w-1/2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
-                <a href="platinum.html" class="hover:text-white hover:text-lg lg:hover:text-base xl:hover:text-lg 2xl:hover:text-xl 3xl:hover:text-2xl transition-all duration-300">Platinum</a>
-                <a href="models.html"   class="hover:text-white hover:text-lg lg:hover:text-base xl:hover:text-lg 2xl:hover:text-xl 3xl:hover:text-2xl transition-all duration-300">Модели</a>
-                <a href="extras.html"   class="hover:text-white hover:text-lg lg:hover:text-base xl:hover:text-lg 2xl:hover:text-xl 3xl:hover:text-2xl transition-all duration-300">Додатоци</a>
-                <a href="aboutus.html"  class="hover:text-white hover:text-lg lg:hover:text-base xl:hover:text-lg 2xl:hover:text-xl 3xl:hover:text-2xl transition-all duration-300">За Нас</a>
-                <a href="blog.html"     class="hover:text-white hover:text-lg lg:hover:text-base xl:hover:text-lg 2xl:hover:text-xl 3xl:hover:text-2xl transition-all duration-300">Блог</a>
-                <a href="faq.html"      class="hover:text-white hover:text-lg lg:hover:text-base xl:hover:text-lg 2xl:hover:text-xl 3xl:hover:text-2xl transition-all duration-300">FAQ</a>
-            </div>
-            <div class="flex items-center justify-end h-full rounded-full w-1/4 lg:gap-1 3xl:gap-2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
-                <a href="tradeIn.html" class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Замени&nbsp;&nbsp;</a>                    
-                <a href="book.html"    class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Закажи презентација&nbsp;&nbsp;</a>        
+    <div id="nav" class="w-full h-[10vh] max-h-[110px] rounded-lg justify-between items-center bg-transparent hover:bg-black/40 backdrop-blur-sm hover:backdrop-blur-lg my-[1.5%] px-[2%] text-[#c1c1c1] fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden lg:flex xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
+        <a id="logo" href="index.html" class="text-4xl 2xl:text-5xl font-medium hover:text-white transition-all duration-300 w-[31%] xl:w-[26%] 2xl:w-1/4 text-start"><img src="logos/LOGO ZAEDNO7.png" class="h-full w-auto"></a>
+        <div class="flex gap-1 items-center justify-center w-1/2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
+            <a href="platinum.html" class="hover:text-white px-1 transition-all duration-300">&nbsp;&nbsp;Platinum</a>
+            <a href="extras.html"   class="hover:text-white px-1 transition-all duration-300">Додатоци</a>
+            <a href="aboutus.html"  class="hover:text-white px-1 transition-all duration-300">За Нас</a>
+            <div class="relative">
+                <button id="infoDropdownButton" type="button" aria-expanded="false" class="flex px-2 py-2 rounded-t-xl w-[117px] xl:w-[129px] 2xl:w-[135px] 3xl:w-[146px] items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
+                    Инфо центар
+                    <span class="pb-[4px] pl-[1px]"><i id="infoChevron" class="fa-solid fa-chevron-down text-[10px] xl:text-xs hidden hover:block"></i></span>
+                </button>
+                <div id="infoDropdownMenu" class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-0 transition-all duration-300 ease-out z-50 flex flex-col w-[117px] xl:w-[129px] 2xl:w-[135px] 3xl:w-[146px] shadow-2xl shadow-black">
+                    <a href="howTo.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Видео водич</a>
+                    <a href="tips.html"  class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Совети</a>
+                    <a href="blog.html"  class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Блог</a>
+                    <a href="faq.html"   class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap  rounded-b-xl pb-2">FAQ</a>
+                </div>
             </div>
         </div>
+        <div class="flex items-center justify-end h-full rounded-full w-[30.5%] xl:w-[26%] 2xl:w-1/4 lg:gap-1 3xl:gap-2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
+            <a href="tradeIn.html" class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Замени&nbsp;&nbsp;</a>                    
+            <a href="book.html"    class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Закажи презентација&nbsp;&nbsp;</a>   
+            <div class="relative">
+                <button id="langDropdownButton" type="button" aria-expanded="false" class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
+                    <img src="flags/macedonia.png" class="h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px] rounded-full">
+                </button>
+                <div id="langDropdownMenu" class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
+                    <a href="#" class="block py-2 3xl:py-3 rounded-t-xl hover:text-white transition-all duration-300"><img src="flags/britain.png" class="rounded-full h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px]"></a>
+                    <a href="#" class="block rounded-b-xl hover:text-white transition-all duration-300">              <img src="flags/albania.png" class="rounded-full h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px]"></a>
+                </div>
+            </div>     
+        </div>
     </div>
+</div>
 
-    <div id="mobileNav" class="fixed top-0 right-0 h-full w-[80%] bg-[#484848] backdrop-blur-lg z-[9999] transform translate-x-full transition-transform duration-300 lg:hidden">
-        <button id="closeMobileNav" class="absolute top-6 right-6 text-white text-2xl">
-            <i class="fa-solid fa-x"></i>
-        </button>
-        <div class="flex flex-col items-start justify-start h-full text-white">
-            <a href="index.html"    class="text-5xl sm:text-6xl p-[5%] font-medium">KIRBY</a>
-            <a href="index.html"    class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-house"></i>Дома</a>
-            <a href="platinum.html" class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-star"></i>Platinum</a>
-            <a href="book.html"     class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-calendar-days"></i>Закажи презентација</a>
-            <a href="models.html"   class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-grip-vertical"></i>Модели</a>
-            <a href="extras.html"   class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-gear"></i>Додатоци</a>
-            <a href="tradeIn.html"  class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-arrow-right-arrow-left"></i>Замени</a>
-            <a href="aboutus.html"  class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-people-group"></i>За Нас</a>
-            <a href="blog.html"     class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-newspaper"></i>Блог</a>
-            <a href="faq.html"      class="text-xl xs:text-3xl sm:text-3xl md:text-4xl pl-[5%] pb-[3%] hover:text-gray-300 flex items-center"><i class="flex justify-center items-center text-center w-8 xs:w-12 sm:w-14 fa-solid fa-circle-question"></i>FAQ</a>
-            <div class="w-full h-full bg-gradient-to-b from-transparent to-black"></div>
-            <div class="w-full"><img class="w-full" src="images_webp/footer.webp" alt=""></div>
+<div id="mobileNav" class="fixed top-[2vh] left-1/2 -translate-x-1/2 z-[9999] lg:hidden w-[90vw] text-white backdrop-blur-3xl p-[5%] md:p-[3%] flex-col rounded-xl bg-black/25 xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691px]">
+    <div id="mainMenu" class="flex justify-between items-center">
+        <div class="relative">
+                    <button id="mobileLangDropdownButton" type="button" aria-expanded="false" class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap text-white">
+                        <img src="flags/macedonia.png" class="h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px] rounded-full">
+                </button>
+                    <div id="mobileLangDropdownMenu" class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
+                        <a href="#" class="block hover:text-white transition-all duration-300 py-2 xs:py-3 md:py-4"><img src="flags/britain.png" class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
+                        <a href="#" class="block hover:text-white transition-all duration-300">             <img src="flags/albania.png" class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
+                </div>
+        </div>
+        <a href="index.html" class="max-w-[40%] h-full"><img src="logos/LOGO ZAEDNO7.png" class="h-full"></a>
+        <button id="mobileMenuToggle" class="text-white"><i class="fa-solid fa-bars text-[20px] md:text-[30px]"></i></button>
+    </div>
+    <div id="triggeredMenu" class="flex flex-col gap-[1vh] w-full justify-center items-center text-lg md:text-xl">
+        <a href="index.html"    class="text-center pt-[1vh]">Дома</a>
+        <a href="platinum.html" class="text-center">Platinum</a>
+        <a href="extras.html"   class="text-center">Додатоци</a>
+        <a href="book.html"     class="text-center">Закажи презентација</a>
+        <a href="tradeIn.html"  class="text-center">Замени</a>
+        <a href="aboutus.html"  class="text-center">За Нас</a>
+        <div class=" pb-[1vh]">
+                <button id="mobileInfoDropdownButton" type="button" aria-expanded="false" class=" text-white">Инфо центар&nbsp;<span class=""><i id="mobileInfoChevron" class="fa-solid fa-chevron-down text-sm"></i></span></button>
+                <div id="mobileInfoDropdownMenu" class="flex flex-col max-h-0 overflow-hidden text-base md:text-lg pl-[1vh]">
+                        <a href="howTo.html" class="text-white/70 transition-all duration-300">Видео водич</a>
+                        <a href="tips.html"  class="text-white/70 transition-all duration-300">Совети</a>
+                        <a href="blog.html"  class="text-white/70 transition-all duration-300">Блог</a>
+                        <a href="faq.html"   class="text-white/70 transition-all duration-300">FAQ</a>
+                </div>
         </div>
     </div>
+</div>
 
     <div id="nav-spacer" class="pt-20 lg:pt-[16vh] bg-[#484848]"></div>
 
-    <!-- Hamburger button for mobile -->
-    <button id="hamburger" class="fixed top-3 right-1.5 z-60 lg:hidden text-white text-lg bg-white/10 p-2 rounded">
-        <i class="fa-solid fa-bars"></i>
-    </button>
+        <script>
+    (function(){
+        const button = document.getElementById('infoDropdownButton');
+        const menu = document.getElementById('infoDropdownMenu');
+        const chevron = document.getElementById('infoChevron');
+        if (!button || !menu) return;
 
-    <!-- Mobile nav backdrop -->
-    <div id="mobileNavBackdrop" class="fixed inset-0 bg-black/40 backdrop-blur-md z-[9998] hidden lg:hidden"></div>
+        const openMenu = () => {
+            menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+            menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+            button.setAttribute('aria-expanded', 'true');
+            button.classList.remove('bg-transparent');
+            button.classList.add('bg-black/80', 'text-white');
+            if (chevron) chevron.classList.add('rotated');
+        };
 
+        const closeMenu = () => {
+            menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+            menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+            button.setAttribute('aria-expanded', 'false');
+            button.classList.remove('bg-black/80', 'text-white');
+            button.classList.add('bg-transparent');
+            if (chevron) chevron.classList.remove('rotated');
+        };
 
-    <script>
+        const toggleMenu = (event) => {
+            event.stopPropagation();
+            if (menu.classList.contains('opacity-0')) {
+                openMenu();
+            } else {
+                closeMenu();
+            }
+        };
+
+        button.addEventListener('click', toggleMenu);
+
+        document.addEventListener('click', (event) => {
+            if (!button.contains(event.target) && !menu.contains(event.target)) {
+                closeMenu();
+            }
+        });
+    })();
+
+    (function(){
+        const button = document.getElementById('langDropdownButton');
+        const menu = document.getElementById('langDropdownMenu');
+        const chevron = document.getElementById('langChevron');
+        if (!button || !menu) return;
+
+        const openMenu = () => {
+            menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+            menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+            button.setAttribute('aria-expanded', 'true');
+            button.classList.remove('bg-transparent');
+            button.classList.add('text-white');
+            if (chevron) chevron.classList.add('rotated');
+        };
+
+        const closeMenu = () => {
+            menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+            menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+            button.setAttribute('aria-expanded', 'false');
+            button.classList.remove('bg-black/90', 'text-white');
+            button.classList.add('bg-transparent');
+            if (chevron) chevron.classList.remove('rotated');
+        };
+
+        const toggleMenu = (event) => {
+            event.stopPropagation();
+            if (menu.classList.contains('opacity-0')) {
+                openMenu();
+            } else {
+                closeMenu();
+            }
+        };
+
+        button.addEventListener('click', toggleMenu);
+
+        document.addEventListener('click', (event) => {
+            if (!button.contains(event.target) && !menu.contains(event.target)) {
+                closeMenu();
+            }
+        });
+    })();
+
+    (function(){
+        const button = document.getElementById('mobileInfoDropdownButton');
+        const menu = document.getElementById('mobileInfoDropdownMenu');
+        const chevron = document.getElementById('mobileInfoChevron');
+        if (!button || !menu) return;
+
+        const toggleMenu = (event) => {
+            event.stopPropagation();
+            if (menu.classList.contains('open')) {
+                menu.classList.remove('open');
+                chevron.classList.remove('rotated');
+                button.setAttribute('aria-expanded', 'false');
+            } else {
+                menu.classList.add('open');
+                chevron.classList.add('rotated');
+                button.setAttribute('aria-expanded', 'true');
+            }
+        };
+
+        button.addEventListener('click', toggleMenu);
+    })();
+
+    (function(){
+        const button = document.getElementById('mobileLangDropdownButton');
+        const menu = document.getElementById('mobileLangDropdownMenu');
+        if (!button || !menu) return;
+
+        const toggleMenu = (event) => {
+            event.stopPropagation();
+            if (menu.classList.contains('open')) {
+                menu.classList.remove('open');
+                button.setAttribute('aria-expanded', 'false');
+            } else {
+                menu.classList.add('open');
+                button.setAttribute('aria-expanded', 'true');
+            }
+        };
+
+        button.addEventListener('click', toggleMenu);
+        document.addEventListener('click', (event) => {
+            if (!button.contains(event.target) && !menu.contains(event.target)) {
+                menu.classList.remove('open');
+                button.setAttribute('aria-expanded', 'false');
+            }
+        });
+    })();
+
+    (function(){
+        const toggle = document.getElementById('mobileMenuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        const triggered = document.getElementById('triggeredMenu');
+        if (!toggle || !mobileNav || !triggered) return;
+
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const opened = triggered.classList.toggle('open');
+            if (opened) {
+                mobileNav.classList.add('mobile-open');
+            } else {
+                mobileNav.classList.remove('mobile-open');
+            }
+        });
+
+        // close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileNav.contains(e.target) && triggered.classList.contains('open')) {
+                triggered.classList.remove('open');
+                mobileNav.classList.remove('mobile-open');
+            }
+        });
+    })();
+
     (function(){
         const nav = document.getElementById('nav');
         const spacer = document.getElementById('nav-spacer');
         if(!nav) return;
 
-        // ensure smooth transition
         nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
         nav.style.willChange = 'transform, opacity';
         nav.style.transform = nav.style.transform || 'translateY(0)';
         nav.style.opacity = nav.style.opacity || '1';
 
-        // compute and set spacer height (px) so layout doesn't jump
         function recompute(){
             try{
                 const h = Math.ceil(nav.getBoundingClientRect().height);
@@ -119,37 +386,8 @@
             }
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         });
-
-        const hamburger = document.getElementById('hamburger');
-        const mobileNav = document.getElementById('mobileNav');
-        const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
-        const closeMobileNav = document.getElementById('closeMobileNav');
-
-        hamburger.addEventListener('click', () => {
-            mobileNav.classList.remove('translate-x-full');
-            mobileNavBackdrop.classList.remove('hidden');
-        });
-
-        closeMobileNav.addEventListener('click', () => {
-            mobileNav.classList.add('translate-x-full');
-            mobileNavBackdrop.classList.add('hidden');
-        });
-
-        // Close mobile nav on backdrop click
-        mobileNavBackdrop.addEventListener('click', () => {
-            mobileNav.classList.add('translate-x-full');
-            mobileNavBackdrop.classList.add('hidden');
-        });
-
-        // Close mobile nav on link click
-        mobileNav.addEventListener('click', (e) => {
-            if (e.target.tagName === 'A') {
-                mobileNav.classList.add('translate-x-full');
-                mobileNavBackdrop.classList.add('hidden');
-            }
-        });
     })();
-    </script>
+        </script>
 
     <div class="px-[5%] w-full">
         <div class="w-full flex flex-col lg:flex-row justify-center sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-lg xs:text-2xl md:text-3xl lg:text-sm xl:text-base 2xl:text-lg 3xl:text-2xl">
