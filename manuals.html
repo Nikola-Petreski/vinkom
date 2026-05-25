@@ -103,6 +103,15 @@
 #mobileNav.mobile-open {
   background-color: rgba(0,0,0,0.25) !important;
 }
+/* Minimal slide/fade animation for manual transitions */
+.anim-transition {
+  transition: transform .36s cubic-bezier(.2,.8,.2,1), opacity .28s ease;
+}
+.centered { transform: translateX(0); opacity: 1; }
+.exit-left { transform: translateX(-30%); opacity: 0; }
+.exit-right { transform: translateX(30%); opacity: 0; }
+.enter-left { transform: translateX(-30%); opacity: 0; }
+.enter-right { transform: translateX(30%); opacity: 0; }
 </style>
 
     <div class="px-[5%] w-full">
@@ -177,8 +186,34 @@
     <div id="desktopNavSpacer" class="w-full hidden lg:block my-[1.5%]"><div class="w-full h-[10vh] max-h-[110px]"></div></div>
     <div id="mobileNavSpacer" class="py-[2vh] block lg:hidden"><div class="w-full py-[5%] md:py-[3%]"><div class="w-full h-[28px] xs:h-[32px] md:h-[35px]"></div></div></div>
 
-<div class="w-full h-screen bg-gradient-to-b from-[#484848] to-black">
-</div>
+    <div class="w-full bg-gradient-to-b h-[80vh] justify-center items-center from-[#484848] to-black px-[5%] flex">
+        <div id="mauals" class="w-full flex justify-center items-center xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-sm text-white/70">
+          <div id="leftList" class="w-[20%] h-[75vh] flex flex-col justify-between"></div>
+          <div id="manual" class="w-[60%] h-[65vh] flex flex-col justify-between items-center">
+            <div class="rounded-xl h-[85%] w-auto flex justify-center items-center relative group">
+              <img id="manualImage" src="manuals/images/heritage_II_legend.webp" class="h-full w-auto object-contain rounded-xl" alt="Heritage II / Legend">
+              <!-- Dark overlay on hover -->
+              <div class="absolute inset-0 bg-black/80 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"></div>
+              <!-- Button + dropdown centered on hover -->
+              <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <div class="relative">
+                  <button id="manualPdfButton" class="rounded-xl bg-white text-black px-3 py-1 text-lg">Прикажи прирачник</button>
+                  <div id="manualPdfDropdown" class="hidden absolute w-full rounded-md flex flex-col z-50">
+                    <a id="manualPdfMkd" target="_blank" class="rounded-md text-white text-base">Македонски</a>
+                    <a id="manualPdfEng" target="_blank" class="rounded-md text-white text-base">English</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center items-center gap-[2vw] text-white text-2xl">
+              <i id="manualPrev" role="button" tabindex="0" class="text-xl fa-solid fa-angle-left cursor-pointer"></i>
+              <p id="manualTitle" class="w-[220px] text-center flex justify-center items-center">Heritage II / Legend</p>
+              <i id="manualNext" role="button" tabindex="0" class="text-xl fa-solid fa-angle-right cursor-pointer"></i>
+            </div>
+          </div>
+          <div id="rightList" class="w-[20%] h-[75vh] flex flex-col justify-between text-right"></div>
+        </div>
+    </div>
 
     <div class="px-[5%] w-full bg-black">
         <div id="footer" class="w-full flex flex-col-reverse lg:flex-row justify-between items-center py-[6%] xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-lg xs:text-2xl md:text-3xl lg:text-xs xl:text-base 2xl:text-lg 3xl:text-2xl">
@@ -421,6 +456,199 @@
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 })()
+</script>
+<script>
+(function(){
+  const leftList = document.getElementById('leftList');
+  const rightList = document.getElementById('rightList');
+  const manualTitle = document.getElementById('manualTitle');
+  const manualImage = document.getElementById('manualImage');
+  const manualPdfButton = document.getElementById('manualPdfButton');
+  const manualPdfDropdown = document.getElementById('manualPdfDropdown');
+  const manualPdfMkd = document.getElementById('manualPdfMkd');
+  const manualPdfEng = document.getElementById('manualPdfEng');
+  const manualPrev = document.getElementById('manualPrev');
+  const manualNext = document.getElementById('manualNext');
+
+  if (!leftList || !rightList || !manualTitle || !manualImage || !manualPdfButton || !manualPdfDropdown || !manualPdfMkd || !manualPdfEng || !manualPrev || !manualNext) return;
+
+  let manuals = [];
+  let selectedIndex = 0;
+  let listEntries = [];
+
+  const getPdfUrl = (item) => item.mkd_doc || item.eng_doc || item.doc || item.pdf || '#';
+
+  const updateManualView = (index, direction = 1) => {
+    if (!manuals.length) return;
+    const newIndex = ((index % manuals.length) + manuals.length) % manuals.length;
+    const item = manuals[newIndex];
+
+    // prepare elements
+    const img = manualImage;
+    const title = manualTitle;
+    img.classList.add('anim-transition');
+    title.classList.add('anim-transition');
+
+    const exitClass = direction >= 0 ? 'exit-left' : 'exit-right';
+    const enterClass = direction >= 0 ? 'enter-right' : 'enter-left';
+
+    const onExited = () => {
+      // remove exit listeners
+      img.removeEventListener('transitionend', onExited);
+
+      // update content
+      img.src = item.image || '';
+      img.alt = item.name || '';
+      title.textContent = item.name || '';
+      // set PDF button/dropdown depending on available docs
+      if (item.mkd_doc && item.eng_doc) {
+        manualPdfMkd.href = item.mkd_doc;
+        manualPdfEng.href = item.eng_doc;
+        manualPdfDropdown.classList.add('hidden');
+      } else {
+        const url = getPdfUrl(item);
+        manualPdfMkd.href = '#';
+        manualPdfEng.href = '#';
+        manualPdfDropdown.classList.add('hidden');
+        manualPdfButton.dataset.url = url;
+      }
+
+      // remove exit classes before entering
+      title.classList.remove(exitClass);
+      img.classList.remove(exitClass);
+
+      // set starting position for enter, then force reflow
+      title.classList.add(enterClass);
+      img.classList.add(enterClass);
+      // force reflow
+      void img.offsetWidth;
+
+      // animate to centered
+      title.classList.remove(enterClass);
+      img.classList.remove(enterClass);
+      title.classList.add('centered');
+      img.classList.add('centered');
+    };
+
+    // start exit animation
+    title.classList.remove('centered');
+    img.classList.remove('centered');
+    title.classList.add(exitClass);
+    img.classList.add(exitClass);
+
+    // wait for transition to finish on image then swap
+    img.addEventListener('transitionend', onExited, { once: true });
+
+    // update highlights for list
+      listEntries.forEach((entry, entryIndex) => {
+      const isActive = entryIndex === newIndex;
+      entry.classList.toggle('text-white', isActive);
+      entry.classList.toggle('text-white/70', !isActive);
+    });
+
+    // scroll into view after small delay so active is set
+    setTimeout(() => {
+      const currentEntry = listEntries[newIndex];
+      if (currentEntry && typeof currentEntry.scrollIntoView === 'function') {
+        currentEntry.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      }
+    }, 60);
+
+    selectedIndex = newIndex;
+  };
+
+  // PDF button behaviour: open single link or toggle dropdown for dual-language manuals
+  manualPdfButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const item = manuals[selectedIndex];
+    if (!item) return;
+    if (item.mkd_doc && item.eng_doc) {
+      manualPdfDropdown.classList.toggle('hidden');
+    } else {
+      const url = getPdfUrl(item);
+      if (url && url !== '#') window.open(url, '_blank');
+    }
+  });
+
+  // hide dropdown when clicking outside the button/dropdown area
+  document.addEventListener('click', (e) => {
+    if (manualPdfDropdown && !manualPdfButton.contains(e.target) && !manualPdfDropdown.contains(e.target)) {
+      manualPdfDropdown.classList.add('hidden');
+    }
+  });
+
+  const createEntry = (item, index) => {
+    const entry = document.createElement('div');
+    entry.className = 'cursor-pointer text-white/70 hover:text-white transition-all duration-200';
+    entry.textContent = item.name || '';
+    entry.addEventListener('click', () => updateManualView(index, index > selectedIndex ? 1 : -1));
+    return entry;
+  };
+
+  const renderLists = (items) => {
+    leftList.innerHTML = '';
+    rightList.innerHTML = '';
+    listEntries = [];
+
+    const mid = Math.ceil(items.length / 2);
+    items.forEach((item, index) => {
+      const entry = createEntry(item, index);
+      listEntries.push(entry);
+      if (index < mid) {
+        leftList.appendChild(entry);
+      } else {
+        rightList.appendChild(entry);
+      }
+    });
+  };
+
+  const showError = (message) => {
+    console.error(message);
+    leftList.textContent = 'Не можам да го вчитам списокот.';
+    rightList.textContent = 'Не можам да го вчитам списокот.';
+  };
+
+  fetch('./data/manuals.json')
+    .then((response) => {
+      if (!response.ok) throw new Error('Failed to load manuals.json: ' + response.status);
+      return response.json();
+    })
+    .then((items) => {
+      if (!Array.isArray(items) || !items.length) throw new Error('manuals.json must contain a non-empty array');
+      manuals = items;
+      renderLists(manuals);
+      // initialize first manual without animation
+      const first = manuals[0];
+      if (first) {
+        manualImage.src = first.image || '';
+        manualImage.alt = first.name || '';
+        manualTitle.textContent = first.name || '';
+        // configure PDF button/dropdown for first item
+        if (first.mkd_doc && first.eng_doc) {
+          manualPdfMkd.href = first.mkd_doc;
+          manualPdfEng.href = first.eng_doc;
+          manualPdfDropdown.classList.add('hidden');
+        } else {
+          manualPdfButton.dataset.url = getPdfUrl(first);
+          manualPdfMkd.href = '#';
+          manualPdfEng.href = '#';
+          manualPdfDropdown.classList.add('hidden');
+        }
+        manualImage.classList.add('centered', 'anim-transition');
+        manualTitle.classList.add('centered', 'anim-transition');
+        listEntries.forEach((entry, entryIndex) => {
+          const isActive = entryIndex === 0;
+          entry.classList.toggle('text-white', isActive);
+          entry.classList.toggle('text-white/70', !isActive);
+        });
+        selectedIndex = 0;
+      }
+    })
+    .catch((error) => showError(error));
+
+  manualPrev.addEventListener('click', () => updateManualView(selectedIndex - 1));
+  manualNext.addEventListener('click', () => updateManualView(selectedIndex + 1));
+})();
 </script>
 </body>
 </html>
