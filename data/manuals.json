@@ -10,7 +10,7 @@
   { "name": "G4",                   "image": "manuals/images/g4.jpg",                  "eng_doc": "manuals/manuals/g4_eng.pdf"},
   { "name": "G3",                   "image": "manuals/images/g3.webp",                  "eng_doc": "manuals/manuals/g3_eng.pdf"},
   { "name": "Legend II",            "image": "manuals/images/legend_II.webp",           "eng_doc": "manuals/manuals/legend_eng.pdf"},
-  { "name": "Heritage II / Legend", "image": "manuals/images/heritage_II_legend.webp",  "eng_doc": "manuals/manuals/heritage_II_lengend_eng.pdf"},
+  { "name": "Heritage II / Legend", "image": "manuals/images/heritage_II_legend.webp",  "eng_doc": "manuals/manuals/heritage_II_legend_eng.pdf"},
   { "name": "Heritage",             "image": "manuals/images/heritage.webp",            "eng_doc": "manuals/manuals/heritage_eng.pdf"},
   { "name": "Tradition",            "image": "manuals/images/tradition.webp",           "eng_doc": "manuals/manuals/tradition_eng.pdf"},
   { "name": "Classic III",          "image": "manuals/images/classic_III.webp",         "eng_doc": "manuals/manuals/classic_III_eng.pdf"},
