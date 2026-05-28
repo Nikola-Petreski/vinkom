@@ -860,6 +860,10 @@ video {
   z-index: 9800;
 }
 
+.z-\[9700\] {
+  z-index: 9700;
+}
+
 .-my-14 {
   margin-top: -3.5rem;
   margin-bottom: -3.5rem;
