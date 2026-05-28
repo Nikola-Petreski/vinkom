@@ -1348,6 +1348,86 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 
     <script src="cookie.js"></script>
+
+<div class="fixed bottom-[5%] left-[5%] z-[9900]">
+  <div class="relative inline-block">
+    <p id="cartBadge" class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] sm:text-xs md:text-base lg:text-[12px] xl:text-xs rounded-full px-2 py-1 leading-none">0</p>
+    <a id="checkOutBtn" href="checkOut.html" class="group flex items-center bg-[#484848] border border-white text-white rounded-full py-1 px-2 xs:py-3 xs:px-3 md:py-4 md:px-4 lg:py-2 lg:px-3 text-lg xs:text-2xl md:text-3xl lg:text-xl 2xl:text-2xl gap-0 hover:gap-1 overflow-hidden">
+      <i class="fa-solid fa-basket-shopping"></i>
+      <p class="opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">Види кошничка</p>
+    </a>
+  </div>
+</div>
+
+<script>
+
+function updateCartBadge(){
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  let totalQty = 0;
+  cart.forEach(item => {
+    totalQty += (item.qty || 1);
+  });
+  const badge = document.getElementById('cartBadge');
+  if (badge) {
+    if (totalQty === 0) {
+      badge.style.display = "none";
+    } else {
+      badge.style.display = "inline-flex";
+      badge.textContent = totalQty >= 100 ? "99+" : totalQty.toString();
+    }
+  }
+}
+
+// Update badge when localStorage changes from other pages/tabs
+window.addEventListener('storage', (e) => {
+  if(e.key === 'cart'){
+    updateCartBadge();
+  }
+});
+
+(function(){
+  const addBtn = document.getElementById('modalAddToCart');
+  const checkOutBtn = document.getElementById('checkOutBtn');
+
+  // Update badge on page load
+  updateCartBadge();
+  
+  if(!addBtn) return;
+  
+  addBtn.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const nameEl = document.getElementById('modal-title');
+    const priceEl = document.getElementById('modal-price');
+    const imgEl = document.getElementById('modal-img');
+    if(!nameEl || !priceEl) return;
+    const name = nameEl.textContent.trim();
+    const img = imgEl ? imgEl.src : '';
+    const digits = priceEl.textContent.replace(/\D/g,'');
+    const price = parseInt(digits) || 0;
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    cart.push({ id: Date.now(), name, price, qty: 1, image: img });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartBadge();
+
+    if(checkOutBtn){
+      const pEl = checkOutBtn.querySelector('p');
+      if(pEl){
+        const defaultText = ' Види кошничка';
+        pEl.textContent = ' Додадено во кошничка';
+        pEl.classList.remove('opacity-0', 'max-w-0');
+        pEl.classList.add('opacity-100', 'max-w-xs');
+        setTimeout(()=>{
+          pEl.textContent = defaultText;
+          pEl.classList.remove('opacity-100', 'max-w-xs');
+          pEl.classList.add('opacity-0', 'max-w-0');
+        }, 2500);
+      }
+    }
+  });
+})();
+
+</script>
+
 </body>
 </html>
 
