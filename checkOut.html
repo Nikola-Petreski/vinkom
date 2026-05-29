@@ -184,7 +184,7 @@
 
     <div class="w-full px-[5%] bg-gradient-to-b from-[#484848] to-black/60">
         <div class="w-full h-full lg:h-[400px] xl:h-[460px] 2xl:h-[520px] 3xl:h-[620px] flex flex-col lg:flex-row justify-center items-center text-base xs:text-lg md:text-xl lg:text-sm 2xl:text-base 3xl:text-xl xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto shadow-2xl shadow-black rounded-xl">
-            <form data-formsubmit="true" id="sellForm" method="POST" action="https://formsubmit.co/43b21711b46354ed9c0946432e5fe177" class="w-full lg:w-[75%] h-full bg-black/40 justify-between items-center rounded-t-xl lg:rounded-tr-none lg:rounded-bl-xl flex flex-col lg:flex-row p-[5%] lg:p-[2%] gap-3 lg:gap-0">
+            <form id="sellForm" method="POST" action="https://api.web3forms.com/submit" class="w-full lg:w-[75%] h-full bg-black/40 justify-between items-center rounded-t-xl lg:rounded-tr-none lg:rounded-bl-xl flex flex-col lg:flex-row p-[5%] lg:p-[2%] gap-3 lg:gap-0">
                 <div id="info" class="w-full lg:w-[25%] h-full flex flex-col justify-between gap-1">
                     <h1 class="text-3xl xs:text-5xl lg:text-4xl md:text-6xl 3xl:text-6xl text-white/70 mb-[10%]">Кошничка</h1>
                     <label class="text-white px-[3%]">Име</label>
@@ -207,11 +207,12 @@
                       </div>
                     </div>
 
-                    <!-- FormSubmit hidden controls -->
-                    <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Откуп/Замена">
-                    <input type="hidden" name="_next" value="https://vinkom-mu.vercel.app/thankyoutradeIn.html">
+                    <input type="hidden" name="access_key" value="f920a926-766c-47f4-83b9-6195fa11fc84">
+                    <input type="hidden" name="address" value="">
+                    <input type="hidden" name="products" value="">
+                    <input type="hidden" name="finalPrice" value="">
+                    <input type="hidden" name="termsAccepted" value="false">
+                    <input type="hidden" name="newsletterSubscribed" value="false">
 
                     <div class="flex justify-between w-full gap-[0.5%]">
                         <div class="flex flex-col justify-center gap-1 lg:gap-0 2xl:gap-2 w-full text-xs xs:text-sm md:text-lg lg:text-xs xl:text-sm 3xl:text-base text-white/70">
@@ -266,7 +267,7 @@
             <p class="text-white/70 text-base xs:text-2xl md:text-3xl lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl">Претплати се и добивај новости, совети и ексклузивни понуди директно на е-пошта.</p>
             <div class="flex gap-2">
               <form action="https://formsubmit.co/43b21711b46354ed9c0946432e5fe177" method="POST" class="w-full flex flex-row lg:flex-col xl:flex-row gap-2 items-center text-base lg:text-sm">
-                  <input type="hidden" name="_next" value="https://vinkom-mu.vercel.app/thankyouSub.html">
+                  <input type="hidden" name="_next" value="https://vinkom-mu.vercel.app/thankyouExtras.html">
                   <input type="hidden" name="_captcha" value="false">
                   <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off">
                   <input type="hidden" name="_subject" value="Претплата">
@@ -541,6 +542,62 @@
           dropdown.remove();
           document.removeEventListener('click', onDoc);
         }
+      });
+    });
+  }
+
+  // Web3Forms helper for cart payload
+  function setHiddenField(form, name, value){
+    let field = form.querySelector(`input[name="${name}"]`);
+    if(!field){
+      field = document.createElement('input');
+      field.type = 'hidden';
+      field.name = name;
+      form.appendChild(field);
+    }
+    field.value = value;
+  }
+
+  function buildProductsSummary(){
+    const cart = loadCart();
+    if(!cart.length) return 'Кошничката е празна.';
+    return cart.map((item, index) => `${index + 1}. ${item.name} — Qty: ${item.qty || 1} — Price: ${item.price}`).join('\n');
+  }
+
+  function calculateFinalPrice(){
+    return loadCart().reduce((sum, item) => sum + ((item.price || 0) * (item.qty || 1)), 0);
+  }
+
+  const sellForm = document.getElementById('sellForm');
+  if(sellForm){
+    sellForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      const termsCheckbox = sellForm.querySelector('input[type="checkbox"][required]');
+      const newsletterCheckbox = sellForm.querySelector('input[name="newsletter_subscription"]');
+
+      setHiddenField(sellForm, 'address', '');
+      setHiddenField(sellForm, 'products', buildProductsSummary());
+      setHiddenField(sellForm, 'finalPrice', calculateFinalPrice());
+      setHiddenField(sellForm, 'termsAccepted', termsCheckbox && termsCheckbox.checked ? 'true' : 'false');
+      setHiddenField(sellForm, 'newsletterSubscribed', newsletterCheckbox && newsletterCheckbox.checked ? 'true' : 'false');
+
+      const formData = new FormData(sellForm);
+      fetch(sellForm.action, {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => response.json())
+      .then(data => {
+        if(data.success || data.message === 'SUCCESS'){ // web3forms success response
+          window.location.href = 'https://vinkom-mu.vercel.app/thankyoutradeIn.html';
+        } else {
+          console.error('Web3Forms submission error', data);
+          sellForm.submit();
+        }
+      })
+      .catch(error => {
+        console.error('Web3Forms request failed', error);
+        sellForm.submit();
       });
     });
   }
