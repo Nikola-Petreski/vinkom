@@ -266,13 +266,12 @@
             </div>
             <div
               class="flex justify-between items-center w-full text-base xs:text-lg sm:text-xl md:text-2xl lg:text-xs 2xl:text-base">
-              <button id="addProduct" class="bg-white/10 px-3 py-1 rounded-xl">Додај производ</button>
+              <button type="button" id="addProduct" class="bg-white/10 px-3 py-1 rounded-xl">Додај производ</button>
               <p id="finalPrice">1100 ден.</p>
             </div>
           </div>
 
           <input type="hidden" name="access_key" value="f920a926-766c-47f4-83b9-6195fa11fc84">
-          <input type="hidden" name="address" value="">
           <input type="hidden" name="products" value="">
           <input type="hidden" name="finalPrice" value="">
           <input type="hidden" name="termsAccepted" value="false">
@@ -434,6 +433,19 @@
       function formatPrice(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ден.'; }
       function loadCart() { return JSON.parse(localStorage.getItem('cart') || '[]'); }
       function saveCart(cart) { localStorage.setItem('cart', JSON.stringify(cart)); }
+      function clearCart() { saveCart([]); }
+      const sellForm = document.getElementById('sellForm');
+      const submitButton = sellForm ? sellForm.querySelector('input[type="submit"]') : null;
+      function showEmptyCartSubmitTooltip() {
+        if (submitButton && submitButton.disabled) {
+          showTooltip(submitButton, 'Додадете барем еден производ во кошничката за да ја испратите нарачката.');
+        }
+      }
+      if (submitButton) {
+        submitButton.addEventListener('mouseenter', showEmptyCartSubmitTooltip);
+        submitButton.addEventListener('focus', showEmptyCartSubmitTooltip);
+        submitButton.addEventListener('mouseover', showEmptyCartSubmitTooltip);
+      }
 
       function escapeHtml(text) { return String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
 
@@ -564,6 +576,16 @@
             productList.appendChild(item);
           });
           finalPriceP.textContent = formatPrice(total);
+        }
+
+        if (submitButton) {
+          const disableSubmit = !cart.length;
+          submitButton.disabled = disableSubmit;
+          if (disableSubmit) {
+            submitButton.classList.add('opacity-50', 'cursor-not-allowed');
+          } else {
+            submitButton.classList.remove('opacity-50', 'cursor-not-allowed');
+          }
         }
 
         if (addProductBtn) {
@@ -710,14 +732,17 @@
         return loadCart().reduce((sum, item) => sum + ((item.price || 0) * (item.qty || 1)), 0);
       }
 
-      const sellForm = document.getElementById('sellForm');
       if (sellForm) {
         sellForm.addEventListener('submit', function (e) {
           e.preventDefault();
+          const cart = loadCart();
+          if (!cart.length) {
+            showTooltip(submitButton || sellForm, 'Ве молиме додадете барем еден производ во кошничката пред да ја испратите нарачката.');
+            return;
+          }
           const termsCheckbox = sellForm.querySelector('input[type="checkbox"][required]');
           const newsletterCheckbox = sellForm.querySelector('input[name="newsletter_subscription"]');
 
-          setHiddenField(sellForm, 'address', '');
           setHiddenField(sellForm, 'products', buildProductsSummary());
           setHiddenField(sellForm, 'finalPrice', calculateFinalPrice());
           setHiddenField(sellForm, 'termsAccepted', termsCheckbox && termsCheckbox.checked ? 'true' : 'false');
@@ -731,7 +756,8 @@
             .then(response => response.json())
             .then(data => {
               if (data.success || data.message === 'SUCCESS') { // web3forms success response
-                window.location.href = 'https://vinkom-mu.vercel.app/thankyoutradeIn.html';
+                clearCart();
+                window.location.href = 'https://vinkom-mu.vercel.app/thankyouExtras.html';
               } else {
                 console.error('Web3Forms submission error', data);
                 sellForm.submit();
