@@ -852,7 +852,8 @@
                 </div>
 
                 <!-- Right: contact form (same style as faq.html form) -->
-                <form data-formsubmit="true" class="w-full lg:w-1/2 flex flex-col justify-center items-end gap-5" method="POST" action="https://formsubmit.co/43b21711b46354ed9c0946432e5fe177 ">
+                <form id="landingFaqForm" method="POST" action="https://api.web3forms.com/submit" class="w-full lg:w-1/2 flex flex-col justify-center items-end gap-5">
+                  <input type="hidden" name="access_key" value="e8a44d0d-7452-4216-8adb-ab76860b4dc5">
                     <h2 class="text-white text-3xl 3xl:text-4xl w-full text-center">Не најдовте одговор?</h2>
                     <p class="text-[#c1c1c1] text-base 3xl:text-lg">Можете да најдете повеќе одговори на нашата <a href="faq.html" class="text-white">FAQ страница</a>. Доколку не го најдете она што го барате, слободно контактирајте нè преку формата подолу – внесете го вашето име и презиме, е-мејл или телефонски број, и испратете го вашето прашање. Нашиот тим ќе ви одговори што е можно поскоро.</p>
                     <div class="w-full flex flex-col justify-center items-center gap-3">
@@ -863,15 +864,11 @@
                         </div>
                         <textarea name="message" type="text" required class="w-full h-full rounded-xl outline-none border-none bg-black/40 text-lg px-3 py-2 text-white" placeholder="Вашето прашање..."></textarea>
                     </div>
-                    <!-- FormSubmit hidden controls -->
-                    <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Прашање">
-                    <input type="hidden" name="_next" value="https://vinkom-mu.vercel.app/thankyouFAQ.html">
+                    <!-- Web3Forms: removed FormSubmit-only hidden controls -->
                     <div class="flex justify-between w-full gap-[1%]">
                         <div class="flex flex-col justify-center gap-1 w-[70%] xs:w-[82%] sm:w-[75%] md:w-[75%] lg:w-[65%] xl:w-[80%] 3xl:w-[70%] text-[8px] xs:text-xs md:text-sm lg:text-xs 2xl:text-sm 3xl:text-base text-white/70">
-                            <div class="flex gap-1"><input type="checkbox" required><p>Се согласувам со <a href="privacyPolicy.html" class="text-white">Политиката за Приватност</a> и <a href="termsAndConditions.html" class="text-white">Условите за Користење</a></p></div>
-                            <div class="flex gap-1"><input type="checkbox" name="newsletter_subscription" value="yes"><p>Сакам да добивам информации, новости и промоции преку е-пошта.</p></div>
+                            <div class="flex gap-1"><input id="landingFaqTermsCheckbox" type="checkbox" name="termsAccepted" value="true" required><p>Се согласувам со <a href="privacyPolicy.html" class="text-white">Политиката за Приватност</a> и <a href="termsAndConditions.html" class="text-white">Условите за Користење</a></p></div>
+                            <div class="flex gap-1"><input id="landingFaqNewsletterCheckbox" type="checkbox" name="newsletter_subscription" value="true"><p>Сакам да добивам информации, новости и промоции преку е-пошта.</p></div>
                         </div>
                         <input type="submit" class="w-[30%] xs:w-[17%] sm:w-[24%] md:w-[24%] lg:w-[34%] xl:w-[19%] 3xl:w-[26%] rounded-xl outline-none border-none bg-black/40 hover:bg-[#484848] text-sm xs:text-lg sm:text-xl 2xl:text-lg 3xl:text-xl py-2 lg:py-3 text-[#c1c1c1] hover:text-white transition-all duration-500" value="Испрати">
                     </div>
@@ -880,7 +877,41 @@
         </div>
     </div>
 
-    <button id="backToTop"
+        <!-- Landing FAQ form submission handler (Web3Forms with JS) -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('landingFaqForm');
+            const terms = document.getElementById('landingFaqTermsCheckbox');
+            const newsletter = document.getElementById('landingFaqNewsletterCheckbox');
+            if (!form || !terms || !newsletter) return;
+
+            form.addEventListener('submit', async function (event) {
+              event.preventDefault();
+              const formData = new FormData(form);
+              formData.set('termsAccepted', terms.checked ? 'true' : 'false');
+              formData.set('newsletter_subscription', newsletter.checked ? 'true' : 'false');
+
+              try {
+                const response = await fetch(form.action, {
+                  method: 'POST',
+                  body: formData,
+                });
+                const result = await response.json();
+                if (response.ok && result.success) {
+                  window.location.href = 'https://vinkom-mu.vercel.app/thankyouFAQ.html';
+                  return;
+                }
+                console.error('Web3Forms submission failed', result);
+                alert('Внесот не успеа. Обидете се повторно.');
+              } catch (err) {
+                console.error('Web3Forms submission error', err);
+                alert('Внесот не успеа. Обидете се повторно.');
+              }
+            });
+          });
+        </script>
+
+        <button id="backToTop"
             aria-label="Back to top"
             aria-hidden="true"
             class="fixed right-3 bottom-6 md:right-5 md:bottom-10 z-[1000] bg-white/20 hover:bg-white/40 text-white p-3 rounded-full shadow-2xl transition-all duration-200 transform scale-95 opacity-0 pointer-events-none">
@@ -917,11 +948,8 @@
             <h1 class="text-white text-4xl sm:text-5xl lg:text-2xl xl:text-4xl 3xl:text-5xl">Дознавај прв</h1>
             <p class="text-white/70 text-base xs:text-2xl md:text-3xl lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl">Претплати се и добивај новости, совети и ексклузивни понуди директно на е-пошта.</p>
             <div class="flex gap-2">
-              <form action="https://formsubmit.co/43b21711b46354ed9c0946432e5fe177" method="POST" class="w-full flex flex-row lg:flex-col xl:flex-row gap-2 items-center text-base lg:text-sm">
-                  <input type="hidden" name="_next" value="https://vinkom-mu.vercel.app/thankyouSub.html">
-                  <input type="hidden" name="_captcha" value="false">
-                  <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off">
-                  <input type="hidden" name="_subject" value="Претплата">
+              <form id="subscribeForm" action="https://api.web3forms.com/submit" method="POST" class="w-full flex flex-row lg:flex-col xl:flex-row gap-2 items-center text-base lg:text-sm">
+                  <input type="hidden" name="access_key" value="6c1d84bc-0208-463a-9f71-e42b2b89ca44">
                   <input id="subscribeEmail" type="email" name="email" required placeholder="E-mail" class="outline-none w-[69%] lg:w-full xl:w-[69%] border border-white/70 rounded-xl px-[4%] py-[3%] bg-transparent text-white my-[5%] lg:my-0"/>      
                   <button type="submit" class="outline-none w-[29%] lg:w-full xl:w-[69%]  border border-white/70 rounded-xl px-[3%] py-[3%] bg-transparent text-white/70 hover:bg-white/70 hover:text-white transition-all duration-300 my-[5%] lg:my-0">Испрати</button>
               </form>
@@ -991,7 +1019,7 @@ document.addEventListener('DOMContentLoaded', function(){
   // keyboard support
   document.addEventListener('keydown', function(e){
     if(e.key === 'ArrowLeft'){ prevSlide(); startAutoplay(); }
-    if(e.key === 'ArrowRight'){ nextSlide(); startAutoplay(); }
+    if(e.key === 'ArrowRight'){ nextSlide(); startAutplay(); }
   });
 
   // pause on hover
@@ -1021,6 +1049,37 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 </script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const subscribeForm = document.getElementById('subscribeForm');
+    if (!subscribeForm) return;
+
+    subscribeForm.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(subscribeForm);
+
+      try {
+        const response = await fetch(subscribeForm.action, {
+          method: 'POST',
+          body: formData,
+        });
+
+        const result = await response.json();
+        if (response.ok && result.success) {
+          window.location.href = 'https://vinkom-mu.vercel.app/thankyouSub.html';
+          return;
+        }
+
+        console.error('Web3Forms submission failed', result);
+        alert('Внесот не успеа. Обидете се повторно.');
+      } catch (error) {
+        console.error('Web3Forms submission error', error);
+        alert('Внесот не успеа. Обидете се повторно.');
+      }
+    });
+  });
+</script>
 
     <script>
         // FAQ toggle handlers for hardcoded cards on landing page

@@ -1,9 +1,11 @@
 ﻿<!DOCTYPE html>
 <html lang="mk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Avalir Platinum - премиум моделот на KIRBY со најсовремена опрема и луксузен дизајн.">
+    <meta name="description"
+        content="Avalir Platinum - премиум моделот на KIRBY со најсовремена опрема и луксузен дизајн.">
     <title>KIRBY | Avalir Platinum</title>
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
@@ -21,20 +23,61 @@
             scroll-behavior: smooth;
         }
 
-        .font-gidole { font-family: 'Gidole', sans-serif !important; }
+        .font-gidole {
+            font-family: 'Gidole', sans-serif !important;
+        }
 
-        .modal-overlay { transition: opacity 200ms ease; opacity: 0; pointer-events: none; }
-        .modal-overlay.visible { opacity: 1; pointer-events: auto; background-color: rgba(0,0,0,0.45); backdrop-filter: blur(6px); }
+        .modal-overlay {
+            transition: opacity 200ms ease;
+            opacity: 0;
+            pointer-events: none;
+        }
 
-        .modal-content { transform: translateY(2vh) scale(0.98); opacity: 0; transition: transform 200ms cubic-bezier(0.2,0,0.2,1), opacity 200ms ease; }
-        .modal-content.show { transform: translateY(0) scale(1); opacity: 1; }
+        .modal-overlay.visible {
+            opacity: 1;
+            pointer-events: auto;
+            background-color: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(6px);
+        }
 
-        @media (max-width: 768px){ .modal-content { flex-direction: column; padding: 3% !important; } }
+        .modal-content {
+            transform: translateY(2vh) scale(0.98);
+            opacity: 0;
+            transition: transform 200ms cubic-bezier(0.2, 0, 0.2, 1), opacity 200ms ease;
+        }
+
+        .modal-content.show {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                flex-direction: column;
+                padding: 3% !important;
+            }
+        }
+
         /* Custom scrollbar for modals */
-        .modal-content::-webkit-scrollbar { width: 10px; }
-        .modal-content::-webkit-scrollbar-track { background: transparent; }
-        .modal-content::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.12); border-radius: 9999px; border: 2px solid transparent; background-clip: padding-box; }
-        .modal-content { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.12) transparent; }
+        .modal-content::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.12);
+            border-radius: 9999px;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .modal-content {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+        }
 
         .reveal-letters span {
             opacity: 0;
@@ -49,81 +92,81 @@
         }
 
         #infoDropdownMenu {
-          -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
         }
 
         #infoChevron,
         #langChevron {
-          display: inline-block;
-          opacity: 0;
-          transform: rotate(0deg);
-          transition: transform .25s ease, opacity .15s ease;
+            display: inline-block;
+            opacity: 0;
+            transform: rotate(0deg);
+            transition: transform .25s ease, opacity .15s ease;
         }
 
         #infoDropdownButton:hover #infoChevron,
         #langDropdownButton:hover #langChevron {
-          opacity: 1;
+            opacity: 1;
         }
 
         #infoChevron.rotated,
         #langChevron.rotated {
-          transform: rotate(180deg);
+            transform: rotate(180deg);
         }
 
         #mobileInfoChevron {
-          display: inline-block;
-          transition: transform .25s ease;
+            display: inline-block;
+            transition: transform .25s ease;
         }
 
         #mobileInfoChevron.rotated {
-          transform: rotate(180deg);
+            transform: rotate(180deg);
         }
 
         #mobileInfoDropdownMenu {
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height .3s ease;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .3s ease;
         }
 
         #mobileInfoDropdownMenu.open {
-          max-height: 500px;
+            max-height: 500px;
         }
 
         #mobileLangDropdownMenu {
-          max-height: 0;
-          overflow: hidden;
-          opacity: 0;
-          visibility: hidden;
-          transform: translateY(-6px) scaleY(0.98);
-          transform-origin: top;
-          transition: max-height .28s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1);
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-6px) scaleY(0.98);
+            transform-origin: top;
+            transition: max-height .28s ease, opacity .22s ease, transform .26s cubic-bezier(.2, .9, .2, 1);
         }
 
         #mobileLangDropdownMenu.open {
-          max-height: 240px;
-          opacity: 1;
-          visibility: visible;
-          transform: translateY(0) scaleY(1);
+            max-height: 240px;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scaleY(1);
         }
 
         /* Triggered menu (mobile) smooth open/close */
         #triggeredMenu {
-          max-height: 0;
-          overflow: hidden;
-          opacity: 0;
-          transform: translateY(-8px);
-          transition: max-height .32s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1);
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-8px);
+            transition: max-height .32s ease, opacity .22s ease, transform .26s cubic-bezier(.2, .9, .2, 1);
         }
 
         #triggeredMenu.open {
-          max-height: 800px;
-          opacity: 1;
-          transform: translateY(0);
+            max-height: 800px;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         #mobileNav.mobile-open {
-          background-color: rgba(0,0,0,0.25) !important;
+            background-color: rgba(0, 0, 0, 0.25) !important;
         }
 
         .slide-in {
@@ -137,9 +180,17 @@
             transform: scale(1);
         }
 
-        .slide-in:nth-child(1) { transition-delay: 0s; }
-        .slide-in:nth-child(2) { transition-delay: 0.15s; }
-        .slide-in:nth-child(3) { transition-delay: 0.3s; }
+        .slide-in:nth-child(1) {
+            transition-delay: 0s;
+        }
+
+        .slide-in:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .slide-in:nth-child(3) {
+            transition-delay: 0.3s;
+        }
 
         .hero-push-wrapper {
             position: relative;
@@ -204,7 +255,7 @@
             bottom: 0;
             width: 100%;
             z-index: 10;
-            background: rgba(0,0,0,0.95);
+            background: rgba(0, 0, 0, 0.95);
             transform: translateY(100%);
             transition: transform 1s ease;
             will-change: transform;
@@ -218,7 +269,8 @@
             transform: translateY(0);
         }
 
-        .metallic-shine h1, .metallic-shine p {
+        .metallic-shine h1,
+        .metallic-shine p {
             background: linear-gradient(270deg, #C0C0C0 0%, #C0C0C0 45%, #ffffff 50%, #C0C0C0 55%, #C0C0C0 100%);
             background-size: 200% 100%;
             -webkit-background-clip: text;
@@ -228,344 +280,385 @@
         }
 
         @keyframes shine {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
         }
     </style>
 </head>
+
 <body class="overflow-x-hidden font-gidole bg-black">
 
     <div class="px-[5%] w-full">
-        <div id="nav" class="w-full h-[10vh] max-h-[110px] rounded-lg justify-between items-center bg-transparent hover:bg-black/40 backdrop-blur-sm hover:backdrop-blur-lg my-[1.5%] px-[2%] text-[#c1c1c1] fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden lg:flex xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
-            <a id="logo" href="index.html" class="text-4xl 2xl:text-5xl font-medium hover:text-white transition-all duration-300 w-[31%] xl:w-[26%] 2xl:w-1/4 text-start"><img src="logos/LOGO ZAEDNO7.png" class="h-full w-auto"></a>
-            <div class="flex gap-1 items-center justify-center w-1/2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
-                <a href="platinum.html" class="hover:text-white px-1 transition-all duration-300">&nbsp;&nbsp;Platinum</a>
-                <a href="extras.html"   class="hover:text-white px-1 transition-all duration-300">Додатоци</a>
-                <a href="aboutus.html"  class="hover:text-white px-1 transition-all duration-300">За Нас</a>
+        <div id="nav"
+            class="w-full h-[10vh] max-h-[110px] rounded-lg justify-between items-center bg-transparent hover:bg-black/40 backdrop-blur-sm hover:backdrop-blur-lg my-[1.5%] px-[2%] text-[#c1c1c1] fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden lg:flex xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
+            <a id="logo" href="index.html"
+                class="text-4xl 2xl:text-5xl font-medium hover:text-white transition-all duration-300 w-[31%] xl:w-[26%] 2xl:w-1/4 text-start"><img
+                    src="logos/LOGO ZAEDNO7.png" class="h-full w-auto"></a>
+            <div
+                class="flex gap-1 items-center justify-center w-1/2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
+                <a href="platinum.html"
+                    class="hover:text-white px-1 transition-all duration-300">&nbsp;&nbsp;Platinum</a>
+                <a href="extras.html" class="hover:text-white px-1 transition-all duration-300">Додатоци</a>
+                <a href="aboutus.html" class="hover:text-white px-1 transition-all duration-300">За Нас</a>
                 <div class="relative">
-                    <button id="infoDropdownButton" type="button" aria-expanded="false" class="flex px-2 py-2 rounded-t-xl w-[117px] xl:w-[129px] 2xl:w-[135px] 3xl:w-[146px] items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
+                    <button id="infoDropdownButton" type="button" aria-expanded="false"
+                        class="flex px-2 py-2 rounded-t-xl w-[117px] xl:w-[129px] 2xl:w-[135px] 3xl:w-[146px] items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
                         Инфо центар
-                        <span class="pb-[4px] pl-[1px]"><i id="infoChevron" class="fa-solid fa-chevron-down text-[10px] xl:text-xs hidden hover:block"></i></span>
+                        <span class="pb-[4px] pl-[1px]"><i id="infoChevron"
+                                class="fa-solid fa-chevron-down text-[10px] xl:text-xs hidden hover:block"></i></span>
                     </button>
-                    <div id="infoDropdownMenu" class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-0 transition-all duration-300 ease-out z-50 flex flex-col w-[117px] xl:w-[129px] 2xl:w-[135px] 3xl:w-[146px] shadow-2xl shadow-black">
-                        <a href="howTo.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Видео водич</a>
-                        <a href="tips.html"  class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Совети</a>
-                        <a href="blog.html"  class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Блог</a>
-                        <a href="faq.html"   class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap  rounded-b-xl pb-2">FAQ</a>
+                    <div id="infoDropdownMenu"
+                        class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-0 transition-all duration-300 ease-out z-50 flex flex-col w-[117px] xl:w-[129px] 2xl:w-[135px] 3xl:w-[146px] shadow-2xl shadow-black">
+                        <a href="howTo.html"
+                            class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Видео
+                            водич</a>
+                        <a href="tips.html"
+                            class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Совети</a>
+                        <a href="blog.html"
+                            class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Блог</a>
+                        <a href="faq.html"
+                            class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap  rounded-b-xl pb-2">FAQ</a>
                     </div>
                 </div>
             </div>
-            <div class="flex items-center justify-end h-full rounded-full w-[30.5%] xl:w-[26%] 2xl:w-1/4 lg:gap-1 3xl:gap-2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
-                <a href="tradeIn.html" class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Замени&nbsp;&nbsp;</a>                    
-                <a href="book.html"    class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Закажи презентација&nbsp;&nbsp;</a>   
+            <div
+                class="flex items-center justify-end h-full rounded-full w-[30.5%] xl:w-[26%] 2xl:w-1/4 lg:gap-1 3xl:gap-2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
+                <a href="tradeIn.html"
+                    class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Замени&nbsp;&nbsp;</a>
+                <a href="book.html"
+                    class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Закажи
+                    презентација&nbsp;&nbsp;</a>
                 <div class="relative">
-                    <button id="langDropdownButton" type="button" aria-expanded="false" class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
+                    <button id="langDropdownButton" type="button" aria-expanded="false"
+                        class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
                         <img src="flags/macedonia.png" class="h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px] rounded-full">
                     </button>
-                    <div id="langDropdownMenu" class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
-                        <a href="#" class="block py-2 3xl:py-3 rounded-t-xl hover:text-white transition-all duration-300"><img src="flags/britain.png" class="rounded-full h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px]"></a>
-                        <a href="#" class="block rounded-b-xl hover:text-white transition-all duration-300">              <img src="flags/albania.png" class="rounded-full h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px]"></a>
+                    <div id="langDropdownMenu"
+                        class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
+                        <a href="#"
+                            class="block py-2 3xl:py-3 rounded-t-xl hover:text-white transition-all duration-300"><img
+                                src="flags/britain.png"
+                                class="rounded-full h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px]"></a>
+                        <a href="#" class="block rounded-b-xl hover:text-white transition-all duration-300"> <img
+                                src="flags/albania.png"
+                                class="rounded-full h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px]"></a>
                     </div>
-                </div>     
+                </div>
             </div>
         </div>
     </div>
 
-    <div id="mobileNav" class="fixed top-[2vh] left-1/2 -translate-x-1/2 z-[9990] lg:hidden w-[90vw] text-white backdrop-blur-3xl p-[5%] md:p-[3%] flex-col rounded-xl bg-black/25 xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691px]">
-      <div id="mainMenu" class="flex justify-between items-center">
-        <div class="relative">
-              <button id="mobileLangDropdownButton" type="button" aria-expanded="false" class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap text-white">
-                <img src="flags/macedonia.png" class="h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px] rounded-full">
-            </button>
-              <div id="mobileLangDropdownMenu" class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
-                <a href="#" class="block hover:text-white transition-all duration-300 py-2 xs:py-3 md:py-4"><img src="flags/britain.png" class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
-                <a href="#" class="block hover:text-white transition-all duration-300">             <img src="flags/albania.png" class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
+    <div id="mobileNav"
+        class="fixed top-[2vh] left-1/2 -translate-x-1/2 z-[9990] lg:hidden w-[90vw] text-white backdrop-blur-3xl p-[5%] md:p-[3%] flex-col rounded-xl bg-black/25 xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691px]">
+        <div id="mainMenu" class="flex justify-between items-center">
+            <div class="relative">
+                <button id="mobileLangDropdownButton" type="button" aria-expanded="false"
+                    class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap text-white">
+                    <img src="flags/macedonia.png"
+                        class="h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px] rounded-full">
+                </button>
+                <div id="mobileLangDropdownMenu"
+                    class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
+                    <a href="#" class="block hover:text-white transition-all duration-300 py-2 xs:py-3 md:py-4"><img
+                            src="flags/britain.png"
+                            class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
+                    <a href="#" class="block hover:text-white transition-all duration-300"> <img src="flags/albania.png"
+                            class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
+                </div>
+            </div>
+            <a href="index.html" class="max-w-[40%] h-full"><img src="logos/LOGO ZAEDNO7.png" class="h-full"></a>
+            <button id="mobileMenuToggle" class="text-white"><i
+                    class="fa-solid fa-bars text-[20px] md:text-[30px]"></i></button>
+        </div>
+        <div id="triggeredMenu" class="flex flex-col gap-[1vh] w-full justify-center items-center text-lg md:text-xl">
+            <a href="index.html" class="text-center pt-[1vh]">Дома</a>
+            <a href="platinum.html" class="text-center">Platinum</a>
+            <a href="extras.html" class="text-center">Додатоци</a>
+            <a href="book.html" class="text-center">Закажи презентација</a>
+            <a href="tradeIn.html" class="text-center">Замени</a>
+            <a href="aboutus.html" class="text-center">За Нас</a>
+            <div class=" pb-[1vh]">
+                <button id="mobileInfoDropdownButton" type="button" aria-expanded="false" class=" text-white">Инфо
+                    центар&nbsp;<span class=""><i id="mobileInfoChevron"
+                            class="fa-solid fa-chevron-down text-sm"></i></span></button>
+                <div id="mobileInfoDropdownMenu"
+                    class="flex flex-col max-h-0 overflow-hidden text-base md:text-lg pl-[1vh]">
+                    <a href="howTo.html" class="text-white/70 transition-all duration-300">Видео водич</a>
+                    <a href="tips.html" class="text-white/70 transition-all duration-300">Совети</a>
+                    <a href="blog.html" class="text-white/70 transition-all duration-300">Блог</a>
+                    <a href="faq.html" class="text-white/70 transition-all duration-300">FAQ</a>
+                </div>
             </div>
         </div>
-        <a href="index.html" class="max-w-[40%] h-full"><img src="logos/LOGO ZAEDNO7.png" class="h-full"></a>
-        <button id="mobileMenuToggle" class="text-white"><i class="fa-solid fa-bars text-[20px] md:text-[30px]"></i></button>
-      </div>
-      <div id="triggeredMenu" class="flex flex-col gap-[1vh] w-full justify-center items-center text-lg md:text-xl">
-        <a href="index.html"    class="text-center pt-[1vh]">Дома</a>
-        <a href="platinum.html" class="text-center">Platinum</a>
-        <a href="extras.html"   class="text-center">Додатоци</a>
-        <a href="book.html"     class="text-center">Закажи презентација</a>
-        <a href="tradeIn.html"  class="text-center">Замени</a>
-        <a href="aboutus.html"  class="text-center">За Нас</a>
-        <div class=" pb-[1vh]">
-            <button id="mobileInfoDropdownButton" type="button" aria-expanded="false" class=" text-white">Инфо центар&nbsp;<span class=""><i id="mobileInfoChevron" class="fa-solid fa-chevron-down text-sm"></i></span></button>
-            <div id="mobileInfoDropdownMenu" class="flex flex-col max-h-0 overflow-hidden text-base md:text-lg pl-[1vh]">
-                <a href="howTo.html" class="text-white/70 transition-all duration-300">Видео водич</a>
-                <a href="tips.html"  class="text-white/70 transition-all duration-300">Совети</a>
-                <a href="blog.html"  class="text-white/70 transition-all duration-300">Блог</a>
-                <a href="faq.html"   class="text-white/70 transition-all duration-300">FAQ</a>
-            </div>
-        </div>
-      </div>
     </div>
 
-<script>
-(function(){
-    const nav = document.getElementById('nav');
-    const spacer = document.getElementById('nav-spacer');
-    if(!nav) return;
-
-    // ensure smooth transition
-    nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
-    nav.style.willChange = 'transform, opacity';
-    nav.style.transform = nav.style.transform || 'translateY(0)';
-    nav.style.opacity = nav.style.opacity || '1';
-
-    function recompute(){
-        try{
-            const h = Math.ceil(nav.getBoundingClientRect().height);
-            if(spacer) spacer.style.height = h + 'px';
-        }catch(e){}
-    }
-    recompute();
-    window.addEventListener('resize', recompute, {passive:true});
-
-    let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop + 6) {
-            nav.style.transform = 'translateY(-' + (nav.offsetHeight + 4) + 'px)';
-            nav.style.opacity = '0';
-        } else if (scrollTop < lastScrollTop - 6) {
-            nav.style.transform = 'translateY(0)';
-            nav.style.opacity = '1';
-        } else {
-            nav.style.transform = 'translateY(0)';
-        }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-})();
-
-(function(){
-  const button = document.getElementById('infoDropdownButton');
-  const menu = document.getElementById('infoDropdownMenu');
-  const chevron = document.getElementById('infoChevron');
-  if (!button || !menu) return;
-
-  const openMenu = () => {
-    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-    menu.classList.add('opacity-100', 'visible', 'translate-y-0');
-    button.setAttribute('aria-expanded', 'true');
-    button.classList.remove('bg-transparent');
-    button.classList.add('bg-black/80', 'text-white');
-    if (chevron) chevron.classList.add('rotated');
-  };
-
-  const closeMenu = () => {
-    menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
-    menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
-    button.setAttribute('aria-expanded', 'false');
-    button.classList.remove('bg-black/80', 'text-white');
-    button.classList.add('bg-transparent');
-    if (chevron) chevron.classList.remove('rotated');
-  };
-
-  const toggleMenu = (event) => {
-    event.stopPropagation();
-    if (menu.classList.contains('opacity-0')) {
-      openMenu();
-    } else {
-      closeMenu();
-    }
-  };
-
-  button.addEventListener('click', toggleMenu);
-
-  document.addEventListener('click', (event) => {
-    if (!button.contains(event.target) && !menu.contains(event.target)) {
-      closeMenu();
-    }
-  });
-})();
-
-(function(){
-  const button = document.getElementById('langDropdownButton');
-  const menu = document.getElementById('langDropdownMenu');
-  const chevron = document.getElementById('langChevron');
-  if (!button || !menu) return;
-
-  const openMenu = () => {
-    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-    menu.classList.add('opacity-100', 'visible', 'translate-y-0');
-    button.setAttribute('aria-expanded', 'true');
-    button.classList.remove('bg-transparent');
-    button.classList.add('text-white');
-    if (chevron) chevron.classList.add('rotated');
-  };
-
-  const closeMenu = () => {
-    menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
-    menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
-    button.setAttribute('aria-expanded', 'false');
-    button.classList.remove('bg-black/90', 'text-white');
-    button.classList.add('bg-transparent');
-    if (chevron) chevron.classList.remove('rotated');
-  };
-
-  const toggleMenu = (event) => {
-    event.stopPropagation();
-    if (menu.classList.contains('opacity-0')) {
-      openMenu();
-    } else {
-      closeMenu();
-    }
-  };
-
-  button.addEventListener('click', toggleMenu);
-
-  document.addEventListener('click', (event) => {
-    if (!button.contains(event.target) && !menu.contains(event.target)) {
-      closeMenu();
-    }
-  });
-})();
-
-(function(){
-  const button = document.getElementById('mobileInfoDropdownButton');
-  const menu = document.getElementById('mobileInfoDropdownMenu');
-  const chevron = document.getElementById('mobileInfoChevron');
-  if (!button || !menu) return;
-
-  const toggleMenu = (event) => {
-    event.stopPropagation();
-    if (menu.classList.contains('open')) {
-      menu.classList.remove('open');
-      chevron.classList.remove('rotated');
-      button.setAttribute('aria-expanded', 'false');
-    } else {
-      menu.classList.add('open');
-      chevron.classList.add('rotated');
-      button.setAttribute('aria-expanded', 'true');
-    }
-  };
-
-  button.addEventListener('click', toggleMenu);
-})();
-
-(function(){
-  const button = document.getElementById('mobileLangDropdownButton');
-  const menu = document.getElementById('mobileLangDropdownMenu');
-  if (!button || !menu) return;
-
-  const toggleMenu = (event) => {
-    event.stopPropagation();
-    if (menu.classList.contains('open')) {
-      menu.classList.remove('open');
-      button.setAttribute('aria-expanded', 'false');
-    } else {
-      menu.classList.add('open');
-      button.setAttribute('aria-expanded', 'true');
-    }
-  };
-
-  button.addEventListener('click', toggleMenu);
-  document.addEventListener('click', (event) => {
-    if (!button.contains(event.target) && !menu.contains(event.target)) {
-      menu.classList.remove('open');
-      button.setAttribute('aria-expanded', 'false');
-    }
-  });
-})();
-</script>
-<script>
-(function(){
-  const toggle = document.getElementById('mobileMenuToggle');
-  const mobileNav = document.getElementById('mobileNav');
-  const triggered = document.getElementById('triggeredMenu');
-  if (!toggle || !mobileNav || !triggered) return;
-
-  toggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const opened = triggered.classList.toggle('open');
-    if (opened) {
-      mobileNav.classList.add('mobile-open');
-    } else {
-      mobileNav.classList.remove('mobile-open');
-    }
-  });
-
-  // close when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!mobileNav.contains(e.target) && triggered.classList.contains('open')) {
-      triggered.classList.remove('open');
-      mobileNav.classList.remove('mobile-open');
-    }
-  });
-})();
-</script>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const numbers = document.querySelectorAll('.stat-number');
+        (function () {
+            const nav = document.getElementById('nav');
+            const spacer = document.getElementById('nav-spacer');
+            if (!nav) return;
 
-      const animateCount = (el) => {
-        const target = +el.dataset.target;
-        let current = 0;
+            // ensure smooth transition
+            nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
+            nav.style.willChange = 'transform, opacity';
+            nav.style.transform = nav.style.transform || 'translateY(0)';
+            nav.style.opacity = nav.style.opacity || '1';
 
-        const duration = 1500;
-        const stepTime = Math.max(Math.floor(duration / target), 10);
+            function recompute() {
+                try {
+                    const h = Math.ceil(nav.getBoundingClientRect().height);
+                    if (spacer) spacer.style.height = h + 'px';
+                } catch (e) { }
+            }
+            recompute();
+            window.addEventListener('resize', recompute, { passive: true });
 
-        const counter = setInterval(() => {
-          current += Math.ceil(target / (duration / stepTime));
-          if (current >= target) {
-            el.textContent = target.toLocaleString();
-            clearInterval(counter);
-          } else {
-            el.textContent = current.toLocaleString();
-          }
-        }, stepTime);
-      };
+            let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
+            window.addEventListener('scroll', function () {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop + 6) {
+                    nav.style.transform = 'translateY(-' + (nav.offsetHeight + 4) + 'px)';
+                    nav.style.opacity = '0';
+                } else if (scrollTop < lastScrollTop - 6) {
+                    nav.style.transform = 'translateY(0)';
+                    nav.style.opacity = '1';
+                } else {
+                    nav.style.transform = 'translateY(0)';
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            });
+        })();
 
-          animateCount(entry.target);
-          obs.unobserve(entry.target);
+        (function () {
+            const button = document.getElementById('infoDropdownButton');
+            const menu = document.getElementById('infoDropdownMenu');
+            const chevron = document.getElementById('infoChevron');
+            if (!button || !menu) return;
+
+            const openMenu = () => {
+                menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+                menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+                button.setAttribute('aria-expanded', 'true');
+                button.classList.remove('bg-transparent');
+                button.classList.add('bg-black/80', 'text-white');
+                if (chevron) chevron.classList.add('rotated');
+            };
+
+            const closeMenu = () => {
+                menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+                menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                button.setAttribute('aria-expanded', 'false');
+                button.classList.remove('bg-black/80', 'text-white');
+                button.classList.add('bg-transparent');
+                if (chevron) chevron.classList.remove('rotated');
+            };
+
+            const toggleMenu = (event) => {
+                event.stopPropagation();
+                if (menu.classList.contains('opacity-0')) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            };
+
+            button.addEventListener('click', toggleMenu);
+
+            document.addEventListener('click', (event) => {
+                if (!button.contains(event.target) && !menu.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+        })();
+
+        (function () {
+            const button = document.getElementById('langDropdownButton');
+            const menu = document.getElementById('langDropdownMenu');
+            const chevron = document.getElementById('langChevron');
+            if (!button || !menu) return;
+
+            const openMenu = () => {
+                menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+                menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+                button.setAttribute('aria-expanded', 'true');
+                button.classList.remove('bg-transparent');
+                button.classList.add('text-white');
+                if (chevron) chevron.classList.add('rotated');
+            };
+
+            const closeMenu = () => {
+                menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+                menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                button.setAttribute('aria-expanded', 'false');
+                button.classList.remove('bg-black/90', 'text-white');
+                button.classList.add('bg-transparent');
+                if (chevron) chevron.classList.remove('rotated');
+            };
+
+            const toggleMenu = (event) => {
+                event.stopPropagation();
+                if (menu.classList.contains('opacity-0')) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            };
+
+            button.addEventListener('click', toggleMenu);
+
+            document.addEventListener('click', (event) => {
+                if (!button.contains(event.target) && !menu.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+        })();
+
+        (function () {
+            const button = document.getElementById('mobileInfoDropdownButton');
+            const menu = document.getElementById('mobileInfoDropdownMenu');
+            const chevron = document.getElementById('mobileInfoChevron');
+            if (!button || !menu) return;
+
+            const toggleMenu = (event) => {
+                event.stopPropagation();
+                if (menu.classList.contains('open')) {
+                    menu.classList.remove('open');
+                    chevron.classList.remove('rotated');
+                    button.setAttribute('aria-expanded', 'false');
+                } else {
+                    menu.classList.add('open');
+                    chevron.classList.add('rotated');
+                    button.setAttribute('aria-expanded', 'true');
+                }
+            };
+
+            button.addEventListener('click', toggleMenu);
+        })();
+
+        (function () {
+            const button = document.getElementById('mobileLangDropdownButton');
+            const menu = document.getElementById('mobileLangDropdownMenu');
+            if (!button || !menu) return;
+
+            const toggleMenu = (event) => {
+                event.stopPropagation();
+                if (menu.classList.contains('open')) {
+                    menu.classList.remove('open');
+                    button.setAttribute('aria-expanded', 'false');
+                } else {
+                    menu.classList.add('open');
+                    button.setAttribute('aria-expanded', 'true');
+                }
+            };
+
+            button.addEventListener('click', toggleMenu);
+            document.addEventListener('click', (event) => {
+                if (!button.contains(event.target) && !menu.contains(event.target)) {
+                    menu.classList.remove('open');
+                    button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+    <script>
+        (function () {
+            const toggle = document.getElementById('mobileMenuToggle');
+            const mobileNav = document.getElementById('mobileNav');
+            const triggered = document.getElementById('triggeredMenu');
+            if (!toggle || !mobileNav || !triggered) return;
+
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const opened = triggered.classList.toggle('open');
+                if (opened) {
+                    mobileNav.classList.add('mobile-open');
+                } else {
+                    mobileNav.classList.remove('mobile-open');
+                }
+            });
+
+            // close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileNav.contains(e.target) && triggered.classList.contains('open')) {
+                    triggered.classList.remove('open');
+                    mobileNav.classList.remove('mobile-open');
+                }
+            });
+        })();
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const numbers = document.querySelectorAll('.stat-number');
+
+            const animateCount = (el) => {
+                const target = +el.dataset.target;
+                let current = 0;
+
+                const duration = 1500;
+                const stepTime = Math.max(Math.floor(duration / target), 10);
+
+                const counter = setInterval(() => {
+                    current += Math.ceil(target / (duration / stepTime));
+                    if (current >= target) {
+                        el.textContent = target.toLocaleString();
+                        clearInterval(counter);
+                    } else {
+                        el.textContent = current.toLocaleString();
+                    }
+                }, stepTime);
+            };
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+
+                    animateCount(entry.target);
+                    obs.unobserve(entry.target);
+                });
+            }, {
+                threshold: 0.4
+            });
+
+            numbers.forEach(num => observer.observe(num));
         });
-      }, {
-        threshold: 0.4
-      });
-
-      numbers.forEach(num => observer.observe(num));
-    });
     </script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const slidesContainer = document.getElementById('slides');
-    const prevBtn = document.getElementById('prev');
-    const nextBtn = document.getElementById('next');
-    const dots = document.querySelectorAll('.dot');
-    const carouselContainer = document.getElementById('carousel');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slidesContainer = document.getElementById('slides');
+            const prevBtn = document.getElementById('prev');
+            const nextBtn = document.getElementById('next');
+            const dots = document.querySelectorAll('.dot');
+            const carouselContainer = document.getElementById('carousel');
 
-    let currentIndex = 0;
-    let slides = [];
-    let autoplayInterval;
+            let currentIndex = 0;
+            let slides = [];
+            let autoplayInterval;
 
-    // Fetch carousel data
-    fetch('data/platinumCarousel.json')
-        .then(response => response.json())
-        .then(data => {
-            slides = data;
-            createSlides();
-            updateDots();
-            startAutoplay();
-        })
-        .catch(error => console.error('Error loading carousel data:', error));
+            // Fetch carousel data
+            fetch('data/platinumCarousel.json')
+                .then(response => response.json())
+                .then(data => {
+                    slides = data;
+                    createSlides();
+                    updateDots();
+                    startAutoplay();
+                })
+                .catch(error => console.error('Error loading carousel data:', error));
 
-    function createSlides() {
-        slidesContainer.innerHTML = '';
-        slides.forEach(slide => {
-            const slideDiv = document.createElement('div');
-            slideDiv.className = 'slide flex-shrink-0 w-full h-full bg-cover bg-center';
-            slideDiv.style.backgroundImage = `url(${slide.image})`;
-            slideDiv.innerHTML = `
+            function createSlides() {
+                slidesContainer.innerHTML = '';
+                slides.forEach(slide => {
+                    const slideDiv = document.createElement('div');
+                    slideDiv.className = 'slide flex-shrink-0 w-full h-full bg-cover bg-center';
+                    slideDiv.style.backgroundImage = `url(${slide.image})`;
+                    slideDiv.innerHTML = `
                 <div class="w-full h-full flex flex-col justify-end">
                     <div class="w-full h-[10%] bg-gradient-to-b from-transparent to-black/70"></div>
                     <div class="bg-gradient-to-b from-black/70 to-black flex flex-col gap-2 justify-end items-start p-[8%] sm:p-[6%] xl:p-[4%] rounded-b-xl">
@@ -574,76 +667,76 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
             `;
-            slidesContainer.appendChild(slideDiv);
-        });
-    }
-
-    function updateSlides() {
-        slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-        updateDots();
-    }
-
-    function updateDots() {
-        dots.forEach((dot, index) => {
-            if (index === currentIndex) {
-                dot.classList.remove('w-3', 'bg-white/50');
-                dot.classList.add('w-8', 'bg-white');
-            } else {
-                dot.classList.remove('w-8', 'bg-white');
-                dot.classList.add('w-3', 'bg-white/50');
+                    slidesContainer.appendChild(slideDiv);
+                });
             }
+
+            function updateSlides() {
+                slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+                updateDots();
+            }
+
+            function updateDots() {
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.remove('w-3', 'bg-white/50');
+                        dot.classList.add('w-8', 'bg-white');
+                    } else {
+                        dot.classList.remove('w-8', 'bg-white');
+                        dot.classList.add('w-3', 'bg-white/50');
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlides();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlides();
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                updateSlides();
+            }
+
+            function startAutoplay() {
+                autoplayInterval = setInterval(nextSlide, 10000);
+            }
+
+            function stopAutoplay() {
+                clearInterval(autoplayInterval);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoplay();
+                startAutoplay();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoplay();
+                startAutoplay();
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                    stopAutoplay();
+                    startAutoplay();
+                });
+            });
+
+            // Pause on hover
+            carouselContainer.addEventListener('mouseenter', stopAutoplay);
+            carouselContainer.addEventListener('mouseleave', startAutoplay);
         });
-    }
-
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlides();
-    }
-
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateSlides();
-    }
-
-    function goToSlide(index) {
-        currentIndex = index;
-        updateSlides();
-    }
-
-    function startAutoplay() {
-        autoplayInterval = setInterval(nextSlide, 10000);
-    }
-
-    function stopAutoplay() {
-        clearInterval(autoplayInterval);
-    }
-
-    // Event listeners
-    nextBtn.addEventListener('click', () => {
-        nextSlide();
-        stopAutoplay();
-        startAutoplay();
-    });
-
-    prevBtn.addEventListener('click', () => {
-        prevSlide();
-        stopAutoplay();
-        startAutoplay();
-    });
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            goToSlide(index);
-            stopAutoplay();
-            startAutoplay();
-        });
-    });
-
-    // Pause on hover
-    carouselContainer.addEventListener('mouseenter', stopAutoplay);
-    carouselContainer.addEventListener('mouseleave', startAutoplay);
-});
-</script>
+    </script>
 
     <script>
         function toggleAttachment(index) {
@@ -663,11 +756,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     </script>
 
-    <div id="mobileHeroOverlay" class="w-full fixed top-0 left-0 h-[15vh] z-50 bg-gradient-to-b from-black to-transparent block lg:hidden transition-opacity duration-1000 ease-out"></div>
+    <div id="mobileHeroOverlay"
+        class="w-full fixed top-0 left-0 h-[15vh] z-50 bg-gradient-to-b from-black to-transparent block lg:hidden transition-opacity duration-1000 ease-out">
+    </div>
 
     <div id="mobileHero" class="w-full block lg:hidden">
         <div class="mobile-hero-wrapper flex justify-center items-center" id="mobileHeroWrapper">
-            <div class="mobile-hero-image flex flex-col justify-between" style="background-image:url('images/platinum_img/images_webp/studio.webp');">
+            <div class="mobile-hero-image flex flex-col justify-between"
+                style="background-image:url('images/platinum_img/images_webp/studio.webp');">
                 <div class=""></div>
                 <div class="w-full h-[20vh] bg-gradient-to-t from-black to-transparent"></div>
             </div>
@@ -675,11 +771,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="flex flex-col justify-center items-center gap-0.5 text-center">
                     <h1 class="text-4xl xs:text-7xl font-extrabold">Avalir Platinum</h1>
                     <p class="text-xl xs:text-5xl">Најмоќниот Kirby досега</p>
-                    <p class="text-xs xs:text-lg text-white/70 px-[5%] xs:px-[3%]">Рачно изработен од нашиот посветен тим и дизајниран за врвно длабинско чистење, Kirby ја отстранува нечистотијата што другите правосмукалки ја оставаат зад себе.</p>
+                    <p class="text-xs xs:text-lg text-white/70 px-[5%] xs:px-[3%]">Рачно изработен од нашиот посветен
+                        тим и дизајниран за врвно длабинско чистење, Kirby ја отстранува нечистотијата што другите
+                        правосмукалки ја оставаат зад себе.</p>
                 </div>
-                <div class="w-full flex xs:flex-row justify-center items-center gap-[1vw] font-medium text-sm xs:text-xl text-white/70">
-                    <a href="book.html" class="xs:w-auto text-black bg-white/70 hover:bg-white/85 transition-all duration-300 rounded-xl px-[8px] py-[3px] 2xl:px-[10px] 2xl:py-[4px] text-center">Закажи Презентација</a>
-                    <a href="#powerSystem" class="xs:w-auto rounded-xl px-[8px] py-[2px] 2xl:px-[10px] 2xl:py-[3px] border-2 border-white/70 hover:text-white hover:border-white transition-all duration-300 text-center">Дознај Повеќе</a>
+                <div
+                    class="w-full flex xs:flex-row justify-center items-center gap-[1vw] font-medium text-sm xs:text-xl text-white/70">
+                    <a href="book.html"
+                        class="xs:w-auto text-black bg-white/70 hover:bg-white/85 transition-all duration-300 rounded-xl px-[8px] py-[3px] 2xl:px-[10px] 2xl:py-[4px] text-center">Закажи
+                        Презентација</a>
+                    <a href="#powerSystem"
+                        class="xs:w-auto rounded-xl px-[8px] py-[2px] 2xl:px-[10px] 2xl:py-[3px] border-2 border-white/70 hover:text-white hover:border-white transition-all duration-300 text-center">Дознај
+                        Повеќе</a>
                 </div>
             </div>
         </div>
@@ -693,11 +796,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="flex flex-col justify-center items-center gap-1 pr-[7%] xl:pr-[10%]">
                         <h1 class="text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl font-extrabold">Avalir Platinum</h1>
                         <p class="text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl">Најмоќниот Kirby досега</p>
-                        <p class="text-sm xl:text-base 2xl:text-xl 3xl:text-2xl text-white/70 text-center">Рачно изработен од нашиот посветен тим и дизајниран за врвно длабинско чистење, Kirby ја отстранува нечистотијата што другите правосмукалки ја оставаат зад себе.</p>
+                        <p class="text-sm xl:text-base 2xl:text-xl 3xl:text-2xl text-white/70 text-center">Рачно
+                            изработен од нашиот посветен тим и дизајниран за врвно длабинско чистење, Kirby ја
+                            отстранува нечистотијата што другите правосмукалки ја оставаат зад себе.</p>
                     </div>
-                    <div class="w-full flex justify-center items-center gap-[1vw] pr-[7%] xl:pr-[10%] font-medium text-base xl:text-lg 2xl:text-2xl 3xl:text-3xl text-white/70">
-                        <a href="book.html" class="text-black bg-white/70 hover:bg-white/85 transition-all duration-300 rounded-xl px-[8px] py-[3px] 2xl:px-[10px] 2xl:py-[4px]">Закажи Презентација</a>
-                        <a href="#powerSystem" class="rounded-xl px-[8px] py-[2px] 2xl:px-[10px] 2xl:py-[3px] border-2 border-white/70 hover:text-white hover:border-white transition-all duration-300">Дознај Повеќе</a>
+                    <div
+                        class="w-full flex justify-center items-center gap-[1vw] pr-[7%] xl:pr-[10%] font-medium text-base xl:text-lg 2xl:text-2xl 3xl:text-3xl text-white/70">
+                        <a href="book.html"
+                            class="text-black bg-white/70 hover:bg-white/85 transition-all duration-300 rounded-xl px-[8px] py-[3px] 2xl:px-[10px] 2xl:py-[4px]">Закажи
+                            Презентација</a>
+                        <a href="#powerSystem"
+                            class="rounded-xl px-[8px] py-[2px] 2xl:px-[10px] 2xl:py-[3px] border-2 border-white/70 hover:text-white hover:border-white transition-all duration-300">Дознај
+                            Повеќе</a>
                     </div>
                 </div>
             </div>
@@ -705,7 +815,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const heroWrapper = document.getElementById('heroPushWrapper');
             if (!heroWrapper) return;
             setTimeout(() => heroWrapper.classList.add('hero-pushed'), 1000);
@@ -740,30 +850,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     <div id="powerSystem" class="w-full bg-gradient-to-b from-black to-[#484848] px-[5%]">
-        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col gap-6 py-[10%]">
-            <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">Kirby Power System</h1>
-            <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">Kirby Power System</h1>
-            <div class="flex flex-col lg:flex-row justify-between items-center w-full gap-[5vw] lg:gap-0 font-bold text-base xs:text-xl md:text-2xl lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl">
-                <div class=" bg-white/70 rounded-xl lg:w-[32%] p-[5%] lg:p-[3%] 3xl:p-[2%] flex flex-col gap-[2vw] 2xl:gap-[1vw]">
-                    <i class="fa-solid fa-wind text-blue-600 text-2xl xs:text-3xl md:text-4xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl"></i>
-                    <p class="w-full">Platinum користи <span class="text-blue-600">затворен систем на проток на воздух</span> и агитација. Секоја компонента работи синхронизирано за максимална ефикасност.</p>
+        <div
+            class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col gap-6 py-[10%]">
+            <h1
+                class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">
+                Kirby Power System</h1>
+            <h1
+                class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">
+                Kirby Power System</h1>
+            <div
+                class="flex flex-col lg:flex-row justify-between items-center w-full gap-[5vw] lg:gap-0 font-bold text-base xs:text-xl md:text-2xl lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl">
+                <div
+                    class=" bg-white/70 rounded-xl lg:w-[32%] p-[5%] lg:p-[3%] 3xl:p-[2%] flex flex-col gap-[2vw] 2xl:gap-[1vw]">
+                    <i
+                        class="fa-solid fa-wind text-blue-600 text-2xl xs:text-3xl md:text-4xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl"></i>
+                    <p class="w-full">Platinum користи <span class="text-blue-600">затворен систем на проток на
+                            воздух</span> и агитација. Секоја компонента работи синхронизирано за максимална ефикасност.
+                    </p>
                 </div>
-                <div class="bg-white/70 rounded-xl lg:w-[32%] p-[5%] lg:p-[3%] 3xl:p-[2%] flex flex-col gap-[2vw] 2xl:gap-[1vw]">
-                    <i class="fa-solid fa-bolt text-amber-600 text-2xl xs:text-3xl md:text-4xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl"></i>
-                    <p class="w-full">Создава <span class="text-amber-600">константна моќ за длабинско отстранување на нечистотија.</span> Не ја чисти само површина — продира во влакната и ткаенините.</p>
+                <div
+                    class="bg-white/70 rounded-xl lg:w-[32%] p-[5%] lg:p-[3%] 3xl:p-[2%] flex flex-col gap-[2vw] 2xl:gap-[1vw]">
+                    <i
+                        class="fa-solid fa-bolt text-amber-600 text-2xl xs:text-3xl md:text-4xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl"></i>
+                    <p class="w-full">Создава <span class="text-amber-600">константна моќ за длабинско отстранување на
+                            нечистотија.</span> Не ја чисти само површина — продира во влакната и ткаенините.</p>
                 </div>
-                <div class="bg-white/70 rounded-xl lg:w-[32%] p-[5%] lg:p-[3%] 3xl:p-[2%] flex flex-col gap-[2vw] 2xl:gap-[1vw]">
-                    <i class="fa-solid fa-bacterium text-green-600 text-2xl xs:text-3xl md:text-4xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl"></i>
-                    <p class="w-full">Ги еленимира наталожените <span class="text-green-600">прашина и алергени</span> што обичните правосмукалки не можат да ги достигнат. Резултатот е чист и посвеж дом.</p>
+                <div
+                    class="bg-white/70 rounded-xl lg:w-[32%] p-[5%] lg:p-[3%] 3xl:p-[2%] flex flex-col gap-[2vw] 2xl:gap-[1vw]">
+                    <i
+                        class="fa-solid fa-bacterium text-green-600 text-2xl xs:text-3xl md:text-4xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl"></i>
+                    <p class="w-full">Ги еленимира наталожените <span class="text-green-600">прашина и алергени</span>
+                        што обичните правосмукалки не можат да ги достигнат. Резултатот е чист и посвеж дом.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="awareness" data-awareness-carousel="platinum" class="w-full bg-gradient-to-b from-[#484848] to-black px-[5%]">
-        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col gap-6 py-[10%]">
-            <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">Научно заснована заштита</h1>
-            <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">Научно заснована заштита</h1>
+    <div id="awareness" data-awareness-carousel="platinum"
+        class="w-full bg-gradient-to-b from-[#484848] to-black px-[5%]">
+        <div
+            class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col gap-6 py-[10%]">
+            <h1
+                class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">
+                Научно заснована заштита</h1>
+            <h1
+                class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">
+                Научно заснована заштита</h1>
             <div class="w-full">
                 <!-- Swiper structure -->
                 <div class="swiper" id="awarenessSwiper">
@@ -772,13 +904,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <!-- Navigation and indicators -->
                     <div class="flex justify-center items-center mt-[2vh]">
-                        <button id="prevBtn" class="bg-white/20 disabled:opacity-40 hover:bg-white/40 text-white px-4 py-2 rounded-lg transition-all duration-300 mr-4">
+                        <button id="prevBtn"
+                            class="bg-white/20 disabled:opacity-40 hover:bg-white/40 text-white px-4 py-2 rounded-lg transition-all duration-300 mr-4">
                             <i class="fas fa-chevron-left"></i>
                         </button>
 
                         <div id="carouselIndicators" class="flex gap-1 justify-center"></div>
 
-                        <button id="nextBtn" class="bg-white/20 disabled:opacity-40 hover:bg-white/40 text-white px-4 py-2 rounded-lg transition-all duration-300 ml-4">
+                        <button id="nextBtn"
+                            class="bg-white/20 disabled:opacity-40 hover:bg-white/40 text-white px-4 py-2 rounded-lg transition-all duration-300 ml-4">
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
@@ -788,39 +922,65 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     <div id="3200rpm" class="w-full bg-gradient-to-t from-[#484848] to-black px-[5%]">
-        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col gap-6 py-[10%]">
-            <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">Под површината</h1>
-            <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">Под површината</h1>
-            <div class="bg-black/70 rounded-xl w-full flex flex-col lg:flex-row justify-center items-center p-[3%] gap-[2vw] text-2xl sm:text-3xl md:text-4xl lg:text-2xl 3xl:text-3xl">
-                <div class="w-full lg:w-[25%] h-full bg-black/30 flex flex-col justify-around rounded-xl p-[5%] lg:p-[3%] gap-[2vh] shadow-2xl shadow-white/10 hover:shadow-white/30 transition-all duration-300">
+        <div
+            class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col gap-6 py-[10%]">
+            <h1
+                class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">
+                Под површината</h1>
+            <h1
+                class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">
+                Под површината</h1>
+            <div
+                class="bg-black/70 rounded-xl w-full flex flex-col lg:flex-row justify-center items-center p-[3%] gap-[2vw] text-2xl sm:text-3xl md:text-4xl lg:text-2xl 3xl:text-3xl">
+                <div
+                    class="w-full lg:w-[25%] h-full bg-black/30 flex flex-col justify-around rounded-xl p-[5%] lg:p-[3%] gap-[2vh] shadow-2xl shadow-white/10 hover:shadow-white/30 transition-all duration-300">
                     <h1 class="text-white font-bold">3200 вртежи во минута</h1>
-                    <p class="text-white/70 text-base sm:text-lg md:text-xl lg:text-base 3xl:text-xl">Со 3200 вртежи во минута, четката создава континуирана и контролирана механичка агитација. Брзина  прецизно избалансирана за оптимална сила и стабилност. Ротацијата работи рамномерно при секое поминување. Тука започнуваат вистинските длабински перформанси.</p>
+                    <p class="text-white/70 text-base sm:text-lg md:text-xl lg:text-base 3xl:text-xl">Со 3200 вртежи во
+                        минута, четката создава континуирана и контролирана механичка агитација. Брзина прецизно
+                        избалансирана за оптимална сила и стабилност. Ротацијата работи рамномерно при секое поминување.
+                        Тука започнуваат вистинските длабински перформанси.</p>
                     <img src="images_webp/platinumHTML/3200rpm/1.webp" class="object-contain w-full" alt="">
                 </div>
                 <div class="w-full lg:w-[50%] h-full lg:h-[90%] gap-[2vw] flex flex-col justify-center items-center">
                     <div class="w-full h-fit flex flex-col md:flex-row gap-[2vw]">
-                        <div class="w-full lg:w-1/2 h-fit rounded-xl p-[5%] bg-black/30 shadow-2xl shadow-white/10 hover:shadow-white/30 transition-all duration-300 gap-[2vh] flex flex-col justify-center">
+                        <div
+                            class="w-full lg:w-1/2 h-fit rounded-xl p-[5%] bg-black/30 shadow-2xl shadow-white/10 hover:shadow-white/30 transition-all duration-300 gap-[2vh] flex flex-col justify-center">
                             <h1 class="text-white font-bold">Контролирана сила</h1>
-                            <p class="text-white/70 text-base sm:text-lg md:text-xl lg:text-base 3xl:text-xl">Системот одржува рамномерна сила без осцилации во брзината. Механизмот обезбедува темелност без агресивно влијание врз површините. Стабилноста е резултат на прецизно инженерство.</p>
+                            <p class="text-white/70 text-base sm:text-lg md:text-xl lg:text-base 3xl:text-xl">Системот
+                                одржува рамномерна сила без осцилации во брзината. Механизмот обезбедува темелност без
+                                агресивно влијание врз површините. Стабилноста е резултат на прецизно инженерство.</p>
                             <img src="images_webp/platinumHTML/3200rpm/4.webp" class="object-contain w-full" alt="">
                         </div>
-                        <div class="w-full lg:w-1/2 h-full rounded-xl p-[5%] bg-black/30 shadow-2xl shadow-white/10 hover:shadow-white/30 transition-all duration-300 gap-[2vh] flex flex-col justify-center">
+                        <div
+                            class="w-full lg:w-1/2 h-full rounded-xl p-[5%] bg-black/30 shadow-2xl shadow-white/10 hover:shadow-white/30 transition-all duration-300 gap-[2vh] flex flex-col justify-center">
                             <h1 class="text-white font-bold">За интензивна употреба</h1>
-                            <p class="text-white/70 text-base sm:text-lg md:text-xl lg:text-base 3xl:text-xl">Континуираната агитација е ефикасна кај влакна од миленици и подлабоки наслаги. Механичкото движење работи таму каде што обичното вшмукување не е доволно. Системот е прилагоден за простории со голема фреквенција. Перформансите остануваат силни и издржливи со текот на времето.</p>
+                            <p class="text-white/70 text-base sm:text-lg md:text-xl lg:text-base 3xl:text-xl">
+                                Континуираната агитација е ефикасна кај влакна од миленици и подлабоки наслаги.
+                                Механичкото движење работи таму каде што обичното вшмукување не е доволно. Системот е
+                                прилагоден за простории со голема фреквенција. Перформансите остануваат силни и
+                                издржливи со текот на времето.</p>
                         </div>
                     </div>
-                    <div class="w-full bg-black/30 flex flex-col md:flex-row rounded-xl p-[5%] gap-[2vh] shadow-2xl shadow-white/10 hover:shadow-white/30 transition-all duration-300">
+                    <div
+                        class="w-full bg-black/30 flex flex-col md:flex-row rounded-xl p-[5%] gap-[2vh] shadow-2xl shadow-white/10 hover:shadow-white/30 transition-all duration-300">
                         <div class="flex flex-col gap-[2vh]">
                             <h1 class="text-white font-bold">Активна агитација</h1>
-                            <p class="text-white/70 text-base sm:text-lg md:text-xl lg:text-base 3xl:text-xl">Ротационата динамика ги раздвојува влакната во тепихот и ткаенините. Агитацијата продира подлабоко од стандардното вшмукување. Резултатот е поефикасно и потемелно чистење.</p>
+                            <p class="text-white/70 text-base sm:text-lg md:text-xl lg:text-base 3xl:text-xl">
+                                Ротационата динамика ги раздвојува влакната во тепихот и ткаенините. Агитацијата продира
+                                подлабоко од стандардното вшмукување. Резултатот е поефикасно и потемелно чистење.</p>
                         </div>
-                        <img src="images_webp/platinumHTML/3200rpm/2.webp" class="w-full md:w-[30%] object-contain" alt="">
+                        <img src="images_webp/platinumHTML/3200rpm/2.webp" class="w-full md:w-[30%] object-contain"
+                            alt="">
 
                     </div>
                 </div>
-                <div class="w-full lg:w-[25%] h-full bg-black/30 flex flex-col justify-around rounded-xl p-[3%] gap-[2vh] shadow-2xl shadow-white/10 hover:shadow-white/30 transition-all duration-300">
+                <div
+                    class="w-full lg:w-[25%] h-full bg-black/30 flex flex-col justify-around rounded-xl p-[3%] gap-[2vh] shadow-2xl shadow-white/10 hover:shadow-white/30 transition-all duration-300">
                     <h1 class="text-white font-bold">Ослободување честички</h1>
-                    <p class="text-white/70 text-base sm:text-lg md:text-xl lg:text-base 3xl:text-xl">Ротацијата ја раздвижува наталожената прашина и ситните честички меѓу влакната. Системот активно ги ослободува наслагите наместо само да помине преку нив. Ослободените честички полесно се извлекуваат од материјалот. Разликата е видлива и при првото користење.</p>
+                    <p class="text-white/70 text-base sm:text-lg md:text-xl lg:text-base 3xl:text-xl">Ротацијата ја
+                        раздвижува наталожената прашина и ситните честички меѓу влакната. Системот активно ги ослободува
+                        наслагите наместо само да помине преку нив. Ослободените честички полесно се извлекуваат од
+                        материјалот. Разликата е видлива и при првото користење.</p>
                     <img src="images_webp/platinumHTML/3200rpm/3.webp" class="w-full object-contain" alt="">
                 </div>
             </div>
@@ -828,83 +988,203 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     <div id="attachments" class="w-full bg-[#484848] px-[5%]">
-        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col gap-6 py-[10%]">
-            <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">Што вклучува Avalir Platinum</h1>
-            <h1 class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">Што вклучува Avalir Platinum</h1>
+        <div
+            class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col gap-6 py-[10%]">
+            <h1
+                class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">
+                Што вклучува Avalir Platinum</h1>
+            <h1
+                class="w-full text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">
+                Што вклучува Avalir Platinum</h1>
             <div class="w-full h-full flex flex-col gap-[6vw] lg:gap-[4vw] p-[5%] bg-black/40 rounded-xl">
-                <div class="w-full h-[35vh] lg:h-[70vh] xl:h-[50vh] 2xl:h-[70vh] flex justify-start lg:justify-end items-start p-[2%] lg:p-[1%] bg-[url('images_webp/platinumHTML/attachments/zip.webp')] bg-cover bg-left lg:bg-center rounded-xl">
-                    <div id="attachment-container-1" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[2%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[35%] transition-all duration-300 flex flex-col justify-between items-start">
-                        <h1 id="attachment-toggle-1" onclick="toggleAttachment(1)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between w-full"><p>Zipp Четка</p><i id="attachment-chevron-1" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                        <p id="attachment-desc-1" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Ротирачка четка со голема брзина специјализирана за мебел, скали и душеци. Со силна агитација ги отстранува длабоко вкоренетите влакна од миленици, прашината и алергените, оставајќи ги ткаенините чисти со еден поминување.</p>
+                <div
+                    class="w-full h-[35vh] lg:h-[70vh] xl:h-[50vh] 2xl:h-[70vh] flex justify-start lg:justify-end items-start p-[2%] lg:p-[1%] bg-[url('images_webp/platinumHTML/attachments/zip.webp')] bg-cover bg-left lg:bg-center rounded-xl">
+                    <div id="attachment-container-1"
+                        class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[2%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[35%] transition-all duration-300 flex flex-col justify-between items-start">
+                        <h1 id="attachment-toggle-1" onclick="toggleAttachment(1)"
+                            class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between w-full">
+                            <p>Zipp Четка</p><i id="attachment-chevron-1"
+                                class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
+                        </h1>
+                        <p id="attachment-desc-1"
+                            class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
+                            Ротирачка четка со голема брзина специјализирана за мебел, скали и душеци. Со силна
+                            агитација ги отстранува длабоко вкоренетите влакна од миленици, прашината и алергените,
+                            оставајќи ги ткаенините чисти со еден поминување.</p>
                     </div>
                 </div>
-                <div class="w-full justify-between items-center h-[80vh] lg:h-[50vh] xl:h-[70vh] flex flex-col lg:flex-row">
-                    <div class="w-full lg:w-[48%] h-[48%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/crevo.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                        <div id="attachment-container-2" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[60%] 2xl:max-w-[45%] 3xl:max-w-[50%] transition-all duration-300">
-                            <h1 id="attachment-toggle-2" onclick="toggleAttachment(2)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Црево</p><i id="attachment-chevron-2" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-2" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Флексибилно растегливо црево со должина од 213 см и ротирачки приклучоци за максимална маневрабилност при чистење над подот. Издржливата херметичка конструкција обезбедува постојана и целосна моќ на вшмукување.</p>
+                <div
+                    class="w-full justify-between items-center h-[80vh] lg:h-[50vh] xl:h-[70vh] flex flex-col lg:flex-row">
+                    <div
+                        class="w-full lg:w-[48%] h-[48%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/crevo.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
+                        <div id="attachment-container-2"
+                            class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[60%] 2xl:max-w-[45%] 3xl:max-w-[50%] transition-all duration-300">
+                            <h1 id="attachment-toggle-2" onclick="toggleAttachment(2)"
+                                class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between">
+                                <p>Црево</p><i id="attachment-chevron-2"
+                                    class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
+                            </h1>
+                            <p id="attachment-desc-2"
+                                class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
+                                Флексибилно растегливо црево со должина од 213 см и ротирачки приклучоци за максимална
+                                маневрабилност при чистење над подот. Издржливата херметичка конструкција обезбедува
+                                постојана и целосна моќ на вшмукување.</p>
                         </div>
                     </div>
-                    <div class="w-full lg:w-[48%] h-[48%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/sprayer.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                        <div id="attachment-container-3" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[90%] lg:max-w-full xl:max-w-[65%] 2xl:max-w-[50%] 3xl:max-w-[60%] transition-all duration-300">
-                            <h1 id="attachment-toggle-3" onclick="toggleAttachment(3)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Преносен Шампонер</p><i id="attachment-chevron-3" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-3" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Комплетен систем за шампонирање со резервоар за раствор кој извлекува длабинска нечистотија од теписи, мебел, скали и душеци. Обезбедува професионално чистење без потреба од изнајмување скапи машини, оставајќи ги површините свежи и хигиенски чисти.</p>
+                    <div
+                        class="w-full lg:w-[48%] h-[48%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/sprayer.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
+                        <div id="attachment-container-3"
+                            class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[90%] lg:max-w-full xl:max-w-[65%] 2xl:max-w-[50%] 3xl:max-w-[60%] transition-all duration-300">
+                            <h1 id="attachment-toggle-3" onclick="toggleAttachment(3)"
+                                class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between">
+                                <p>Преносен Шампонер</p><i id="attachment-chevron-3"
+                                    class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
+                            </h1>
+                            <p id="attachment-desc-3"
+                                class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
+                                Комплетен систем за шампонирање со резервоар за раствор кој извлекува длабинска
+                                нечистотија од теписи, мебел, скали и душеци. Обезбедува професионално чистење без
+                                потреба од изнајмување скапи машини, оставајќи ги површините свежи и хигиенски чисти.
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="w-full justify-between items-center h-[120vh] lg:h-[100vh] xl:h-[140vh] flex flex-col lg:flex-row">
-                    <div class="w-full lg:w-[49%] h-[32%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/chetkaZaPrav.webp')] p-[2%] lg:p-[1%] bg-cover bg-top lg:bg-center flex justify-start items-start rounded-xl">
-                        <div id="attachment-container-4" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[50%] 2xl:max-w-[40%] 3xl:max-w-[50%] transition-all duration-300">
-                            <h1 id="attachment-toggle-4" onclick="toggleAttachment(4)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Четка за прав</p><i id="attachment-chevron-4" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-4" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Меки природни влакна за безбедно чистење на абажури, ролетни, полици за книги, електроника и други осетливи површини. Ја задржува фината прашина без гребење, одржувајќи ги предметите чисти и заштитени.</p>
+                <div
+                    class="w-full justify-between items-center h-[120vh] lg:h-[100vh] xl:h-[140vh] flex flex-col lg:flex-row">
+                    <div
+                        class="w-full lg:w-[49%] h-[32%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/chetkaZaPrav.webp')] p-[2%] lg:p-[1%] bg-cover bg-top lg:bg-center flex justify-start items-start rounded-xl">
+                        <div id="attachment-container-4"
+                            class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[50%] 2xl:max-w-[40%] 3xl:max-w-[50%] transition-all duration-300">
+                            <h1 id="attachment-toggle-4" onclick="toggleAttachment(4)"
+                                class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between">
+                                <p>Четка за прав</p><i id="attachment-chevron-4"
+                                    class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
+                            </h1>
+                            <p id="attachment-desc-4"
+                                class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
+                                Меки природни влакна за безбедно чистење на абажури, ролетни, полици за книги,
+                                електроника и други осетливи површини. Ја задржува фината прашина без гребење,
+                                одржувајќи ги предметите чисти и заштитени.</p>
                         </div>
                     </div>
                     <div class="h-[66%] lg:h-full w-full lg:w-[48%] flex flex-col justify-between">
-                        <div class="w-full h-[48%] lg:h-[37%] bg-[url('images_webp/platinumHTML/attachments/chetkaZaMebel.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                            <div id="attachment-container-5" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[40%] 3xl:max-w-[50%] transition-all duration-300">
-                                <h1 id="attachment-toggle-5" onclick="toggleAttachment(5)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Четка за мебел</p><i id="attachment-chevron-5" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                                <p id="attachment-desc-5" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Четка која ја раздвижува и извлекува нечистотијата од софи, столици, душеци и автомобилски седишта. Ефикасно отстранува алергени, влакна од миленици и дамки, враќајќи свежина на сите ткаенини.</p>
+                        <div
+                            class="w-full h-[48%] lg:h-[37%] bg-[url('images_webp/platinumHTML/attachments/chetkaZaMebel.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
+                            <div id="attachment-container-5"
+                                class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[40%] 3xl:max-w-[50%] transition-all duration-300">
+                                <h1 id="attachment-toggle-5" onclick="toggleAttachment(5)"
+                                    class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between">
+                                    <p>Четка за мебел</p><i id="attachment-chevron-5"
+                                        class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
+                                </h1>
+                                <p id="attachment-desc-5"
+                                    class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
+                                    Четка која ја раздвижува и извлекува нечистотијата од софи, столици, душеци и
+                                    автомобилски седишта. Ефикасно отстранува алергени, влакна од миленици и дамки,
+                                    враќајќи свежина на сите ткаенини.</p>
                             </div>
                         </div>
-                        <div class="w-full h-[48%] lg:h-[57%] bg-[url('images_webp/platinumHTML/attachments/chetkaZaPod.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                            <div id="attachment-container-6" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[40%] 3xl:max-w-[50%] transition-all duration-300">
-                                <h1 id="attachment-toggle-6" onclick="toggleAttachment(6)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Четка за под</p><i id="attachment-chevron-6" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                                <p id="attachment-desc-6" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Рамна и широка четка наменета за тврди подови, плочки, ламинат и теписи со кратки влакна. Нежно ја собира површинската нечистотија без расфрлање или гребење, идеална за кујни, бањи и влезни простории.</p>
+                        <div
+                            class="w-full h-[48%] lg:h-[57%] bg-[url('images_webp/platinumHTML/attachments/chetkaZaPod.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
+                            <div id="attachment-container-6"
+                                class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[40%] 3xl:max-w-[50%] transition-all duration-300">
+                                <h1 id="attachment-toggle-6" onclick="toggleAttachment(6)"
+                                    class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between">
+                                    <p>Четка за под</p><i id="attachment-chevron-6"
+                                        class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
+                                </h1>
+                                <p id="attachment-desc-6"
+                                    class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
+                                    Рамна и широка четка наменета за тврди подови, плочки, ламинат и теписи со кратки
+                                    влакна. Нежно ја собира површинската нечистотија без расфрлање или гребење, идеална
+                                    за кујни, бањи и влезни простории.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-full justify-between items-center h-[120vh] lg:h-[50vh] xl:h-[70vh] flex flex-col lg:flex-row">
-                    <div class="w-full lg:w-[31%] h-[32%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/turboSander.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-start items-start rounded-xl">
-                        <div id="attachment-container-7" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[75%] 2xl:max-w-[90%] transition-all duration-300">
-                            <h1 id="attachment-toggle-7" onclick="toggleAttachment(7)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Turbo Sander</p><i id="attachment-chevron-7" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-7" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Моќен додаток за полирање кој безбедно ги обновува дрвените подови до огледален сјај. Со микрофибер влошки и контролиран проток на воздух ги отстранува лесните гребнатини и ја враќа природната убавина на дрвото.</p>
+                <div
+                    class="w-full justify-between items-center h-[120vh] lg:h-[50vh] xl:h-[70vh] flex flex-col lg:flex-row">
+                    <div
+                        class="w-full lg:w-[31%] h-[32%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/turboSander.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-start items-start rounded-xl">
+                        <div id="attachment-container-7"
+                            class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[75%] 2xl:max-w-[90%] transition-all duration-300">
+                            <h1 id="attachment-toggle-7" onclick="toggleAttachment(7)"
+                                class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between">
+                                <p>Turbo Sander</p><i id="attachment-chevron-7"
+                                    class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
+                            </h1>
+                            <p id="attachment-desc-7"
+                                class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
+                                Моќен додаток за полирање кој безбедно ги обновува дрвените подови до огледален сјај. Со
+                                микрофибер влошки и контролиран проток на воздух ги отстранува лесните гребнатини и ја
+                                враќа природната убавина на дрвото.</p>
                         </div>
                     </div>
-                    <div class="w-full lg:w-[30%] h-[32%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/utilityTool.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                        <div id="attachment-container-8" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[75%] 2xl:max-w-[90%] transition-all duration-300">
-                            <h1 id="attachment-toggle-8" onclick="toggleAttachment(8)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Тимар четка</p><i id="attachment-chevron-8" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-8" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Повеќенаменска четка за ефикасно чистење на мебел, завеси и меки површини. Отстранува влакна од миленици, прашина и алергени, додека ги заштитува чувствителните ткаенини при чистење над подот.</p>
+                    <div
+                        class="w-full lg:w-[30%] h-[32%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/utilityTool.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
+                        <div id="attachment-container-8"
+                            class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[75%] 2xl:max-w-[90%] transition-all duration-300">
+                            <h1 id="attachment-toggle-8" onclick="toggleAttachment(8)"
+                                class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between">
+                                <p>Тимар четка</p><i id="attachment-chevron-8"
+                                    class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
+                            </h1>
+                            <p id="attachment-desc-8"
+                                class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
+                                Повеќенаменска четка за ефикасно чистење на мебел, завеси и меки површини. Отстранува
+                                влакна од миленици, прашина и алергени, додека ги заштитува чувствителните ткаенини при
+                                чистење над подот.</p>
                         </div>
                     </div>
-                    <div class="w-full lg:w-[31%] h-[32%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/alatkaZaTesniProstori.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-start items-start rounded-xl">
-                        <div id="attachment-container-9" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[75%] 2xl:max-w-[90%] transition-all duration-300">
-                            <h1 id="attachment-toggle-9" onclick="toggleAttachment(9)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Четка за тесни простори</p><i id="attachment-chevron-9" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-9" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Тесна продолжена млазница од 30 см за пристап зад мебел, радијатори, лајсни и апарати каде што се собира нечистотија. Моќното и насочено вшмукување ги отстранува скриената прашина и остатоци од недостапни места.</p>
+                    <div
+                        class="w-full lg:w-[31%] h-[32%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/alatkaZaTesniProstori.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-start items-start rounded-xl">
+                        <div id="attachment-container-9"
+                            class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[75%] 2xl:max-w-[90%] transition-all duration-300">
+                            <h1 id="attachment-toggle-9" onclick="toggleAttachment(9)"
+                                class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between">
+                                <p>Четка за тесни простори</p><i id="attachment-chevron-9"
+                                    class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
+                            </h1>
+                            <p id="attachment-desc-9"
+                                class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
+                                Тесна продолжена млазница од 30 см за пристап зад мебел, радијатори, лајсни и апарати
+                                каде што се собира нечистотија. Моќното и насочено вшмукување ги отстранува скриената
+                                прашина и остатоци од недостапни места.</p>
                         </div>
                     </div>
                 </div>
-                <div class="w-full justify-between items-center h-[80vh] lg:h-[50vh] xl:h-[80vh] flex flex-col lg:flex-row">
-                    <div class="w-full lg:w-[48%] h-[48%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/HEPAfilterKesi.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                        <div id="attachment-container-10" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[50%] 3xl:max-w-[57%] transition-all duration-300">
-                            <h1 id="attachment-toggle-10" onclick="toggleAttachment(10)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>HEPA Филтер Кеси</p><i id="attachment-chevron-10" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-10" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Пакет од шест премиум заменливи кеси кои задржуваат 99,99% од микроскопските алергени и непријатни мириси. Обезбедуваат врвна филтрација, чист издувен воздух и поедноставно одржување при подолги сесии на чистење.</p>
+                <div
+                    class="w-full justify-between items-center h-[80vh] lg:h-[50vh] xl:h-[80vh] flex flex-col lg:flex-row">
+                    <div
+                        class="w-full lg:w-[48%] h-[48%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/HEPAfilterKesi.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
+                        <div id="attachment-container-10"
+                            class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[50%] 3xl:max-w-[57%] transition-all duration-300">
+                            <h1 id="attachment-toggle-10" onclick="toggleAttachment(10)"
+                                class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between">
+                                <p>HEPA Филтер Кеси</p><i id="attachment-chevron-10"
+                                    class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
+                            </h1>
+                            <p id="attachment-desc-10"
+                                class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
+                                Пакет од шест премиум заменливи кеси кои задржуваат 99,99% од микроскопските алергени и
+                                непријатни мириси. Обезбедуваат врвна филтрација, чист издувен воздух и поедноставно
+                                одржување при подолги сесии на чистење.</p>
                         </div>
                     </div>
-                    <div class="w-full lg:w-[48%] h-[48%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/prenosnaRachka.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                        <div id="attachment-container-11" class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[50%] transition-all duration-300">
-                            <h1 id="attachment-toggle-11" onclick="toggleAttachment(11)" class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between"><p>Преносна Рачка</p><i id="attachment-chevron-11" class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i></h1>
-                            <p id="attachment-desc-11" class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">Ергономска горна рачка за лесно носење на машината по скали и меѓу простории. Ја претвора Kirby во преносна станица за чистење, идеална за повеќекатни домови, автомобили и работилници.</p>
+                    <div
+                        class="w-full lg:w-[48%] h-[48%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/prenosnaRachka.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
+                        <div id="attachment-container-11"
+                            class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[50%] transition-all duration-300">
+                            <h1 id="attachment-toggle-11" onclick="toggleAttachment(11)"
+                                class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between">
+                                <p>Преносна Рачка</p><i id="attachment-chevron-11"
+                                    class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
+                            </h1>
+                            <p id="attachment-desc-11"
+                                class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
+                                Ергономска горна рачка за лесно носење на машината по скали и меѓу простории. Ја
+                                претвора Kirby во преносна станица за чистење, идеална за повеќекатни домови, автомобили
+                                и работилници.</p>
                         </div>
                     </div>
                 </div>
@@ -915,527 +1195,681 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="bg-gradient-to-b from-[#484848] to-black h-[30vh] w-full"></div>
 
     <div class="w-full bg-black px-[5%]">
-        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col-reverse lg:flex-row items-center justify-between py-[10%]">
-            <div class="text-slate-500 h-full flex flex-col justify-center gap-[1vh] metallic-shine text-center lg:text-start">
-                <h1 class="text-2xl xs:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black">Најмоќното чистење досега</h1>
-                <p class="text-sm xs:text-lg md:text-xl xl:text-2xl 2xl:text-3xl">Создаден со внимание кон секој детал и изработен од посветен тим, Kirby поставува нов стандард за длабинско чистење — отстранувајќи ја нечистотијата што другите ја оставаат зад себе.</p>
+        <div
+            class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col-reverse lg:flex-row items-center justify-between py-[10%]">
+            <div
+                class="text-slate-500 h-full flex flex-col justify-center gap-[1vh] metallic-shine text-center lg:text-start">
+                <h1 class="text-2xl xs:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black">Најмоќното
+                    чистење досега</h1>
+                <p class="text-sm xs:text-lg md:text-xl xl:text-2xl 2xl:text-3xl">Создаден со внимание кон секој детал и
+                    изработен од посветен тим, Kirby поставува нов стандард за длабинско чистење — отстранувајќи ја
+                    нечистотијата што другите ја оставаат зад себе.</p>
             </div>
             <img src="images_webp/platinumHTML/100.webp" class="max-w-[35%] 3xl:max-w-[45%] hidden lg:block" alt="">
             <img src="images_webp/platinumHTML/black.webp" class="block lg:hidden w-full" alt="">
         </div>
     </div>
 
-    <div id="phone"  class="w-full bg-gradient-to-b from-black to-[#484848] px-[5%]">
-        <section class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center py-[10%]">
-            <h1 class="text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">Направи избор. <p class="text-white">Денес</p></h1>
-            <h1 class="text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">Направи избор. <p class="text-white">Денес</p></h1>
+    <div id="phone" class="w-full bg-gradient-to-b from-black to-[#484848] px-[5%]">
+        <section
+            class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center py-[10%]">
+            <h1
+                class="text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">
+                Направи избор. <p class="text-white">Денес</p>
+            </h1>
+            <h1
+                class="text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">
+                Направи избор. <p class="text-white">Денес</p>
+            </h1>
             <div class="relative w-full flex justify-center items-center  py-[10%] lg:py-[5%]">
-                <img src="images_webp/phone-vertical.webp" class="w-full opacity-0 translate-y-10 transition-all duration-1000 block lg:hidden h-full" data-cta-phone alt=""/>
-                <img src="images_webp/phone.webp" class="w-full h-full opacity-0 translate-y-10 transition-all duration-1000 hidden lg:block" data-cta-phone alt=""/>
+                <img src="images_webp/phone-vertical.webp"
+                    class="w-full opacity-0 translate-y-10 transition-all duration-1000 block lg:hidden h-full"
+                    data-cta-phone alt="" />
+                <img src="images_webp/phone.webp"
+                    class="w-full h-full opacity-0 translate-y-10 transition-all duration-1000 hidden lg:block"
+                    data-cta-phone alt="" />
             </div>
-            <div class="flex flex-col text-white/70 text-center justify-center items-center gap-4 lg:gap-2 px-[5%] text-2xl xs:text-4xl md:text-5xl lg:text-lg xl:text-xl 2xl:text-2xl">
-                <h1 class="text-white w-auto text-2xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-6xl 2xl:text-5xl 3xl:text-6xl font-extrabold">Имај го најдоброто</h1>
+            <div
+                class="flex flex-col text-white/70 text-center justify-center items-center gap-4 lg:gap-2 px-[5%] text-2xl xs:text-4xl md:text-5xl lg:text-lg xl:text-xl 2xl:text-2xl">
+                <h1
+                    class="text-white w-auto text-2xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-6xl 2xl:text-5xl 3xl:text-6xl font-extrabold">
+                    Имај го најдоброто</h1>
                 <p class="w-auto">Подготвен ли си да го видиш во акција?</p>
                 <div class="flex flex-col lg:flex-row justify-center gap-4">
-                    <a href="models.html" class="text-center rounded-xl px-[3vw] py-[1vw] 3xl:px-10 3xl:py-3 transition-all duration-300 bg-black/40 hover:bg-black/70 hover:text-white">Модели</a>
-                    <a href="book.html"   class="text-center rounded-xl px-[3vw] py-[1vw] 3xl:px-10 3xl:py-3 transition-all duration-300 bg-black/40 hover:bg-black/70 hover:text-white text-nowrap">Закажи Презентација</a>
+                    <a href="models.html"
+                        class="text-center rounded-xl px-[3vw] py-[1vw] 3xl:px-10 3xl:py-3 transition-all duration-300 bg-black/40 hover:bg-black/70 hover:text-white">Модели</a>
+                    <a href="book.html"
+                        class="text-center rounded-xl px-[3vw] py-[1vw] 3xl:px-10 3xl:py-3 transition-all duration-300 bg-black/40 hover:bg-black/70 hover:text-white text-nowrap">Закажи
+                        Презентација</a>
                 </div>
             </div>
         </section>
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const targets = document.querySelectorAll('[data-cta-phone]');
+        document.addEventListener('DOMContentLoaded', () => {
+            const targets = document.querySelectorAll('[data-cta-phone]');
 
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
 
-          entry.target.classList.remove('opacity-0', 'translate-y-10');
-          obs.unobserve(entry.target);
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    obs.unobserve(entry.target);
+                });
+            }, {
+                threshold: 0,
+                rootMargin: '0px 0px -35% 0px'
+            });
+
+            targets.forEach(el => observer.observe(el));
         });
-      }, {
-        threshold: 0,
-        rootMargin: '0px 0px -35% 0px'
-      });
-
-      targets.forEach(el => observer.observe(el));
-    });
     </script>
 
     <div id="faq" class="w-full bg-gradient-to-t from-black to-[#484848] px-[5%]">
-        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col gap-6 py-[10%]">
-            <h1 class="text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">FAQ</h1>
-            <h1 class="text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">FAQ</h1>
-            <div class="w-full flex flex-col lg:flex-row bg-white/10 px-[5%] py-[5%] lg:py-[3%] rounded-xl gap-4 xs:gap-5 sm:gap-6 md:gap-7 lg:gap-9 xl:gap-10 2xl:gap-14">
-                <div id="landing-faq-list" class="w-full lg:w-1/2 text-white text-2xl font-medium flex flex-col items-center">
+        <div
+            class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col gap-6 py-[10%]">
+            <h1
+                class="text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 block lg:hidden">
+                FAQ</h1>
+            <h1
+                class="text-3xl xs:text-5xl md:text-6xl text-center lg:text-start lg:text-4xl xl:text-5xl 3xl:text-6xl text-white/70 font-extrabold px-0 lg:px-6 reveal-letters hidden lg:block">
+                FAQ</h1>
+            <div
+                class="w-full flex flex-col lg:flex-row bg-white/10 px-[5%] py-[5%] lg:py-[3%] rounded-xl gap-4 xs:gap-5 sm:gap-6 md:gap-7 lg:gap-9 xl:gap-10 2xl:gap-14">
+                <div id="landing-faq-list"
+                    class="w-full lg:w-1/2 text-white text-2xl font-medium flex flex-col items-center">
                     <div class="w-full flex justify-around items-start px-[4%] py-[3%] my-[2%] bg-white/10 rounded-xl">
                         <div class="w-11/12">
                             <p class="">За што служи N/D педалот на задната страна на Kirby?</p>
-                            <p class="faq-answer text-[#c1c1c1] text-base mt-3 overflow-hidden transition-all duration-300 opacity-0 w-11/12" style="max-height:0;">Ова е вашата Neutral/Drive педала. Кога усисувате или користите системот за шампонирање на теписи во исправена положба, притиснете го Drive (D) педалот. Ова го активира Tech Drive® power assist за полесно туркање на вашиот Kirby. За другите режими на употреба (чистење на тврд под, усисување во канистер режим со црево, рачно усисување, користење на воздушна пумпа, турбо додатоци итн.), притиснете го Neutral (N) педалот.</p>
+                            <p class="faq-answer text-[#c1c1c1] text-base mt-3 overflow-hidden transition-all duration-300 opacity-0 w-11/12"
+                                style="max-height:0;">Ова е вашата Neutral/Drive педала. Кога усисувате или користите
+                                системот за шампонирање на теписи во исправена положба, притиснете го Drive (D) педалот.
+                                Ова го активира Tech Drive® power assist за полесно туркање на вашиот Kirby. За другите
+                                режими на употреба (чистење на тврд под, усисување во канистер режим со црево, рачно
+                                усисување, користење на воздушна пумпа, турбо додатоци итн.), притиснете го Neutral (N)
+                                педалот.</p>
                         </div>
-                        <button class="faq-toggle w-1/12 h-full text-base text-white flex justify-center items-center transform transition-transform duration-300" aria-expanded="false" aria-label="Toggle answer"><i class="fa-solid fa-chevron-down"></i></button>
+                        <button
+                            class="faq-toggle w-1/12 h-full text-base text-white flex justify-center items-center transform transition-transform duration-300"
+                            aria-expanded="false" aria-label="Toggle answer"><i
+                                class="fa-solid fa-chevron-down"></i></button>
                     </div>
 
                     <div class="w-full flex justify-around items-start px-[4%] py-[3%] my-[2%] bg-white/10 rounded-xl">
                         <div class="w-11/12">
                             <p class="">Како да знам кога еднократната кеса е полна и треба да се замени?</p>
-                            <p class="faq-answer text-[#c1c1c1] text-base mt-3 overflow-hidden transition-all duration-300 opacity-0 w-11/12" style="max-height:0;">На еднократната кеса има линија за полнење. Кога нечистотијата ќе стигне до таа линија, треба да ја замените кесата бидејќи веќе не филтрира правилно. Користете само оригинални Kirby филтер кеси за да се осигура правилно чистење.</p>
+                            <p class="faq-answer text-[#c1c1c1] text-base mt-3 overflow-hidden transition-all duration-300 opacity-0 w-11/12"
+                                style="max-height:0;">На еднократната кеса има линија за полнење. Кога нечистотијата ќе
+                                стигне до таа линија, треба да ја замените кесата бидејќи веќе не филтрира правилно.
+                                Користете само оригинални Kirby филтер кеси за да се осигура правилно чистење.</p>
                         </div>
-                        <button class="faq-toggle w-1/12 h-full text-base text-white flex justify-center items-center transform transition-transform duration-300" aria-expanded="false" aria-label="Toggle answer"><i class="fa-solid fa-chevron-down"></i></button>
+                        <button
+                            class="faq-toggle w-1/12 h-full text-base text-white flex justify-center items-center transform transition-transform duration-300"
+                            aria-expanded="false" aria-label="Toggle answer"><i
+                                class="fa-solid fa-chevron-down"></i></button>
                     </div>
 
                     <div class="w-full flex justify-around items-start px-[4%] py-[3%] my-[2%] bg-white/10 rounded-xl">
                         <div class="w-11/12">
                             <p class="">Дали надворешната платнена кеса може да се мие?</p>
-                            <p class="faq-answer text-[#c1c1c1] text-base mt-3 overflow-hidden transition-all duration-300 opacity-0 w-11/12" style="max-height:0;">Не се препорачува да ја миете надворешната кеса или да ја натопувате со вода.</p>
+                            <p class="faq-answer text-[#c1c1c1] text-base mt-3 overflow-hidden transition-all duration-300 opacity-0 w-11/12"
+                                style="max-height:0;">Не се препорачува да ја миете надворешната кеса или да ја
+                                натопувате со вода.</p>
                         </div>
-                        <button class="faq-toggle w-1/12 h-full text-base text-white flex justify-center items-center transform transition-transform duration-300" aria-expanded="false" aria-label="Toggle answer"><i class="fa-solid fa-chevron-down"></i></button>
+                        <button
+                            class="faq-toggle w-1/12 h-full text-base text-white flex justify-center items-center transform transition-transform duration-300"
+                            aria-expanded="false" aria-label="Toggle answer"><i
+                                class="fa-solid fa-chevron-down"></i></button>
                     </div>
 
                     <div class="w-full flex justify-around items-start px-[4%] py-[3%] my-[2%] bg-white/10 rounded-xl">
                         <div class="w-11/12">
                             <p class="">Дали надворешната платнена кеса може да се мие?</p>
-                            <p class="faq-answer text-[#c1c1c1] text-base mt-3 overflow-hidden transition-all duration-300 opacity-0 w-11/12" style="max-height:0;">Не се препорачува да ја миете надворешната кеса или да ја натопувате со вода.</p>
+                            <p class="faq-answer text-[#c1c1c1] text-base mt-3 overflow-hidden transition-all duration-300 opacity-0 w-11/12"
+                                style="max-height:0;">Не се препорачува да ја миете надворешната кеса или да ја
+                                натопувате со вода.</p>
                         </div>
-                        <button class="faq-toggle w-1/12 h-full text-base text-white flex justify-center items-center transform transition-transform duration-300" aria-expanded="false" aria-label="Toggle answer"><i class="fa-solid fa-chevron-down"></i></button>
+                        <button
+                            class="faq-toggle w-1/12 h-full text-base text-white flex justify-center items-center transform transition-transform duration-300"
+                            aria-expanded="false" aria-label="Toggle answer"><i
+                                class="fa-solid fa-chevron-down"></i></button>
                     </div>
                 </div>
 
                 <!-- Right: contact form (same style as faq.html form) -->
-                <form data-formsubmit="true" class="w-full lg:w-1/2 flex flex-col justify-center items-end gap-5" method="POST" action="https://formsubmit.co/43b21711b46354ed9c0946432e5fe177 ">
+                <form id="platinumFaqForm" class="w-full lg:w-1/2 flex flex-col justify-center items-end gap-5"
+                    method="POST" action="https://api.web3forms.com/submit">
                     <h2 class="text-white text-3xl 3xl:text-4xl w-full text-center">Не најдовте одговор?</h2>
-                    <p class="text-[#c1c1c1] text-base 3xl:text-lg">Можете да најдете повеќе одговори на нашата <a href="faq.html" class="text-white">FAQ страница</a>. Доколку не го најдете она што го барате, слободно контактирајте нè преку формата подолу – внесете го вашето име и презиме, е-мејл или телефонски број, и испратете го вашето прашање. Нашиот тим ќе ви одговори што е можно поскоро.</p>
+                    <p class="text-[#c1c1c1] text-base 3xl:text-lg">Можете да најдете повеќе одговори на нашата <a
+                            href="faq.html" class="text-white">FAQ страница</a>. Доколку не го најдете она што го
+                        барате, слободно контактирајте нè преку формата подолу – внесете го вашето име и презиме, е-мејл
+                        или телефонски број, и испратете го вашето прашање. Нашиот тим ќе ви одговори што е можно
+                        поскоро.</p>
                     <div class="w-full flex flex-col justify-center items-center gap-3">
-                        <input name="name" type="text" required class="w-full rounded-xl outline-none border-none bg-black/40 text-lg px-3 py-2 text-white" placeholder="Име и Презиме">
+                        <input name="name" type="text" required
+                            class="w-full rounded-xl outline-none border-none bg-black/40 text-lg px-3 py-2 text-white"
+                            placeholder="Име и Презиме">
                         <div class="w-full flex flex-col lg:flex-row justify-between items-center gap-2 lg:gap-0">
-                            <input name="email" type="email" required class="w-full lg:w-[58%] rounded-xl outline-none border-none bg-black/40 text-lg px-3 py-2 text-white" placeholder="E-mail">
-                            <input name="phone" type="tel" required class="w-full lg:w-[38%] rounded-xl outline-none border-none bg-black/40 text-lg px-3 py-2 text-white" placeholder="07X-XXX-XXX">
+                            <input name="email" type="email" required
+                                class="w-full lg:w-[58%] rounded-xl outline-none border-none bg-black/40 text-lg px-3 py-2 text-white"
+                                placeholder="E-mail">
+                            <input name="phone" type="tel" required
+                                class="w-full lg:w-[38%] rounded-xl outline-none border-none bg-black/40 text-lg px-3 py-2 text-white"
+                                placeholder="07X-XXX-XXX">
                         </div>
-                        <textarea name="message" type="text" required class="w-full h-full rounded-xl outline-none border-none bg-black/40 text-lg px-3 py-2 text-white" placeholder="Вашето прашање..."></textarea>
+                        <textarea name="message" type="text" required
+                            class="w-full h-full rounded-xl outline-none border-none bg-black/40 text-lg px-3 py-2 text-white"
+                            placeholder="Вашето прашање..."></textarea>
                     </div>
-                    <!-- FormSubmit hidden controls -->
-                    <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Прашање">
-                    <input type="hidden" name="_next" value="https://vinkom-mu.vercel.app/thankyouFAQ.html">
-                    <input type="submit" class="w-[38%] rounded-xl outline-none border-none bg-black/40 hover:bg-[#484848] text-lg py-2 lg:py-3 text-[#c1c1c1] hover:text-white transition-all duration-500" value="Испрати">
+                    <input type="hidden" name="access_key" value="e8a44d0d-7452-4216-8adb-ab76860b4dc5">
+                    <input type="submit"
+                        class="w-[38%] rounded-xl outline-none border-none bg-black/40 hover:bg-[#484848] text-lg py-2 lg:py-3 text-[#c1c1c1] hover:text-white transition-all duration-500"
+                        value="Испрати">
                 </form>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const faqForm = document.getElementById('platinumFaqForm');
+                        if (!faqForm) return;
+
+                        faqForm.addEventListener('submit', async function (event) {
+                            event.preventDefault();
+
+                            const formData = new FormData(faqForm);
+
+                            try {
+                                const response = await fetch(faqForm.action, {
+                                    method: 'POST',
+                                    body: formData,
+                                });
+
+                                const result = await response.json();
+                                if (response.ok && result.success) {
+                                    window.location.href = 'https://vinkom-mu.vercel.app/thankyouFAQ.html';
+                                    return;
+                                }
+
+                                console.error('Web3Forms submission failed', result);
+                                alert('Внесот не успеа. Обидете се повторно.');
+                            } catch (error) {
+                                console.error('Web3Forms submission error', error);
+                                alert('Внесот не успеа. Обидете се повторно.');
+                            }
+                        });
+                    });
+                </script>
             </div>
         </div>
     </div>
 
-    <button id="backToTop"
-            aria-label="Back to top"
-            aria-hidden="true"
-            class="fixed right-3 bottom-6 md:right-5 md:bottom-10 z-60 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full shadow-2xl transition-all duration-200 transform scale-95 opacity-0 pointer-events-none">
-      <i class="fa-solid fa-arrow-up"></i>
+    <button id="backToTop" aria-label="Back to top" aria-hidden="true"
+        class="fixed right-3 bottom-6 md:right-5 md:bottom-10 z-60 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full shadow-2xl transition-all duration-200 transform scale-95 opacity-0 pointer-events-none">
+        <i class="fa-solid fa-arrow-up"></i>
     </button>
 
     <script>
-      (function(){
-        const btn = document.getElementById('backToTop');
-        if(!btn) return;
+        (function () {
+            const btn = document.getElementById('backToTop');
+            if (!btn) return;
 
-        let visible = false;
-        const SHOW_AFTER = 700; // px
+            let visible = false;
+            const SHOW_AFTER = 700; // px
 
-        function show() {
-          if (visible) return;
-          visible = true;
-          btn.setAttribute('aria-hidden','false');
-          btn.classList.remove('opacity-0','pointer-events-none','scale-95');
-          btn.classList.add('opacity-100','pointer-events-auto','scale-100');
-        }
-        function hide() {
-          if (!visible) return;
-          visible = false;
-          btn.setAttribute('aria-hidden','true');
-          btn.classList.remove('opacity-100','pointer-events-auto','scale-100');
-          btn.classList.add('opacity-0','pointer-events-none','scale-95');
-        }
+            function show() {
+                if (visible) return;
+                visible = true;
+                btn.setAttribute('aria-hidden', 'false');
+                btn.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+                btn.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
+            }
+            function hide() {
+                if (!visible) return;
+                visible = false;
+                btn.setAttribute('aria-hidden', 'true');
+                btn.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+                btn.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+            }
 
-        // initial state
-        if(window.pageYOffset > SHOW_AFTER) show();
+            // initial state
+            if (window.pageYOffset > SHOW_AFTER) show();
 
-        window.addEventListener('scroll', function(){ 
-          if(window.pageYOffset > SHOW_AFTER) show(); else hide();
-        }, { passive: true });
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > SHOW_AFTER) show(); else hide();
+            }, { passive: true });
 
-        btn.addEventListener('click', function(){
-          try { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-          catch(e) { window.scrollTo(0,0); }
-        });
+            btn.addEventListener('click', function () {
+                try { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+                catch (e) { window.scrollTo(0, 0); }
+            });
 
-        // keyboard activation
-        btn.addEventListener('keydown', function(e){
-          if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); btn.click(); }
-        });
-      })();
+            // keyboard activation
+            btn.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); }
+            });
+        })();
 
     </script>
 
     <div class="px-[5%] w-full bg-black">
-        <div id="footer" class="w-full flex flex-col-reverse lg:flex-row justify-between items-center py-[6%] xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-lg xs:text-2xl md:text-3xl lg:text-xs xl:text-base 2xl:text-lg 3xl:text-2xl">
-          <div class="flex flex-col w-full lg:w-1/4 text-white gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-500 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <a href="platinum.html" class="text-white/70 hover:text-white transition-all duration-300">Platinum</a>
-            <a href="extras.html" class="text-white/70 hover:text-white transition-all duration-300">Додатоци</a>
-            <a href="aboutus.html" class="text-white/70 hover:text-white transition-all duration-300">За Нас</a>
-            <a href="howTo.html" class="text-white/70 hover:text-white transition-all duration-300">Видео водич</a>
-            <a href="tips.html" class="text-white/70 hover:text-white transition-all duration-300">Совети</a>
-            <a href="blog.html" class="text-white/70 hover:text-white transition-all duration-300">Блог</a>
-            <a href="faq.html" class="text-white/70 hover:text-white transition-all duration-300">FAQ</a>
-          </div>
-          <div class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <a href="#" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-600 fa-brands fa-facebook"></i>Facebook</a>
-            <a href="#" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-pink-600 fa-brands fa-instagram"></i>Instagram</a>
-            <a href="#" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-red-600 fa-brands fa-youtube"></i>YouTube</a>
-            <a href="#" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-500 fa-brands fa-linkedin"></i>LinkedIn</a>
-            <a href="mailto:customercare@vinkom.com.mk" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-envelope"></i>customercare@vinkom.com.mk</a>
-          </div>
-          <div class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <a href="termsAndConditions.html" class="text-white/70 hover:text-white transition-all duration-300">Terms & Conditions</a>
-            <a href="privacyPolicy.html" class="text-white/70 hover:text-white transition-all duration-300">Privacy Policy</a>
-            <a href="tradeIn.html" class="text-white/70 hover:text-white transition-all duration-300">Замени</a>
-            <a href="book.html" class="text-white/70 hover:text-white transition-all duration-300">Закажи Презентација</a>
-            <a href="tel:+38922461144" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-phone"></i>02 246 1144</a>
-            <a target="_blank" href="https://www.google.com/maps?q=42.0085833,21.3672778" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-location-dot"></i>Партизански Одреди 165</a>
-          </div>
-          <div class="flex flex-col w-full lg:w-1/4 text-white gap-3 justify-center border-l-2 border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <h1 class="text-white text-4xl sm:text-5xl lg:text-2xl xl:text-4xl 3xl:text-5xl">Дознавај прв</h1>
-            <p class="text-white/70 text-base xs:text-2xl md:text-3xl lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl">Претплати се и добивај новости, совети и ексклузивни понуди директно на е-пошта.</p>
-            <div class="flex gap-2">
-              <form action="https://formsubmit.co/43b21711b46354ed9c0946432e5fe177" method="POST" class="w-full flex flex-row lg:flex-col xl:flex-row gap-2 items-center text-base lg:text-sm">
-                  <input type="hidden" name="_next" value="https://vinkom-mu.vercel.app/thankyouSub.html">
-                  <input type="hidden" name="_captcha" value="false">
-                  <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off">
-                  <input type="hidden" name="_subject" value="Претплата">
-                  <input id="subscribeEmail" type="email" name="email" required placeholder="E-mail" class="outline-none w-[69%] lg:w-full xl:w-[69%] border border-white/70 rounded-xl px-[4%] py-[3%] bg-transparent text-white my-[5%] lg:my-0"/>      
-                  <button type="submit" class="outline-none w-[29%] lg:w-full xl:w-[69%]  border border-white/70 rounded-xl px-[3%] py-[3%] bg-transparent text-white/70 hover:bg-white/70 hover:text-white transition-all duration-300 my-[5%] lg:my-0">Испрати</button>
-              </form>
+        <div id="footer"
+            class="w-full flex flex-col-reverse lg:flex-row justify-between items-center py-[6%] xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-lg xs:text-2xl md:text-3xl lg:text-xs xl:text-base 2xl:text-lg 3xl:text-2xl">
+            <div
+                class="flex flex-col w-full lg:w-1/4 text-white gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-500 px-[2%] py-[1%] my-[5%] lg:my-0">
+                <a href="platinum.html" class="text-white/70 hover:text-white transition-all duration-300">Platinum</a>
+                <a href="extras.html" class="text-white/70 hover:text-white transition-all duration-300">Додатоци</a>
+                <a href="aboutus.html" class="text-white/70 hover:text-white transition-all duration-300">За Нас</a>
+                <a href="howTo.html" class="text-white/70 hover:text-white transition-all duration-300">Видео водич</a>
+                <a href="tips.html" class="text-white/70 hover:text-white transition-all duration-300">Совети</a>
+                <a href="blog.html" class="text-white/70 hover:text-white transition-all duration-300">Блог</a>
+                <a href="faq.html" class="text-white/70 hover:text-white transition-all duration-300">FAQ</a>
             </div>
-          </div>
+            <div
+                class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
+                <a href="#"
+                    class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i
+                        class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-600 fa-brands fa-facebook"></i>Facebook</a>
+                <a href="#"
+                    class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i
+                        class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-pink-600 fa-brands fa-instagram"></i>Instagram</a>
+                <a href="#"
+                    class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i
+                        class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-red-600 fa-brands fa-youtube"></i>YouTube</a>
+                <a href="#"
+                    class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i
+                        class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-500 fa-brands fa-linkedin"></i>LinkedIn</a>
+                <a href="mailto:customercare@vinkom.com.mk"
+                    class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i
+                        class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-envelope"></i>customercare@vinkom.com.mk</a>
+            </div>
+            <div
+                class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
+                <a href="termsAndConditions.html"
+                    class="text-white/70 hover:text-white transition-all duration-300">Terms & Conditions</a>
+                <a href="privacyPolicy.html" class="text-white/70 hover:text-white transition-all duration-300">Privacy
+                    Policy</a>
+                <a href="tradeIn.html" class="text-white/70 hover:text-white transition-all duration-300">Замени</a>
+                <a href="book.html" class="text-white/70 hover:text-white transition-all duration-300">Закажи
+                    Презентација</a>
+                <a href="tel:+38922461144"
+                    class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i
+                        class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-phone"></i>02
+                    246 1144</a>
+                <a target="_blank" href="https://www.google.com/maps?q=42.0085833,21.3672778"
+                    class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i
+                        class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-location-dot"></i>Партизански
+                    Одреди 165</a>
+            </div>
+            <div
+                class="flex flex-col w-full lg:w-1/4 text-white gap-3 justify-center border-l-2 border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
+                <h1 class="text-white text-4xl sm:text-5xl lg:text-2xl xl:text-4xl 3xl:text-5xl">Дознавај прв</h1>
+                <p
+                    class="text-white/70 text-base xs:text-2xl md:text-3xl lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl">
+                    Претплати се и добивај новости, совети и ексклузивни понуди директно на е-пошта.</p>
+                <div class="flex gap-2">
+                    <form id="subscribeForm" action="https://api.web3forms.com/submit" method="POST"
+                        class="w-full flex flex-row lg:flex-col xl:flex-row gap-2 items-center text-base lg:text-sm">
+                        <input type="hidden" name="access_key" value="6c1d84bc-0208-463a-9f71-e42b2b89ca44">
+                        <input id="subscribeEmail" type="email" name="email" required placeholder="E-mail"
+                            class="outline-none w-[69%] lg:w-full xl:w-[69%] border border-white/70 rounded-xl px-[4%] py-[3%] bg-transparent text-white my-[5%] lg:my-0" />
+                        <button type="submit"
+                            class="outline-none w-[29%] lg:w-full xl:w-[69%]  border border-white/70 rounded-xl px-[3%] py-[3%] bg-transparent text-white/70 hover:bg-white/70 hover:text-white transition-all duration-300 my-[5%] lg:my-0">Испрати</button>
+                    </form>
+                </div>
+            </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const subscribeForm = document.getElementById('subscribeForm');
+    if (!subscribeForm) return;
+
+    subscribeForm.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(subscribeForm);
+
+      try {
+        const response = await fetch(subscribeForm.action, {
+          method: 'POST',
+          body: formData,
+        });
+
+        const result = await response.json();
+        if (response.ok && result.success) {
+          window.location.href = 'https://vinkom-mu.vercel.app/thankyouSub.html';
+          return;
+        }
+
+        console.error('Web3Forms submission failed', result);
+        alert('Внесот не успеа. Обидете се повторно.');
+      } catch (error) {
+        console.error('Web3Forms submission error', error);
+        alert('Внесот не успеа. Обидете се повторно.');
+      }
+    });
+  });
+</script>
         </div>
     </div>
 
     <div class="w-full bg-black px-[5%]">
-        <img src="images_webp/footer.webp" loading="lazy" class="w-full xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center" alt="">
+        <img src="images_webp/footer.webp" loading="lazy"
+            class="w-full xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center"
+            alt="">
     </div>
 
-<script>
-    // FAQ toggle handlers for hardcoded cards on landing page
-    (function(){
-        const list = document.getElementById('landing-faq-list');
-        if(!list) return;
-        const buttons = Array.from(list.querySelectorAll('.faq-toggle'));
-        buttons.forEach(btn => {
-            btn.addEventListener('click', function(){
-                const expanded = btn.getAttribute('aria-expanded') === 'true';
-                const container = btn.parentElement;
-                if(!container) return;
-                const ans = container.querySelector('.faq-answer');
-                if(!ans) return;
-                if(expanded){
-                    ans.style.maxHeight = '0px';
-                    ans.style.opacity = '0';
-                    btn.classList.remove('rotate-180');
-                    btn.setAttribute('aria-expanded','false');
-                } else {
-                    // close others in this landing list first
-                    try{
-                      const parentList = document.getElementById('landing-faq-list');
-                      const openBtns = Array.from(parentList.querySelectorAll('button[aria-expanded="true"]'));
-                      openBtns.forEach(function(ob){ if(ob === btn) return; ob.setAttribute('aria-expanded','false'); ob.classList.remove('rotate-180'); const oContainer = ob.parentElement; const oAns = oContainer && oContainer.querySelector('.faq-answer'); if(oAns){ oAns.style.maxHeight = '0px'; oAns.style.opacity = '0'; } });
-                    }catch(e){}
+    <script>
+        // FAQ toggle handlers for hardcoded cards on landing page
+        (function () {
+            const list = document.getElementById('landing-faq-list');
+            if (!list) return;
+            const buttons = Array.from(list.querySelectorAll('.faq-toggle'));
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const expanded = btn.getAttribute('aria-expanded') === 'true';
+                    const container = btn.parentElement;
+                    if (!container) return;
+                    const ans = container.querySelector('.faq-answer');
+                    if (!ans) return;
+                    if (expanded) {
+                        ans.style.maxHeight = '0px';
+                        ans.style.opacity = '0';
+                        btn.classList.remove('rotate-180');
+                        btn.setAttribute('aria-expanded', 'false');
+                    } else {
+                        // close others in this landing list first
+                        try {
+                            const parentList = document.getElementById('landing-faq-list');
+                            const openBtns = Array.from(parentList.querySelectorAll('button[aria-expanded="true"]'));
+                            openBtns.forEach(function (ob) { if (ob === btn) return; ob.setAttribute('aria-expanded', 'false'); ob.classList.remove('rotate-180'); const oContainer = ob.parentElement; const oAns = oContainer && oContainer.querySelector('.faq-answer'); if (oAns) { oAns.style.maxHeight = '0px'; oAns.style.opacity = '0'; } });
+                        } catch (e) { }
 
-                    const full = ans.scrollHeight;
-                    ans.style.maxHeight = full + 'px';
-                    ans.style.opacity = '1';
-                    btn.classList.add('rotate-180');
-                    btn.setAttribute('aria-expanded','true');
-                }
+                        const full = ans.scrollHeight;
+                        ans.style.maxHeight = full + 'px';
+                        ans.style.opacity = '1';
+                        btn.classList.add('rotate-180');
+                        btn.setAttribute('aria-expanded', 'true');
+                    }
+                });
+                // keyboard support
+                btn.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
             });
-            // keyboard support
-            btn.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); btn.click(); } });
+        })();
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.reveal-letters');
+
+            // Split text
+            elements.forEach(el => {
+                const text = el.textContent.trim();
+                el.textContent = '';
+
+                [...text].forEach((char, i) => {
+                    const span = document.createElement('span');
+                    span.textContent = char === ' ' ? '\u00A0' : char;
+                    span.style.transitionDelay = `${i * 40}ms`;
+                    el.appendChild(span);
+                });
+            });
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+
+                    entry.target.classList.add('reveal-visible');
+
+                    observer.unobserve(entry.target);
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            elements.forEach(el => observer.observe(el));
         });
-    })();
-</script>
+    </script>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const elements = document.querySelectorAll('.reveal-letters');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slideInElements = document.querySelectorAll('.slide-in');
 
-  // Split text
-  elements.forEach(el => {
-    const text = el.textContent.trim();
-    el.textContent = '';
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Trigger animation when element comes into view
+                        entry.target.classList.add('visible');
+                    } else {
+                        // Remove animation class when element leaves view
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, {
+                threshold: 0.3,
+                rootMargin: '0px 0px -50px 0px'
+            });
 
-    [...text].forEach((char, i) => {
-      const span = document.createElement('span');
-      span.textContent = char === ' ' ? '\u00A0' : char;
-      span.style.transitionDelay = `${i * 40}ms`;
-      el.appendChild(span);
-    });
-  });
+            slideInElements.forEach(el => observer.observe(el));
+        });
+    </script>
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const rpmDivs = Array.from(document.querySelectorAll('[data-rpm-toggle]'));
+            const img = document.getElementById('rpm-img');
+            const globalClose = document.getElementById('rpm-global-close');
+            let currentIndex = null;
 
-      entry.target.classList.add('reveal-visible');
+            const defaultSrc = 'images_webp/platinumHTML/3200rpm/default.webp';
+            const srcMap = {
+                1: 'images_webp/platinumHTML/3200rpm/s1.webp',
+                2: 'images_webp/platinumHTML/3200rpm/s2.webp',
+                3: 'images_webp/platinumHTML/3200rpm/s3.webp',
+                4: 'images_webp/platinumHTML/3200rpm/s4.webp',
+                5: 'images_webp/platinumHTML/3200rpm/s5.webp'
+            };
 
-      observer.unobserve(entry.target);
-    });
-  }, {
-    threshold: 0.1
-  });
+            rpmDivs.forEach(div => {
+                div.addEventListener('click', (e) => {
+                    const idx = Number(div.dataset.index || 0);
+                    if (!idx) return;
+                    if (currentIndex === idx) {
+                        closeCurrent();
+                        return;
+                    }
+                    openIndex(idx);
+                });
+            });
 
-  elements.forEach(el => observer.observe(el));
-});
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const slideInElements = document.querySelectorAll('.slide-in');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Trigger animation when element comes into view
-        entry.target.classList.add('visible');
-      } else {
-        // Remove animation class when element leaves view
-        entry.target.classList.remove('visible');
-      }
-    });
-  }, {
-    threshold: 0.3,
-    rootMargin: '0px 0px -50px 0px'
-  });
-
-  slideInElements.forEach(el => observer.observe(el));
-});
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const rpmDivs = Array.from(document.querySelectorAll('[data-rpm-toggle]'));
-    const img = document.getElementById('rpm-img');
-    const globalClose = document.getElementById('rpm-global-close');
-    let currentIndex = null;
-
-    const defaultSrc = 'images_webp/platinumHTML/3200rpm/default.webp';
-    const srcMap = {
-        1: 'images_webp/platinumHTML/3200rpm/s1.webp',
-        2: 'images_webp/platinumHTML/3200rpm/s2.webp',
-        3: 'images_webp/platinumHTML/3200rpm/s3.webp',
-        4: 'images_webp/platinumHTML/3200rpm/s4.webp',
-        5: 'images_webp/platinumHTML/3200rpm/s5.webp'
-    };
-
-    rpmDivs.forEach(div => {
-        div.addEventListener('click', (e) => {
-            const idx = Number(div.dataset.index || 0);
-            if (!idx) return;
-            if (currentIndex === idx) {
+            globalClose.addEventListener('click', (e) => {
+                e.stopPropagation();
                 closeCurrent();
-                return;
-            }
-            openIndex(idx);
-        });
-    });
-
-    globalClose.addEventListener('click', (e) => {
-        e.stopPropagation();
-        closeCurrent();
-    });
-
-    // Navigation buttons
-    const upBtn = document.getElementById('slideUp');
-    const downBtn = document.getElementById('slideDown');
-
-    if (upBtn) {
-        upBtn.addEventListener('click', () => {
-            if (!currentIndex) {
-                openIndex(1);
-            } else {
-                const nextIdx = currentIndex === 1 ? 5 : currentIndex - 1;
-                openIndex(nextIdx);
-            }
-        });
-    }
-
-    if (downBtn) {
-        downBtn.addEventListener('click', () => {
-            if (!currentIndex) {
-                openIndex(1);
-            } else {
-                const nextIdx = currentIndex === 5 ? 1 : currentIndex + 1;
-                openIndex(nextIdx);
-            }
-        });
-    }
-
-    function openIndex(idx) {
-        // close previous
-        if (currentIndex) {
-            const prev = rpmDivs.find(d => Number(d.dataset.index) === currentIndex);
-            if (prev) prev.querySelector('.rpm-content').style.maxHeight = '0px';
-        }
-
-        const target = rpmDivs.find(d => Number(d.dataset.index) === idx);
-        if (!target) return;
-        const content = target.querySelector('.rpm-content');
-        content.style.maxHeight = content.scrollHeight + 'px';
-        currentIndex = idx;
-
-        globalClose.classList.remove('opacity-0', 'pointer-events-none');
-        globalClose.classList.add('opacity-100', 'pointer-events-auto');
-
-        changeImage(srcMap[idx] || defaultSrc);
-    }
-
-    function closeCurrent() {
-        if (!currentIndex) return;
-        const prev = rpmDivs.find(d => Number(d.dataset.index) === currentIndex);
-        if (prev) prev.querySelector('.rpm-content').style.maxHeight = '0px';
-        currentIndex = null;
-
-        globalClose.classList.add('opacity-0', 'pointer-events-none');
-        globalClose.classList.remove('opacity-100', 'pointer-events-auto');
-
-        changeImage(defaultSrc);
-    }
-
-    function changeImage(nextSrc) {
-        if (!img) return;
-        // Fade out and slide to left
-        img.style.opacity = '0';
-        img.style.transform = 'translateX(-100%)';
-        const handler = () => {
-            img.removeEventListener('transitionend', handler);
-            // Temporarily disable transition to set new image and position
-            img.style.transition = 'none';
-            img.src = nextSrc;
-            img.style.transform = 'translateX(100%)';
-            img.style.opacity = '0';
-            requestAnimationFrame(() => {
-                // Re-enable transition and animate in from right with fade
-                img.style.transition = '';
-                img.style.transform = 'translateX(0)';
-                img.style.opacity = '1';
             });
-        };
-        img.addEventListener('transitionend', handler);
-    }
-});
-</script>
+
+            // Navigation buttons
+            const upBtn = document.getElementById('slideUp');
+            const downBtn = document.getElementById('slideDown');
+
+            if (upBtn) {
+                upBtn.addEventListener('click', () => {
+                    if (!currentIndex) {
+                        openIndex(1);
+                    } else {
+                        const nextIdx = currentIndex === 1 ? 5 : currentIndex - 1;
+                        openIndex(nextIdx);
+                    }
+                });
+            }
+
+            if (downBtn) {
+                downBtn.addEventListener('click', () => {
+                    if (!currentIndex) {
+                        openIndex(1);
+                    } else {
+                        const nextIdx = currentIndex === 5 ? 1 : currentIndex + 1;
+                        openIndex(nextIdx);
+                    }
+                });
+            }
+
+            function openIndex(idx) {
+                // close previous
+                if (currentIndex) {
+                    const prev = rpmDivs.find(d => Number(d.dataset.index) === currentIndex);
+                    if (prev) prev.querySelector('.rpm-content').style.maxHeight = '0px';
+                }
+
+                const target = rpmDivs.find(d => Number(d.dataset.index) === idx);
+                if (!target) return;
+                const content = target.querySelector('.rpm-content');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                currentIndex = idx;
+
+                globalClose.classList.remove('opacity-0', 'pointer-events-none');
+                globalClose.classList.add('opacity-100', 'pointer-events-auto');
+
+                changeImage(srcMap[idx] || defaultSrc);
+            }
+
+            function closeCurrent() {
+                if (!currentIndex) return;
+                const prev = rpmDivs.find(d => Number(d.dataset.index) === currentIndex);
+                if (prev) prev.querySelector('.rpm-content').style.maxHeight = '0px';
+                currentIndex = null;
+
+                globalClose.classList.add('opacity-0', 'pointer-events-none');
+                globalClose.classList.remove('opacity-100', 'pointer-events-auto');
+
+                changeImage(defaultSrc);
+            }
+
+            function changeImage(nextSrc) {
+                if (!img) return;
+                // Fade out and slide to left
+                img.style.opacity = '0';
+                img.style.transform = 'translateX(-100%)';
+                const handler = () => {
+                    img.removeEventListener('transitionend', handler);
+                    // Temporarily disable transition to set new image and position
+                    img.style.transition = 'none';
+                    img.src = nextSrc;
+                    img.style.transform = 'translateX(100%)';
+                    img.style.opacity = '0';
+                    requestAnimationFrame(() => {
+                        // Re-enable transition and animate in from right with fade
+                        img.style.transition = '';
+                        img.style.transform = 'translateX(0)';
+                        img.style.opacity = '1';
+                    });
+                };
+                img.addEventListener('transitionend', handler);
+            }
+        });
+    </script>
 
     <script src="./includes/awareness-carousel.js"></script>
-    
+
     <div id="cookieBanner" class="fixed bottom-[5vw] px-[5%] xl:bottom-[3vw] xl:px-[5%] w-full text-white z-50 hidden">
-        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto lg:mx-0 w-auto lg:w-[450px] 3xl:w-[580px] rounded-xl bg-black/40 backdrop-blur-3xl p-[5%] lg:p-[3%] xl:p-[2%] flex flex-col justify-between items-center gap-[3vw] xl:gap-[1vw]">
+        <div
+            class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto lg:mx-0 w-auto lg:w-[450px] 3xl:w-[580px] rounded-xl bg-black/40 backdrop-blur-3xl p-[5%] lg:p-[3%] xl:p-[2%] flex flex-col justify-between items-center gap-[3vw] xl:gap-[1vw]">
             <div class="flex justify-center items-center gap-2 xs:gap-4 md:gap-4">
-                <p class="text-sm xs:text-xl md:text-3xl lg:text-lg 3xl:text-2xl">Оваа веб-страница користи колачиња за анализа и подобрување на искуството.</p> 
-                <i class="fa-solid fa-cookie text-2xl xs:text-4xl md:text-6xl lg:text-3xl 3xl:text-5xl flex justify-center items-center"></i>
+                <p class="text-sm xs:text-xl md:text-3xl lg:text-lg 3xl:text-2xl">Оваа веб-страница користи колачиња за
+                    анализа и подобрување на искуството.</p>
+                <i
+                    class="fa-solid fa-cookie text-2xl xs:text-4xl md:text-6xl lg:text-3xl 3xl:text-5xl flex justify-center items-center"></i>
             </div>
             <div class="flex gap-[6%] w-full text-base xs:text-xl md:text-3xl lg:text-xl 3xl:text-3xl">
-              <button onclick="rejectCookies()" class="border w-[47%] border-white py-[1%] rounded-xl">Одбиј</button>
-              <button onclick="acceptCookies()" class="bg-white w-[47%] text-black py-[1%] rounded-xl">Прифати</button>
+                <button onclick="rejectCookies()" class="border w-[47%] border-white py-[1%] rounded-xl">Одбиј</button>
+                <button onclick="acceptCookies()"
+                    class="bg-white w-[47%] text-black py-[1%] rounded-xl">Прифати</button>
             </div>
         </div>
     </div>
 
     <script src="cookie.js"></script>
 
-<div class="fixed bottom-[5%] left-[5%] z-[9900]">
-  <div class="relative inline-block">
-    <p id="cartBadge" class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] sm:text-xs md:text-base lg:text-[12px] xl:text-xs rounded-full px-2 py-1 leading-none">0</p>
-    <a id="checkOutBtn" href="checkOut.html" class="group flex items-center bg-[#484848] border border-white text-white rounded-full py-1 px-2 xs:py-3 xs:px-3 md:py-4 md:px-4 lg:py-2 lg:px-3 text-lg xs:text-2xl md:text-3xl lg:text-xl 2xl:text-2xl gap-0 hover:gap-1 overflow-hidden">
-      <i class="fa-solid fa-basket-shopping"></i>
-      <p class="opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">Види кошничка</p>
-    </a>
-  </div>
-</div>
+    <div class="fixed bottom-[5%] left-[5%] z-[9900]">
+        <div class="relative inline-block">
+            <p id="cartBadge"
+                class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] sm:text-xs md:text-base lg:text-[12px] xl:text-xs rounded-full px-2 py-1 leading-none">
+                0</p>
+            <a id="checkOutBtn" href="checkOut.html"
+                class="group flex items-center bg-[#484848] border border-white text-white rounded-full py-1 px-2 xs:py-3 xs:px-3 md:py-4 md:px-4 lg:py-2 lg:px-3 text-lg xs:text-2xl md:text-3xl lg:text-xl 2xl:text-2xl gap-0 hover:gap-1 overflow-hidden">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <p
+                    class="opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">
+                    Види кошничка</p>
+            </a>
+        </div>
+    </div>
 
-<script>
+    <script>
 
-function updateCartBadge(){
-  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-  let totalQty = 0;
-  cart.forEach(item => {
-    totalQty += (item.qty || 1);
-  });
-  const badge = document.getElementById('cartBadge');
-  if (badge) {
-    if (totalQty === 0) {
-      badge.style.display = "none";
-    } else {
-      badge.style.display = "inline-flex";
-      badge.textContent = totalQty >= 100 ? "99+" : totalQty.toString();
-    }
-  }
-}
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            let totalQty = 0;
+            cart.forEach(item => {
+                totalQty += (item.qty || 1);
+            });
+            const badge = document.getElementById('cartBadge');
+            if (badge) {
+                if (totalQty === 0) {
+                    badge.style.display = "none";
+                } else {
+                    badge.style.display = "inline-flex";
+                    badge.textContent = totalQty >= 100 ? "99+" : totalQty.toString();
+                }
+            }
+        }
 
-// Update badge when localStorage changes from other pages/tabs
-window.addEventListener('storage', (e) => {
-  if(e.key === 'cart'){
-    updateCartBadge();
-  }
-});
+        // Update badge when localStorage changes from other pages/tabs
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'cart') {
+                updateCartBadge();
+            }
+        });
 
-(function(){
-  const addBtn = document.getElementById('modalAddToCart');
-  const checkOutBtn = document.getElementById('checkOutBtn');
+        (function () {
+            const addBtn = document.getElementById('modalAddToCart');
+            const checkOutBtn = document.getElementById('checkOutBtn');
 
-  // Update badge on page load
-  updateCartBadge();
-  
-  if(!addBtn) return;
-  
-  addBtn.addEventListener('click', (e)=>{
-    e.preventDefault();
-    const nameEl = document.getElementById('modal-title');
-    const priceEl = document.getElementById('modal-price');
-    const imgEl = document.getElementById('modal-img');
-    if(!nameEl || !priceEl) return;
-    const name = nameEl.textContent.trim();
-    const img = imgEl ? imgEl.src : '';
-    const digits = priceEl.textContent.replace(/\D/g,'');
-    const price = parseInt(digits) || 0;
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    cart.push({ id: Date.now(), name, price, qty: 1, image: img });
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartBadge();
+            // Update badge on page load
+            updateCartBadge();
 
-    if(checkOutBtn){
-      const pEl = checkOutBtn.querySelector('p');
-      if(pEl){
-        const defaultText = ' Види кошничка';
-        pEl.textContent = ' Додадено во кошничка';
-        pEl.classList.remove('opacity-0', 'max-w-0');
-        pEl.classList.add('opacity-100', 'max-w-xs');
-        setTimeout(()=>{
-          pEl.textContent = defaultText;
-          pEl.classList.remove('opacity-100', 'max-w-xs');
-          pEl.classList.add('opacity-0', 'max-w-0');
-        }, 2500);
-      }
-    }
-  });
-})();
+            if (!addBtn) return;
 
-</script>
+            addBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const nameEl = document.getElementById('modal-title');
+                const priceEl = document.getElementById('modal-price');
+                const imgEl = document.getElementById('modal-img');
+                if (!nameEl || !priceEl) return;
+                const name = nameEl.textContent.trim();
+                const img = imgEl ? imgEl.src : '';
+                const digits = priceEl.textContent.replace(/\D/g, '');
+                const price = parseInt(digits) || 0;
+                const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                cart.push({ id: Date.now(), name, price, qty: 1, image: img });
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartBadge();
+
+                if (checkOutBtn) {
+                    const pEl = checkOutBtn.querySelector('p');
+                    if (pEl) {
+                        const defaultText = ' Види кошничка';
+                        pEl.textContent = ' Додадено во кошничка';
+                        pEl.classList.remove('opacity-0', 'max-w-0');
+                        pEl.classList.add('opacity-100', 'max-w-xs');
+                        setTimeout(() => {
+                            pEl.textContent = defaultText;
+                            pEl.classList.remove('opacity-100', 'max-w-xs');
+                            pEl.classList.add('opacity-0', 'max-w-0');
+                        }, 2500);
+                    }
+                }
+            });
+        })();
+
+    </script>
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-

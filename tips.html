@@ -215,27 +215,6 @@
     </div>
   </div>
 
-  <div class="w-full h-screen bg-gradient-to-b from-[#484848] to-black/60">
-
-    <div id="tips"
-      class="flex flex-col justify-center items-center px-[5%] xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
-      <div id="tabs" class="flex justify-between items-center w-full px-[5%] text-sm">
-        <p
-          class="bg-[#484848] text-white border-x-4 border-t-4 border-white px-2 py-2 -mb-1 rounded-tl-xl rounded-tr-xl z-10">
-          Теписи</p>
-        <p
-          class="bg-black/10  text-white/70 border-x-2 border-t-2 border-white/70 px-2 py-2 -mb-2 rounded-tl-xl rounded-tr-xl">
-          Шампон</p>
-        <p
-          class="bg-black/10  text-white/70 border-x-2 border-t-2 border-white/70 px-2 py-2 -mb-2 rounded-tl-xl rounded-tr-xl">
-          Останато</p>
-      </div>
-      <div id="tipsContent" class="w-full border-4 border-white h-screen rounded-xl bg-[#484848]">
-
-      </div>
-    </div>
-  </div>
-
   <div id="spacer" class="w-full h-[10vh] bg-gradient-to-b from-black/60 to-black"></div>
 
   <div class="px-[5%] w-full bg-black">
@@ -292,12 +271,9 @@
         <p class="text-white/70 text-base xs:text-2xl md:text-3xl lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl">
           Претплати се и добивај новости, совети и ексклузивни понуди директно на е-пошта.</p>
         <div class="flex gap-2">
-          <form action="https://formsubmit.co/43b21711b46354ed9c0946432e5fe177" method="POST"
+          <form id="subscribeForm" action="https://api.web3forms.com/submit" method="POST"
             class="w-full flex flex-row lg:flex-col xl:flex-row gap-2 items-center text-base lg:text-sm">
-            <input type="hidden" name="_next" value="https://vinkom-mu.vercel.app/thankyouSub.html">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off">
-            <input type="hidden" name="_subject" value="Претплата">
+            <input type="hidden" name="access_key" value="6c1d84bc-0208-463a-9f71-e42b2b89ca44">
             <input id="subscribeEmail" type="email" name="email" required placeholder="E-mail"
               class="outline-none w-[69%] lg:w-full xl:w-[69%] border border-white/70 rounded-xl px-[4%] py-[3%] bg-transparent text-white my-[5%] lg:my-0" />
             <button type="submit"
@@ -305,6 +281,37 @@
           </form>
         </div>
       </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const subscribeForm = document.getElementById('subscribeForm');
+    if (!subscribeForm) return;
+
+    subscribeForm.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(subscribeForm);
+
+      try {
+        const response = await fetch(subscribeForm.action, {
+          method: 'POST',
+          body: formData,
+        });
+
+        const result = await response.json();
+        if (response.ok && result.success) {
+          window.location.href = 'https://vinkom-mu.vercel.app/thankyouSub.html';
+          return;
+        }
+
+        console.error('Web3Forms submission failed', result);
+        alert('Внесот не успеа. Обидете се повторно.');
+      } catch (error) {
+        console.error('Web3Forms submission error', error);
+        alert('Внесот не успеа. Обидете се повторно.');
+      }
+    });
+  });
+</script>
     </div>
   </div>
 

@@ -1,860 +1,1221 @@
 ﻿<!DOCTYPE html>
 <html lang="mk">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="За Нас - KIRBY бренд кој нуди американски производи, експертиза и премиум поддршка за клиентите.">
-    <title>KIRBY | За Нас</title>
-    <link href="./output.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gidole&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/4baf646c88.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://gidole.github.io/GidoleFont/gidoleFont.css">
-    <link rel="icon" type="image/png" href="images_webp/logoW.webp">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="За Нас - KIRBY бренд кој нуди американски производи, експертиза и премиум поддршка за клиентите.">
+  <title>KIRBY | За Нас</title>
+  <link href="./output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gidole&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4baf646c88.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://gidole.github.io/GidoleFont/gidoleFont.css">
+  <link rel="icon" type="image/png" href="images_webp/logoW.webp">
 
-    <style>
-        @import url('https://gidole.github.io/GidoleFont/gidoleFont.css');
+  <style>
+    @import url('https://gidole.github.io/GidoleFont/gidoleFont.css');
 
-        .font-gidole {
-            font-family: 'Gidole', sans-serif !important;
-        }
-        .modal-overlay { transition: opacity 200ms ease; opacity: 0; pointer-events: none; }
-        .modal-overlay.visible { opacity: 1; pointer-events: auto; background-color: rgba(0,0,0,0.45); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
-        .modal-content { transform: translateY(2vh) scale(0.98); opacity: 0; transition: transform 200ms cubic-bezier(0.2,0,0.2,1), opacity 200ms ease; }
-        .modal-content.show { transform: translateY(0) scale(1); opacity: 1; }
-        @media (max-width: 768px){ .modal-content { flex-direction: column; padding: 3% !important; } }
-        /* Custom scrollbar for modals */
-        .modal-content::-webkit-scrollbar { width: 10px; }
-        .modal-content::-webkit-scrollbar-track { background: transparent; }
-        .modal-content::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.12); border-radius: 9999px; border: 2px solid transparent; background-clip: padding-box; }
-        .modal-content { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.12) transparent; }
-
-        .reveal-letters span {
-          opacity: 0;
-          transform: translateY(20px);
-          display: inline-block;
-          transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .reveal-visible span {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        #infoDropdownMenu {
-          -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
-        }
-
-        #infoChevron,
-        #langChevron {
-          display: inline-block;
-          opacity: 0;
-          transform: rotate(0deg);
-          transition: transform .25s ease, opacity .15s ease;
-        }
-
-        #infoDropdownButton:hover #infoChevron,
-        #langDropdownButton:hover #langChevron {
-          opacity: 1;
-        }
-
-        #infoChevron.rotated,
-        #langChevron.rotated {
-          transform: rotate(180deg);
-        }
-
-        #mobileInfoChevron {
-          display: inline-block;
-          transition: transform .25s ease;
-        }
-
-        #mobileInfoChevron.rotated {
-          transform: rotate(180deg);
-        }
-
-        #mobileInfoDropdownMenu {
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height .3s ease;
-        }
-
-        #mobileInfoDropdownMenu.open {
-          max-height: 500px;
-        }
-
-        #mobileLangDropdownMenu {
-          max-height: 0;
-          overflow: hidden;
-          opacity: 0;
-          visibility: hidden;
-          transform: translateY(-6px) scaleY(0.98);
-          transform-origin: top;
-          transition: max-height .28s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1);
-        }
-
-        #mobileLangDropdownMenu.open {
-          max-height: 240px;
-          opacity: 1;
-          visibility: visible;
-          transform: translateY(0) scaleY(1);
-        }
-
-        /* Triggered menu (mobile) smooth open/close */
-        #triggeredMenu {
-          max-height: 0;
-          overflow: hidden;
-          opacity: 0;
-          transform: translateY(-8px);
-          transition: max-height .32s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1);
-        }
-
-        #triggeredMenu.open {
-          max-height: 800px;
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        #mobileNav.mobile-open {
-          background-color: rgba(0,0,0,0.25) !important;
-        }
-    </style>
-</head>
-<body class="overflow-x-hidden font-gidole bg-[#484848] w-full relative">
-
-    <div class="px-[5%] w-full">
-        <div id="nav" class="w-full h-[10vh] max-h-[110px] rounded-lg justify-between items-center bg-transparent hover:bg-black/40 backdrop-blur-sm hover:backdrop-blur-lg my-[1.5%] px-[2%] text-[#c1c1c1] fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden lg:flex xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
-            <a id="logo" href="index.html" class="text-4xl 2xl:text-5xl font-medium hover:text-white transition-all duration-300 w-[31%] xl:w-[26%] 2xl:w-1/4 text-start"><img src="logos/LOGO ZAEDNO7.png" class="h-full w-auto"></a>
-            <div class="flex gap-1 items-center justify-center w-1/2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
-                <a href="platinum.html" class="hover:text-white px-1 transition-all duration-300">&nbsp;&nbsp;Platinum</a>
-                <a href="extras.html"   class="hover:text-white px-1 transition-all duration-300">Додатоци</a>
-                <a href="aboutus.html"  class="hover:text-white px-1 transition-all duration-300">За Нас</a>
-                <div class="relative">
-                    <button id="infoDropdownButton" type="button" aria-expanded="false" class="flex px-2 py-2 rounded-t-xl w-[117px] xl:w-[129px] 2xl:w-[135px] 3xl:w-[146px] items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
-                        Инфо центар
-                        <span class="pb-[4px] pl-[1px]"><i id="infoChevron" class="fa-solid fa-chevron-down text-[10px] xl:text-xs hidden hover:block"></i></span>
-                    </button>
-                    <div id="infoDropdownMenu" class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-0 transition-all duration-300 ease-out z-50 flex flex-col w-[117px] xl:w-[129px] 2xl:w-[135px] 3xl:w-[146px] shadow-2xl shadow-black">
-                        <a href="howTo.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Видео водич</a>
-                        <a href="tips.html"  class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Совети</a>
-                        <a href="blog.html"  class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Блог</a>
-                        <a href="faq.html"   class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap  rounded-b-xl pb-2">FAQ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="flex items-center justify-end h-full rounded-full w-[30.5%] xl:w-[26%] 2xl:w-1/4 lg:gap-1 3xl:gap-2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
-                <a href="tradeIn.html" class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Замени&nbsp;&nbsp;</a>                    
-                <a href="book.html"    class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Закажи презентација&nbsp;&nbsp;</a>   
-                <div class="relative">
-                    <button id="langDropdownButton" type="button" aria-expanded="false" class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
-                        <img src="flags/macedonia.png" class="h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px] rounded-full">
-                    </button>
-                    <div id="langDropdownMenu" class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
-                        <a href="#" class="block py-2 3xl:py-3 rounded-t-xl hover:text-white transition-all duration-300"><img src="flags/britain.png" class="rounded-full h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px]"></a>
-                        <a href="#" class="block rounded-b-xl hover:text-white transition-all duration-300">              <img src="flags/albania.png" class="rounded-full h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px]"></a>
-                    </div>
-                </div>     
-            </div>
-        </div>
-    </div>
-
-    <div id="mobileNav" class="fixed top-[2vh] left-1/2 -translate-x-1/2 z-[9990] lg:hidden w-[90vw] text-white backdrop-blur-3xl p-[5%] md:p-[3%] flex-col rounded-xl bg-black/25 xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691px]">
-      <div id="mainMenu" class="flex justify-between items-center">
-        <div class="relative">
-              <button id="mobileLangDropdownButton" type="button" aria-expanded="false" class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap text-white">
-                <img src="flags/macedonia.png" class="h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px] rounded-full">
-            </button>
-              <div id="mobileLangDropdownMenu" class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
-                <a href="#" class="block hover:text-white transition-all duration-300 py-2 xs:py-3 md:py-4"><img src="flags/britain.png" class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
-                <a href="#" class="block hover:text-white transition-all duration-300">             <img src="flags/albania.png" class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
-            </div>
-        </div>
-        <a href="index.html" class="max-w-[40%] h-full"><img src="logos/LOGO ZAEDNO7.png" class="h-full"></a>
-        <button id="mobileMenuToggle" class="text-white"><i class="fa-solid fa-bars text-[20px] md:text-[30px]"></i></button>
-      </div>
-      <div id="triggeredMenu" class="flex flex-col gap-[1vh] w-full justify-center items-center text-lg md:text-xl">
-        <a href="index.html"    class="text-center pt-[1vh]">Дома</a>
-        <a href="platinum.html" class="text-center">Platinum</a>
-        <a href="extras.html"   class="text-center">Додатоци</a>
-        <a href="book.html"     class="text-center">Закажи презентација</a>
-        <a href="tradeIn.html"  class="text-center">Замени</a>
-        <a href="aboutus.html"  class="text-center">За Нас</a>
-        <div class=" pb-[1vh]">
-            <button id="mobileInfoDropdownButton" type="button" aria-expanded="false" class=" text-white">Инфо центар&nbsp;<span class=""><i id="mobileInfoChevron" class="fa-solid fa-chevron-down text-sm"></i></span></button>
-            <div id="mobileInfoDropdownMenu" class="flex flex-col max-h-0 overflow-hidden text-base md:text-lg pl-[1vh]">
-                <a href="howTo.html" class="text-white/70 transition-all duration-300">Видео водич</a>
-                <a href="tips.html"  class="text-white/70 transition-all duration-300">Совети</a>
-                <a href="blog.html"  class="text-white/70 transition-all duration-300">Блог</a>
-                <a href="faq.html"   class="text-white/70 transition-all duration-300">FAQ</a>
-            </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="mobileNavSpacer" class="py-[2vh] block lg:hidden"><div class="w-full py-[5%] md:py-[3%]"><div class="w-full h-[28px] xs:h-[32px] md:h-[35px]"></div></div></div>
-
-    <script>
-    (function(){
-        const nav = document.getElementById('nav');
-        const spacer = document.getElementById('nav-spacer');
-        if(!nav) return;
-
-        // ensure smooth transition
-        nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
-        nav.style.willChange = 'transform, opacity';
-        nav.style.transform = nav.style.transform || 'translateY(0)';
-        nav.style.opacity = nav.style.opacity || '1';
-
-        // compute and set spacer height (px) so layout doesn't jump
-        function recompute(){
-            try{
-                const h = Math.ceil(nav.getBoundingClientRect().height);
-                if(spacer) spacer.style.height = h + 'px';
-            }catch(e){}
-        }
-        recompute();
-        window.addEventListener('resize', recompute, {passive:true});
-
-        let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
-        let ticking = false;
-
-        function hideNav(){
-            const h = Math.ceil(nav.getBoundingClientRect().height) + 4;
-            nav.style.transform = 'translateY(-' + h + 'px)';
-            nav.style.opacity = '0';
-        }
-        function showNav(){
-            nav.style.transform = 'translateY(0)';
-            nav.style.opacity = '1';
-        }
-
-        function onScroll(){
-            const current = window.pageYOffset || document.documentElement.scrollTop;
-            if(current > lastScroll + 6){
-                hideNav();
-            } else if(current < lastScroll - 6){
-                showNav();
-            }
-            lastScroll = current <= 0 ? 0 : current;
-            ticking = false;
-        }
-
-        window.addEventListener('scroll', function(){
-            if(!ticking){ window.requestAnimationFrame(onScroll); ticking = true; }
-        }, {passive:true});
-    })();
-
-    </script>
-
-<div class="w-full">
-        <div class="w-full flex flex-col justify-center items-center  bg-[#484848] xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
-            <div id="1992" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
-                <div class="w-[75%] lg:w-[40%] flex flex-col justify-center items-center gap-4">
-                    <div class="w-full text-white/70 flex lg:hidden flex-col justify-center items-start gap-2 lg:gap-10 text-[8px] sm:text-sm lg:text-lg"><p class="text-lg sm:text-3xl lg:text-6xl font-black text-white">Први чекори</p><p>Винком ја донесе компанијата Кирби во Македонија во 1992 година, започнувајќи ја својата работа со моделот G3 – уред што постави сосема нов стандард за хигиена во домот. Во период кога напредните системи за длабинско чистење беа речиси непознати, G3 привлече внимание преку домашните презентации, каде што семејствата можеа директно да се уверат во неговата моќ и ефикасност. Овие демонстрации станаа препознатлив знак за Винком, бидејќи токму на терен се покажува вистинската вредност на производот. Како фабрички овластен дистрибутер на Кирби со сопствен сервис и целосна поддршка за оригинални резервни делови и потрошен материјал, Винком изгради стабилна основа за доверба со своите клиенти. Нивната долгорочна посветеност на еден производ е силен доказ за квалитетот што го нudi системот. Со повеќе од три децении присутност на македонскиот пазар, компанијата докажува дека вложувањето во Кирби е инвестиција која постојано се исплатува.</p></div>
-                    <img class="w-full h-full" src="images_webp/aboutus/0000242.webp" loading="eager" alt="">
-                </div>
-                <div class="h-full w-[20%] lg:w-[16%] flex flex-col justify-end items-center">
-                    <div class="rounded-full w-[8vh] h-[8vh] lg:w-[12vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">1992</div>
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                </div>
-                <div class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl"><p class="text-5xl xl:text-6xl font-black text-white">Први чекори</p><p>Винком ја донесе компанијата Кирби во Македонија во 1992 година со моделот G3 – апарат што воведе сосема нов стандард за хигиена. Во време кога ваков систем беше реткост, демонстрациите им покажаа на македонските семејства што значи вистинско длабинско чистење. Првите домашни презентации ја потврдија моќта на системот. Со официјално дистрибутерство, сервис и редовни резервни делови, Винком постави цврста основа за доверлив и долгорочен однос со клиентите. Г3 моделот ја започна приказната за квалитет и иновација која трае и денес.</p></div>
-            </div>
-            <div id="1993" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
-                <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-start gap-4 lg:gap-10">
-                    <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white">Созревање</p>
-                    <p class="text-white/70 text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl">Година по успехот на G3, во Македонија пристигна G4 – подобрена верзија со модерен дизајн и практични механички унапредувања. Моторната асистенција значително го олеснуваше користењето, додека конструкцијата овозможуваше стабилни перформанси и долговечност. Деталните демонстрации во домовите ги запознаа корисниците со функционалноста на апаратот, што ја зголеми довербата во брендот и ја зацврсти позицијата на Винком на локалниот пазар. G4 стана модел кој ја обединува удобноста, ефикасноста и квалитетот, поставувајќи стандарди за следните генерации на Kirby апарати.</p>
-                    <img src="images_webp/aboutus/1993.webp" class="w-full h-full object-cover object-bottom lg:hidden rounded-xl shadow-2xl shadow-black" loading="lazy" alt=""></img>
-                </div>
-                <div class="h-[100vh] w-[20%] lg:w-[16%] flex flex-col justify-center items-center">
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                    <div class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">1993</div>
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                </div>
-                <div class="w-[40%] hidden lg:flex justify-center rounded-xl items-center">
-                    <img src="images_webp/aboutus/1993.webp" class="h-full w-full rounded-xl shadow-2xl shadow-black" loading="lazy" alt=""></img>
-                </div>
-            </div>
-            <div id="1997" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
-                <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-center gap-4">
-                    <div class="w-full text-white/70 flex lg:hidden flex-col justify-center items-start gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-lg"><p class="text-lg sm:text-3xl lg:text-6xl font-black text-white">NASA?</p><p>По успешниот G4, следеше G5 – модел препознатлив по темната виолетова боја и иновативниот вентилатор изработен од „Lexan“ материјал развиен со помош на технологија од NASA. Овој напредок овозможи поголема моќ на вшмукување и издржливост. Корисниците брзо го прифатија поради неговата сигурност и ефикасност, додека Винком ја продолжи мисијата да ја приближува најсовремената технологија до македонските домови. Презентациите дома им овозможија на клиентите лично да се уверат во иновациите и квалитетот на G5, зацврстувајќи доверба и лојалност кон брендот.</p></div>
-                    <img class="w-full rounded-xl shadow-2xl shadow-black h-full object-cover object-bottom" src="images_webp/aboutus/1997.webp" loading="lazy" alt="">
-                </div>
-                <div class="h-full w-[20%] flex flex-col justify-end items-center">
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                    <div class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">1997</div>
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                </div>
-                <div class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl"><p class="text-5xl xl:text-5xl font-black text-white">NASA?</p><p>По успешниот G4, следеше G5 – модел препознатлив по темната виолетова боја и иновативниот вентилатор изработен од „Lexan“ материјал развиен со помош на технологија од NASA. Овој напредок овозможи поголема моќ на вшмукување и издржливост. Корисниците брзо го прифатија поради неговата сигурност и ефикасност, додека Винком ја продолжи мисијата да ја приближува најсовремената технологија до македонските домови. Презентациите дома им овозможија на клиентите лично да се уверат во иновациите и квалитетот на G5, зацврстувајќи доверба и лојалност кон брендот.</p></div>
-            </div>
-            <div id="1999" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
-                <div class="w-[75%] lg:w-[40%] text-white/70 h-[80%] flex flex-col justify-center items-start gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl">
-                    <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white">Нови можности</p>
-                    <p>Gsix донесе посовремен изглед и подобрена четка за порамномерно и подлабоко чистење. Преносливиот шампонирач овозможуваше подобар резултат на меките подови, а апаратот го зголеми комфорот и ефикасноста. Клиентите бргу ја забележаа разликата во квалитетот, додека Винком преку редовна поддршка, сервис и оригинални делови ја одржуваше довербата во брендот. Gsix се истакна како модел што ја комбинира иновацијата и практичноста, обезбедувајќи стабилно и долгорочно решение за македонските семејства кои бараат квалитетно длабинско чистење.</p>
-                    <img class="w-full h-full object-cover object-bottom block lg:hidden rounded-xl shadow-2xl shadow-black" src="images_webp/aboutus/1999.webp" loading="lazy" alt="">
-                </div>
-                <div class="h-full w-[20%] flex flex-col justify-end items-center">
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                    <div class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs sm:text-sm md:text-base lg:text-2xl text-white">1999</div>
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                </div>
-                <div class="w-[40%] hidden lg:flex justify-center items-center">
-                    <img class="h-full w-full rounded-xl shadow-2xl shadow-black" src="images_webp/aboutus/1999.webp" loading="lazy" alt="">
-                </div>
-            </div>
-            <div class="w-[73.8%] mx-auto xs:w-[397px] sm:w-[422px] md:w-[505px]  h-2 bg-white/50 rounded-tl-xl rounded-br-xl block lg:hidden"></div>
-            <div id="2002" class="w-full px-[5%] flex flex-row-reverse lg:flex-row justify-between items-center">
-                <div class="w-[75%] lg:w-[40%] h-full flex flex-col justify-center items-start gap-4 lg:gap-10 text-white/70 text-[8px] sm:text-sm lg:text-lg">
-                    <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white flex lg:hidden">Моќно дуо</p>
-                    <p class="flex lg:hidden">По повод 10 години постоење, Винком ги претстави Ultimate G и Diamond Edition – два различни модели со ист фокус на квалитет и издржливост. Ultimate G нудеше стабилност, моќ и оптимална филтрација, додека Diamond Edition се истакнуваше по потивок режим и филтри за чувствителни површини. Двете верзии им овозможија на клиентите да изберат апарат што најмногу им одговара, додека Винком обезбеди сервис, поддршка и резервни делови. Со оваа понуда, компанијата ја потврди својата позиција како доверлив партнер и лидер во домашната хигиена.</p>
-                    <img class="h-full object-cover object-bottom w-full rounded-xl shadow-2xl shadow-black" src="images_webp/aboutus/2002.webp" loading="lazy" alt="">
-                </div>
-                <div class="h-full w-[20%] flex flex-col justify-end items-center">
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                    <div class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">2002</div>
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                </div>
-                <div class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl"><p class="text-5xl xl:text-6xl font-black text-white">Моќно дуо</p><p>По повод 10 години постоење, Винком ги претстави Ultimate G и Diamond Edition – два различни модели со ист фокус на квалитет и издржливост. Ultimate G нудеше стабилност, моќ и оптимална филтрација, додека Diamond Edition се истакнуваше по потивок режим и филтри за чувствителни површини. Двете верзии им овозможија на клиентите да изберат апарат што најмногу им одговара, додека Винком обезбеди сервис, поддршка и резервни делови. Со оваа понуда, компанијата ја потврди својата позиција како доверлив партнер и лидер во домашната хигиена.</p></div>
-            </div>
-            <div id="2006" class="w-full px-[5%] h-[100vh] flex flex-row-reverse lg:flex-row justify-between items-center">
-                <div class="w-[75%] lg:w-[40%] h-[80%] text-white/70 flex flex-col justify-center items-start text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl gap-4 lg:gap-10">
-                    <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white">Ново ниво</p>
-                    <p>Sentria донесе модерен и елегантен изглед, со LED светла, редизајнирана рачка и подобрена ергономија. Новите алатки овозможуваа поефикасно чистење на мебел и текстилни површини, што го направи моделот омилен меѓу корисниците. Признанието од Carpet and Rug Institute дополнително го потврди неговиот квалитет. Винком обезбеди професионален сервис и целосна поддршка, овозможувајќи доверба и сигурност за секој корисник. Sentria стана модел што ја спојува удобноста, ефикасноста и модерниот дизајн, продолжувајќи ја традицијата на квалитет во Македонија.</p>
-                    <img class="h-3/5 sm:h-1/2 object-cover object-bottom w-full block lg:hidden rounded-xl shadow-2xl shadow-black" src="images_webp/aboutus/2006.webp" loading="lazy" alt="">
-                </div>
-                <div class="h-full w-[20%] flex flex-col justify-end items-center">
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                    <div class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs sm:text-sm md:text-base lg:text-2xl text-white">2006</div>
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                </div>
-                <div class="w-[40%] hidden lg:flex justify-center items-center">
-                    <img class="h-full w-full rounded-xl shadow-2xl shadow-black" src="images_webp/aboutus/2006.webp" loading="lazy" alt="">
-                </div>
-            </div>
-            <div class="w-[73.8%] mx-auto xs:w-[397px] sm:w-[422px] md:w-[505px]  h-2 bg-white/50 rounded-tr-xl rounded-bl-xl block lg:hidden"></div>
-            <div id="2011" class="w-full px-[5%] h-[80%] flex justify-between items-center">
-                <div class="w-[75%] lg:w-[40%] h-full flex flex-col justify-center items-start text-[8px] sm:text-sm lg:text-lg text-white/70 gap-4 lg:gap-10">
-                    <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white flex lg:hidden">Тука кога најмногу треба</p>
-                    <p class="flex lg:hidden">Во 2011 година, Винком ја формира својата прва специјализирана служба за грижа на корисници. Тимот обезбедуваше теренска помош, брза достава на потрошен материјал и стручни совети за правилно користење на апаратите. Оваа услуга го подигна искуството на клиентите на ново ниво и ја зацврсти врската со купувачите. Со фокус на доверба и поддршка, Винком постави нов стандард за грижа кон корисниците, овозможувајќи секој клиент да биде сигурен дека добива експертска поддршка и долгорочно решение за чистење.</p>
-                    <img class="h-3/5 sm:h-1/2 object-cover object-center w-full rounded-xl shadow-2xl shadow-black" src="images_webp/aboutus/2011.webp" loading="lazy" alt="">
-                </div>
-                <div class="h-full w-[20%] flex flex-col justify-end items-center">
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                    <div class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">2011</div>
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                </div>
-                <div class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl"><p class="text-5xl xl:text-6xl font-black text-white">Тука кога најмногу треба</p><p>Во 2011 година, Винком ја формира својата прва специјализирана служба за грижа на корисници. Тимот обезбедуваше теренска помош, брза достава на потрошен материјал и стручни совети за правилно користење на апаратите. Оваа услуга го подигна искуството на клиентите на ново ниво и ја зацврсти врската со купувачите. Со фокус на доверба и поддршка, Винком постави нов стандард за грижа кон корисниците, овозможувајќи секој клиент да биде сигурен дека добива експертска поддршка и долгорочно решение за чистење.</p></div>
-            </div>
-            <div id="2012" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
-                <div class="w-[75%] lg:w-[40%] text-white/70 h-[80%] flex flex-col justify-center items-start gap-10 text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl">
-                    <div class="w-full flex flex-col justify-center items-center gap-4 lg:gap-10">
-                        <div class="text-[10rem] lg:text-[15rem]  lg:hidden h-full font-extrabold text-white -my-14 sm:-my-0" id="counter-mobile">0</div>
-                        <p class="text-white/70 lg:hidden text-lg lg:text-4xl mt-0 sm:mt-14">Години Винком</p>
-                        <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white text-start w-full">2 децении</p>
-                        <p>Sentria II пристигна токму кога Винком славеше две децении работа. Моделот се истакнуваше со практичен дизајн, лесна употреба и стабилна моќ на моторот, особено погоден за помали домови и чувствителни површини. Новите пакети со додатоци и HEPA филтер кеси овозможија почист воздух и поголема удобност за корисниците. Винком обезбеди комплетна поддршка и сервис, продолжувајќи ја довербата на клиентите во квалитетот на Kirby системите. Sentria II ја спои практичноста и ефикасноста во еден апарат што станува доверливо решение за секое семејство.</p>
-                    </div>
-
-                    <script>
-                    (function(){
-                      const counterEl = document.getElementById('counter-mobile');
-                      if(!counterEl) return;
-                    
-                      let hasRun = false;
-                    
-                      const observer = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                          if(entry.isIntersecting && !hasRun){
-                            hasRun = true;
-                            let count = 0;
-                            const target = 20;
-                            const duration = 1500;
-                            const stepTime = Math.floor(duration / target);
-
-                            const interval = setInterval(() => {
-                              count++;
-                              counterEl.textContent = count;
-                              if(count === target) {
-                                clearInterval(interval);
-                              }
-                            }, stepTime);
-                          }
-                        });
-                      }, { threshold: 0.5 });
-
-                      observer.observe(counterEl);
-                    })();
-                    </script>
-                </div>
-                <div class="h-full w-[20%] flex flex-col justify-end items-center">
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                    <div class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">2012</div>
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                </div>
-                <div class="w-[40%] h-[50vh] hidden lg:flex justify-center items-center">
-                    <div class="w-full h-screen flex flex-col justify-center items-center">
-                      <div class="text-xs lg:text-[15rem] font-extrabold text-white" id="counter-lg">0</div>
-                      <p class="text-white/70 text-xs lg:text-4xl mt-24">Години Винком</p>
-                    </div>
-
-                    <script>
-                    (function(){
-                      const counterEl = document.getElementById('counter-lg');
-                      if(!counterEl) return;
-                    
-                      let hasRun = false;
-                    
-                      const observer = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                          if(entry.isIntersecting && !hasRun){
-                            hasRun = true;
-                            let count = 0;
-                            const target = 20;
-                            const duration = 1500;
-                            const stepTime = Math.floor(duration / target);
-
-                            const interval = setInterval(() => {
-                              count++;
-                              counterEl.textContent = count;
-                              if(count === target) {
-                                clearInterval(interval);
-                              }
-                            }, stepTime);
-                          }
-                        });
-                      }, { threshold: 0.5 });
-
-                      observer.observe(counterEl);
-                    })();
-                    </script>
-                </div>
-            </div>
-            <div id="2014" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
-                <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-center gap-4 lg:gap-10">
-                    <div class="w-full text-white/70 flex lg:hidden flex-col justify-center items-center gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-lg">
-                        <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white text-start w-full">Симбол за трајност</p>
-                        <p>Во 2014 година, Kirby го одбележи својот јубилеј – 100 години иновации, патенти и квалитет. Истовремено, Винком веќе 22 години го претставуваше брендот во Македонија, создавајќи силна врска со локалните корисници. Овој спој на глобалното наследство и домашното искуство потврди посветеност кон сигурност, квалитет и континуирано усовршување. Јубилејот ја истакна важноста на традицијата и иновацијата, потврдувајќи дека довербата на клиентите е резултат на децении посветена работа и квалитетни производи кои успешно комбинираат технологија и практичност.</p>
-                    </div>
-                    <img src="images_webp/aboutus/2014.webp" class="w-full object-cover object-center" loading="lazy" alt="">
-                </div>
-                <div class="h-full w-[20%] flex flex-col justify-end items-center">
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                    <div class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">2014</div>
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                </div>
-                <div class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl"><p class="text-5xl xl:text-6xl font-black text-white">Симбол за трајност</p><p>Во 2014 година, Kirby го одбележи својот јубилеј – 100 години иновации, патенти и квалитет. Истовремено, Винком веќе 22 години го претставуваше брендот во Македонија, создавајќи силна врска со локалните корисници. Овој спој на глобалното наследство и домашното искуство потврди посветеност кон сигурност, квалитет и континуирано усовршување. Јубилејот ја истакна важноста на традицијата и иновацијата, потврдувајќи дека довербата на клиентите е резултат на децении посветена работа и квалитетни производи кои успешно комбинираат технологија и практичност.</p></div>
-            </div>
-            <div id="2015" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
-                <div class="w-[75%] lg:w-[40%] h-[80%] text-white/70 flex flex-col justify-center items-start gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl">
-                    <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white">Совршено, во секоја смисла</p>
-                    <p>Avalir донесе препознатлив баланс на сила, издржливост и практичност. Моделот нудеше стабилен мотор, едноставно ракување и широки можности за чистење на различни површини. Клиентите ценат неговата ефикасност, практичност и можност да се прилагоди на секое домаќинство. Винком го претстави како доверливо решение за домашната хигиена, со целосен сервис, оригинални делови и експертска поддршка. Avalir продолжува да ја зацврстува репутацијата на компанијата како лидер во квалитетното и сигурно длабинско чистење во македонските домови.</p>
-                    <img class="h-1/2 block lg:hidden object-cover object-bottom w-full rounded-xl shadow-2xl shadow-black" src="images_webp/aboutus/2015.webp" loading="lazy" alt="">            
-                </div>
-                <div class="h-full w-[20%] flex flex-col justify-end items-center">
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                    <div class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs sm:text-sm md:text-base lg:text-2xl text-white">2015</div>
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                </div>
-                <div class="w-[40%] hidden lg:flex justify-center items-center">
-                    <img class="h-full w-full rounded-xl shadow-2xl shadow-black" src="images_webp/aboutus/2015.webp" loading="lazy" alt="">
-                </div>
-            </div>
-            <div id="2017" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
-                <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-center text-white/70 gap-4 lg:gap-10 text-[8px] lg:text-lg">
-                    <p class="text-lg sm:text-3xl lg:text-6xl w-full text-start flex lg:hidden font-black text-white">Може ли подобро</p>
-                    <p class="flex lg:hidden text- sm:text-sm">Може. Avalir 2 го покажа постојаното унапредување на функционалноста и дизајнот. Со нови ергономски решенија, 15 алатки и напреден систем за шампонирање, моделот овозможува поефикасно и подлабоко чистење на сите површини. Клиентите ја ценат практичноста, удобноста и издржливоста, додека поддршката на Винком овозможува долгорочно и сигурно користење. Avalir 2 стана еден од најценетите апарати за домашна хигиена на македонскиот пазар, комбинирајќи иновации, квалитет и доверба во секојдневното чистење.</p>
-                    <img class="h-3/5 sm:h-1/2 object-cover object-center w-full rounded-xl shadow-2xl shadow-black" src="images_webp/aboutus/2017.webp" loading="lazy" alt="">
-                </div>
-                <div class="h-full w-[20%] flex flex-col justify-end items-center">
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                    <div class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">2017</div>
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                </div>
-                <div class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl"><p class="text-5xl xl:text-6xl font-black text-white">Може ли подобро</p><p>Може. Avalir 2 го покажа постојаното унапредување на функционалноста и дизајнот. Со нови ергономски решенија, 15 алатки и напреден систем за шампонирање, моделот овозможува поефикасно и подлабоко чистење на сите површини. Клиентите ја ценат практичноста, удобноста и издржливоста, додека поддршката на Винком овозможува долгорочно и сигурно користење. Avalir 2 стана еден од најценетите апарати за домашна хигиена на македонскиот пазар, комбинирајќи иновации, квалитет и доверба во секојдневното чистење.</p></div>
-            </div>
-            <div class="w-[73.8%] mx-auto xs:w-[397px] sm:w-[422px] md:w-[505px]  h-2 bg-white/50 rounded-tl-xl rounded-br-xl block lg:hidden"></div>
-            <div id="2022" class="w-full px-[5%] h-[100vh] flex flex-row-reverse lg:flex-row justify-between items-center">
-                <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-center gap-4 lg:gap-10">
-                        <img class="h-3/5 sm:h-1/2 object-cover object-center w-full rounded-xl shadow-2xl shadow-black" src="images_webp/aboutus/2022.jpg" loading="lazy" alt="">                    
-                    <div class="w-full text-white/70 flex lg:hidden flex-col justify-center items-start gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-lg">
-                        <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white">3 децении посветени</p>
-                        <p>Во 2022 година, Винком го прослави својот тридесетгодишен јубилеј како водечки претставник на Kirby во Македонија. Три децении посветена работа донесоа стабилна врска со клиентите, иновативни решенија и континуирана грижа за корисниците. Со комбинирање на традиција, искуство и модерни технологии, Винком ја потврди својата репутација како доверлив партнер кој секогаш овозможува висок квалитет на услуги, професионална поддршка и најдобри решенија за домашна хигиена.</p>
-                    </div>
-                </div>
-                <div class="h-full w-[20%] flex flex-col justify-end items-center">
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                    <div class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">2022</div>
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                </div>
-                <div class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl"><p class="text-5xl xl:text-6xl font-black text-white">3 децении посветени</p><p>Во 2022 година, Винком го прослави својот тридесетгодишен јубилеј како водечки претставник на Kirby во Македонија. Три децении посветена работа донесоа стабилна врска со клиентите, иновативни решенија и континуирана грижа за корисниците. Со комбинирање на традиција, искуство и модерни технологии, Винком ја потврди својата репутација како доверлив партнер кој секогаш овозможува висок квалитет на услуги, професионална поддршка и најдобри решенија за домашна хигиена.</p></div>
-            </div>
-            <div id="2024" class="w-full px-[5%] h-[100vh] flex flex-row-reverse lg:flex-row justify-between items-center">
-                <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-center gap-4 lg:gap-10">
-                    <div class="w-full text-white/70 flex lg:hidden flex-col justify-center items-start gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-lg"><p class="text-lg sm:text-3xl lg:text-6xl font-black text-white">Нов член</p><p>Во 2024 година, Kirby ја претстави својата најнова гордост — моделот Kirby Avalir Platinum, како дел од долгата традиција на квалитет и иновација. Овој „најлесен Kirby досега“ ја донесе врвната изработка, моќна вшмукувачка сила и модерен дизајн, подготвен за современи домови. Винком, како овластен дистрибутер, веднаш го воведе Platinum на македонскиот пазар, нудејќи го преку презентации и обезбедувајќи оригинални додатоци и сервис. Со тоа, Винком повторно ја потврди својата посветеност да им донесе на клиентите најново и најдобро од светот на домашната хигиена.</p></div>
-                    <img src="images_webp/aboutus/2024.webp" class="h-3/5 sm:h-1/2 w-full object-cover object-center rounded-xl shadow-2xl shadow-black" loading="lazy" alt="">
-                </div>
-                <div class="h-full w-[20%] flex flex-col justify-end items-center">
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                    <div class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">2024</div>
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                </div>
-                <div class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl"><p class="text-5xl xl:text-6xl font-black text-white">Нов член</p><p>Во 2024 година, Kirby ја претстави својата најнова гордост — моделот Kirby Avalir Platinum, како дел од долгата традиција на квалитет и иновација. Овој „најлесен Kirby досега“ ја донесе врвната изработка, моќна вшмукувачка сила и модерен дизајн, подготвен за современи домови. Винком, како овластен дистрибутер, веднаш го воведе Platinum на македонскиот пазар, нудејќи го преку презентации и обезбедувајќи оригинални додатоци и сервис. Со тоа, Винком повторно ја потврди својата посветеност да им донесе на клиентите најново и најдобро од светот на домашната хигиена.</p></div>
-            </div>
-            <div id="2026" class="w-full px-[5%] h-[100vh] flex flex-row-reverse lg:flex-row justify-between items-center">
-                <div class="w-[75%] lg:w-[40%] h-[80%] text-white/70 flex flex-col justify-center items-start gap-10 text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl"><p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white">Во чекор со времето</p><p>До ден денес, Vinkom е водечка сила на македонскиот пазар за Kirby системи. Со влог на континуирана поддршка, брз сервис, достапни оригинални делови и модерни модели — ги задржуваме довербата и лојалноста на своите клиенти. Додека светот се менува, ние остануваме доследни: секој нов корисник добива ист квалитет и грижа како оние од првиот ден. Нашата мрежа се шири, сегашните и идните потрошувачи ја препознаваат Винком како сигурен партнер за долгорочно чистење, поддршка и удобност.</p></div>
-                <div class="h-full w-[20%] flex flex-col justify-start items-center">
-                    <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
-                    <div class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">2026</div>
-                </div>
-                <div class="w-[40%] hidden lg:flex justify-center items-center">
-                    <img class="h-full w-full rounded-xl shadow-2xl shadow-black" src="" loading="lazy" alt="">
-                </div>
-            </div>
-        </div>
-</div>
-
-    <div class="w-full h-[10vh] bg-gradient-to-b from-transparent to-black"></div>
-
-    <button id="backToTop"
-            aria-label="Back to top"
-            aria-hidden="true"
-            class="fixed right-2 bottom-3 md:right-5 md:bottom-10  z-60 bg-white/10 hover:bg-white/10 text-white p-2 rounded-full shadow-2xl transition-all duration-200 transform scale-95 opacity-0 pointer-events-none">
-      <i class="fa-solid fa-arrow-up"></i>
-    </button>
-
-<div class="fixed bottom-[5%] left-[5%] z-[9900]">
-  <div class="relative inline-block">
-    <p id="cartBadge" class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] sm:text-xs md:text-base lg:text-[12px] xl:text-xs rounded-full px-2 py-1 leading-none">0</p>
-    <a id="checkOutBtn" href="checkOut.html" class="group flex items-center bg-[#484848] border border-white text-white rounded-full py-1 px-2 xs:py-3 xs:px-3 md:py-4 md:px-4 lg:py-2 lg:px-3 text-lg xs:text-2xl md:text-3xl lg:text-xl 2xl:text-2xl gap-0 hover:gap-1 overflow-hidden">
-      <i class="fa-solid fa-basket-shopping"></i>
-      <p class="opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">Види кошничка</p>
-    </a>
-  </div>
-</div>
-
-<script>
-
-function updateCartBadge(){
-  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-  let totalQty = 0;
-  cart.forEach(item => {
-    totalQty += (item.qty || 1);
-  });
-  const badge = document.getElementById('cartBadge');
-  if (badge) {
-    if (totalQty === 0) {
-      badge.style.display = "none";
-    } else {
-      badge.style.display = "inline-flex";
-      badge.textContent = totalQty >= 100 ? "99+" : totalQty.toString();
+    .font-gidole {
+      font-family: 'Gidole', sans-serif !important;
     }
-  }
-}
 
-// Update badge when localStorage changes from other pages/tabs
-window.addEventListener('storage', (e) => {
-  if(e.key === 'cart'){
-    updateCartBadge();
-  }
-});
+    .modal-overlay {
+      transition: opacity 200ms ease;
+      opacity: 0;
+      pointer-events: none;
+    }
 
-(function(){
-  const addBtn = document.getElementById('modalAddToCart');
-  const checkOutBtn = document.getElementById('checkOutBtn');
+    .modal-overlay.visible {
+      opacity: 1;
+      pointer-events: auto;
+      background-color: rgba(0, 0, 0, 0.45);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+    }
 
-  // Update badge on page load
-  updateCartBadge();
-  
-  if(!addBtn) return;
-  
-  addBtn.addEventListener('click', (e)=>{
-    e.preventDefault();
-    const nameEl = document.getElementById('modal-title');
-    const priceEl = document.getElementById('modal-price');
-    const imgEl = document.getElementById('modal-img');
-    if(!nameEl || !priceEl) return;
-    const name = nameEl.textContent.trim();
-    const img = imgEl ? imgEl.src : '';
-    const digits = priceEl.textContent.replace(/\D/g,'');
-    const price = parseInt(digits) || 0;
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    cart.push({ id: Date.now(), name, price, qty: 1, image: img });
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartBadge();
+    .modal-content {
+      transform: translateY(2vh) scale(0.98);
+      opacity: 0;
+      transition: transform 200ms cubic-bezier(0.2, 0, 0.2, 1), opacity 200ms ease;
+    }
 
-    if(checkOutBtn){
-      const pEl = checkOutBtn.querySelector('p');
-      if(pEl){
-        const defaultText = ' Види кошничка';
-        pEl.textContent = ' Додадено во кошничка';
-        pEl.classList.remove('opacity-0', 'max-w-0');
-        pEl.classList.add('opacity-100', 'max-w-xs');
-        setTimeout(()=>{
-          pEl.textContent = defaultText;
-          pEl.classList.remove('opacity-100', 'max-w-xs');
-          pEl.classList.add('opacity-0', 'max-w-0');
-        }, 2500);
+    .modal-content.show {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .modal-content {
+        flex-direction: column;
+        padding: 3% !important;
       }
     }
-  });
-})();
 
-</script>
-
-
-    <script>
-(function(){
-  const button = document.getElementById('infoDropdownButton');
-  const menu = document.getElementById('infoDropdownMenu');
-  const chevron = document.getElementById('infoChevron');
-  if (!button || !menu) return;
-
-  const openMenu = () => {
-    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-    menu.classList.add('opacity-100', 'visible', 'translate-y-0');
-    button.setAttribute('aria-expanded', 'true');
-    button.classList.remove('bg-transparent');
-    button.classList.add('bg-black/80', 'text-white');
-    if (chevron) chevron.classList.add('rotated');
-  };
-
-  const closeMenu = () => {
-    menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
-    menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
-    button.setAttribute('aria-expanded', 'false');
-    button.classList.remove('bg-black/80', 'text-white');
-    button.classList.add('bg-transparent');
-    if (chevron) chevron.classList.remove('rotated');
-  };
-
-  const toggleMenu = (event) => {
-    event.stopPropagation();
-    if (menu.classList.contains('opacity-0')) {
-      openMenu();
-    } else {
-      closeMenu();
+    /* Custom scrollbar for modals */
+    .modal-content::-webkit-scrollbar {
+      width: 10px;
     }
-  };
 
-  button.addEventListener('click', toggleMenu);
-
-  document.addEventListener('click', (event) => {
-    if (!button.contains(event.target) && !menu.contains(event.target)) {
-      closeMenu();
+    .modal-content::-webkit-scrollbar-track {
+      background: transparent;
     }
-  });
-})();
 
-(function(){
-  const button = document.getElementById('langDropdownButton');
-  const menu = document.getElementById('langDropdownMenu');
-  const chevron = document.getElementById('langChevron');
-  if (!button || !menu) return;
-
-  const openMenu = () => {
-    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-    menu.classList.add('opacity-100', 'visible', 'translate-y-0');
-    button.setAttribute('aria-expanded', 'true');
-    button.classList.remove('bg-transparent');
-    button.classList.add('text-white');
-    if (chevron) chevron.classList.add('rotated');
-  };
-
-  const closeMenu = () => {
-    menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
-    menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
-    button.setAttribute('aria-expanded', 'false');
-    button.classList.remove('bg-black/90', 'text-white');
-    button.classList.add('bg-transparent');
-    if (chevron) chevron.classList.remove('rotated');
-  };
-
-  const toggleMenu = (event) => {
-    event.stopPropagation();
-    if (menu.classList.contains('opacity-0')) {
-      openMenu();
-    } else {
-      closeMenu();
+    .modal-content::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      border: 2px solid transparent;
+      background-clip: padding-box;
     }
-  };
 
-  button.addEventListener('click', toggleMenu);
-
-  document.addEventListener('click', (event) => {
-    if (!button.contains(event.target) && !menu.contains(event.target)) {
-      closeMenu();
+    .modal-content {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
     }
-  });
-})();
 
-(function(){
-  const button = document.getElementById('mobileInfoDropdownButton');
-  const menu = document.getElementById('mobileInfoDropdownMenu');
-  const chevron = document.getElementById('mobileInfoChevron');
-  if (!button || !menu) return;
-
-  const toggleMenu = (event) => {
-    event.stopPropagation();
-    if (menu.classList.contains('open')) {
-      menu.classList.remove('open');
-      chevron.classList.remove('rotated');
-      button.setAttribute('aria-expanded', 'false');
-    } else {
-      menu.classList.add('open');
-      chevron.classList.add('rotated');
-      button.setAttribute('aria-expanded', 'true');
+    .reveal-letters span {
+      opacity: 0;
+      transform: translateY(20px);
+      display: inline-block;
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
-  };
 
-  button.addEventListener('click', toggleMenu);
-})();
-
-(function(){
-  const button = document.getElementById('mobileLangDropdownButton');
-  const menu = document.getElementById('mobileLangDropdownMenu');
-  if (!button || !menu) return;
-
-  const toggleMenu = (event) => {
-    event.stopPropagation();
-    if (menu.classList.contains('open')) {
-      menu.classList.remove('open');
-      button.setAttribute('aria-expanded', 'false');
-    } else {
-      menu.classList.add('open');
-      button.setAttribute('aria-expanded', 'true');
+    .reveal-visible span {
+      opacity: 1;
+      transform: translateY(0);
     }
-  };
 
-  button.addEventListener('click', toggleMenu);
-  document.addEventListener('click', (event) => {
-    if (!button.contains(event.target) && !menu.contains(event.target)) {
-      menu.classList.remove('open');
-      button.setAttribute('aria-expanded', 'false');
+    #infoDropdownMenu {
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
     }
-  });
-})();
-</script>
-<script>
-(function(){
-  const toggle = document.getElementById('mobileMenuToggle');
-  const mobileNav = document.getElementById('mobileNav');
-  const triggered = document.getElementById('triggeredMenu');
-  if (!toggle || !mobileNav || !triggered) return;
 
-  toggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const opened = triggered.classList.toggle('open');
-    if (opened) {
-      mobileNav.classList.add('mobile-open');
-    } else {
-      mobileNav.classList.remove('mobile-open');
+    #infoChevron,
+    #langChevron {
+      display: inline-block;
+      opacity: 0;
+      transform: rotate(0deg);
+      transition: transform .25s ease, opacity .15s ease;
     }
-  });
 
-  // close when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!mobileNav.contains(e.target) && triggered.classList.contains('open')) {
-      triggered.classList.remove('open');
-      mobileNav.classList.remove('mobile-open');
+    #infoDropdownButton:hover #infoChevron,
+    #langDropdownButton:hover #langChevron {
+      opacity: 1;
     }
-  });
-})();
-</script>
-<script>
-(function(){
-    const nav = document.getElementById('nav');
-    const spacer = document.getElementById('nav-spacer');
-    if(!nav) return;
 
-    nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
-    nav.style.willChange = 'transform, opacity';
-    nav.style.transform = nav.style.transform || 'translateY(0)';
-    nav.style.opacity = nav.style.opacity || '1';
-
-    function recompute(){
-        try{
-            const h = Math.ceil(nav.getBoundingClientRect().height);
-            if(spacer) spacer.style.height = h + 'px';
-        }catch(e){}
+    #infoChevron.rotated,
+    #langChevron.rotated {
+      transform: rotate(180deg);
     }
-    recompute();
-    window.addEventListener('resize', recompute, {passive:true});
 
-    let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    #mobileInfoChevron {
+      display: inline-block;
+      transition: transform .25s ease;
+    }
 
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop + 6) {
-            nav.style.transform = 'translateY(-' + (nav.offsetHeight + 4) + 'px)';
-            nav.style.opacity = '0';
-        } else if (scrollTop < lastScrollTop - 6) {
-            nav.style.transform = 'translateY(0)';
-            nav.style.opacity = '1';
-        } else {
-            nav.style.transform = 'translateY(0)';
-        }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-})();
-</script>
+    #mobileInfoChevron.rotated {
+      transform: rotate(180deg);
+    }
 
-    <div class="px-[5%] w-full bg-black">
-        <div id="footer" class="w-full flex flex-col-reverse lg:flex-row justify-between items-center py-[6%] xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-lg xs:text-2xl md:text-3xl lg:text-xs xl:text-base 2xl:text-lg 3xl:text-2xl">
-          <div class="flex flex-col w-full lg:w-1/4 text-white gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-500 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <a href="platinum.html" class="text-white/70 hover:text-white transition-all duration-300">Platinum</a>
-            <a href="extras.html" class="text-white/70 hover:text-white transition-all duration-300">Додатоци</a>
-            <a href="aboutus.html" class="text-white/70 hover:text-white transition-all duration-300">За Нас</a>
-            <a href="howTo.html" class="text-white/70 hover:text-white transition-all duration-300">Видео водич</a>
-            <a href="tips.html" class="text-white/70 hover:text-white transition-all duration-300">Совети</a>
-            <a href="blog.html" class="text-white/70 hover:text-white transition-all duration-300">Блог</a>
-            <a href="faq.html" class="text-white/70 hover:text-white transition-all duration-300">FAQ</a>
-          </div>
-          <div class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <a href="#" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-600 fa-brands fa-facebook"></i>Facebook</a>
-            <a href="#" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-pink-600 fa-brands fa-instagram"></i>Instagram</a>
-            <a href="#" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-red-600 fa-brands fa-youtube"></i>YouTube</a>
-            <a href="#" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-500 fa-brands fa-linkedin"></i>LinkedIn</a>
-            <a href="mailto:customercare@vinkom.com.mk" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-envelope"></i>customercare@vinkom.com.mk</a>
-          </div>
-          <div class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <a href="termsAndConditions.html" class="text-white/70 hover:text-white transition-all duration-300">Terms & Conditions</a>
-            <a href="privacyPolicy.html" class="text-white/70 hover:text-white transition-all duration-300">Privacy Policy</a>
-            <a href="tradeIn.html" class="text-white/70 hover:text-white transition-all duration-300">Замени</a>
-            <a href="book.html" class="text-white/70 hover:text-white transition-all duration-300">Закажи Презентација</a>
-            <a href="tel:+38922461144" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-phone"></i>02 246 1144</a>
-            <a target="_blank" href="https://www.google.com/maps?q=42.0085833,21.3672778" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-location-dot"></i>Партизански Одреди 165</a>
-          </div>
-          <div class="flex flex-col w-full lg:w-1/4 text-white gap-3 justify-center border-l-2 border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <h1 class="text-white text-4xl sm:text-5xl lg:text-2xl xl:text-4xl 3xl:text-5xl">Дознавај прв</h1>
-            <p class="text-white/70 text-base xs:text-2xl md:text-3xl lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl">Претплати се и добивај новости, совети и ексклузивни понуди директно на е-пошта.</p>
-            <div class="flex gap-2">
-              <form action="https://formsubmit.co/43b21711b46354ed9c0946432e5fe177" method="POST" class="w-full flex flex-row lg:flex-col xl:flex-row gap-2 items-center text-base lg:text-sm">
-                  <input type="hidden" name="_next" value="https://vinkom-mu.vercel.app/thankyouSub.html">
-                  <input type="hidden" name="_captcha" value="false">
-                  <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off">
-                  <input type="hidden" name="_subject" value="Претплата">
-                  <input id="subscribeEmail" type="email" name="email" required placeholder="E-mail" class="outline-none w-[69%] lg:w-full xl:w-[69%] border border-white/70 rounded-xl px-[4%] py-[3%] bg-transparent text-white my-[5%] lg:my-0"/>      
-                  <button type="submit" class="outline-none w-[29%] lg:w-full xl:w-[69%]  border border-white/70 rounded-xl px-[3%] py-[3%] bg-transparent text-white/70 hover:bg-white/70 hover:text-white transition-all duration-300 my-[5%] lg:my-0">Испрати</button>
-              </form>
-            </div>
+    #mobileInfoDropdownMenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+
+    #mobileInfoDropdownMenu.open {
+      max-height: 500px;
+    }
+
+    #mobileLangDropdownMenu {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px) scaleY(0.98);
+      transform-origin: top;
+      transition: max-height .28s ease, opacity .22s ease, transform .26s cubic-bezier(.2, .9, .2, 1);
+    }
+
+    #mobileLangDropdownMenu.open {
+      max-height: 240px;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scaleY(1);
+    }
+
+    /* Triggered menu (mobile) smooth open/close */
+    #triggeredMenu {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: max-height .32s ease, opacity .22s ease, transform .26s cubic-bezier(.2, .9, .2, 1);
+    }
+
+    #triggeredMenu.open {
+      max-height: 800px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #mobileNav.mobile-open {
+      background-color: rgba(0, 0, 0, 0.25) !important;
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden font-gidole bg-[#484848] w-full relative">
+
+  <div class="px-[5%] w-full">
+    <div id="nav"
+      class="w-full h-[10vh] max-h-[110px] rounded-lg justify-between items-center bg-transparent hover:bg-black/40 backdrop-blur-sm hover:backdrop-blur-lg my-[1.5%] px-[2%] text-[#c1c1c1] fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden lg:flex xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
+      <a id="logo" href="index.html"
+        class="text-4xl 2xl:text-5xl font-medium hover:text-white transition-all duration-300 w-[31%] xl:w-[26%] 2xl:w-1/4 text-start"><img
+          src="logos/LOGO ZAEDNO7.png" class="h-full w-auto"></a>
+      <div
+        class="flex gap-1 items-center justify-center w-1/2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
+        <a href="platinum.html" class="hover:text-white px-1 transition-all duration-300">&nbsp;&nbsp;Platinum</a>
+        <a href="extras.html" class="hover:text-white px-1 transition-all duration-300">Додатоци</a>
+        <a href="aboutus.html" class="hover:text-white px-1 transition-all duration-300">За Нас</a>
+        <div class="relative">
+          <button id="infoDropdownButton" type="button" aria-expanded="false"
+            class="flex px-2 py-2 rounded-t-xl w-[117px] xl:w-[129px] 2xl:w-[135px] 3xl:w-[146px] items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
+            Инфо центар
+            <span class="pb-[4px] pl-[1px]"><i id="infoChevron"
+                class="fa-solid fa-chevron-down text-[10px] xl:text-xs hidden hover:block"></i></span>
+          </button>
+          <div id="infoDropdownMenu"
+            class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-0 transition-all duration-300 ease-out z-50 flex flex-col w-[117px] xl:w-[129px] 2xl:w-[135px] 3xl:w-[146px] shadow-2xl shadow-black">
+            <a href="howTo.html"
+              class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Видео
+              водич</a>
+            <a href="tips.html"
+              class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Совети</a>
+            <a href="blog.html"
+              class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Блог</a>
+            <a href="faq.html"
+              class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap  rounded-b-xl pb-2">FAQ</a>
           </div>
         </div>
+      </div>
+      <div
+        class="flex items-center justify-end h-full rounded-full w-[30.5%] xl:w-[26%] 2xl:w-1/4 lg:gap-1 3xl:gap-2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
+        <a href="tradeIn.html"
+          class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Замени&nbsp;&nbsp;</a>
+        <a href="book.html"
+          class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Закажи
+          презентација&nbsp;&nbsp;</a>
+        <div class="relative">
+          <button id="langDropdownButton" type="button" aria-expanded="false"
+            class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
+            <img src="flags/macedonia.png" class="h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px] rounded-full">
+          </button>
+          <div id="langDropdownMenu"
+            class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
+            <a href="#" class="block py-2 3xl:py-3 rounded-t-xl hover:text-white transition-all duration-300"><img
+                src="flags/britain.png" class="rounded-full h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px]"></a>
+            <a href="#" class="block rounded-b-xl hover:text-white transition-all duration-300"> <img
+                src="flags/albania.png" class="rounded-full h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px]"></a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="w-full bg-black px-[5%]">
-        <img src="images_webp/footer.webp" loading="lazy" class="w-full xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center" alt="">
+  <div id="mobileNav"
+    class="fixed top-[2vh] left-1/2 -translate-x-1/2 z-[9990] lg:hidden w-[90vw] text-white backdrop-blur-3xl p-[5%] md:p-[3%] flex-col rounded-xl bg-black/25 xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691px]">
+    <div id="mainMenu" class="flex justify-between items-center">
+      <div class="relative">
+        <button id="mobileLangDropdownButton" type="button" aria-expanded="false"
+          class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap text-white">
+          <img src="flags/macedonia.png"
+            class="h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px] rounded-full">
+        </button>
+        <div id="mobileLangDropdownMenu"
+          class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
+          <a href="#" class="block hover:text-white transition-all duration-300 py-2 xs:py-3 md:py-4"><img
+              src="flags/britain.png"
+              class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
+          <a href="#" class="block hover:text-white transition-all duration-300"> <img src="flags/albania.png"
+              class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
+        </div>
+      </div>
+      <a href="index.html" class="max-w-[40%] h-full"><img src="logos/LOGO ZAEDNO7.png" class="h-full"></a>
+      <button id="mobileMenuToggle" class="text-white"><i
+          class="fa-solid fa-bars text-[20px] md:text-[30px]"></i></button>
     </div>
+    <div id="triggeredMenu" class="flex flex-col gap-[1vh] w-full justify-center items-center text-lg md:text-xl">
+      <a href="index.html" class="text-center pt-[1vh]">Дома</a>
+      <a href="platinum.html" class="text-center">Platinum</a>
+      <a href="extras.html" class="text-center">Додатоци</a>
+      <a href="book.html" class="text-center">Закажи презентација</a>
+      <a href="tradeIn.html" class="text-center">Замени</a>
+      <a href="aboutus.html" class="text-center">За Нас</a>
+      <div class=" pb-[1vh]">
+        <button id="mobileInfoDropdownButton" type="button" aria-expanded="false" class=" text-white">Инфо
+          центар&nbsp;<span class=""><i id="mobileInfoChevron"
+              class="fa-solid fa-chevron-down text-sm"></i></span></button>
+        <div id="mobileInfoDropdownMenu" class="flex flex-col max-h-0 overflow-hidden text-base md:text-lg pl-[1vh]">
+          <a href="howTo.html" class="text-white/70 transition-all duration-300">Видео водич</a>
+          <a href="tips.html" class="text-white/70 transition-all duration-300">Совети</a>
+          <a href="blog.html" class="text-white/70 transition-all duration-300">Блог</a>
+          <a href="faq.html" class="text-white/70 transition-all duration-300">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <script>
-    (function(){
+  <div id="mobileNavSpacer" class="py-[2vh] block lg:hidden">
+    <div class="w-full py-[5%] md:py-[3%]">
+      <div class="w-full h-[28px] xs:h-[32px] md:h-[35px]"></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const nav = document.getElementById('nav');
+      const spacer = document.getElementById('nav-spacer');
+      if (!nav) return;
+
+      // ensure smooth transition
+      nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
+      nav.style.willChange = 'transform, opacity';
+      nav.style.transform = nav.style.transform || 'translateY(0)';
+      nav.style.opacity = nav.style.opacity || '1';
+
+      // compute and set spacer height (px) so layout doesn't jump
+      function recompute() {
+        try {
+          const h = Math.ceil(nav.getBoundingClientRect().height);
+          if (spacer) spacer.style.height = h + 'px';
+        } catch (e) { }
+      }
+      recompute();
+      window.addEventListener('resize', recompute, { passive: true });
+
+      let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+      let ticking = false;
+
+      function hideNav() {
+        const h = Math.ceil(nav.getBoundingClientRect().height) + 4;
+        nav.style.transform = 'translateY(-' + h + 'px)';
+        nav.style.opacity = '0';
+      }
+      function showNav() {
+        nav.style.transform = 'translateY(0)';
+        nav.style.opacity = '1';
+      }
+
+      function onScroll() {
+        const current = window.pageYOffset || document.documentElement.scrollTop;
+        if (current > lastScroll + 6) {
+          hideNav();
+        } else if (current < lastScroll - 6) {
+          showNav();
+        }
+        lastScroll = current <= 0 ? 0 : current;
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+      }, { passive: true });
+    })();
+
+  </script>
+
+  <div class="w-full">
+    <div
+      class="w-full flex flex-col justify-center items-center  bg-[#484848] xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
+      <div id="1992" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div class="w-[75%] lg:w-[40%] flex flex-col justify-center items-center gap-4">
+          <div
+            class="w-full text-white/70 flex lg:hidden flex-col justify-center items-start gap-2 lg:gap-10 text-[8px] sm:text-sm lg:text-lg">
+            <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white">Први чекори</p>
+            <p>Винком ја донесе компанијата Кирби во Македонија во 1992 година, започнувајќи ја својата работа со
+              моделот G3 – уред што постави сосема нов стандард за хигиена во домот. Во период кога напредните системи
+              за длабинско чистење беа речиси непознати, G3 привлече внимание преку домашните презентации, каде што
+              семејствата можеа директно да се уверат во неговата моќ и ефикасност. Овие демонстрации станаа
+              препознатлив знак за Винком, бидејќи токму на терен се покажува вистинската вредност на производот. Како
+              фабрички овластен дистрибутер на Кирби со сопствен сервис и целосна поддршка за оригинални резервни делови
+              и потрошен материјал, Винком изгради стабилна основа за доверба со своите клиенти. Нивната долгорочна
+              посветеност на еден производ е силен доказ за квалитетот што го нudi системот. Со повеќе од три децении
+              присутност на македонскиот пазар, компанијата докажува дека вложувањето во Кирби е инвестиција која
+              постојано се исплатува.</p>
+          </div>
+          <img class="w-full h-full" src="images_webp/aboutus/0000242.webp" loading="eager" alt="">
+        </div>
+        <div class="h-full w-[20%] lg:w-[16%] flex flex-col justify-end items-center">
+          <div
+            class="rounded-full w-[8vh] h-[8vh] lg:w-[12vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            1992</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-6xl font-black text-white">Први чекори</p>
+          <p>Винком ја донесе компанијата Кирби во Македонија во 1992 година со моделот G3 – апарат што воведе сосема
+            нов стандард за хигиена. Во време кога ваков систем беше реткост, демонстрациите им покажаа на македонските
+            семејства што значи вистинско длабинско чистење. Првите домашни презентации ја потврдија моќта на системот.
+            Со официјално дистрибутерство, сервис и редовни резервни делови, Винком постави цврста основа за доверлив и
+            долгорочен однос со клиентите. Г3 моделот ја започна приказната за квалитет и иновација која трае и денес.
+          </p>
+        </div>
+      </div>
+      <div id="1993" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-start gap-4 lg:gap-10">
+          <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white">Созревање</p>
+          <p class="text-white/70 text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl">Година по успехот на G3,
+            во Македонија пристигна G4 – подобрена верзија со модерен дизајн и практични механички унапредувања.
+            Моторната асистенција значително го олеснуваше користењето, додека конструкцијата овозможуваше стабилни
+            перформанси и долговечност. Деталните демонстрации во домовите ги запознаа корисниците со функционалноста на
+            апаратот, што ја зголеми довербата во брендот и ја зацврсти позицијата на Винком на локалниот пазар. G4
+            стана модел кој ја обединува удобноста, ефикасноста и квалитетот, поставувајќи стандарди за следните
+            генерации на Kirby апарати.</p>
+          <img src="images_webp/aboutus/1993.webp"
+            class="w-full h-full object-cover object-bottom lg:hidden rounded-xl shadow-2xl shadow-black" loading="lazy"
+            alt=""></img>
+        </div>
+        <div class="h-[100vh] w-[20%] lg:w-[16%] flex flex-col justify-center items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            1993</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div class="w-[40%] hidden lg:flex justify-center rounded-xl items-center">
+          <img src="images_webp/aboutus/1993.webp" class="h-full w-full rounded-xl shadow-2xl shadow-black"
+            loading="lazy" alt=""></img>
+        </div>
+      </div>
+      <div id="1997" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-center gap-4">
+          <div
+            class="w-full text-white/70 flex lg:hidden flex-col justify-center items-start gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-lg">
+            <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white">NASA?</p>
+            <p>По успешниот G4, следеше G5 – модел препознатлив по темната виолетова боја и иновативниот вентилатор
+              изработен од „Lexan“ материјал развиен со помош на технологија од NASA. Овој напредок овозможи поголема
+              моќ на вшмукување и издржливост. Корисниците брзо го прифатија поради неговата сигурност и ефикасност,
+              додека Винком ја продолжи мисијата да ја приближува најсовремената технологија до македонските домови.
+              Презентациите дома им овозможија на клиентите лично да се уверат во иновациите и квалитетот на G5,
+              зацврстувајќи доверба и лојалност кон брендот.</p>
+          </div>
+          <img class="w-full rounded-xl shadow-2xl shadow-black h-full object-cover object-bottom"
+            src="images_webp/aboutus/1997.webp" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            1997</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-5xl font-black text-white">NASA?</p>
+          <p>По успешниот G4, следеше G5 – модел препознатлив по темната виолетова боја и иновативниот вентилатор
+            изработен од „Lexan“ материјал развиен со помош на технологија од NASA. Овој напредок овозможи поголема моќ
+            на вшмукување и издржливост. Корисниците брзо го прифатија поради неговата сигурност и ефикасност, додека
+            Винком ја продолжи мисијата да ја приближува најсовремената технологија до македонските домови.
+            Презентациите дома им овозможија на клиентите лично да се уверат во иновациите и квалитетот на G5,
+            зацврстувајќи доверба и лојалност кон брендот.</p>
+        </div>
+      </div>
+      <div id="1999" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] text-white/70 h-[80%] flex flex-col justify-center items-start gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white">Нови можности</p>
+          <p>Gsix донесе посовремен изглед и подобрена четка за порамномерно и подлабоко чистење. Преносливиот
+            шампонирач овозможуваше подобар резултат на меките подови, а апаратот го зголеми комфорот и ефикасноста.
+            Клиентите бргу ја забележаа разликата во квалитетот, додека Винком преку редовна поддршка, сервис и
+            оригинални делови ја одржуваше довербата во брендот. Gsix се истакна како модел што ја комбинира иновацијата
+            и практичноста, обезбедувајќи стабилно и долгорочно решение за македонските семејства кои бараат квалитетно
+            длабинско чистење.</p>
+          <img class="w-full h-full object-cover object-bottom block lg:hidden rounded-xl shadow-2xl shadow-black"
+            src="images_webp/aboutus/1999.webp" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs sm:text-sm md:text-base lg:text-2xl text-white">
+            1999</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div class="w-[40%] hidden lg:flex justify-center items-center">
+          <img class="h-full w-full rounded-xl shadow-2xl shadow-black" src="images_webp/aboutus/1999.webp"
+            loading="lazy" alt="">
+        </div>
+      </div>
+      <div
+        class="w-[73.8%] mx-auto xs:w-[397px] sm:w-[422px] md:w-[505px]  h-2 bg-white/50 rounded-tl-xl rounded-br-xl block lg:hidden">
+      </div>
+      <div id="2002" class="w-full px-[5%] flex flex-row-reverse lg:flex-row justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] h-full flex flex-col justify-center items-start gap-4 lg:gap-10 text-white/70 text-[8px] sm:text-sm lg:text-lg">
+          <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white flex lg:hidden">Моќно дуо</p>
+          <p class="flex lg:hidden">По повод 10 години постоење, Винком ги претстави Ultimate G и Diamond Edition – два
+            различни модели со ист фокус на квалитет и издржливост. Ultimate G нудеше стабилност, моќ и оптимална
+            филтрација, додека Diamond Edition се истакнуваше по потивок режим и филтри за чувствителни површини. Двете
+            верзии им овозможија на клиентите да изберат апарат што најмногу им одговара, додека Винком обезбеди сервис,
+            поддршка и резервни делови. Со оваа понуда, компанијата ја потврди својата позиција како доверлив партнер и
+            лидер во домашната хигиена.</p>
+          <img class="h-full object-cover object-bottom w-full rounded-xl shadow-2xl shadow-black"
+            src="images_webp/aboutus/2002.webp" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2002</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-6xl font-black text-white">Моќно дуо</p>
+          <p>По повод 10 години постоење, Винком ги претстави Ultimate G и Diamond Edition – два различни модели со ист
+            фокус на квалитет и издржливост. Ultimate G нудеше стабилност, моќ и оптимална филтрација, додека Diamond
+            Edition се истакнуваше по потивок режим и филтри за чувствителни површини. Двете верзии им овозможија на
+            клиентите да изберат апарат што најмногу им одговара, додека Винком обезбеди сервис, поддршка и резервни
+            делови. Со оваа понуда, компанијата ја потврди својата позиција како доверлив партнер и лидер во домашната
+            хигиена.</p>
+        </div>
+      </div>
+      <div id="2006" class="w-full px-[5%] h-[100vh] flex flex-row-reverse lg:flex-row justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] h-[80%] text-white/70 flex flex-col justify-center items-start text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl gap-4 lg:gap-10">
+          <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white">Ново ниво</p>
+          <p>Sentria донесе модерен и елегантен изглед, со LED светла, редизајнирана рачка и подобрена ергономија.
+            Новите алатки овозможуваа поефикасно чистење на мебел и текстилни површини, што го направи моделот омилен
+            меѓу корисниците. Признанието од Carpet and Rug Institute дополнително го потврди неговиот квалитет. Винком
+            обезбеди професионален сервис и целосна поддршка, овозможувајќи доверба и сигурност за секој корисник.
+            Sentria стана модел што ја спојува удобноста, ефикасноста и модерниот дизајн, продолжувајќи ја традицијата
+            на квалитет во Македонија.</p>
+          <img
+            class="h-3/5 sm:h-1/2 object-cover object-bottom w-full block lg:hidden rounded-xl shadow-2xl shadow-black"
+            src="images_webp/aboutus/2006.webp" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs sm:text-sm md:text-base lg:text-2xl text-white">
+            2006</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div class="w-[40%] hidden lg:flex justify-center items-center">
+          <img class="h-full w-full rounded-xl shadow-2xl shadow-black" src="images_webp/aboutus/2006.webp"
+            loading="lazy" alt="">
+        </div>
+      </div>
+      <div
+        class="w-[73.8%] mx-auto xs:w-[397px] sm:w-[422px] md:w-[505px]  h-2 bg-white/50 rounded-tr-xl rounded-bl-xl block lg:hidden">
+      </div>
+      <div id="2011" class="w-full px-[5%] h-[80%] flex justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] h-full flex flex-col justify-center items-start text-[8px] sm:text-sm lg:text-lg text-white/70 gap-4 lg:gap-10">
+          <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white flex lg:hidden">Тука кога најмногу треба</p>
+          <p class="flex lg:hidden">Во 2011 година, Винком ја формира својата прва специјализирана служба за грижа на
+            корисници. Тимот обезбедуваше теренска помош, брза достава на потрошен материјал и стручни совети за
+            правилно користење на апаратите. Оваа услуга го подигна искуството на клиентите на ново ниво и ја зацврсти
+            врската со купувачите. Со фокус на доверба и поддршка, Винком постави нов стандард за грижа кон корисниците,
+            овозможувајќи секој клиент да биде сигурен дека добива експертска поддршка и долгорочно решение за чистење.
+          </p>
+          <img class="h-3/5 sm:h-1/2 object-cover object-center w-full rounded-xl shadow-2xl shadow-black"
+            src="images_webp/aboutus/2011.webp" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2011</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-6xl font-black text-white">Тука кога најмногу треба</p>
+          <p>Во 2011 година, Винком ја формира својата прва специјализирана служба за грижа на корисници. Тимот
+            обезбедуваше теренска помош, брза достава на потрошен материјал и стручни совети за правилно користење на
+            апаратите. Оваа услуга го подигна искуството на клиентите на ново ниво и ја зацврсти врската со купувачите.
+            Со фокус на доверба и поддршка, Винком постави нов стандард за грижа кон корисниците, овозможувајќи секој
+            клиент да биде сигурен дека добива експертска поддршка и долгорочно решение за чистење.</p>
+        </div>
+      </div>
+      <div id="2012" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] text-white/70 h-[80%] flex flex-col justify-center items-start gap-10 text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl">
+          <div class="w-full flex flex-col justify-center items-center gap-4 lg:gap-10">
+            <div class="text-[10rem] lg:text-[15rem]  lg:hidden h-full font-extrabold text-white -my-14 sm:-my-0"
+              id="counter-mobile">0</div>
+            <p class="text-white/70 lg:hidden text-lg lg:text-4xl mt-0 sm:mt-14">Години Винком</p>
+            <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white text-start w-full">2 децении</p>
+            <p>Sentria II пристигна токму кога Винком славеше две децении работа. Моделот се истакнуваше со практичен
+              дизајн, лесна употреба и стабилна моќ на моторот, особено погоден за помали домови и чувствителни
+              површини. Новите пакети со додатоци и HEPA филтер кеси овозможија почист воздух и поголема удобност за
+              корисниците. Винком обезбеди комплетна поддршка и сервис, продолжувајќи ја довербата на клиентите во
+              квалитетот на Kirby системите. Sentria II ја спои практичноста и ефикасноста во еден апарат што станува
+              доверливо решение за секое семејство.</p>
+          </div>
+
+          <script>
+            (function () {
+              const counterEl = document.getElementById('counter-mobile');
+              if (!counterEl) return;
+
+              let hasRun = false;
+
+              const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                  if (entry.isIntersecting && !hasRun) {
+                    hasRun = true;
+                    let count = 0;
+                    const target = 20;
+                    const duration = 1500;
+                    const stepTime = Math.floor(duration / target);
+
+                    const interval = setInterval(() => {
+                      count++;
+                      counterEl.textContent = count;
+                      if (count === target) {
+                        clearInterval(interval);
+                      }
+                    }, stepTime);
+                  }
+                });
+              }, { threshold: 0.5 });
+
+              observer.observe(counterEl);
+            })();
+          </script>
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2012</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div class="w-[40%] h-[50vh] hidden lg:flex justify-center items-center">
+          <div class="w-full h-screen flex flex-col justify-center items-center">
+            <div class="text-xs lg:text-[15rem] font-extrabold text-white" id="counter-lg">0</div>
+            <p class="text-white/70 text-xs lg:text-4xl mt-24">Години Винком</p>
+          </div>
+
+          <script>
+            (function () {
+              const counterEl = document.getElementById('counter-lg');
+              if (!counterEl) return;
+
+              let hasRun = false;
+
+              const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                  if (entry.isIntersecting && !hasRun) {
+                    hasRun = true;
+                    let count = 0;
+                    const target = 20;
+                    const duration = 1500;
+                    const stepTime = Math.floor(duration / target);
+
+                    const interval = setInterval(() => {
+                      count++;
+                      counterEl.textContent = count;
+                      if (count === target) {
+                        clearInterval(interval);
+                      }
+                    }, stepTime);
+                  }
+                });
+              }, { threshold: 0.5 });
+
+              observer.observe(counterEl);
+            })();
+          </script>
+        </div>
+      </div>
+      <div id="2014" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-center gap-4 lg:gap-10">
+          <div
+            class="w-full text-white/70 flex lg:hidden flex-col justify-center items-center gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-lg">
+            <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white text-start w-full">Симбол за трајност</p>
+            <p>Во 2014 година, Kirby го одбележи својот јубилеј – 100 години иновации, патенти и квалитет. Истовремено,
+              Винком веќе 22 години го претставуваше брендот во Македонија, создавајќи силна врска со локалните
+              корисници. Овој спој на глобалното наследство и домашното искуство потврди посветеност кон сигурност,
+              квалитет и континуирано усовршување. Јубилејот ја истакна важноста на традицијата и иновацијата,
+              потврдувајќи дека довербата на клиентите е резултат на децении посветена работа и квалитетни производи кои
+              успешно комбинираат технологија и практичност.</p>
+          </div>
+          <img src="images_webp/aboutus/2014.webp" class="w-full object-cover object-center" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2014</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-6xl font-black text-white">Симбол за трајност</p>
+          <p>Во 2014 година, Kirby го одбележи својот јубилеј – 100 години иновации, патенти и квалитет. Истовремено,
+            Винком веќе 22 години го претставуваше брендот во Македонија, создавајќи силна врска со локалните корисници.
+            Овој спој на глобалното наследство и домашното искуство потврди посветеност кон сигурност, квалитет и
+            континуирано усовршување. Јубилејот ја истакна важноста на традицијата и иновацијата, потврдувајќи дека
+            довербата на клиентите е резултат на децении посветена работа и квалитетни производи кои успешно комбинираат
+            технологија и практичност.</p>
+        </div>
+      </div>
+      <div id="2015" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] h-[80%] text-white/70 flex flex-col justify-center items-start gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white">Совршено, во секоја смисла</p>
+          <p>Avalir донесе препознатлив баланс на сила, издржливост и практичност. Моделот нудеше стабилен мотор,
+            едноставно ракување и широки можности за чистење на различни површини. Клиентите ценат неговата ефикасност,
+            практичност и можност да се прилагоди на секое домаќинство. Винком го претстави како доверливо решение за
+            домашната хигиена, со целосен сервис, оригинални делови и експертска поддршка. Avalir продолжува да ја
+            зацврстува репутацијата на компанијата како лидер во квалитетното и сигурно длабинско чистење во
+            македонските домови.</p>
+          <img class="h-1/2 block lg:hidden object-cover object-bottom w-full rounded-xl shadow-2xl shadow-black"
+            src="images_webp/aboutus/2015.webp" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs sm:text-sm md:text-base lg:text-2xl text-white">
+            2015</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div class="w-[40%] hidden lg:flex justify-center items-center">
+          <img class="h-full w-full rounded-xl shadow-2xl shadow-black" src="images_webp/aboutus/2015.webp"
+            loading="lazy" alt="">
+        </div>
+      </div>
+      <div id="2017" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-center text-white/70 gap-4 lg:gap-10 text-[8px] lg:text-lg">
+          <p class="text-lg sm:text-3xl lg:text-6xl w-full text-start flex lg:hidden font-black text-white">Може ли
+            подобро</p>
+          <p class="flex lg:hidden text- sm:text-sm">Може. Avalir 2 го покажа постојаното унапредување на
+            функционалноста и дизајнот. Со нови ергономски решенија, 15 алатки и напреден систем за шампонирање, моделот
+            овозможува поефикасно и подлабоко чистење на сите површини. Клиентите ја ценат практичноста, удобноста и
+            издржливоста, додека поддршката на Винком овозможува долгорочно и сигурно користење. Avalir 2 стана еден од
+            најценетите апарати за домашна хигиена на македонскиот пазар, комбинирајќи иновации, квалитет и доверба во
+            секојдневното чистење.</p>
+          <img class="h-3/5 sm:h-1/2 object-cover object-center w-full rounded-xl shadow-2xl shadow-black"
+            src="images_webp/aboutus/2017.webp" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2017</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-6xl font-black text-white">Може ли подобро</p>
+          <p>Може. Avalir 2 го покажа постојаното унапредување на функционалноста и дизајнот. Со нови ергономски
+            решенија, 15 алатки и напреден систем за шампонирање, моделот овозможува поефикасно и подлабоко чистење на
+            сите површини. Клиентите ја ценат практичноста, удобноста и издржливоста, додека поддршката на Винком
+            овозможува долгорочно и сигурно користење. Avalir 2 стана еден од најценетите апарати за домашна хигиена на
+            македонскиот пазар, комбинирајќи иновации, квалитет и доверба во секојдневното чистење.</p>
+        </div>
+      </div>
+      <div
+        class="w-[73.8%] mx-auto xs:w-[397px] sm:w-[422px] md:w-[505px]  h-2 bg-white/50 rounded-tl-xl rounded-br-xl block lg:hidden">
+      </div>
+      <div id="2022" class="w-full px-[5%] h-[100vh] flex flex-row-reverse lg:flex-row justify-between items-center">
+        <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-center gap-4 lg:gap-10">
+          <img class="h-3/5 sm:h-1/2 object-cover object-center w-full rounded-xl shadow-2xl shadow-black"
+            src="images_webp/aboutus/2022.jpg" loading="lazy" alt="">
+          <div
+            class="w-full text-white/70 flex lg:hidden flex-col justify-center items-start gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-lg">
+            <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white">3 децении посветени</p>
+            <p>Во 2022 година, Винком го прослави својот тридесетгодишен јубилеј како водечки претставник на Kirby во
+              Македонија. Три децении посветена работа донесоа стабилна врска со клиентите, иновативни решенија и
+              континуирана грижа за корисниците. Со комбинирање на традиција, искуство и модерни технологии, Винком ја
+              потврди својата репутација како доверлив партнер кој секогаш овозможува висок квалитет на услуги,
+              професионална поддршка и најдобри решенија за домашна хигиена.</p>
+          </div>
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2022</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-6xl font-black text-white">3 децении посветени</p>
+          <p>Во 2022 година, Винком го прослави својот тридесетгодишен јубилеј како водечки претставник на Kirby во
+            Македонија. Три децении посветена работа донесоа стабилна врска со клиентите, иновативни решенија и
+            континуирана грижа за корисниците. Со комбинирање на традиција, искуство и модерни технологии, Винком ја
+            потврди својата репутација како доверлив партнер кој секогаш овозможува висок квалитет на услуги,
+            професионална поддршка и најдобри решенија за домашна хигиена.</p>
+        </div>
+      </div>
+      <div id="2024" class="w-full px-[5%] h-[100vh] flex flex-row-reverse lg:flex-row justify-between items-center">
+        <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-center gap-4 lg:gap-10">
+          <div
+            class="w-full text-white/70 flex lg:hidden flex-col justify-center items-start gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-lg">
+            <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white">Нов член</p>
+            <p>Во 2024 година, Kirby ја претстави својата најнова гордост — моделот Kirby Avalir Platinum, како дел од
+              долгата традиција на квалитет и иновација. Овој „најлесен Kirby досега“ ја донесе врвната изработка, моќна
+              вшмукувачка сила и модерен дизајн, подготвен за современи домови. Винком, како овластен дистрибутер,
+              веднаш го воведе Platinum на македонскиот пазар, нудејќи го преку презентации и обезбедувајќи оригинални
+              додатоци и сервис. Со тоа, Винком повторно ја потврди својата посветеност да им донесе на клиентите
+              најново и најдобро од светот на домашната хигиена.</p>
+          </div>
+          <img src="images_webp/aboutus/2024.webp"
+            class="h-3/5 sm:h-1/2 w-full object-cover object-center rounded-xl shadow-2xl shadow-black" loading="lazy"
+            alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2024</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-6xl font-black text-white">Нов член</p>
+          <p>Во 2024 година, Kirby ја претстави својата најнова гордост — моделот Kirby Avalir Platinum, како дел од
+            долгата традиција на квалитет и иновација. Овој „најлесен Kirby досега“ ја донесе врвната изработка, моќна
+            вшмукувачка сила и модерен дизајн, подготвен за современи домови. Винком, како овластен дистрибутер, веднаш
+            го воведе Platinum на македонскиот пазар, нудејќи го преку презентации и обезбедувајќи оригинални додатоци и
+            сервис. Со тоа, Винком повторно ја потврди својата посветеност да им донесе на клиентите најново и најдобро
+            од светот на домашната хигиена.</p>
+        </div>
+      </div>
+      <div id="2026" class="w-full px-[5%] h-[100vh] flex flex-row-reverse lg:flex-row justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] h-[80%] text-white/70 flex flex-col justify-center items-start gap-10 text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white">Во чекор со времето</p>
+          <p>До ден денес, Vinkom е водечка сила на македонскиот пазар за Kirby системи. Со влог на континуирана
+            поддршка, брз сервис, достапни оригинални делови и модерни модели — ги задржуваме довербата и лојалноста на
+            своите клиенти. Додека светот се менува, ние остануваме доследни: секој нов корисник добива ист квалитет и
+            грижа како оние од првиот ден. Нашата мрежа се шири, сегашните и идните потрошувачи ја препознаваат Винком
+            како сигурен партнер за долгорочно чистење, поддршка и удобност.</p>
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-start items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2026</div>
+        </div>
+        <div class="w-[40%] hidden lg:flex justify-center items-center">
+          <img class="h-full w-full rounded-xl shadow-2xl shadow-black" src="" loading="lazy" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full h-[10vh] bg-gradient-to-b from-transparent to-black"></div>
+
+  <button id="backToTop" aria-label="Back to top" aria-hidden="true"
+    class="fixed right-2 bottom-3 md:right-5 md:bottom-10  z-60 bg-white/10 hover:bg-white/10 text-white p-2 rounded-full shadow-2xl transition-all duration-200 transform scale-95 opacity-0 pointer-events-none">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <div class="fixed bottom-[5%] left-[5%] z-[9900]">
+    <div class="relative inline-block">
+      <p id="cartBadge"
+        class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] sm:text-xs md:text-base lg:text-[12px] xl:text-xs rounded-full px-2 py-1 leading-none">
+        0</p>
+      <a id="checkOutBtn" href="checkOut.html"
+        class="group flex items-center bg-[#484848] border border-white text-white rounded-full py-1 px-2 xs:py-3 xs:px-3 md:py-4 md:px-4 lg:py-2 lg:px-3 text-lg xs:text-2xl md:text-3xl lg:text-xl 2xl:text-2xl gap-0 hover:gap-1 overflow-hidden">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <p
+          class="opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">
+          Види кошничка</p>
+      </a>
+    </div>
+  </div>
+
+  <script>
+
+    function updateCartBadge() {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      let totalQty = 0;
+      cart.forEach(item => {
+        totalQty += (item.qty || 1);
+      });
+      const badge = document.getElementById('cartBadge');
+      if (badge) {
+        if (totalQty === 0) {
+          badge.style.display = "none";
+        } else {
+          badge.style.display = "inline-flex";
+          badge.textContent = totalQty >= 100 ? "99+" : totalQty.toString();
+        }
+      }
+    }
+
+    // Update badge when localStorage changes from other pages/tabs
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'cart') {
+        updateCartBadge();
+      }
+    });
+
+    (function () {
+      const addBtn = document.getElementById('modalAddToCart');
+      const checkOutBtn = document.getElementById('checkOutBtn');
+
+      // Update badge on page load
+      updateCartBadge();
+
+      if (!addBtn) return;
+
+      addBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const nameEl = document.getElementById('modal-title');
+        const priceEl = document.getElementById('modal-price');
+        const imgEl = document.getElementById('modal-img');
+        if (!nameEl || !priceEl) return;
+        const name = nameEl.textContent.trim();
+        const img = imgEl ? imgEl.src : '';
+        const digits = priceEl.textContent.replace(/\D/g, '');
+        const price = parseInt(digits) || 0;
+        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        cart.push({ id: Date.now(), name, price, qty: 1, image: img });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartBadge();
+
+        if (checkOutBtn) {
+          const pEl = checkOutBtn.querySelector('p');
+          if (pEl) {
+            const defaultText = ' Види кошничка';
+            pEl.textContent = ' Додадено во кошничка';
+            pEl.classList.remove('opacity-0', 'max-w-0');
+            pEl.classList.add('opacity-100', 'max-w-xs');
+            setTimeout(() => {
+              pEl.textContent = defaultText;
+              pEl.classList.remove('opacity-100', 'max-w-xs');
+              pEl.classList.add('opacity-0', 'max-w-0');
+            }, 2500);
+          }
+        }
+      });
+    })();
+
+  </script>
+
+
+  <script>
+    (function () {
+      const button = document.getElementById('infoDropdownButton');
+      const menu = document.getElementById('infoDropdownMenu');
+      const chevron = document.getElementById('infoChevron');
+      if (!button || !menu) return;
+
+      const openMenu = () => {
+        menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'true');
+        button.classList.remove('bg-transparent');
+        button.classList.add('bg-black/80', 'text-white');
+        if (chevron) chevron.classList.add('rotated');
+      };
+
+      const closeMenu = () => {
+        menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('bg-black/80', 'text-white');
+        button.classList.add('bg-transparent');
+        if (chevron) chevron.classList.remove('rotated');
+      };
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('opacity-0')) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+
+      document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+          closeMenu();
+        }
+      });
+    })();
+
+    (function () {
+      const button = document.getElementById('langDropdownButton');
+      const menu = document.getElementById('langDropdownMenu');
+      const chevron = document.getElementById('langChevron');
+      if (!button || !menu) return;
+
+      const openMenu = () => {
+        menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'true');
+        button.classList.remove('bg-transparent');
+        button.classList.add('text-white');
+        if (chevron) chevron.classList.add('rotated');
+      };
+
+      const closeMenu = () => {
+        menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('bg-black/90', 'text-white');
+        button.classList.add('bg-transparent');
+        if (chevron) chevron.classList.remove('rotated');
+      };
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('opacity-0')) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+
+      document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+          closeMenu();
+        }
+      });
+    })();
+
+    (function () {
+      const button = document.getElementById('mobileInfoDropdownButton');
+      const menu = document.getElementById('mobileInfoDropdownMenu');
+      const chevron = document.getElementById('mobileInfoChevron');
+      if (!button || !menu) return;
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('open')) {
+          menu.classList.remove('open');
+          chevron.classList.remove('rotated');
+          button.setAttribute('aria-expanded', 'false');
+        } else {
+          menu.classList.add('open');
+          chevron.classList.add('rotated');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+    })();
+
+    (function () {
+      const button = document.getElementById('mobileLangDropdownButton');
+      const menu = document.getElementById('mobileLangDropdownMenu');
+      if (!button || !menu) return;
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('open')) {
+          menu.classList.remove('open');
+          button.setAttribute('aria-expanded', 'false');
+        } else {
+          menu.classList.add('open');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+      document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+          menu.classList.remove('open');
+          button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      const toggle = document.getElementById('mobileMenuToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      const triggered = document.getElementById('triggeredMenu');
+      if (!toggle || !mobileNav || !triggered) return;
+
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const opened = triggered.classList.toggle('open');
+        if (opened) {
+          mobileNav.classList.add('mobile-open');
+        } else {
+          mobileNav.classList.remove('mobile-open');
+        }
+      });
+
+      // close when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!mobileNav.contains(e.target) && triggered.classList.contains('open')) {
+          triggered.classList.remove('open');
+          mobileNav.classList.remove('mobile-open');
+        }
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      const nav = document.getElementById('nav');
+      const spacer = document.getElementById('nav-spacer');
+      if (!nav) return;
+
+      nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
+      nav.style.willChange = 'transform, opacity';
+      nav.style.transform = nav.style.transform || 'translateY(0)';
+      nav.style.opacity = nav.style.opacity || '1';
+
+      function recompute() {
+        try {
+          const h = Math.ceil(nav.getBoundingClientRect().height);
+          if (spacer) spacer.style.height = h + 'px';
+        } catch (e) { }
+      }
+      recompute();
+      window.addEventListener('resize', recompute, { passive: true });
+
+      let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      window.addEventListener('scroll', function () {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop + 6) {
+          nav.style.transform = 'translateY(-' + (nav.offsetHeight + 4) + 'px)';
+          nav.style.opacity = '0';
+        } else if (scrollTop < lastScrollTop - 6) {
+          nav.style.transform = 'translateY(0)';
+          nav.style.opacity = '1';
+        } else {
+          nav.style.transform = 'translateY(0)';
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      });
+    })();
+  </script>
+
+  <div class="px-[5%] w-full bg-black">
+    <div id="footer"
+      class="w-full flex flex-col-reverse lg:flex-row justify-between items-center py-[6%] xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-lg xs:text-2xl md:text-3xl lg:text-xs xl:text-base 2xl:text-lg 3xl:text-2xl">
+      <div
+        class="flex flex-col w-full lg:w-1/4 text-white gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-500 px-[2%] py-[1%] my-[5%] lg:my-0">
+        <a href="platinum.html" class="text-white/70 hover:text-white transition-all duration-300">Platinum</a>
+        <a href="extras.html" class="text-white/70 hover:text-white transition-all duration-300">Додатоци</a>
+        <a href="aboutus.html" class="text-white/70 hover:text-white transition-all duration-300">За Нас</a>
+        <a href="howTo.html" class="text-white/70 hover:text-white transition-all duration-300">Видео водич</a>
+        <a href="tips.html" class="text-white/70 hover:text-white transition-all duration-300">Совети</a>
+        <a href="blog.html" class="text-white/70 hover:text-white transition-all duration-300">Блог</a>
+        <a href="faq.html" class="text-white/70 hover:text-white transition-all duration-300">FAQ</a>
+      </div>
+      <div
+        class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
+        <a href="#"
+          class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i
+            class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-600 fa-brands fa-facebook"></i>Facebook</a>
+        <a href="#"
+          class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i
+            class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-pink-600 fa-brands fa-instagram"></i>Instagram</a>
+        <a href="#"
+          class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i
+            class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-red-600 fa-brands fa-youtube"></i>YouTube</a>
+        <a href="#"
+          class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i
+            class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-500 fa-brands fa-linkedin"></i>LinkedIn</a>
+        <a href="mailto:customercare@vinkom.com.mk"
+          class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i
+            class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-envelope"></i>customercare@vinkom.com.mk</a>
+      </div>
+      <div
+        class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
+        <a href="termsAndConditions.html" class="text-white/70 hover:text-white transition-all duration-300">Terms &
+          Conditions</a>
+        <a href="privacyPolicy.html" class="text-white/70 hover:text-white transition-all duration-300">Privacy
+          Policy</a>
+        <a href="tradeIn.html" class="text-white/70 hover:text-white transition-all duration-300">Замени</a>
+        <a href="book.html" class="text-white/70 hover:text-white transition-all duration-300">Закажи Презентација</a>
+        <a href="tel:+38922461144"
+          class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i
+            class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-phone"></i>02
+          246 1144</a>
+        <a target="_blank" href="https://www.google.com/maps?q=42.0085833,21.3672778"
+          class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i
+            class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-location-dot"></i>Партизански
+          Одреди 165</a>
+      </div>
+      <div
+        class="flex flex-col w-full lg:w-1/4 text-white gap-3 justify-center border-l-2 border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
+        <h1 class="text-white text-4xl sm:text-5xl lg:text-2xl xl:text-4xl 3xl:text-5xl">Дознавај прв</h1>
+        <p class="text-white/70 text-base xs:text-2xl md:text-3xl lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl">
+          Претплати се и добивај новости, совети и ексклузивни понуди директно на е-пошта.</p>
+        <div class="flex gap-2">
+          <form id="subscribeForm" action="https://api.web3forms.com/submit" method="POST"
+            class="w-full flex flex-row lg:flex-col xl:flex-row gap-2 items-center text-base lg:text-sm">
+            <input type="hidden" name="access_key" value="6c1d84bc-0208-463a-9f71-e42b2b89ca44">
+            <input id="subscribeEmail" type="email" name="email" required placeholder="E-mail"
+              class="outline-none w-[69%] lg:w-full xl:w-[69%] border border-white/70 rounded-xl px-[4%] py-[3%] bg-transparent text-white my-[5%] lg:my-0" />
+            <button type="submit"
+              class="outline-none w-[29%] lg:w-full xl:w-[69%]  border border-white/70 rounded-xl px-[3%] py-[3%] bg-transparent text-white/70 hover:bg-white/70 hover:text-white transition-all duration-300 my-[5%] lg:my-0">Испрати</button>
+          </form>
+        </div>
+      </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const subscribeForm = document.getElementById('subscribeForm');
+    if (!subscribeForm) return;
+
+    subscribeForm.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(subscribeForm);
+
+      try {
+        const response = await fetch(subscribeForm.action, {
+          method: 'POST',
+          body: formData,
+        });
+
+        const result = await response.json();
+        if (response.ok && result.success) {
+          window.location.href = 'https://vinkom-mu.vercel.app/thankyouSub.html';
+          return;
+        }
+
+        console.error('Web3Forms submission failed', result);
+        alert('Внесот не успеа. Обидете се повторно.');
+      } catch (error) {
+        console.error('Web3Forms submission error', error);
+        alert('Внесот не успеа. Обидете се повторно.');
+      }
+    });
+  });
+</script>
+    </div>
+  </div>
+
+  <div class="w-full bg-black px-[5%]">
+    <img src="images_webp/footer.webp" loading="lazy"
+      class="w-full xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center"
+      alt="">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    (function () {
       const target = document.getElementById('2014');
-      if(!target || typeof confetti !== 'function') return;
+      if (!target || typeof confetti !== 'function') return;
       let fired = false;
 
-      function getNormalizedOriginFromLeftBox(section){
+      function getNormalizedOriginFromLeftBox(section) {
         // select the left column (first direct child)
         const left = section.querySelector(':scope > div:nth-child(1)');
-        if(!left) return { x: 0.5, y: 0.6 }; // fallback center-ish
+        if (!left) return { x: 0.5, y: 0.6 }; // fallback center-ish
         const r = left.getBoundingClientRect();
         const cx = r.left + r.width / 2;
         const cy = r.top + r.height / 2;
@@ -863,7 +1224,7 @@ window.addEventListener('storage', (e) => {
 
       const o = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
-          if(entry.isIntersecting && !fired){
+          if (entry.isIntersecting && !fired) {
             fired = true;
             const origin = getNormalizedOriginFromLeftBox(target);
             // main burst (from left image center)
@@ -877,64 +1238,59 @@ window.addEventListener('storage', (e) => {
 
       o.observe(target);
     })();
-    </script>
-    <script>
+  </script>
+  <script>
     // Back to Top button logic (same as index.html)
-    (function(){
+    (function () {
       const btn = document.getElementById('backToTop');
-      if(!btn) return;
+      if (!btn) return;
       let visible = false;
       const SHOW_AFTER = 300; // px
       function show() {
         if (visible) return;
         visible = true;
-        btn.setAttribute('aria-hidden','false');
-        btn.classList.remove('opacity-0','pointer-events-none','scale-95');
-        btn.classList.add('opacity-100','pointer-events-auto','scale-100');
+        btn.setAttribute('aria-hidden', 'false');
+        btn.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+        btn.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
       }
       function hide() {
         if (!visible) return;
         visible = false;
-        btn.setAttribute('aria-hidden','true');
-        btn.classList.remove('opacity-100','pointer-events-auto','scale-100');
-        btn.classList.add('opacity-0','pointer-events-none','scale-95');
+        btn.setAttribute('aria-hidden', 'true');
+        btn.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+        btn.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
       }
-      if(window.pageYOffset > SHOW_AFTER) show();
-      window.addEventListener('scroll', function(){ 
-        if(window.pageYOffset > SHOW_AFTER) show(); else hide();
+      if (window.pageYOffset > SHOW_AFTER) show();
+      window.addEventListener('scroll', function () {
+        if (window.pageYOffset > SHOW_AFTER) show(); else hide();
       }, { passive: true });
-      btn.addEventListener('click', function(){
+      btn.addEventListener('click', function () {
         try { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-        catch(e) { window.scrollTo(0,0); }
+        catch (e) { window.scrollTo(0, 0); }
       });
-      btn.addEventListener('keydown', function(e){
-        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); btn.click(); }
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); }
       });
     })();
-    </script>
+  </script>
 
-    <div id="cookieBanner" class="fixed bottom-[5vw] px-[5%] xl:bottom-[3vw] xl:px-[5%] w-full text-white z-50 hidden">
-        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto lg:mx-0 w-auto lg:w-[450px] 3xl:w-[580px] rounded-xl bg-black/40 backdrop-blur-3xl p-[5%] lg:p-[3%] xl:p-[2%] flex flex-col justify-between items-center gap-[3vw] xl:gap-[1vw]">
-            <div class="flex justify-center items-center gap-2 xs:gap-4 md:gap-4">
-                <p class="text-sm xs:text-xl md:text-3xl lg:text-lg 3xl:text-2xl">Оваа веб-страница користи колачиња за анализа и подобрување на искуството.</p> 
-                <i class="fa-solid fa-cookie text-2xl xs:text-4xl md:text-6xl lg:text-3xl 3xl:text-5xl flex justify-center items-center"></i>
-            </div>
-            <div class="flex gap-[6%] w-full text-base xs:text-xl md:text-3xl lg:text-xl 3xl:text-3xl">
-              <button onclick="rejectCookies()" class="border w-[47%] border-white py-[1%] rounded-xl">Одбиј</button>
-              <button onclick="acceptCookies()" class="bg-white w-[47%] text-black py-[1%] rounded-xl">Прифати</button>
-            </div>
-        </div>
+  <div id="cookieBanner" class="fixed bottom-[5vw] px-[5%] xl:bottom-[3vw] xl:px-[5%] w-full text-white z-50 hidden">
+    <div
+      class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto lg:mx-0 w-auto lg:w-[450px] 3xl:w-[580px] rounded-xl bg-black/40 backdrop-blur-3xl p-[5%] lg:p-[3%] xl:p-[2%] flex flex-col justify-between items-center gap-[3vw] xl:gap-[1vw]">
+      <div class="flex justify-center items-center gap-2 xs:gap-4 md:gap-4">
+        <p class="text-sm xs:text-xl md:text-3xl lg:text-lg 3xl:text-2xl">Оваа веб-страница користи колачиња за анализа
+          и подобрување на искуството.</p>
+        <i
+          class="fa-solid fa-cookie text-2xl xs:text-4xl md:text-6xl lg:text-3xl 3xl:text-5xl flex justify-center items-center"></i>
+      </div>
+      <div class="flex gap-[6%] w-full text-base xs:text-xl md:text-3xl lg:text-xl 3xl:text-3xl">
+        <button onclick="rejectCookies()" class="border w-[47%] border-white py-[1%] rounded-xl">Одбиј</button>
+        <button onclick="acceptCookies()" class="bg-white w-[47%] text-black py-[1%] rounded-xl">Прифати</button>
+      </div>
     </div>
-    
-<script src="cookie.js"></script>
+  </div>
+
+  <script src="cookie.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
