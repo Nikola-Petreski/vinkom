@@ -259,10 +259,10 @@
       <div class="w-full flex flex-col lg:flex-row h-full gap-[3%] justify-center items-stretch xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
         <div id="videoList" class="hidden lg:flex flex-col items-start gap-2 text-white/70 bg-black/40 w-full lg:w-[31%] xl:w-[34%] rounded-xl max-h-[79vh] overflow-y-auto p-3 lg:sticky lg:top-[14vh] self-start">
         </div>
-        <div class="w-full lg:w-[69%] xl:w-[66%] min-h-full flex flex-col gap-[3vh]">
+        <div class="w-full lg:w-[69%] xl:w-[66%] h-auto flex flex-col gap-[3vh]">
           <div id="videoPlayer" class="w-full h-auto bg-black/40 rounded-xl">
           </div>
-          <div id="videos" class="w-full h-auto grid grid-cols-1 md:grid-cols-2 gap-[3%]">
+          <div id="videos" class="w-full h-auto grid grid-cols-1 md:grid-cols-2 gap-[5%] lg:gap-[3%]">
           </div>
         </div>
       </div>
@@ -353,15 +353,19 @@
 
   const renderPlayer = () => {
     const currentVideo = videos[activeIndex];
+    const isSetupVideo = currentVideo.videoTitle === 'Set Up Your Kirby';
+    const stepsButton = isSetupVideo
+      ? ''
+      : '<button id="toggleStepsBtn" type="button" aria-expanded="' + (stepsVisible ? 'true' : 'false') + '" class="border border-white/70 text-sm lg:text-base rounded-xl px-2 py-1 lg:px-4 lg:py-2 text-white/70 hover:text-white hover:bg-white/10 transition-all duration-300 text-nowrap">' + (stepsVisible ? 'Hide steps' : 'Show steps') + '</button>';
     videoPlayer.innerHTML =
       '<div class="w-full flex flex-col gap-4">' +
         renderVideoEmbed(currentVideo) +
-        '<div class="flex flex-row items-center justify-between text-white px-4 2xl:px-6">' +
-          '<h1 class="text-2xl md:text-3xl lg:text-xl xl:text-3xl 2xl:text-4xl font-medium leading-tight">' + escapeHtml(currentVideo.videoTitle) + '</h1>' +
-          '<button id="toggleStepsBtn" type="button" aria-expanded="' + (stepsVisible ? 'true' : 'false') + '" class="border border-white/70 rounded-xl px-4 py-2 text-white/70 hover:text-white hover:bg-white/10 transition-all duration-300 text-nowrap">' + (stepsVisible ? 'Hide steps' : 'Show steps') + '</button>' +
+        '<div class="flex flex-col md:flex-row items-center justify-between text-white px-2 md:px-4 2xl:px-6 gap-4 md:gap-0">' +
+          '<h1 class="text-center md:text-start text-lg xs:text-2xl md:text-xl lg:text-2xl md:text-3xl lg:text-xl xl:text-3xl 2xl:text-4xl font-medium leading-tight">' + escapeHtml(currentVideo.videoTitle) + '</h1>' +
+          stepsButton +
         '</div>' +
-        '<div id="currentVideoSteps" class="steps-panel ' + (stepsVisible ? 'open' : '') + 'px-4 2xl:px-6 pb-4 2xl:px-6">' +
-          renderSteps(currentVideo.steps, 'text-white/70 text-sm md:text-base leading-relaxed space-y-2') +
+        '<div id="currentVideoSteps" class="steps-panel ' + (stepsVisible ? 'open' : '') + 'px-2 pb-2 md:px-4 2xl:px-6 md:pb-4 2xl:px-6">' +
+          renderSteps(currentVideo.steps, 'text-white/70 text-sm md:text-base leading-relaxed space-y-1 lg:space-y-2') +
         '</div>' +
       '</div>';
   };
@@ -375,14 +379,14 @@
         ? '<img src="' + thumb + '" loading="lazy" class="rounded-t-xl bg-black" alt="">'
         : '<video src="' + escapeHtml(video.videoPath) + '" class="rounded-t-xl bg-black" muted preload="metadata"></video>';
 
-      return '<button type="button" data-video-index="' + index + '" class="video-select-btn video-grid-card group text-left hover:bg-black/40 rounded-xl transition-all duration-300 overflow-hidden border border-white/10">' +
+      return '<button type="button" data-video-index="' + index + '" class="video-select-btn video-grid-card group text-left bg-black/40 lg:bg-transparent hover:bg-black/40 rounded-xl transition-all duration-300 overflow-hidden border border-white/10">' +
         '<span class="video-grid-thumb relative block">' +
           preview +
-          '<span class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-all duration-300">' +
+          '<span class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-100 lg:opacity-0 group-hover:opacity-100 transition-all duration-300">' +
             '<span class="flex h-12 w-12 items-center justify-center rounded-full border border-white/70 bg-black/50 text-white translate-y-2 scale-90 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300"><i class="fa-solid fa-play pl-1"></i></span>' +
           '</span>' +
         '</span>' +
-        '<p class="text-white/70 group-hover:text-white transition-all duration-300 p-3 text-sm xl:text-base 2xl:text-xl leading-snug">' + escapeHtml(video.videoTitle) + '</p>' +
+        '<p class="text-white/70 group-hover:text-white transition-all duration-300 p-3 text-sm xs:text-2xl md:text-base xl:text-base 2xl:text-xl leading-snug">' + escapeHtml(video.videoTitle) + '</p>' +
       '</button>';
     }).join('');
   };
@@ -450,7 +454,7 @@
 </script>
 
 
-<div id="spacer" class="bg-gradient-to-b from-black/60 to-black h-[10vh]"></div>
+<div id="spacer" class="bg-gradient-to-b from-black/60 to-black h-[40vh] md:h-[10vh] lg:h-[20vh]"></div>
 
     <div class="px-[5%] w-full bg-black">
         <div id="footer" class="w-full flex flex-col-reverse lg:flex-row justify-between items-center py-[6%] xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-lg xs:text-2xl md:text-3xl lg:text-xs xl:text-base 2xl:text-lg 3xl:text-2xl">
