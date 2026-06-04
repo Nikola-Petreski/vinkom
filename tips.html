@@ -105,6 +105,22 @@
     #mobileNav.mobile-open {
       background-color: rgba(0, 0, 0, 0.25) !important;
     }
+
+    .accordion-body {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.45s ease, opacity 0.3s ease 0.1s, padding 0.35s ease;
+    }
+
+    .accordion-body.open {
+      opacity: 1;
+      max-height: 1000px;
+    }
+
+    .rotate-180 {
+      transform: rotate(180deg);
+    }
   </style>
 
   <div class="px-[5%] w-full">
@@ -215,9 +231,172 @@
     </div>
   </div>
 
+  <h1 class="hidden">Совети и трикови за почист дом со помош на Kirby.</h1>
 
-  <div class="w-full h-screen bg-gradient-to-b from-[#484848] to-black">
-</div>
+  <div class="w-full bg-gradient-to-b from-[#484848] to-black/60 px-[5%]">
+    <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto bg-[#303030] rounded-xl">
+      <div id="tabs" class="w-full flex flex-wrap justify-start items-center">
+        <div class="flex items-center gap-1 px-2 xs:px-3 xl:px-4 2xl:px-5 3xl:px-6 rounded-full bg-[#303030]">
+          <span class="h-2 w-2 3xl:h-3 3xl:w-3 rounded-full bg-[#ff5f57]"></span>
+          <span class="h-2 w-2 3xl:h-3 3xl:w-3 rounded-full bg-[#ffbd2e]"></span>
+          <span class="h-2 w-2 3xl:h-3 3xl:w-3 rounded-full bg-[#28c840]"></span>
+        </div>
+        <div id="tabButtons" class="flex flex-wrap"></div>
+      </div>
+      <div id="content" class="border-white border-2 w-full bg-[#484848] rounded-xl p-[5%] 2xl:px-[3%] 2xl:py-[2%] flex flex-col gap-0 lg:gap-6 transition-opacity duration-300 ease-out opacity-100">
+
+        <h2 id="tipsCategoryTitle" class="text-white text-lg xs:text-2xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold">Carpet Cleaning Tips</h2>
+        <div id="tipsAccordion" class="space-y-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabsRoot = document.getElementById('tabs');
+      const buttonsRoot = document.getElementById('tabButtons');
+      const accordionRoot = document.getElementById('tipsAccordion');
+      const titleEl = document.getElementById('tipsCategoryTitle');
+      const contentRoot = document.getElementById('content');
+      if (!tabsRoot || !buttonsRoot || !accordionRoot || !titleEl || !contentRoot) return;
+
+      const activeTabClasses = '  px-2 py-1 xs:px-3 xl:px-4 xl:py-2 2xl:px-5 2xl:py-3 3xl:px-7 3xl:py-4 lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl text-white border-t-2 border-x-2 border-white rounded-t-xl -mb-[2px] z-[10] bg-[#484848]';
+      const inactiveTabClasses = 'px-3 py-1 xs:px-3 xl:px-4 xl:py-2 2xl:px-5 2xl:py-3 3xl:px-7 3xl:py-4 lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl text-white/70 hover:text-white';
+      const shortNames = {
+        'Carpet Cleaning Tips': 'Carpet',
+        'Shampoo Tips': 'Shampoo',
+        'Other General House Cleaning Tips': 'Other'
+      };
+      let tipsData = [];
+      let currentCategory = null;
+
+      function clearAccordion() {
+        accordionRoot.innerHTML = '';
+      }
+
+      function renderAccordion(tips) {
+        clearAccordion();
+        if (!Array.isArray(tips) || tips.length === 0) {
+          accordionRoot.innerHTML = '<div class="text-white/70 py-6">Нема совети за оваа категорија.</div>';
+          return;
+        }
+
+        tips.slice(0, 5).forEach((tip) => {
+          const item = document.createElement('div');
+          item.className = 'rounded-xl overflow-hidden border-b-2 border-white py-1 xs:py-3 px-3';
+
+          const header = document.createElement('button');
+          header.type = 'button';
+          header.className = 'w-full flex items-center justify-between gap-4 py-3 text-left text-white transition-colors duration-200';
+          header.innerHTML = `<span class="font-semibold sm:text-lg lg:text-xl 2xl:text-2xl 3xl:text-3xl">${tip.title}</span><i class="fa-solid fa-chevron-down transition-transform duration-300"></i>`;
+
+          const body = document.createElement('div');
+          body.className = 'accordion-body text-white/70';
+          body.innerHTML = `<p class="leading-relaxed text-xs xs:text-sm md:text-base 3xl:text-lg">${tip.text.replace(/\n/g, '<br>')}</p>`;
+
+          header.addEventListener('click', () => {
+            const openHeader = accordionRoot.querySelector('button.active');
+            if (openHeader && openHeader !== header) {
+              openHeader.classList.remove('active');
+              const openIcon = openHeader.querySelector('i');
+              if (openIcon) openIcon.classList.remove('rotate-180');
+              const openBody = openHeader.nextElementSibling;
+              if (openBody) {
+                openBody.classList.remove('open');
+                openBody.style.maxHeight = '0px';
+              }
+            }
+
+            const isOpen = header.classList.toggle('active');
+            const icon = header.querySelector('i');
+            if (icon) icon.classList.toggle('rotate-180', isOpen);
+
+            if (isOpen) {
+              body.classList.add('open');
+              body.style.maxHeight = `${body.scrollHeight}px`;
+            } else {
+              body.classList.remove('open');
+              body.style.maxHeight = '0px';
+            }
+          });
+
+          item.appendChild(header);
+          item.appendChild(body);
+          accordionRoot.appendChild(item);
+        });
+      }
+
+      function setActiveCategory(categoryName) {
+        if (currentCategory === categoryName) return;
+        currentCategory = categoryName;
+        const buttons = buttonsRoot.querySelectorAll('button');
+        buttons.forEach((button) => {
+          if (button.dataset.category === categoryName) {
+            button.className = activeTabClasses;
+          } else {
+            button.className = inactiveTabClasses;
+          }
+        });
+
+        const category = tipsData.find((entry) => entry.category === categoryName);
+        titleEl.textContent = categoryName;
+        contentRoot.classList.remove('opacity-100');
+        contentRoot.classList.add('opacity-0');
+        window.setTimeout(() => {
+          renderAccordion(category?.tips || []);
+          contentRoot.classList.remove('opacity-0');
+          contentRoot.classList.add('opacity-100');
+        }, 180);
+      }
+
+      function createTab(categoryName) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.dataset.category = categoryName;
+        const shortLabel = shortNames[categoryName] || categoryName;
+        button.className = inactiveTabClasses;
+        button.innerHTML = `
+          <span class="md:hidden">${shortLabel}</span>
+          <span class="hidden md:inline">${categoryName}</span>
+        `;
+        button.addEventListener('click', () => setActiveCategory(categoryName));
+        buttonsRoot.appendChild(button);
+      }
+
+      fetch('data/tips.json')
+        .then((response) => {
+          if (!response.ok) throw new Error('Не може да се вчита tips.json');
+          return response.json();
+        })
+        .then((data) => {
+          tipsData = Array.isArray(data) ? data : [];
+          const categories = [
+            'Carpet Cleaning Tips',
+            'Shampoo Tips',
+            'Other General House Cleaning Tips'
+          ];
+          const availableCategories = categories.filter((name) => tipsData.some((entry) => entry.category === name));
+
+          if (availableCategories.length === 0) {
+            tabsRoot.innerHTML = '<div class="text-white/70 py-6">Нема податоци за категориите.</div>';
+            accordionRoot.innerHTML = '';
+            titleEl.textContent = '';
+            return;
+          }
+
+          availableCategories.forEach(createTab);
+          setActiveCategory(availableCategories[0]);
+        })
+        .catch((error) => {
+          console.error(error);
+          tabsRoot.innerHTML = `<div class="text-red-400 py-6">${error.message}</div>`;
+          accordionRoot.innerHTML = `<div class="text-red-400 py-6">${error.message}</div>`;
+        });
+    });
+  </script>
+
+  <div id="spacer" class="bg-gradient-to-b from-black/60 to-black h-[10vh] w-full"></div>
+
 
   <div class="px-[5%] w-full bg-black">
     <div id="footer"
