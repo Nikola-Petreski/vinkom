@@ -263,9 +263,9 @@
       const activeTabClasses = '  px-2 py-1 xs:px-3 xl:px-4 xl:py-2 2xl:px-5 2xl:py-3 3xl:px-7 3xl:py-4 lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl text-white border-t-2 border-x-2 border-white rounded-t-xl -mb-[2px] z-[10] bg-[#484848]';
       const inactiveTabClasses = 'px-3 py-1 xs:px-3 xl:px-4 xl:py-2 2xl:px-5 2xl:py-3 3xl:px-7 3xl:py-4 lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl text-white/70 hover:text-white';
       const shortNames = {
-        'Carpet Cleaning Tips': 'Carpet',
-        'Shampoo Tips': 'Shampoo',
-        'Other General House Cleaning Tips': 'Other'
+        'Совети за чистење теписи': 'Теписи',
+        'Совети за шампонирање': 'Шампонирање',
+        'Општи совети за домаќинство': 'Општо'
       };
       let tipsData = [];
       let currentCategory = null;
@@ -371,9 +371,9 @@
         .then((data) => {
           tipsData = Array.isArray(data) ? data : [];
           const categories = [
-            'Carpet Cleaning Tips',
-            'Shampoo Tips',
-            'Other General House Cleaning Tips'
+            'Совети за чистење теписи',
+            'Совети за шампонирање',
+            'Општи совети за домаќинство'
           ];
           const availableCategories = categories.filter((name) => tipsData.some((entry) => entry.category === name));
 

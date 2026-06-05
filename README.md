@@ -1,52 +1,50 @@
-# Vinkom Website
 
-## What this is
-A fully functional multi-page promotional website built for a real client, featuring dynamic content rendering, user interaction flows, and a structured frontend architecture.
+# KIRBY Marketing Site (Local static frontend)
 
-## Why I built it
-This project was developed to create a scalable and maintainable web presence with interactive features such as booking, trade-in, and user inquiry flows. The goal was to move beyond static pages and build a system that is easy to update and extend.
+**Overview**: This repository holds the static frontend for a KIRBY product/marketing site (Macedonian primary copy). The site is a mostly-static HTML/CSS/JS project that showcases product pages, videos, FAQs, booking and trade-in flows, and small interactive widgets.
 
-## Tech Stack
-- HTML5
-- Tailwind CSS
-- Vanilla JavaScript
-- JSON (data-driven content)
+- **Main entry**: [index.html](index.html)
+- **Build tooling**: [package.json](package.json) (TailwindCSS for utility CSS)
+- **Tailwind config**: [tailwind.config.js](tailwind.config.js)
+- **Content/data**: `data/` JSON files used by the pages (carousel, faq, testimonials, etc.)
 
-## Features
-- Multi-page responsive website (home, about, blog, models, FAQ, etc.)
-- Dynamic content loading using JSON data
-- User interaction flows:
-  - Booking system
-  - Trade-in form
-  - Multiple confirmation and thank-you flows
-- Reusable JavaScript components (includes/) for shared layout and logic
-- Tailwind CSS workflow with custom configuration
-- Structured and scalable project architecture
+**What's included**
+- Static HTML pages: `index.html`, `aboutus.html`, `platinum.html`, `extras.html`, `book.html`, `tradeIn.html`, `faq.html`, `howTo.html`, `blog.html` and thank-you pages.
+- Reusable includes in `includes/` (nav, carousels, small JS modules).
+- Images under `images/` and optimized WebP versions in `images_webp/`.
+- Data-driven JSON in `data/` and a separate `dataEng/` folder for English content.
 
-## Architecture and Structure
-- Separation of content and logic using JSON (data/)
-- Modular JavaScript for reusable UI components
-- Clear page-based structure for scalability
-- Tailwind-based styling pipeline (input.css → output.css)
+**Local development**
+1. Install dependencies (Node.js + npm required):
 
-## Setup
+```
+npm install
+```
 
-1. Install dependencies:
-   npm install
+2. Start Tailwind in watch mode (generates `output.css` from `input.css`):
 
-2. Start Tailwind in watch mode:
-   npm run dev
+```
+npm run dev
+```
 
-3. Open any .html file in a browser or run a local server (e.g. Live Server).
+Open the site in a browser (e.g., `file://` or via a simple local static server). Tailwind will rebuild `output.css` when you edit styles or the input file.
 
-## What I learned
-- Structuring a frontend project for real-world scalability
-- Building reusable components without frameworks
-- Managing dynamic content with JavaScript and JSON
-- Designing user flows for real interactions (forms and confirmations)
-- Working with Tailwind CSS in a production-like workflow
+**Content editing**
+- Page structure is plain HTML; to update copy or layout edit the matching HTML file.
+- Dynamic lists and carousels are populated from JSON files in `data/` — update those JSON files to change carousel slides, FAQs, tips, testimonials, etc.
+- The `includes/` folder contains small shared JS modules (carousel, nav loader) used across pages.
 
-## Notes
-- output.css is generated from input.css using Tailwind
-- JSON-based content allows updates without modifying core logic
-- The project avoids heavy frameworks to maintain control and performance
+**Assets & images**
+- Source images are in `images/`. Web-optimized versions live in `images_webp/`.
+- If you need to regenerate optimized images, the project includes `sharp` as a dependency; add scripts to automate image processing if needed.
+
+**Deployment**
+- This is a static site; deploy by copying the project files to any static host (Netlify, Vercel static, S3, Apache/nginx). Ensure `output.css` is built before deploying.
+
+**Notes & next steps**
+- Contact email in footer: `customercare@vinkom.com.mk`.
+- If you want a bilingual README (Macedonian + English) or CI to build `output.css` automatically, tell me and I can add it.
+
+-----
+_README updated: provides project overview, dev commands, and where to edit content._
+
