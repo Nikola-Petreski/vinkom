@@ -353,7 +353,7 @@
 
   const renderPlayer = () => {
     const currentVideo = videos[activeIndex];
-    const isSetupVideo = currentVideo.videoTitle === 'Set Up Your Kirby';
+    const isSetupVideo = currentVideo.videoTitle === 'Kirby Set Up';
     const stepsButton = isSetupVideo
       ? ''
       : '<button id="toggleStepsBtn" type="button" aria-expanded="' + (stepsVisible ? 'true' : 'false') + '" class="border border-white/70 text-sm lg:text-base rounded-xl px-2 py-1 lg:px-4 lg:py-2 text-white/70 hover:text-white hover:bg-white/10 transition-all duration-300 text-nowrap">' + (stepsVisible ? 'Hide steps' : 'Show steps') + '</button>';
@@ -727,6 +727,11 @@
 })()
 </script>
 
+  <button id="backToTop" aria-label="Back to top" aria-hidden="true"
+    class="fixed right-[5%] bottom-[5%] xl:hidden z-[9990] bg-[#484848] border border-white text-white rounded-full py-1 px-[10px] xs:py-2 xs:px-4 md:py-3 md:px-4 lg:py-2 lg:px-3 text-lg xs:text-2xl md:text-3xl lg:text-xl 2xl:text-2xl shadow-2xl transition-all duration-300 transform scale-95 opacity-0 pointer-events-none">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
   <div class="fixed bottom-[5%] left-[5%] z-[9900]">
     <div class="relative inline-block">
       <p id="cartBadge"
@@ -809,6 +814,51 @@ window.addEventListener('storage', (e) => {
   });
 })();
 
+</script>
+<script>
+(function(){
+  const btn = document.getElementById('backToTop');
+  const videoPlayer = document.getElementById('videoPlayer');
+  if(!btn || !videoPlayer) return;
+
+  let visible = false;
+
+  function show() {
+    if (visible) return;
+    visible = true;
+    btn.setAttribute('aria-hidden','false');
+    btn.classList.remove('opacity-0','pointer-events-none','scale-95');
+    btn.classList.add('opacity-100','pointer-events-auto','scale-100');
+  }
+  function hide() {
+    if (!visible) return;
+    visible = false;
+    btn.setAttribute('aria-hidden','true');
+    btn.classList.remove('opacity-100','pointer-events-auto','scale-100');
+    btn.classList.add('opacity-0','pointer-events-none','scale-95');
+  }
+
+  // Use IntersectionObserver to detect when videoPlayer is no longer in view
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        // Show button when videoPlayer is NOT visible (user has scrolled past it)
+        if (!entry.isIntersecting) {
+          show();
+        } else {
+          hide();
+        }
+      });
+    },
+    { threshold: 0 } // Trigger when any part of the element leaves view
+  );
+
+  observer.observe(videoPlayer);
+
+  btn.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
 </script>
 
 </body>

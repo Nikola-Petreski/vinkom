@@ -236,14 +236,14 @@
   <div class="w-full bg-gradient-to-b from-[#484848] to-black/60 px-[5%]">
     <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto bg-[#303030] rounded-xl">
       <div id="tabs" class="w-full flex flex-wrap justify-start items-center">
-        <div class="flex items-center gap-1 px-2 xs:px-3 xl:px-4 2xl:px-5 3xl:px-6 rounded-full bg-[#303030]">
-          <span class="h-2 w-2 3xl:h-3 3xl:w-3 rounded-full bg-[#ff5f57]"></span>
-          <span class="h-2 w-2 3xl:h-3 3xl:w-3 rounded-full bg-[#ffbd2e]"></span>
-          <span class="h-2 w-2 3xl:h-3 3xl:w-3 rounded-full bg-[#28c840]"></span>
+        <div class="flex items-center gap-0.5 xs:gap-1 px-1 xs:px-3 xl:px-4 2xl:px-5 3xl:px-6 rounded-full bg-[#303030]">
+          <span class="h-1 w-1 xs:h-2 xs:w-2 3xl:h-3 3xl:w-3 rounded-full bg-[#ff5f57]"></span>
+          <span class="h-1 w-1 xs:h-2 xs:w-2 3xl:h-3 3xl:w-3 rounded-full bg-[#ffbd2e]"></span>
+          <span class="h-1 w-1 xs:h-2 xs:w-2 3xl:h-3 3xl:w-3 rounded-full bg-[#28c840]"></span>
         </div>
         <div id="tabButtons" class="flex flex-wrap"></div>
       </div>
-      <div id="content" class="border-white border-2 w-full bg-[#484848] rounded-xl p-[5%] 2xl:px-[3%] 2xl:py-[2%] flex flex-col gap-0 lg:gap-6 transition-opacity duration-300 ease-out opacity-100">
+      <div id="content" class="border-white border-4 w-full bg-[#484848] rounded-xl p-[5%] 2xl:px-[3%] 2xl:py-[2%] flex flex-col gap-0 lg:gap-6 transition-opacity duration-300 ease-out opacity-100">
 
         <h2 id="tipsCategoryTitle" class="text-white text-lg xs:text-2xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold">Carpet Cleaning Tips</h2>
         <div id="tipsAccordion" class="space-y-3"></div>
@@ -260,8 +260,8 @@
       const contentRoot = document.getElementById('content');
       if (!tabsRoot || !buttonsRoot || !accordionRoot || !titleEl || !contentRoot) return;
 
-      const activeTabClasses = '  px-2 py-1 xs:px-3 xl:px-4 xl:py-2 2xl:px-5 2xl:py-3 3xl:px-7 3xl:py-4 lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl text-white border-t-2 border-x-2 border-white rounded-t-xl -mb-[2px] z-[10] bg-[#484848]';
-      const inactiveTabClasses = 'px-3 py-1 xs:px-3 xl:px-4 xl:py-2 2xl:px-5 2xl:py-3 3xl:px-7 3xl:py-4 lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl text-white/70 hover:text-white';
+      const activeTabClasses = '  outline-none px-2 py-1 xs:px-3 xl:px-4 xl:py-2 2xl:px-5 2xl:py-3 3xl:px-7 3xl:py-4 text-sm lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl text-white border-t-4 border-x-4 border-white rounded-t-xl -mb-[4px] z-[10] bg-[#484848]';
+      const inactiveTabClasses = 'outline-none px-2 py-1 xs:px-3 xl:px-4 xl:py-2 2xl:px-5 2xl:py-3 3xl:px-7 3xl:py-4 text-sm lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl text-white/70 hover:text-white';
       const shortNames = {
         'Совети за чистење теписи': 'Теписи',
         'Совети за шампонирање': 'Шампонирање',
