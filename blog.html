@@ -430,7 +430,7 @@
 
             const p = document.createElement('p');
             p.className = 'text-white/70';
-            p.textContent = post.excerpt;
+            p.innerHTML = post.excerpt.replace(/\n/g, '<br>');
 
             textDiv.appendChild(h1);
             textDiv.appendChild(p);
@@ -461,12 +461,12 @@
                 if(block.type === 'subtitle'){
                     const h2 = document.createElement('h2');
                     h2.className = 'font-semibold text-white';
-                    h2.textContent = block.text;
+                    h2.innerHTML = block.text.replace(/\n/g, '<br>');
                     content.appendChild(h2);
                 } else if(block.type === 'paragraph'){
                     const p = document.createElement('p');
                     p.className = 'text-white/70';
-                    p.textContent = block.text;
+                    p.innerHTML = block.text.replace(/\n/g, '<br>');
                     content.appendChild(p);
                 }
             });

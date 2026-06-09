@@ -2555,10 +2555,6 @@ video {
   color: rgb(255 255 255 / 0.9);
 }
 
-.text-transparent {
-  color: transparent;
-}
-
 .line-through {
   text-decoration-line: line-through;
 }
@@ -4021,11 +4017,6 @@ video {
   .lg\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
-  }
-
-  .lg\:text-white {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity, 1));
   }
 
   .lg\:opacity-0 {
