@@ -690,6 +690,15 @@
       if (!Array.isArray(items) || !items.length) throw new Error('manuals.json must contain a non-empty array');
       manuals = items;
       renderLists(manuals);
+      
+      // Preload all manual images on page load
+      manuals.forEach((manual) => {
+        if (manual.image) {
+          const img = new Image();
+          img.src = manual.image;
+        }
+      });
+      
       // initialize first manual without animation
       const first = manuals[0];
       if (first) {
