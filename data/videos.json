@@ -2,7 +2,8 @@
   {
     "videoTitle": "Kirby Set Up",
     "steps": [],
-    "videoPath": "howToVideo.mp4"
+    "videoPath": "howToVideo.mp4",
+    "thumbnail": "thumbnails/thumbnailVideosDefaultVideo.png"
   },
   {
     "videoTitle": "Променете го ременот на вашиот Kirby",

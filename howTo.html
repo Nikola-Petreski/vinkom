@@ -309,7 +309,8 @@
       return '<iframe class="w-full lg:h-[280px] xl:h-[300px] 2xl:h-[400px] 3xl:h-[500px] aspect-video rounded-xl bg-black" src="https://www.youtube.com/embed/' + youtubeId + '" title="' + escapeHtml(video.videoTitle) + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
     }
 
-    return '<video class="w-full aspect-video rounded-xl bg-black object-contain" src="' + escapeHtml(video.videoPath) + '" controls playsinline></video>';
+    const posterAttr = video.thumbnail ? ' poster="' + escapeHtml(video.thumbnail) + '"' : '';
+    return '<video class="w-full aspect-video rounded-xl bg-black object-contain" src="' + escapeHtml(video.videoPath) + '"' + posterAttr + ' controls playsinline></video>';
   };
 
   const renderSteps = (steps, className) => {
