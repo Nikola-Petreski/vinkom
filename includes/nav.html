@@ -1,17 +1,64 @@
-<div id="nav" class="w-full h-[8vh] rounded-lg flex justify-between items-center bg-transparent hover:bg-black/50 backdrop-blur-sm hover:backdrop-blur-lg px-[5%] py-[2%] mx-[2%] mt-[3vh] text-[#c1c1c1] fixed top-0 left-0 right-0 z-50 transition-all duration-500">
-    <a id="logo" href="index.html" class="text-4xl font-medium hover:text-white transition-all duration-300 w-1/4 text-start">KIRBY</a>
-    <div class="flex gap-5 items-center justify-center w-1/2">
-        <a href="compare.html" class="hover:text-white text-base transition-all hover:text-lg duration-300">Спореди</a>
-        <a target="_blank" href="models.html" class="hover:text-white transition-all hover:text-lg duration-300">Модели</a>
-        <a href="blog.html" class="hover:text-white transition-all hover:text-lg duration-300">Блог</a>
-        <a href="#" class="hover:text-white transition-all hover:text-lg duration-300">За Нас</a>
-        <a href="faq.html" class="hover:text-white transition-all hover:text-lg duration-300">FAQ</a>
-        <a href="tradeIn.html" class="hover:text-white transition-all hover:text-lg duration-300">Продај/Замени</a>
+<style>
+  #infoDropdownButton.active {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  #userDropdownButton.active {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  i {
+    transition: transform 0.3s ease;
+  }
+  i.rotated {
+    transform: rotate(180deg);
+  }
+  #infoChevron,
+  #userChevron {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline !important;
+  }
+</style>
+
+<div id="nav"
+  class="w-full h-[9vh] xl:h-[10vh] max-h-[110px] rounded-lg flex justify-between items-center bg-transparent hover:bg-black/40 backdrop-blur-sm hover:backdrop-blur-lg my-[1.5%] px-[1%] xl:px-[1%] 2xl:px-[2%] text-[#c1c1c1] fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden lg:flex xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
+  <a id="logo" href="index.html"
+    class="w-[22%] xl:w-[24%] 2xl:w-[24%] h-full text-start"><img
+      src="logos/LOGO ZAEDNO7.png" class="h-full w-auto object-contain"></a>
+  <div class="flex items-center justify-center w-[60%] xl:w-[52%] text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
+    <a href="platinum.html" class="hover:text-white px-2 transition-all duration-300">Platinum</a>
+    <a href="extras.html" class="hover:text-white px-2 transition-all duration-300">Производи</a>
+    <div class="relative">
+      <button id="infoDropdownButton" type="button" aria-expanded="false" class="flex px-2 py-2 rounded-t-xl items-center bg-transparent hover:text-white transition-all duration-300 text-nowrap gap-0.5">Инфо центар<span class="pb-[4px]"></span><i id="infoChevron" class="fa-solid fa-chevron-down text-[10px] xl:text-xs"></i></button>
+      <div id="infoDropdownMenu" class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-0 transition-all duration-300 ease-out z-50 flex flex-col shadow-2xl shadow-black w-full">
+        <a href="howTo.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Видео водич</a>
+        <a href="tips.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Совети</a>
+        <a href="blog.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Блог</a>
+        <a href="faq.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap  rounded-b-xl pb-2">FAQ</a>
+      </div>
     </div>
-    <div class="flex items-center justify-end h-full rounded-full w-1/4">
-        <a target="_blank" href="models.html" class="py-[2%] transition-all duration-500 rounded-xl text-base whitespace-nowrap text-white bg-transparent flex justify-center items-center hover:bg-white/20">&nbsp;&nbsp;&nbsp;Модели&nbsp;&nbsp;&nbsp;</a>                    
-        <a href="book.html" class="py-[2%] transition-all duration-500 rounded-xl text-base text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-white/20">&nbsp;&nbsp;&nbsp;Закажи презентација&nbsp;&nbsp;&nbsp;</a>        
+    <div class="relative">
+      <button id="userDropdownButton" type="button" aria-expanded="false" class="flex px-2 py-2 rounded-t-xl items-center bg-transparent hover:text-white transition-all duration-300 text-nowrap gap-0.5">Кориснички центар<span class="pb-[4px]"></span><i id="userChevron" class="fa-solid fa-chevron-down text-[10px] xl:text-xs"></i></button>
+      <div id="userDropdownMenu"
+        class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-0 transition-all duration-300 ease-out z-50 flex flex-col shadow-2xl shadow-black w-full">
+        <a href="models.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Постари модели</a>
+        <a href="manuals.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Упатства</a>
+        <a href="warranty.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap pb-2">Гаранција</a>
+        <a href="service.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap rounded-b-xl">Сервис</a>
+      </div>
     </div>
+    <a href="aboutus.html" class="hover:text-white px-2 transition-all duration-300">За Нас</a>
+  </div>
+  <div class="flex items-center justify-end rounded-full w-[20%] xl:w-[24%] 2xl:w-[24%] 3xl: gap-1 3xl:gap-2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
+    <a href="tradeIn.html" class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent justify-center items-center hover:bg-black/50 hidden xl:flex">&nbsp;&nbsp;Замени&nbsp;&nbsp;</a>
+    <a href="book.html" class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Закажи презентација&nbsp;&nbsp;</a>
+    <div class="relative w-[23px] 2xl:h-[25px] 2xl:w-[25px] 3xl:w-[28px] h-[23px] 3xl:h-[28px]">
+      <button id="langDropdownButton" type="button" aria-expanded="false" class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
+        <img src="flags/macedonia.png" class="h-[23px] w-[23px] 2xl:h-[25px] 2xl:w-[25px] 3xl:h-[28px] 3xl:w-[28px] object-cover rounded-full">
+      </button>
+      <div id="langDropdownMenu" class="absolute bg-transparent rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col gap-1.5 py-1.5">
+        <a href="#" class="flex items-center justify-center rounded-t-xl hover:text-white transition-all duration-300 p-0"><img src="flags/britain.png" class="h-[23px] w-[23px] 2xl:h-[25px] 2xl:w-[25px] 3xl:h-[28px] 3xl:w-[28px] rounded-full object-cover flex-shrink-0"></a>
+        <a href="#" class="flex items-center justify-center rounded-b-xl hover:text-white transition-all duration-300 p-0"><img src="flags/albania.png" class="h-[23px] w-[23px] 2xl:h-[25px] 2xl:w-[25px] 3xl:h-[28px] 3xl:w-[28px] rounded-full object-cover flex-shrink-0"></a>
+      </div>
+    </div>
+  </div>
 </div>
-
-

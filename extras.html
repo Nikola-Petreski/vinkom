@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Додатоци за KIRBY модели — опции и додатоци кои ги надополнуваат перформансите и стилот.">
-  <title>KIRBY | Додатоци</title>
+    content="KIRBY Производи — Додатоци и производи кои ги надополнуваат перформансите и стилот.">
+  <title>KIRBY | Производи</title>
   <link href="./output.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,6 +44,23 @@
     .modal-content.show {
       transform: translateY(0) scale(1);
       opacity: 1;
+    }
+
+    #modal-desc {
+      white-space: pre-wrap;
+    }
+
+    .version-button {
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .version-button.active {
+      background: #fff;
+      color: #000;
+      border-color: rgba(255,255,255,0.85);
     }
 
     @media (max-width: 768px) {
@@ -169,104 +186,10 @@
 <body class="overflow-x-hidden font-gidole bg-[#484848] w-full">
 
 
-  <div class="px-[5%] w-full">
-    <div id="nav"
-      class="w-full h-[10vh] max-h-[110px] rounded-lg justify-between items-center bg-transparent hover:bg-black/40 backdrop-blur-sm hover:backdrop-blur-lg my-[1.5%] px-[2%] text-[#c1c1c1] fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden lg:flex xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
-      <a id="logo" href="index.html"
-        class="text-4xl 2xl:text-5xl font-medium hover:text-white transition-all duration-300 w-[31%] xl:w-[26%] 2xl:w-1/4 text-start"><img
-          src="logos/LOGO ZAEDNO7.png" class="h-full w-auto"></a>
-      <div
-        class="flex gap-1 items-center justify-center w-1/2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
-        <a href="platinum.html" class="hover:text-white px-1 transition-all duration-300">&nbsp;&nbsp;Platinum</a>
-        <a href="extras.html" class="hover:text-white px-1 transition-all duration-300">Додатоци</a>
-        <a href="aboutus.html" class="hover:text-white px-1 transition-all duration-300">За Нас</a>
-        <div class="relative">
-          <button id="infoDropdownButton" type="button" aria-expanded="false"
-            class="flex px-2 py-2 rounded-t-xl w-[117px] xl:w-[129px] 2xl:w-[135px] 3xl:w-[146px] items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
-            Инфо центар
-            <span class="pb-[4px] pl-[1px]"><i id="infoChevron"
-                class="fa-solid fa-chevron-down text-[10px] xl:text-xs hidden hover:block"></i></span>
-          </button>
-          <div id="infoDropdownMenu"
-            class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-0 transition-all duration-300 ease-out z-50 flex flex-col w-[117px] xl:w-[129px] 2xl:w-[135px] 3xl:w-[146px] shadow-2xl shadow-black">
-            <a href="howTo.html"
-              class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Видео
-              водич</a>
-            <a href="tips.html"
-              class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Совети</a>
-            <a href="blog.html"
-              class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Блог</a>
-            <a href="faq.html"
-              class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap  rounded-b-xl pb-2">FAQ</a>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex items-center justify-end h-full rounded-full w-[30.5%] xl:w-[26%] 2xl:w-1/4 lg:gap-1 3xl:gap-2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
-        <a href="tradeIn.html"
-          class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Замени&nbsp;&nbsp;</a>
-        <a href="book.html"
-          class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Закажи
-          презентација&nbsp;&nbsp;</a>
-        <div class="relative">
-          <button id="langDropdownButton" type="button" aria-expanded="false"
-            class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
-            <img src="flags/macedonia.png" class="h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px] rounded-full">
-          </button>
-          <div id="langDropdownMenu"
-            class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
-            <a href="#" class="block py-2 3xl:py-3 rounded-t-xl hover:text-white transition-all duration-300"><img
-                src="flags/britain.png" class="rounded-full h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px]"></a>
-            <a href="#" class="block rounded-b-xl hover:text-white transition-all duration-300"> <img
-                src="flags/albania.png" class="rounded-full h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px]"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <div id="nav-container"></div>
 
-  <div id="mobileNav"
-    class="fixed top-[2vh] left-1/2 -translate-x-1/2 z-[9700] lg:hidden w-[90vw] text-white backdrop-blur-3xl p-[5%] md:p-[3%] flex-col rounded-xl bg-black/25 xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691px]">
-    <div id="mainMenu" class="flex justify-between items-center">
-      <div class="relative">
-        <button id="mobileLangDropdownButton" type="button" aria-expanded="false"
-          class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap text-white">
-          <img src="flags/macedonia.png"
-            class="h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px] rounded-full">
-        </button>
-        <div id="mobileLangDropdownMenu"
-          class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
-          <a href="#" class="block hover:text-white transition-all duration-300 py-2 xs:py-3 md:py-4"><img
-              src="flags/britain.png"
-              class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
-          <a href="#" class="block hover:text-white transition-all duration-300"> <img src="flags/albania.png"
-              class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
-        </div>
-      </div>
-      <a href="index.html" class="max-w-[40%] h-full"><img src="logos/LOGO ZAEDNO7.png" class="h-full"></a>
-      <button id="mobileMenuToggle" class="text-white"><i
-          class="fa-solid fa-bars text-[20px] md:text-[30px]"></i></button>
-    </div>
-    <div id="triggeredMenu" class="flex flex-col gap-[1vh] w-full justify-center items-center text-lg md:text-xl">
-      <a href="index.html" class="text-center pt-[1vh]">Дома</a>
-      <a href="platinum.html" class="text-center">Platinum</a>
-      <a href="extras.html" class="text-center">Додатоци</a>
-      <a href="book.html" class="text-center">Закажи презентација</a>
-      <a href="tradeIn.html" class="text-center">Замени</a>
-      <a href="aboutus.html" class="text-center">За Нас</a>
-      <div class=" pb-[1vh]">
-        <button id="mobileInfoDropdownButton" type="button" aria-expanded="false" class=" text-white">Инфо
-          центар&nbsp;<span class=""><i id="mobileInfoChevron"
-              class="fa-solid fa-chevron-down text-sm"></i></span></button>
-        <div id="mobileInfoDropdownMenu" class="flex flex-col max-h-0 overflow-hidden text-base md:text-lg pl-[1vh]">
-          <a href="howTo.html" class="text-white/70 transition-all duration-300">Видео водич</a>
-          <a href="tips.html" class="text-white/70 transition-all duration-300">Совети</a>
-          <a href="blog.html" class="text-white/70 transition-all duration-300">Блог</a>
-          <a href="faq.html" class="text-white/70 transition-all duration-300">FAQ</a>
-        </div>
-      </div>
-    </div>
-  </div>
+    <div id="mobile-nav-container"></div>
+
 
   <div id="desktopNavSpacer" class="w-full hidden lg:block my-[1.5%]">
     <div class="w-full h-[10vh] max-h-[110px]"></div>
@@ -286,8 +209,8 @@
           class="flex flex-col justify-between w-full gap-2 sm:gap-1 md::gap-2 lg:gap-3 xl:gap-4 2xl:gap-5 text-sm md:text-base 2xl:text-xl 3xl:text-2xl">
           <div class="w-full flex flex-col lg:flex-row gap-2 justify-between items-center">
             <div class="flex flex-col gap-2 w-full lg:w-[48%]">
-              <label class="text-white px-2">Пребарај додатоци</label>
-              <input id="search-input" type="text" placeholder="Внеси име на додаток"
+              <label class="text-white px-2">Пребарај производи</label>
+              <input id="search-input" type="text" placeholder="Внеси име на производ"
                 class="px-[3%] py-[3%] rounded-xl bg-[#484848] text-white/70 focus:text-white focus:outline-none">
             </div>
             <div class="flex flex-col gap-2 w-full lg:w-[48%] relative">
@@ -309,7 +232,7 @@
               <label
                 class="flex items-center w-full lg:w-1/4 gap-2 text-white/70 cursor-pointer bg-black/40 justify-start lg:justify-center  text-nowrap px-[5%] rounded-xl py-[1.5%]">
                 <input type="radio" name="category" value="all" class="accent-[#484848]" checked>
-                Сите додатоци
+                Сите производи
               </label>
               <label
                 class="flex items-center w-full lg:w-1/4 gap-2 text-white/70 cursor-pointer bg-black/40 justify-start lg:justify-center text-nowrap px-[5%] rounded-xl py-[1.5%]">
@@ -342,22 +265,21 @@
 
   <!-- PRODUCT MODAL -->
   <div id="product-modal"
-    class="fixed inset-0 bg-transparent backdrop-blur-xl z-[9800] hidden flex justify-center items-center px-[5%]">
+    class="fixed inset-0 bg-transparent backdrop-blur-xl z-[10050] hidden flex justify-center items-center px-[5%]">
     <div
-      class="bg-black/80 max-h-[90vh] w-fit flex flex-col lg:flex-row px-[5%] lg:px-[3%] py-[5%] lg:py-[3%] justify-start items-center gap-5 rounded-xl  overflow-y-scroll lg:overflow-y-hidden xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px]">
+      class="bg-black/80 max-h-[80vh] lg:max-h-[90vh] w-fit flex flex-col lg:flex-row px-[5%] lg:px-[2.5%] xl:px-[3%] py-[5%] lg:py-[2.5%] xl:py-[3%] justify-start items-center gap-5 lg:gap-3 xl:gap-5 rounded-xl  overflow-y-scroll lg:overflow-y-hidden xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px]">
       <img id="modal-img" src="" class="object-cover object-center w-full lg:max-w-[50%] 2xl:max-w-[45%] rounded-xl"
         alt="productImage">
       <div
         class="flex flex-col justify-between gap-2 xl:gap-4 3xl:gap-8 lg:px-[2%] text-sm md:text-base lg:text-base xl:text-lg 2xl:text-xl 3xl:text-3xl">
         <h1 id="modal-title" class="text-white text-lg lg:text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-7xl font-semibold">
         </h1>
-        <p id="modal-desc" class="text-white/70 text-xs xs:text-base"></p>
+        <div id="version-buttons" class="flex flex-wrap gap-2 text-xs xs:text-sm"></div>
+        <p id="modal-desc" class="text-white/70 text-xs xs:text-base lg:text-sm xl:text-base"></p>
         <div
           class="flex justify-between items-center text-white text-xs xs:text-sm lg:text-base xl:text-lg 3xl:text-2xl">
           <p id="modal-price" class="flex justify-start items-center gap-1"><i class="fa-solid fa-tag"></i></p>
-          <a id="modalAddToCart" href="order.html"
-            class="px-[5%] lg:px-[8%] py-[2%] md:py-[1%] lg:py-[2%] bg-black/40 hover:bg-black text-white transition-all duration-300 rounded-lg">Додај
-            во кошничка</a>
+          <a id="modalAddToCart" href="order.html" class="px-[5%] lg:px-[8%] py-[2%] md:py-[1%] lg:py-[2%] bg-black/40 hover:bg-black text-white transition-all duration-300 rounded-lg">Додај во кошничка</a>
         </div>
       </div>
     </div>
@@ -365,7 +287,7 @@
       class="fa-solid fa-x absolute right-[2vw] top-[2vw] text-white text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl cursor-pointer"></i>
   </div>
 
-  <div class="fixed bottom-[5%] left-[5%] z-[9900]">
+  <div class="fixed bottom-[5%] left-[5%] z-[11000]">
     <div class="relative inline-block">
       <p id="cartBadge"
         class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] sm:text-xs md:text-base lg:text-[12px] xl:text-xs rounded-full px-2 py-1 leading-none">
@@ -394,9 +316,82 @@
     const productModal = document.getElementById('product-modal');
     const modalImg = document.getElementById('modal-img');
     const modalTitle = document.getElementById('modal-title');
+    const versionButtons = document.getElementById('version-buttons');
     const modalDesc = document.getElementById('modal-desc');
     const modalPrice = document.getElementById('modal-price');
     const closeModal = document.getElementById('close-modal');
+    let currentModalProduct = null;
+    let currentModalVersionIndex = 0;
+
+    function getCategories(product) {
+      return Array.isArray(product.category) ? product.category : Array.isArray(product.categories) ? product.categories : [product.category];
+    }
+
+    function getCardVersion(extra) {
+      return Array.isArray(extra.versions) && extra.versions.length ? extra.versions[0] : extra;
+    }
+
+    function getModalVersions(extra) {
+      return Array.isArray(extra.versions) && extra.versions.length > 1 ? extra.versions.slice(1) : null;
+    }
+
+    function renderModalVersion(extra, versionIndex) {
+      const modalVersions = getModalVersions(extra);
+      const version = modalVersions && modalVersions[versionIndex]
+        ? modalVersions[versionIndex]
+        : getCardVersion(extra);
+      currentModalProduct = extra;
+      currentModalVersionIndex = versionIndex;
+
+      modalTitle.textContent = version.name || extra.fullName;
+      if (version.descriptionHtml) {
+        modalDesc.innerHTML = version.descriptionHtml;
+      } else {
+        modalDesc.textContent = version.description || extra.longDesc || '';
+      }
+      modalImg.src = version.image || extra.image || 'images_webp/placeholder.webp';
+
+      const priceValue = typeof version.price === 'number' && version.price > 0 ? version.price : (typeof extra.price === 'number' ? extra.price : 0);
+      modalPrice.innerHTML = `<i class="fa-solid fa-tag"></i>Цена: ${priceValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')} ден.`;
+
+      if (modalVersions && versionButtons) {
+        versionButtons.innerHTML = '';
+        modalVersions.forEach((item, idx) => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'version-button px-3 py-2 rounded-xl';
+          button.textContent = item.label || `Верзија ${idx + 1}`;
+          if (idx === versionIndex) button.classList.add('active');
+          button.addEventListener('click', () => renderModalVersion(extra, idx));
+          versionButtons.appendChild(button);
+        });
+      } else if (versionButtons) {
+        versionButtons.innerHTML = '';
+      }
+
+      updateModalAddButtonState();
+    }
+
+    function sortFeaturedFirst(items, sortOption) {
+      return items.slice().sort((a, b) => {
+        const aFeatured = a.featured ? 1 : 0;
+        const bFeatured = b.featured ? 1 : 0;
+        if (aFeatured !== bFeatured) return bFeatured - aFeatured;
+        switch (sortOption) {
+          case 'Цена (најниска)': return getEffectivePrice(a) - getEffectivePrice(b);
+          case 'Цена (највисока)': return getEffectivePrice(b) - getEffectivePrice(a);
+          case 'Попуст (најмал)': return a.discount - b.discount;
+          case 'Попуст (најголем)': return b.discount - a.discount;
+          default: return 0;
+        }
+      });
+    }
+
+    function getEffectivePrice(e) {
+      const version = Array.isArray(e.versions) && e.versions.length ? e.versions[0] : e;
+      const basePrice = typeof version.price === 'number' && version.price > 0 ? version.price : e.price;
+      return e.discount > 0 ? Math.round(basePrice * (1 - e.discount / 100)) : basePrice;
+    }
 
     // NAV AND MOBILE NAV
     (function () {
@@ -613,27 +608,28 @@
       const card = document.createElement('div');
       card.className = 'relative group h-[95vw] xs:h-[400px] md:h-[500px] lg:h-[280px] xl:h-[330px] 2xl:h-[395px] 3xl:h-[500px] flex flex-col bg-transparent shadow-black shadow-2xl rounded-xl overflow-hidden extra-card';
 
-      let priceText;
+      const cardVersion = getCardVersion(extra);
+      const displayImage = cardVersion.image || extra.image || 'images_webp/placeholder.webp';
+      const displayName = cardVersion.name || extra.fullName;
+      const displayShortDesc = cardVersion.description || extra.shortDesc || '';
+      const displayPrice = typeof cardVersion.price === 'number' && cardVersion.price > 0 ? cardVersion.price : extra.price;
+      let displayPriceText;
       if (extra.discount > 0) {
-        const priceNum = extra.price;
-        const discountedPrice = Math.round(priceNum * (1 - extra.discount / 100));
-        const discountedFormatted = discountedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ден.';
-        const originalFormatted = priceNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-        priceText = `<span style="text-decoration: line-through;">${originalFormatted}</span> <span class="text-[8px] sm:text-sm md:text-lg lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl text-white">${discountedFormatted}</span>`;
+        const discountedPrice = Math.round(displayPrice * (1 - extra.discount / 100));
+        const originalFormatted = displayPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        displayPriceText = `<span style="text-decoration: line-through;">${originalFormatted}</span> <span class="text-[8px] sm:text-sm md:text-lg lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl text-white">${discountedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')} ден.</span>`;
       } else {
-        priceText = `Цена: ${extra.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')} ден.`;
+        displayPriceText = `Цена: ${displayPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')} ден.`;
       }
 
-      const imageSrc = extra.image || 'images_webp/placeholder.webp'; // Use placeholder if no image
-
       card.innerHTML = `
-                <div class="relative w-full flex justify-center items-center h-[90%] group-hover:h-full transition-all duration-500 ease-in-out bg-cover bg-center rounded-t-xl" style="background-image: url('${imageSrc}');">
-                    <img src="${imageSrc}" loading="lazy" class="object-cover object-center h-full z-10" alt="">
+                <div class="relative w-full flex justify-center items-center h-[90%] group-hover:h-full transition-all duration-500 ease-in-out bg-cover bg-center rounded-t-xl" style="background-image: url('${displayImage}');">
+                    <img src="${displayImage}" loading="lazy" class="object-cover object-center h-full z-10" alt="">
                     <div class="absolute top-0 right-0 h-full w-[95%] 2xl:w-[90%] backdrop-blur-3xl bg-black/40 translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out flex flex-col justify-between px-[5%] py-[17%] text-white z-20 rounded-l-xl">
                         <div class="flex flex-col w-full gap-2 sm:gap-2 lg:gap-3 text-xs xs:text-base sm:text-sm md:text-xl lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl">
-                            <h3 class="text-sm xs:text-xl md:text-2xl lg:text-base xl:text-lg 2xl:text-xl 3xl:text-3xl font-semibold">${extra.fullName}</h3>
-                            <p class="text-white/70">${extra.shortDesc}</p>
-                            <p class="text-white/70 flex items-center justify-start gap-1"><i class="fa-solid fa-tag"></i>${priceText}</p>
+                            <h3 class="text-sm xs:text-xl md:text-2xl lg:text-base xl:text-lg 2xl:text-xl 3xl:text-3xl font-semibold">${displayName}</h3>
+                            <p class="text-white/70">${displayShortDesc}</p>
+                            <p class="text-white/70 flex items-center justify-start gap-1"><i class="fa-solid fa-tag"></i>${displayPriceText}</p>
                         </div>
                         <button class="view-more-btn w-full rounded-xl py-[3%] flex justify-center items-center text-white transition-all duration-300 bg-black/40 hover:bg-black/70 text-xs xs:text-lg sm:text-xl lg:text-base 2xl:text-lg">Види повеќе</button>
                     </div>
@@ -651,15 +647,10 @@
       // Add event listener to view more button
       const viewMoreBtn = card.querySelector('.view-more-btn');
       viewMoreBtn.addEventListener('click', () => {
-        modalImg.src = extra.image || 'images_webp/placeholder.webp';
-        modalTitle.textContent = extra.fullName;
-        modalDesc.textContent = extra.longDesc;
-        let priceText = `Цена: ${extra.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')} ден.`;
-        if (extra.discount > 0) {
-          const discountedPrice = Math.round(extra.price * (1 - extra.discount / 100));
-          priceText = `Цена: ${discountedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')} ден.`;
-        }
-        modalPrice.innerHTML = `<i class="fa-solid fa-tag"></i>${priceText}`;
+        currentModalProduct = extra;
+        currentModalVersionIndex = 0;
+        renderModalVersion(extra, 0);
+        updateModalAddButtonState();
         productModal.classList.remove('hidden');
       });
 
@@ -674,12 +665,13 @@
       .then(res => res.json())
       .then(extras => {
         allExtras = extras;
+        allExtras = sortFeaturedFirst(allExtras, sortSelect.value);
         // Hide discount options if no extras have discounts
         if (!allExtras.some(e => e.discount > 0)) {
           [...sortSelect.options].forEach(opt => { if (opt.textContent.includes('Попуст')) opt.style.display = 'none'; });
         }
 
-        extras.forEach(extra => {
+        allExtras.forEach(extra => {
           const card = createCard(extra);
           extrasGrid.appendChild(card);
           allCards.push({ extra, card });
@@ -707,19 +699,13 @@
       const category = document.querySelector('input[name="category"]:checked').value;
       const sortOption = sortSelect.value;
 
-      let filtered = allExtras.filter(e =>
-        e.fullName.toLowerCase().includes(searchTerm) &&
-        (category === 'all' || e.category === category)
-      );
+      let filtered = allExtras.filter(e => {
+        const categories = getCategories(e);
+        return e.fullName.toLowerCase().includes(searchTerm) &&
+          (category === 'all' || categories.includes(category));
+      });
 
-      const getEffectivePrice = (e) => e.discount > 0 ? Math.round(e.price * (1 - e.discount / 100)) : e.price;
-
-      switch (sortOption) {
-        case 'Цена (најниска)': filtered.sort((a, b) => getEffectivePrice(a) - getEffectivePrice(b)); break;
-        case 'Цена (највисока)': filtered.sort((a, b) => getEffectivePrice(b) - getEffectivePrice(a)); break;
-        case 'Попуст (најмал)': filtered.sort((a, b) => a.discount - b.discount); break;
-        case 'Попуст (најголем)': filtered.sort((a, b) => b.discount - a.discount); break;
-      }
+      filtered = sortFeaturedFirst(filtered, sortOption);
 
       // Determine new order
       const newOrder = filtered.map(extra => allCards.find(ac => ac.extra.fullName === extra.fullName).card);
@@ -777,54 +763,7 @@
     }
   </script>
 
-    <div class="px-[5%] w-full bg-black">
-        <div id="footer" class="w-full flex flex-col-reverse lg:flex-row justify-between items-center py-[6%] xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-lg xs:text-2xl md:text-3xl lg:text-xs xl:text-base 2xl:text-lg 3xl:text-2xl">
-          <div class="flex flex-col w-full lg:w-1/4 text-white gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-500 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <a href="platinum.html" class="text-white/70 hover:text-white transition-all duration-300">Platinum</a>
-            <a href="extras.html" class="text-white/70 hover:text-white transition-all duration-300">Додатоци</a>
-            <a href="aboutus.html" class="text-white/70 hover:text-white transition-all duration-300">За Нас</a>
-            <a href="howTo.html" class="text-white/70 hover:text-white transition-all duration-300">Видео водич</a>
-            <a href="tips.html" class="text-white/70 hover:text-white transition-all duration-300">Совети</a>
-            <a href="blog.html" class="text-white/70 hover:text-white transition-all duration-300">Блог</a>
-            <a href="faq.html" class="text-white/70 hover:text-white transition-all duration-300">FAQ</a>
-          </div>
-          <div class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <a href="https://www.facebook.com/p/Vinkom-Dooel-Kirby-100057307614536/?locale=mk_MK" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-600 fa-brands fa-facebook"></i>Facebook</a>
-            <a href="https://www.instagram.com/vinkom_dooelkirby/" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-pink-600 fa-brands fa-instagram"></i>Instagram</a>
-            <a href="https://www.youtube.com/@kirbyvacuums" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-red-600 fa-brands fa-youtube"></i>YouTube</a>
-            <a href="https://www.linkedin.com/company/vinkom-dooel/" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-500 fa-brands fa-linkedin"></i>LinkedIn</a>
-            <a href="mailto:customercare@vinkom.com.mk" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-envelope"></i>customercare@vinkom.com.mk</a>
-          </div>
-          <div class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <a href="termsAndConditions.html" class="text-white/70 hover:text-white transition-all duration-300">Terms & Conditions</a>
-            <a href="privacyPolicy.html" class="text-white/70 hover:text-white transition-all duration-300">Privacy Policy</a>
-            <a href="tradeIn.html" class="text-white/70 hover:text-white transition-all duration-300">Замени</a>
-            <a href="book.html" class="text-white/70 hover:text-white transition-all duration-300">Закажи Презентација</a>
-            <a href="tel:+38922461144" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-phone"></i>02 246 1144</a>
-            <a href="tel:+38970383953" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-mobile-screen-button"></i>070 383 953</a>
-            <a target="_blank" href="https://www.google.com/maps?q=42.0085833,21.3672778" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-location-dot"></i>Партизански Одреди 165</a>
-          </div>
-          <div class="flex flex-col w-full lg:w-1/4 text-white gap-3 justify-center border-l-2 border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <h1 class="text-white text-4xl sm:text-5xl lg:text-2xl xl:text-4xl 3xl:text-5xl">Дознавај прв</h1>
-            <p class="text-white/70 text-base xs:text-2xl md:text-3xl lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl">Претплати се и добивај новости, совети и ексклузивни понуди директно на е-пошта.</p>
-            <div class="flex gap-2">
-              <form id="subscribeForm" action="https://api.web3forms.com/submit" method="POST" class="w-full flex flex-row lg:flex-col xl:flex-row gap-2 items-center text-base lg:text-sm">
-                  <input type="hidden" name="access_key" value="6c1d84bc-0208-463a-9f71-e42b2b89ca44">
-                  <input type="hidden" name="subject" value="Претплата на корисник">
-                  <input id="subscribeEmail" type="email" name="email" required placeholder="E-mail" class="outline-none w-[69%] lg:w-full xl:w-[69%] border border-white/70 rounded-xl px-[4%] py-[3%] bg-transparent text-white my-[5%] lg:my-0"/>      
-                  <button type="submit" class="outline-none w-[29%] lg:w-full xl:w-[69%]  border border-white/70 rounded-xl px-[3%] py-[3%] bg-transparent text-white/70 hover:bg-white/70 hover:text-white transition-all duration-300 my-[5%] lg:my-0">Испрати</button>
-              </form>
-            </div>
-          </div>
-        </div>
-    </div>
-
-
-  <div class="w-full bg-black px-[5%]">
-    <img src="images_webp/footer.webp" loading="lazy"
-      class="w-full xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center"
-      alt="">
-  </div>
+    <div id="footer-container"></div>
 
   <div id="cookieBanner" class="fixed bottom-[5%] px-[5%] w-full text-white z-[9999] hidden">
     <div
@@ -959,14 +898,15 @@
           showTooltip(addBtn, addBtn.title || 'Достигнат е максималниот број на различни производи во кошничката');
           return;
         }
-        const nameEl = document.getElementById('modal-title');
-        const priceEl = document.getElementById('modal-price');
+        if (!currentModalProduct) return;
+        const modalVersions = getModalVersions(currentModalProduct);
+        const version = modalVersions && modalVersions[currentModalVersionIndex]
+          ? modalVersions[currentModalVersionIndex]
+          : getCardVersion(currentModalProduct);
+        const name = version.name || currentModalProduct.fullName;
+        const price = typeof version.price === 'number' ? version.price : (typeof currentModalProduct.price === 'number' ? currentModalProduct.price : 0);
         const imgEl = document.getElementById('modal-img');
-        if (!nameEl || !priceEl) return;
-        const name = nameEl.textContent.trim();
         const img = imgEl ? imgEl.src : '';
-        const digits = priceEl.textContent.replace(/\D/g, '');
-        const price = parseInt(digits) || 0;
         addProductToCart({ name, price, image: img });
 
         if (checkOutBtn) {
@@ -987,6 +927,7 @@
     })();
   </script>
   <script src="cookie.js"></script>
+<script src="assets/js/includes.js"></script>
 </body>
 
 </html>

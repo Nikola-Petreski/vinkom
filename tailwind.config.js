@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "./*.{html,js}",          // all HTML/JS in root
-    "./includes/**/*.{js,ts}" // all JS/TS in includes folder (recursive)
+    "./includes/**/*.{html,js,ts}" // all HTML/JS/TS in includes folder (recursive)
   ],
   theme: {
     extend: {

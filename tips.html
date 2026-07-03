@@ -123,104 +123,10 @@
     }
   </style>
 
-  <div class="px-[5%] w-full">
-    <div id="nav"
-      class="w-full h-[10vh] max-h-[110px] rounded-lg justify-between items-center bg-transparent hover:bg-black/40 backdrop-blur-sm hover:backdrop-blur-lg my-[1.5%] px-[2%] text-[#c1c1c1] fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden lg:flex xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
-      <a id="logo" href="index.html"
-        class="text-4xl 2xl:text-5xl font-medium hover:text-white transition-all duration-300 w-[31%] xl:w-[26%] 2xl:w-1/4 text-start"><img
-          src="logos/LOGO ZAEDNO7.png" class="h-full w-auto"></a>
-      <div
-        class="flex gap-1 items-center justify-center w-1/2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
-        <a href="platinum.html" class="hover:text-white px-1 transition-all duration-300">&nbsp;&nbsp;Platinum</a>
-        <a href="extras.html" class="hover:text-white px-1 transition-all duration-300">Додатоци</a>
-        <a href="aboutus.html" class="hover:text-white px-1 transition-all duration-300">За Нас</a>
-        <div class="relative">
-          <button id="infoDropdownButton" type="button" aria-expanded="false"
-            class="flex px-2 py-2 rounded-t-xl w-[117px] xl:w-[129px] 2xl:w-[135px] 3xl:w-[146px] items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
-            Инфо центар
-            <span class="pb-[4px] pl-[1px]"><i id="infoChevron"
-                class="fa-solid fa-chevron-down text-[10px] xl:text-xs hidden hover:block"></i></span>
-          </button>
-          <div id="infoDropdownMenu"
-            class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-0 transition-all duration-300 ease-out z-50 flex flex-col w-[117px] xl:w-[129px] 2xl:w-[135px] 3xl:w-[146px] shadow-2xl shadow-black">
-            <a href="howTo.html"
-              class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Видео
-              водич</a>
-            <a href="tips.html"
-              class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Совети</a>
-            <a href="blog.html"
-              class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Блог</a>
-            <a href="faq.html"
-              class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap  rounded-b-xl pb-2">FAQ</a>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex items-center justify-end h-full rounded-full w-[30.5%] xl:w-[26%] 2xl:w-1/4 lg:gap-1 3xl:gap-2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
-        <a href="tradeIn.html"
-          class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Замени&nbsp;&nbsp;</a>
-        <a href="book.html"
-          class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;&nbsp;Закажи
-          презентација&nbsp;&nbsp;</a>
-        <div class="relative">
-          <button id="langDropdownButton" type="button" aria-expanded="false"
-            class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
-            <img src="flags/macedonia.png" class="h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px] rounded-full">
-          </button>
-          <div id="langDropdownMenu"
-            class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
-            <a href="#" class="block py-2 3xl:py-3 rounded-t-xl hover:text-white transition-all duration-300"><img
-                src="flags/britain.png" class="rounded-full h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px]"></a>
-            <a href="#" class="block rounded-b-xl hover:text-white transition-all duration-300"> <img
-                src="flags/albania.png" class="rounded-full h-[23px] w-[23px] 3xl:h-[28px] 3xl:w-[28px]"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <div id="nav-container"></div>
 
-  <div id="mobileNav"
-    class="fixed top-[2vh] left-1/2 -translate-x-1/2 z-[9990] lg:hidden w-[90vw] text-white backdrop-blur-3xl p-[5%] md:p-[3%] flex-col rounded-xl bg-black/25 xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691px]">
-    <div id="mainMenu" class="flex justify-between items-center">
-      <div class="relative">
-        <button id="mobileLangDropdownButton" type="button" aria-expanded="false"
-          class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap text-white">
-          <img src="flags/macedonia.png"
-            class="h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px] rounded-full">
-        </button>
-        <div id="mobileLangDropdownMenu"
-          class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
-          <a href="#" class="block hover:text-white transition-all duration-300 py-2 xs:py-3 md:py-4"><img
-              src="flags/britain.png"
-              class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
-          <a href="#" class="block hover:text-white transition-all duration-300"> <img src="flags/albania.png"
-              class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
-        </div>
-      </div>
-      <a href="index.html" class="max-w-[40%] h-full"><img src="logos/LOGO ZAEDNO7.png" class="h-full"></a>
-      <button id="mobileMenuToggle" class="text-white"><i
-          class="fa-solid fa-bars text-[20px] md:text-[30px]"></i></button>
-    </div>
-    <div id="triggeredMenu" class="flex flex-col gap-[1vh] w-full justify-center items-center text-lg md:text-xl">
-      <a href="index.html" class="text-center pt-[1vh]">Дома</a>
-      <a href="platinum.html" class="text-center">Platinum</a>
-      <a href="extras.html" class="text-center">Додатоци</a>
-      <a href="book.html" class="text-center">Закажи презентација</a>
-      <a href="tradeIn.html" class="text-center">Замени</a>
-      <a href="aboutus.html" class="text-center">За Нас</a>
-      <div class=" pb-[1vh]">
-        <button id="mobileInfoDropdownButton" type="button" aria-expanded="false" class=" text-white">Инфо
-          центар&nbsp;<span class=""><i id="mobileInfoChevron"
-              class="fa-solid fa-chevron-down text-sm"></i></span></button>
-        <div id="mobileInfoDropdownMenu" class="flex flex-col max-h-0 overflow-hidden text-base md:text-lg pl-[1vh]">
-          <a href="howTo.html" class="text-white/70 transition-all duration-300">Видео водич</a>
-          <a href="tips.html" class="text-white/70 transition-all duration-300">Совети</a>
-          <a href="blog.html" class="text-white/70 transition-all duration-300">Блог</a>
-          <a href="faq.html" class="text-white/70 transition-all duration-300">FAQ</a>
-        </div>
-      </div>
-    </div>
-  </div>
+    <div id="mobile-nav-container"></div>
+
 
   <div id="desktopNavSpacer" class="w-full hidden lg:block my-[1.5%]">
     <div class="w-full h-[10vh] max-h-[110px]"></div>
@@ -398,54 +304,7 @@
   <div id="spacer" class="bg-gradient-to-b from-black/60 to-black h-[10vh] w-full"></div>
 
 
-    <div class="px-[5%] w-full bg-black">
-        <div id="footer" class="w-full flex flex-col-reverse lg:flex-row justify-between items-center py-[6%] xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-lg xs:text-2xl md:text-3xl lg:text-xs xl:text-base 2xl:text-lg 3xl:text-2xl">
-          <div class="flex flex-col w-full lg:w-1/4 text-white gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-500 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <a href="platinum.html" class="text-white/70 hover:text-white transition-all duration-300">Platinum</a>
-            <a href="extras.html" class="text-white/70 hover:text-white transition-all duration-300">Додатоци</a>
-            <a href="aboutus.html" class="text-white/70 hover:text-white transition-all duration-300">За Нас</a>
-            <a href="howTo.html" class="text-white/70 hover:text-white transition-all duration-300">Видео водич</a>
-            <a href="tips.html" class="text-white/70 hover:text-white transition-all duration-300">Совети</a>
-            <a href="blog.html" class="text-white/70 hover:text-white transition-all duration-300">Блог</a>
-            <a href="faq.html" class="text-white/70 hover:text-white transition-all duration-300">FAQ</a>
-          </div>
-          <div class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <a href="https://www.facebook.com/p/Vinkom-Dooel-Kirby-100057307614536/?locale=mk_MK" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-600 fa-brands fa-facebook"></i>Facebook</a>
-            <a href="https://www.instagram.com/vinkom_dooelkirby/" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-pink-600 fa-brands fa-instagram"></i>Instagram</a>
-            <a href="https://www.youtube.com/@kirbyvacuums" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-red-600 fa-brands fa-youtube"></i>YouTube</a>
-            <a href="https://www.linkedin.com/company/vinkom-dooel/" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-500 fa-brands fa-linkedin"></i>LinkedIn</a>
-            <a href="mailto:customercare@vinkom.com.mk" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-envelope"></i>customercare@vinkom.com.mk</a>
-          </div>
-          <div class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <a href="termsAndConditions.html" class="text-white/70 hover:text-white transition-all duration-300">Terms & Conditions</a>
-            <a href="privacyPolicy.html" class="text-white/70 hover:text-white transition-all duration-300">Privacy Policy</a>
-            <a href="tradeIn.html" class="text-white/70 hover:text-white transition-all duration-300">Замени</a>
-            <a href="book.html" class="text-white/70 hover:text-white transition-all duration-300">Закажи Презентација</a>
-            <a href="tel:+38922461144" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-phone"></i>02 246 1144</a>
-            <a href="tel:+38970383953" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-mobile-screen-button"></i>070 383 953</a>
-            <a target="_blank" href="https://www.google.com/maps?q=42.0085833,21.3672778" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-location-dot"></i>Партизански Одреди 165</a>
-          </div>
-          <div class="flex flex-col w-full lg:w-1/4 text-white gap-3 justify-center border-l-2 border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
-            <h1 class="text-white text-4xl sm:text-5xl lg:text-2xl xl:text-4xl 3xl:text-5xl">Дознавај прв</h1>
-            <p class="text-white/70 text-base xs:text-2xl md:text-3xl lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl">Претплати се и добивај новости, совети и ексклузивни понуди директно на е-пошта.</p>
-            <div class="flex gap-2">
-              <form id="subscribeForm" action="https://api.web3forms.com/submit" method="POST" class="w-full flex flex-row lg:flex-col xl:flex-row gap-2 items-center text-base lg:text-sm">
-                  <input type="hidden" name="access_key" value="6c1d84bc-0208-463a-9f71-e42b2b89ca44">
-                  <input type="hidden" name="subject" value="Претплата на корисник">
-                  <input id="subscribeEmail" type="email" name="email" required placeholder="E-mail" class="outline-none w-[69%] lg:w-full xl:w-[69%] border border-white/70 rounded-xl px-[4%] py-[3%] bg-transparent text-white my-[5%] lg:my-0"/>      
-                  <button type="submit" class="outline-none w-[29%] lg:w-full xl:w-[69%]  border border-white/70 rounded-xl px-[3%] py-[3%] bg-transparent text-white/70 hover:bg-white/70 hover:text-white transition-all duration-300 my-[5%] lg:my-0">Испрати</button>
-              </form>
-            </div>
-          </div>
-        </div>
-    </div>
-
-
-  <div class="w-full bg-black px-[5%]">
-    <img src="images_webp/footer.webp" loading="lazy"
-      class="w-full xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center"
-      alt="">
-  </div>
+    <div id="footer-container"></div>
 
   <script>
     (function () {
@@ -727,6 +586,7 @@
 
   </script>
 
+<script src="assets/js/includes.js"></script>
 </body>
 
 </html>
