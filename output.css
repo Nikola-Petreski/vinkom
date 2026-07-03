@@ -3134,6 +3134,11 @@ video {
     padding-bottom: 0.75rem;
   }
 
+  .xs\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
   .xs\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
