@@ -30,6 +30,6 @@
   { "name": "Model 509",            "image": "manuals/images/model_509.webp",           "eng_doc": "manuals/manuals/model_509_eng.pdf"},
   { "name": "Model 508",            "image": "manuals/images/model_508.webp",           "eng_doc": "manuals/manuals/model_508_eng.pdf"},
   { "name": "Model 505",            "image": "manuals/images/model_505.webp",           "eng_doc": "manuals/manuals/model_505_eng.pdf"},
-  { "name": "Model 4C",             "image": "manuals/images/model_4c.webp",            "eng_doc": "manuals/manuals/model_4c_eng.pdf"},
-  { "name": "Model 2C",             "image": "manuals/images/model_2c.webp",            "eng_doc": "manuals/manuals/model_2c_eng.pdf"}
+  { "name": "Model 4C",             "image": "manuals/images/model_4C.webp",            "eng_doc": "manuals/manuals/model_4C_eng.pdf"},
+  { "name": "Model 2C",             "image": "manuals/images/model_2C.webp",            "eng_doc": "manuals/manuals/model_2C_eng.pdf"}
 ]

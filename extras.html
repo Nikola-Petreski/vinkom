@@ -344,10 +344,13 @@
       currentModalVersionIndex = versionIndex;
 
       modalTitle.textContent = version.name || extra.fullName;
+      const description = version.descriptionHtml ? null : (version.description || extra.longDesc || '');
       if (version.descriptionHtml) {
         modalDesc.innerHTML = version.descriptionHtml;
+      } else if (description && /<[^>]+>/.test(description)) {
+        modalDesc.innerHTML = description;
       } else {
-        modalDesc.textContent = version.description || extra.longDesc || '';
+        modalDesc.textContent = description;
       }
       modalImg.src = version.image || extra.image || 'images_webp/placeholder.webp';
 

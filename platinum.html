@@ -646,11 +646,11 @@
             if (desc.classList.contains('opacity-0')) {
                 // expand
                 desc.classList.remove('opacity-0', 'max-h-0');
-                desc.classList.add('opacity-100', 'max-h-[300px]');
+                desc.classList.add('opacity-100', 'max-h-[400px]');
                 chevron.classList.add('rotate-180');
             } else {
                 // collapse
-                desc.classList.remove('opacity-100', 'max-h-[300px]');
+                desc.classList.remove('opacity-100', 'max-h-[400px]');
                 desc.classList.add('opacity-0', 'max-h-0');
                 chevron.classList.remove('rotate-180');
             }
@@ -1004,17 +1004,31 @@
                     </div>
                 </div>
                 <div
+                    class="w-full h-[35vh] lg:h-[70vh] xl:h-[50vh] 2xl:h-[70vh] flex justify-start lg:justify-end items-start p-[2%] lg:p-[1%] bg-[url('images_webp/platinumHTML/attachments/shamponer.webp')] bg-cover bg-left lg:bg-center rounded-xl">
+                    <div id="attachment-container-7"
+                        class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[2%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[35%] transition-all duration-300 flex flex-col justify-between items-start">
+                        <h1 id="attachment-toggle-7" onclick="toggleAttachment(7)"
+                            class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between w-full">
+                            <p>Multi-Surface Шампонер</p><i id="attachment-chevron-7"
+                                class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
+                        </h1>
+                        <p id="attachment-desc-7"
+                            class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
+                            Kirby Multi-Surface Shampoo System е наменет за шампонирање теписи и тапацир, тврди подови како винил, ламинат и дрво, и длабинско чистење на плочки и фуги. Овој систем обезбедува темелно чистење и свеж мирис без остатоци.</p>
+                    </div>
+                </div>
+                <div
                     class="w-full justify-between items-center h-[120vh] lg:h-[50vh] xl:h-[70vh] flex flex-col lg:flex-row">
                     <div
                         class="w-full lg:w-[31%] h-[32%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/turboSander.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-start items-start rounded-xl">
-                        <div id="attachment-container-7"
+                        <div id="attachment-container-8"
                             class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[75%] 2xl:max-w-[90%] transition-all duration-300">
-                            <h1 id="attachment-toggle-7" onclick="toggleAttachment(7)"
+                            <h1 id="attachment-toggle-8" onclick="toggleAttachment(8)"
                                 class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between">
-                                <p>Turbo Sander</p><i id="attachment-chevron-7"
+                                <p>Turbo Sander</p><i id="attachment-chevron-8"
                                     class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
                             </h1>
-                            <p id="attachment-desc-7"
+                            <p id="attachment-desc-8"
                                 class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
                                 Моќен додаток за полирање кој безбедно ги обновува дрвените подови до огледален сјај. Со
                                 микрофибер влошки и контролиран проток на воздух ги отстранува лесните гребнатини и ја
@@ -1023,14 +1037,14 @@
                     </div>
                     <div
                         class="w-full lg:w-[30%] h-[32%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/utilityTool.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                        <div id="attachment-container-8"
+                        <div id="attachment-container-9"
                             class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[75%] 2xl:max-w-[90%] transition-all duration-300">
-                            <h1 id="attachment-toggle-8" onclick="toggleAttachment(8)"
+                            <h1 id="attachment-toggle-9" onclick="toggleAttachment(9)"
                                 class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between">
-                                <p>Тимар четка</p><i id="attachment-chevron-8"
+                                <p>Тимар четка</p><i id="attachment-chevron-9"
                                     class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
                             </h1>
-                            <p id="attachment-desc-8"
+                            <p id="attachment-desc-9"
                                 class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
                                 Повеќенаменска четка за ефикасно чистење на мебел, завеси и меки површини. Отстранува
                                 влакна од миленици, прашина и алергени, додека ги заштитува чувствителните ткаенини при
@@ -1039,14 +1053,14 @@
                     </div>
                     <div
                         class="w-full lg:w-[31%] h-[32%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/alatkaZaTesniProstori.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-start items-start rounded-xl">
-                        <div id="attachment-container-9"
+                        <div id="attachment-container-10"
                             class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[75%] 2xl:max-w-[90%] transition-all duration-300">
-                            <h1 id="attachment-toggle-9" onclick="toggleAttachment(9)"
+                            <h1 id="attachment-toggle-10" onclick="toggleAttachment(10)"
                                 class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between">
-                                <p>Четка за тесни простори</p><i id="attachment-chevron-9"
+                                <p>Четка за тесни простори</p><i id="attachment-chevron-10"
                                     class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
                             </h1>
-                            <p id="attachment-desc-9"
+                            <p id="attachment-desc-10"
                                 class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
                                 Тесна продолжена млазница од 30 см за пристап зад мебел, радијатори, лајсни и апарати
                                 каде што се собира нечистотија. Моќното и насочено вшмукување ги отстранува скриената
@@ -1055,33 +1069,33 @@
                     </div>
                 </div>
                 <div
-                    class="w-full justify-between items-center h-[80vh] lg:h-[50vh] xl:h-[80vh] flex flex-col lg:flex-row">
+                    class="w-full justify-between items-center h-[80vh] lg:h-[60vh] xl:h-[90vh] flex flex-col lg:flex-row">
                     <div
                         class="w-full lg:w-[48%] h-[48%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/HEPAfilterKesi.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                        <div id="attachment-container-10"
-                            class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[50%] 3xl:max-w-[57%] transition-all duration-300">
-                            <h1 id="attachment-toggle-10" onclick="toggleAttachment(10)"
+                        <div id="attachment-container-11"
+                            class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[100%] lg:max-w-full xl:max-w-[80%] 2xl:max-w-[70%] 3xl:max-w-[80%] transition-all duration-300">
+                            <h1 id="attachment-toggle-11" onclick="toggleAttachment(11)"
                                 class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between">
-                                <p>HEPA Филтер Кеси</p><i id="attachment-chevron-10"
+                                <p>HEPA Филтер Кеси</p><i id="attachment-chevron-11"
                                     class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
                             </h1>
-                            <p id="attachment-desc-10"
+                            <p id="attachment-desc-11"
                                 class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
-                                Пакет од шест премиум заменливи кеси кои задржуваат 99,99% од микроскопските алергени и
-                                непријатни мириси. Обезбедуваат врвна филтрација, чист издувен воздух и поедноставно
-                                одржување при подолги сесии на чистење.</p>
+                                Пакет од шест заменливи кеси кои задржуваат 99,99% од микроскопските алергени и
+                                непријатни мириси. <span class="hidden xs:inline">Обезбедуваат врвна филтрација, чист издувен воздух и поедноставно
+                                одржување при подолги сесии на чистење.</span> Користењето неоригинални филтер кеси може да доведе до намалена ефикасност, оштетување на уредот и пропуштање прашина. <span class="hidden xs:inline">Оригиналните Kirby кеси се:<br> <i class='fa-solid fa-check text-green-600'></i> Специјално дизајнирани за системот<br> <i class='fa-solid fa-check text-green-600'></i> Тестирани за квалитет и безбедност<br> <i class='fa-solid fa-check text-green-600'></i> Гарантираат правилна работа </span></p>
                         </div>
                     </div>
                     <div
                         class="w-full lg:w-[48%] h-[48%] lg:h-full bg-[url('images_webp/platinumHTML/attachments/prenosnaRachka.webp')] p-[2%] lg:p-[1%] bg-cover bg-center flex justify-end items-start rounded-xl">
-                        <div id="attachment-container-11"
-                            class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[50%] transition-all duration-300">
-                            <h1 id="attachment-toggle-11" onclick="toggleAttachment(11)"
+                        <div id="attachment-container-12"
+                            class="backdrop-blur-md bg-black/40 rounded-xl text-white/70 p-[3%] w-auto max-w-[80%] lg:max-w-full xl:max-w-[55%] 2xl:max-w-[70%] transition-all duration-300">
+                            <h1 id="attachment-toggle-12" onclick="toggleAttachment(12)"
                                 class="text-white font-black text-sm xs:text-xl md:text-2xl cursor-pointer flex flex-row items-center justify-between">
-                                <p>Преносна Рачка</p><i id="attachment-chevron-11"
+                                <p>Преносна Рачка</p><i id="attachment-chevron-12"
                                     class="fa-solid fa-chevron-down transition-transform duration-300 px-1"></i>
                             </h1>
-                            <p id="attachment-desc-11"
+                            <p id="attachment-desc-12"
                                 class="opacity-0 max-h-0 overflow-hidden transition-all duration-300 text-sm xs:text-base md:text-lg 3xl:text-2xl">
                                 Ергономска горна рачка за лесно носење на машината по скали и меѓу простории. Ја
                                 претвора Kirby во преносна станица за чистење, идеална за повеќекатни домови, автомобили
