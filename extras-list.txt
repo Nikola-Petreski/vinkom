@@ -1,0 +1,239 @@
+name: Kirby Avair Platinum
+price: 181450
+category: Потрошен материјал, Резервни делови, Средства
+id: 
+
+name: Шампон од 1 галон (3,785 мл)
+price: 3300
+category: Средства
+id: 
+
+name: Освежувач на домот
+price: 950
+category: Средства
+id: 
+
+name: Предтретман за чистење плочки и фуги
+price: 880
+category: Средства
+id: 
+
+name: Средство за флеки од домашни миленичиња
+price: 1250
+category: Средства
+id: 
+
+name: Средство за чистење на тврди површини
+price: 800
+category: Средства
+id: 
+
+name: Средство за чистење плочки и фуги
+price: 880
+category: Средства
+id: 
+
+name: Шампон за предтретман на често проодни места
+price: 1100
+category: Средства
+id: 
+
+name: Концентрат за чистење на тврди подови
+price: 1100
+category: Средства
+id: 
+
+name: Lickity Split
+price: 610
+category: Средства
+id: 
+
+name: OXY-повеќенаменски отсранувач на дамки
+price: 1250
+category: Средства
+id: 
+
+name: Магичен сјај финиш за висок сјај на подот
+price: 1430
+category: Средства
+id: 
+
+name: Кирби пена
+price: 720
+category: Средства
+id: 
+
+name: Kirby комплет за плочки и фуги
+price: 4750
+category: Резервни делови
+id: 
+
+name: Koнектор за шампонер Авалир
+price: 280
+category: Резервни делови
+id: 
+
+name: Турбина
+price: 2000
+category: Резервни делови
+id: 
+
+name: Заден приклучок на црево
+price: 1150
+category: Резервни делови
+id: 
+
+name: Задни тркала
+price: 850
+category: Резервни делови
+id: 
+
+name: Зип четка
+price: 6150
+category: Резервни делови
+id: 
+
+name: Ѕвоно за длабинска четка
+price: 9500
+category: Резервни делови
+id: 
+
+name: Кабел за Kirby апарати
+price: 3350
+category: Резервни делови
+id: 
+
+name: Кадичка за Kirby шампонер
+price: 1870
+category: Резервни делови
+id: 
+
+name: Мини емптор
+price: 2920
+category: Резервни делови
+id: 
+
+name: Надворешна вреќа
+price: 4290
+category: Резервни делови
+id: 
+
+name: Подлошка од четка за тврди подови
+price: 850
+category: Резервни делови
+id: 
+
+name: Предни тркала
+price: 800
+category: Резервни делови
+id: 
+
+name: Продолжна цевка
+price: 1200
+category: Резервни делови
+id: 
+
+name: Продолжно црево – комплет
+price: 3300
+category: Резервни делови
+id: 
+
+name: Регулатор за проток на воздух
+price: 550
+category: Резервни делови
+id: 
+
+name: Резервоар за шампонер
+price: 2150
+category: Резервни делови
+id: 
+
+name: Сито филтер за шампонер
+price: 220
+category: Резервни делови
+id: 
+
+name: Тимар четка
+price: 390
+category: Резервни делови
+id: 
+
+name: Црево за шампонер
+price: 740
+category: Резервни делови
+id: 
+
+name: Црно црево
+price: 1400
+category: Резервни делови
+id: 
+
+name: Четка за мебел
+price: 700
+category: Резервни делови
+id: 
+
+name: Четка за прав
+price: 1100
+category: Резервни делови
+id: 
+
+name: Замена за четка за прав
+price: 650
+category: Резервни делови
+id: 
+
+name: Четка за таван
+price: 1060
+category: Резервни делови
+id: 
+
+name: Четка за шампонер
+price: 3200
+category: Резервни делови
+id: 
+
+name: Пренослив шприц пиштол
+price: 1410
+category: Резервни делови
+id: 
+
+name: Дрвена четка
+price: 3300
+category: Резервни делови
+id: 
+
+name: Дрвена четка ДЕЛИКАТЕ
+price: 2820
+category: Резервни делови
+id: 
+
+name: Микрофибер крпа за чистење
+price: 610
+category: Резервни делови
+id: 
+
+name: Ременче
+price: 200
+category: Потрошен материјал
+id: 
+
+name: Universal Филтер кеса (6 парчиња)
+price: 2700
+category: Потрошен материјал
+id: 
+
+name: Universal Филтер кеса (1 парче)
+price: 450
+category: Потрошен материјал
+id: 
+
+name: HEPA Plus Филтер кеса (6 парчиња)
+price: 3000
+category: Потрошен материјал
+id: 
+
+name: HEPA Plus Филтер кеса (1 парче)
+price: 500
+category: Потрошен материјал
+id: 

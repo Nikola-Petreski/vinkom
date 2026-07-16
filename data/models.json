@@ -3,7 +3,10 @@
     "name": "Kirby Avalir 2",
     "productImage": "images_webp/avalir_2_img/avalir_2.webp",
     "bgImage": "images_webp/avalir_2_img/avalir_2_bg.webp",
-    "productionYears": { "from": 2017, "to": 2024 },
+    "productionYears": {
+      "from": 2017,
+      "to": 2024
+    },
     "description": "Kirby Avalir 2 е дизајниран со фокус на современиот корисник и го подигнува чистењето на повисоко ниво. Неговиот елегантен дизајн со сини акценти не е само визуелно привлечен, туку и практичен, бидејќи доаѓа со 15 различни додатоци за чистење. Опремен е со напреден Multi-Surface Shampoo System, кој овозможува не само шампонирање на теписи, туку и темелно чистење на дрвени подови, плочки и винил со голема леснотија. Поедноставената едноделна база за шампонирање се прикачува брзо и има лесно отстранлива фиока за отпад, што го прави празнењето на нечистата вода едноставно и практично. Со усовршен дизајн и ергономски карактеристики, Avalir 2 ја продолжува традицијата на удобност и беспрекорни перформанси.",
     "price": 1350,
     "discount": 0,
@@ -22,14 +25,17 @@
       "images_webp/avalir_2_img/gallery/7.webp",
       "images_webp/avalir_2_img/gallery/8.webp",
       "images_webp/avalir_2_img/gallery/9.webp"
-    ]
-
+    ],
+    "shortDescription": "Елегантен, модерен Kirby со 15 додатоци и Multi-Surface Shampoo System за теписи, дрво, плочки и винил; лесно празнење вода и ергономски дизајн."
   },
   {
     "name": "Kirby Avalir",
     "productImage": "images_webp/avalir_img/avalir.webp",
     "bgImage": "images_webp/avalir_img/avalir_bg.webp",
-    "productionYears": { "from": 2015, "to": 2017 },
+    "productionYears": {
+      "from": 2015,
+      "to": 2017
+    },
     "description": "Оваа елегантна правосмукалка со црвени акценти е редизајниран со целосен фокус на потребите на корисниците. Kirby Avalir може да се трансформира во дванаесет различни функционални уреди, што го прави исклучително разновиден. Со модерен дизајн и мазни линии, моделот располага со унапреден Multi-Surface Shampoo System кој овозможува шампонирање на теписи, како и темелно чистење на дрвени подови, плочки и винил. Едноделната база за шампонирање се прикачува брзо и содржи самостојна, лесно отстранлива фиока за отпадна вода. Дополнително, редизајнираната рачка овозможува полесно подигнување без наведнување.",
     "price": 1250,
     "discount": 0,
@@ -48,13 +54,17 @@
       "images_webp/avalir_img/gallery/7.webp",
       "images_webp/avalir_img/gallery/8.webp",
       "images_webp/avalir_img/gallery/9.webp"
-    ]
+    ],
+    "shortDescription": "Редизајниран Kirby со 12 функционални додатоци, Multi-Surface Shampoo System за теписи, дрвен под и плочки, и брзо поврзување за лесно чистење."
   },
   {
     "name": "Kirby Sentria II",
     "productImage": "images_webp/sentria_II_img/sentria_II.webp",
     "bgImage": "images_webp/sentria_II_img/sentria_II_bg.webp",
-    "productionYears": { "from": 2012, "to": 2014 },
+    "productionYears": {
+      "from": 2012,
+      "to": 2014
+    },
     "description": "Моделот Sentria II не донесе само нова и унапредена шема на бои, туку и значајни конструктивни подобрувања. Вклучува редизајниран Mini Em-tor за подобар зафат и полесно отстранување, F-Style прицврстување на филтер-кесата за поедноставна замена, како и модернизирана верзија на популарниот Zippbrush додаток. Уредот располага со издржлива полимерна основа што ја намалува тежината, како и брави на рачките за полесно носење. Sentria II беше и сè уште е еден од најпопуларните Kirby модели, а подоцна беше наследен од најновиот Kirby Avalir Platinum.",
     "price": 1150,
     "discount": 0,
@@ -70,13 +80,17 @@
       "images_webp/sentria_II_img/gallery/4.webp",
       "images_webp/sentria_II_img/gallery/5.webp",
       "images_webp/sentria_II_img/gallery/6.webp"
-    ]
+    ],
+    "shortDescription": "Подобрен Sentria II со лесен Mini Em-tor, F-Style филтер-појава и полимерна основа за помала тежина и подобра преносливост."
   },
   {
     "name": "Kirby Sentria",
     "productImage": "images_webp/sentria_img/sentria.webp",
     "bgImage": "images_webp/sentria_img/sentria_bg.webp",
-    "productionYears": { "from": 2006, "to": 2012 },
+    "productionYears": {
+      "from": 2006,
+      "to": 2012
+    },
     "description": "Моделот Sentria се одликува со помеки линии и заоблен дизајн, што му дава елегантен и современ изглед. Рачката е целосно редизајнирана за да обезбеди подобра ергономија и поголема удобност при користење. Во споредба со претходните модели, Sentria носи неколку забележливи подобрувања, како LED предни светла за подобра видливост, повисок заштитен браник на млазницата за поголема заштита при чистење околу мебел, како и подобрен додаток за тапацир што собира повеќе нечистотии. Овој модел го има освоено и престижниот Gold Seal of Approval од Carpet and Rug Institute за ефикасно чистење теписи.",
     "price": 1050,
     "discount": 0,
@@ -92,13 +106,17 @@
       "images_webp/sentria_img/gallery/4.webp",
       "images_webp/sentria_img/gallery/5.webp",
       "images_webp/sentria_img/gallery/6.webp"
-    ]
+    ],
+    "shortDescription": "Софистициран Kirby со мек дизајн, ергономска рачка, LED светла и подобрен додаток за тапацир со Gold Seal of Approval."
   },
   {
     "name": "Kirby Diamond",
     "productImage": "images_webp/diamond_edition/diamond_edition.webp",
     "bgImage": "images_webp/diamond_edition/diamond_edition_bg.webp",
-    "productionYears": { "from": 2002, "to": 2003 },
+    "productionYears": {
+      "from": 2002,
+      "to": 2003
+    },
     "description": "Моделот Diamond Edition беше многу популарен кај корисниците благодарение на својот класичен дизајн и значајните подобрувања во однос на серијата Ultimate G. Овој модел ги вклучува Allergen Reduction филтрите на Kirby, кои овозможуваат далеку подобра филтрација во споредба со стандардните хартиени кеси. Со унапреден мотор, подобренa ротирачка четка и редизајнирана плоча за теписи, значително е зголемена ефикасноста при исправено чистење. Дополнително, вградена е и деликатна поставка за тенки теписи и тивко чистење, што овозможува поголема флексибилност и комфор при секојдневна употреба.",
     "price": 1000,
     "discount": 0,
@@ -114,13 +132,17 @@
       "images_webp/diamond_edition/gallery/4.webp",
       "images_webp/diamond_edition/gallery/5.webp",
       "images_webp/diamond_edition/gallery/6.webp"
-    ]
+    ],
+    "shortDescription": "Класичен модел со Allergen Reduction филтри, подобрена четка и тивок режим за флексибилно и ефикасно чистење."
   },
   {
     "name": "Kirby Ultimate G",
     "productImage": "images_webp/ultimate_g/ultimate_g.webp",
     "bgImage": "images_webp/ultimate_g/ultimate_g_bg.webp",
-    "productionYears": { "from": 2002, "to": 2003 },
+    "productionYears": {
+      "from": 2002,
+      "to": 2003
+    },
     "description": "Моделот Ultimate G беше на пазарот релативно кратко време, пред да биде претставена Diamond Edition верзијата од серијата Ultimate G. Оваа серија донесе подобрена надворешна кеса за поефикасна филтрација, како и продолжени лопатки на вентилаторот за подобар проток на воздух. Вклучува и нов дизајн на четката со подобрени перки за поефикасно чистење. Отворот на кесата е редизајниран во S-форма за да се намали подигнувањето прашина при вадење. Дополнително, вградени се магнети за појасен индикатор на перформансите. Ultimate G овозможува користење како исправен правосмукалка, канистер и систем за шампонирање теписи.",
     "price": 980,
     "discount": 0,
@@ -133,13 +155,17 @@
       "images_webp/ultimate_g/gallery/1.webp",
       "images_webp/ultimate_g/gallery/2.webp",
       "images_webp/ultimate_g/gallery/3.webp"
-    ]
+    ],
+    "shortDescription": "Краткотраен но моќен модел со подобрена филтрација, нова четка и S-образен отвор на кесата за полесно празнење."
   },
   {
     "name": "Kirby G6",
     "productImage": "images_webp/g6_img/g6.webp",
     "bgImage": "images_webp/g6_img/g6_bg.webp",
-    "productionYears": { "from": 1999, "to": 2002 },
+    "productionYears": {
+      "from": 1999,
+      "to": 2002
+    },
     "description": "Kirby Gsix беше првпат претставен во 1999 година и се произведуваше сè до појавата на серијата Ultimate G во 2002 година. Овој модел се одликува со потемен и поелегантен дизајн кој му дава чувство на класа и сериозност. Gsix вклучува подобрена четка за поефикасно чистење, понапредни филтер-кеси и унапреден пренослив шампонер со подобар распрскувачки млаз. Дополнителни стандардни карактеристики се механизмот за навалување на рачката, toe-touch контролата и TechDrive Power Assist системот, кои овозможуваат полесно управување и поголема удобност при користење.",
     "price": 950,
     "discount": 0,
@@ -152,13 +178,17 @@
       "images_webp/g6_img/gallery/1.webp",
       "images_webp/g6_img/gallery/2.webp",
       "images_webp/g6_img/gallery/3.webp"
-    ]
+    ],
+    "shortDescription": "Стилен Gsix со подобрена четка, TechDrive Power Assist, напредни филтер-кеси и пренослив шампонер за полесно управување."
   },
   {
     "name": "Kirby G5",
     "productImage": "images_webp/g5_img/g5.webp",
     "bgImage": "images_webp/g5_img/g5_bg.webp",
-    "productionYears": { "from": 1997, "to": 1999 },
+    "productionYears": {
+      "from": 1997,
+      "to": 1999
+    },
     "description": "Kirby G5 е еден од најпопуларните модели на Kirby, препознатлив по својата темно бордо боја и елегантен дизајн. Највпечатлива карактеристика на овој модел е неговата „Lexan“ турбина, развиена со помош на NASA, со цел значително зголемување на вкупната моќ на вшмукување. Покрај тоа, G5 нуди можност за користење како исправена и пренослива машина за чистење. Стандардните функции вклучуваат toe-touch контрола, прилагодување на висината на млазницата и TechDrive Power Assist систем, кои овозможуваат лесно управување, стабилни перформанси и удобно чистење на различни површини во домот.",
     "price": 880,
     "discount": 0,
@@ -174,13 +204,17 @@
       "images_webp/g5_img/gallery/4.webp",
       "images_webp/g5_img/gallery/5.webp",
       "images_webp/g5_img/gallery/6.webp"
-    ]
+    ],
+    "shortDescription": "Популарен темно бордо модел со Lexan турбина, toe-touch контрола и TechDrive Power Assist за стабилни и удобни перформанси."
   },
   {
     "name": "Kirby G4",
     "productImage": "images_webp/g4_img/g4.webp",
     "bgImage": "images_webp/g4_img/g4_bg.webp",
-    "productionYears": { "from": 1993, "to": 1997 },
+    "productionYears": {
+      "from": 1993,
+      "to": 1997
+    },
     "description": "Kirby G4 моделот донесе значајни подобрувања насочени кон полесно управување и подобра функционалност. Овој модел беше опремен со целосно нов механизам за заклучување на рачката со три позиции, што овозможува поголема флексибилност и стабилност при користење. Покрај тоа, G4 поддржува различни дополнителни додатоци и наставки кои ја зголемуваат моќта и разновидноста при чистење. Како стандардни карактеристики се вклучени toe-touch контрола, TechDrive Power Assist систем, заменливи Micron Magic кеси за подобра филтрација, како и belt lifter механизам за полесно одржување и користење.",
     "price": 820,
     "discount": 0,
@@ -193,14 +227,17 @@
       "images_webp/g4_img/gallery/1.jpg",
       "images_webp/g4_img/gallery/2.jpg",
       "images_webp/g4_img/gallery/3.jpg"
-
-    ]
+    ],
+    "shortDescription": "G4 нуди трипозициони заклучок на рачката, TechDrive Power Assist, Micron Magic кеси и belt lifter за полесно одржување."
   },
   {
     "name": "Kirby G3",
     "productImage": "images_webp/g3_img/g3.webp",
     "bgImage": "images_webp/g3_img/g3_bg.webp",
-    "productionYears": { "from": 1990, "to": 1993 },
+    "productionYears": {
+      "from": 1990,
+      "to": 1993
+    },
     "description": "Kirby G3 моделот донесе сосема нов изглед и чувство на целиот Kirby, со повеќе од 60 подобрувања, па беше наречен „Зора на новата генерација“. Овој модел го воведе TechDrive Power Assist системот, кој стана еден од најпопуларните карактеристики на Kirby. Автоматската трансмисија го чувствува правецот и брзината со која сакате да се движи Kirby, што го прави поместувањето речиси безнапорно. Дополнително, G3 нуди toe-touch контрола, belt lifter и прилагодлива четка, како и можност за користење како upright правосмукалка, straight suction чистач и пренослив чистач со различни наставки.",
     "price": 750,
     "discount": 0,
@@ -216,8 +253,7 @@
       "images_webp/g3_img/gallery/4.webp",
       "images_webp/g3_img/gallery/5.webp",
       "images_webp/g3_img/gallery/6.webp"
-    ]
+    ],
+    "shortDescription": "Г3 донесе TechDrive Power Assist, toe-touch контрола, belt lifter и прилагодлива четка за лесно и моќно движење."
   }
 ]
-
-
