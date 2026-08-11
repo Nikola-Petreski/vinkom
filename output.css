@@ -2135,6 +2135,10 @@ video {
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
 }
 
+.to-\[\#484848\]\/50 {
+  --tw-gradient-to: rgb(72 72 72 / 0.5) var(--tw-gradient-to-position);
+}
+
 .bg-contain {
   background-size: contain;
 }
