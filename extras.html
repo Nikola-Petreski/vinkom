@@ -352,7 +352,8 @@
       } else {
         modalDesc.textContent = description;
       }
-      modalImg.src = version.image || extra.image || 'images_webp/placeholder.webp';
+      const modalImageSource = extra.modalImage || version.image || extra.image || 'images_webp/placeholder.webp';
+      modalImg.src = modalImageSource;
 
       const priceValue = typeof version.price === 'number' && version.price > 0 ? version.price : (typeof extra.price === 'number' ? extra.price : 0);
       modalPrice.innerHTML = `<i class="fa-solid fa-tag"></i>Цена: ${priceValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')} ден.`;

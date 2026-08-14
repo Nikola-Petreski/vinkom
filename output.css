@@ -910,6 +910,10 @@ video {
   margin-top: 0px;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -926,20 +930,12 @@ video {
   margin-top: 0.75rem;
 }
 
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
-.mt-\[2vh\] {
-  margin-top: 2vh;
-}
-
-.mt-1 {
-  margin-top: 0.25rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .mt-6 {
@@ -948,6 +944,18 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mt-\[2vh\] {
+  margin-top: 2vh;
+}
+
+.mb-\[1\%\] {
+  margin-bottom: 1%;
+}
+
+.mb-\[4\%\] {
+  margin-bottom: 4%;
 }
 
 .block {
@@ -1066,6 +1074,10 @@ video {
   height: 32%;
 }
 
+.h-\[320px\] {
+  height: 320px;
+}
+
 .h-\[35vh\] {
   height: 35vh;
 }
@@ -1165,10 +1177,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[320px\] {
-  height: 320px;
 }
 
 .max-h-0 {
@@ -2135,10 +2143,6 @@ video {
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
 }
 
-.to-\[\#484848\]\/50 {
-  --tw-gradient-to: rgb(72 72 72 / 0.5) var(--tw-gradient-to-position);
-}
-
 .bg-contain {
   background-size: contain;
 }
@@ -2681,12 +2685,12 @@ video {
   color: rgb(255 255 255 / 0.75);
 }
 
-.text-white\/90 {
-  color: rgb(255 255 255 / 0.9);
-}
-
 .text-white\/80 {
   color: rgb(255 255 255 / 0.8);
+}
+
+.text-white\/90 {
+  color: rgb(255 255 255 / 0.9);
 }
 
 .line-through {
@@ -2719,20 +2723,25 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-xl {
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-black {
   --tw-shadow-color: #000;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-black\/20 {
+  --tw-shadow-color: rgb(0 0 0 / 0.2);
   --tw-shadow: var(--tw-shadow-colored);
 }
 
@@ -2743,11 +2752,6 @@ video {
 
 .shadow-white\/10 {
   --tw-shadow-color: rgb(255 255 255 / 0.1);
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
-.shadow-black\/20 {
-  --tw-shadow-color: rgb(0 0 0 / 0.2);
   --tw-shadow: var(--tw-shadow-colored);
 }
 
@@ -3297,12 +3301,12 @@ video {
     height: 50%;
   }
 
-  .sm\:h-\[570px\] {
-    height: 570px;
-  }
-
   .sm\:h-\[380px\] {
     height: 380px;
+  }
+
+  .sm\:h-\[570px\] {
+    height: 570px;
   }
 
   .sm\:w-\[24\%\] {
@@ -3349,12 +3353,12 @@ video {
     gap: 1.5rem;
   }
 
-  .sm\:p-\[6\%\] {
-    padding: 6%;
-  }
-
   .sm\:p-8 {
     padding: 2rem;
+  }
+
+  .sm\:p-\[6\%\] {
+    padding: 6%;
   }
 
   .sm\:text-2xl {
@@ -3730,6 +3734,10 @@ video {
     height: 400px;
   }
 
+  .lg\:h-\[440px\] {
+    height: 440px;
+  }
+
   .lg\:h-\[455px\] {
     height: 455px;
   }
@@ -3770,8 +3778,12 @@ video {
     height: 100%;
   }
 
-  .lg\:h-\[440px\] {
-    height: 440px;
+  .lg\:h-\[485px\] {
+    height: 485px;
+  }
+
+  .lg\:h-\[520px\] {
+    height: 520px;
   }
 
   .lg\:max-h-\[90vh\] {
@@ -4339,6 +4351,14 @@ video {
     height: 90vh;
   }
 
+  .xl\:h-\[500px\] {
+    height: 500px;
+  }
+
+  .xl\:h-\[510px\] {
+    height: 510px;
+  }
+
   .xl\:w-\[140px\] {
     width: 140px;
   }
@@ -4608,6 +4628,18 @@ video {
 
   .\32xl\:h-\[725px\] {
     height: 725px;
+  }
+
+  .\32xl\:h-\[510px\] {
+    height: 510px;
+  }
+
+  .\32xl\:h-\[530px\] {
+    height: 530px;
+  }
+
+  .\32xl\:h-\[540px\] {
+    height: 540px;
   }
 
   .\32xl\:max-h-max {
@@ -4898,6 +4930,10 @@ video {
 
   .\33xl\:h-screen {
     height: 100vh;
+  }
+
+  .\33xl\:h-\[680px\] {
+    height: 680px;
   }
 
   .\33xl\:w-3 {
