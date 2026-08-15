@@ -1,3 +1,57 @@
+function initLocaleSwitching() {
+  const currentPath = window.location.pathname;
+  const currentFile = currentPath.split('/').pop() || 'index.html';
+  const locale = currentPath.includes('/en/') ? 'en' : currentPath.includes('/al/') ? 'al' : 'mk';
+  const pageFile = currentFile.includes('.') ? currentFile : 'index.html';
+  const currentIsNested = currentPath.includes('/en/') || currentPath.includes('/al/');
+
+  const resolveAssetPath = (assetPath) => currentIsNested ? `../${assetPath}` : assetPath;
+
+  const flagMap = {
+    mk: 'flags/macedonia.png',
+    en: 'flags/britain.png',
+    al: 'flags/albania.png'
+  };
+
+  const defaultFlag = resolveAssetPath(flagMap[locale] || flagMap.mk);
+
+  const buildLangTarget = (targetLocale) => {
+    const samePage = pageFile;
+    const rootTarget = `./${samePage}`;
+    const enTarget = `./en/${samePage}`;
+    const alTarget = `./al/${samePage}`;
+
+    if (currentIsNested) {
+      if (targetLocale === 'mk') return `../${samePage}`;
+      return `../${targetLocale}/${samePage}`;
+    }
+
+    if (targetLocale === 'mk') return rootTarget;
+    if (targetLocale === 'en') return enTarget;
+    if (targetLocale === 'al') return alTarget;
+    return rootTarget;
+  };
+
+  document.querySelectorAll('[data-lang-link]').forEach(link => {
+    const targetLocale = link.dataset.langLink;
+    link.href = buildLangTarget(targetLocale);
+  });
+
+  document.querySelectorAll('[data-current-lang-flag]').forEach(button => {
+    const img = button.querySelector('img');
+    if (img) {
+      img.src = defaultFlag;
+      if (locale === 'en') {
+        img.alt = 'English';
+      } else if (locale === 'al') {
+        img.alt = 'Albanian';
+      } else {
+        img.alt = 'Macedonian';
+      }
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Determine the path to the includes based on current page location
   let basePath = "";
@@ -13,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-  
+
   // Fetch nav
   fetch(basePath + "includes/nav.html")
     .then(res => {
@@ -24,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const container = document.getElementById("nav-container");
       if (container) {
         container.innerHTML = html;
+        initLocaleSwitching();
         // Initialize nav scripts
         initNavScripts();
       }
@@ -40,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const container = document.getElementById("mobile-nav-container");
       if (container) {
         container.innerHTML = html;
+        initLocaleSwitching();
         // Initialize mobile nav scripts
         initMobileNavScripts();
       }

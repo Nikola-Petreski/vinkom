@@ -88,10 +88,9 @@ async function initAwarenessSwiper() {
                 const expert = b.expert || {};
                 const title = expert.title_en ?? expert.title_mk ?? '';
                 const organization = expert.organization_en ?? expert.organization_mk ?? '';
-                const quoteKey = locale === 'en' ? 'quotes_en' : locale === 'al' ? 'quotes_al' : 'quotes_mk';
-                const quotes = Array.isArray(b[quoteKey]) ? b[quoteKey] : (Array.isArray(b.quotes_en) ? b.quotes_en : (Array.isArray(b.quotes_mk) ? b.quotes_mk : [b[quoteKey] || b.quotes_en || b.quotes_mk || '']));
                 const connectorText = locale === 'en' ? 'at' : locale === 'al' ? 'në' : 'во';
                 const attributionText = locale === 'en' ? 'Quote taken from' : locale === 'al' ? 'Citimi është marrë nga' : 'Цитатот е превземен од';
+                const quotes = Array.isArray(b.quotes_en) ? b.quotes_en : (Array.isArray(b.quotes_mk) ? b.quotes_mk : [b.quotes_en || b.quotes_mk || '']);
 
                 slide.innerHTML = `
                     <div class="aw-card">

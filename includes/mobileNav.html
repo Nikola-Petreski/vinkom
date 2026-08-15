@@ -7,12 +7,12 @@
   </style>
   <div id="mainMenu" class="flex justify-between items-center">
     <div class="relative">
-          <button id="mobileLangDropdownButton" type="button" aria-expanded="false" class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap text-white">
+          <button id="mobileLangDropdownButton" type="button" aria-expanded="false" data-current-lang-flag class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap text-white">
             <img src="flags/macedonia.png" class="h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px] rounded-full">
         </button>
           <div id="mobileLangDropdownMenu" class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
-            <a href="#" class="block hover:text-white transition-all duration-300 py-2 xs:py-3 md:py-4"><img src="flags/britain.png" class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
-            <a href="#" class="block hover:text-white transition-all duration-300">             <img src="flags/albania.png" class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
+            <a href="#" data-lang-link="en" class="block hover:text-white transition-all duration-300 py-2 xs:py-3 md:py-4"><img src="flags/britain.png" class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
+            <a href="#" data-lang-link="al" class="block hover:text-white transition-all duration-300">             <img src="flags/albania.png" class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
         </div>
     </div>
     <a href="index.html" class="max-w-[40%] h-full"><img src="logos/LOGO ZAEDNO7.png" class="h-full"></a>

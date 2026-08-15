@@ -1,0 +1,79 @@
+{
+  "expert_blocks": [
+    {
+      "id": "hidden-allergen-buildup",
+      "expert": {
+        "name": "John",
+        "surname": "McKeon",
+        "title_en": "MD, Executive Director",
+        "organization_en": "Allergy Standards Ltd.",
+        "image": "../images_webp/platinumHTML/awareness/person1.webp",
+        "source_publication": "Real Simple",
+        "source_link": "https://www.realsimple.com/what-is-slow-vacuuming-11916250"
+      },
+      "quotes_en": [
+        "\"Allergens tend to accumulate in places where dust builds up and isn't cleaned regularly,\" says John McKeon, MD and Executive Director of Allergy Standards. \"The bedroom is especially important because we spend approximately one-third of our lives there. Bedding, pillows, mattresses, and the space underneath the bed can all serve as reservoirs for dust mite debris and other particles.\""
+      ]
+    },
+    {
+      "id": "hepa-filtration-benefit-1",
+      "expert": {
+        "name": "Mark",
+        "surname": "Jacobson",
+        "title_en": "MD, Allergist",
+        "organization_en": "Allergy & Asthma Physicians",
+        "image": "../images_webp/platinumHTML/awareness/person2.webp",
+        "source_publication": "Prevention",
+        "source_link": "https://www.prevention.com/life/a19600469/best-hepa-vacuums/"
+      },
+      "quotes_en": [
+        "Using the wrong vacuum can temporarily worsen allergy symptoms, especially if you're allergic to dust. \"It's important that accumulated dust isn't disturbed and released back into the air,\" says Mark Jacobson, MD, an allergist at Allergy & Asthma Physicians in Hinsdale, Illinois, and former president of the Illinois Society of Allergy, Asthma, and Immunology."
+      ]
+    },
+    {
+      "id": "hepa-filtration-benefit-2",
+      "expert": {
+        "name": "Purvi",
+        "surname": "Parikh",
+        "title_en": "MD, Allergist",
+        "organization_en": "Allergy & Asthma Network",
+        "image": "../images_webp/platinumHTML/awareness/person3.webp",
+        "source_publication": "Prevention",
+        "source_link": "https://www.prevention.com/life/a19600469/best-hepa-vacuums/"
+      },
+      "quotes_en": [
+        "HEPA vacuums can be a real lifesaver when it comes to cleaning for people dealing with allergies and various respiratory conditions. \"Many people are allergic to mold and pet dander, which can be effectively filtered by HEPA filters,\" says Purvi Parikh, MD, an allergist at Allergy & Asthma Network."
+      ]
+    },
+    {
+      "id": "sealed-hepa-recommendation",
+      "expert": {
+        "name": "Krikor",
+        "surname": "Manoukian",
+        "title_en": "MD, Allergist & Immunologist",
+        "organization_en": "Board-Certified Allergist/Immunologist",
+        "image": "../images_webp/platinumHTML/awareness/person4.webp",
+        "source_publication": "HeyAllergy.com",
+        "source_link": "https://www.heyallergy.com/blog/hepa-vacuum-guide-what-matters-beyond-hepa"
+      },
+      "quotes_en": [
+        "HEPA vacuums are among the most effective measures for controlling indoor allergens. True HEPA filters capture 99.97% of particles measuring 0.3 microns and larger — a level of filtration that allergists recommend as part of a comprehensive strategy for avoiding allergens."
+      ]
+    },
+    {
+      "id": "medical-review-hepa",
+      "expert": {
+        "name": "Carah",
+        "surname": "Santos",
+        "title_en": "MD, Medical Reviewer",
+        "organization_en": "National Jewish Health",
+        "image": "../images_webp/platinumHTML/awareness/person5.webp",
+        "source_publication": "National Jewish Health",
+        "source_link": "https://www.nationaljewish.org/conditions/fallergy/overview/lifestyle/hepa-filters"
+      },
+      "quotes_en": [
+        "HEPA filters attached to vacuums reduce dust by trapping fine particles, often consisting of dust mites and other irritants, without releasing them back into the air inside the home. Many people with allergies report significant improvement and fewer symptoms when HEPA filtration is part of their regular cleaning routine."
+      ]
+    }
+  ]
+}

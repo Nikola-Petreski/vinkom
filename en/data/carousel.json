@@ -1,0 +1,34 @@
+[
+
+    {
+        "slide": 1,
+        "image": "../images_webp/carousel/rand2.webp",
+        "h": "Deep Cleaning",
+        "p": "Kirby removes hidden dirt deep within your carpets, where ordinary vacuums can't reach."
+    },
+    {
+        "slide": 2,
+        "image": "../images_webp/carousel/rand3.webp",
+        "h": "Power & Control, Effortlessly",
+        "p": "Moves with ease using automatic power assist and adjustable cleaning height."
+    },
+    {
+        "slide": 3,
+        "image": "../images_webp/carousel/rand4.webp",
+        "h": "One machine for Every Room",
+        "p": "Transforms from a vacuum into a shampooer, floor cleaner, and furniture cleaner."
+    },
+    {
+        "slide": 4,
+        "image": "../images_webp/carousel/rand1.webp",
+        "h": "Breathe Cleaner, Live Better",
+        "p": "The HEPA system captures 99.97% of particles down to 0.3 microns — dust, pollen, and pet allergens."
+    },
+    {
+        "slide": 5,
+        "image": "../images_webp/carousel/rand5.webp",
+        "h": "Build for a Lifetime",
+        "p": "Made in the USA from cast aluminum, with a lifetime rebuilding program."
+    }
+]
+
