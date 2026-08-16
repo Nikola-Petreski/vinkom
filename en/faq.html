@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Frequently asked questions about KIRBY, including ordering, delivery, warranty, and services.">
+  <title>KIRBY | FAQ</title>
+  <link href="../output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gidole&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4baf646c88.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" href="images_webp/logoW.webp">
+
+  <style>
+    .font-gidole {
+      font-family: 'Gidole', sans-serif !important;
+    }
+
+    details>summary {
+      cursor: pointer;
+    }
+  </style>
+  <style>
+    /* Small compatibility helpers for nav utilities that may be missing from compiled output.css */
+    .backdrop-blur-sm {
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+    }
+
+    .hover\:backdrop-blur-lg:hover {
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+    }
+
+    .hover\:bg-black\/50:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .duration-500 {
+      transition-duration: 500ms !important;
+    }
+
+    .duration-300 {
+      transition-duration: 300ms !important;
+    }
+
+    /* Custom scrollbar for the FAQ list (subtle, matches page) */
+    #faq-list::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    #faq-list::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    #faq-list::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      border: 2px solid transparent;
+      background-clip: padding-box;
+    }
+
+    /* Firefox */
+    #faq-list {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+    }
+  </style>
+  <style>
+    .reveal-letters span {
+      opacity: 0;
+      transform: translateY(20px);
+      display: inline-block;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal-visible span {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #infoDropdownMenu {
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+    }
+
+    #infoChevron,
+    #langChevron {
+      display: inline-block;
+      opacity: 0;
+      transform: rotate(0deg);
+      transition: transform .25s ease, opacity .15s ease;
+    }
+
+    #infoDropdownButton:hover #infoChevron,
+    #langDropdownButton:hover #langChevron {
+      opacity: 1;
+    }
+
+    #infoChevron.rotated,
+    #langChevron.rotated {
+      transform: rotate(180deg);
+    }
+
+    #mobileInfoChevron {
+      display: inline-block;
+      transition: transform .25s ease;
+    }
+
+    #mobileInfoChevron.rotated {
+      transform: rotate(180deg);
+    }
+
+    #mobileInfoDropdownMenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+
+    #mobileInfoDropdownMenu.open {
+      max-height: 500px;
+    }
+
+    #mobileLangDropdownMenu {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px) scaleY(0.98);
+      transform-origin: top;
+      transition: max-height .28s ease, opacity .22s ease, transform .26s cubic-bezier(.2, .9, .2, 1);
+    }
+
+    #mobileLangDropdownMenu.open {
+      max-height: 240px;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scaleY(1);
+    }
+
+    /* Triggered menu (mobile) smooth open/close */
+    #triggeredMenu {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: max-height .32s ease, opacity .22s ease, transform .26s cubic-bezier(.2, .9, .2, 1);
+    }
+
+    #triggeredMenu.open {
+      max-height: 800px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #mobileNav.mobile-open {
+      background-color: rgba(0, 0, 0, 0.25) !important;
+    }
+  </style>
+</head>
+
+<body class="font-gidole overflow-x-hidden bg-[#484848]">
+
+    <div id="nav-container"></div>
+
+    <div id="mobile-nav-container"></div>
+
+
+  <div id="desktopNavSpacer" class="w-full hidden lg:block my-[1.5%]">
+    <div class="w-full h-[10vh] max-h-[110px]"></div>
+  </div>
+  <div id="mobileNavSpacer" class="py-[2vh] block lg:hidden">
+    <div class="w-full py-[5%] md:py-[3%]">
+      <div class="w-full h-[28px] xs:h-[32px] md:h-[35px]"></div>
+    </div>
+  </div>
+
+
+  <script>
+    (function () {
+      const button = document.getElementById('infoDropdownButton');
+      const menu = document.getElementById('infoDropdownMenu');
+      const chevron = document.getElementById('infoChevron');
+      if (!button || !menu) return;
+
+      const openMenu = () => {
+        menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'true');
+        button.classList.remove('bg-transparent');
+        button.classList.add('bg-black/80', 'text-white');
+        if (chevron) chevron.classList.add('rotated');
+      };
+
+      const closeMenu = () => {
+        menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('bg-black/80', 'text-white');
+        button.classList.add('bg-transparent');
+        if (chevron) chevron.classList.remove('rotated');
+      };
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('opacity-0')) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+
+      document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+          closeMenu();
+        }
+      });
+    })();
+
+    (function () {
+      const button = document.getElementById('langDropdownButton');
+      const menu = document.getElementById('langDropdownMenu');
+      const chevron = document.getElementById('langChevron');
+      if (!button || !menu) return;
+
+      const openMenu = () => {
+        menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'true');
+        button.classList.remove('bg-transparent');
+        button.classList.add('text-white');
+        if (chevron) chevron.classList.add('rotated');
+      };
+
+      const closeMenu = () => {
+        menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('bg-black/90', 'text-white');
+        button.classList.add('bg-transparent');
+        if (chevron) chevron.classList.remove('rotated');
+      };
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('opacity-0')) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+
+      document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+          closeMenu();
+        }
+      });
+    })();
+
+    (function () {
+      const button = document.getElementById('mobileInfoDropdownButton');
+      const menu = document.getElementById('mobileInfoDropdownMenu');
+      const chevron = document.getElementById('mobileInfoChevron');
+      if (!button || !menu) return;
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('open')) {
+          menu.classList.remove('open');
+          chevron.classList.remove('rotated');
+          button.setAttribute('aria-expanded', 'false');
+        } else {
+          menu.classList.add('open');
+          chevron.classList.add('rotated');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+    })();
+
+    (function () {
+      const button = document.getElementById('mobileLangDropdownButton');
+      const menu = document.getElementById('mobileLangDropdownMenu');
+      if (!button || !menu) return;
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('open')) {
+          menu.classList.remove('open');
+          button.setAttribute('aria-expanded', 'false');
+        } else {
+          menu.classList.add('open');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+      document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+          menu.classList.remove('open');
+          button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      const toggle = document.getElementById('mobileMenuToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      const triggered = document.getElementById('triggeredMenu');
+      if (!toggle || !mobileNav || !triggered) return;
+
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const opened = triggered.classList.toggle('open');
+        if (opened) {
+          mobileNav.classList.add('mobile-open');
+        } else {
+          mobileNav.classList.remove('mobile-open');
+        }
+      });
+
+      // close when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!mobileNav.contains(e.target) && triggered.classList.contains('open')) {
+          triggered.classList.remove('open');
+          mobileNav.classList.remove('mobile-open');
+        }
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      const nav = document.getElementById('nav');
+      const spacer = document.getElementById('nav-spacer');
+      if (!nav) return;
+
+      nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
+      nav.style.willChange = 'transform, opacity';
+      nav.style.transform = nav.style.transform || 'translateY(0)';
+      nav.style.opacity = nav.style.opacity || '1';
+
+      function recompute() {
+        try {
+          const h = Math.ceil(nav.getBoundingClientRect().height);
+          if (spacer) spacer.style.height = h + 'px';
+        } catch (e) { }
+      }
+      recompute();
+      window.addEventListener('resize', recompute, { passive: true });
+
+      let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      window.addEventListener('scroll', function () {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop + 6) {
+          nav.style.transform = 'translateY(-' + (nav.offsetHeight + 4) + 'px)';
+          nav.style.opacity = '0';
+        } else if (scrollTop < lastScrollTop - 6) {
+          nav.style.transform = 'translateY(0)';
+          nav.style.opacity = '1';
+        } else {
+          nav.style.transform = 'translateY(0)';
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      });
+    })();
+  </script>
+
+  <div class="w-full px-[5%] bg-gradient-to-b from-transparent to-black/40">
+    <div
+      class="gap-6 lg:gap-0 w-full flex flex-col lg:flex-row justify-center items-center xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
+      <!-- FAQ list (left column) - cards will be generated dynamically from data/faq.json -->
+      <div class="relative w-full lg:w-1/2 h-[70vh]  lg:h-[500px]">
+        <div id="faq-list" class="flex flex-col overflow-y-scroll h-full w-full items-center py-4 justify-start"></div>
+        <!-- transparent backdrop-blur overlays (top & bottom 5%) -->
+        <div
+          class="pointer-events-none absolute top-0 left-0 right-0 h-[10%] bg-gradient-to-b from-black/50 to-transparent z-30 rounded-t-xl">
+        </div>
+        <div
+          class="pointer-events-none absolute bottom-0 left-0 right-0 h-[10%] bg-gradient-to-t from-black/50 to-transparent z-30 rounded-b-xl">
+        </div>
+      </div>
+        <form id="faqForm" method="POST" action="https://api.web3forms.com/submit"
+            class="w-full lg:w-1/2 flex flex-col justify-center items-end gap-5 px-0 lg:px-[5%]">
+            <input type="hidden" name="access_key" value="e8a44d0d-7452-4216-8adb-ab76860b4dc5">
+            <input type="hidden" name="subject" value="FAQ - Question from User">
+        
+            <h1 class="text-white text-5xl w-full text-center py-[5%] lg:py-0">FAQ</h1>
+        
+            <p class="text-[#c1c1c1] text-base lg:text-sm xl:text-base 3xl:text-xl">
+                If you can't find the answer you're looking for in our FAQ section,
+                you can contact us using the form below. Simply enter your name,
+                email address or phone number, and your question. Our team will get
+                back to you as soon as possible.
+            </p>
+        
+            <input name="name" type="text" required
+                class="w-full rounded-xl border-none bg-black/40 text-lg px-3 py-2 text-white"
+                placeholder="Full Name">
+        
+            <div class="w-full flex flex-col md:flex-row justify-between items-center gap-5 lg:gap-0">
+                <input name="email" type="email" required
+                    class="w-full md:w-[58%] rounded-xl border-none bg-black/40 text-lg px-3 py-2 text-white"
+                    placeholder="E-mail">
+            
+                <input name="phone" type="tel" required
+                    class="w-full md:w-[38%] rounded-xl border-none bg-black/40 text-lg px-3 py-2 text-white"
+                    placeholder="07X-XXX-XXX">
+            </div>
+        
+            <textarea name="message" required
+                class="w-full h-full rounded-xl border-none bg-black/40 text-lg px-3 py-2 text-white"
+                placeholder="Your question..."></textarea>
+        
+            <div class="flex justify-between w-full gap-[1%]">
+                <div
+                    class="flex flex-col justify-center gap-1 w-[70%] xs:w-[64%] sm:w-[75%] md:w-[75%] lg:w-[65%] xl:w-[70%] 2xl:w-[80%] 3xl:w-[80%] text-[10px] xs:text-sm md:text-sm lg:text-xs 2xl:text-xs 3xl:text-base text-white/70">
+            
+                    <div class="flex gap-1">
+                        <input id="faqTermsCheckbox" type="checkbox" name="termsAccepted" value="true" required>
+                        <p>
+                            I agree to the
+                            <a href="privacyPolicy.html" class="text-white">Privacy Policy</a>
+                            and
+                            <a href="termsAndConditions.html" class="text-white">Terms and Conditions</a>
+                        </p>
+                    </div>
+                
+                    <div class="flex gap-1">
+                        <input id="faqNewsletterCheckbox" type="checkbox" name="newsletter_subscription" value="true">
+                        <p>I want to receive information, news, and promotions by email.</p>
+                    </div>
+                </div>
+            
+                <input type="submit"
+                    class="w-[30%] xs:w-[34%] sm:w-[24%] md:w-[24%] lg:w-[34%] xl:w-[34%] 2xl:w-[29%] 3xl:w-[19%] rounded-xl outline-none border-none bg-black/40 hover:bg-black/60 text-sm xs:text-2xl sm:text-xl 2xl:text-lg 3xl:text-xl py-2 lg:py-3 text-white/70 hover:text-white transition-all duration-500"
+                    value="Submit">
+            </div>
+        </form>
+    </div>
+  </div>
+
+  <div class="w-full h-[16vh] bg-gradient-to-b from-black/40 to-black"></div>
+
+    <div id="footer-container"></div>
+
+  <!-- FAQ form submission handler -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const faqForm = document.getElementById('faqForm');
+      const termsCheckbox = document.getElementById('faqTermsCheckbox');
+      const newsletterCheckbox = document.getElementById('faqNewsletterCheckbox');
+
+      if (!faqForm || !termsCheckbox || !newsletterCheckbox) return;
+
+      faqForm.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(faqForm);
+        formData.set('termsAccepted', termsCheckbox.checked ? 'true' : 'false');
+        formData.set('newsletter_subscription', newsletterCheckbox.checked ? 'true' : 'false');
+
+        try {
+          const response = await fetch(faqForm.action, {
+            method: 'POST',
+            body: formData,
+          });
+
+          const result = await response.json();
+          if (response.ok && result.success) {
+            window.location.href = 'https://vinkom-mu.vercel.app/thankyouFAQ.html';
+            return;
+          }
+
+          console.error('Web3Forms submission failed', result);
+          alert('Внесот не успеа. Обидете се повторно.');
+        } catch (error) {
+          console.error('Web3Forms submission error', error);
+          alert('Внесот не успеа. Обидете се повторно.');
+        }
+      });
+    });
+  </script>
+
+  <!-- Load partials (nav + footer) -->
+  <script src="includes/load-partials.js"></script>
+
+  <script>
+    // Dynamically render FAQ cards from data/faq.json
+    (function () {
+      const list = document.getElementById('faq-list');
+      if (!list) return;
+
+      function createCard(faq) {
+        const card = document.createElement('div');
+        card.className = 'w-[95%] flex justify-around items-start px-[4%] py-[3%] bg-white/10 rounded-xl mb-5';
+
+        const inner = document.createElement('div');
+        inner.className = 'w-11/12';
+
+        const q = document.createElement('p');
+        q.className = 'text-white text-2xl font-medium';
+        q.textContent = faq.q;
+        inner.appendChild(q);
+
+        // chevron button (accessible)
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'w-1/12 h-full text-white flex justify-center items-center transform transition-transform duration-300';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Toggle answer');
+        btn.innerHTML = '<i class="fa-solid fa-chevron-down"></i>';
+
+        // Toggle handler: insert/remove answer paragraph (answer not present until expanded)
+        btn.addEventListener('click', function () {
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          if (expanded) {
+            const ans = inner.querySelector('.faq-answer');
+            if (!ans) { btn.classList.remove('rotate-180'); btn.setAttribute('aria-expanded', 'false'); return; }
+            // collapse smoothly using max-height + opacity
+            ans.style.maxHeight = '0px';
+            ans.style.opacity = '0';
+            btn.classList.remove('rotate-180');
+            btn.setAttribute('aria-expanded', 'false');
+            // remove after transition ends
+            const onEnd = function (e) { if (e.target === ans) { ans.removeEventListener('transitionend', onEnd); if (ans.parentNode) ans.parentNode.removeChild(ans); } };
+            ans.addEventListener('transitionend', onEnd);
+          } else {
+            // close any other open FAQ in the list first (accordion behavior)
+            try {
+              const openBtns = Array.from(list.querySelectorAll('button[aria-expanded="true"]'));
+              openBtns.forEach(function (ob) { if (ob === btn) return; ob.setAttribute('aria-expanded', 'false'); ob.classList.remove('rotate-180'); const oInner = ob.parentElement && ob.parentElement.querySelector('.faq-answer'); if (oInner) { oInner.style.maxHeight = '0px'; oInner.style.opacity = '0'; const onEndOther = function (e) { if (e.target === oInner) { oInner.removeEventListener('transitionend', onEndOther); if (oInner.parentNode) oInner.parentNode.removeChild(oInner); } }; oInner.addEventListener('transitionend', onEndOther); } });
+            } catch (e) { }
+
+            const p = document.createElement('p');
+            p.className = 'faq-answer text-[#c1c1c1] mt-3 overflow-hidden transition-all duration-300 opacity-0 w-11/12';
+            p.style.maxHeight = '0px';
+            p.style.opacity = '0';
+            // allow HTML in answers (they're trusted from local file)
+            p.innerHTML = faq.a.replace(/\n/g, '<br>');
+            inner.appendChild(p);
+            // trigger measured expansion on next frame
+            requestAnimationFrame(() => {
+              const full = p.scrollHeight;
+              p.style.maxHeight = full + 'px';
+              p.style.opacity = '1';
+              btn.classList.add('rotate-180');
+              btn.setAttribute('aria-expanded', 'true');
+            });
+          }
+        });
+
+        // keyboard support (Enter / Space)
+        btn.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
+
+        card.appendChild(inner);
+        card.appendChild(btn);
+        return card;
+      }
+
+      fetch('./data/faq.json').then(r => r.json()).then(data => {
+        // Support two formats:
+        // 1) legacy: data.sections is an array of { section: 'name', faqs: [...] }
+        // 2) new: data.sections is a flat array of faq objects { q, a }
+        if (!data) return;
+        if (Array.isArray(data.sections)) {
+          data.sections.forEach(item => {
+            if (!item) return;
+            // legacy grouped sections
+            if (Array.isArray(item.faqs)) {
+              item.faqs.forEach(faq => { list.appendChild(createCard(faq)); });
+              return;
+            }
+            // flattened list where each item is a faq object
+            if (item.q && item.a) { list.appendChild(createCard(item)); return; }
+          });
+        } else if (Array.isArray(data.faqs)) {
+          // alternate top-level faqs array
+          data.faqs.forEach(faq => { list.appendChild(createCard(faq)); });
+        }
+      }).catch(err => {
+        console.error('Failed to load FAQ data', err);
+        list.innerHTML = '<p class="text-[#c1c1c1]">Не може да се вчитаат прашањата. Обидете се повторно подоцна.</p>';
+      });
+    })();
+  </script>
+
+  <div id="cookieBanner" class="fixed bottom-[5%] px-[5%] w-full text-white z-[9999] hidden">
+    <div
+      class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto lg:mx-0 w-auto lg:w-[450px] 3xl:w-[580px] rounded-xl bg-black/40 backdrop-blur-3xl p-[5%] lg:p-[3%] xl:p-[2%] flex flex-col justify-between items-center gap-[3vw] xl:gap-[1vw]">
+      <div class="flex justify-center items-center gap-2 xs:gap-4 md:gap-4">
+        <p class="text-sm xs:text-xl md:text-3xl lg:text-lg 3xl:text-2xl">Оваа веб-страница користи колачиња за анализа
+          и подобрување на искуството.</p>
+        <i
+          class="fa-solid fa-cookie text-2xl xs:text-4xl md:text-6xl lg:text-3xl 3xl:text-5xl flex justify-center items-center"></i>
+      </div>
+      <div class="flex gap-[6%] w-full text-base xs:text-xl md:text-3xl lg:text-xl 3xl:text-3xl">
+        <button onclick="rejectCookies()" class="border w-[47%] border-white py-[1%] rounded-xl">Одбиј</button>
+        <button onclick="acceptCookies()" class="bg-white w-[47%] text-black py-[1%] rounded-xl">Прифати</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../cookie.js"></script>
+
+  <div class="fixed bottom-[5%] left-[5%] z-[9900]">
+    <div class="relative inline-block">
+      <p id="cartBadge"
+        class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] sm:text-xs md:text-base lg:text-[12px] xl:text-xs rounded-full px-2 py-1 leading-none">
+        0</p>
+      <a id="checkOutBtn" href="checkOut.html"
+        class="group flex items-center bg-[#484848] hover:bg-[#303030] transition-all duration-300 border border-white text-white rounded-full py-1 px-2 xs:py-2 xs:px-3 md:py-4 md:px-4 lg:py-2 lg:px-3 text-lg xs:text-2xl md:text-3xl lg:text-xl 2xl:text-2xl gap-0 hover:gap-1 overflow-hidden">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <p
+          class="opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">
+          Види кошничка</p>
+      </a>
+    </div>
+  </div>
+
+  <script>
+
+    function updateCartBadge() {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      let totalQty = 0;
+      cart.forEach(item => {
+        totalQty += (item.qty || 1);
+      });
+      const badge = document.getElementById('cartBadge');
+      if (badge) {
+        if (totalQty === 0) {
+          badge.style.display = "none";
+        } else {
+          badge.style.display = "inline-flex";
+          badge.textContent = totalQty >= 100 ? "99+" : totalQty.toString();
+        }
+      }
+    }
+
+    // Update badge when localStorage changes from other pages/tabs
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'cart') {
+        updateCartBadge();
+      }
+    });
+
+    (function () {
+      const addBtn = document.getElementById('modalAddToCart');
+      const checkOutBtn = document.getElementById('checkOutBtn');
+
+      // Update badge on page load
+      updateCartBadge();
+
+      if (!addBtn) return;
+
+      addBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const nameEl = document.getElementById('modal-title');
+        const priceEl = document.getElementById('modal-price');
+        const imgEl = document.getElementById('modal-img');
+        if (!nameEl || !priceEl) return;
+        const name = nameEl.textContent.trim();
+        const img = imgEl ? imgEl.src : '';
+        const digits = priceEl.textContent.replace(/\D/g, '');
+        const price = parseInt(digits) || 0;
+        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        cart.push({ id: Date.now(), name, price, qty: 1, image: img });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartBadge();
+
+        if (checkOutBtn) {
+          const pEl = checkOutBtn.querySelector('p');
+          if (pEl) {
+            const defaultText = ' Види кошничка';
+            pEl.textContent = ' Додадено во кошничка';
+            pEl.classList.remove('opacity-0', 'max-w-0');
+            pEl.classList.add('opacity-100', 'max-w-xs');
+            setTimeout(() => {
+              pEl.textContent = defaultText;
+              pEl.classList.remove('opacity-100', 'max-w-xs');
+              pEl.classList.add('opacity-0', 'max-w-0');
+            }, 2500);
+          }
+        }
+      });
+    })();
+
+  </script>
+
+<script src="../assets/js/includes.js"></script>
+</body>
+
+</html>
