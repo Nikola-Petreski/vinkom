@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the KIRBY lineup — discover each model’s features, specifications, design, and deep-cleaning performance.">
+    <title>KIRBY | Earlier Models</title>
+    <link href="../output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gidole&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4baf646c88.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://gidole.github.io/GidoleFont/gidoleFont.css">
+    <link rel="icon" type="image/png" href="./images_webp/logoW.webp">
+
+    <style>
+        @import url('https://gidole.github.io/GidoleFont/gidoleFont.css');
+
+        .font-gidole {
+            font-family: 'Gidole', sans-serif !important;
+        }
+        .modal-overlay { transition: opacity 200ms ease; opacity: 0; pointer-events: none; }
+        .modal-overlay.visible { opacity: 1; pointer-events: auto; background-color: rgba(0,0,0,0.45); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+        .modal-content { transform: translateY(2vh) scale(0.98); opacity: 0; transition: transform 200ms cubic-bezier(0.2,0,0.2,1), opacity 200ms ease; }
+        .modal-content.show { transform: translateY(0) scale(1); opacity: 1; }
+        @media (max-width: 768px){ .modal-content { flex-direction: column; padding: 3% !important; } }
+    </style>
+    <style>
+.reveal-letters span {
+  opacity: 0;
+  transform: translateY(20px);
+  display: inline-block;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-visible span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#infoDropdownMenu {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+#infoChevron,
+#langChevron {
+  display: inline-block;
+  opacity: 0;
+  transform: rotate(0deg);
+  transition: transform .25s ease, opacity .15s ease;
+}
+
+#infoDropdownButton:hover #infoChevron,
+#langDropdownButton:hover #langChevron {
+  opacity: 1;
+}
+
+#infoChevron.rotated,
+#langChevron.rotated {
+  transform: rotate(180deg);
+}
+
+#mobileInfoChevron {
+  display: inline-block;
+  transition: transform .25s ease;
+}
+
+#mobileInfoChevron.rotated {
+  transform: rotate(180deg);
+}
+
+#mobileInfoDropdownMenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease;
+}
+
+#mobileInfoDropdownMenu.open {
+  max-height: 500px;
+}
+
+#mobileLangDropdownMenu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px) scaleY(0.98);
+  transform-origin: top;
+  transition: max-height .28s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1);
+}
+
+#mobileLangDropdownMenu.open {
+  max-height: 240px;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scaleY(1);
+}
+
+/* Triggered menu (mobile) smooth open/close */
+#triggeredMenu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: max-height .32s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1);
+}
+
+#triggeredMenu.open {
+  max-height: 800px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#mobileNav.mobile-open {
+  background-color: rgba(0,0,0,0.25) !important;
+}
+    </style>
+</head>
+<body class="overflow-x-hidden font-gidole bg-[#484848] w-full">
+
+    <div id="nav-container"></div>
+
+    <div id="mobile-nav-container"></div>
+
+
+    <div id="desktopNavSpacer" class="w-full hidden lg:block my-[1.5%]"><div class="w-full h-[10vh] max-h-[110px]"></div></div>
+    <div id="mobileNavSpacer" class="py-[2vh] block lg:hidden"><div class="w-full py-[5%] md:py-[3%]"><div class="w-full h-[28px] xs:h-[32px] md:h-[35px]"></div></div></div>
+
+
+    <script>
+(function(){
+  const button = document.getElementById('infoDropdownButton');
+  const menu = document.getElementById('infoDropdownMenu');
+  const chevron = document.getElementById('infoChevron');
+  if (!button || !menu) return;
+
+  const openMenu = () => {
+    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+    menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+    button.setAttribute('aria-expanded', 'true');
+    button.classList.remove('bg-transparent');
+    button.classList.add('bg-black/80', 'text-white');
+    if (chevron) chevron.classList.add('rotated');
+  };
+
+  const closeMenu = () => {
+    menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+    menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+    button.setAttribute('aria-expanded', 'false');
+    button.classList.remove('bg-black/80', 'text-white');
+    button.classList.add('bg-transparent');
+    if (chevron) chevron.classList.remove('rotated');
+  };
+
+  const toggleMenu = (event) => {
+    event.stopPropagation();
+    if (menu.classList.contains('opacity-0')) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  };
+
+  button.addEventListener('click', toggleMenu);
+
+  document.addEventListener('click', (event) => {
+    if (!button.contains(event.target) && !menu.contains(event.target)) {
+      closeMenu();
+    }
+  });
+})();
+
+(function(){
+  const button = document.getElementById('langDropdownButton');
+  const menu = document.getElementById('langDropdownMenu');
+  const chevron = document.getElementById('langChevron');
+  if (!button || !menu) return;
+
+  const openMenu = () => {
+    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+    menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+    button.setAttribute('aria-expanded', 'true');
+    button.classList.remove('bg-transparent');
+    button.classList.add('text-white');
+    if (chevron) chevron.classList.add('rotated');
+  };
+
+  const closeMenu = () => {
+    menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+    menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+    button.setAttribute('aria-expanded', 'false');
+    button.classList.remove('bg-black/90', 'text-white');
+    button.classList.add('bg-transparent');
+    if (chevron) chevron.classList.remove('rotated');
+  };
+
+  const toggleMenu = (event) => {
+    event.stopPropagation();
+    if (menu.classList.contains('opacity-0')) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  };
+
+  button.addEventListener('click', toggleMenu);
+
+  document.addEventListener('click', (event) => {
+    if (!button.contains(event.target) && !menu.contains(event.target)) {
+      closeMenu();
+    }
+  });
+})();
+
+(function(){
+  const button = document.getElementById('mobileInfoDropdownButton');
+  const menu = document.getElementById('mobileInfoDropdownMenu');
+  const chevron = document.getElementById('mobileInfoChevron');
+  if (!button || !menu) return;
+
+  const toggleMenu = (event) => {
+    event.stopPropagation();
+    if (menu.classList.contains('open')) {
+      menu.classList.remove('open');
+      chevron.classList.remove('rotated');
+      button.setAttribute('aria-expanded', 'false');
+    } else {
+      menu.classList.add('open');
+      chevron.classList.add('rotated');
+      button.setAttribute('aria-expanded', 'true');
+    }
+  };
+
+  button.addEventListener('click', toggleMenu);
+})();
+
+(function(){
+  const button = document.getElementById('mobileLangDropdownButton');
+  const menu = document.getElementById('mobileLangDropdownMenu');
+  if (!button || !menu) return;
+
+  const toggleMenu = (event) => {
+    event.stopPropagation();
+    if (menu.classList.contains('open')) {
+      menu.classList.remove('open');
+      button.setAttribute('aria-expanded', 'false');
+    } else {
+      menu.classList.add('open');
+      button.setAttribute('aria-expanded', 'true');
+    }
+  };
+
+  button.addEventListener('click', toggleMenu);
+  document.addEventListener('click', (event) => {
+    if (!button.contains(event.target) && !menu.contains(event.target)) {
+      menu.classList.remove('open');
+      button.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+  const toggle = document.getElementById('mobileMenuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  const triggered = document.getElementById('triggeredMenu');
+  if (!toggle || !mobileNav || !triggered) return;
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const opened = triggered.classList.toggle('open');
+    if (opened) {
+      mobileNav.classList.add('mobile-open');
+    } else {
+      mobileNav.classList.remove('mobile-open');
+    }
+  });
+
+  // close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!mobileNav.contains(e.target) && triggered.classList.contains('open')) {
+      triggered.classList.remove('open');
+      mobileNav.classList.remove('mobile-open');
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+    const nav = document.getElementById('nav');
+    const spacer = document.getElementById('nav-spacer');
+    if(!nav) return;
+
+    nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
+    nav.style.willChange = 'transform, opacity';
+    nav.style.transform = nav.style.transform || 'translateY(0)';
+    nav.style.opacity = nav.style.opacity || '1';
+
+    function recompute(){
+        try{
+            const h = Math.ceil(nav.getBoundingClientRect().height);
+            if(spacer) spacer.style.height = h + 'px';
+        }catch(e){}
+    }
+    recompute();
+    window.addEventListener('resize', recompute, {passive:true});
+
+    let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop + 6) {
+            nav.style.transform = 'translateY(-' + (nav.offsetHeight + 4) + 'px)';
+            nav.style.opacity = '0';
+        } else if (scrollTop < lastScrollTop - 6) {
+            nav.style.transform = 'translateY(0)';
+            nav.style.opacity = '1';
+        } else {
+            nav.style.transform = 'translateY(0)';
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+})();
+</script>
+
+    <div class="w-full px-[5%]">
+        <div class="w-full bg-[#484848] flex flex-col justify-center items-center gap-10 xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
+            <div id="models-grid" class="w-full text-white gap-3 md:gap-6 lg:gap-2 xl:gap-4 2xl:gap-6 grid grid-cols-2 grid-rows-5 lg:grid-cols-5 lg:grid-rows-2 text-xs sm:text-2xl md:text-3xl lg:text-base xl:text-xl 2xl:text-2xl 3xl:text-3xl">
+            </div>
+
+        </div>        
+    </div>
+
+    <!-- Model Popup -->
+    <div id="modelPopup" class="hidden fixed inset-0 backdrop-blur-xl flex justify-center items-center z-[9995] p-[7vw] w-full">
+        <div id="popupModel" class="max-h-[92vh] xs:max-h-max overflow-y-scroll xs:overflow-y-hidden xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] h-auto mx-auto bg-black/80 rounded-xl p-[5%] lg:p-[3%] flex flex-col lg:flex-row justify-start items-center gap-[1vh] lg:gap-[2vh] overflow-visible">
+            <div id="popupBg" class="relative group bg-cover bg-center rounded-lg w-full lg:w-auto lg:max-w-[37%] xl:max-w-[30%] 2xl:max-w-[25%] flex justify-center items-center lg:h-full h-[250px] xs:h-[350px] md:h-[380px]">
+                <img id="popupImg" src="" class="h-full object-contain" alt="">
+            </div>
+            <div class="w-full h-full lg:p-0 flex flex-col justify-around items-start gap-[1vh] lg:gap-[2vh] px-0 lg:px-[3%] 2xl:px-[2%]">
+                <h1 id="popupName" class="text-white pt-1 font-semibold text-xl xs:text-2xl sm:text-4xl md:text-3xl lg:text-5xl xl:text-6xl 3xl:text-7xl"></h1>
+                <p id="popupDesc" class="text-white/70 text-[10px] xs:text-sm md:text-lg lg:text-base xl:text-lg 2xl:text-2xl 3xl:text-3xl"></p>
+                <div class="flex flex-row justify-between items-center md:items-end w-full gap-[1vh] lg:gap-[2vh]">
+                    <div class="flex flex-col text-white text-xs xs:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl justify-center items-center">
+                        <p id="popupYears" class="flex justify-start items-center gap-1 my-auto"><i class="fa-solid fa-calendar"></i>Manufacturing: </p>
+                    </div>
+                    <div id="popupBookContainer" class="relative">
+                        <a id="popupBookDirect" target="_blank" href="manuals.html" class="transition-all duration-300 text-white text-nowrap rounded-xl px-5 py-2 text-xs xs:text-lg xl:text-xl 2xl:text-3xl 3xl:text-3xl bg-[#484848] hover:bg-black/80">Manual</a>
+                        <button id="popupBookBtn" type="button" class="hidden transition-all duration-300 text-white w-[80px] xs:w-[120px] xl:w-[140px] 2xl:w-[160px] py-2 xs:py-1 xl:py-2 text-nowrap rounded-xl text-xs xs:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl bg-[#484848] hover:bg-black/80">Manual</button>
+                        <div id="popupBookDropdown" class="hidden absolute right-0 bottom-full mb-1 lg:top-full lg:bottom-auto lg:mb-0 lg:mt-1 w-[80px] xs:w-[120px] xl:w-[140px] 2xl:w-[160px] rounded-xl bg-black/90 border border-white shadow-xl z-50 overflow-hidden flex flex-col text-xs xs:text-lg lg:text-base 2xl:text-lg 3xl:text-xl">
+                            <a id="popupBookMkd" target="_blank" href="#" class="block w-full text-center text-white py-1 md:py-2 lg:py-1 3xl:py-2 border-b border-white/20 hover:bg-white/10 transition-all duration-300">Македонски</a>
+                            <a id="popupBookEng" target="_blank" href="#" class="block w-full text-center text-white py-1 md:py-2 lg:py-1 3xl:py-2 hover:bg-white/10 transition-all duration-300">English</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <i id="closePopup" class="fa-solid fa-x absolute text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl text-white cursor-pointer top-[2wv] right-[2vw] xs:top-[3vw] xs:right-[3vw]"></i>
+        </div>
+    </div>
+
+
+    <div class="w-full h-[16vh] bg-gradient-to-b from-[#484848] to-black"></div>
+
+    <div id="footer-container"></div>
+
+    <script>
+        let allModels = [];
+        let allCards = [];
+        let allManuals = [];
+        let manualIndex = {};
+        const manualNameMap = {
+            'Kirby Avalir 2': 'Avalir 2',
+            'Kirby Avalir': 'Avalir',
+            'Kirby Sentria II': 'Sentria II',
+            'Kirby Sentria': 'Sentria',
+            'Kirby Ultimate G': 'Ultimate G Series',
+            'Kirby G6': 'Gsix',
+            'Kirby G5': 'G5',
+            'Kirby G4': 'G4',
+            'Kirby G3': 'G3'
+        };
+        const manualFallbackUrl = 'manuals.html';
+
+        function normalizeForManual(name) {
+            return name.toLowerCase().replace(/kirby\s*/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+        }
+
+        function buildManualIndex(manuals) {
+            allManuals = manuals || [];
+            manualIndex = {};
+            allManuals.forEach(manual => {
+                if (manual && manual.name) {
+                    manualIndex[manual.name] = manual;
+                }
+            });
+        }
+
+        function getManualForModel(modelName) {
+            if (!modelName) return null;
+            const mappedName = manualNameMap[modelName];
+            if (mappedName && manualIndex[mappedName]) {
+                return manualIndex[mappedName];
+            }
+            const normalizedModel = normalizeForManual(modelName);
+            return allManuals.find(manual => {
+                const normalizedManual = normalizeForManual(manual.name);
+                return normalizedManual === normalizedModel || normalizedModel.includes(normalizedManual) || normalizedManual.includes(normalizedModel);
+            }) || null;
+        }
+
+        Promise.all([
+            fetch('data/models.json').then(response => response.json()),
+            fetch('data/manuals.json').then(response => response.json())
+        ])
+            .then(([models, manuals]) => {
+                buildManualIndex(manuals);
+                allModels = models;
+                const grid = document.getElementById('models-grid');
+                models.forEach(model => {
+                    const card = createCard(model);
+                    grid.appendChild(card);
+                    allCards.push({model, card});
+                });
+                // Initially all visible
+                allCards.forEach(({card}) => {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                });
+            })
+            .catch(error => console.error('Error loading models or manuals:', error));
+
+        function createCard(model) {
+            const card = document.createElement('div');
+            card.className = 'relative group h-[100vw] xs:h-[600px] md:h-[720px] lg:h-[380px] xl:h-[420px] 2xl:h-[550px] 3xl:h-[700px] flex flex-col bg-transparent shadow-black shadow-2xl rounded-xl overflow-hidden model-card';
+
+            const years = `${model.productionYears.from}–${model.productionYears.to}`;
+            const shortDesc = model.shortDescription || '';
+
+            card.innerHTML = `
+                <div class="relative w-full flex justify-center items-center h-[90%] group-hover:h-full transition-all duration-500 ease-in-out bg-cover bg-center rounded-t-xl" style="background-image: url('${model.bgImage}');">
+                    <img src="${model.productImage}" class="object-contain h-full z-10" alt="">
+                    <div class="absolute top-0 right-0 h-full w-[95%] 2xl:w-[90%] backdrop-blur-3xl bg-black/40 translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out flex flex-col justify-between px-[5%] py-[17%] text-white z-20 rounded-l-xl">
+                        <div class="flex flex-col gap-1 xs:gap-2 xl:gap-1">
+                            <h3 class="text-base xs:text-2xl md:text-3xl lg:text-lg xl:text-2xl 2xl:text-2xl 3xl:text-3xl font-semibold mb-[5%]">${model.name}</h3>
+                            <p class="text-xs xs:text-xl w-full sm:text-sm md:text-2xl lg:text-sm xl:text-base 2xl:text-xl 3xl:text-2xl text-white/70">${shortDesc}</p>
+                            <p class="text-xs xs:text-xl w-full sm:text-sm md:text-2xl lg:text-sm xl:text-base 2xl:text-xl 3xl:text-2xl text-white/70 flex items-center justify-start gap-1 md:gap-2"><i class="fa-solid fa-calendar"></i>${years}</p>
+                        </div>
+                        <button class="view-more-btn w-full rounded-xl py-[3%] flex justify-center items-center text-white transition-all duration-300 text-sm xs:text-xl w-full sm:text-sm md:text-2xl lg:text-sm xl:text-lg 2xl:text-xl 3xl:text-2xl" style="background-color: ${model.color};" onmouseover="this.style.backgroundColor='${model.hoverColor}'" onmouseout="this.style.backgroundColor='${model.color}'">View More</button>
+                    </div>
+                </div>
+                <p class="h-[10%] group-hover:h-0 opacity-100 group-hover:opacity-0 transition-all duration-500 ease-in-out flex justify-center items-center bg-black/40 rounded-b-xl text-white text-base xs:text-3xl md:text-4xl lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">${model.name}</p>
+            `;
+            const btn = card.querySelector('.view-more-btn');
+            btn.addEventListener('click', () => openPopup(model));
+            card.style.position = 'relative';
+            if (model.discount > 0) {
+                const badge = document.createElement('div');
+                badge.className = 'absolute top-[3%] -right-0 px-2 bg-red-600 rounded-l-lg shadow-xl shadow-black/60 z-30';
+                badge.innerHTML = `<p class="text-[8px] sm:text-sm md:text-lg lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl uppercase tracking-wide text-white">${model.discount}% discount</p>`;
+                card.appendChild(badge);
+            }
+            return card;
+        }
+
+        function openPopup(model) {
+            document.getElementById('popupBg').style.backgroundImage = `url('${model.bgImage}')`;
+            document.getElementById('popupImg').src = model.productImage;
+            document.getElementById('popupName').textContent = model.name;
+            document.getElementById('popupDesc').textContent = model.description;
+            document.getElementById('popupYears').innerHTML = `<i class="fa-solid fa-calendar"></i>Manufacturing: ${model.productionYears.from}-${model.productionYears.to}`;
+            const popupBookDirect = document.getElementById('popupBookDirect');
+            const popupBookBtn = document.getElementById('popupBookBtn');
+            const popupBookDropdown = document.getElementById('popupBookDropdown');
+            const popupBookMkd = document.getElementById('popupBookMkd');
+            const popupBookEng = document.getElementById('popupBookEng');
+
+            popupBookDirect.style.backgroundColor = model.color;
+            popupBookBtn.style.backgroundColor = model.color;
+            popupBookDirect.onmouseover = () => popupBookDirect.style.backgroundColor = model.hoverColor;
+            popupBookDirect.onmouseout = () => popupBookDirect.style.backgroundColor = model.color;
+            popupBookBtn.onmouseover = () => popupBookBtn.style.backgroundColor = model.hoverColor;
+            popupBookBtn.onmouseout = () => popupBookBtn.style.backgroundColor = model.color;
+
+            if (model.name === 'Kirby Diamond') {
+                popupBookBtn.classList.add('hidden');
+                popupBookDropdown.classList.add('hidden');
+                popupBookDirect.classList.add('hidden');
+            } else {
+                const manual = getManualForModel(model.name);
+                if (manual && (manual.mkd_doc || manual.eng_doc)) {
+                    if (manual.mkd_doc && manual.eng_doc) {
+                        popupBookDirect.classList.add('hidden');
+                        popupBookBtn.classList.remove('hidden');
+                        popupBookDropdown.classList.add('hidden');
+                        popupBookMkd.href = manual.mkd_doc;
+                        popupBookEng.href = manual.eng_doc;
+                    } else {
+                        const manualUrl = manual.mkd_doc || manual.eng_doc;
+                        popupBookBtn.classList.add('hidden');
+                        popupBookDropdown.classList.add('hidden');
+                        popupBookDirect.classList.remove('hidden');
+                        popupBookDirect.href = manualUrl;
+                    }
+                } else {
+                    popupBookBtn.classList.add('hidden');
+                    popupBookDropdown.classList.add('hidden');
+                    popupBookDirect.classList.remove('hidden');
+                    popupBookDirect.href = manualFallbackUrl;
+                }
+            }
+
+            document.getElementById('modelPopup').classList.remove('hidden');
+        }
+
+        const popupBookBtn = document.getElementById('popupBookBtn');
+        const popupBookDropdown = document.getElementById('popupBookDropdown');
+        const popupBookContainer = document.getElementById('popupBookContainer');
+
+        if (popupBookBtn) {
+            popupBookBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                popupBookDropdown.classList.toggle('hidden');
+            });
+        }
+
+        document.addEventListener('click', (e) => {
+            if (popupBookDropdown && !popupBookContainer.contains(e.target)) {
+                popupBookDropdown.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('closePopup').addEventListener('click', () => {
+            document.getElementById('modelPopup').classList.add('hidden');
+        });
+
+        document.getElementById('modelPopup').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('modelPopup')) {
+                document.getElementById('modelPopup').classList.add('hidden');
+            }
+        });
+    </script>
+
+    <div id="cookieBanner" class="fixed bottom-[5%] px-[5%] w-full text-white z-[9999] hidden">
+        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto lg:mx-0 w-auto lg:w-[450px] 3xl:w-[580px] rounded-xl bg-black/40 backdrop-blur-3xl p-[5%] lg:p-[3%] xl:p-[2%] flex flex-col justify-between items-center gap-[3vw] xl:gap-[1vw]">
+            <div class="flex justify-center items-center gap-2 xs:gap-4 md:gap-4">
+                <p class="text-sm xs:text-xl md:text-3xl lg:text-lg 3xl:text-2xl">This website uses cookies to help analyze and improve your experience.</p> 
+                <i class="fa-solid fa-cookie text-2xl xs:text-4xl md:text-6xl lg:text-3xl 3xl:text-5xl flex justify-center items-center"></i>
+            </div>
+            <div class="flex gap-[6%] w-full text-base xs:text-xl md:text-3xl lg:text-xl 3xl:text-3xl">
+              <button onclick="rejectCookies()" class="border w-[47%] border-white py-[1%] rounded-xl">Reject</button>
+              <button onclick="acceptCookies()" class="bg-white w-[47%] text-black py-[1%] rounded-xl">Accept</button>
+            </div>
+        </div>
+    </div>
+
+<script src="../cookie.js"></script>
+
+  <div class="fixed bottom-[5%] left-[5%] z-[9900]">
+    <div class="relative inline-block">
+      <p id="cartBadge"
+        class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] sm:text-xs md:text-base lg:text-[12px] xl:text-xs rounded-full px-2 py-1 leading-none">
+        0</p>
+      <a id="checkOutBtn" href="checkOut.html"
+        class="group flex items-center bg-[#484848] hover:bg-[#303030] transition-all duration-300 border border-white text-white rounded-full py-1 px-2 xs:py-2 xs:px-3 md:py-4 md:px-4 lg:py-2 lg:px-3 text-lg xs:text-2xl md:text-3xl lg:text-xl 2xl:text-2xl gap-0 hover:gap-1 overflow-hidden">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <p class="opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">Cart</p>
+      </a>
+    </div>
+  </div>
+
+<script>
+
+function updateCartBadge(){
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  let totalQty = 0;
+  cart.forEach(item => {
+    totalQty += (item.qty || 1);
+  });
+  const badge = document.getElementById('cartBadge');
+  if (badge) {
+    if (totalQty === 0) {
+      badge.style.display = "none";
+    } else {
+      badge.style.display = "inline-flex";
+      badge.textContent = totalQty >= 100 ? "99+" : totalQty.toString();
+    }
+  }
+}
+
+// Update badge when localStorage changes from other pages/tabs
+window.addEventListener('storage', (e) => {
+  if(e.key === 'cart'){
+    updateCartBadge();
+  }
+});
+
+(function(){
+  const addBtn = document.getElementById('modalAddToCart');
+  const checkOutBtn = document.getElementById('checkOutBtn');
+
+  // Update badge on page load
+  updateCartBadge();
+  
+  if(!addBtn) return;
+  
+  addBtn.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const nameEl = document.getElementById('modal-title');
+    const priceEl = document.getElementById('modal-price');
+    const imgEl = document.getElementById('modal-img');
+    if(!nameEl || !priceEl) return;
+    const name = nameEl.textContent.trim();
+    const img = imgEl ? imgEl.src : '';
+    const digits = priceEl.textContent.replace(/\D/g,'');
+    const price = parseInt(digits) || 0;
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    cart.push({ id: Date.now(), name, price, qty: 1, image: img });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartBadge();
+
+    if(checkOutBtn){
+      const pEl = checkOutBtn.querySelector('p');
+      if(pEl){
+        const defaultText = ' Cart';
+        pEl.textContent = ' Added to Cart';
+        pEl.classList.remove('opacity-0', 'max-w-0');
+        pEl.classList.add('opacity-100', 'max-w-xs');
+        setTimeout(()=>{
+          pEl.textContent = defaultText;
+          pEl.classList.remove('opacity-100', 'max-w-xs');
+          pEl.classList.add('opacity-0', 'max-w-0');
+        }, 2500);
+      }
+    }
+  });
+})();
+
+</script>
+
+<script src="../assets/js/includes.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

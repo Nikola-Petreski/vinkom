@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Warranty info and buyers rights.">
+  <title>KIRBY | Warranty</title>
+  <link href="../output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gidole&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4baf646c88.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://gidole.github.io/GidoleFont/gidoleFont.css">
+  <link rel="icon" type="image/png" href="../images_webp/logoW.webp">
+  <style>
+    @import url('https://gidole.github.io/GidoleFont/gidoleFont.css');
+    .font-gidole { font-family: 'Gidole', sans-serif !important; }
+    .reveal-letters span { opacity: 0; transform: translateY(20px); display: inline-block; transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal-visible span { opacity: 1; transform: translateY(0); }
+    #infoDropdownMenu { -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); }
+    #infoChevron, #langChevron { display: inline-block; opacity: 0; transform: rotate(0deg); transition: transform .25s ease, opacity .15s ease; }
+    #infoDropdownButton:hover #infoChevron, #langDropdownButton:hover #langChevron { opacity: 1; }
+    #infoChevron.rotated, #langChevron.rotated { transform: rotate(180deg); }
+    #mobileInfoChevron { display: inline-block; transition: transform .25s ease; }
+    #mobileInfoChevron.rotated { transform: rotate(180deg); }
+    #mobileInfoDropdownMenu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    #mobileInfoDropdownMenu.open { max-height: 500px; }
+    #mobileLangDropdownMenu { max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(-6px) scaleY(0.98); transform-origin: top; transition: max-height .28s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1); }
+    #mobileLangDropdownMenu.open { max-height: 240px; opacity: 1; visibility: visible; transform: translateY(0) scaleY(1); }
+    #triggeredMenu { max-height: 0; overflow: hidden; opacity: 0; transform: translateY(-8px); transition: max-height .32s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1); }
+    #triggeredMenu.open { max-height: 800px; opacity: 1; transform: translateY(0); }
+    #mobileNav.mobile-open { background-color: rgba(0,0,0,0.25) !important; }
+    #section-progress-container { position: fixed; bottom: 0; left: 0; width: 100%; height: 4px; background: rgba(255,255,255,0.40); z-index: 9999; pointer-events: none; }
+    #section-progress-bar { width: 0%; height: 100%; background: #fff; transition: width 100ms linear; }
+  </style>
+</head>
+<body class="overflow-x-hidden font-gidole bg-[#484848] w-full relative">
+  <div id="nav-container"></div>
+  <div id="mobile-nav-container"></div>
+
+  <div id="desktopNavSpacer" class="w-full hidden lg:block my-[1.5%]">
+    <div class="w-full h-[10vh] max-h-[110px]"></div>
+  </div>
+  <div id="mobileNavSpacer" class="py-[2vh] block lg:hidden">
+    <div class="w-full py-[5%] md:py-[3%]">
+      <div class="w-full h-[28px] xs:h-[32px] md:h-[35px]"></div>
+    </div>
+  </div>
+
+  <main class="w-full px-[5%] bg-gradient-to-b from-transparent to-black/50">
+    <div class="page-content mx-auto text-white/90">
+      <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-white/70 text-sm xs:text-lg md:text-xl xl:text-2xl lg:px-[2%]">
+        <br><p class="text-2xl xs:text-4xl md:text-5xl xl:text-6xl font-black text-white">Warranty</p><br><br>
+
+        <p class="text-white">GUARANTEE CONDITIONS</p><br>
+
+        <p>The company "VINKOM DOOEL" - Skopje, the issuer of the warranty certificate, guarantees that the product will function properly and will serve its purpose if the instructions for use are applied.</p><br>
+
+        <br><p class="text-white">WARRANTY PERIOD</p><br>
+
+        <p>It is valid from the date of sale and verification of the warranty certificate and for commercial use it is 12 months, and for personal use it is 36 months. The issuer of the warranty undertakes that during the warranty period: <br>- It will remove all defects free of charge and will replace parts that are found to have manufacturing and assembly errors. <br>- It will carry out all repairs to the device within 10 days from the date of written notification of the defect, and if it does not carry out repairs to the device within this period, it will extend it for as many days as the repair period has been exceeded.<br>In the event that the device is not repaired within 20 days or the defect cannot be removed at all, the user has the right to request a replacement of the device. The referral and commissioning of the KIRBY product are carried out at the expense of the guarantor.</p> <br>
+
+        <br><p class="text-white">The following are excluded from the warranty obligations:</p><br>
+
+        <p>- Parts that are part of the regular maintenance of the device and are by nature worn out and replaced with new ones (belt, bulb, paper bags, brush bristles, rear wheels, ...).<br>- Repair of a device that has had the serial number removed, i.e. the date of manufacture of the built-in parts.<br>- Defects that have occurred due to failure to comply with the instructions for use and maintenance or the use of inappropriate consumables and tools.<br>- Defects due to mechanical damage (turbine, hose, pipes, etc.)</p><br>
+
+        <br><p class="text-white">The warranty expires</p><br>
+
+        <p>- If it is determined that the commissioning and commissioning was performed by an unauthorized person or if a non-original part is installed in the device.<br>- If it is determined that the device was purchased from an unauthorized dealer, resold, etc.</p> 
+
+        <br><p>The warranty is proven with a copy of the warranty from the KIRBY company.</p>
+      </div>
+    </div>
+  </main>
+
+    <div class="w-full h-[16vh] bg-gradient-to-b from-black/50 to-black"></div>
+
+  <div id="footer-container"></div>
+
+  <div class="fixed bottom-[5%] left-[5%] z-[9900]">
+    <div class="relative inline-block">
+      <p id="cartBadge" class="absolute -top-2 -right-2 hidden rounded-full bg-red-600 px-2 py-1 text-[10px] text-white sm:text-xs md:text-base lg:text-[12px] xl:text-xs leading-none">0</p>
+      <a id="checkOutBtn" href="checkOut.html" class="group flex items-center gap-0 overflow-hidden rounded-full border border-white bg-[#484848] px-2 py-1 text-lg text-white transition-all duration-300 hover:gap-1 hover:bg-[#303030] xs:py-2 xs:px-3 md:py-4 md:px-4 lg:py-2 lg:px-3 xs:text-2xl md:text-3xl lg:text-xl 2xl:text-2xl">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <p class="max-w-0 whitespace-nowrap opacity-0 transition-all duration-300 group-hover:max-w-xs group-hover:opacity-100">Cart</p>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function updateCartBadge() {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      let totalQty = 0;
+      cart.forEach(item => { totalQty += (item.qty || 1); });
+      const badge = document.getElementById('cartBadge');
+      if (badge) {
+        if (totalQty === 0) {
+          badge.style.display = 'none';
+        } else {
+          badge.style.display = 'inline-flex';
+          badge.textContent = totalQty >= 100 ? '99+' : totalQty.toString();
+        }
+      }
+    }
+
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'cart') {
+        updateCartBadge();
+      }
+    });
+
+    (function () {
+      updateCartBadge();
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const targetSection = document.querySelector('.page-content');
+      if (!targetSection) return;
+
+      const container = document.createElement('div');
+      container.id = 'section-progress-container';
+      const bar = document.createElement('div');
+      bar.id = 'section-progress-bar';
+      container.appendChild(bar);
+      document.body.appendChild(container);
+
+      function updateProgress() {
+        const sectionTop = targetSection.getBoundingClientRect().top + window.scrollY;
+        const sectionHeight = targetSection.offsetHeight;
+        const maxScroll = Math.max(1, sectionHeight - window.innerHeight);
+        const scrolled = window.scrollY - sectionTop;
+        const percent = Math.max(0, Math.min(100, (scrolled / maxScroll) * 100));
+        bar.style.width = percent + '%';
+      }
+
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      window.addEventListener('resize', updateProgress);
+      updateProgress();
+    })();
+  </script>
+
+  <script src="../assets/js/includes.js"></script>
+</body>
+</html>

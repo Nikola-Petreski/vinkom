@@ -1,0 +1,259 @@
+[
+  {
+    "name": "Kirby Avalir 2",
+    "productImage": "../images_webp/avalir_2_img/avalir_2.webp",
+    "bgImage": "../images_webp/avalir_2_img/avalir_2_bg.webp",
+    "productionYears": {
+      "from": 2017,
+      "to": 2024
+    },
+    "description": "Kirby Avalir 2 is engineered with modern users in mind, elevating cleaning performance to new heights. Its sleek design with blue accents combines visual elegance with practicality, featuring 15 diverse cleaning attachments for every task. Equipped with the advanced Multi-Surface Shampoo System, it effortlessly shampoos carpets and thoroughly cleans hardwood floors, tiles, and vinyl surfaces. The streamlined one-piece shampoo base connects quickly and includes an easily removable dirty water tank, making disposal simple and convenient. With its refined design and ergonomic features, the Avalir 2 continues Kirby's tradition of outstanding comfort and exceptional cleaning performance.",
+    "price": 1350,
+    "discount": 0,
+    "availability": 0,
+    "power": "1200 W",
+    "color": "#022baa",
+    "hoverColor": "#0e1a51",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/avalir_2_img/gallery/1.webp",
+      "../images_webp/avalir_2_img/gallery/2.webp",
+      "../images_webp/avalir_2_img/gallery/3.webp",
+      "../images_webp/avalir_2_img/gallery/4.webp",
+      "../images_webp/avalir_2_img/gallery/5.webp",
+      "../images_webp/avalir_2_img/gallery/6.webp",
+      "../images_webp/avalir_2_img/gallery/7.webp",
+      "../images_webp/avalir_2_img/gallery/8.webp",
+      "../images_webp/avalir_2_img/gallery/9.webp"
+    ],
+    "shortDescription": "Elegant, modern Kirby with 15 attachments and Multi-Surface Shampoo System for carpets, wood, tiles and vinyl; easy water emptying with ergonomic design."
+  },
+  {
+    "name": "Kirby Avalir",
+    "productImage": "../images_webp/avalir_img/avalir.webp",
+    "bgImage": "../images_webp/avalir_img/avalir_bg.webp",
+    "productionYears": {
+      "from": 2015,
+      "to": 2017
+    },
+    "description": "This elegant upright cleaner with red accents is completely redesigned with user needs as the top priority. The Kirby Avalir transforms into twelve different functional devices, making it exceptionally versatile for any cleaning task. Its modern design with smooth lines features an upgraded Multi-Surface Shampoo System perfect for carpet shampooing and thorough cleaning of hardwood, tile, and vinyl floors. The streamlined one-piece shampoo base connects easily and houses a removable dirty water tank for simple disposal. Additionally, the redesigned handle makes lifting effortless, requiring minimal bending or strain.",
+    "price": 1250,
+    "discount": 0,
+    "availability": 0,
+    "power": "1150 W",
+    "color": "#692223",
+    "hoverColor": "#380f0f",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/avalir_img/gallery/1.webp",
+      "../images_webp/avalir_img/gallery/2.webp",
+      "../images_webp/avalir_img/gallery/3.webp",
+      "../images_webp/avalir_img/gallery/4.webp",
+      "../images_webp/avalir_img/gallery/5.webp",
+      "../images_webp/avalir_img/gallery/6.webp",
+      "../images_webp/avalir_img/gallery/7.webp",
+      "../images_webp/avalir_img/gallery/8.webp",
+      "../images_webp/avalir_img/gallery/9.webp"
+    ],
+    "shortDescription": "Redesigned Kirby with 12 functional attachments, Multi-Surface Shampoo System for carpets, hardwood and tiles, with quick-connect for effortless cleaning."
+  },
+  {
+    "name": "Kirby Sentria II",
+    "productImage": "../images_webp/sentria_II_img/sentria_II.webp",
+    "bgImage": "../images_webp/sentria_II_img/sentria_II_bg.webp",
+    "productionYears": {
+      "from": 2012,
+      "to": 2014
+    },
+    "description": "The Sentria II brought not only a fresh color scheme but also significant structural improvements. It features a redesigned Mini Em-tor for better grip and easier removal, F-Style filter bag attachment for simpler replacement, and a modernized version of the popular Zippbrush attachment. The unit has a durable polymer base reducing weight, plus carrying handles for convenient portability. Sentria II remains one of Kirby's most beloved models, later succeeded by the latest Kirby Avalir Platinum edition. Its reliability and performance made it a customer favorite for generations.",
+    "price": 1150,
+    "discount": 0,
+    "availability": 0,
+    "power": "1100 W",
+    "color": "#6a5138",
+    "hoverColor": "#5d4228",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/sentria_II_img/gallery/1.webp",
+      "../images_webp/sentria_II_img/gallery/2.webp",
+      "../images_webp/sentria_II_img/gallery/3.webp",
+      "../images_webp/sentria_II_img/gallery/4.webp",
+      "../images_webp/sentria_II_img/gallery/5.webp",
+      "../images_webp/sentria_II_img/gallery/6.webp"
+    ],
+    "shortDescription": "Enhanced Sentria II with easy Mini Em-tor, F-Style filter attachment and polymer base for lighter weight and improved portability."
+  },
+  {
+    "name": "Kirby Sentria",
+    "productImage": "../images_webp/sentria_img/sentria.webp",
+    "bgImage": "../images_webp/sentria_img/sentria_bg.webp",
+    "productionYears": {
+      "from": 2006,
+      "to": 2012
+    },
+    "description": "The Sentria model stands out with smooth lines and rounded design, giving it an elegant and contemporary appearance. The handle was completely redesigned to provide superior ergonomics and enhanced comfort during use. Compared to earlier models, Sentria introduces several notable improvements, including LED front lights for better visibility, a taller protective bumper for added safety when cleaning around furniture, plus an improved upholstery attachment that captures more debris. This model earned the prestigious Gold Seal of Approval from the Carpet and Rug Institute for effective carpet cleaning performance.",
+    "price": 1050,
+    "discount": 0,
+    "availability": 0,
+    "power": "1050 W",
+    "color": "#abb7be",
+    "hoverColor": "#53646e",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/sentria_img/gallery/1.webp",
+      "../images_webp/sentria_img/gallery/2.webp",
+      "../images_webp/sentria_img/gallery/3.webp",
+      "../images_webp/sentria_img/gallery/4.webp",
+      "../images_webp/sentria_img/gallery/5.webp",
+      "../images_webp/sentria_img/gallery/6.webp"
+    ],
+    "shortDescription": "Sophisticated Kirby with smooth design, ergonomic handle, LED lights and improved upholstery attachment with Gold Seal of Approval."
+  },
+  {
+    "name": "Kirby Diamond",
+    "productImage": "../images_webp/diamond_edition/diamond_edition.webp",
+    "bgImage": "../images_webp/diamond_edition/diamond_edition_bg.webp",
+    "productionYears": {
+      "from": 2002,
+      "to": 2003
+    },
+    "description": "The Diamond Edition was highly popular with users thanks to its classic design and substantial improvements over the Ultimate G series. This model includes Kirby's Allergen Reduction filters, which provide far superior filtration compared to standard paper bags. With an upgraded motor, improved rotating brush, and redesigned carpet plate, upright cleaning efficiency increased significantly. Additionally, a gentle setting for delicate carpets and quiet operation was built in, offering greater flexibility and comfort for daily household cleaning needs.",
+    "price": 1000,
+    "discount": 0,
+    "availability": 0,
+    "power": "1000 W",
+    "color": "#53646e",
+    "hoverColor": "#3e4f51",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/diamond_edition/gallery/1.webp",
+      "../images_webp/diamond_edition/gallery/2.webp",
+      "../images_webp/diamond_edition/gallery/3.webp",
+      "../images_webp/diamond_edition/gallery/4.webp",
+      "../images_webp/diamond_edition/gallery/5.webp",
+      "../images_webp/diamond_edition/gallery/6.webp"
+    ],
+    "shortDescription": "Classic model with Allergen Reduction filters, improved brush and quiet mode for flexible and effective cleaning performance."
+  },
+  {
+    "name": "Kirby Ultimate G",
+    "productImage": "../images_webp/ultimate_g/ultimate_g.webp",
+    "bgImage": "../images_webp/ultimate_g/ultimate_g_bg.webp",
+    "productionYears": {
+      "from": 2002,
+      "to": 2003
+    },
+    "description": "The Ultimate G model enjoyed a relatively brief market presence before the Diamond Edition version of the Ultimate G series was introduced. This series brought an enhanced outer bag for more efficient filtration, plus extended fan blades for improved airflow. It includes a new brush design with better bristles for more effective cleaning action. The bag opening was redesigned in S-shape form to reduce dust clouds when emptying. Additionally, magnets were built in for clear performance indicators. Ultimate G provides versatility as an upright cleaner, canister unit, and carpet shampooing system.",
+    "price": 980,
+    "discount": 0,
+    "availability": 0,
+    "power": "950 W",
+    "color": "#897d54",
+    "hoverColor": "#675e3c",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/ultimate_g/gallery/1.webp",
+      "../images_webp/ultimate_g/gallery/2.webp",
+      "../images_webp/ultimate_g/gallery/3.webp"
+    ],
+    "shortDescription": "Short-lived but powerful model with enhanced filtration, new brush design and S-shaped bag opening for easier emptying."
+  },
+  {
+    "name": "Kirby G6",
+    "productImage": "../images_webp/g6_img/g6.webp",
+    "bgImage": "../images_webp/g6_img/g6_bg.webp",
+    "productionYears": {
+      "from": 1999,
+      "to": 2002
+    },
+    "description": "Kirby G6 was first introduced in 1999 and produced until the Ultimate G series appeared in 2002. This model features a darker, more elegant design that conveys class and sophistication. The G6 includes an improved brush for more effective cleaning, advanced filter bags, and an upgraded portable shampooer with better spray control. Additional standard features include the handle tilt mechanism, toe-touch control, and TechDrive Power Assist system, enabling easier operation and greater comfort during use.",
+    "price": 950,
+    "discount": 0,
+    "availability": 0,
+    "power": "900 W",
+    "color": "#b9ac38",
+    "hoverColor": "#4b4f3d",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/g6_img/gallery/1.webp",
+      "../images_webp/g6_img/gallery/2.webp",
+      "../images_webp/g6_img/gallery/3.webp"
+    ],
+    "shortDescription": "Stylish G6 with improved brush, TechDrive Power Assist, advanced filter bags and portable shampooer for easier operation."
+  },
+  {
+    "name": "Kirby G5",
+    "productImage": "../images_webp/g5_img/g5.webp",
+    "bgImage": "../images_webp/g5_img/g5_bg.webp",
+    "productionYears": {
+      "from": 1997,
+      "to": 1999
+    },
+    "description": "Kirby G5 is one of Kirby's most popular models, recognizable by its deep burgundy color and elegant design. The most impressive feature of this model is its NASA-developed Lexan turbine, engineered to significantly increase overall suction power. Additionally, G5 offers the flexibility of both upright and portable cleaning modes. Standard features include toe-touch control, adjustable nozzle height, and the TechDrive Power Assist system, all working together for easy operation, stable performance and comfortable cleaning on various household surfaces.",
+    "price": 880,
+    "discount": 0,
+    "availability": 0,
+    "power": "850 W",
+    "color": "#6d4859",
+    "hoverColor": "#46353c",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/g5_img/gallery/1.webp",
+      "../images_webp/g5_img/gallery/2.webp",
+      "../images_webp/g5_img/gallery/3.webp",
+      "../images_webp/g5_img/gallery/4.webp",
+      "../images_webp/g5_img/gallery/5.webp",
+      "../images_webp/g5_img/gallery/6.webp"
+    ],
+    "shortDescription": "Popular deep burgundy model with Lexan turbine, toe-touch control and TechDrive Power Assist for stable and comfortable performance."
+  },
+  {
+    "name": "Kirby G4",
+    "productImage": "../images_webp/g4_img/g4.webp",
+    "bgImage": "../images_webp/g4_img/g4_bg.webp",
+    "productionYears": {
+      "from": 1993,
+      "to": 1997
+    },
+    "description": "The Kirby G4 model brought significant improvements focused on easier operation and better functionality. This model was equipped with a completely new three-position handle lock mechanism, providing greater flexibility and stability during use. Beyond that, G4 supports various optional attachments and accessories that increase power and versatility for different cleaning tasks. Standard features include toe-touch control, TechDrive Power Assist system, replaceable Micron Magic bags for superior filtration, plus a belt lifter mechanism for simplified maintenance and everyday use.",
+    "price": 820,
+    "discount": 0,
+    "availability": 0,
+    "power": "800 W",
+    "color": "#9ba1bb",
+    "hoverColor": "#3c4352",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/g4_img/gallery/1.jpg",
+      "../images_webp/g4_img/gallery/2.jpg",
+      "../images_webp/g4_img/gallery/3.jpg"
+    ],
+    "shortDescription": "G4 offers three-position handle lock, TechDrive Power Assist, Micron Magic bags and belt lifter for easier maintenance."
+  },
+  {
+    "name": "Kirby G3",
+    "productImage": "../images_webp/g3_img/g3.webp",
+    "bgImage": "../images_webp/g3_img/g3_bg.webp",
+    "productionYears": {
+      "from": 1990,
+      "to": 1993
+    },
+    "description": "The Kirby G3 model brought a completely new look and feel to the entire Kirby line, with over 60 improvements, earning it the name 'Dawn of a New Generation'. This model introduced the TechDrive Power Assist system, which became one of Kirby's most popular features. The automatic transmission senses direction and desired speed, making movement almost effortless. Additionally, G3 offers toe-touch control, belt lifter and adjustable brush, plus the ability to function as an upright vacuum, straight suction cleaner and portable unit with various attachments.",
+    "price": 750,
+    "discount": 0,
+    "availability": 0,
+    "power": "750 W",
+    "color": "#9e9e9e",
+    "hoverColor": "#656565",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/g3_img/gallery/1.webp",
+      "../images_webp/g3_img/gallery/2.webp",
+      "../images_webp/g3_img/gallery/3.webp",
+      "../images_webp/g3_img/gallery/4.webp",
+      "../images_webp/g3_img/gallery/5.webp",
+      "../images_webp/g3_img/gallery/6.webp"
+    ],
+    "shortDescription": "G3 brought TechDrive Power Assist, toe-touch control, belt lifter and adjustable brush for easy and powerful operation."
+  }
+]
