@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gidole&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/4baf646c88.js" crossorigin="anonymous"></script>
-  <link rel="icon" type="image/png" href="images_webp/logoW.webp">
+  <link rel="icon" type="image/png" href="../images_webp/logoW.webp">
 
   <style>
     .font-gidole {
@@ -481,10 +481,10 @@
           }
 
           console.error('Web3Forms submission failed', result);
-          alert('Внесот не успеа. Обидете се повторно.');
+          alert('Something went wrong. Please try again.');
         } catch (error) {
           console.error('Web3Forms submission error', error);
-          alert('Внесот не успеа. Обидете се повторно.');
+          alert('Something went wrong. Please try again.');
         }
       });
     });
@@ -588,7 +588,7 @@
         }
       }).catch(err => {
         console.error('Failed to load FAQ data', err);
-        list.innerHTML = '<p class="text-[#c1c1c1]">Не може да се вчитаат прашањата. Обидете се повторно подоцна.</p>';
+        list.innerHTML = '<p class="text-[#c1c1c1]">Couldn’t load the questions. Please try again later.</p>';
       });
     })();
   </script>
@@ -597,14 +597,13 @@
     <div
       class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto lg:mx-0 w-auto lg:w-[450px] 3xl:w-[580px] rounded-xl bg-black/40 backdrop-blur-3xl p-[5%] lg:p-[3%] xl:p-[2%] flex flex-col justify-between items-center gap-[3vw] xl:gap-[1vw]">
       <div class="flex justify-center items-center gap-2 xs:gap-4 md:gap-4">
-        <p class="text-sm xs:text-xl md:text-3xl lg:text-lg 3xl:text-2xl">Оваа веб-страница користи колачиња за анализа
-          и подобрување на искуството.</p>
+        <p class="text-sm xs:text-xl md:text-3xl lg:text-lg 3xl:text-2xl">This website uses cookies to help analyze and improve your experience.</p>
         <i
           class="fa-solid fa-cookie text-2xl xs:text-4xl md:text-6xl lg:text-3xl 3xl:text-5xl flex justify-center items-center"></i>
       </div>
       <div class="flex gap-[6%] w-full text-base xs:text-xl md:text-3xl lg:text-xl 3xl:text-3xl">
-        <button onclick="rejectCookies()" class="border w-[47%] border-white py-[1%] rounded-xl">Одбиј</button>
-        <button onclick="acceptCookies()" class="bg-white w-[47%] text-black py-[1%] rounded-xl">Прифати</button>
+        <button onclick="rejectCookies()" class="border w-[47%] border-white py-[1%] rounded-xl">Reject</button>
+        <button onclick="acceptCookies()" class="bg-white w-[47%] text-black py-[1%] rounded-xl">Submit</button>
       </div>
     </div>
   </div>
@@ -621,7 +620,7 @@
         <i class="fa-solid fa-basket-shopping"></i>
         <p
           class="opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">
-          Види кошничка</p>
+          Cart</p>
       </a>
     </div>
   </div>
@@ -679,8 +678,8 @@
         if (checkOutBtn) {
           const pEl = checkOutBtn.querySelector('p');
           if (pEl) {
-            const defaultText = ' Види кошничка';
-            pEl.textContent = ' Додадено во кошничка';
+            const defaultText = ' Cart';
+            pEl.textContent = ' Added to cart';
             pEl.classList.remove('opacity-0', 'max-w-0');
             pEl.classList.add('opacity-100', 'max-w-xs');
             setTimeout(() => {

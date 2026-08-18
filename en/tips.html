@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KIRBY Tips & Tricks — Helpful advice for a cleaner home with Kirby.">  
+  <title>KIRBY | Tips</title>
+  <link href="../output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gidole&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4baf646c88.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://gidole.github.io/GidoleFont/gidoleFont.css">
+  <link rel="icon" type="image/png" href="../images_webp/logoW.webp">
+
+<body class="bg-[#484848]">
+  <style>
+    .reveal-letters span {
+      opacity: 0;
+      transform: translateY(20px);
+      display: inline-block;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal-visible span {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #infoDropdownMenu {
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+    }
+
+    #infoChevron,
+    #langChevron {
+      display: inline-block;
+      opacity: 0;
+      transform: rotate(0deg);
+      transition: transform .25s ease, opacity .15s ease;
+    }
+
+    #infoDropdownButton:hover #infoChevron,
+    #langDropdownButton:hover #langChevron {
+      opacity: 1;
+    }
+
+    #infoChevron.rotated,
+    #langChevron.rotated {
+      transform: rotate(180deg);
+    }
+
+    #mobileInfoChevron {
+      display: inline-block;
+      transition: transform .25s ease;
+    }
+
+    #mobileInfoChevron.rotated {
+      transform: rotate(180deg);
+    }
+
+    #mobileInfoDropdownMenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+
+    #mobileInfoDropdownMenu.open {
+      max-height: 500px;
+    }
+
+    #mobileLangDropdownMenu {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px) scaleY(0.98);
+      transform-origin: top;
+      transition: max-height .28s ease, opacity .22s ease, transform .26s cubic-bezier(.2, .9, .2, 1);
+    }
+
+    #mobileLangDropdownMenu.open {
+      max-height: 240px;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scaleY(1);
+    }
+
+    /* Triggered menu (mobile) smooth open/close */
+    #triggeredMenu {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: max-height .32s ease, opacity .22s ease, transform .26s cubic-bezier(.2, .9, .2, 1);
+    }
+
+    #triggeredMenu.open {
+      max-height: 800px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #mobileNav.mobile-open {
+      background-color: rgba(0, 0, 0, 0.25) !important;
+    }
+
+    .accordion-body {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.45s ease, opacity 0.3s ease 0.1s, padding 0.35s ease;
+    }
+
+    .accordion-body.open {
+      opacity: 1;
+      max-height: 1000px;
+    }
+
+    .rotate-180 {
+      transform: rotate(180deg);
+    }
+  </style>
+
+    <div id="nav-container"></div>
+
+    <div id="mobile-nav-container"></div>
+
+
+  <div id="desktopNavSpacer" class="w-full hidden lg:block my-[1.5%]">
+    <div class="w-full h-[10vh] max-h-[110px]"></div>
+  </div>
+  <div id="mobileNavSpacer" class="py-[2vh] block lg:hidden">
+    <div class="w-full py-[5%] md:py-[3%]">
+      <div class="w-full h-[28px] xs:h-[32px] md:h-[35px]"></div>
+    </div>
+  </div>
+
+  <h1 class="hidden">Tips & Tricks for a Cleaner Home with Kirby</h1>
+
+  <div class="w-full bg-gradient-to-b from-[#484848] to-black/60 px-[5%]">
+    <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto bg-[#303030] rounded-xl">
+      <div id="tabs" class="w-full flex flex-wrap justify-start items-center">
+        <div class="flex items-center gap-0.5 xs:gap-1 px-1 xs:px-3 xl:px-4 2xl:px-5 3xl:px-6 rounded-full bg-[#303030]">
+          <span class="h-1 w-1 xs:h-2 xs:w-2 3xl:h-3 3xl:w-3 rounded-full bg-[#ff5f57]"></span>
+          <span class="h-1 w-1 xs:h-2 xs:w-2 3xl:h-3 3xl:w-3 rounded-full bg-[#ffbd2e]"></span>
+          <span class="h-1 w-1 xs:h-2 xs:w-2 3xl:h-3 3xl:w-3 rounded-full bg-[#28c840]"></span>
+        </div>
+        <div id="tabButtons" class="flex flex-wrap"></div>
+      </div>
+      <div id="content" class="border-white border-4 w-full bg-[#484848] rounded-xl p-[5%] 2xl:px-[3%] 2xl:py-[2%] flex flex-col gap-0 lg:gap-6 transition-opacity duration-300 ease-out opacity-100">
+
+        <h2 id="tipsCategoryTitle" class="text-white text-lg xs:text-2xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold">Carpet Cleaning Tips</h2>
+        <div id="tipsAccordion" class="space-y-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabsRoot = document.getElementById('tabs');
+      const buttonsRoot = document.getElementById('tabButtons');
+      const accordionRoot = document.getElementById('tipsAccordion');
+      const titleEl = document.getElementById('tipsCategoryTitle');
+      const contentRoot = document.getElementById('content');
+      if (!tabsRoot || !buttonsRoot || !accordionRoot || !titleEl || !contentRoot) return;
+
+      const activeTabClasses = '  outline-none px-2 py-1 xs:px-3 xl:px-4 xl:py-2 2xl:px-5 2xl:py-3 3xl:px-7 3xl:py-4 text-sm lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl text-white border-t-4 border-x-4 border-white rounded-t-xl -mb-[4px] z-[10] bg-[#484848]';
+      const inactiveTabClasses = 'outline-none px-2 py-1 xs:px-3 xl:px-4 xl:py-2 2xl:px-5 2xl:py-3 3xl:px-7 3xl:py-4 text-sm lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl text-white/70 hover:text-white';
+      const shortNames = {
+        'Carpet Cleaning Tips' : 'Carpet',
+        'Shampoo Tips' : 'Shampoo',
+        'General Home Cleaing Tips' : 'General'
+      };
+      let tipsData = [];
+      let currentCategory = null;
+
+      function clearAccordion() {
+        accordionRoot.innerHTML = '';
+      }
+
+      function renderAccordion(tips) {
+        clearAccordion();
+        if (!Array.isArray(tips) || tips.length === 0) {
+          accordionRoot.innerHTML = '<div class="text-white/70 py-6">No tips for this category.</div>';
+          return;
+        }
+
+        tips.slice(0, 5).forEach((tip) => {
+          const item = document.createElement('div');
+          item.className = 'rounded-xl overflow-hidden border-b-2 border-white py-1 xs:py-3 px-3';
+
+          const header = document.createElement('button');
+          header.type = 'button';
+          header.className = 'w-full flex items-center justify-between gap-4 py-3 text-left text-white transition-colors duration-200';
+          header.innerHTML = `<span class="font-semibold sm:text-lg lg:text-xl 2xl:text-2xl 3xl:text-3xl">${tip.title}</span><i class="fa-solid fa-chevron-down transition-transform duration-300"></i>`;
+
+          const body = document.createElement('div');
+          body.className = 'accordion-body text-white/70';
+          body.innerHTML = `<p class="leading-relaxed text-xs xs:text-sm md:text-base 3xl:text-lg">${tip.text.replace(/\n/g, '<br>')}</p>`;
+
+          header.addEventListener('click', () => {
+            const openHeader = accordionRoot.querySelector('button.active');
+            if (openHeader && openHeader !== header) {
+              openHeader.classList.remove('active');
+              const openIcon = openHeader.querySelector('i');
+              if (openIcon) openIcon.classList.remove('rotate-180');
+              const openBody = openHeader.nextElementSibling;
+              if (openBody) {
+                openBody.classList.remove('open');
+                openBody.style.maxHeight = '0px';
+              }
+            }
+
+            const isOpen = header.classList.toggle('active');
+            const icon = header.querySelector('i');
+            if (icon) icon.classList.toggle('rotate-180', isOpen);
+
+            if (isOpen) {
+              body.classList.add('open');
+              body.style.maxHeight = `${body.scrollHeight}px`;
+            } else {
+              body.classList.remove('open');
+              body.style.maxHeight = '0px';
+            }
+          });
+
+          item.appendChild(header);
+          item.appendChild(body);
+          accordionRoot.appendChild(item);
+        });
+      }
+
+      function setActiveCategory(categoryName) {
+        if (currentCategory === categoryName) return;
+        currentCategory = categoryName;
+        const buttons = buttonsRoot.querySelectorAll('button');
+        buttons.forEach((button) => {
+          if (button.dataset.category === categoryName) {
+            button.className = activeTabClasses;
+          } else {
+            button.className = inactiveTabClasses;
+          }
+        });
+
+        const category = tipsData.find((entry) => entry.category === categoryName);
+        titleEl.textContent = categoryName;
+        contentRoot.classList.remove('opacity-100');
+        contentRoot.classList.add('opacity-0');
+        window.setTimeout(() => {
+          renderAccordion(category?.tips || []);
+          contentRoot.classList.remove('opacity-0');
+          contentRoot.classList.add('opacity-100');
+        }, 180);
+      }
+
+      function createTab(categoryName) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.dataset.category = categoryName;
+        const shortLabel = shortNames[categoryName] || categoryName;
+        button.className = inactiveTabClasses;
+        button.innerHTML = `
+          <span class="md:hidden">${shortLabel}</span>
+          <span class="hidden md:inline">${categoryName}</span>
+        `;
+        button.addEventListener('click', () => setActiveCategory(categoryName));
+        buttonsRoot.appendChild(button);
+      }
+
+      fetch('data/tips.json')
+        .then((response) => {
+          if (!response.ok) throw new Error('Fail to load tips');
+          return response.json();
+        })
+        .then((data) => {
+          tipsData = Array.isArray(data) ? data : [];
+          const categories = [
+            'Carpet Cleaning Tips',
+            'Shampoo Tips',
+            'General Home Cleaing Tips'
+          ];
+          const availableCategories = categories.filter((name) => tipsData.some((entry) => entry.category === name));
+
+          if (availableCategories.length === 0) {
+            tabsRoot.innerHTML = '<div class="text-white/70 py-6">No category data.</div>';
+            accordionRoot.innerHTML = '';
+            titleEl.textContent = '';
+            return;
+          }
+
+          availableCategories.forEach(createTab);
+          setActiveCategory(availableCategories[0]);
+        })
+        .catch((error) => {
+          console.error(error);
+          tabsRoot.innerHTML = `<div class="text-red-400 py-6">${error.message}</div>`;
+          accordionRoot.innerHTML = `<div class="text-red-400 py-6">${error.message}</div>`;
+        });
+    });
+  </script>
+
+  <div id="spacer" class="bg-gradient-to-b from-black/60 to-black h-[10vh] w-full"></div>
+
+
+    <div id="footer-container"></div>
+
+  <script>
+    (function () {
+      const button = document.getElementById('infoDropdownButton');
+      const menu = document.getElementById('infoDropdownMenu');
+      const chevron = document.getElementById('infoChevron');
+      if (!button || !menu) return;
+
+      const openMenu = () => {
+        menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'true');
+        button.classList.remove('bg-transparent');
+        button.classList.add('bg-black/80', 'text-white');
+        if (chevron) chevron.classList.add('rotated');
+      };
+
+      const closeMenu = () => {
+        menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('bg-black/80', 'text-white');
+        button.classList.add('bg-transparent');
+        if (chevron) chevron.classList.remove('rotated');
+      };
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('opacity-0')) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+
+      document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+          closeMenu();
+        }
+      });
+    })();
+
+    (function () {
+      const button = document.getElementById('langDropdownButton');
+      const menu = document.getElementById('langDropdownMenu');
+      const chevron = document.getElementById('langChevron');
+      if (!button || !menu) return;
+
+      const openMenu = () => {
+        menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'true');
+        button.classList.remove('bg-transparent');
+        button.classList.add('text-white');
+        if (chevron) chevron.classList.add('rotated');
+      };
+
+      const closeMenu = () => {
+        menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('bg-black/90', 'text-white');
+        button.classList.add('bg-transparent');
+        if (chevron) chevron.classList.remove('rotated');
+      };
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('opacity-0')) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+
+      document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+          closeMenu();
+        }
+      });
+    })();
+
+    (function () {
+      const button = document.getElementById('mobileInfoDropdownButton');
+      const menu = document.getElementById('mobileInfoDropdownMenu');
+      const chevron = document.getElementById('mobileInfoChevron');
+      if (!button || !menu) return;
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('open')) {
+          menu.classList.remove('open');
+          chevron.classList.remove('rotated');
+          button.setAttribute('aria-expanded', 'false');
+        } else {
+          menu.classList.add('open');
+          chevron.classList.add('rotated');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+    })();
+
+    (function () {
+      const button = document.getElementById('mobileLangDropdownButton');
+      const menu = document.getElementById('mobileLangDropdownMenu');
+      if (!button || !menu) return;
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('open')) {
+          menu.classList.remove('open');
+          button.setAttribute('aria-expanded', 'false');
+        } else {
+          menu.classList.add('open');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+      document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+          menu.classList.remove('open');
+          button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      const toggle = document.getElementById('mobileMenuToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      const triggered = document.getElementById('triggeredMenu');
+      if (!toggle || !mobileNav || !triggered) return;
+
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const opened = triggered.classList.toggle('open');
+        if (opened) {
+          mobileNav.classList.add('mobile-open');
+        } else {
+          mobileNav.classList.remove('mobile-open');
+        }
+      });
+
+      // close when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!mobileNav.contains(e.target) && triggered.classList.contains('open')) {
+          triggered.classList.remove('open');
+          mobileNav.classList.remove('mobile-open');
+        }
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      const nav = document.getElementById('nav');
+      const spacer = document.getElementById('nav-spacer');
+      if (!nav) return;
+
+      nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
+      nav.style.willChange = 'transform, opacity';
+      nav.style.transform = nav.style.transform || 'translateY(0)';
+      nav.style.opacity = nav.style.opacity || '1';
+
+      function recompute() {
+        try {
+          const h = Math.ceil(nav.getBoundingClientRect().height);
+          if (spacer) spacer.style.height = h + 'px';
+        } catch (e) { }
+      }
+      recompute();
+      window.addEventListener('resize', recompute, { passive: true });
+
+      let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      window.addEventListener('scroll', function () {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop + 6) {
+          nav.style.transform = 'translateY(-' + (nav.offsetHeight + 4) + 'px)';
+          nav.style.opacity = '0';
+        } else if (scrollTop < lastScrollTop - 6) {
+          nav.style.transform = 'translateY(0)';
+          nav.style.opacity = '1';
+        } else {
+          nav.style.transform = 'translateY(0)';
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      });
+    })()
+  </script>
+
+  <div class="fixed bottom-[5%] left-[5%] z-[9900]">
+    <div class="relative inline-block">
+      <p id="cartBadge"
+        class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] sm:text-xs md:text-base lg:text-[12px] xl:text-xs rounded-full px-2 py-1 leading-none">
+        0</p>
+      <a id="checkOutBtn" href="checkOut.html"
+        class="group flex items-center bg-[#484848] hover:bg-[#303030] transition-all duration-300 border border-white text-white rounded-full py-1 px-2 xs:py-2 xs:px-3 md:py-4 md:px-4 lg:py-2 lg:px-3 text-lg xs:text-2xl md:text-3xl lg:text-xl 2xl:text-2xl gap-0 hover:gap-1 overflow-hidden">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <p
+          class="opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">
+          Cart</p>
+      </a>
+    </div>
+  </div>
+
+  <script>
+
+    function updateCartBadge() {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      let totalQty = 0;
+      cart.forEach(item => {
+        totalQty += (item.qty || 1);
+      });
+      const badge = document.getElementById('cartBadge');
+      if (badge) {
+        if (totalQty === 0) {
+          badge.style.display = "none";
+        } else {
+          badge.style.display = "inline-flex";
+          badge.textContent = totalQty >= 100 ? "99+" : totalQty.toString();
+        }
+      }
+    }
+
+    // Update badge when localStorage changes from other pages/tabs
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'cart') {
+        updateCartBadge();
+      }
+    });
+
+    (function () {
+      const addBtn = document.getElementById('modalAddToCart');
+      const checkOutBtn = document.getElementById('checkOutBtn');
+
+      // Update badge on page load
+      updateCartBadge();
+
+      if (!addBtn) return;
+
+      addBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const nameEl = document.getElementById('modal-title');
+        const priceEl = document.getElementById('modal-price');
+        const imgEl = document.getElementById('modal-img');
+        if (!nameEl || !priceEl) return;
+        const name = nameEl.textContent.trim();
+        const img = imgEl ? imgEl.src : '';
+        const digits = priceEl.textContent.replace(/\D/g, '');
+        const price = parseInt(digits) || 0;
+        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        cart.push({ id: Date.now(), name, price, qty: 1, image: img });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartBadge();
+
+        if (checkOutBtn) {
+          const pEl = checkOutBtn.querySelector('p');
+          if (pEl) {
+            const defaultText = ' Cart';
+            pEl.textContent = ' Added to cart';
+            pEl.classList.remove('opacity-0', 'max-w-0');
+            pEl.classList.add('opacity-100', 'max-w-xs');
+            setTimeout(() => {
+              pEl.textContent = defaultText;
+              pEl.classList.remove('opacity-100', 'max-w-xs');
+              pEl.classList.add('opacity-0', 'max-w-0');
+            }, 2500);
+          }
+        }
+      });
+    })();
+
+  </script>
+
+<script src="../assets/js/includes.js"></script>
+</body>
+
+</html>

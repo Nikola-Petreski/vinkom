@@ -772,14 +772,6 @@ video {
   top: 60%;
 }
 
-.left-3 {
-  left: 0.75rem;
-}
-
-.top-1\/2 {
-  top: 50%;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -1187,14 +1179,6 @@ video {
   height: 100vh;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
-.h-\[420px\] {
-  height: 420px;
-}
-
 .max-h-0 {
   max-height: 0px;
 }
@@ -1309,10 +1293,6 @@ video {
 
 .w-\[30\%\] {
   width: 30%;
-}
-
-.w-\[38\%\] {
-  width: 38%;
 }
 
 .w-\[40\%\] {
@@ -1453,6 +1433,10 @@ video {
   flex-shrink: 0;
 }
 
+.grow {
+  flex-grow: 1;
+}
+
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1485,11 +1469,6 @@ video {
 
 .translate-y-2 {
   --tw-translate-y: 0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-y-1\/2 {
-  --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2076,6 +2055,10 @@ video {
   background-image: url('images_webp/platinumHTML/attachments/zip.webp');
 }
 
+.bg-\[url\(images\/platinum_img\/images_webp\/studio\.webp\)\] {
+  background-image: url(images/platinum_img/images_webp/studio.webp);
+}
+
 .bg-\[url\(images_webp\/landingPage\.webp\)\] {
   background-image: url(images_webp/landingPage.webp);
 }
@@ -2086,14 +2069,6 @@ video {
 
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\'images\/platinum_img\/images_webp\/studio\.webp\'\)\] {
-  background-image: url('images/platinum_img/images_webp/studio.webp');
-}
-
-.bg-\[url\(images\/platinum_img\/images_webp\/studio\.webp\)\] {
-  background-image: url(images/platinum_img/images_webp/studio.webp);
 }
 
 .from-\[\#484848\] {
@@ -2144,18 +2119,6 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-black\/90 {
-  --tw-gradient-from: rgb(0 0 0 / 0.9) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.from-black\/80 {
-  --tw-gradient-from: rgb(0 0 0 / 0.8) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
 .to-\[\#484848\] {
   --tw-gradient-to: #484848 var(--tw-gradient-to-position);
 }
@@ -2182,10 +2145,6 @@ video {
 
 .to-transparent {
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
-}
-
-.to-black\/80 {
-  --tw-gradient-to: rgb(0 0 0 / 0.8) var(--tw-gradient-to-position);
 }
 
 .bg-contain {
@@ -2552,11 +2511,6 @@ video {
   line-height: 1;
 }
 
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
 .text-\[10px\] {
   font-size: 10px;
 }
@@ -2908,10 +2862,6 @@ video {
   transition-duration: 500ms;
 }
 
-.duration-700 {
-  transition-duration: 700ms;
-}
-
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -3049,6 +2999,10 @@ video {
 .hover\:text-yellow-500:hover {
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity, 1));
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 .hover\:shadow-white\/30:hover {
@@ -3361,10 +3315,6 @@ video {
 
   .sm\:h-\[570px\] {
     height: 570px;
-  }
-
-  .sm\:h-\[500px\] {
-    height: 500px;
   }
 
   .sm\:w-\[24\%\] {
@@ -3834,10 +3784,6 @@ video {
 
   .lg\:h-full {
     height: 100%;
-  }
-
-  .lg\:h-\[560px\] {
-    height: 560px;
   }
 
   .lg\:max-h-\[90vh\] {
@@ -4409,10 +4355,6 @@ video {
     height: 90vh;
   }
 
-  .xl\:h-\[620px\] {
-    height: 620px;
-  }
-
   .xl\:w-\[140px\] {
     width: 140px;
   }
@@ -4972,10 +4914,6 @@ video {
 
   .\33xl\:h-screen {
     height: 100vh;
-  }
-
-  .\33xl\:h-\[720px\] {
-    height: 720px;
   }
 
   .\33xl\:w-3 {

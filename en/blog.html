@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KIRBY Blog — Discover news, expert tips, and insights about our products, technology, and demonstrations.">
+    <title>KIRBY | Blog</title>
+    <link href="../output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gidole&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4baf646c88.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://gidole.github.io/GidoleFont/gidoleFont.css">
+    <link rel="icon" type="image/png" href="../images_webp/logoW.webp">
+
+    <style>
+        @import url('https://gidole.github.io/GidoleFont/gidoleFont.css');
+
+        .font-gidole {
+            font-family: 'Gidole', sans-serif !important;
+        }
+
+        /* Custom scrollbar for the modal popup */
+        #modalScroll::-webkit-scrollbar { width: 10px; }
+        #modalScroll::-webkit-scrollbar-track { background: transparent; }
+        #modalScroll::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.12); border-radius: 9999px; border: 2px solid transparent; background-clip: padding-box; }
+        /* Firefox */
+        #modalScroll { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.12) transparent; }
+
+        .reveal-letters span {
+          opacity: 0;
+          transform: translateY(20px);
+          display: inline-block;
+          transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .reveal-visible span {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        #infoDropdownMenu {
+          -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+        }
+
+        #infoChevron,
+        #langChevron {
+          display: inline-block;
+          opacity: 0;
+          transform: rotate(0deg);
+          transition: transform .25s ease, opacity .15s ease;
+        }
+
+        #infoDropdownButton:hover #infoChevron,
+        #langDropdownButton:hover #langChevron {
+          opacity: 1;
+        }
+
+        #infoChevron.rotated,
+        #langChevron.rotated {
+          transform: rotate(180deg);
+        }
+
+        #mobileInfoChevron {
+          display: inline-block;
+          transition: transform .25s ease;
+        }
+
+        #mobileInfoChevron.rotated {
+          transform: rotate(180deg);
+        }
+
+        #mobileInfoDropdownMenu {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height .3s ease;
+        }
+
+        #mobileInfoDropdownMenu.open {
+          max-height: 500px;
+        }
+
+        #mobileLangDropdownMenu {
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-6px) scaleY(0.98);
+          transform-origin: top;
+          transition: max-height .28s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1);
+        }
+
+        #mobileLangDropdownMenu.open {
+          max-height: 240px;
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0) scaleY(1);
+        }
+
+        /* Triggered menu (mobile) smooth open/close */
+        #triggeredMenu {
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          transform: translateY(-8px);
+          transition: max-height .32s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1);
+        }
+
+        #triggeredMenu.open {
+          max-height: 800px;
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        #mobileNav.mobile-open {
+          background-color: rgba(0,0,0,0.25) !important;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden font-gidole bg-[#484848]">
+
+    <div id="nav-container"></div>
+
+    <div id="mobile-nav-container"></div>
+
+
+    <div id="desktopNavSpacer" class="w-full hidden lg:block my-[1.5%]"><div class="w-full h-[10vh] max-h-[110px]"></div></div>
+    <div id="mobileNavSpacer" class="py-[2vh] block lg:hidden"><div class="w-full py-[5%] md:py-[3%]"><div class="w-full h-[28px] xs:h-[32px] md:h-[35px]"></div></div></div>
+
+    <script>
+(function(){
+  const button = document.getElementById('infoDropdownButton');
+  const menu = document.getElementById('infoDropdownMenu');
+  const chevron = document.getElementById('infoChevron');
+  if (!button || !menu) return;
+
+  const openMenu = () => {
+    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+    menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+    button.setAttribute('aria-expanded', 'true');
+    button.classList.remove('bg-transparent');
+    button.classList.add('bg-black/80', 'text-white');
+    if (chevron) chevron.classList.add('rotated');
+  };
+
+  const closeMenu = () => {
+    menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+    menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+    button.setAttribute('aria-expanded', 'false');
+    button.classList.remove('bg-black/80', 'text-white');
+    button.classList.add('bg-transparent');
+    if (chevron) chevron.classList.remove('rotated');
+  };
+
+  const toggleMenu = (event) => {
+    event.stopPropagation();
+    if (menu.classList.contains('opacity-0')) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  };
+
+  button.addEventListener('click', toggleMenu);
+
+  document.addEventListener('click', (event) => {
+    if (!button.contains(event.target) && !menu.contains(event.target)) {
+      closeMenu();
+    }
+  });
+})();
+
+(function(){
+  const button = document.getElementById('langDropdownButton');
+  const menu = document.getElementById('langDropdownMenu');
+  const chevron = document.getElementById('langChevron');
+  if (!button || !menu) return;
+
+  const openMenu = () => {
+    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+    menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+    button.setAttribute('aria-expanded', 'true');
+    button.classList.remove('bg-transparent');
+    button.classList.add('text-white');
+    if (chevron) chevron.classList.add('rotated');
+  };
+
+  const closeMenu = () => {
+    menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+    menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+    button.setAttribute('aria-expanded', 'false');
+    button.classList.remove('bg-black/90', 'text-white');
+    button.classList.add('bg-transparent');
+    if (chevron) chevron.classList.remove('rotated');
+  };
+
+  const toggleMenu = (event) => {
+    event.stopPropagation();
+    if (menu.classList.contains('opacity-0')) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  };
+
+  button.addEventListener('click', toggleMenu);
+
+  document.addEventListener('click', (event) => {
+    if (!button.contains(event.target) && !menu.contains(event.target)) {
+      closeMenu();
+    }
+  });
+})();
+
+(function(){
+  const button = document.getElementById('mobileInfoDropdownButton');
+  const menu = document.getElementById('mobileInfoDropdownMenu');
+  const chevron = document.getElementById('mobileInfoChevron');
+  if (!button || !menu) return;
+
+  const toggleMenu = (event) => {
+    event.stopPropagation();
+    if (menu.classList.contains('open')) {
+      menu.classList.remove('open');
+      chevron.classList.remove('rotated');
+      button.setAttribute('aria-expanded', 'false');
+    } else {
+      menu.classList.add('open');
+      chevron.classList.add('rotated');
+      button.setAttribute('aria-expanded', 'true');
+    }
+  };
+
+  button.addEventListener('click', toggleMenu);
+})();
+
+(function(){
+  const button = document.getElementById('mobileLangDropdownButton');
+  const menu = document.getElementById('mobileLangDropdownMenu');
+  if (!button || !menu) return;
+
+  const toggleMenu = (event) => {
+    event.stopPropagation();
+    if (menu.classList.contains('open')) {
+      menu.classList.remove('open');
+      button.setAttribute('aria-expanded', 'false');
+    } else {
+      menu.classList.add('open');
+      button.setAttribute('aria-expanded', 'true');
+    }
+  };
+
+  button.addEventListener('click', toggleMenu);
+  document.addEventListener('click', (event) => {
+    if (!button.contains(event.target) && !menu.contains(event.target)) {
+      menu.classList.remove('open');
+      button.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+  const toggle = document.getElementById('mobileMenuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  const triggered = document.getElementById('triggeredMenu');
+  if (!toggle || !mobileNav || !triggered) return;
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const opened = triggered.classList.toggle('open');
+    if (opened) {
+      mobileNav.classList.add('mobile-open');
+    } else {
+      mobileNav.classList.remove('mobile-open');
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!mobileNav.contains(e.target) && triggered.classList.contains('open')) {
+      triggered.classList.remove('open');
+      mobileNav.classList.remove('mobile-open');
+    }
+  });
+})();
+</script>
+
+    <script>
+    (function(){
+        const nav = document.getElementById('nav');
+        const spacer = document.getElementById('nav-spacer') || document.getElementById('desktopNavSpacer');
+        if(!nav) return;
+
+        // ensure smooth transition
+        nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
+        nav.style.willChange = 'transform, opacity';
+        nav.style.transform = nav.style.transform || 'translateY(0)';
+        nav.style.opacity = nav.style.opacity || '1';
+
+        // compute and set spacer height (px) so layout doesn't jump
+        function recompute(){
+            try{
+                const h = Math.ceil(nav.getBoundingClientRect().height);
+                if(spacer) spacer.style.height = h + 'px';
+            }catch(e){}
+        }
+        recompute();
+        window.addEventListener('resize', recompute, {passive:true});
+
+        let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+        let ticking = false;
+
+        function hideNav(){
+            const h = Math.ceil(nav.getBoundingClientRect().height) + 4;
+            nav.style.transform = 'translateY(-' + h + 'px)';
+            nav.style.opacity = '0';
+        }
+        function showNav(){
+            nav.style.transform = 'translateY(0)';
+            nav.style.opacity = '1';
+        }
+
+        function onScroll(){
+            const current = window.pageYOffset || document.documentElement.scrollTop;
+            if(current > lastScroll + 6){
+                hideNav();
+            } else if(current < lastScroll - 6){
+                showNav();
+            }
+            lastScroll = current <= 0 ? 0 : current;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function(){
+            if(!ticking){ window.requestAnimationFrame(onScroll); ticking = true; }
+        }, {passive:true});
+    })();
+    </script>
+
+    <div class="px-[5%] w-full"><div id="blogContainer" class="w-full h-full bg-[#484848] grid grid-cols-1 md:grid-cols-2 gap-8 2xl:gap-10 3xl:gap-12 xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto"></div></div>
+
+    <script>
+    (function(){
+        const container = document.getElementById('blogContainer');
+        if(!container) return;
+
+        function createCard(post){
+            const card = document.createElement('div');
+            card.className = 'flex flex-col 2xl:flex-row items-start 2xl:items-center text-sm bg-black/40 p-[5%] shadow-2xl shadow-black rounded-xl gap-2 cursor-pointer';
+
+            const img = document.createElement('img');
+            img.src = post.thumbnail;
+            img.className = 'w-full h-full max-w-max 2xl:max-w-[40%] object-cover object-center rounded-xl';
+            img.alt = post.title;
+
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'flex flex-col justify-between w-full h-full text-base sm:text-lg xl:text-xl 3xl:text-2xl 2xl:px-[2%]';
+
+            const textDiv = document.createElement('div');
+            textDiv.className = 'flex flex-col w-full gap-1';
+
+            const h1 = document.createElement('h1');
+            h1.className = 'text-white font-semibold';
+            h1.textContent = post.title;
+
+            const p = document.createElement('p');
+            p.className = 'text-white/70';
+            p.innerHTML = post.excerpt.replace(/\n/g, '<br>');
+
+            textDiv.appendChild(h1);
+            textDiv.appendChild(p);
+
+            const dateP = document.createElement('p');
+            dateP.className = 'text-white/70 py-[1%] self-end';
+            dateP.textContent = post.date;
+
+            contentDiv.appendChild(textDiv);
+            contentDiv.appendChild(dateP);
+
+            card.appendChild(img);
+            card.appendChild(contentDiv);
+
+            if (post.modal !== false) {
+                card.addEventListener('click', () => openModal(post));
+            }
+
+            return card;
+        }
+
+        function openModal(post){
+            document.getElementById('modalImg').src = post.thumbnail;
+            document.getElementById('modalTitle').textContent = post.title;
+            const content = document.getElementById('modalContent');
+            content.innerHTML = '';
+            post.blocks.forEach(block => {
+                if(block.type === 'subtitle'){
+                    const h2 = document.createElement('h2');
+                    h2.className = 'font-semibold text-white';
+                    h2.innerHTML = block.text.replace(/\n/g, '<br>');
+                    content.appendChild(h2);
+                } else if(block.type === 'paragraph'){
+                    const p = document.createElement('p');
+                    p.className = 'text-white/70';
+                    p.innerHTML = block.text.replace(/\n/g, '<br>');
+                    content.appendChild(p);
+                }
+            });
+            const modal = document.getElementById('blogModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        fetch('data/blog.json')
+            .then(response => response.json())
+            .then(blogData => {
+                blogData.forEach(post => {
+                    const card = createCard(post);
+                    container.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error loading blog data:', error));
+    })();
+    </script>
+    <div class="w-full h-[16vh] bg-gradient-to-b from-[#484848] to-black"></div>
+
+    <div id="blogModal" class="fixed inset-0 backdrop-blur-3xl justify-center items-center hidden z-[9995] px-[5%]">
+        <div id="modalScroll" class="flex flex-col gap-5 3xl:gap-10  p-[3%] max-h-[90vh] bg-black/70 rounded-xl overflow-y-scroll xs:max-w-[480px] sm:max-w-[512px] md:max-w-[614px] lg:max-w-[819px] xl:max-w-[1024px] 2xl:max-w-[1229px] 3xl:max-w-[1536px] mx-auto">
+            <img id="modalImg" src="" class="w-full max-h-[60vh] object-cover object-bottom rounded-xl relative" alt="">
+            <button id="closeModalBtn" class="absolute  top-[2wv] right-[2vw] xs:top-[3vw] xs:right-[3vw] text-white text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl hover:text-gray-300 z-10"><i class="fa-solid fa-x"></i></button>
+            <h1 id="modalTitle" class="font-semibold text-white text-base xs:text-lg md:text-xl 2xl:text-2xl 3xl:text-3xl"></h1>
+            <div id="modalContent" class="flex flex-col gap-2 text-sm xs:text-base md:text-lg 2xl:text-xl 3xl:text-2xl"></div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        const modal = document.getElementById('blogModal');
+        if(!modal) return;
+
+        modal.addEventListener('click', (e) => {
+            if(e.target.id === 'blogModal') {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        });
+
+        const closeBtn = document.getElementById('closeModalBtn');
+        if(closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            });
+        }
+    })();
+    </script>
+
+    <div id="footer-container"></div>
+
+    <div id="cookieBanner" class="fixed bottom-[5%] px-[5%] w-full text-white z-[9999] hidden">
+        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto lg:mx-0 w-auto lg:w-[450px] 3xl:w-[580px] rounded-xl bg-black/40 backdrop-blur-3xl p-[5%] lg:p-[3%] xl:p-[2%] flex flex-col justify-between items-center gap-[3vw] xl:gap-[1vw]">
+            <div class="flex justify-center items-center gap-2 xs:gap-4 md:gap-4">
+                <p class="text-sm xs:text-xl md:text-3xl lg:text-lg 3xl:text-2xl">Оваа веб-страница користи колачиња за анализа и подобрување на искуството.</p> 
+                <i class="fa-solid fa-cookie text-2xl xs:text-4xl md:text-6xl lg:text-3xl 3xl:text-5xl flex justify-center items-center"></i>
+            </div>
+            <div class="flex gap-[6%] w-full text-base xs:text-xl md:text-3xl lg:text-xl 3xl:text-3xl">
+              <button onclick="rejectCookies()" class="border w-[47%] border-white py-[1%] rounded-xl">Одбиј</button>
+              <button onclick="acceptCookies()" class="bg-white w-[47%] text-black py-[1%] rounded-xl">Прифати</button>
+            </div>
+        </div>
+    </div>
+
+  <div class="fixed bottom-[5%] left-[5%] z-[9900]">
+    <div class="relative inline-block">
+      <p id="cartBadge"
+        class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] sm:text-xs md:text-base lg:text-[12px] xl:text-xs rounded-full px-2 py-1 leading-none">
+        0</p>
+      <a id="checkOutBtn" href="checkOut.html"
+        class="group flex items-center bg-[#484848] hover:bg-[#303030] transition-all duration-300 border border-white text-white rounded-full py-1 px-2 xs:py-2 xs:px-3 md:py-4 md:px-4 lg:py-2 lg:px-3 text-lg xs:text-2xl md:text-3xl lg:text-xl 2xl:text-2xl gap-0 hover:gap-1 overflow-hidden">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <p
+          class="opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">
+          Види кошничка</p>
+      </a>
+    </div>
+  </div>
+
+<script>
+
+function updateCartBadge(){
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  let totalQty = 0;
+  cart.forEach(item => {
+    totalQty += (item.qty || 1);
+  });
+  const badge = document.getElementById('cartBadge');
+  if (badge) {
+    if (totalQty === 0) {
+      badge.style.display = "none";
+    } else {
+      badge.style.display = "inline-flex";
+      badge.textContent = totalQty >= 100 ? "99+" : totalQty.toString();
+    }
+  }
+}
+
+// Update badge when localStorage changes from other pages/tabs
+window.addEventListener('storage', (e) => {
+  if(e.key === 'cart'){
+    updateCartBadge();
+  }
+});
+
+(function(){
+  const addBtn = document.getElementById('modalAddToCart');
+  const checkOutBtn = document.getElementById('checkOutBtn');
+
+  // Update badge on page load
+  updateCartBadge();
+  
+  if(!addBtn) return;
+  
+  addBtn.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const nameEl = document.getElementById('modal-title');
+    const priceEl = document.getElementById('modal-price');
+    const imgEl = document.getElementById('modal-img');
+    if(!nameEl || !priceEl) return;
+    const name = nameEl.textContent.trim();
+    const img = imgEl ? imgEl.src : '';
+    const digits = priceEl.textContent.replace(/\D/g,'');
+    const price = parseInt(digits) || 0;
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    cart.push({ id: Date.now(), name, price, qty: 1, image: img });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartBadge();
+
+    if(checkOutBtn){
+      const pEl = checkOutBtn.querySelector('p');
+      if(pEl){
+        const defaultText = ' Види кошничка';
+        pEl.textContent = ' Додадено во кошничка';
+        pEl.classList.remove('opacity-0', 'max-w-0');
+        pEl.classList.add('opacity-100', 'max-w-xs');
+        setTimeout(()=>{
+          pEl.textContent = defaultText;
+          pEl.classList.remove('opacity-100', 'max-w-xs');
+          pEl.classList.add('opacity-0', 'max-w-0');
+        }, 2500);
+      }
+    }
+  });
+})();
+
+</script>
+
+<script src="../cookie.js"></script>
+<script src="../assets/js/includes.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
