@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Request Submitted Successfully — thek you for your intrest. Expect new soon.">
-    <title>KIRBY | Request Submitted Successfully</title>
+    <meta name="description" content="Thank you! You're presentation is succesfully booked. Expect confirmation and other info soon.">
+    <title>KIRBY | Booked Presentation</title>
     <link href="../output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +30,7 @@
         }
 
     </style>
+</head>
         <style>
 .reveal-letters span {
     opacity: 0;
@@ -122,7 +123,7 @@
 }
         </style>
 </head>
-<body class="overflow-x-hidden font-gidole bg-[#484848]">
+<body class="overflow-x-hidden font-gidole bg-[#484848] max-w-[1920px] mx-auto">
 
     <div id="nav-container"></div>
 
@@ -132,174 +133,177 @@
     <div id="desktopNavSpacer" class="w-full hidden lg:block my-[1.5%]"><div class="w-full h-[10vh] max-h-[110px]"></div></div>
     <div id="mobileNavSpacer" class="py-[2vh] block lg:hidden"><div class="w-full py-[5%] md:py-[3%]"><div class="w-full h-[28px] xs:h-[32px] md:h-[35px]"></div></div></div>
 
-
         <script>
-    (function(){
-        const button = document.getElementById('infoDropdownButton');
-        const menu = document.getElementById('infoDropdownMenu');
-        const chevron = document.getElementById('infoChevron');
-        if (!button || !menu) return;
+(function(){
+    const button = document.getElementById('infoDropdownButton');
+    const menu = document.getElementById('infoDropdownMenu');
+    const chevron = document.getElementById('infoChevron');
+    if (!button || !menu) return;
 
-        const openMenu = () => {
-            menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-            menu.classList.add('opacity-100', 'visible', 'translate-y-0');
-            button.setAttribute('aria-expanded', 'true');
-            button.classList.remove('bg-transparent');
-            button.classList.add('bg-black/80', 'text-white');
-            if (chevron) chevron.classList.add('rotated');
-        };
+    const openMenu = () => {
+        menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'true');
+        button.classList.remove('bg-transparent');
+        button.classList.add('bg-black/80', 'text-white');
+        if (chevron) chevron.classList.add('rotated');
+    };
 
-        const closeMenu = () => {
-            menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
-            menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+    const closeMenu = () => {
+        menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('bg-black/80', 'text-white');
+        button.classList.add('bg-transparent');
+        if (chevron) chevron.classList.remove('rotated');
+    };
+
+    const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('opacity-0')) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    };
+
+    button.addEventListener('click', toggleMenu);
+
+    document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+            closeMenu();
+        }
+    });
+})();
+
+(function(){
+    const button = document.getElementById('langDropdownButton');
+    const menu = document.getElementById('langDropdownMenu');
+    const chevron = document.getElementById('langChevron');
+    if (!button || !menu) return;
+
+    const openMenu = () => {
+        menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'true');
+        button.classList.remove('bg-transparent');
+        button.classList.add('text-white');
+        if (chevron) chevron.classList.add('rotated');
+    };
+
+    const closeMenu = () => {
+        menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('bg-black/90', 'text-white');
+        button.classList.add('bg-transparent');
+        if (chevron) chevron.classList.remove('rotated');
+    };
+
+    const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('opacity-0')) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    };
+
+    button.addEventListener('click', toggleMenu);
+
+    document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+            closeMenu();
+        }
+    });
+})();
+
+(function(){
+    const button = document.getElementById('mobileInfoDropdownButton');
+    const menu = document.getElementById('mobileInfoDropdownMenu');
+    const chevron = document.getElementById('mobileInfoChevron');
+    if (!button || !menu) return;
+
+    const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('open')) {
+            menu.classList.remove('open');
+            chevron.classList.remove('rotated');
             button.setAttribute('aria-expanded', 'false');
-            button.classList.remove('bg-black/80', 'text-white');
-            button.classList.add('bg-transparent');
-            if (chevron) chevron.classList.remove('rotated');
-        };
-
-        const toggleMenu = (event) => {
-            event.stopPropagation();
-            if (menu.classList.contains('opacity-0')) {
-                openMenu();
-            } else {
-                closeMenu();
-            }
-        };
-
-        button.addEventListener('click', toggleMenu);
-
-        document.addEventListener('click', (event) => {
-            if (!button.contains(event.target) && !menu.contains(event.target)) {
-                closeMenu();
-            }
-        });
-    })();
-
-    (function(){
-        const button = document.getElementById('langDropdownButton');
-        const menu = document.getElementById('langDropdownMenu');
-        const chevron = document.getElementById('langChevron');
-        if (!button || !menu) return;
-
-        const openMenu = () => {
-            menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-            menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+        } else {
+            menu.classList.add('open');
+            chevron.classList.add('rotated');
             button.setAttribute('aria-expanded', 'true');
-            button.classList.remove('bg-transparent');
-            button.classList.add('text-white');
-            if (chevron) chevron.classList.add('rotated');
-        };
+        }
+    };
 
-        const closeMenu = () => {
-            menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
-            menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+    button.addEventListener('click', toggleMenu);
+})();
+
+(function(){
+    const button = document.getElementById('mobileLangDropdownButton');
+    const menu = document.getElementById('mobileLangDropdownMenu');
+    if (!button || !menu) return;
+
+    const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('open')) {
+            menu.classList.remove('open');
             button.setAttribute('aria-expanded', 'false');
-            button.classList.remove('bg-black/90', 'text-white');
-            button.classList.add('bg-transparent');
-            if (chevron) chevron.classList.remove('rotated');
-        };
+        } else {
+            menu.classList.add('open');
+            button.setAttribute('aria-expanded', 'true');
+        }
+    };
 
-        const toggleMenu = (event) => {
-            event.stopPropagation();
-            if (menu.classList.contains('opacity-0')) {
-                openMenu();
-            } else {
-                closeMenu();
-            }
-        };
+    button.addEventListener('click', toggleMenu);
+    document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+            menu.classList.remove('open');
+            button.setAttribute('aria-expanded', 'false');
+        }
+    });
+})();
 
-        button.addEventListener('click', toggleMenu);
+(function(){
+    const toggle = document.getElementById('mobileMenuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const triggered = document.getElementById('triggeredMenu');
+    if (!toggle || !mobileNav || !triggered) return;
 
-        document.addEventListener('click', (event) => {
-            if (!button.contains(event.target) && !menu.contains(event.target)) {
-                closeMenu();
-            }
-        });
-    })();
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const opened = triggered.classList.toggle('open');
+        if (opened) {
+            mobileNav.classList.add('mobile-open');
+        } else {
+            mobileNav.classList.remove('mobile-open');
+        }
+    });
 
-    (function(){
-        const button = document.getElementById('mobileInfoDropdownButton');
-        const menu = document.getElementById('mobileInfoDropdownMenu');
-        const chevron = document.getElementById('mobileInfoChevron');
-        if (!button || !menu) return;
+    // close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mobileNav.contains(e.target) && triggered.classList.contains('open')) {
+            triggered.classList.remove('open');
+            mobileNav.classList.remove('mobile-open');
+        }
+    });
+})();
+</script>
 
-        const toggleMenu = (event) => {
-            event.stopPropagation();
-            if (menu.classList.contains('open')) {
-                menu.classList.remove('open');
-                chevron.classList.remove('rotated');
-                button.setAttribute('aria-expanded', 'false');
-            } else {
-                menu.classList.add('open');
-                chevron.classList.add('rotated');
-                button.setAttribute('aria-expanded', 'true');
-            }
-        };
-
-        button.addEventListener('click', toggleMenu);
-    })();
-
-    (function(){
-        const button = document.getElementById('mobileLangDropdownButton');
-        const menu = document.getElementById('mobileLangDropdownMenu');
-        if (!button || !menu) return;
-
-        const toggleMenu = (event) => {
-            event.stopPropagation();
-            if (menu.classList.contains('open')) {
-                menu.classList.remove('open');
-                button.setAttribute('aria-expanded', 'false');
-            } else {
-                menu.classList.add('open');
-                button.setAttribute('aria-expanded', 'true');
-            }
-        };
-
-        button.addEventListener('click', toggleMenu);
-        document.addEventListener('click', (event) => {
-            if (!button.contains(event.target) && !menu.contains(event.target)) {
-                menu.classList.remove('open');
-                button.setAttribute('aria-expanded', 'false');
-            }
-        });
-    })();
-
-    (function(){
-        const toggle = document.getElementById('mobileMenuToggle');
-        const mobileNav = document.getElementById('mobileNav');
-        const triggered = document.getElementById('triggeredMenu');
-        if (!toggle || !mobileNav || !triggered) return;
-
-        toggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const opened = triggered.classList.toggle('open');
-            if (opened) {
-                mobileNav.classList.add('mobile-open');
-            } else {
-                mobileNav.classList.remove('mobile-open');
-            }
-        });
-
-        // close when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!mobileNav.contains(e.target) && triggered.classList.contains('open')) {
-                triggered.classList.remove('open');
-                mobileNav.classList.remove('mobile-open');
-            }
-        });
-    })();
-
+    <script>
     (function(){
         const nav = document.getElementById('nav');
         const spacer = document.getElementById('nav-spacer');
         if(!nav) return;
 
+        // ensure smooth transition
         nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
         nav.style.willChange = 'transform, opacity';
         nav.style.transform = nav.style.transform || 'translateY(0)';
         nav.style.opacity = nav.style.opacity || '1';
 
+        // compute and set spacer height (px) so layout doesn't jump
         function recompute(){
             try{
                 const h = Math.ceil(nav.getBoundingClientRect().height);
@@ -309,40 +313,49 @@
         recompute();
         window.addEventListener('resize', recompute, {passive:true});
 
-        let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+        let ticking = false;
 
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop + 6) {
-                nav.style.transform = 'translateY(-' + (nav.offsetHeight + 4) + 'px)';
-                nav.style.opacity = '0';
-            } else if (scrollTop < lastScrollTop - 6) {
-                nav.style.transform = 'translateY(0)';
-                nav.style.opacity = '1';
-            } else {
-                nav.style.transform = 'translateY(0)';
+        function hideNav(){
+            const h = Math.ceil(nav.getBoundingClientRect().height) + 4;
+            nav.style.transform = 'translateY(-' + h + 'px)';
+            nav.style.opacity = '0';
+        }
+        function showNav(){
+            nav.style.transform = 'translateY(0)';
+            nav.style.opacity = '1';
+        }
+
+        function onScroll(){
+            const current = window.pageYOffset || document.documentElement.scrollTop;
+            if(current > lastScroll + 6){
+                hideNav();
+            } else if(current < lastScroll - 6){
+                showNav();
             }
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-        });
+            lastScroll = current <= 0 ? 0 : current;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function(){
+            if(!ticking){ window.requestAnimationFrame(onScroll); ticking = true; }
+        }, {passive:true});
     })();
-        </script>
+
+    </script>
+
 
     <div class="w-full px-[5%]">
         <div class="w-full flex flex-col lg:flex-row justify-center sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-lg xs:text-2xl md:text-3xl lg:text-sm xl:text-base 2xl:text-lg 3xl:text-2xl">
             <div class="w-full lg:w-1/2 max-w-[1024px] px-[10%] py-[10%] lg:p-[5%] bg-white/70 rounded-t-xl lg:rounded-tr-none lg:rounded-bl-xl gap-6 flex flex-col">
-                <p class="text-2xl xs:text-4xl md:text-5xl sm:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl font-black">
-                    Your request has been successfully submitted.
-                </p>
-
-                <p class="text-black/70 text-base xs:text-xl sm:text-sm md:text-2xl lg:text-base xl:text-xl 2xl:text-2xl 3xl:text-3xl">
-                    Our team will review your request and contact you later today. In the meantime, discover useful tips for caring, maintaining, and using your Kirby on our
+                <p class="text-2xl xs:text-4xl md:text-5xl lg:text-4xl 2xl:text-5xl 3xl:text-6xl font-black">You're already a step closer to cleaner home.</p>
+                <p class="text-black/70 text-base xs:text-lg md:text-xl lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl">The presentation booking is succesfull! Thank you for your time. We will contact you to confirm the presentation and the details. In the meantime, discover useful tips for caring, maintaining, and using your Kirby on our
                     <a href="blog.html" class="text-black">blog</a>,
                     or explore our
                     <a href="models.html" class="text-black">models</a>
                     and
-                    <a class="text-black" href="extras.html">accessories</a>.
-                    You will be redirected to the Home Page shortly.
-                </p>
+                    <a class="text-black" href="extras.html">products</a>.
+                    You will be redirected to the Home Page shortly.</p>
             </div>
             <div class="w-full lg:w-1/2 max-w-[1024px] px-[10%] lg:px-[5%] bg-gradient-to-b lg:bg-gradient-to-r flex justify-center items-center from-white/70 to-transparent rounded-b-xl lg:rounded-bl-none lg:rounded-tr-xl">
                 <img class="w-full" src="../images_webp/logoB.webp" alt="">
@@ -350,9 +363,8 @@
         </div>
     </div>
 
-    <div class="w-full h-[16vh] bg-gradient-to-b from-[#484848] to-black"></div>
+    <div class="w-full h-[10vh] bg-gradient-to-b from-[#484848] to-black"></div>
 
-    
     <div id="footer-container"></div>
 
     <script>
@@ -374,7 +386,7 @@
         </div>
     </div>
 
-<script src="cookie.js"></script>
+<script src="../cookie.js"></script>
 
   <div class="fixed bottom-[5%] left-[5%] z-[9900]">
     <div class="relative inline-block">
