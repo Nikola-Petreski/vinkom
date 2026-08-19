@@ -2867,10 +2867,6 @@ video {
   border-bottom-width: 0px;
 }
 
-.hover\:mb-1:hover {
-  margin-bottom: 0.25rem;
-}
-
 .hover\:gap-1:hover {
   gap: 0.25rem;
 }
@@ -2941,14 +2937,6 @@ video {
 
 .hover\:bg-white\/85:hover {
   background-color: rgb(255 255 255 / 0.85);
-}
-
-.hover\:pb-1:hover {
-  padding-bottom: 0.25rem;
-}
-
-.hover\:font-semibold:hover {
-  font-weight: 600;
 }
 
 .hover\:text-black:hover {

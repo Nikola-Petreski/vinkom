@@ -147,7 +147,8 @@ function initializeCart() {
     const imageElement = document.getElementById('modal-img');
     if (!nameElement || !priceElement) return;
 
-    const price = parseInt(priceElement.textContent.replace(/\D/g, ''), 10) || 0;
+    const priceMatches = priceElement.textContent.match(/\d[\d.]*/g) || [];
+    const price = parseInt((priceMatches.at(-1) || '0').replace(/\./g, ''), 10) || 0;
     addProductToCart({
       name: nameElement.textContent.trim(),
       price,
