@@ -41,6 +41,41 @@
                     <button type="submit" class="outline-none w-[29%] lg:w-full xl:w-[69%]  border border-white/70 rounded-xl px-[3%] py-[3%] bg-transparent text-white/70 hover:bg-white/70 hover:text-white transition-all duration-300 my-[5%] lg:my-0">Submit</button>
                 </form>
             </div>
+            <script>
+                function attachSubscribeFormListener() {
+                    const subscribeForm = document.getElementById('subscribeForm');
+                    if (!subscribeForm) {
+                        setTimeout(attachSubscribeFormListener, 100);
+                        return;
+                    }
+                    
+                    subscribeForm.addEventListener('submit', async function(event) {
+                        event.preventDefault();
+                        
+                        const formData = new FormData(subscribeForm);
+                        
+                        try {
+                            const response = await fetch(subscribeForm.action, {
+                                method: 'POST',
+                                body: formData,
+                            });
+                            
+                            const result = await response.json();
+                            if (response.ok && result.success) {
+                                window.location.href = 'https://vinkom-mu.vercel.app/en/thankyouSub.html';
+                                return;
+                            }
+                            
+                            console.error('Web3Forms submission failed', result);
+                            alert('Request Failed. Please Try Again.');
+                        } catch (error) {
+                            console.error('Web3Forms submission error', error);
+                            alert('Request Failed. Please Try Again.');
+                        }
+                    });
+                }
+                attachSubscribeFormListener();
+            </script>
         </div>
     </div>
 </div>

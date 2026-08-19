@@ -52,6 +52,34 @@ function initLocaleSwitching() {
   });
 }
 
+function executeFooterScripts(container) {
+  const scripts = Array.from(container.querySelectorAll('script'));
+  if (scripts.length === 0) return;
+
+  scripts.forEach(oldScript => {
+    try {
+      const newScript = document.createElement('script');
+      // copy attributes
+      for (let i = 0; i < oldScript.attributes.length; i++) {
+        const attr = oldScript.attributes[i];
+        newScript.setAttribute(attr.name, attr.value);
+      }
+      if (oldScript.src) {
+        // external script: load and wait
+        newScript.src = oldScript.src;
+        document.head.appendChild(newScript);
+        oldScript.parentNode && oldScript.parentNode.removeChild(oldScript);
+      } else {
+        // inline script: copy content and execute
+        newScript.textContent = oldScript.textContent;
+        oldScript.parentNode && oldScript.parentNode.replaceChild(newScript, oldScript);
+      }
+    } catch (e) {
+      console.error('Script exec error', e);
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Determine the path to the includes based on current page location
   let basePath = "";
@@ -112,6 +140,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const container = document.getElementById("footer-container");
       if (container) {
         container.innerHTML = html;
+        // Execute scripts in the injected HTML
+        executeFooterScripts(container);
       }
     })
     .catch(err => console.warn("Error loading footer:", err));
