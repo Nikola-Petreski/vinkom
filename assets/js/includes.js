@@ -81,23 +81,56 @@ function executeFooterScripts(container) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Determine the path to the includes based on current page location
-  let basePath = "";
   const currentPath = window.location.pathname;
-  
-  // If we're in a subdirectory, adjust the path
-  if (currentPath.includes("/")) {
-    const depth = (currentPath.match(/\//g) || []).length - 1;
-    if (depth > 1) {
-      // We're in a subdirectory, go up
-      for (let i = 1; i < depth; i++) {
-        basePath += "../";
+  const isEnglish = currentPath.includes('/en/');
+  const isNestedLocale = isEnglish || currentPath.includes('/al/');
+  const basePath = isNestedLocale ? '../' : '';
+  const includesPath = isEnglish
+    ? basePath + 'en/includes/'
+    : basePath + 'includes/';
+
+  // Load cart logic script early (before other includes that might need it)
+  const cartScript = document.createElement('script');
+  cartScript.src = basePath + 'assets/js/cart-logic.js';
+  cartScript.onload = () => {
+    if (typeof initializeCart === 'function') initializeCart();
+  };
+  document.head.appendChild(cartScript);
+
+  // Fetch cart badge
+  fetch(includesPath + "cart-badge.html")
+    .then(res => {
+      if (!res.ok) throw new Error("Failed to load cart badge");
+      return res.text();
+    })
+    .then(html => {
+      const container = document.getElementById("cart-badge-container");
+      if (container) {
+        container.innerHTML = html;
+        updateCartBadge();
       }
-    }
-  }
+    })
+    .catch(err => console.warn("Error loading cart badge:", err));
+
+  // Fetch cookie banner
+  fetch(includesPath + "cookie-banner.html")
+    .then(res => {
+      if (!res.ok) throw new Error("Failed to load cookie banner");
+      return res.text();
+    })
+    .then(html => {
+      const container = document.getElementById("cookie-container");
+      if (container) {
+        container.innerHTML = html;
+        if (typeof initializeCookieBanner === 'function') {
+          initializeCookieBanner();
+        }
+      }
+    })
+    .catch(err => console.warn("Error loading cookie banner:", err));
 
   // Fetch nav
-  fetch(basePath + "includes/nav.html")
+  fetch(includesPath + "nav.html")
     .then(res => {
       if (!res.ok) throw new Error("Failed to load nav");
       return res.text();
@@ -114,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(err => console.warn("Error loading nav:", err));
 
   // Fetch mobile nav
-  fetch(basePath + "includes/mobileNav.html")
+  fetch(includesPath + "mobileNav.html")
     .then(res => {
       if (!res.ok) throw new Error("Failed to load mobileNav");
       return res.text();
@@ -131,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(err => console.warn("Error loading mobileNav:", err));
 
   // Fetch footer
-  fetch(basePath + "includes/footer.html")
+  fetch(includesPath + "footer.html")
     .then(res => {
       if (!res.ok) throw new Error("Failed to load footer");
       return res.text();

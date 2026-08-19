@@ -2,7 +2,8 @@
   {
     "videoTitle": "Set Up Your Kirby",
     "steps": [],
-    "videoPath": "../howToVideo.mp4"
+    "videoPath": "../howToVideo.mp4",
+    "thumbnail": "../thumbnails/thumbnailVideosDefaultVideo.png"
   },
   {
     "videoTitle": "Change the belt on your Kirby system",

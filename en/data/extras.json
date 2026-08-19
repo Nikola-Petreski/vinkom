@@ -3,14 +3,14 @@
     "shortName": "Avalir Platinum",
     "fullName": "Kirby Avalir Platinum",
     "category": [
-      "Потрошен материјал",
-      "Резервни делови",
-      "Средства"
+      "Consumables",
+      "Spare Parts",
+      "Cleaning Products"
     ],
     "categories": [
-      "Потрошен материјал",
-      "Резервни делови",
-      "Средства"
+      "Consumables",
+      "Spare Parts",
+      "Cleaning Products"
     ],
     "shortDesc": "Kirby Avalir Platinum with quiet operation and 15 specialized cleaning attachments.",
     "longDesc": "Kirby Avalir Platinum with quiet operation and <a href=\"platinum.html#attachment-toggle-1\" class=\"text-white underline\">15 specialized cleaning attachments</a>. Known for quality, safety, and performance, Kirby has delivered deep cleaning for more than 110 years. The new Avalir Platinum with sound-reduction technology delivers premium performance with quieter, more efficient operation. With advanced sound insulation and a new motor, it runs quietly without sacrificing power. More than a vacuum, Kirby easily transforms into a carpet cleaner, tile cleaner, hardwood polisher, and much more.",
@@ -23,7 +23,7 @@
   {
     "shortName": "Shampoo 1L",
     "fullName": "Shampoo 1 Liter",
-    "category": "Средства",
+    "category": "Cleaning Products",
     "shortDesc": "Kirby shampoo for deep-cleaning carpets, furniture, and fabrics, lifting stains and leaving a fresh, pleasant scent.",
     "longDesc": "Kirby 1-liter shampoo is designed for efficient, deep cleaning of carpets, upholstery, and various fabric surfaces. The formula penetrates deep into fibers to remove built-up dirt, stains, and allergens without harming colors. It is biodegradable and safe for homes with children and pets. Thanks to Kirby’s protective formula, it helps reduce rapid resoiling and keeps textiles looking fresh for longer. Ideal for regular upkeep and professional-quality results with Kirby systems.",
     "price": 1100,
@@ -33,7 +33,7 @@
   {
     "shortName": "Shampoo 1G",
     "fullName": "Shampoo 1 Galon (3,785 ml)",
-    "category": "Средства",
+    "category": "Cleaning Products",
     "shortDesc": "Kirby shampoo with a larger volume for intensive cleaning of carpets, upholstery, and fabrics in larger spaces.",
     "longDesc": "Kirby 1-gallon shampoo is a practical solution for users who regularly clean larger surfaces or multiple rooms. Its advanced formula penetrates deep into carpet and upholstery fibers, effectively removing dirt, grime, and allergens. The biodegradable formula is safe for children and pets and leaves no sticky residue. It helps preserve the freshness and color of fabrics while preventing rapid resoiling. Perfect for both professional and home use with all Kirby shampoo systems.",
     "price": 3300,
@@ -43,7 +43,7 @@
   {
     "shortName": "Home Fresheners",
     "fullName": "Home Fresheners",
-    "category": "Средства",
+    "category": "Cleaning Products",
     "shortDesc": "Kirby freshener that effectively neutralizes unpleasant odors from pet dander, smoke, and moisture in the home.",
     "longDesc": "Kirby home freshener is designed for quick and effective removal of unpleasant odors from pets, smoke, food, or moisture. It can be used on carpets, furniture, curtains, or directly in the air and provides long-lasting freshness without leaving stains or sticky residue. The formula is safe for everyday use around children and pets. It is an ideal follow-up to Kirby cleaning, creating a pleasant and clean atmosphere. Available in several fresh scent options to suit different preferences.",
     "price": 950,
@@ -53,7 +53,7 @@
   {
     "shortName": "Tile Pre-Treat",
     "fullName": "Tile & Grout Pre-Treat",
-    "category": "Средства",
+    "category": "Cleaning Products",
     "shortDesc": "Kirby pre-treatment that softens dirt on tile and grout before detailed, thorough cleaning.",
     "longDesc": "Kirby tile and grout pre-treatment is specially formulated to soften stubborn soil, grease, and built-up grime. It penetrates deep into ceramic, porcelain, stone, and grout surfaces, making removal easier during brushing. It contains no harsh chemicals and is safe for regular use in bathrooms and kitchens. With a short dwell time and minimal rinsing, it leaves surfaces visibly cleaner and brighter. Ideal for use with Kirby Tile & Grout tools for professional results.",
     "price": 880,
@@ -63,7 +63,7 @@
   {
     "shortName": "Pet Stain Cleaner",
     "fullName": "Pet Stain and Odor Remover Carpet Cleaner",
-    "category": "Средства",
+    "category": "Cleaning Products",
     "shortDesc": "Kirby enzyme-based cleaner for removing stains and odors from pet urine and messes on fabric.",
     "longDesc": "Kirby pet cleaner is specially designed for deep cleaning of stains and odors caused by dogs and cats. The enzyme formula effectively breaks down urine, vomit, and hair residue on carpets, upholstery, and fabric. Lavender scent provides a fresh, pleasant atmosphere without masking odors. It leaves no sticky residue and is safe for use with Kirby systems. Regular use helps maintain a hygienic, clean, and comfortable home for the whole family.",
     "price": 1250,
@@ -73,7 +73,7 @@
   {
     "shortName": "Hard Floors",
     "fullName": "Hard Floor Cleaner",
-    "category": "Средства",
+    "category": "Cleaning Products",
     "shortDesc": "Kirby cleaner for effectively washing hard floors in vinyl, tile, and wood without streaks or damage.",
     "longDesc": "Kirby hard-surface cleaner is designed for gentle but thorough maintenance of sealed floors such as vinyl, ceramic, laminate, and wood. The concentrated formula is easy to dilute in the Kirby system and effectively removes dust, grease, and sticky residue without scratching or leaving marks. Low foam allows quick rinsing and easy use in daily conditions. It leaves a pleasant fresh scent and improves the look of floors in kitchens, bathrooms, and hallways.",
     "price": 800,
@@ -83,7 +83,7 @@
   {
     "shortName": "Tile Cleaner",
     "fullName": "Tile & Grout Cleaner",
-    "category": "Средства",
+    "category": "Cleaning Products",
     "shortDesc": "Kirby deep-cleaning formula for tile and grout that restores shine without sticky residue.",
     "longDesc": "Kirby tile and grout cleaner is specially formulated to remove stubborn soils, buildup, and mildew. It penetrates deep into grout lines and ceramic or porcelain surfaces, restoring their natural shine. The low-foam formula leaves no sticky film and allows easy rinsing after cleaning. It is ideal for bathrooms, kitchens, and damp areas where hygiene matters most. Regular use keeps spaces clean, fresh, and visually neat.",
     "price": 880,
@@ -93,7 +93,7 @@
   {
     "shortName": "Carpet Pre-treat",
     "fullName": "Carpet Shampoo Pre-treat",
-    "category": "Средства",
+    "category": "Cleaning Products",
     "shortDesc": "Kirby pre-treatment that softens stains on heavily used carpets before deep shampooing.",
     "longDesc": "Kirby carpet pre-treatment is designed for the most soiled and heavily trafficked surfaces in the home. The formula penetrates fibers and softens stubborn stains and built-up grime before the main shampooing step. With a short dwell time, it significantly improves Kirby shampoo performance and allows deeper cleaning. It is safe for carpet colors and fiber structure. Ideal for hallways, entryways, and areas with high foot traffic.",
     "price": 1100,
@@ -103,7 +103,7 @@
   {
     "shortName": "Hard Floor Concentrate",
     "fullName": "Hard Floor Cleaner Concentrate",
-    "category": "Средства",
+    "category": "Cleaning Products",
     "shortDesc": "Kirby concentrate for economical, safe cleaning of hard floors with long-lasting freshness.",
     "longDesc": "Kirby hard-floor concentrate is a practical solution for regular, thorough maintenance of various floor surfaces. It is diluted with water and used with the Kirby system to gently remove dust, grease, and everyday dirt. Low foam helps prevent slipping and leaves no marks after drying. The formula is safe for wood, vinyl, tile, and laminate. It is ideal for larger areas and keeps floors looking clean, fresh, and well cared for.",
     "price": 1100,
@@ -113,7 +113,7 @@
   {
     "shortName": "Lickity Split",
     "fullName": "Lickity Split",
-    "category": "Средства",
+    "category": "Cleaning Products",
     "shortDesc": "Kirby formula for quickly removing fresh stains from food, markers, and liquids on fabric.",
     "longDesc": "Kirby Lickity Split is designed for emergencies when fresh stains appear on carpets, upholstery, or hard surfaces. It works immediately, preventing fresh food, ink, marker, or cosmetic stains from soaking in. The formula is safe for colored surfaces and leaves no sticky residue after cleaning. It is easy to use and ideal for households with children. When paired with the Kirby vacuum system, it delivers quick, clean, visible results with minimal effort.",
     "price": 610,
@@ -123,7 +123,7 @@
   {
     "shortName": "OXY Additive",
     "fullName": "Brightening Oxygen Additive",
-    "category": "Средства",
+    "category": "Cleaning Products",
     "shortDesc": "Kirby OXY cleaner for effectively removing coffee, pet, and food stains from carpets.",
     "longDesc": "Kirby multi-purpose OXY stain remover is designed for rapid and deep cleaning of fresh and stubborn stains. OXY technology penetrates fibers and breaks down organic stains from coffee, grease, food, mud, and urine without damaging colors. It is used on carpets, upholstery, and furniture and leaves no sticky residue after cleaning. The practical spray allows easy application during everyday mishaps. It is ideal for families with children and pets, helping maintain a fresh, hygienic home.",
     "price": 1250,
@@ -132,8 +132,8 @@
   },
   {
     "shortName": "Miracle Shine",
-    "fullName": "Miracle Shine Fllor Polish",
-    "category": "Средства",
+    "fullName": "Miracle Shine Floor Polish",
+    "category": "Cleaning Products",
     "shortDesc": "Kirby wax finish that adds protection and a high-gloss shine to hard floors.",
     "longDesc": "Kirby Miracle Shine is a premium hard-floor finishing product made with natural carnauba wax. It is applied after cleaning and creates a satin or high-gloss finish on wood, bamboo, and sealed floors. The formula helps conceal minor scratches, protects against wear, and extends the time between polishing. It is easy to apply with a pad or buffer and leaves no tacky layer. It is compatible with Kirby systems and gives a professional look in the home.",
     "price": 1430,
@@ -143,7 +143,7 @@
   {
     "shortName": "Kirby Foam",
     "fullName": "Kirby Foam Carpet and Fabric Cleaner",
-    "category": "Средства",
+    "category": "Cleaning Products",
     "shortDesc": "Kirby dry foam for quick refresh of rugs and upholstery without using water.",
     "longDesc": "Kirby Foam is a dry-foam carpet and fabric cleaner designed for quick, practical refresh of rugs, upholstery, and furniture. It penetrates fibers and absorbs dust and unpleasant odors without soaking the surface or requiring a long drying time. It is ideal for use between deep cleanings or when moisture is undesirable. It is easy to apply with Kirby tools and leaves no residue after use. It delivers a clean, fresh look and is suitable for everyday home hygiene.",
     "price": 720,
@@ -153,7 +153,7 @@
   {
     "shortName": "Tile Kit",
     "fullName": "Tile & Grout Kit",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby kit with brush and solution for deep cleaning tile and grout.",
     "longDesc": "Kirby tile and grout kit is a complete solution for deep cleaning hard surfaces. It includes a rotating brush, belt, and specialized products for removing buildup, mildew, and dirt from tiles and grout. The low-foam formula cleans effectively without damaging the surface and restores its natural shine. It is easy to install and compatible with multiple Kirby models. Ideal for bathrooms and kitchens, it ensures long-lasting hygiene and professional results.",
     "price": 4750,
@@ -163,7 +163,7 @@
   {
     "shortName": "Connector",
     "fullName": "Kirby Connector",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby connector for secure and stable connection of the shampoo hose to the unit.",
     "longDesc": "Kirby shampooer connector is a replacement part that ensures a stable, airtight connection between the hose and the unit. It is designed for smooth shampoo flow and prevents leaks during operation. Made from durable material, it allows long-lasting, secure use. It is easy to install and replace without extra tools. It is necessary for proper operation of the shampoo system and is compatible with Kirby Avalir models for optimal cleaning results.",
     "price": 280,
@@ -173,7 +173,7 @@
   {
     "shortName": "Turbine",
     "fullName": "Kirby Turbine",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby turbine transfers power to the brushes for steady movement and strong suction.",
     "longDesc": "Kirby turbine (fan) is a key motor component that rotates the brush and provides strong suction across models from the 1970s onward. Replacing it when worn restores performance and requires T-20 screws and a silicone seal for installation. Built for everyday use, it maintains the efficiency of carpet and hard-floor systems without power loss.",
     "price": 2000,
@@ -183,7 +183,7 @@
   {
     "shortName": "Hose Connector",
     "fullName": "Kirby Hose Connector",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby rear hose connector allows secure attachment of accessories.",
     "longDesc": "Kirby rear hose connector (elbow) is mounted where the hose attaches to the unit, with rotating ends for flexibility and an airtight seal. Compatible with Avalir and Generation models, it is durable and resistant to wear. Easy to replace, it is essential for portable mode and accessory use without losing cleaning power.",
     "price": 1150,
@@ -193,7 +193,7 @@
   {
     "shortName": "Back Wheels",
     "fullName": "Kirby Back Wheels",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby rear wheels for smooth movement on Generation and Sentria models (2-piece set).",
     "longDesc": "Kirby rear wheels (set of 2) fit Generation, Sentria, and Avalir models and are removed with a flathead and snap ring tool. Replacing worn wheels improves stability on carpet and hard floors and are available in different colors. Built for long service life, they make maneuvering large areas easier and more controlled.",
     "price": 850,
@@ -203,7 +203,7 @@
   {
     "shortName": "Zipp Brush",
     "fullName": "Kirby Zipp Brush",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby Zippbrush air-powered brush for cleaning upholstery, fabrics, and pet hair.",
     "longDesc": "Kirby Zippbrush is an air-powered motorized brush for carpets, upholstery, furniture, and pet hair, with side-to-side rotation for maximum dirt removal. It connects to the hose and is ideal for upholstery cleaning. Compatible with all Kirby models for deep home hygiene with pets.",
     "price": 6150,
@@ -213,7 +213,7 @@
   {
     "shortName": "Cord",
     "fullName": "Kirby Cord",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby power cord delivers reliable power with a flexible and durable design.",
     "longDesc": "Kirby appliance cord is flexible and resistant to twisting, ensuring safe and consistent power for all models. Made from high-quality materials, it allows easy maneuvering while cleaning multiple rooms without interruption. Ideal for replacing damaged or worn cords, it is compatible with many Kirby units for safe, efficient performance.",
     "price": 3350,
@@ -223,7 +223,7 @@
   {
     "shortName": "Waste Tray",
     "fullName": "Kirby Wate Tray",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby tray ensures even shampoo dispensing without leaks or excessive consumption.",
     "longDesc": "Kirby shampooer tray is a durable container designed for precise storage and distribution of shampoo during deep carpet cleaning. Easy to attach and remove, it prevents leakage and allows economical use. Compatible with Avalir systems, it is essential for optimal results without interruption.",
     "price": 1870,
@@ -233,7 +233,7 @@
   {
     "shortName": "Mini Emptor",
     "fullName": "Kirby Mini Emptor",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby Mini Emptor allows precise cleaning of tight spaces, stairs, and furniture through the hose.",
     "longDesc": "Kirby Mini Emptor is a compact hose attachment designed to remove dust from corners, stairs, upholstery, and hard-to-reach areas. Easy to handle and control, it delivers strong, continuous suction without strain. Compatible with all Kirby models, it is ideal for detailed home hygiene maintenance.",
     "price": 2920,
@@ -243,7 +243,7 @@
   {
     "shortName": "Outer Bag",
     "fullName": "Kirby Outer Bag",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby outer bag provides effective filtration for clean air and HEPA performance.",
     "longDesc": "Kirby outer bag is a key filter for trapping debris and releasing clean air while achieving HEPA-level filtration. Durable for repeated cleaning cycles, regular replacement prevents clogging and helps maintain suction power. Ideal for allergy-sensitive homes and optimal machine performance.",
     "price": 4290,
@@ -253,7 +253,7 @@
   {
     "shortName": "Bottom Plate",
     "fullName": "Kirby Metal Bottom Plate",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby bottom plate allows gentle cleaning on hard floors without scratching.",
     "longDesc": "Kirby bottom plate is mounted on the hard-floor brush and provides soft but effective cleaning on tile, vinyl, and laminate without leaving marks. Made from durable, wear-resistant material and easy to replace. Ideal for daily maintenance without risking damage to sensitive surfaces.",
     "price": 850,
@@ -263,7 +263,7 @@
   {
     "shortName": "Front Wheels",
     "fullName": "Kirby Front Wheels",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby front wheels provide better mobility and stability on Generation and Sentria models.",
     "longDesc": "Kirby front wheels are compatible with Generation, Sentria, and Avalir models and can be removed with a standard flathead screwdriver. Replacing worn wheels greatly improves stability and maneuverability on carpets and hard floors. Available in several colors and made from durable material for long life. Ideal for easier cleaning of large spaces without snagging or instability.",
     "price": 800,
@@ -273,7 +273,7 @@
   {
     "shortName": "Extension Wand",
     "fullName": "Kirby Extension Wand",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby extension wand provides greater reach for cleaning with multiple accessories.",
     "longDesc": "Kirby extension wand makes it easier to clean high or hard-to-reach areas such as ceilings, corners, and tight spaces. It is compatible with various Kirby accessories and ensures stable, safe operation. Made from lightweight yet durable material, it allows comfortable use without strain. Ideal for detailed cleaning around the home.",
     "price": 1200,
@@ -283,7 +283,7 @@
   {
     "shortName": "Vacuum Hose",
     "fullName": "Kirby Vacuum Hose",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby hose provides greater flexibility and convenience during cleaning.",
     "longDesc": "Kirby hose provides extra reach and freedom while using the vacuum. It is ideal for cleaning large areas, stairs, and hard-to-reach spaces. Made from durable, flexible material that resists twisting and wear, it ensures safe, long-lasting use. It connects easily to existing accessories for maximum efficiency.",
     "price": 3300,
@@ -293,7 +293,7 @@
   {
     "shortName": "Air Regulator",
     "fullName": "Airflow Regulator",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby regulator allows control of airflow when using accessories.",
     "longDesc": "Kirby airflow regulator makes it easy to adjust suction power during cleaning. It is especially useful on delicate surfaces, curtains, and fabrics where less force is needed. Easy to use and fully compatible with Kirby systems, it offers better control, precision, and safety in everyday use.",
     "price": 550,
@@ -303,7 +303,7 @@
   {
     "shortName": "Shampooer Tank",
     "fullName": "Kirby Shampooer Tank",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby shampooer tank allows storage and even distribution of shampoo.",
     "longDesc": "Kirby shampooer tank is a durable container designed to store and distribute shampoo during deep carpet cleaning. Easy to install and maintain, it prevents leakage and provides an even flow for consistent results. Compatible with Avalir systems, it is ideal for cleaning large areas with efficient product use.",
     "price": 2150,
@@ -313,7 +313,7 @@
   {
     "shortName": "Tank Filter",
     "fullName": "Tank Filter Sponge",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby tank filter screen prevents particles and grime from clogging the shampoo system.",
     "longDesc": "Kirby shampooer tank filter is designed to protect the system from small particles, dust, and residue that can cause clogging. It ensures a smooth, even flow of shampoo during deep cleaning of carpets and upholstery. Easy to remove, clean, and reinstall, it allows long-lasting, reliable use. Compatible with Avalir models, it is essential for maintaining optimal performance without interruptions.",
     "price": 220,
@@ -323,7 +323,7 @@
   {
     "shortName": "Utility Nozzle",
     "fullName": "Kirby Utility Nozzle",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby utility brush gently cleans and massages leather, fabric, and delicate surfaces safely.",
     "longDesc": "Kirby utility brush is a small, soft brush designed for gentle cleaning and refreshing of upholstered furniture, leather, and delicate fabrics. It effectively removes dust, fibers, and small debris without scratching or damaging the material. It attaches easily to the hose and allows precise control while cleaning. Compatible with all Kirby models, it is ideal for everyday upkeep and extending the life of materials.",
     "price": 390,
@@ -333,7 +333,7 @@
   {
     "shortName": "Tank Hose",
     "fullName": "Shampooer Tank Hose",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby shampooer hose allows stable, flexible transfer of shampoo during cleaning.",
     "longDesc": "Kirby shampooer hose is a flexible, durable tube designed to transfer shampoo and water during deep cleaning of carpets and upholstery. It is designed to prevent twisting and leaks, allowing safe and uninterrupted operation. Easy to handle in various positions, it makes cleaning large areas much easier. Compatible with Avalir systems, it ensures consistent pressure and even liquid distribution.",
     "price": 740,
@@ -343,7 +343,7 @@
   {
     "shortName": "Bag Hose",
     "fullName": "Kirby Bag Hose",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby black hose provides long reach and stable airflow during cleaning.",
     "longDesc": "Kirby black hose is the standard hose for connecting accessories and is designed for strong, uninterrupted airflow. Flexible and resistant to wear, it allows easy cleaning in tight corners, stairs, and high surfaces. Easy to maintain and clean, it preserves suction strength. Compatible with all Kirby models, it is an essential part of daily and detailed home cleaning.",
     "price": 1400,
@@ -353,7 +353,7 @@
   {
     "shortName": "Upholstery Brush",
     "fullName": "Kirby Upholstery Brush",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby upholstery brush gently removes dust and fibers from furniture without damage.",
     "longDesc": "Kirby upholstery brush is specially designed with soft bristles for gentle but effective cleaning of furniture, cushions, and textiles. It removes dust, fibers, and small debris without scratching or creating static. It attaches easily to the hose and allows precise control during use. Compatible with all Kirby systems, it is ideal for regular maintenance and keeping furniture looking fresh.",
     "price": 700,
@@ -363,7 +363,7 @@
   {
     "shortName": "Duster Brush",
     "fullName": "Kirby Duster Brush",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby duster brush gently removes dust from furniture and delicate surfaces without scratching.",
     "longDesc": "Kirby duster brush is equipped with soft synthetic bristles for safe dust removal from ceilings, lamps, shelves, and delicate surfaces. It is designed to prevent static buildup and protect materials from damage. It connects easily to the hose and allows precise cleaning control. Compatible with all Kirby models, it is ideal for everyday home upkeep without leaving marks on wood, glass, or fabric.",
     "price": 1100,
@@ -373,7 +373,7 @@
   {
     "shortName": "Replacement Brush",
     "fullName": "Replacement for Duster Brush",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby replacement brush head for dusting tools allows quick swap and continued efficiency.",
     "longDesc": "Kirby replacement duster brush head is a practical solution for extending the life of the accessory without buying a full new tool. It features the same soft bristles that provide the same gentle cleaning performance. It installs easily with a clip system, preventing a drop in performance as the original wears out. Compatible with all Kirby systems, it allows economical and uninterrupted upkeep.",
     "price": 650,
@@ -383,7 +383,7 @@
   {
     "shortName": "Ceiling Brush",
     "fullName": "Ceiling and Wall Brush",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby ceiling brush makes cleaning high surfaces and corners easy without a ladder.",
     "longDesc": "Kirby ceiling brush is designed with an extended shape and soft bristles for effective removal of dust, cobwebs, and dirt from ceilings, fans, and high corners. It allows safe cleaning without the need for a ladder or risk of injury. It is easy to maneuver and absorbs dust without scattering it. Compatible with all Kirby models via the hose, it is ideal for routine upkeep of high areas in the home.",
     "price": 1060,
@@ -393,7 +393,7 @@
   {
     "shortName": "Tile Brush Roll",
     "fullName": "Tile & Grout Brush Roll",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Kirby shampoo brush roll allows even shampoo application and deep carpet cleaning.",
     "longDesc": "Kirby shampoo brush roll is designed to combine brushing and even distribution of shampoo for deep cleaning of carpets and fabrics. The rotating mechanism penetrates fibers, softens stains, and allows more effective dirt removal. Compatible with Avalir systems and durable for regular professional use, it delivers clean results without residue and with efficient product usage.",
     "price": 3200,
@@ -403,7 +403,7 @@
   {
     "shortName": "Portable Shampooer",
     "fullName": "Kirby Portable Shampooer",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Precise spraying of shampoo or water with easy trigger control for targeted cleaning.",
     "longDesc": "Kirby portable shampooer allows controlled application of shampoo, water, or cleaning solution to carpets and fabrics without overusing product. Easy and comfortable to handle, it is compatible with the Avalir system, durable for everyday use, and ideal for spot treatment or preparing surfaces.",
     "price": 1410,
@@ -413,7 +413,7 @@
   {
     "shortName": "Brush Roll",
     "fullName": "Kirby Brush Roll",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Classic brush with natural fibers for gentle cleaning of hard floors.",
     "longDesc": "Kirby wooden brush with natural fibers effectively removes dust and grime from hard floors and surfaces on older models without scratching. Durable and compatible with Generation series units, it is ideal for long-term maintenance of clean surfaces.",
     "price": 3300,
@@ -423,7 +423,7 @@
   {
     "shortName": "Delicate Brush",
     "fullName": "Kirby Delicate Brush Roll",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Soft brush for delicate floors without causing damage.",
     "longDesc": "Kirby delicate wooden brush with ultra-soft bristles is designed for careful cleaning of hardwood, laminate, and polished floors. It removes dust gently and is compatible with all models, ensuring a professional finish on premium surfaces.",
     "price": 2820,
@@ -433,7 +433,7 @@
   {
     "shortName": "Microfiber Cloth",
     "fullName": "Kirby Microfiber Cloth",
-    "category": "Резервни делови",
+    "category": "Spare Parts",
     "shortDesc": "Polishes and picks up dust without leaving streaks on different surfaces.",
     "longDesc": "Kirby microfiber cloth absorbs dust, moisture, and oils from floors, furniture, and glass, leaving surfaces clean without streaks or chemicals. Multi-purpose and durable, it is machine-washable and ideal for everyday use and long-term care of surfaces.",
     "price": 610,
@@ -443,7 +443,7 @@
   {
     "shortName": "Belt",
     "fullName": "Kirby Belt",
-    "category": "Потрошен материјал",
+    "category": "Consumables",
     "shortDesc": "Transfers power from the motor to the brush for consistent cleaning performance.",
     "longDesc": "Kirby drive belt transfers power from the motor to the brush for effective cleaning. Replacing it when worn helps maintain the machine?s performance, installs easily, and is durable for heavy use. Compatible with all models, it keeps the unit operating smoothly and reliably.",
     "price": 200,
@@ -453,7 +453,7 @@
   {
     "shortName": "Universal Bag 6",
     "fullName": "Universal Filter Bags (6 pieces)",
-    "category": "Потрошен материјал",
+    "category": "Consumables",
     "shortDesc": "Filter bags for allergen reduction (6 pieces).",
     "longDesc": "A practical and efficient solution for everyday hygiene maintenance. These bags trap dust, pollen, and particles that can spread through the air. Using non-genuine filter bags can reduce efficiency, damage the unit, and allow dust to escape. Genuine Kirby bags are: specially designed for the system; tested for quality and safety; and built to ensure proper operation.",
     "price": 2700,
@@ -463,7 +463,7 @@
   {
     "shortName": "Universal Bag 1",
     "fullName": "Universal Filter Bag (1 piece)",
-    "category": "Потрошен материјал",
+    "category": "Consumables",
     "shortDesc": "Filter bags for allergen reduction (1 piece).",
     "longDesc": "A practical and efficient solution for everyday hygiene maintenance. These bags trap dust, pollen, and particles that can spread through the air. Using non-genuine filter bags can reduce efficiency, damage the unit, and allow dust to escape. Genuine Kirby bags are: specially designed for the system; tested for quality and safety; and built to ensure proper operation.",
     "price": 450,
@@ -473,7 +473,7 @@
   {
     "shortName": "HEPA Plus Bag 6",
     "fullName": "HEPA Plus Filter Bag (6 pieces)",
-    "category": "Потрошен материјал",
+    "category": "Consumables",
     "shortDesc": "Micro-allergen HEPA filter bags (6 pieces).",
     "longDesc": "Maximum filtration for your Kirby system. HEPA technology traps dust, pollen, pet dander, and micro-particles, preventing them from re-entering the air. Using non-genuine filter bags can reduce efficiency, damage the unit, and allow dust to escape. Genuine Kirby bags are: specially designed for the system; tested for quality and safety; and built to ensure proper operation.",
     "price": 3000,
@@ -483,7 +483,7 @@
   {
     "shortName": "HEPA Plus Bag 1",
     "fullName": "HEPA Plus Filter Bag (1 piece)",
-    "category": "Потрошен материјал",
+    "category": "Consumables",
     "shortDesc": "Micro-allergen HEPA filter bag (1 piece).",
     "longDesc": "Maximum filtration for your Kirby system. HEPA technology traps dust, pollen, pet dander, and micro-particles, preventing them from re-entering the air. Using non-genuine filter bags can reduce efficiency, damage the unit, and allow dust to escape. Genuine Kirby bags are: specially designed for the system; tested for quality and safety; and built to ensure proper operation.",
     "price": 500,

@@ -1,5 +1,4 @@
-// Check consent on page load
-document.addEventListener("DOMContentLoaded", () => {
+function initializeCookieBanner() {
   const consent = localStorage.getItem("cookieConsent");
   const banner = document.getElementById("cookieBanner");
   if (!banner) return;
@@ -32,7 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // On other pages, show banner immediately
   banner.classList.remove("hidden");
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeCookieBanner);
+} else {
+  initializeCookieBanner();
+}
 
 // Accept cookies
 function acceptCookies() {

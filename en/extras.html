@@ -286,20 +286,7 @@
       class="fa-solid fa-x absolute right-[2vw] top-[2vw] text-white text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl cursor-pointer"></i>
   </div>
 
-  <div class="fixed bottom-[5%] left-[5%] z-[11000]">
-    <div class="relative inline-block">
-      <p id="cartBadge"
-        class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] sm:text-xs md:text-base lg:text-[12px] xl:text-xs rounded-full px-2 py-1 leading-none">
-        0</p>
-      <a id="checkOutBtn" href="checkOut.html"
-        class="group flex items-center bg-[#484848] hover:bg-[#303030] transition-all duration-300 border border-white text-white rounded-full py-1 px-2 xs:py-2 xs:px-3 md:py-4 md:px-4 lg:py-2 lg:px-3 text-lg xs:text-2xl md:text-3xl lg:text-xl 2xl:text-2xl gap-0 hover:gap-1 overflow-hidden">
-        <i class="fa-solid fa-basket-shopping"></i>
-        <p
-          class="opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">
-          Cart</p>
-      </a>
-    </div>
-  </div>
+  
 
   <script>
     // GLOBAL ELEMENTS
@@ -376,7 +363,6 @@
         versionButtons.innerHTML = '';
       }
 
-      updateModalAddButtonState();
     }
 
     function sortFeaturedFirst(items, sortOption) {
@@ -668,7 +654,6 @@
         currentModalProduct = extra;
         currentModalVersionIndex = 0;
         renderModalVersion(extra, 0);
-        updateModalAddButtonState();
         productModal.classList.remove('hidden');
       });
 
@@ -781,168 +766,14 @@
     }
   </script>
 
+    <div id="cookie-container"></div>
+    <div id="cart-badge-container"></div>
+
     <div id="footer-container"></div>
 
-  <div id="cookieBanner" class="fixed bottom-[5%] px-[5%] w-full text-white z-[9999] hidden">
-    <div
-      class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto lg:mx-0 w-auto lg:w-[450px] 3xl:w-[580px] rounded-xl bg-black/40 backdrop-blur-3xl p-[5%] lg:p-[3%] xl:p-[2%] flex flex-col justify-between items-center gap-[3vw] xl:gap-[1vw]">
-      <div class="flex justify-center items-center gap-2 xs:gap-4 md:gap-4">
-        <p class="text-sm xs:text-xl md:text-3xl lg:text-lg 3xl:text-2xl">This website uses cookies to help analyze and improve your experience.</p>
-        <i
-          class="fa-solid fa-cookie text-2xl xs:text-4xl md:text-6xl lg:text-3xl 3xl:text-5xl flex justify-center items-center"></i>
-      </div>
-      <div class="flex gap-[6%] w-full text-base xs:text-xl md:text-3xl lg:text-xl 3xl:text-3xl">
-        <button onclick="rejectCookies()" class="border w-[47%] border-white py-[1%] rounded-xl">Reject</button>
-        <button onclick="acceptCookies()" class="bg-white w-[47%] text-black py-[1%] rounded-xl">Accept</button>
-      </div>
-    </div>
-  </div>
+  
 
-  <script>
-    function loadCart() {
-      return JSON.parse(localStorage.getItem('cart') || '[]');
-    }
-
-    function saveCart(cart) {
-      localStorage.setItem('cart', JSON.stringify(cart));
-    }
-
-    function showTooltip(target, message) {
-      const existing = document.getElementById('custom-tooltip');
-      if (existing) existing.remove();
-      const tooltip = document.createElement('div');
-      tooltip.id = 'custom-tooltip';
-      tooltip.textContent = message;
-      tooltip.style.position = 'fixed';
-      tooltip.style.zIndex = '9999';
-      tooltip.style.background = 'rgba(0,0,0,0.88)';
-      tooltip.style.color = '#fff';
-      tooltip.style.padding = '0.5rem 0.75rem';
-      tooltip.style.borderRadius = '9999px';
-      tooltip.style.fontSize = '0.85rem';
-      tooltip.style.lineHeight = '1.2';
-      tooltip.style.pointerEvents = 'none';
-      tooltip.style.opacity = '0';
-      tooltip.style.transition = 'opacity 0.2s ease';
-      tooltip.style.maxWidth = 'calc(100vw - 32px)';
-      tooltip.style.wordBreak = 'break-word';
-      document.body.appendChild(tooltip);
-      const rect = target.getBoundingClientRect();
-      const left = Math.min(window.innerWidth - tooltip.offsetWidth - 8, Math.max(8, rect.left + rect.width / 2 - tooltip.offsetWidth / 2));
-      let top = rect.top - tooltip.offsetHeight - 8;
-      if (top < 8) top = rect.bottom + 8;
-      tooltip.style.left = `${left}px`;
-      tooltip.style.top = `${top}px`;
-      requestAnimationFrame(() => tooltip.style.opacity = '1');
-      setTimeout(() => {
-        tooltip.style.opacity = '0';
-        setTimeout(() => tooltip.remove(), 200);
-      }, 2000);
-    }
-
-    function updateCartBadge() {
-      const cart = loadCart();
-      let totalQty = 0;
-      cart.forEach(item => {
-        totalQty += (item.qty || 1);
-      });
-      const badge = document.getElementById('cartBadge');
-      if (badge) {
-        if (totalQty === 0) {
-          badge.style.display = "none";
-        } else {
-          badge.style.display = "inline-flex";
-          badge.textContent = totalQty >= 100 ? "99+" : totalQty.toString();
-        }
-      }
-    }
-
-    function addProductToCart(product) {
-      const cart = loadCart();
-      const existing = cart.find(item => item.name === product.name);
-      if (existing) {
-        existing.qty = Math.min(99, (existing.qty || 1) + 1);
-      } else {
-        if (cart.length >= 10) {
-          return false;
-        }
-        cart.push({ id: Date.now(), name: product.name, price: product.price, qty: 1, image: product.image });
-      }
-      saveCart(cart);
-      updateCartBadge();
-      updateModalAddButtonState();
-      return true;
-    }
-
-    function updateModalAddButtonState() {
-      const addBtn = document.getElementById('modalAddToCart');
-      const titleEl = document.getElementById('modal-title');
-      if (!addBtn || !titleEl) return;
-      const cart = loadCart();
-      const productName = titleEl.textContent.trim();
-      const existing = cart.some(item => item.name === productName);
-      const disableAdd = !existing && cart.length >= 10;
-      addBtn.disabled = disableAdd;
-      if (disableAdd) {
-        addBtn.classList.add('opacity-50', 'cursor-not-allowed');
-        addBtn.setAttribute('aria-disabled', 'true');
-      } else {
-        addBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-        addBtn.removeAttribute('aria-disabled');
-      }
-    }
-
-    // Update badge when localStorage changes from other pages/tabs
-    window.addEventListener('storage', (e) => {
-      if (e.key === 'cart') {
-        updateCartBadge();
-        updateModalAddButtonState();
-      }
-    });
-
-    (function () {
-      const addBtn = document.getElementById('modalAddToCart');
-      const checkOutBtn = document.getElementById('checkOutBtn');
-      if (!addBtn) return;
-
-      // Update badge and modal add state on page load
-      updateCartBadge();
-      updateModalAddButtonState();
-
-      addBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (addBtn.getAttribute('aria-disabled') === 'true') {
-          showTooltip(addBtn, addBtn.title || 'You have reached the maximum number of different products allowed in your cart');
-          return;
-        }
-        if (!currentModalProduct) return;
-        const modalVersions = getModalVersions(currentModalProduct);
-        const version = modalVersions && modalVersions[currentModalVersionIndex]
-          ? modalVersions[currentModalVersionIndex]
-          : getCardVersion(currentModalProduct);
-        const name = version.name || currentModalProduct.fullName;
-        const price = getProductPrice(currentModalProduct, version);
-        const imgEl = document.getElementById('modal-img');
-        const img = imgEl ? imgEl.src : '';
-        addProductToCart({ name, price, image: img });
-
-        if (checkOutBtn) {
-          const pEl = checkOutBtn.querySelector('p');
-          if (pEl) {
-            const defaultText = ' Cart';
-            pEl.textContent = ' Added to Cart';
-            pEl.classList.remove('opacity-0', 'max-w-0');
-            pEl.classList.add('opacity-100', 'max-w-xs');
-            setTimeout(() => {
-              pEl.textContent = defaultText;
-              pEl.classList.remove('opacity-100', 'max-w-xs');
-              pEl.classList.add('opacity-0', 'max-w-0');
-            }, 2500);
-          }
-        }
-      });
-    })();
-  </script>
+  
   <script src="../cookie.js"></script>
 <script src="../assets/js/includes.js"></script>
 </body>
