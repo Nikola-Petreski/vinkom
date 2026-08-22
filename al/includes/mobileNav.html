@@ -1,0 +1,47 @@
+<div id="mobileNav" class="fixed top-[2vh] left-1/2 -translate-x-1/2 z-[9990] lg:hidden w-[90vw] text-white backdrop-blur-3xl p-[5%] md:p-[3%] flex-col rounded-xl bg-black/25 xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691px]">
+  <style>
+    #mobileUserChevron { display: inline-block; transition: transform .25s ease; }
+    #mobileUserChevron.rotated { transform: rotate(180deg); }
+    #mobileUserDropdownMenu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    #mobileUserDropdownMenu.open { max-height: 500px; }
+  </style>
+  <div id="mainMenu" class="flex justify-between items-center">
+    <div class="relative">
+          <button id="mobileLangDropdownButton" type="button" aria-expanded="false" data-current-lang-flag class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap text-white">
+            <img src="../flags/albania.png" class="h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px] rounded-full">
+        </button>
+          <div id="mobileLangDropdownMenu" class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
+            <a href="#" data-lang-link="mk" class="block hover:text-white transition-all duration-300 py-2 xs:py-3 md:py-4"><img src="../flags/macedonia.png" class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
+            <a href="#" data-lang-link="al" class="block hover:text-white transition-all duration-300">             <img src="../flags/albania.png" class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
+        </div>
+    </div>
+    <a href="index.html" class="max-w-[40%] h-full"><img src="../logos/LOGO ZAEDNO7.png" class="h-full"></a>
+    <button id="mobileMenuToggle" class="text-white"><i class="fa-solid fa-bars text-[20px] md:text-[30px]"></i></button>
+  </div>
+  <div id="triggeredMenu" class="flex flex-col gap-[1vh] w-full justify-center items-center text-lg md:text-xl">
+    <a href="index.html"    class="text-center pt-[1vh]">Shtëpi</a>
+    <a href="platinum.html" class="text-center">Platinum</a>
+    <a href="extras.html"   class="text-center">Produkte</a>
+    <a href="book.html"     class="text-center">Prezantimi i Librit</a>
+    <a href="tradeIn.html"  class="text-center">Shkëmbim</a>
+    <a href="aboutus.html"  class="text-center">Rreth Nesh</a>
+    <div class="">
+        <button id="mobileInfoDropdownButton" type="button" aria-expanded="false" class=" text-white">Qendra e Njohurive &nbsp;<span class=""><i id="mobileInfoChevron" class="fa-solid fa-chevron-down text-sm"></i></span></button>
+        <div id="mobileInfoDropdownMenu" class="flex flex-col max-h-0 overflow-hidden text-base md:text-lg pl-[1vh]">
+            <a href="howTo.html" class="text-white/70 transition-all duration-300">Video me udhëzime</a>
+            <a href="tips.html"  class="text-white/70 transition-all duration-300">Këshilla</a>
+            <a href="blog.html"  class="text-white/70 transition-all duration-300">Blog</a>
+            <a href="faq.html"   class="text-white/70 transition-all duration-300">FAQ</a>
+        </div>
+    </div>
+    <div class="">
+      <button id="mobileUserDropdownButton" type="button" aria-expanded="false" class=" text-white">Mbështetja e Pronarëve&nbsp;<span class=""><i id="mobileUserChevron" class="fa-solid fa-chevron-down text-sm"></i></span></button>
+      <div id="mobileUserDropdownMenu" class="flex flex-col max-h-0 overflow-hidden text-base md:text-lg pl-[1vh]">
+        <a href="models.html"  class="text-white/70 transition-all duration-300">Modele më të hershme</a>
+        <a href="manuals.html" class="text-white/70 transition-all duration-300">Manualet</a>
+        <a href="warranty.html" class="text-white/70 transition-all duration-300">Garancia</a>
+        <a href="service.html" class="text-white/70 transition-all duration-300">Shërbim</a>
+      </div>
+    </div>
+  </div>
+</div>

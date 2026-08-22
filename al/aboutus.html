@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="al">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rreth nesh — KIRBY, një markë që ofron produkte amerikane, ekspertizë dhe mbështetje premium për klientët.">
+  <title>KIRBY | Rreth Nesh</title>
+  <link href="../output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gidole&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4baf646c88.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://gidole.github.io/GidoleFont/gidoleFont.css">
+  <link rel="icon" type="image/png" href="../images_webp/logoW.webp">
+
+  <style>
+    @import url('https://gidole.github.io/GidoleFont/gidoleFont.css');
+
+    .font-gidole {
+      font-family: 'Gidole', sans-serif !important;
+    }
+
+    .modal-overlay {
+      transition: opacity 200ms ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .modal-overlay.visible {
+      opacity: 1;
+      pointer-events: auto;
+      background-color: rgba(0, 0, 0, 0.45);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+    }
+
+    .modal-content {
+      transform: translateY(2vh) scale(0.98);
+      opacity: 0;
+      transition: transform 200ms cubic-bezier(0.2, 0, 0.2, 1), opacity 200ms ease;
+    }
+
+    .modal-content.show {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .modal-content {
+        flex-direction: column;
+        padding: 3% !important;
+      }
+    }
+
+    /* Custom scrollbar for modals */
+    .modal-content::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .modal-content::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      border: 2px solid transparent;
+      background-clip: padding-box;
+    }
+
+    .modal-content {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+    }
+
+    .reveal-letters span {
+      opacity: 0;
+      transform: translateY(20px);
+      display: inline-block;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal-visible span {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #infoDropdownMenu {
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+    }
+
+    #infoChevron,
+    #langChevron {
+      display: inline-block;
+      opacity: 0;
+      transform: rotate(0deg);
+      transition: transform .25s ease, opacity .15s ease;
+    }
+
+    #infoDropdownButton:hover #infoChevron,
+    #langDropdownButton:hover #langChevron {
+      opacity: 1;
+    }
+
+    #infoChevron.rotated,
+    #langChevron.rotated {
+      transform: rotate(180deg);
+    }
+
+    #mobileInfoChevron {
+      display: inline-block;
+      transition: transform .25s ease;
+    }
+
+    #mobileInfoChevron.rotated {
+      transform: rotate(180deg);
+    }
+
+    #mobileInfoDropdownMenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+
+    #mobileInfoDropdownMenu.open {
+      max-height: 500px;
+    }
+
+    #mobileLangDropdownMenu {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px) scaleY(0.98);
+      transform-origin: top;
+      transition: max-height .28s ease, opacity .22s ease, transform .26s cubic-bezier(.2, .9, .2, 1);
+    }
+
+    #mobileLangDropdownMenu.open {
+      max-height: 240px;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scaleY(1);
+    }
+
+    /* Triggered menu (mobile) smooth open/close */
+    #triggeredMenu {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: max-height .32s ease, opacity .22s ease, transform .26s cubic-bezier(.2, .9, .2, 1);
+    }
+
+    #triggeredMenu.open {
+      max-height: 800px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #mobileNav.mobile-open {
+      background-color: rgba(0, 0, 0, 0.25) !important;
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden font-gidole bg-[#484848] w-full relative">
+
+    <div id="nav-container"></div>
+
+    <div id="mobile-nav-container"></div>
+
+
+  <div id="mobileNavSpacer" class="py-[2vh] block lg:hidden">
+    <div class="w-full py-[5%] md:py-[3%]">
+      <div class="w-full h-[28px] xs:h-[32px] md:h-[35px]"></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const nav = document.getElementById('nav');
+      const spacer = document.getElementById('nav-spacer');
+      if (!nav) return;
+
+      // ensure smooth transition
+      nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
+      nav.style.willChange = 'transform, opacity';
+      nav.style.transform = nav.style.transform || 'translateY(0)';
+      nav.style.opacity = nav.style.opacity || '1';
+
+      // compute and set spacer height (px) so layout doesn't jump
+      function recompute() {
+        try {
+          const h = Math.ceil(nav.getBoundingClientRect().height);
+          if (spacer) spacer.style.height = h + 'px';
+        } catch (e) { }
+      }
+      recompute();
+      window.addEventListener('resize', recompute, { passive: true });
+
+      let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+      let ticking = false;
+
+      function hideNav() {
+        const h = Math.ceil(nav.getBoundingClientRect().height) + 4;
+        nav.style.transform = 'translateY(-' + h + 'px)';
+        nav.style.opacity = '0';
+      }
+      function showNav() {
+        nav.style.transform = 'translateY(0)';
+        nav.style.opacity = '1';
+      }
+
+      function onScroll() {
+        const current = window.pageYOffset || document.documentElement.scrollTop;
+        if (current > lastScroll + 6) {
+          hideNav();
+        } else if (current < lastScroll - 6) {
+          showNav();
+        }
+        lastScroll = current <= 0 ? 0 : current;
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+      }, { passive: true });
+    })();
+
+  </script>
+
+  <div class="w-full">
+<div
+      class="w-full flex flex-col justify-center items-center  bg-[#484848] xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
+      <div id="1992" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div class="w-[75%] lg:w-[40%] flex flex-col justify-center items-center gap-4">
+          <div
+            class="w-full text-white/70 flex lg:hidden flex-col justify-center items-start gap-2 lg:gap-10 text-[8px] sm:text-sm lg:text-lg">
+            <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white">Hapat e Parë</p>
+            <p>Në vitin 1992, Vinkom solli Kirby në Maqedoni, duke filluar me G3—një sistem që vendosi një standard të ri për higjienën e shtëpisë. Në një kohë kur sistemet e avancuara të pastrimit të thellë ishin pothuajse të panjohura, G3 tërhoqi vëmendjen përmes demonstrimeve në shtëpi, ku familjet mund të përjetonin nga afër fuqinë dhe efikasitetin e tij. Këto demonstrime u bënë një shenjë dalluese e Vinkom, sepse vlera e vërtetë e produktit tregohet më mirë në përdorim. Si distributor i autorizuar nga fabrika për Kirby, me qendrën e vet të servisit dhe mbështetje të plotë për pjesët dhe materialet origjinale, Vinkom ndërtoi besim afatgjatë me klientët. Përkushtimi afatgjatë ndaj një produkti është dëshmi e fortë e cilësisë që ofron sistemi. Me më shumë se tre dekada në tregun maqedonas, kompania vazhdon të tregojë se investimi në Kirby shpërblehet me kalimin e kohës.</p>
+          </div>
+          <img class="w-full h-full" src="../images_webp/aboutus/0000242.webp" loading="eager" alt="">
+        </div>
+        <div class="h-full w-[20%] lg:w-[16%] flex flex-col justify-end items-center">
+          <div
+            class="rounded-full w-[8vh] h-[8vh] lg:w-[12vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            1992</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-6xl font-black text-white">Hapat e Parë</p>
+          <p>Në vitin 1992, Vinkom solli Kirby në Maqedoni me G3—një sistem që solli një standard të ri të higjienës në shtëpi. Kur ky lloj sistemi ishte ende i rrallë, demonstrimet u treguan familjeve maqedonase se çfarë do të thotë pastrim i vërtetë i thellë. Prezantimet e para në shtëpi dëshmuan fuqinë e sistemit. Me distribuim zyrtar, servis dhe pjesë origjinale zëvendësuese, Vinkom hodhi themelet për një marrëdhënie të qëndrueshme dhe afatgjatë me klientët. G3 nisi një histori cilësie dhe inovacioni që vazhdon edhe sot.</p>
+        </div>
+      </div>
+
+      <div id="1993" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-start gap-4 lg:gap-10">
+          <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white">Duke u Forcuar</p>
+          <p class="text-white/70 text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl">Një vit pas suksesit të G3, G4 mbërriti në Maqedoni—një model i përmirësuar me dizajn modern dhe përmirësime praktike mekanike. Ndihma e fuqisë e bëri përdorimin dukshëm më të lehtë, ndërsa ndërtimi i tij ofronte performancë të besueshme dhe jetëgjatësi të lartë. Demonstrimet e detajuara në shtëpi u treguan klientëve mundësitë e sistemit, duke rritur besimin te marka dhe duke forcuar pozicionin e Vinkom në tregun vendas. G4 bashkoi komoditetin, efikasitetin dhe cilësinë, duke vendosur standardin për gjeneratat e mëvonshme të sistemeve Kirby.</p>
+          <img src="../images_webp/aboutus/1993.webp"
+            class="w-full h-full object-cover object-bottom lg:hidden rounded-xl shadow-2xl shadow-black" loading="lazy"
+            alt=""></img>
+        </div>
+        <div class="h-[100vh] w-[20%] lg:w-[16%] flex flex-col justify-center items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            1993</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div class="w-[40%] hidden lg:flex justify-center rounded-xl items-center">
+          <img src="../images_webp/aboutus/1993.webp" class="h-full w-full rounded-xl shadow-2xl shadow-black"
+            loading="lazy" alt=""></img>
+        </div>
+      </div>
+
+      <div id="1997" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-center gap-4">
+          <div
+            class="w-full text-white/70 flex lg:hidden flex-col justify-center items-start gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-lg">
+            <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white">NASA?</p>
+            <p>Pas suksesit të G4 erdhi G5, i dallueshëm për përfundimin në vjollcë të errët dhe ventilatorin inovativ të bërë nga materiali Lexan, i zhvilluar me teknologji të NASA-s. Ky përparim solli thithje më të fuqishme dhe qëndrueshmëri më të madhe. Klientët e përqafuan shpejt për besueshmërinë dhe efikasitetin e tij, ndërsa Vinkom vazhdoi misionin për të sjellë teknologjinë më të avancuar në shtëpitë maqedonase. Demonstrimet në shtëpi u dhanë klientëve mundësinë të shihnin nga afër inovacionin dhe cilësinë e G5, duke forcuar besimin dhe besnikërinë ndaj markës.</p>
+          </div>
+          <img class="w-full rounded-xl shadow-2xl shadow-black h-full object-cover object-bottom"
+            src="../images_webp/aboutus/1997.webp" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            1997</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-5xl font-black text-white">NASA?</p>
+          <p>Pas suksesit të G4 erdhi G5, i dallueshëm për përfundimin në vjollcë të errët dhe ventilatorin inovativ të bërë nga materiali Lexan, i zhvilluar me teknologji të NASA-s. Ky përparim solli thithje më të fuqishme dhe qëndrueshmëri më të madhe. Klientët e përqafuan shpejt për besueshmërinë dhe efikasitetin e tij, ndërsa Vinkom vazhdoi misionin për të sjellë teknologjinë më të avancuar në shtëpitë maqedonase. Demonstrimet në shtëpi u dhanë klientëve mundësinë të shihnin nga afër inovacionin dhe cilësinë e G5, duke forcuar besimin dhe besnikërinë ndaj markës.</p>
+        </div>
+      </div>
+
+      <div id="1999" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] text-white/70 h-[80%] flex flex-col justify-center items-start gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white">Mundësi të Reja</p>
+          <p>Gsix solli një pamje më bashkëkohore dhe një furçë rrotulluese të përmirësuar për pastrim më të njëtrajtshëm dhe më të thellë. Shampoja portative ofronte rezultate më të mira në sipërfaqet e buta, ndërsa sistemi përmirësonte komoditetin dhe efikasitetin. Klientët e vunë shpejt re ndryshimin në cilësi, ndërsa Vinkom ruajti besimin te marka përmes mbështetjes, servisit dhe pjesëve origjinale. Gsix u dallua si një model që bashkonte inovacionin me praktikën, duke ofruar një zgjidhje të besueshme dhe afatgjatë për familjet maqedonase që kërkonin pastrim cilësor të thellë.</p>
+          <img class="w-full h-full object-cover object-bottom block lg:hidden rounded-xl shadow-2xl shadow-black"
+            src="../images_webp/aboutus/1999.webp" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs sm:text-sm md:text-base lg:text-2xl text-white">
+            1999</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div class="w-[40%] hidden lg:flex justify-center items-center">
+          <img class="h-full w-full rounded-xl shadow-2xl shadow-black" src="../images_webp/aboutus/1999.webp"
+            loading="lazy" alt="">
+        </div>
+      </div>
+
+      <div
+        class="w-[73.8%] mx-auto xs:w-[397px] sm:w-[422px] md:w-[505px]  h-2 bg-white/50 rounded-tl-xl rounded-br-xl block lg:hidden">
+      </div>
+
+      <div id="2002" class="w-full px-[5%] flex flex-row-reverse lg:flex-row justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] h-full flex flex-col justify-center items-start gap-4 lg:gap-10 text-white/70 text-[8px] sm:text-sm lg:text-lg">
+          <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white flex lg:hidden">Një Dyshe e Fuqishme</p>
+          <p class="flex lg:hidden">Për dhjetëvjetorin e saj, Vinkom prezantoi Ultimate G dhe Diamond Edition—dy modele të ndryshme me të njëjtin fokus te cilësia dhe qëndrueshmëria. Ultimate G ofronte stabilitet, fuqi dhe filtrim efikas, ndërsa Diamond Edition dallohej për funksionim më të qetë dhe filtra për sipërfaqe delikate. Të dy versionet u lejonin klientëve të zgjidhnin sistemin që u përshtatej më së miri, ndërsa Vinkom ofronte servis, mbështetje dhe pjesë zëvendësuese. Me këtë gamë, kompania konfirmoi pozicionin e saj si partner i besueshëm dhe lider në higjienën e shtëpisë.</p>
+          <img class="h-full object-cover object-bottom w-full rounded-xl shadow-2xl shadow-black"
+            src="../images_webp/aboutus/2002.webp" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2002</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-6xl font-black text-white">Një Dyshe e Fuqishme</p>
+          <p>Për dhjetëvjetorin e saj, Vinkom prezantoi Ultimate G dhe Diamond Edition—dy modele të ndryshme me të njëjtin fokus te cilësia dhe qëndrueshmëria. Ultimate G ofronte stabilitet, fuqi dhe filtrim efikas, ndërsa Diamond Edition dallohej për funksionim më të qetë dhe filtra për sipërfaqe delikate. Të dy versionet u lejonin klientëve të zgjidhnin sistemin që u përshtatej më së miri, ndërsa Vinkom ofronte servis, mbështetje dhe pjesë zëvendësuese. Me këtë gamë, kompania konfirmoi pozicionin e saj si partner i besueshëm dhe lider në higjienën e shtëpisë.</p>
+        </div>
+      </div>
+
+      <div id="2006" class="w-full px-[5%] h-[100vh] flex flex-row-reverse lg:flex-row justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] h-[80%] text-white/70 flex flex-col justify-center items-start text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl gap-4 lg:gap-10">
+          <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white">Një Nivel i Ri</p>
+          <p>Sentria solli një pamje moderne dhe elegante, me drita LED, dorezë të ridizajnuar dhe ergonomi të përmirësuar.
+            Pajisjet e reja e bënë pastrimin e mobilieve dhe sipërfaqeve tekstile më efikas, duke e bërë shpejt modelin të
+            preferuarin e klientëve. Njohja nga Carpet and Rug Institute konfirmoi më tej cilësinë e tij. Vinkom ofroi
+            servis profesional dhe mbështetje të plotë, duke i dhënë çdo klienti besim dhe qetësi. Sentria u bë një model
+            që bashkoi komoditetin, efikasitetin dhe dizajnin modern, duke vazhduar traditën e cilësisë së Kirby në
+            Maqedoni.</p>
+          <img
+            class="h-3/5 sm:h-1/2 object-cover object-bottom w-full block lg:hidden rounded-xl shadow-2xl shadow-black"
+            src="../images_webp/aboutus/2006.webp" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs sm:text-sm md:text-base lg:text-2xl text-white">
+            2006</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div class="w-[40%] hidden lg:flex justify-center items-center">
+          <img class="h-full w-full rounded-xl shadow-2xl shadow-black" src="../images_webp/aboutus/2006.webp"
+            loading="lazy" alt="">
+        </div>
+      </div>
+
+      <div
+        class="w-[73.8%] mx-auto xs:w-[397px] sm:w-[422px] md:w-[505px]  h-2 bg-white/50 rounded-tr-xl rounded-bl-xl block lg:hidden">
+      </div>
+
+      <div id="2011" class="w-full px-[5%] h-[80%] flex justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] h-full flex flex-col justify-center items-start text-[8px] sm:text-sm lg:text-lg text-white/70 gap-4 lg:gap-10">
+          <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white flex lg:hidden">Këtu Kur Ka Më Shumë Rëndësi</p>
+          <p class="flex lg:hidden">Në vitin 2011, Vinkom krijoi shërbimin e parë të specializuar për kujdesin ndaj klientëve. Ekipi ofronte ndihmë në shtëpi, dërgesë të shpejtë të materialeve harxhuese dhe udhëzime profesionale për përdorimin e duhur të sistemeve Kirby. Ky shërbim e ngriti përvojën e klientit në një nivel të ri dhe forcoi marrëdhënien me blerësit. Me fokus te besimi dhe mbështetja, Vinkom vendosi një standard të ri të kujdesit ndaj klientit, duke siguruar që çdo klient të mund të mbështetej në ndihmë profesionale dhe një zgjidhje afatgjatë për pastrimin.</p>
+          <img class="h-3/5 sm:h-1/2 object-cover object-center w-full rounded-xl shadow-2xl shadow-black"
+            src="../images_webp/aboutus/2011.webp" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2011</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-6xl font-black text-white">Këtu Kur Ka Më Shumë Rëndësi</p>
+          <p>Në vitin 2011, Vinkom krijoi shërbimin e parë të specializuar për kujdesin ndaj klientëve. Ekipi ofronte ndihmë në shtëpi, dërgesë të shpejtë të materialeve harxhuese dhe udhëzime profesionale për përdorimin e duhur të sistemeve Kirby. Ky shërbim e ngriti përvojën e klientit në një nivel të ri dhe forcoi marrëdhënien me blerësit. Me fokus te besimi dhe mbështetja, Vinkom vendosi një standard të ri të kujdesit ndaj klientit, duke siguruar që çdo klient të mund të mbështetej në ndihmë profesionale dhe një zgjidhje afatgjatë për pastrimin.</p>
+        </div>
+      </div>
+
+      <div id="2012" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] text-white/70 h-[80%] flex flex-col justify-center items-start gap-10 text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl">
+          <div class="w-full flex flex-col justify-center items-center gap-4 lg:gap-10">
+            <div class="text-[10rem] lg:text-[15rem]  lg:hidden h-full font-extrabold text-white -my-14 sm:-my-0"
+              id="counter-mobile">0</div>
+            <p class="text-white/70 lg:hidden text-lg lg:text-4xl mt-0 sm:mt-14">Vite të Vinkom</p>
+            <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white text-start w-full">Dy Dekada</p>
+            <p>Sentria II mbërriti pikërisht kur Vinkom festonte njëzet vjet në biznes. Modeli u dallua për dizajnin praktik, përdorimin e lehtë dhe fuqinë e besueshme të motorit, veçanërisht për shtëpi më të vogla dhe sipërfaqe delikate. Paketat e reja të aksesorëve dhe qeset filtruese HEPA ofronin ajër më të pastër dhe më shumë komoditet për përdoruesit. Vinkom ofroi mbështetje dhe servis të plotë, duke ruajtur besimin e klientëve te cilësia e sistemeve Kirby. Sentria II bashkoi praktikën dhe efikasitetin në një sistem të vetëm, duke u bërë një zgjidhje e besueshme për çdo familje.</p>
+          </div>
+
+          <script>
+            (function () {
+              const counterEl = document.getElementById('counter-mobile');
+              if (!counterEl) return;
+
+              let hasRun = false;
+
+              const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                  if (entry.isIntersecting && !hasRun) {
+                    hasRun = true;
+                    let count = 0;
+                    const target = 20;
+                    const duration = 1500;
+                    const stepTime = Math.floor(duration / target);
+
+                    const interval = setInterval(() => {
+                      count++;
+                      counterEl.textContent = count;
+                      if (count === target) {
+                        clearInterval(interval);
+                      }
+                    }, stepTime);
+                  }
+                });
+              }, { threshold: 0.5 });
+
+              observer.observe(counterEl);
+            })();
+          </script>
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2012</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div class="w-[40%] h-[50vh] hidden lg:flex justify-center items-center">
+          <div class="w-full h-screen flex flex-col justify-center items-center">
+            <div class="text-xs lg:text-[15rem] font-extrabold text-white" id="counter-lg">0</div>
+            <p class="text-white/70 text-xs lg:text-4xl mt-24">Vite të Vinkom</p>
+          </div>
+
+          <script>
+            (function () {
+              const counterEl = document.getElementById('counter-lg');
+              if (!counterEl) return;
+
+              let hasRun = false;
+
+              const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                  if (entry.isIntersecting && !hasRun) {
+                    hasRun = true;
+                    let count = 0;
+                    const target = 20;
+                    const duration = 1500;
+                    const stepTime = Math.floor(duration / target);
+
+                    const interval = setInterval(() => {
+                      count++;
+                      counterEl.textContent = count;
+                      if (count === target) {
+                        clearInterval(interval);
+                      }
+                    }, stepTime);
+                  }
+                });
+              }, { threshold: 0.5 });
+
+              observer.observe(counterEl);
+            })();
+          </script>
+        </div>
+      </div>
+
+      <div id="2014" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-center gap-4 lg:gap-10">
+          <div
+            class="w-full text-white/70 flex lg:hidden flex-col justify-center items-center gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-lg">
+            <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white text-start w-full">Një Simbol i Cilësisë së Përhershme</p>
+            <p>Në vitin 2014, Kirby shënoi një moment historik: 100 vjet inovacion, patenta dhe cilësi. Në të njëjtën kohë, Vinkom e kishte përfaqësuar markën në Maqedoni për 22 vjet, duke ndërtuar një lidhje të fortë me klientët vendas. Ky bashkim i trashëgimisë globale me përvojën lokale konfirmoi përkushtimin ndaj besueshmërisë, cilësisë dhe përmirësimit të vazhdueshëm. Përvjetori theksoi rëndësinë e traditës dhe inovacionit, duke treguar se besimi i klientëve fitohet përmes dekadave të punës së përkushtuar dhe produkteve cilësore që bashkojnë me sukses teknologjinë me praktikën.</p>
+          </div>
+          <img src="../images_webp/aboutus/2014.webp" class="w-full object-cover object-center" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2014</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-6xl font-black text-white">Një Simbol i Cilësisë së Përhershme</p>
+          <p>Në vitin 2014, Kirby shënoi një moment historik: 100 vjet inovacion, patenta dhe cilësi. Në të njëjtën kohë, Vinkom e kishte përfaqësuar markën në Maqedoni për 22 vjet, duke ndërtuar një lidhje të fortë me klientët vendas. Ky bashkim i trashëgimisë globale me përvojën lokale konfirmoi përkushtimin ndaj besueshmërisë, cilësisë dhe përmirësimit të vazhdueshëm. Përvjetori theksoi rëndësinë e traditës dhe inovacionit, duke treguar se besimi i klientëve fitohet përmes dekadave të punës së përkushtuar dhe produkteve cilësore që bashkojnë me sukses teknologjinë me praktikën.</p>
+        </div>
+      </div>
+
+      <div id="2015" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] h-[80%] text-white/70 flex flex-col justify-center items-start gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white">I Jashtëzakonshëm në Çdo Aspekt</p>
+          <p>Avalir ofroi një ekuilibër të veçantë mes fuqisë, qëndrueshmërisë dhe praktikës. Modeli kishte një motor të besueshëm, përdorim të thjeshtë dhe mundësi të shumta pastrimi për sipërfaqe të ndryshme. Klientët vlerësojnë efikasitetin, komoditetin dhe përshtatjen e tij me çdo shtëpi. Vinkom e prezantoi si një zgjidhje të besueshme për higjienën e shtëpisë, me servis të plotë, pjesë origjinale dhe mbështetje profesionale. Avalir vazhdon të forcojë reputacionin e kompanisë si lider në cilësi dhe pastrim të thellë të besueshëm për shtëpitë maqedonase.</p>
+          <img class="h-1/2 block lg:hidden object-cover object-bottom w-full rounded-xl shadow-2xl shadow-black"
+            src="../images_webp/aboutus/2015.webp" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs sm:text-sm md:text-base lg:text-2xl text-white">
+            2015</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div class="w-[40%] hidden lg:flex justify-center items-center">
+          <img class="h-full w-full rounded-xl shadow-2xl shadow-black" src="../images_webp/aboutus/2015.webp"
+            loading="lazy" alt="">
+        </div>
+      </div>
+
+      <div id="2017" class="w-full px-[5%] h-[100vh] flex justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-center text-white/70 gap-4 lg:gap-10 text-[8px] lg:text-lg">
+          <p class="text-lg sm:text-3xl lg:text-6xl w-full text-start flex lg:hidden font-black text-white">A Mund të Bëhet Më Mirë?</p>
+          <p class="flex lg:hidden text- sm:text-sm">Po. Avalir 2 dëshmoi zhvillimin e vazhdueshëm të funksionalitetit dhe dizajnit. Me veçori të reja ergonomike, 15 pajisje dhe një sistem të avancuar për shampo, ai mundësoi pastrim më efikas dhe më të thellë në çdo sipërfaqe. Klientët vlerësojnë praktikën, komoditetin dhe qëndrueshmërinë e tij, ndërsa mbështetja e Vinkom mundëson përdorim të besueshëm dhe afatgjatë. Avalir 2 u bë një nga sistemet më të vlerësuara për higjienën e shtëpisë në tregun maqedonas, duke bashkuar inovacionin, cilësinë dhe besimin në pastrimin e përditshëm.</p>
+          <img class="h-3/5 sm:h-1/2 object-cover object-center w-full rounded-xl shadow-2xl shadow-black"
+            src="../images_webp/aboutus/2017.webp" loading="lazy" alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2017</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-6xl font-black text-white">A Mund të Bëhet Më Mirë?</p>
+          <p>Po. Avalir 2 dëshmoi zhvillimin e vazhdueshëm të funksionalitetit dhe dizajnit. Me veçori të reja ergonomike, 15 pajisje dhe një sistem të avancuar për shampo, ai mundësoi pastrim më efikas dhe më të thellë në çdo sipërfaqe. Klientët vlerësojnë praktikën, komoditetin dhe qëndrueshmërinë e tij, ndërsa mbështetja e Vinkom mundëson përdorim të besueshëm dhe afatgjatë. Avalir 2 u bë një nga sistemet më të vlerësuara për higjienën e shtëpisë në tregun maqedonas, duke bashkuar inovacionin, cilësinë dhe besimin në pastrimin e përditshëm.</p>
+        </div>
+      </div>
+
+      <div
+        class="w-[73.8%] mx-auto xs:w-[397px] sm:w-[422px] md:w-[505px]  h-2 bg-white/50 rounded-tl-xl rounded-br-xl block lg:hidden">
+      </div>
+
+      <div id="2022" class="w-full px-[5%] h-[100vh] flex flex-row-reverse lg:flex-row justify-between items-center">
+        <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-center gap-4 lg:gap-10">
+          <img class="h-3/5 sm:h-1/2 object-cover object-center w-full rounded-xl shadow-2xl shadow-black"
+            src="../images_webp/aboutus/2022.jpg" loading="lazy" alt="">
+          <div
+            class="w-full text-white/70 flex lg:hidden flex-col justify-center items-start gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-lg">
+            <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white">Tre Dekada Përkushtimi</p>
+            <p>Në vitin 2022, Vinkom festoi përvjetorin e tridhjetë si përfaqësuesi kryesor i Kirby në Maqedoni. Tre dekada punë të përkushtuar ndërtuan marrëdhënie të forta me klientët, zgjidhje inovative dhe kujdes të vazhdueshëm për përdoruesit. Duke bashkuar traditën, përvojën dhe teknologjinë moderne, Vinkom konfirmoi reputacionin e saj si partner i besueshëm që ofron vazhdimisht shërbim cilësor, mbështetje profesionale dhe zgjidhjet më të mira për higjienën e shtëpisë.</p>
+          </div>
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2022</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-6xl font-black text-white">Tre Dekada Përkushtimi</p>
+          <p>Në vitin 2022, Vinkom festoi përvjetorin e tridhjetë si përfaqësuesi kryesor i Kirby në Maqedoni. Tre dekada punë të përkushtuar ndërtuan marrëdhënie të forta me klientët, zgjidhje inovative dhe kujdes të vazhdueshëm për përdoruesit. Duke bashkuar traditën, përvojën dhe teknologjinë moderne, Vinkom konfirmoi reputacionin e saj si partner i besueshëm që ofron vazhdimisht shërbim cilësor, mbështetje profesionale dhe zgjidhjet më të mira për higjienën e shtëpisë.</p>
+        </div>
+      </div>
+
+      <div id="2024" class="w-full px-[5%] h-[100vh] flex flex-row-reverse lg:flex-row justify-between items-center">
+        <div class="w-[75%] lg:w-[40%] h-[80%] flex flex-col justify-center items-center gap-4 lg:gap-10">
+          <div
+            class="w-full text-white/70 flex lg:hidden flex-col justify-center items-start gap-4 lg:gap-10 text-[8px] sm:text-sm lg:text-lg">
+            <p class="text-lg sm:text-3xl lg:text-6xl font-black text-white">Një Ardhje e Re</p>
+            <p>Në vitin 2024, Kirby prezantoi krenarinë e saj më të re—Kirby Avalir Platinum—si pjesë e traditës së gjatë të cilësisë dhe inovacionit. Ky “Kirby më i lehtë deri tani” solli mjeshtëri të jashtëzakonshme, thithje të fuqishme dhe dizajn modern të krijuar për shtëpitë e sotme. Si distributor i autorizuar, Vinkom e prezantoi shpejt Platinum në tregun maqedonas përmes demonstrimeve në shtëpi, të mbështetura nga aksesorë dhe servis origjinal. Edhe një herë, Vinkom konfirmoi përkushtimin për t’u sjellë klientëve më të rejat dhe më të mirat në higjienën e shtëpisë.</p>
+          </div>
+          <img src="../images_webp/aboutus/2024.webp"
+            class="h-3/5 sm:h-1/2 w-full object-cover object-center rounded-xl shadow-2xl shadow-black" loading="lazy"
+            alt="">
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-end items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2024</div>
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+        </div>
+        <div
+          class="w-[40%] text-white/70 hidden lg:flex flex-col justify-center items-start gap-10 text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-5xl xl:text-6xl font-black text-white">Një Ardhje e Re</p>
+          <p>Në vitin 2024, Kirby prezantoi krenarinë e saj më të re—Kirby Avalir Platinum—si pjesë e traditës së gjatë të cilësisë dhe inovacionit. Ky “Kirby më i lehtë deri tani” solli mjeshtëri të jashtëzakonshme, thithje të fuqishme dhe dizajn modern të krijuar për shtëpitë e sotme. Si distributor i autorizuar, Vinkom e prezantoi shpejt Platinum në tregun maqedonas përmes demonstrimeve në shtëpi, të mbështetura nga aksesorë dhe servis origjinal. Edhe një herë, Vinkom konfirmoi përkushtimin për t’u sjellë klientëve më të rejat dhe më të mirat në higjienën e shtëpisë.</p>
+        </div>
+      </div>
+
+      <div id="2026" class="w-full px-[5%] h-[100vh] flex flex-row-reverse lg:flex-row justify-between items-center">
+        <div
+          class="w-[75%] lg:w-[40%] h-[80%] text-white/70 flex flex-col justify-center items-start gap-10 text-[8px] sm:text-sm lg:text-base 2xl:text-xl 3xl:text-2xl">
+          <p class="text-lg sm:text-3xl lg:text-5xl xl:text-6xl font-black text-white">Në Hap Me Kohën</p>
+          <p>Sot, Vinkom mbetet një forcë udhëheqëse në tregun e Kirby në Maqedoni. Përmes mbështetjes së vazhdueshme, servisit të shpejtë, pjesëve origjinale të disponueshme dhe modeleve moderne, ne ruajmë besimin dhe besnikërinë e klientëve tanë. Ndërsa bota ndryshon, standardet tona mbeten të njëjta: çdo klient i ri merr të njëjtën cilësi dhe kujdes si klientët që nga fillimi. Rrjeti ynë vazhdon të rritet, ndërsa klientët e sotëm dhe të ardhshëm e njohin Vinkom si partner të besueshëm për pastrim, mbështetje dhe komoditet afatgjatë.</p>
+        </div>
+        <div class="h-full w-[20%] flex flex-col justify-start items-center">
+          <div class="h-[46vh] w-2 lg:w-2 bg-white/50"></div>
+          <div
+            class="rounded-full w-[8vh] lg:w-[12vh] h-[8vh] lg:h-[12vh] border-4 lg:border-8 flex justify-center items-center border-white/50 bg-transparent font-black text-xs xs:text-sm sm:text-sm md:text-base lg:text-2xl text-white">
+            2026</div>
+        </div>
+        <div class="w-[40%] hidden lg:flex justify-center items-center">
+          <img class="h-full w-full rounded-xl shadow-2xl shadow-black" src="" loading="lazy" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="w-full h-[10vh] bg-gradient-to-b from-transparent to-black"></div>
+
+  <button id="backToTop" aria-label="Back to top" aria-hidden="true"
+    class="fixed right-[5%] bottom-[5%]  z-60 bg-[#484848] hover:bg-[#303030] border border-white text-white rounded-full py-1 px-[10px] xs:py-2 xs:px-4 md:py-3 md:px-4 lg:py-2 lg:px-3 text-lg xs:text-2xl md:text-3xl lg:text-xl 2xl:text-2xl shadow-2xl transition-all duration-300 transform scale-95 opacity-0 pointer-events-none">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  
+
+  
+
+
+  <script>
+    (function () {
+      const button = document.getElementById('infoDropdownButton');
+      const menu = document.getElementById('infoDropdownMenu');
+      const chevron = document.getElementById('infoChevron');
+      if (!button || !menu) return;
+
+      const openMenu = () => {
+        menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'true');
+        button.classList.remove('bg-transparent');
+        button.classList.add('bg-black/80', 'text-white');
+        if (chevron) chevron.classList.add('rotated');
+      };
+
+      const closeMenu = () => {
+        menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('bg-black/80', 'text-white');
+        button.classList.add('bg-transparent');
+        if (chevron) chevron.classList.remove('rotated');
+      };
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('opacity-0')) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+
+      document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+          closeMenu();
+        }
+      });
+    })();
+
+    (function () {
+      const button = document.getElementById('langDropdownButton');
+      const menu = document.getElementById('langDropdownMenu');
+      const chevron = document.getElementById('langChevron');
+      if (!button || !menu) return;
+
+      const openMenu = () => {
+        menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'true');
+        button.classList.remove('bg-transparent');
+        button.classList.add('text-white');
+        if (chevron) chevron.classList.add('rotated');
+      };
+
+      const closeMenu = () => {
+        menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('bg-black/90', 'text-white');
+        button.classList.add('bg-transparent');
+        if (chevron) chevron.classList.remove('rotated');
+      };
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('opacity-0')) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+
+      document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+          closeMenu();
+        }
+      });
+    })();
+
+    (function () {
+      const button = document.getElementById('mobileInfoDropdownButton');
+      const menu = document.getElementById('mobileInfoDropdownMenu');
+      const chevron = document.getElementById('mobileInfoChevron');
+      if (!button || !menu) return;
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('open')) {
+          menu.classList.remove('open');
+          chevron.classList.remove('rotated');
+          button.setAttribute('aria-expanded', 'false');
+        } else {
+          menu.classList.add('open');
+          chevron.classList.add('rotated');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+    })();
+
+    (function () {
+      const button = document.getElementById('mobileLangDropdownButton');
+      const menu = document.getElementById('mobileLangDropdownMenu');
+      if (!button || !menu) return;
+
+      const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('open')) {
+          menu.classList.remove('open');
+          button.setAttribute('aria-expanded', 'false');
+        } else {
+          menu.classList.add('open');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      };
+
+      button.addEventListener('click', toggleMenu);
+      document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+          menu.classList.remove('open');
+          button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      const toggle = document.getElementById('mobileMenuToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      const triggered = document.getElementById('triggeredMenu');
+      if (!toggle || !mobileNav || !triggered) return;
+
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const opened = triggered.classList.toggle('open');
+        if (opened) {
+          mobileNav.classList.add('mobile-open');
+        } else {
+          mobileNav.classList.remove('mobile-open');
+        }
+      });
+
+      // close when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!mobileNav.contains(e.target) && triggered.classList.contains('open')) {
+          triggered.classList.remove('open');
+          mobileNav.classList.remove('mobile-open');
+        }
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      const nav = document.getElementById('nav');
+      const spacer = document.getElementById('nav-spacer');
+      if (!nav) return;
+
+      nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
+      nav.style.willChange = 'transform, opacity';
+      nav.style.transform = nav.style.transform || 'translateY(0)';
+      nav.style.opacity = nav.style.opacity || '1';
+
+      function recompute() {
+        try {
+          const h = Math.ceil(nav.getBoundingClientRect().height);
+          if (spacer) spacer.style.height = h + 'px';
+        } catch (e) { }
+      }
+      recompute();
+      window.addEventListener('resize', recompute, { passive: true });
+
+      let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      window.addEventListener('scroll', function () {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop + 6) {
+          nav.style.transform = 'translateY(-' + (nav.offsetHeight + 4) + 'px)';
+          nav.style.opacity = '0';
+        } else if (scrollTop < lastScrollTop - 6) {
+          nav.style.transform = 'translateY(0)';
+          nav.style.opacity = '1';
+        } else {
+          nav.style.transform = 'translateY(0)';
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      });
+    })();
+  </script>
+
+    <div id="cookie-container"></div>
+    <div id="cart-badge-container"></div>
+
+    <div id="footer-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    (function () {
+      const target = document.getElementById('2014');
+      if (!target || typeof confetti !== 'function') return;
+      let fired = false;
+
+      function getNormalizedOriginFromLeftBox(section) {
+        // select the left column (first direct child)
+        const left = section.querySelector(':scope > div:nth-child(1)');
+        if (!left) return { x: 0.5, y: 0.6 }; // fallback center-ish
+        const r = left.getBoundingClientRect();
+        const cx = r.left + r.width / 2;
+        const cy = r.top + r.height / 2;
+        return { x: Math.max(0, Math.min(1, cx / window.innerWidth)), y: Math.max(0, Math.min(1, cy / window.innerHeight)) };
+      }
+
+      const o = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !fired) {
+            fired = true;
+            const origin = getNormalizedOriginFromLeftBox(target);
+            // main burst (from left image center)
+            confetti({ particleCount: 200, spread: 70, origin });
+            // follow-up softer burst
+            setTimeout(() => confetti({ particleCount: 120, spread: 130, origin }), 350);
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.5 });
+
+      o.observe(target);
+    })();
+  </script>
+  <script>
+    // Back to Top button logic (same as index.html)
+    (function () {
+      const btn = document.getElementById('backToTop');
+      if (!btn) return;
+      let visible = false;
+      const SHOW_AFTER = 300; // px
+      function show() {
+        if (visible) return;
+        visible = true;
+        btn.setAttribute('aria-hidden', 'false');
+        btn.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+        btn.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
+      }
+      function hide() {
+        if (!visible) return;
+        visible = false;
+        btn.setAttribute('aria-hidden', 'true');
+        btn.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+        btn.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+      }
+      if (window.pageYOffset > SHOW_AFTER) show();
+      window.addEventListener('scroll', function () {
+        if (window.pageYOffset > SHOW_AFTER) show(); else hide();
+      }, { passive: true });
+      btn.addEventListener('click', function () {
+        try { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        catch (e) { window.scrollTo(0, 0); }
+      });
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); }
+      });
+    })();
+  </script>
+
+  
+
+  <script src="../cookie.js"></script>
+<script src="../assets/js/includes.js"></script>
+</body>
+
+</html>

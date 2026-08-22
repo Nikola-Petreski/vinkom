@@ -83,11 +83,13 @@ function executeFooterScripts(container) {
 document.addEventListener("DOMContentLoaded", () => {
   const currentPath = window.location.pathname;
   const isEnglish = currentPath.includes('/en/');
-  const isNestedLocale = isEnglish || currentPath.includes('/al/');
+  const isAlbanian = currentPath.includes('/al/');
+  const isNestedLocale = isEnglish || isAlbanian;
   const basePath = isNestedLocale ? '../' : '';
-  const includesPath = isEnglish
-    ? basePath + 'en/includes/'
-    : basePath + 'includes/';
+  const locale = isEnglish ? 'en' : isAlbanian ? 'al' : '';
+  const includesPath = locale
+    ? basePath + locale + '/includes/'
+    : 'includes/';
 
   // Load cart logic script early (before other includes that might need it)
   const cartScript = document.createElement('script');

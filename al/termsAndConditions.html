@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="al">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kushtet dhe afatet për përdorimin e faqes KIRBY, të drejtat, detyrimet dhe informacioni për klientët.">
+    <title>KIRBY | Kushtet dhe Rregullat</title>
+    <link href="../output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gidole&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4baf646c88.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://gidole.github.io/GidoleFont/gidoleFont.css">
+    <link rel="icon" type="image/png" href="../images_webp/logoW.webp">
+
+    <style>
+        @import url('https://gidole.github.io/GidoleFont/gidoleFont.css');
+
+        .font-gidole {
+            font-family: 'Gidole', sans-serif !important;
+        }
+        .modal-overlay { transition: opacity 200ms ease; opacity: 0; pointer-events: none; }
+        .modal-overlay.visible { opacity: 1; pointer-events: auto; background-color: rgba(0,0,0,0.45); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+        .modal-content { transform: translateY(2vh) scale(0.98); opacity: 0; transition: transform 200ms cubic-bezier(0.2,0,0.2,1), opacity 200ms ease; }
+        .modal-content.show { transform: translateY(0) scale(1); opacity: 1; }
+        @media (max-width: 768px){ .modal-content { flex-direction: column; padding: 3% !important; } }
+        /* Custom scrollbar for modals */
+        .modal-content::-webkit-scrollbar { width: 10px; }
+        .modal-content::-webkit-scrollbar-track { background: transparent; }
+        .modal-content::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.12); border-radius: 9999px; border: 2px solid transparent; background-clip: padding-box; }
+        .modal-content { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.12) transparent; }
+        #section-progress-container { position: fixed; bottom: 0; left: 0; width: 100%; height: 4px; background: rgba(255,255,255,0.40); z-index: 9999; pointer-events: none; }
+        #section-progress-bar { width: 0%; height: 100%; background: #fff; transition: width 100ms linear; }
+    </style>
+</head>
+        <style>
+.reveal-letters span {
+    opacity: 0;
+    transform: translateY(20px);
+    display: inline-block;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-visible span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#infoDropdownMenu {
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+}
+
+#infoChevron,
+#langChevron {
+    display: inline-block;
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: transform .25s ease, opacity .15s ease;
+}
+
+#infoDropdownButton:hover #infoChevron,
+#langDropdownButton:hover #langChevron {
+    opacity: 1;
+}
+
+#infoChevron.rotated,
+#langChevron.rotated {
+    transform: rotate(180deg);
+}
+
+#mobileInfoChevron {
+    display: inline-block;
+    transition: transform .25s ease;
+}
+
+#mobileInfoChevron.rotated {
+    transform: rotate(180deg);
+}
+
+#mobileInfoDropdownMenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+}
+
+#mobileInfoDropdownMenu.open {
+    max-height: 500px;
+}
+
+#mobileLangDropdownMenu {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px) scaleY(0.98);
+    transform-origin: top;
+    transition: max-height .28s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1);
+}
+
+#mobileLangDropdownMenu.open {
+    max-height: 240px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scaleY(1);
+}
+
+/* Triggered menu (mobile) smooth open/close */
+#triggeredMenu {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: max-height .32s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1);
+}
+
+#triggeredMenu.open {
+    max-height: 800px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#mobileNav.mobile-open {
+    background-color: rgba(0,0,0,0.25) !important;
+}
+        </style>
+</head>
+<body class="overflow-x-hidden font-gidole bg-[#484848] w-full relative">
+
+    <div id="nav-container"></div>
+
+    <div id="mobile-nav-container"></div>
+
+
+    <div id="desktopNavSpacer" class="w-full hidden lg:block my-[1.5%]"><div class="w-full h-[10vh] max-h-[110px]"></div></div>
+    <div id="mobileNavSpacer" class="py-[2vh] block lg:hidden"><div class="w-full py-[5%] md:py-[3%]"><div class="w-full h-[28px] xs:h-[32px] md:h-[35px]"></div></div></div>
+
+        <script>
+(function(){
+    const button = document.getElementById('infoDropdownButton');
+    const menu = document.getElementById('infoDropdownMenu');
+    const chevron = document.getElementById('infoChevron');
+    if (!button || !menu) return;
+
+    const openMenu = () => {
+        menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'true');
+        button.classList.remove('bg-transparent');
+        button.classList.add('bg-black/80', 'text-white');
+        if (chevron) chevron.classList.add('rotated');
+    };
+
+    const closeMenu = () => {
+        menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('bg-black/80', 'text-white');
+        button.classList.add('bg-transparent');
+        if (chevron) chevron.classList.remove('rotated');
+    };
+
+    const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('opacity-0')) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    };
+
+    button.addEventListener('click', toggleMenu);
+
+    document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+            closeMenu();
+        }
+    });
+})();
+
+(function(){
+    const button = document.getElementById('langDropdownButton');
+    const menu = document.getElementById('langDropdownMenu');
+    const chevron = document.getElementById('langChevron');
+    if (!button || !menu) return;
+
+    const openMenu = () => {
+        menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'true');
+        button.classList.remove('bg-transparent');
+        button.classList.add('text-white');
+        if (chevron) chevron.classList.add('rotated');
+    };
+
+    const closeMenu = () => {
+        menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('bg-black/90', 'text-white');
+        button.classList.add('bg-transparent');
+        if (chevron) chevron.classList.remove('rotated');
+    };
+
+    const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('opacity-0')) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    };
+
+    button.addEventListener('click', toggleMenu);
+
+    document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+            closeMenu();
+        }
+    });
+})();
+
+(function(){
+    const button = document.getElementById('mobileInfoDropdownButton');
+    const menu = document.getElementById('mobileInfoDropdownMenu');
+    const chevron = document.getElementById('mobileInfoChevron');
+    if (!button || !menu) return;
+
+    const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('open')) {
+            menu.classList.remove('open');
+            chevron.classList.remove('rotated');
+            button.setAttribute('aria-expanded', 'false');
+        } else {
+            menu.classList.add('open');
+            chevron.classList.add('rotated');
+            button.setAttribute('aria-expanded', 'true');
+        }
+    };
+
+    button.addEventListener('click', toggleMenu);
+})();
+
+(function(){
+    const button = document.getElementById('mobileLangDropdownButton');
+    const menu = document.getElementById('mobileLangDropdownMenu');
+    if (!button || !menu) return;
+
+    const toggleMenu = (event) => {
+        event.stopPropagation();
+        if (menu.classList.contains('open')) {
+            menu.classList.remove('open');
+            button.setAttribute('aria-expanded', 'false');
+        } else {
+            menu.classList.add('open');
+            button.setAttribute('aria-expanded', 'true');
+        }
+    };
+
+    button.addEventListener('click', toggleMenu);
+    document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !menu.contains(event.target)) {
+            menu.classList.remove('open');
+            button.setAttribute('aria-expanded', 'false');
+        }
+    });
+})();
+
+(function(){
+    const toggle = document.getElementById('mobileMenuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const triggered = document.getElementById('triggeredMenu');
+    if (!toggle || !mobileNav || !triggered) return;
+
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const opened = triggered.classList.toggle('open');
+        if (opened) {
+            mobileNav.classList.add('mobile-open');
+        } else {
+            mobileNav.classList.remove('mobile-open');
+        }
+    });
+
+    // close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mobileNav.contains(e.target) && triggered.classList.contains('open')) {
+            triggered.classList.remove('open');
+            mobileNav.classList.remove('mobile-open');
+        }
+    });
+})();
+</script>
+
+    <div class="px-[5%] w-full bg-gradient-to-b from-transparent to-black/50">
+        <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-white/70 text-sm xs:text-lg md:text-xl xl:text-2xl lg:px-[2%]">
+            <p class="text-2xl xs:text-4xl md:text-5xl xl:text-6xl font-black text-white">Kushtet e Përdorimit</p><br>
+        
+            <p class="text-white">Përditësimi i fundit: 19.03.2026</p><br>
+            <p>Mirë se vini në faqen e internetit vinkom.com.mk.</p><br>
+            <p>Duke përdorur këtë faqe interneti, ju pranoni kushtet e mëposhtme të përdorimit.</p><br>
+        
+            <p class="text-white">1. Informacionet e Kompanisë</p><br>
+        
+            <p>Kjo faqe interneti operohet nga Vinkom DOOEL</p>
+            <p>Shteti: Republika e Maqedonisë së Veriut</p>
+            <p>Qyteti: Shkup</p>
+            <p>Adresa: Partizanski Odredi 165</p>
+            <p>Email: customercare@vinkom.com.mk</p>
+            <p>Telefon: 02 246 1144</p>
+            <p>Vinkom DOOEL është distributori zyrtar i produkteve Kirby në Maqedoninë e Veriut.</p><br>
+        
+            <p class="text-white">2. Qëllimi i Faqes së Internetit</p><br>
+            <p>Faqja e internetit ka qëllim informues dhe promovues dhe ju mundëson të:</p>
+            <p>- shfletoni produktet Kirby</p>
+            <p>- caktoni një prezantim</p>
+            <p>- dërgoni pyetje</p>
+            <p>- kërkoni ndërrimin e një pajisjeje të vjetër</p>
+            <p>- regjistroheni për të marrë informacione marketingu</p><br>
+        
+            <p class="text-white">3. Saktësia e Informacioneve</p><br>
+        
+            <p>Ne përpiqemi t'i mbajmë të gjitha informacionet në faqe të sakta dhe të përditësuara.</p>
+            <p>Megjithatë, Vinkom DOOEL nuk garanton që të gjitha informacionet janë plotësisht pa gabime ose gjithmonë të përditësuara.</p>
+            <p>Kompania rezervon të drejtën të ndryshojë informacionet, përmbajtjen dhe ofertat pa njoftim paraprak.</p><br>
+        
+            <p class="text-white">4. Shërbimet e Jashtme</p><br>
+        
+            <p>Në raste të caktuara, faqja e internetit mund të përmbajë lidhje drejt shërbimeve të jashtme përmes të cilave kryhet procesi i blerjes.</p>
+            <p>Vinkom DOOEL nuk është përgjegjës për përmbajtjen, politikat e privatësisë ose mënyrën e përpunimit të të dhënave në këto platforma të jashtme.</p><br>
+        
+            <p class="text-white">5. Pronësia Intelektuale</p><br>
+        
+            <p>E gjithë përmbajtja në këtë faqe interneti, duke përfshirë:</p>
+            <p>- tekstet</p>
+            <p>- fotografitë</p>
+            <p>- videot</p>
+            <p>- elementet grafike</p>
+            <p>- dizajnin</p>
+            <p>është e mbrojtur me të drejta autoriale.</p><br>
+            <p>Kopjimi, shpërndarja ose përdorimi i kësaj përmbajtjeje pa lejen paraprake me shkrim nga Vinkom DOOEL është i ndaluar.</p><br>
+        
+            <p class="text-white">6. Kufizimi i Përgjegjësisë</p><br>
+        
+            <p>Vinkom DOOEL nuk është përgjegjës për:</p>
+            <p>- problemet teknike të faqes së internetit</p>
+            <p>- mosdisponueshmërinë e përkohshme të faqes</p>
+            <p>- humbjen e të dhënave për shkak të incidenteve teknike ose të sigurisë</p><br>
+        
+            <p>Përdorimi i faqes së internetit bëhet me përgjegjësinë e vetë përdoruesit.</p><br>
+        
+            <p class="text-white">7. Ndryshimet e Kushteve</p><br>
+        
+            <p>Vinkom DOOEL rezervon të drejtën t'i ndryshojë këto kushte në çdo kohë.</p><br>
+        
+            <p>Çdo ndryshim do të publikohet në këtë faqe.</p><br>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            const nav = document.getElementById('nav');
+            const spacer = document.getElementById('nav-spacer');
+            if(!nav) return;
+
+            // ensure smooth transition
+            nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
+            nav.style.willChange = 'transform, opacity';
+            nav.style.transform = nav.style.transform || 'translateY(0)';
+            nav.style.opacity = nav.style.opacity || '1';
+
+            // compute and set spacer height (px) so layout doesn't jump
+            function recompute(){
+                try{
+                    const h = Math.ceil(nav.getBoundingClientRect().height);
+                    if(spacer) spacer.style.height = h + 'px';
+                }catch(e){}
+            }
+            recompute();
+            window.addEventListener('resize', recompute, {passive:true});
+
+            let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+            let ticking = false;
+
+            function hideNav(){
+                const h = Math.ceil(nav.getBoundingClientRect().height) + 4;
+                nav.style.transform = 'translateY(-' + h + 'px)';
+                nav.style.opacity = '0';
+            }
+            function showNav(){
+                nav.style.transform = 'translateY(0)';
+                nav.style.opacity = '1';
+            }
+
+            function onScroll(){
+                const current = window.pageYOffset || document.documentElement.scrollTop;
+                if(current > lastScroll + 6){
+                    hideNav();
+                } else if(current < lastScroll - 6){
+                    showNav();
+                }
+                lastScroll = current <= 0 ? 0 : current;
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function(){
+                if(!ticking){ window.requestAnimationFrame(onScroll); ticking = true; }
+            }, {passive:true});
+        })();
+
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+        const closeMobileNav = document.getElementById('closeMobileNav');
+
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.remove('translate-x-full');
+            mobileNavBackdrop.classList.remove('hidden');
+        });
+
+        closeMobileNav.addEventListener('click', () => {
+            mobileNav.classList.add('translate-x-full');
+            mobileNavBackdrop.classList.add('hidden');
+        });
+
+        // Close mobile nav on backdrop click
+        mobileNavBackdrop.addEventListener('click', () => {
+            mobileNav.classList.add('translate-x-full');
+            mobileNavBackdrop.classList.add('hidden');
+        });
+
+        // Close mobile nav on link click
+        mobileNav.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                mobileNav.classList.add('translate-x-full');
+                mobileNavBackdrop.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <div class="w-full h-[16vh] bg-gradient-to-b from-black/50 to-black"></div>
+
+    <div id="cookie-container"></div>
+    <div id="cart-badge-container"></div>
+
+    <div id="footer-container"></div>
+
+    <script>
+    (function(){
+      const target = document.getElementById('2014');
+      if(!target || typeof confetti !== 'function') return;
+      let fired = false;
+
+      function getNormalizedOriginFromLeftBox(section){
+        // select the left column (first direct child)
+        const left = section.querySelector(':scope > div:nth-child(1)');
+        if(!left) return { x: 0.5, y: 0.6 }; // fallback center-ish
+        const r = left.getBoundingClientRect();
+        const cx = r.left + r.width / 2;
+        const cy = r.top + r.height / 2;
+        return { x: Math.max(0, Math.min(1, cx / window.innerWidth)), y: Math.max(0, Math.min(1, cy / window.innerHeight)) };
+      }
+
+      const o = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting && !fired){
+            fired = true;
+            const origin = getNormalizedOriginFromLeftBox(target);
+            // main burst (from left image center)
+            confetti({ particleCount: 200, spread: 70, origin });
+            // follow-up softer burst
+            setTimeout(() => confetti({ particleCount: 120, spread: 130, origin }), 350);
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.5 });
+
+      o.observe(target);
+    })();
+    </script>
+    <script>
+    (function(){
+      const targetSection = Array.from(document.querySelectorAll('div.bg-gradient-to-b')).find(el => el.classList.contains('px-[5%]') && el.classList.contains('w-full') && el.classList.contains('from-transparent') && el.classList.contains('to-black/50'));
+      if(!targetSection) return;
+
+      const container = document.createElement('div');
+      container.id = 'section-progress-container';
+      const bar = document.createElement('div');
+      bar.id = 'section-progress-bar';
+      container.appendChild(bar);
+      document.body.appendChild(container);
+
+      function updateProgress(){
+        const sectionTop = targetSection.getBoundingClientRect().top + window.scrollY;
+        const sectionHeight = targetSection.offsetHeight;
+        const maxScroll = Math.max(1, sectionHeight - window.innerHeight);
+        const scrolled = window.scrollY - sectionTop;
+        const percent = Math.max(0, Math.min(100, (scrolled / maxScroll) * 100));
+        bar.style.width = percent + '%';
+      }
+
+      window.addEventListener('scroll', updateProgress, {passive: true});
+      window.addEventListener('resize', updateProgress);
+      updateProgress();
+    })();
+    </script>
+
+    
+
+<script src="../cookie.js"></script>
+
+  
+
+
+
+<script src="../assets/js/includes.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

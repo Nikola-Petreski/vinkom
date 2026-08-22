@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="al">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Review your selected Kirby products and complete your order quickly and easily.">
-  <title>KIRBY | Cart</title>
+  <meta name="description" content="Rishikoni produktet Kirby që keni zgjedhur dhe përfundoni porosinë tuaj shpejt dhe lehtë.">
+  <title>KIRBY | Shportë</title>
   <link href="../output.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -147,21 +147,21 @@
       <form id="sellForm" method="POST" action="https://api.web3forms.com/submit"
         class="w-full lg:w-[75%] h-full bg-black/40 justify-between items-center rounded-t-xl lg:rounded-tr-none lg:rounded-bl-xl flex flex-col lg:flex-row p-[5%] lg:p-[2%] gap-3 lg:gap-0">
         <div id="info" class="w-full lg:w-[25%] h-full flex flex-col justify-between gap-1">
-          <h1 class="text-3xl xs:text-5xl lg:text-4xl md:text-6xl 3xl:text-6xl text-white/70 mb-[10%]">Cart</h1>
-          <label class="text-white px-[3%]">Name</label>
-          <input name="name" type="text" required placeholder="Name"
+          <h1 class="text-3xl xs:text-5xl lg:text-4xl md:text-6xl 3xl:text-6xl text-white/70 mb-[10%]">Shporta</h1>
+          <label class="text-white px-[3%]">Emri</label>
+          <input name="name" type="text" required placeholder="Emri"
             class="w-full rounded-xl mb-[2%] px-[5%] xs:px-[3%] py-[3%] bg-black/50 text-white outline-none border-transparent border focus:border-white/20 focus:bg-black/70">
-          <label class="text-white px-[3%]">Surname</label>
-          <input name="surname" type="text" required placeholder="Surname"
+          <label class="text-white px-[3%]">Mbiemri</label>
+          <input name="surname" type="text" required placeholder="Mbiemri"
             class="w-full rounded-xl mb-[2%] px-[5%] xs:px-[3%] py-[3%] bg-black/50 text-white outline-none border-transparent border focus:border-white/20 focus:bg-black/70">
-          <label class="text-white px-[3%]">Email</label>
+          <label class="text-white px-[3%]">Emaili</label>
           <input name="email" type="email" required placeholder="user@example.com"
             class="w-full rounded-xl mb-[2%] px-[5%] xs:px-[3%] py-[3%] bg-black/50 text-white outline-none border-transparent border focus:border-white/20 focus:bg-black/70">
-          <label class="text-white px-[3%]">Phone</label>
+          <label class="text-white px-[3%]">Telefoni</label>
           <input name="phone" type="tel" required placeholder="07X-XXX-XXX"
             class="w-full rounded-xl px-[5%] xs:px-[3%] py-[3%] bg-black/50 text-white outline-none border-transparent border focus:border-white/20 focus:bg-black/70">
-          <label class="text-white px-[3%]">Address</label>
-          <textarea name="street" type="" required placeholder="Street, Number, City"
+          <label class="text-white px-[3%]">Adresa</label>
+          <textarea name="street" type="" required placeholder="Rruga, numri, qyteti"
             class="w-full rounded-xl px-[5%] xs:px-[3%] py-[3%] bg-black/50 text-white outline-none border-transparent border focus:border-white/20 focus:bg-black/70 h-full overflow-y-scroll custom-scrollbar"></textarea>
         </div>
         <div id="cart" class="w-full lg:w-[72%] xl:w-[] h-full flex flex-col gap-2 text-white">
@@ -172,13 +172,13 @@
             </div>
             <div
               class="flex justify-between items-center w-full text-base xs:text-lg sm:text-xl md:text-2xl lg:text-xs 2xl:text-base">
-              <button type="button" id="addProduct" class="bg-white/10 px-3 py-1 rounded-xl">Add Product</button>
+              <button type="button" id="addProduct" class="bg-white/10 px-3 py-1 rounded-xl">Shto produkt</button>
               <p id="finalPrice">1100 ден.</p>
             </div>
           </div>
 
           <input type="hidden" name="access_key" value="f920a926-766c-47f4-83b9-6195fa11fc84">
-          <input type="hidden" name="subject" value="Нарачка ЕН - Нарачка од корисник">
+          <input type="hidden" name="subject" value="Нарачка АЛ - Нарачка од корисник">
           <input type="hidden" name="products" value="">
           <input type="hidden" name="finalPrice" value="">
           <input type="hidden" name="termsAccepted" value="false">
@@ -188,11 +188,11 @@
             <div
               class="flex flex-col justify-center gap-1 lg:gap-0 2xl:gap-2 w-full text-xs xs:text-sm md:text-lg lg:text-xs xl:text-sm 3xl:text-base text-white/70">
               <div class="flex gap-1"><input type="checkbox" required>
-                <p>I agree with the <a href="privacyPolicy.html" class="text-white">Privacy Policy</a> and the<a
-                    href="termsAndConditions.html" class="text-white"> Terms and Conditions</a></p>
+                <p>Pranoj <a href="privacyPolicy.html" class="text-white">Politikën e Privatësisë</a> dhe<a
+                  href="termsAndConditions.html" class="text-white"> Kushtet dhe Rregullat</a></p>
               </div>
               <div class="flex gap-1"><input type="checkbox" name="newsletter_subscription" value="yes">
-                <p>I want to receive information, news, and promotions by email.</p>
+                <p>Dëshiroj të marr informacione, lajme dhe oferta promocionale me email.</p>
               </div>
             </div>
           </div>
@@ -203,9 +203,9 @@
       </form>
 
       <div id="inform" class="w-full h-full lg:w-[25%] gap-3 lg:gap-0 bg-white/50 rounded-b-xl lg:rounded-bl-none lg:rounded-tr-xl p-[5%] lg:p-[2%] flex flex-col justify-around text-sm xs:text-base sm:text-lg md:text-xl lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl">
-        <p class=" text-black/70 hover:text-black transition-all duration-300">After placing your order, we will contact you by phone or email to confirm it. Your invoice will be sent to the email address you provide.</p>
-        <p class=" text-black/70 hover:text-black transition-all duration-300">Delivery within Skopje is free for orders over 1,000 denars. For orders under 1,000 denars, you can pick up your products from our sales center in Gjorče Petrov, at <a target="_blank" href="https://www.google.com/maps?q=42.0085833,21.3672778">Partizanski Odredi Blvd. 165.</a></p>
-        <p class=" text-black/70 hover:text-black transition-all duration-300">For deliveries outside Skopje, the delivery fee is paid directly to the courier by the customer and depends on the shipment. Delivery is free for orders over 1,000 denars.</p>
+        <p class=" text-black/70 hover:text-black transition-all duration-300">Pas dërgimit të porosisë, do t'ju kontaktojmë me telefon ose email për ta konfirmuar. Fatura do të dërgohet në adresën e emailit që jepni.</p>
+        <p class=" text-black/70 hover:text-black transition-all duration-300">Dorëzimi në Shkup është falas për porosi mbi 1.000 denarë. Për porosi nën 1.000 denarë, produktet mund t'i merrni në qendrën tonë të shitjes në Gjorçe Petrov, në <a target="_blank" href="https://www.google.com/maps?q=42.0085833,21.3672778">Bulevardin Partizanski Odredi 165.</a></p>
+        <p class=" text-black/70 hover:text-black transition-all duration-300">Për dorëzimet jashtë Shkupit, tarifa i paguhet drejtpërdrejt korrierit nga klienti dhe varet nga dërgesa. Dorëzimi është falas për porosi mbi 1.000 denarë.</p>
       </div>
     </div>
   </div>
@@ -235,7 +235,7 @@
       const submitButton = sellForm ? sellForm.querySelector('input[type="submit"]') : null;
       function showEmptyCartSubmitTooltip() {
         if (submitButton && submitButton.disabled) {
-          showTooltip(submitButton, 'Please add at least one product to your cart before submitting your order.');
+          showTooltip(submitButton, 'Shtoni të paktën një produkt në shportë para se të dërgoni porosinë.');
         }
       }
       if (submitButton) {
@@ -300,7 +300,7 @@
         const cart = loadCart();
         productList.innerHTML = '';
         if (!cart.length) {
-          productList.innerHTML = '<p class="text-white/70 p-2">Your cart is empty.</p>';
+          productList.innerHTML = '<p class="text-white/70 p-2">Shporta juaj është bosh.</p>';
           finalPriceP.textContent = formatPrice(0);
         } else {
           let total = 0;
@@ -406,7 +406,7 @@
         addProductBtn.addEventListener('click', (e) => {
           e.stopPropagation();
           if (addProductBtn.dataset.disabled === 'true') {
-            showTooltip(addProductBtn, 'The maximum number of different products in your cart has been reached.');
+            showTooltip(addProductBtn, 'U arrit numri maksimal i produkteve të ndryshme në shportë.');
             return;
           }
           let existing = document.getElementById('product-dropdown');
@@ -526,7 +526,7 @@
 
       function buildProductsSummary() {
         const cart = loadCart();
-        if (!cart.length) return 'The cart is empty';
+        if (!cart.length) return 'Shporta është bosh';
         return cart.map((item, index) => `${index + 1}. ${item.name} — Qty: ${item.qty || 1} — Price: ${item.price}`).join('\n');
       }
 
@@ -539,7 +539,7 @@
           e.preventDefault();
           const cart = loadCart();
           if (!cart.length) {
-            showTooltip(submitButton || sellForm, 'Please add at least one product to your cart before submitting your order.');
+            showTooltip(submitButton || sellForm, 'Shtoni të paktën një produkt në shportë para se të dërgoni porosinë.');
             return;
           }
           const termsCheckbox = sellForm.querySelector('input[type="checkbox"][required]');
@@ -559,7 +559,7 @@
             .then(data => {
               if (data.success || data.message === 'SUCCESS') { // web3forms success response
                 clearCart();
-                window.location.href = 'https://vinkom-mu.vercel.app/en/thankyouExtras.html';
+                window.location.href = 'https://vinkom-mu.vercel.app/al/thankyouExtras.html';
               } else {
                 console.error('Web3Forms submission error', data);
                 sellForm.submit();

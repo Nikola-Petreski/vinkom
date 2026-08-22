@@ -1,0 +1,74 @@
+{
+  "expert_blocks": [
+    {
+      "id": "hidden-allergen-buildup",
+      "expert": {
+        "name": "John",
+        "surname": "McKeon",
+        "title_en": "MD, Drejtor Ekzekutiv",
+        "organization_en": "Allergy Standards Ltd.",
+        "image": "../images_webp/platinumHTML/awareness/person1.webp",
+        "source_publication": "Real Simple",
+        "source_link": "https://www.realsimple.com/what-is-slow-vacuuming-11916250"
+      },
+      "quotes_en": [
+        "\"Alergjenët kanë tendencë të grumbullohen në vendet ku grumbullohet pluhuri dhe nuk pastrohen rregullisht\", thotë John McKeon, MD dhe Drejtor Ekzekutiv i Standardeve të Alergjisë. \"Dhoma e gjumit është veçanërisht e rëndësishme sepse ne kalojmë afërsisht një të tretën e jetës sonë atje. Shtrati, jastëkët, dyshekët dhe hapësira poshtë shtratit mund të shërbejnë të gjitha si rezervuarë për mbeturinat e marimangave të pluhurit dhe grimca të tjera.\""]
+    },
+    {
+      "id": "hepa-filtration-benefit-1",
+      "expert": {
+        "name": "Mark",
+        "surname": "Jacobson",
+        "title_en": "MD, Alergolog",
+        "organization_en": "Allergy & Asthma Physicians",
+        "image": "../images_webp/platinumHTML/awareness/person2.webp",
+        "source_publication": "Prevention",
+        "source_link": "https://www.prevention.com/life/a19600469/best-hepa-vacuums/"
+      },
+      "quotes_en": [
+        "Përdorimi i fshesës me korrent të gabuar mund të përkeqësojë përkohësisht simptomat e alergjisë, veçanërisht nëse jeni alergjik ndaj pluhurit. \"Është e rëndësishme që pluhuri i akumuluar të mos trazohet dhe të lirohet përsëri në ajër\", thotë Mark Jacobson, MD, një alergolog në Allergy & Asthma Physicians në Hinsdale, Illinois, dhe ish-president i Shoqërisë së Alergjisë, Astmës dhe Imunologjisë së Illinois."      ]
+    },
+    {
+      "id": "hepa-filtration-benefit-2",
+      "expert": {
+        "name": "Purvi",
+        "surname": "Parikh",
+        "title_en": "MD, Alergolog",
+        "organization_en": "Allergy & Asthma Network",
+        "image": "../images_webp/platinumHTML/awareness/person3.webp",
+        "source_publication": "Prevention",
+        "source_link": "https://www.prevention.com/life/a19600469/best-hepa-vacuums/"
+      },
+      "quotes_en": [
+        "Fshesat me korrent HEPA mund të jenë një shpëtim i vërtetë kur bëhet fjalë për pastrimin e njerëzve që vuajnë nga alergjitë dhe probleme të ndryshme të frymëmarrjes. \"Shumë njerëz janë alergjikë ndaj mykut dhe qimeve të kafshëve shtëpiake, të cilat mund të filtrohen në mënyrë efektive nga filtrat HEPA\", thotë Purvi Parikh, MD, një alergologe në Rrjetin për Alergji dhe Astmë."      ]
+    },
+    {
+      "id": "sealed-hepa-recommendation",
+      "expert": {
+        "name": "Krikor",
+        "surname": "Manoukian",
+        "title_en": "MD, Alergolog & Imunolog",
+        "organization_en": "Board-Certified Allergist/Immunologist",
+        "image": "../images_webp/platinumHTML/awareness/person4.webp",
+        "source_publication": "HeyAllergy.com",
+        "source_link": "https://www.heyallergy.com/blog/hepa-vacuum-guide-what-matters-beyond-hepa"
+      },
+      "quotes_en": [
+        "Fshesat me korrent HEPA janë ndër masat më efektive për kontrollin e alergjenëve të brendshëm. Filtrat e vërtetë HEPA kapin 99.97% të grimcave me madhësi 0.3 mikronë e më të mëdha - një nivel filtrimi që alergologët e rekomandojnë si pjesë e një strategjie gjithëpërfshirëse për shmangien e alergjenëve."      ]
+    },
+    {
+      "id": "medical-review-hepa",
+      "expert": {
+        "name": "Carah",
+        "surname": "Santos",
+        "title_en": "MD, Medical Reviewer",
+        "organization_en": "National Jewish Health",
+        "image": "../images_webp/platinumHTML/awareness/person5.webp",
+        "source_publication": "National Jewish Health",
+        "source_link": "https://www.nationaljewish.org/conditions/fallergy/overview/lifestyle/hepa-filters"
+      },
+      "quotes_en": [
+        "Filtrat HEPA të bashkangjitur në fshesa zvogëlojnë pluhurin duke bllokuar grimcat e imëta, shpesh të përbëra nga marimangat e pluhurit dhe irritues të tjerë, pa i lëshuar ato përsëri në ajër brenda shtëpisë. Shumë njerëz me alergji raportojnë përmirësim të ndjeshëm dhe më pak simptoma kur filtrimi HEPA është pjesë e rutinës së tyre të rregullt të pastrimit."      ]
+    }
+  ]
+}

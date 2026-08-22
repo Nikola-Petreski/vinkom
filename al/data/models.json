@@ -1,0 +1,239 @@
+[
+  {
+    "name": "Kirby Avalir 2",
+    "productImage": "../images_webp/avalir_2_img/avalir_2.webp",
+    "bgImage": "../images_webp/avalir_2_img/avalir_2_bg.webp",
+    "productionYears": {
+      "from": 2017,
+      "to": 2024
+    },
+    "description": "Kirby Avalir 2 është projektuar duke pasur parasysh përdoruesit modernë, duke e çuar performancën e pastrimit në nivele të reja. Dizajni i tij elegant me nuanca blu kombinon elegancën vizuale me praktikën, duke paraqitur 15 aksesorë të ndryshëm pastrimi për çdo detyrë. I pajisur me Sistemin e Avancuar të Shamposjes Shumë-Sipërfaqësore, ai lan pa mundim qilimat dhe pastron plotësisht dyshemetë prej druri, pllakat dhe sipërfaqet e vinilit. Baza e efektshme e shampos me një pjesë lidhet shpejt dhe përfshin një rezervuar uji të ndotur që hiqet lehtësisht, duke e bërë asgjësimin e thjeshtë dhe të përshtatshëm. Me dizajnin e tij të rafinuar dhe karakteristikat ergonomike, Avalir 2 vazhdon traditën e Kirby-t për rehati të jashtëzakonshme dhe performancë të jashtëzakonshme pastrimi.",    "price": 1350,
+    "discount": 0,
+    "availability": 0,
+    "power": "1200 W",
+    "color": "#022baa",
+    "hoverColor": "#0e1a51",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/avalir_2_img/gallery/1.webp",
+      "../images_webp/avalir_2_img/gallery/2.webp",
+      "../images_webp/avalir_2_img/gallery/3.webp",
+      "../images_webp/avalir_2_img/gallery/4.webp",
+      "../images_webp/avalir_2_img/gallery/5.webp",
+      "../images_webp/avalir_2_img/gallery/6.webp",
+      "../images_webp/avalir_2_img/gallery/7.webp",
+      "../images_webp/avalir_2_img/gallery/8.webp",
+      "../images_webp/avalir_2_img/gallery/9.webp"
+    ],
+    "shortDescription": "Kirby elegant dhe modern me 15 aksesorë dhe Sistem Shampo për Shumë Sipërfaqe për qilima, dru, pllaka dhe vinil; zbrazje e lehtë e ujit me dizajn ergonomik."  },
+  {
+    "name": "Kirby Avalir",
+    "productImage": "../images_webp/avalir_img/avalir.webp",
+    "bgImage": "../images_webp/avalir_img/avalir_bg.webp",
+    "productionYears": {
+      "from": 2015,
+      "to": 2017
+    },
+    "description": "Ky pastrues elegant vertikal me detaje të kuqe është ridizajnuar plotësisht me nevojat e përdoruesit si përparësi kryesore. Kirby Avalir transformohet në dymbëdhjetë pajisje të ndryshme funksionale, duke e bërë atë jashtëzakonisht të gjithanshëm për çdo detyrë pastrimi. Dizajni i tij modern me linja të lëmuara përmban një Sistem Shampoje Shumë-Sipërfaqësh të përmirësuar, perfekt për larjen e qilimave dhe pastrimin e plotë të dyshemeve prej druri, pllakave dhe vinilit. Baza e efektshme e shampos me një pjesë lidhet lehtësisht dhe përmban një rezervuar uji të ndotur të lëvizshëm për asgjësim të thjeshtë. Përveç kësaj, doreza e ridizajnuar e bën ngritjen pa mundim, duke kërkuar përkulje ose tendosje minimale.",    "price": 1250,
+    "discount": 0,
+    "availability": 0,
+    "power": "1150 W",
+    "color": "#692223",
+    "hoverColor": "#380f0f",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/avalir_img/gallery/1.webp",
+      "../images_webp/avalir_img/gallery/2.webp",
+      "../images_webp/avalir_img/gallery/3.webp",
+      "../images_webp/avalir_img/gallery/4.webp",
+      "../images_webp/avalir_img/gallery/5.webp",
+      "../images_webp/avalir_img/gallery/6.webp",
+      "../images_webp/avalir_img/gallery/7.webp",
+      "../images_webp/avalir_img/gallery/8.webp",
+      "../images_webp/avalir_img/gallery/9.webp"
+    ],
+    "shortDescription": "Kirby i ridizajnuar me 12 aksesorë funksionalë, Sistem Shampo për Shumë Sipërfaqe për qilima, dru të fortë dhe pllaka, me lidhje të shpejtë për pastrim pa mundim."  },
+  {
+    "name": "Kirby Sentria II",
+    "productImage": "../images_webp/sentria_II_img/sentria_II.webp",
+    "bgImage": "../images_webp/sentria_II_img/sentria_II_bg.webp",
+    "productionYears": {
+      "from": 2012,
+      "to": 2014
+    },
+    "description": "Sentria II solli jo vetëm një skemë të re ngjyrash, por edhe përmirësime të rëndësishme strukturore. Ai përmban një Mini Em-tor të ridizajnuar për një kapje më të mirë dhe heqje më të lehtë, një aksesor qese filtri në stilin F për një zëvendësim më të thjeshtë dhe një version të modernizuar të aksesorit të njohur Zippbrush. Njësia ka një bazë polimeri të qëndrueshme që zvogëlon peshën, plus doreza mbajtëse për transportueshmëri të përshtatshme. Sentria II mbetet një nga modelet më të dashura të Kirby-t, i pasuar më vonë nga edicioni më i fundit Kirby Avalir Platinum. Besueshmëria dhe performanca e tij e bënë atë një nga modelet e preferuara të klientëve për breza të tërë.",    "price": 1150,
+    "discount": 0,
+    "availability": 0,
+    "power": "1100 W",
+    "color": "#6a5138",
+    "hoverColor": "#5d4228",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/sentria_II_img/gallery/1.webp",
+      "../images_webp/sentria_II_img/gallery/2.webp",
+      "../images_webp/sentria_II_img/gallery/3.webp",
+      "../images_webp/sentria_II_img/gallery/4.webp",
+      "../images_webp/sentria_II_img/gallery/5.webp",
+      "../images_webp/sentria_II_img/gallery/6.webp"
+    ],
+    "shortDescription": "Sentria II i përmirësuar me Mini Em-tor të lehtë, fiksim të filtrit F-Style dhe bazë polimeri për peshë më të lehtë dhe transportueshmëri të përmirësuar."  },
+  {
+    "name": "Kirby Sentria",
+    "productImage": "../images_webp/sentria_img/sentria.webp",
+    "bgImage": "../images_webp/sentria_img/sentria_bg.webp",
+    "productionYears": {
+      "from": 2006,
+      "to": 2012
+    },
+    "description": "Modeli Sentria dallohet për linjat e lëmuara dhe dizajnin e rrumbullakosur, duke i dhënë një pamje elegante dhe bashkëkohore. Doreza është ridizajnuar plotësisht për të ofruar ergonomikë superiore dhe rehati të shtuar gjatë përdorimit. Krahasuar me modelet e mëparshme, Sentria prezanton disa përmirësime të dukshme, duke përfshirë dritat e përparme LED për shikueshmëri më të mirë, një parakolp mbrojtës më të lartë për siguri të shtuar gjatë pastrimit rreth mobiljeve, plus një aksesor të përmirësuar për tapiceri që kap më shumë mbeturina. Ky model fitoi Vulën prestigjioze të Miratimit të Artë nga Instituti i Qilimave dhe Rrugëve për performancë efektive të pastrimit të qilimave.",    "price": 1050,
+    "discount": 0,
+    "availability": 0,
+    "power": "1050 W",
+    "color": "#abb7be",
+    "hoverColor": "#53646e",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/sentria_img/gallery/1.webp",
+      "../images_webp/sentria_img/gallery/2.webp",
+      "../images_webp/sentria_img/gallery/3.webp",
+      "../images_webp/sentria_img/gallery/4.webp",
+      "../images_webp/sentria_img/gallery/5.webp",
+      "../images_webp/sentria_img/gallery/6.webp"
+    ],
+    "shortDescription": "Kirby i sofistikuar me dizajn të lëmuar, dorezë ergonomike, drita LED dhe fiksim të përmirësuar të tapicerisë me Vulë Miratimi të Artë."  },
+  {
+    "name": "Kirby Diamond",
+    "productImage": "../images_webp/diamond_edition/diamond_edition.webp",
+    "bgImage": "../images_webp/diamond_edition/diamond_edition_bg.webp",
+    "productionYears": {
+      "from": 2002,
+      "to": 2003
+    },
+    "description": "Edicioni Diamond ishte shumë popullor me përdoruesit falë dizajnit të tij klasik dhe përmirësimeve të konsiderueshme në krahasim me serinë Ultimate G. Ky model përfshin filtrat Kirby's Alergen Reduction, të cilët ofrojnë filtrim shumë më të mirë krahasuar me qeset standarde të letrës. Me një motor të përmirësuar, furçë rrotulluese të përmirësuar dhe pllakë qilimash të ridizajnuar, efikasiteti i pastrimit vertikal u rrit ndjeshëm. Përveç kësaj, u ndërtua një cilësim i butë për qilima delikatë dhe funksionim i qetë, duke ofruar fleksibilitet dhe rehati më të madhe për nevojat e përditshme të pastrimit të shtëpisë.",    "price": 1000,
+    "discount": 0,
+    "availability": 0,
+    "power": "1000 W",
+    "color": "#53646e",
+    "hoverColor": "#3e4f51",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/diamond_edition/gallery/1.webp",
+      "../images_webp/diamond_edition/gallery/2.webp",
+      "../images_webp/diamond_edition/gallery/3.webp",
+      "../images_webp/diamond_edition/gallery/4.webp",
+      "../images_webp/diamond_edition/gallery/5.webp",
+      "../images_webp/diamond_edition/gallery/6.webp"
+    ],
+    "shortDescription": "Modeli klasik me filtra për reduktimin e alergjenëve, furçë të përmirësuar dhe modalitet të qetë për performancë pastrimi fleksibile dhe efektive."  },
+  {
+    "name": "Kirby Ultimate G",
+    "productImage": "../images_webp/ultimate_g/ultimate_g.webp",
+    "bgImage": "../images_webp/ultimate_g/ultimate_g_bg.webp",
+    "productionYears": {
+      "from": 2002,
+      "to": 2003
+    },
+    "description": "Modeli Ultimate G gëzoi një prani relativisht të shkurtër në treg përpara se të prezantohej versioni Diamond Edition i serisë Ultimate G. Kjo seri solli një qese të jashtme të përmirësuar për filtrim më efikas, plus tehe të zgjatura të ventilatorit për rrjedhje më të mirë të ajrit. Përfshin një dizajn të ri furçe me fije më të mira për një veprim pastrimi më efektiv. Hapja e qeses u ridizajnua në formë S për të zvogëluar retë e pluhurit gjatë zbrazjes. Përveç kësaj, u integruan magnete për tregues të qartë të performancës. Ultimate G ofron shkathtësi si pastrues vertikal, njësi enësh dhe sistem larjeje qilimash.",    "price": 980,
+    "discount": 0,
+    "availability": 0,
+    "power": "950 W",
+    "color": "#897d54",
+    "hoverColor": "#675e3c",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/ultimate_g/gallery/1.webp",
+      "../images_webp/ultimate_g/gallery/2.webp",
+      "../images_webp/ultimate_g/gallery/3.webp"
+    ],
+    "shortDescription": "Model jetëshkurtër por i fuqishëm me filtrim të përmirësuar, dizajn të ri furçash dhe hapje qeseje në formë S për zbrazje më të lehtë."  },
+  {
+    "name": "Kirby G6",
+    "productImage": "../images_webp/g6_img/g6.webp",
+    "bgImage": "../images_webp/g6_img/g6_bg.webp",
+    "productionYears": {
+      "from": 1999,
+      "to": 2002
+    },
+    "description": "Kirby G6 u prezantua për herë të parë në vitin 1999 dhe u prodhua deri në serinë Ultimate G që u shfaq në vitin 2002. Ky model paraqet një dizajn më të errët dhe më elegant që përcjell klas dhe sofistikim. G6 përfshin një furçë të përmirësuar për pastrim më efektiv, qese filtri të përparuara dhe një shampo portative të përmirësuar me kontroll më të mirë të spërkatjes. Karakteristikat shtesë standarde përfshijnë mekanizmin e animit të dorezës, kontrollin me prekjen e gishtërinjve dhe sistemin TechDrive Power Assist, duke mundësuar funksionim më të lehtë dhe rehati më të madhe gjatë përdorimit.",    "price": 950,
+    "discount": 0,
+    "availability": 0,
+    "power": "900 W",
+    "color": "#b9ac38",
+    "hoverColor": "#4b4f3d",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/g6_img/gallery/1.webp",
+      "../images_webp/g6_img/gallery/2.webp",
+      "../images_webp/g6_img/gallery/3.webp"
+    ],
+    "shortDescription": "G6 elegant me furçë të përmirësuar, TechDrive Power Assist, qese filtri të përparuara dhe shampolar portativ për funksionim më të lehtë."  },
+  {
+    "name": "Kirby G5",
+    "productImage": "../images_webp/g5_img/g5.webp",
+    "bgImage": "../images_webp/g5_img/g5_bg.webp",
+    "productionYears": {
+      "from": 1997,
+      "to": 1999
+    },
+    "description": "Kirby G5 është një nga modelet më të njohura të Kirby-t, i dallueshëm nga ngjyra e tij e errët bordo dhe dizajni elegant. Karakteristika më mbresëlënëse e këtij modeli është turbina e saj Lexan e zhvilluar nga NASA, e projektuar për të rritur ndjeshëm fuqinë e përgjithshme të thithjes. Përveç kësaj, G5 ofron fleksibilitetin e modaliteteve të pastrimit si në pozicion vertikal ashtu edhe në atë portativ. Karakteristikat standarde përfshijnë kontrollin me prekjen e gishtërinjve, lartësinë e rregullueshme të grykës dhe sistemin TechDrive Power Assist, të gjitha duke punuar së bashku për funksionim të lehtë, performancë të qëndrueshme dhe pastrim të rehatshëm në sipërfaqe të ndryshme shtëpiake.",    "price": 880,
+    "discount": 0,
+    "availability": 0,
+    "power": "850 W",
+    "color": "#6d4859",
+    "hoverColor": "#46353c",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/g5_img/gallery/1.webp",
+      "../images_webp/g5_img/gallery/2.webp",
+      "../images_webp/g5_img/gallery/3.webp",
+      "../images_webp/g5_img/gallery/4.webp",
+      "../images_webp/g5_img/gallery/5.webp",
+      "../images_webp/g5_img/gallery/6.webp"
+    ],
+    "shortDescription": "Modeli popullor me ngjyrë të errët bordo me turbinë Lexan, kontroll me prekje të gishtërinjve dhe Ndihmës për energji TechDrive për performancë të qëndrueshme dhe të rehatshme."  },
+  {
+    "name": "Kirby G4",
+    "productImage": "../images_webp/g4_img/g4.webp",
+    "bgImage": "../images_webp/g4_img/g4_bg.webp",
+    "productionYears": {
+      "from": 1993,
+      "to": 1997
+    },
+    "description": "Modeli Kirby G4 solli përmirësime të rëndësishme të përqendruara në funksionim më të lehtë dhe funksionalitet më të mirë. Ky model ishte i pajisur me një mekanizëm krejtësisht të ri bllokimi të dorezës me tre pozicione, duke ofruar fleksibilitet dhe stabilitet më të madh gjatë përdorimit. Përtej kësaj, G4 mbështet aksesorë dhe aksesorë të ndryshëm opsionalë që rrisin fuqinë dhe shkathtësinë për detyra të ndryshme pastrimi. Karakteristikat standarde përfshijnë kontrollin me prekjen e gishtërinjve, sistemin TechDrive Power Assist, qese Micron Magic të zëvendësueshme për filtrim superior, plus një mekanizëm ngritës rripi për mirëmbajtje të thjeshtuar dhe përdorim të përditshëm.",    "price": 820,
+    "discount": 0,
+    "availability": 0,
+    "power": "800 W",
+    "color": "#9ba1bb",
+    "hoverColor": "#3c4352",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/g4_img/gallery/1.jpg",
+      "../images_webp/g4_img/gallery/2.jpg",
+      "../images_webp/g4_img/gallery/3.jpg"
+    ],
+  "shortDescription": "G4 ofron bllokim doreze me tre pozicione, TechDrive Power Assist, çanta Micron Magic dhe ngritës rripi për mirëmbajtje më të lehtë."  },
+  {
+    "name": "Kirby G3",
+    "productImage": "../images_webp/g3_img/g3.webp",
+    "bgImage": "../images_webp/g3_img/g3_bg.webp",
+    "productionYears": {
+      "from": 1990,
+      "to": 1993
+    },
+    "description": "Modeli Kirby G3 solli një pamje dhe ndjesi krejtësisht të re në të gjithë linjën Kirby, me mbi 60 përmirësime, duke i dhënë emrin 'Agimi i një Gjenerate të Re'. Ky model prezantoi sistemin TechDrive Power Assist, i cili u bë një nga karakteristikat më të njohura të Kirby-t. Transmisioni automatik ndjen drejtimin dhe shpejtësinë e dëshiruar, duke e bërë lëvizjen pothuajse të lehtë. Përveç kësaj, G3 ofron kontroll me prekjen e gishtërinjve, ngritës rripi dhe furçë të rregullueshme, plus aftësinë për të funksionuar si fshesë me korrent vertikalisht, pastrues me thithje të drejtpërdrejtë dhe njësi portative me aksesorë të ndryshëm.",    "price": 750,
+    "discount": 0,
+    "availability": 0,
+    "power": "750 W",
+    "color": "#9e9e9e",
+    "hoverColor": "#656565",
+    "galleryUrl": "#",
+    "galleryImages": [
+      "../images_webp/g3_img/gallery/1.webp",
+      "../images_webp/g3_img/gallery/2.webp",
+      "../images_webp/g3_img/gallery/3.webp",
+      "../images_webp/g3_img/gallery/4.webp",
+      "../images_webp/g3_img/gallery/5.webp",
+      "../images_webp/g3_img/gallery/6.webp"
+    ],
+    "shortDescription": "G3 solli TechDrive Power Assist, kontroll me prekje gishtërinjsh, ngritës rripi dhe furçë të rregullueshme për funksionim të lehtë dhe të fuqishëm."  }
+]

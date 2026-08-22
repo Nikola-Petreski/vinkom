@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="al">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="KIRBY Products — Accessories and products designed to complement performance and style.">
-  <title>KIRBY | Products</title>
+  <meta name="description" content="Produktet KIRBY — Aksesorë dhe produkte të dizajnuara për të plotësuar performancën dhe stilin.">
+  <title>KIRBY | Produkte</title>
   <link href="../output.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -208,45 +208,45 @@
           class="flex flex-col justify-between w-full gap-2 sm:gap-1 md::gap-2 lg:gap-3 xl:gap-4 2xl:gap-5 text-sm md:text-base 2xl:text-xl 3xl:text-2xl">
           <div class="w-full flex flex-col lg:flex-row gap-2 justify-between items-center">
             <div class="flex flex-col gap-2 w-full lg:w-[48%]">
-              <label class="text-white px-2">Search Products</label>
-              <input id="search-input" type="text" placeholder="Enter product name"
+              <label class="text-white px-2">Kërko Produkte</label>
+              <input id="search-input" type="text" placeholder="Shkruani emrin e produktit"
                 class="px-[3%] py-[3%] rounded-xl bg-[#484848] text-white/70 focus:text-white focus:outline-none">
             </div>
             <div class="flex flex-col gap-2 w-full lg:w-[48%] relative">
-              <label class="text-white px-2">Sort by</label>
+              <label class="text-white px-2">Rendit sipas</label>
               <select id="sort-select"
                 class="px-[3%] py-[3%] cursor-pointer rounded-xl bg-[#484848] text-white/70 focus:text-white focus:outline-none appearance-none w-full">
-                <option>Price (Highest)</option>
-                <option>Price (Lowest)</option>
-                <option>Discount (Highest)</option>
-                <option>Discount (Lowest)</option>
+                <option value="Price (Highest)">Çmimi (Më i Larti)</option>
+                <option value="Price (Lowest)">Çmimi (Më i ulëti)</option>
+                <option value="Discount (Highest)">Zbritje (Më e larta)</option>
+                <option value="Discount (Lowest)">Zbritje (Më e ulëta)</option>
               </select>
               <i id="chevron" class="fa-solid fa-chevron-down absolute right-3 top-[60%] text-white pointer-events-none"
                 style="transition: transform 0.3s ease;"></i>
             </div>
           </div>
           <div class="flex flex-col gap-2 w-full">
-            <label class="text-white px-2">Show</label>
+            <label class="text-white px-2">Shfaq</label>
             <div class="flex flex-col lg:flex-row px-[2%] py-[2%] gap-2 bg-[#484848] rounded-xl justify-between">
               <label
                 class="flex items-center w-full lg:w-1/4 gap-2 text-white/70 cursor-pointer bg-black/40 justify-start lg:justify-center  text-nowrap px-[5%] rounded-xl py-[1.5%]">
                 <input type="radio" name="category" value="all" class="accent-[#484848]" checked>
-                All Products
+                Të gjitha produktet
               </label>
               <label
                 class="flex items-center w-full lg:w-1/4 gap-2 text-white/70 cursor-pointer bg-black/40 justify-start lg:justify-center text-nowrap px-[5%] rounded-xl py-[1.5%]">
-                <input type="radio" name="category" value="Consumables" class="accent-[#484848]">
-                Consumables
+                <input type="radio" name="category" value="Materiale të konsumueshme" class="accent-[#484848]">
+                Materiale të konsumueshme
               </label>
               <label
                 class="flex items-center w-full lg:w-1/4 gap-2 text-white/70 cursor-pointer bg-black/40 justify-start lg:justify-center text-nowrap px-[5%] rounded-xl py-[1.5%]">
-                <input type="radio" name="category" value="Spare Parts" class="accent-[#484848]">
-                Spare Parts
+                <input type="radio" name="category" value="Pjesë këmbimi" class="accent-[#484848]">
+                Pjesë këmbimi
               </label>
               <label
                 class="flex items-center w-full lg:w-1/4 gap-2 text-white/70 cursor-pointer bg-black/40 justify-start lg:justify-center px-[5%] rounded-xl py-[1.5%]">
-                <input type="radio" name="category" value="Cleaning Products" class="accent-[#484848]">
-                Cleaning Products
+                <input type="radio" name="category" value="Produkte pastrimi" class="accent-[#484848]">
+                Produkte pastrimi
               </label>
             </div>
           </div>
@@ -278,7 +278,7 @@
         <div
           class="flex justify-between items-center text-white text-xs xs:text-sm lg:text-base xl:text-lg 3xl:text-2xl">
           <p id="modal-price" class="flex justify-start items-center gap-1"><i class="fa-solid fa-tag"></i></p>
-          <a id="modalAddToCart" href="order.html" class="px-[5%] lg:px-[8%] py-[2%] md:py-[1%] lg:py-[2%] bg-black/40 hover:bg-black text-white transition-all duration-300 rounded-lg">Add to Cart</a>
+          <a id="modalAddToCart" href="checkOut.html" class="px-[5%] lg:px-[8%] py-[2%] md:py-[1%] lg:py-[2%] bg-black/40 hover:bg-black text-white transition-all duration-300 rounded-lg">Shto në shportë</a>
         </div>
       </div>
     </div>
@@ -635,7 +635,7 @@
                             <p class="text-white/70">${displayShortDesc}</p>
                             <p class="text-white/70 flex items-center justify-start gap-1"><i class="fa-solid fa-tag"></i>${displayPriceText}</p>
                         </div>
-                        <button class="view-more-btn w-full rounded-xl py-[3%] flex justify-center items-center text-white transition-all duration-300 bg-black/40 hover:bg-black/70 text-xs xs:text-lg sm:text-xl lg:text-base 2xl:text-lg">Learn More</button>
+                        <button class="view-more-btn w-full rounded-xl py-[3%] flex justify-center items-center text-white transition-all duration-300 bg-black/40 hover:bg-black/70 text-xs xs:text-lg sm:text-xl lg:text-base 2xl:text-lg">Më shumë</button>
                     </div>
                 </div>
                 <p class="h-[10%] group-hover:h-0 opacity-100 group-hover:opacity-0 transition-all duration-500 ease-in-out flex justify-center items-center bg-black/40 rounded-b-xl text-white text-sm xs:text-2xl md:text-3xl lg:text-base xl:text-lg 2xl:text-2xl 3xl:text-3xl">${extra.shortName}</p>

@@ -1,0 +1,494 @@
+[
+{
+"shortName": "Avalir Platinum",
+"fullName": "Kirby Avalir Platinum",
+"category": [
+"Materiale të konsumueshme",
+"Pjesë këmbimi",
+"Produkte pastrimi"
+],
+"categories": [
+"Materiale të konsumueshme",
+"Pjesë këmbimi",
+"Produkte pastrimi"
+],
+"shortDesc": "Kirby Avalir Platinum me funksionim të qetë dhe 15 aksesorë të specializuar pastrimi.",
+"longDesc": "Kirby Avalir Platinum me funksionim të qetë dhe <a href=\"platinum.html#attachment-toggle-1\" class=\"text-white underline\">15 pajisje pastrimi të specializuara</a>. I njohur për cilësinë, sigurinë dhe performancën, Kirby ka ofruar pastrim të thellë për më shumë se 110 vjet. Avalir Platinum i ri me teknologji të reduktimit të zhurmës ofron performancë premium me funksionim më të qetë dhe më efikas. Me izolim të përparuar të zhurmës dhe një motor të ri, funksionon në qetësi pa sakrifikuar fuqinë. Më shumë sesa një fshesë me korrent, Kirby shndërrohet lehtësisht në një pastrues qilimash, pastrues pllakash, pastrues druri dhe shumë më tepër.",
+"price": 181425,
+"discount": 0,
+"image": "../images_webp/extras/avalirPlatinum.webp",
+"modalImage": "../images_webp/extras/avalirPlatinumVacuum.webp",
+"featured": true
+},
+{
+"shortName": "Carpet Shampoo 1L",
+"fullName": "Shampo 1 litër",
+"category": "Produkte pastrimi",
+"shortDesc": "Shampo Kirby për pastrim të thellë të qilimave, mobiljeve dhe pëlhurave, duke hequr njollat dhe duke lënë një aromë të freskët dhe të këndshme.",
+"longDesc": "Shampo Kirby 1 litër është projektuar për pastrim efikas dhe të thellë të qilimave, tapicerive dhe sipërfaqeve të ndryshme prej pëlhure. Formula depërton thellë në fibra për të hequr papastërtinë, njollat dhe alergjenët e grumbulluar pa dëmtuar ngjyrat. Është biodegradues dhe i sigurt për shtëpitë me fëmijë dhe kafshë shtëpiake. Falë formulës mbrojtëse të Kirby-t, ndihmon në zvogëlimin e ripërtëritjes së shpejtë dhe i mban tekstilet të duken të freskëta për më gjatë. Ideale për mirëmbajtje të rregullt dhe rezultate me cilësi profesionale me sistemet Kirby.",
+"price": 1100,
+"discount": 0,
+"image": "../images_webp/extras/shampon1l.webp"
+},
+{
+"shortName": "Carpet Shampoo 1G",
+"fullName": "Shampo 1 Galon (3,785 ml)",
+"category": "Produkte pastrimi",
+"shortDesc": "Shampo Kirby me vëllim më të madh për pastrim intensiv të qilimave, tapicerive dhe pëlhurave në hapësira më të mëdha.",
+"longDesc": "Shampo Kirby 1 galon është një zgjidhje praktike për përdoruesit që pastrojnë rregullisht sipërfaqe më të mëdha ose dhoma të shumta. Formula e saj e përparuar depërton thellë në fibrat e qilimave dhe tapicerisë, duke hequr në mënyrë efektive papastërtinë, pluhurin dhe alergjenët. Formula e biodegradueshme është e sigurt për fëmijët dhe kafshët shtëpiake dhe nuk lë mbetje ngjitëse. Ndihmon në ruajtjen e freskisë dhe ngjyrës së pëlhurave, duke parandaluar ripërtëritjen e shpejtë. Perfekte si për përdorim profesional ashtu edhe për në shtëpi me të gjitha sistemet e shampo Kirby.",
+"price": 3300,
+"discount": 0,
+"image": "../images_webp/extras/shampon1Galon.webp"
+},
+{
+"shortName": "HomeFresh Freshener",
+"fullName": "Aromatizues për shtëpie",
+"category": "Produkte pastrimi",
+"shortDesc": "Aromatizues Kirby që neutralizon në mënyrë efektive aromat e pakëndshme nga qimet e kafshëve shtëpiake, tymi dhe lagështia në shtëpi.",
+"longDesc": "Aromatizuesi për shtëpinë Kirby është projektuar për heqjen e shpejtë dhe efektive të aromave të pakëndshme nga kafshët shtëpiake, tymi, ushqimi ose lagështia. Mund të përdoret në qilima, mobilje, perde ose direkt në ajër dhe ofron freski afatgjatë pa lënë njolla ose mbetje ngjitëse. Formula është e sigurt për përdorim të përditshëm pranë fëmijëve dhe kafshëve shtëpiake. Është një pasues ideal i pastrimit Kirby, duke krijuar një atmosferë të këndshme dhe të pastër. I disponueshëm në disa opsione aromash të freskëta për t'iu përshtatur preferencave të ndryshme.",
+"price": 950,
+"discount": 0,
+"image": "../images_webp/extras/osvezhuvachNaDomot.webp"
+},
+{
+"shortName": "Tile Pre-Treat",
+"fullName": "Para-trajtim për pllaka dhe llaç",
+"category": "Produkte pastrimi",
+"shortDesc": "Para-trajtim Kirby që zbut papastërtinë në pllaka dhe llaç para pastrimit të detajuar dhe tërësor.",
+"longDesc": "Para-trajtimi për pllaka dhe llaç Kirby është formuluar posaçërisht për të zbutur papastërtinë kokëfortë, yndyrën dhe papastërtinë e grumbulluar. Ai depërton thellë në sipërfaqet prej qeramike, porcelani, guri dhe llaçi, duke e bërë heqjen më të lehtë gjatë larjes. Nuk përmban kimikate të ashpra dhe është i sigurt për përdorim të rregullt në banjo dhe kuzhina. Me një kohë të shkurtër qëndrimi dhe shpëlarje minimale, i lë sipërfaqet dukshëm më të pastra dhe më të ndritshme. Ideal për përdorim me mjetet Kirby Tile & Grout për rezultate profesionale.",
+"price": 880,
+"discount": 0,
+"image": "../images_webp/extras/predtretmanZaPlochki.webp"
+},
+{
+"shortName": "Spot Remover",
+"fullName": "Pastrues për heqjen e njollave dhe aromave të kafshëve shtëpiake",
+"category": "Produkte pastrimi",
+"shortDesc": "Pastrues me bazë enzimash Kirby për heqjen e njollave dhe aromave nga urina e kafshëve shtëpiake dhe rrëmujës në pëlhurë.",
+"longDesc": "Pastruesi për kafshë shtëpiake Kirby është projektuar posaçërisht për pastrim të thellë të njollave dhe aromave të shkaktuara nga qentë dhe macet. Formula enzimatike zbërthen në mënyrë efektive urinën, të vjellat dhe mbetjet e qimeve në qilima, tapiceri dhe pëlhura. Aroma e livandos ofron një atmosferë të freskët dhe të këndshme pa maskuar aromat. Nuk lë mbetje ngjitëse dhe është e sigurt për përdorim me sistemet Kirby. Përdorimi i rregullt ndihmon në ruajtjen e një shtëpie higjienike, të pastër dhe të rehatshme për të gjithë familjen.",
+"price": 1250,
+"discount": 0,
+"image": "../images_webp/extras/sredstvoZaMilenici.webp"
+},
+{
+"shortName": "Hard Floor Cleaner",
+"fullName": "Pastrues dyshemesh të forta",
+"category": "Produkte pastrimi",
+"shortDesc": "Pastrues Kirby për larjen efektive të dyshemeve të forta në vinil, pllaka dhe dru pa njolla ose dëmtime.",
+"longDesc": "Pastruesi Kirby për sipërfaqe të forta është projektuar për mirëmbajtje të butë por të plotë të dyshemeve të izoluara si vinili, qeramika, laminati dhe druri. Formula e koncentruar hollohet lehtë në sistemin Kirby dhe largon në mënyrë efektive pluhurin, yndyrën dhe mbetjet ngjitëse pa gërvishtur ose lënë shenja. Shkuma e ulët lejon shpëlarje të shpejtë dhe përdorim të lehtë në kushte të përditshme. Lë një aromë të këndshme të freskët dhe përmirëson pamjen e dyshemeve në kuzhina, banjo dhe korridore.",
+"price": 800,
+"discount": 0,
+"image": "../images_webp/extras/tvrdiPovrshini880.webp"
+},
+{
+"shortName": "Tile&Grout Cleaner",
+"fullName": "Pastrues pllakash dhe llaçi",
+"category": "Produkte pastrimi",
+"shortDesc": "Formula Kirby për pastrim të thellë për pllaka dhe llaç që rikthen shkëlqimin pa mbetje ngjitëse.",
+"longDesc": "Pastruesi Kirby për pllaka dhe llaç është formuluar posaçërisht për të hequr papastërtitë kokëforta, grumbullimet dhe mykun. Ai depërton thellë në vijat e llaçit dhe sipërfaqet qeramike ose porcelani, duke u rikthyer shkëlqimin e tyre natyror. Formula me pak shkumë nuk lë film ngjitës dhe lejon shpëlarje të lehtë pas pastrimit. Është ideal për banjo, kuzhina dhe zona me lagështirë ku higjiena ka më shumë rëndësi. Përdorimi i rregullt i mban hapësirat të pastra, të freskëta dhe vizualisht të rregullta.",
+"price": 880,
+"discount": 0,
+"image": "../images_webp/extras/plochkiIFugi.webp"
+},
+{
+"shortName": "Shapoo Pre-Treat",
+"fullName": "Para-trajtim me shampo për qilima",
+"category": "Produkte pastrimi",
+"shortDesc": "Para-trajtimi Kirby që zbut njollat në qilimat shumë të përdorur para larjes së thellë me shampo.",
+"longDesc": "Paraprakisht, trajtimi për qilima Kirby është projektuar për sipërfaqet më të ndotura dhe me trafik shumë të lartë në shtëpi. Formula depërton në fibra dhe zbut njollat kokëforta dhe papastërtinë e grumbulluar para hapit kryesor të larjes me shampo. Me një kohë të shkurtër qëndrimi, përmirëson ndjeshëm performancën e shampos Kirby dhe lejon pastrim më të thellë. Është i sigurt për ngjyrat e qilimave dhe strukturën e fibrave. Ideal për korridore, hyrje dhe zona me trafik të lartë këmbësorësh.",
+"price": 1100,
+"discount": 0,
+"image": "../images_webp/extras/predtretmanZaTepisi.webp"
+},
+{
+"shortName": "Hard Floor Concentrate",
+"fullName": "Koncentrat për Pastrues Dyshemesh të Forta",
+"category": "Produkte pastrimi",
+"shortDesc": "Koncentrat Kirby për pastrim ekonomik dhe të sigurt të dyshemeve të forta me freski afatgjatë.",
+"longDesc": "Koncentrati Kirby për dysheme të forta është një zgjidhje praktike për mirëmbajtje të rregullt dhe të plotë të sipërfaqeve të ndryshme të dyshemesë. Ai hollohet me ujë dhe përdoret me sistemin Kirby për të hequr butësisht pluhurin, yndyrën dhe papastërtitë e përditshme. Shkuma e ulët ndihmon në parandalimin e rrëshqitjes dhe nuk lë shenja pas tharjes. Formula është e sigurt për dru, vinil, pllaka dhe laminat. Është ideale për sipërfaqe më të mëdha dhe i mban dyshemetë të pastra, të freskëta dhe të mirëmbajtura.",
+"price": 1100,
+"discount": 0,
+"image": "../images_webp/extras/koncetratZaPodovi.webp"
+},
+{
+"shortName": "Lickity Split",
+"fullName": "Ndarja e Lickity",
+"category": "Produkte pastrimi",
+"shortDesc": "Formula Kirby për heqjen e shpejtë të njollave të freskëta nga ushqimi, shënuesit dhe lëngjet në pëlhurë.",
+"longDesc": "Kirby Lickity Split është projektuar për raste urgjente kur shfaqen njolla të freskëta në qilima, tapiceri ose sipërfaqe të forta. Ai vepron menjëherë, duke parandaluar që ushqimi i freskët, boja, shënuesi ose njollat kozmetike të depërtojnë. Formula është e sigurt për sipërfaqet me ngjyra dhe nuk lë mbetje ngjitëse pas pastrimit. Është e lehtë për t’u përdorur dhe ideale për familjet me fëmijë. Kur shoqërohet me sistemin e fshesës me korrent Kirby, ajo ofron rezultate të shpejta, të pastra dhe të dukshme me përpjekje minimale.",
+"price": 610,
+"discount": 0,
+"image": "../images_webp/extras/lickitySplit.webp"
+},
+{
+"shortName": "OXY Additive",
+"fullName": "Shtesë për oksigjenin ndriçues",
+"category": "Produkte pastrimi",
+"shortDesc": "Pastrues Kirby OXY për heqjen efektive të njollave të kafesë, kafshëve shtëpiake dhe ushqimit nga qilimat.",
+"longDesc": "Heqësi shumëfunksional i njollave Kirby OXY është projektuar për pastrim të shpejtë dhe të thellë të njollave të freskëta dhe kokëforta. Teknologjia OXY depërton në fibra dhe zbërthen njollat organike nga kafeja, yndyra, ushqimi, balta dhe urina pa dëmtuar ngjyrat. Përdoret në qilima, tapiceri dhe mobilje dhe nuk lë mbetje ngjitëse pas pastrimit. Spreji praktik lejon aplikim të lehtë gjatë aksidenteve të përditshme. Është ideal për familjet me fëmijë dhe kafshë shtëpiake, duke ndihmuar në ruajtjen e një shtëpie të freskët dhe higjienike.",
+"price": 1250,
+"discount": 0,
+"image": "../images_webp/extras/OXYDamki.webp"
+},
+{
+"shortName": "Miracle Shine",
+"fullName": "Makarona për dysheme me shkëlqim të mrekullueshëm",
+"category": "Produkte pastrimi",
+"shortDesc": "Lyerje me dyll Kirby që shton mbrojtje dhe shkëlqim të lartë në dyshemetë e forta.",
+"longDesc": "Kirby Miracle Shine është një produkt i cilësisë së lartë për dysheme të forta, i bërë me dyll natyral karnauba. Aplikohet pas pastrimit dhe krijon një sipërfaqe sateni ose me shkëlqim të lartë në dru, bambu dhe dysheme të izoluara. Formula ndihmon në fshehjen e gërvishtjeve të vogla, mbron nga konsumimi dhe zgjat kohën midis lustrimeve. Aplikohet lehtë me një sfungjer ose tampon dhe nuk lë shtresë ngjitëse. Është i pajtueshëm me sistemet Kirby dhe i jep një pamje profesionale shtëpisë.",
+"price": 1430,
+"discount": 0,
+"image": "../images_webp/extras/sjajZaPod.webp"
+},
+{
+"shortName": "Kirby Foam",
+"fullName": "Pastrues Qilimash dhe Pëlhurash me Shkumë Kirby",
+"category": "Produkte pastrimi",
+"shortDesc": "Shkumë e thatë Kirby për rifreskim të shpejtë të qilimave dhe tapicerive pa përdorur ujë.",
+"longDesc": "Kirby Foam është një pastrues qilimash dhe pëlhurash me shkumë të thatë, i projektuar për rifreskim të shpejtë dhe praktik të qilimave, tapicerive dhe mobiljeve. Ai depërton në fibra dhe thith pluhurin dhe aromat e pakëndshme pa e lagur sipërfaqen ose pa kërkuar një kohë të gjatë tharjeje. Është ideal për përdorim midis pastrimeve të thella ose kur lagështia është e padëshirueshme. Aplikohet lehtë me mjetet Kirby dhe nuk lë mbetje pas përdorimit. Ofron një pamje të pastër dhe të freskët dhe është i përshtatshëm për higjienën e përditshme në shtëpi.",
+"price": 720,
+"discount": 0,
+"image": "../images_webp/extras/foam.webp"
+},
+{
+"shortName": "Tile & Grout Kit",
+"fullName": "Kit për pllaka dhe llaç",
+"category": "Pjesë këmbimi",
+"shortDesc": "Kit Kirby me furçë dhe tretësirë për pastrim të thellë të pllakave dhe llaçit.",
+"longDesc": "Seti Kirby për pllaka dhe llaç është një zgjidhje e plotë për pastrimin e thellë të sipërfaqeve të forta. Ai përfshin një furçë rrotulluese, rrip dhe produkte të specializuara për heqjen e mbetjeve, mykut dhe papastërtisë nga pllakat dhe llaçi. Formula me pak shkumë pastron në mënyrë efektive pa dëmtuar sipërfaqen dhe rikthen shkëlqimin e saj natyror. Është i lehtë për t'u instaluar dhe i pajtueshëm me shumë modele Kirby. Ideal për banjo dhe kuzhina, siguron higjienë afatgjatë dhe rezultate profesionale.",
+"price": 4750,
+"discount": 0,
+"image": "../images_webp/extras/kompletZaPlochki.webp"
+},
+{
+"shortName": "Lidhës",
+"fullName": "Lidhësi Kirby",
+"category": "Pjesë këmbimi",
+"shortDesc": "Lidhës Kirby për lidhje të sigurt dhe të qëndrueshme të tubit të shamponit me pajisjen.",
+"longDesc": "Lidhësi i shampos Kirby është një pjesë zëvendësuese që siguron një lidhje të qëndrueshme dhe hermetike midis tubit dhe njësisë. Është projektuar për rrjedhje të qetë të shampos dhe parandalon rrjedhjet gjatë funksionimit. I prodhuar nga material i qëndrueshëm, lejon përdorim të sigurt dhe afatgjatë. Është i lehtë për t'u instaluar dhe zëvendësuar pa mjete shtesë. Është i nevojshëm për funksionimin e duhur të sistemit të shampos dhe është i pajtueshëm me modelet Kirby Avalir për rezultate optimale pastrimi.",
+"price": 280,
+"discount": 0,
+"image": "../images_webp/extras/konektorZaShamponer.webp"
+},
+{
+"shortName": "Turbinë",
+"fullName": "Turbina Kirby",
+"category": "Pjesë këmbimi",
+"shortDesc": "Turbina Kirby transferon energji te furçat për lëvizje të qëndrueshme dhe thithje të fortë.",
+"longDesc": "Turbina (ventilatori) Kirby është një komponent kyç i motorit që rrotullon furçën dhe siguron thithje të fortë në të gjitha modelet nga vitet 1970 e tutje. Zëvendësimi i saj kur konsumohet rikthen performancën dhe kërkon vida T-20 dhe një guarnicion silikoni për instalim. I ndërtuar për përdorim të përditshëm, ajo ruan efikasitetin e sistemeve të qilimave dhe dyshemeve të forta pa humbje të energjisë.",
+"price": 2000,
+"discount": 0,
+"image": "../images_webp/extras/turbina.webp"
+},
+{
+"shortName": "Lidhës tubi",
+"fullName": "Lidhësi i tubit Kirby",
+"category": "Pjesë këmbimi",
+"shortDesc": "Lidhësi i tubit të pasmë Kirby lejon lidhjen e sigurt të aksesorëve.",
+"longDesc": "Lidhësi i tubit të pasmë Kirby (bërryli) është montuar aty ku tubi lidhet me njësinë, me skaje rrotulluese për fleksibilitet dhe një mbyllje hermetike. I pajtueshëm me modelet Avalir dhe Generation, është i qëndrueshëm dhe rezistent ndaj konsumimit. I lehtë për t'u zëvendësuar, është thelbësor për modalitetin portativ dhe përdorimin e aksesorëve pa humbur fuqinë e pastrimit.",
+"price": 1150,
+"discount": 0,
+"image": "../images_webp/extras/zadenPrikluchok.webp"
+},
+{
+"shortName": "Rrotat e pasme",
+"fullName": "Rrotat e pasme Kirby",
+"category": "Pjesë këmbimi",
+"shortDesc": "Rrotat e pasme Kirby për lëvizje të qetë në modelet Generation dhe Sentria (set me 2 pjesë).",
+"longDesc": "Rrotat e pasme Kirby (set prej 2 copësh) i përshtaten modeleve Generation, Sentria dhe Avalir dhe hiqen me një mjet për kokë të sheshtë dhe unazë fiksuese. Zëvendësimi i rrotave të konsumuara përmirëson stabilitetin në qilima dhe dysheme të forta dhe janë të disponueshme në ngjyra të ndryshme. Të ndërtuara për jetëgjatësi të gjatë shërbimi, ato e bëjnë manovrimin e sipërfaqeve të mëdha më të lehtë dhe më të kontrolluar.",
+"price": 850,
+"discount": 0,
+"image": "../images_webp/extras/zadniTrkala.webp"
+},
+{
+"shortName": "Furçë Zipp",
+"fullName": "Kirby Zipp Brush",
+"category": "Pjesë këmbimi",
+"shortDesc": "Furçë me ajër Kirby Zippbrush për pastrimin e tapicerive, pëlhurave dhe qimeve të kafshëve shtëpiake.",
+"longDesc": "Kirby Zippbrush është një furçë me motor me ajër për qilima, tapiceri, mobilje dhe qime kafshësh shtëpiake, me rrotullim nga njëra anë në tjetrën për heqjen maksimale të papastërtive. Ajo lidhet me tubin dhe është ideale për pastrimin e tapicerive. E përputhshme me të gjitha modelet Kirby për higjienë të thellë në shtëpi me kafshët shtëpiake.",
+"price": 6150,
+"discount": 0,
+"image": "../images_webp/extras/zipChetka.webp"
+},
+{
+"shortName": "Kabllo",
+"fullName": "Kordi Kirby",
+"category": "Pjesë këmbimi",
+"shortDesc": "Kablloja e energjisë Kirby ofron energji të besueshme me një dizajn fleksibël dhe të qëndrueshëm.",
+"longDesc": "Kablloja e pajisjeve Kirby është fleksibile dhe rezistente ndaj përdredhjes, duke siguruar energji të sigurt dhe të qëndrueshme për të gjitha modelet. I prodhuar nga materiale me cilësi të lartë, lejon manovrim të lehtë gjatë pastrimit të dhomave të shumta pa ndërprerje. Ideale për zëvendësimin e kabllove të dëmtuara ose të konsumuara, është e pajtueshme me shumë njësi Kirby për performancë të sigurt dhe efikase.",
+"price": 3350,
+"discount": 0,
+"image": "../images_webp/extras/kabel.webp"
+},
+{
+"shortName": "Tabela e mbeturinave",
+"fullName": "Tabaku i ujit Kirby",
+"category": "Pjesë këmbimi",
+"shortDesc": "Tabela Kirby siguron shpërndarje të njëtrajtshme të shamponit pa rrjedhje ose konsum të tepërt.",
+"longDesc": "Tabela e shampos Kirby është një enë e qëndrueshme e projektuar për ruajtjen dhe shpërndarjen e saktë të shampos gjatë pastrimit të thellë të qilimave. E lehtë për t'u montuar dhe hequr, parandalon rrjedhjet dhe lejon përdorim ekonomik. E pajtueshme me sistemet Avalir, është thelbësore për rezultate optimale pa ndërprerje.",
+"price": 1870,
+"discount": 0,
+"image": "../images_webp/extras/kadichka.webp"
+},
+{
+"shortName": "Mini Emptor",
+"fullName": "Kirby Mini Emptor",
+"category": "Pjesë këmbimi",
+"shortDesc": "Kirby Mini Emptor lejon pastrimin preciz të hapësirave të ngushta, shkallëve dhe mobiljeve përmes tubit të ujit.",
+"longDesc": "Kirby Mini Emptor është një aksesor kompakt për tubin e ujit i projektuar për të hequr pluhurin nga qoshet, shkallët, tapiceria dhe zonat e vështira për t'u arritur. I lehtë për t'u trajtuar dhe kontrolluar, ofron thithje të fortë dhe të vazhdueshme pa tendosje. I pajtueshëm me të gjitha modelet Kirby, është ideal për mirëmbajtje të detajuar të higjienës në shtëpi.",
+"price": 2920,
+"discount": 0,
+"image": "../images_webp/extras/miniEmptor.webp"
+},
+{
+"shortName": "Çanta e Jashtme",
+"fullName": "Çanta e jashtme Kirby",
+"category": "Pjesë këmbimi",
+"shortDesc": "Qesja e jashtme Kirby siguron filtrim efektiv për ajër të pastër dhe performancë HEPA.",
+"longDesc": "Qesja e jashtme Kirby është një filtër kyç për bllokimin e mbeturinave dhe lëshimin e ajrit të pastër, duke arritur filtrim në nivelin HEPA. E qëndrueshme për cikle të përsëritura pastrimi, zëvendësimi i rregullt parandalon bllokimin dhe ndihmon në ruajtjen e fuqisë së thithjes. Ideale për shtëpitë e ndjeshme ndaj alergjive dhe performancë optimale të makinës.",
+"price": 4290,
+"discount": 0,
+"image": "../images_webp/extras/vrekja.webp"
+},
+{
+"shortName": "Pllaka e poshtme",
+"fullName": "Pllaka e poshtme metalike Kirby",
+"category": "Pjesë këmbimi",
+"shortDesc": "Pllaka e poshtme Kirby lejon pastrim të butë në dysheme të forta pa gërvishtje.",
+"longDesc": "Pllaka e poshtme Kirby është montuar në furçën e dyshemesë së fortë dhe ofron pastrim të butë por efektiv në pllaka, vinil dhe laminat pa lënë shenja. E bërë nga material i qëndrueshëm, rezistent ndaj konsumimit dhe e lehtë për t'u zëvendësuar. Ideale për mirëmbajtje të përditshme pa rrezikuar dëmtimin e sipërfaqeve të ndjeshme.",
+"price": 850,
+"discount": 0,
+"image": "../images_webp/extras/podloshka.webp"
+},
+{
+"shortName": "Rrotat e përparme",
+"fullName": "Rrotat e përparme Kirby",
+"category": "Pjesë këmbimi",
+"shortDesc": "Rrotat e përparme Kirby ofrojnë lëvizshmëri dhe stabilitet më të mirë në modelet Generation dhe Sentria.",
+"longDesc": "Rrotat e përparme Kirby janë të pajtueshme me modelet Generation, Sentria dhe Avalir dhe mund të hiqen me një kaçavidë standarde me kokë të sheshtë. Zëvendësimi i rrotave të konsumuara përmirëson shumë stabilitetin dhe manovrueshmërinë në qilima dhe dysheme të forta. Në dispozicion në disa ngjyra dhe të bëra nga material i qëndrueshëm për jetëgjatësi. Ideale për pastrim më të lehtë të hapësirave të mëdha pa u bllokuar ose paqëndrueshëm.",
+"price": 800,
+"discount": 0,
+"image": "../images_webp/extras/predniTrkala.webp"
+},
+{
+"shortName": "Shkopi zgjatues",
+"fullName": "Shkopi i zgjerimit Kirby",
+"category": "Pjesë këmbimi",
+"shortDesc": "Shkopi zgjatues Kirby ofron një shtrirje më të madhe për pastrim me aksesorë të shumtë.",
+"longDesc": "Shkopi zgjatues Kirby e bën më të lehtë pastrimin e zonave të larta ose të vështira për t'u arritur, siç janë tavanet, qoshet dhe hapësirat e ngushta. Është i pajtueshëm me aksesorë të ndryshëm Kirby dhe siguron funksionim të qëndrueshëm dhe të sigurt. I prodhuar nga material i lehtë por i qëndrueshëm, lejon përdorim të rehatshëm pa sforcim. Ideal për pastrim të detajuar në shtëpi.",
+"price": 1200,
+"discount": 0,
+"image": "../images_webp/extras/prodolzhnaCevka.webp"
+},
+{
+"shortName": "Tubi i vakumit",
+"fullName": "Tubi i vakumit Kirby",
+"category": "Pjesë këmbimi",
+"shortDesc": "Tubi Kirby ofron fleksibilitet dhe komoditet më të madh gjatë pastrimit.",
+"longDesc": "Tubi Kirby ofron shtrirje dhe liri shtesë gjatë përdorimit të fshesës me korrent. Është ideal për pastrimin e sipërfaqeve të mëdha, shkallëve dhe hapësirave të vështira për t'u arritur. I prodhuar nga material i qëndrueshëm dhe fleksibël që i reziston përdredhjes dhe konsumimit, siguron përdorim të sigurt dhe afatgjatë. Lidhet lehtësisht me aksesorët ekzistues për efikasitet maksimal.",
+"price": 3300,
+"discount": 0,
+"image": "../images_webp/extras/crevo.webp"
+},
+{
+"shortName": "Rregullatori i ajrit",
+"fullName": "Rregullatori i rrjedhjes së ajrit",
+"category": "Pjesë këmbimi",
+"shortDesc": "Rregullatori Kirby lejon kontrollin e rrjedhës së ajrit kur përdoren aksesorë.",
+"longDesc": "Rregullatori i rrjedhës së ajrit Kirby e bën të lehtë rregullimin e fuqisë së thithjes gjatë pastrimit. Është veçanërisht i dobishëm në sipërfaqe delikate, perde dhe pëlhura ku nevojitet më pak forcë. I lehtë për t’u përdorur dhe plotësisht i pajtueshëm me sistemet Kirby, ofron kontroll, saktësi dhe siguri më të mirë në përdorimin e përditshëm.",
+"price": 550,
+"discount": 0,
+"image": "../images_webp/extras/regulatorZaVozduh.webp"
+},
+{
+"shortName": "Depozita e shamponit",
+"fullName": "Kirby Shampooer Tank",
+"category": "Pjesë këmbimi",
+"shortDesc": "Rezervuari Kirby për larjen e shamponave lejon ruajtjen dhe shpërndarjen e njëtrajtshme të shamponave.",
+"longDesc": "Rezervuari Kirby për shampo është një enë e qëndrueshme e projektuar për të ruajtur dhe shpërndarë shampon gjatë pastrimit të thellë të qilimave. I lehtë për t'u instaluar dhe mirëmbajtur, parandalon rrjedhjet dhe siguron një rrjedhje të njëtrajtshme për rezultate të qëndrueshme. I pajtueshëm me sistemet Avalir, është ideal për pastrimin e sipërfaqeve të mëdha me përdorim efikas të produktit.",
+"price": 2150,
+"discount": 0,
+"image": "../images_webp/extras/rezervoarZaShamponer.webp"
+},
+{
+"shortName": "Filtri i rezervuarit",
+"fullName": "Sfungjeri i filtrit të rezervuarit",
+"category": "Pjesë këmbimi",
+"shortDesc": "Rrjeta e filtrit të rezervuarit Kirby parandalon bllokimin e sistemit të shamponimit nga grimcat dhe papastërtitë.",
+"longDesc": "Filtri i rezervuarit të shamponit Kirby është projektuar për të mbrojtur sistemin nga grimcat e vogla, pluhuri dhe mbetjet që mund të shkaktojnë bllokim. Ai siguron një rrjedhje të qetë dhe të njëtrajtshme të shamponit gjatë pastrimit të thellë të qilimave dhe tapicerive. I lehtë për t'u hequr, pastruar dhe riinstaluar, ai lejon përdorim afatgjatë dhe të besueshëm. I pajtueshëm me modelet Avalir, është thelbësor për ruajtjen e performancës optimale pa ndërprerje.",
+"price": 220,
+"discount": 0,
+"image": "../images_webp/extras/sitoZaFilter.webp"
+},
+{
+"shortName": "Hundë shërbimi",
+"fullName": "Gryka e Shërbimeve Kirby",
+"category": "Pjesë këmbimi",
+"shortDesc": "Furça Kirby pastron dhe masazhon butësisht lëkurën, pëlhurën dhe sipërfaqet delikate në mënyrë të sigurt.",
+"longDesc": "Furça Kirby është një furçë e vogël dhe e butë e projektuar për pastrim dhe rifreskim të butë të mobiljeve të veshura me tapiceri, lëkurës dhe pëlhurave delikate. Ajo heq në mënyrë efektive pluhurin, fibrat dhe mbeturinat e vogla pa gërvishtur ose dëmtuar materialin. Ajo ngjitet lehtësisht në tub dhe lejon kontroll të saktë gjatë pastrimit. E pajtueshme me të gjitha modelet Kirby, është ideale për mirëmbajtjen e përditshme dhe zgjatjen e jetëgjatësisë së materialeve.",
+"price": 390,
+"discount": 0,
+"image": "../images_webp/extras/timarChetka.webp"
+},
+{
+"shortName": "Tubi i rezervuarit",
+"fullName": "Shampooer Tank Hose",
+"category": "Pjesë këmbimi",
+"shortDesc": "Tubi i larjes së shampos Kirby lejon transferim të qëndrueshëm dhe fleksibël të shampos gjatë pastrimit.",
+"longDesc": "Tubi Kirby për larjen e shamponave është një tub fleksibël dhe i qëndrueshëm i projektuar për të transferuar shampon dhe ujë gjatë pastrimit të thellë të qilimave dhe tapicerive. Është projektuar për të parandaluar përdredhjen dhe rrjedhjet, duke lejuar funksionim të sigurt dhe të pandërprerë. I lehtë për t'u përdorur në pozicione të ndryshme, e bën pastrimin e sipërfaqeve të mëdha shumë më të lehtë. I pajtueshëm me sistemet Avalir, siguron presion të vazhdueshëm dhe shpërndarje të barabartë të lëngjeve.",
+"price": 740,
+"discount": 0,
+"image": "../images_webp/extras/crevoZaShamponer.webp"
+},
+{
+"shortName": "Tub qeseje",
+"fullName": "Tubi Kirby Bag",
+"category": "Pjesë këmbimi",
+"shortDesc": "Tubi i zi Kirby siguron shtrirje të gjatë dhe rrjedhje të qëndrueshme të ajrit gjatë pastrimit.",
+"longDesc": "Tubi i zi Kirby është tubi standard për lidhjen e aksesorëve dhe është projektuar për rrjedhje të fortë dhe të pandërprerë të ajrit. Fleksibël dhe rezistent ndaj konsumimit, lejon pastrim të lehtë në qoshe të ngushta, shkallë dhe sipërfaqe të larta. I lehtë për t'u mirëmbajtur dhe pastruar, ruan forcën e thithjes. I pajtueshëm me të gjitha modelet Kirby, është një pjesë thelbësore e pastrimit të përditshëm dhe të detajuar të shtëpisë.",
+"price": 1400,
+"discount": 0,
+"image": "../images_webp/extras/crnoCrevo.webp"
+},
+{
+"shortName": "Furçë për tapiceri",
+"fullName": "Furça Kirby për tapiceri",
+"category": "Pjesë këmbimi",
+"shortDesc": "Furça Kirby për tapiceri heq butësisht pluhurin dhe fibrat nga mobiljet pa i dëmtuar.",
+"longDesc": "Furça Kirby për tapiceri është projektuar posaçërisht me fije të buta për pastrim të butë por efektiv të mobiljeve, jastëkëve dhe tekstileve. Ajo heq pluhurin, fibrat dhe mbeturinat e vogla pa gërvishtur ose krijuar elektricitet statik. Ajo ngjitet lehtësisht në tub dhe lejon kontroll të saktë gjatë përdorimit. E pajtueshme me të gjitha sistemet Kirby, është ideale për mirëmbajtje të rregullt dhe për mbajtjen e mobiljeve të freskëta.",
+"price": 700,
+"discount": 0,
+"image": "../images_webp/extras/cetkaZaMebel.webp"
+},
+{
+"shortName": "Furçë pluhuri",
+"fullName": "Furça Kirby për pluhurosje",
+"category": "Pjesë këmbimi",
+"shortDesc": "Furça Kirby për pastrimin e pluhurave heq butësisht pluhurin nga mobiljet dhe sipërfaqet delikate pa i gërvishtur.",
+"longDesc": "Furça Kirby për pastrimin e pluhurave është e pajisur me fije të buta sintetike për heqjen e sigurt të pluhurit nga tavanet, llambat, raftet dhe sipërfaqet delikate. Është projektuar për të parandaluar grumbullimin statik dhe për të mbrojtur materialet nga dëmtimi. Lidhet lehtësisht me tubin dhe lejon kontroll të saktë të pastrimit. E pajtueshme me të gjitha modelet Kirby, është ideale për mirëmbajtjen e përditshme të shtëpisë pa lënë shenja në dru, xham ose pëlhurë.",
+"price": 1100,
+"discount": 0,
+"image": "../images_webp/extras/chetkaZaPrav.webp"
+},
+{
+"shortName": "Furçë Zëvendësuese",
+"fullName": "Zëvendësim për furçën e pluhurit",
+"category": "Pjesë këmbimi",
+"shortDesc": "Koka zëvendësuese e furçës Kirby për mjetet e pastrimit të pluhurit lejon ndërrim të shpejtë dhe efikasitet të vazhdueshëm.",
+"longDesc": "Koka zëvendësuese e furçës Kirby për pluhurosje është një zgjidhje praktike për zgjatjen e jetëgjatësisë së aksesorit pa blerë një mjet krejtësisht të ri. Ajo përmban të njëjtat fije të buta që ofrojnë të njëjtën performancë të butë pastrimi. Instalohet lehtësisht me një sistem kapësesh, duke parandaluar rënien e performancës ndërsa furça origjinale konsumohet. E pajtueshme me të gjitha sistemet Kirby, ajo lejon mirëmbajtje ekonomike dhe të pandërprerë.",
+"price": 650,
+"discount": 0,
+"image": "../images_webp/extras/zamenaZaChetka.webp"
+},
+{
+"shortName": "Furçë për Tavanin",
+"fullName": "Furçë për Tavan dhe Mur",
+"category": "Pjesë këmbimi",
+"shortDesc": "Furça e tavanit Kirby e bën pastrimin e sipërfaqeve të larta dhe qosheve të lehta pa shkallë.",
+"longDesc": "Furça e tavanit Kirby është projektuar me një formë të zgjatur dhe fije të buta për heqjen efektive të pluhurit, rrjetave të merimangave dhe papastërtive nga tavanet, ventilatorët dhe qoshet e larta. Lejon pastrim të sigurt pa pasur nevojë për shkallë ose rrezik lëndimi. Është e lehtë për t'u manovruar dhe thith pluhurin pa e shpërndarë atë. E pajtueshme me të gjitha modelet Kirby nëpërmjet tubit, është ideale për mirëmbajtjen rutinore të zonave të larta në shtëpi.",
+"price": 1060,
+"discount": 0,
+"image": "../images_webp/extras/chetkaZaTavan.webp"
+},
+{
+"shortName": "Rrotull furçe për pllaka",
+"fullName": "Rrotull me furçë për pllaka dhe llaç",
+"category": "Pjesë këmbimi",
+"shortDesc": "Rrotulla e furçës Kirby për shampo lejon aplikim të njëtrajtshëm të shamponit dhe pastrim të thellë të qilimave.",
+"longDesc": "Rrotulla e furçës Kirby për shampo është projektuar për të kombinuar larjen dhe shpërndarjen e barabartë të shampos për pastrim të thellë të qilimave dhe pëlhurave. Mekanizmi rrotullues depërton në fibra, zbut njollat dhe lejon heqjen më efektive të papastërtisë. E pajtueshme me sistemet Avalir dhe e qëndrueshme për përdorim të rregullt profesional, ajo ofron rezultate të pastra pa mbetje dhe me përdorim efikas të produktit.",
+"price": 3200,
+"discount": 0,
+"image": "../images_webp/extras/chetkaZaShamponer.webp"
+},
+{
+"shortName": "Shampo portative",
+"fullName": "Shampo portative Kirby",
+"category": "Pjesë këmbimi",
+"shortDesc": "Spërkatje precize e shampos ose ujit me kontroll të lehtë të shkrehësit për pastrim të synuar.",
+"longDesc": "Shampuesi portativ Kirby lejon aplikimin e kontrolluar të shamponit, ujit ose tretësirës pastruese në qilima dhe pëlhura pa e tepruar me produktin. I lehtë dhe i rehatshëm për t’u përdorur, është i pajtueshëm me sistemin Avalir, i qëndrueshëm për përdorim të përditshëm dhe ideal për trajtimin e njollave ose përgatitjen e sipërfaqeve.",
+"price": 1410,
+"discount": 0,
+"image": "../images_webp/extras/shpritzPishtol.webp"
+},
+{
+"shortName": "Rrotull me furçë",
+"fullName": "Rrotull furçe Kirby",
+"category": "Pjesë këmbimi",
+"shortDesc": "Furçë klasike me fibra natyrale për pastrim të butë të dyshemeve të forta.",
+"longDesc": "Furça prej druri Kirby me fibra natyrale largon në mënyrë efektive pluhurin dhe papastërtinë nga dyshemetë dhe sipërfaqet e forta në modelet e vjetra pa i gërvishtur. E qëndrueshme dhe e pajtueshme me njësitë e serisë Generation, është ideale për mirëmbajtjen afatgjatë të sipërfaqeve të pastra.",
+"price": 3300,
+"discount": 0,
+"image": "../images_webp/extras/drvenaChetka.webp"
+},
+{
+"shortName": "Furçë delikate",
+"fullName": "Rrotull furçe Kirby delikate",
+"category": "Pjesë këmbimi",
+"shortDesc": "Furçë e butë për dysheme delikate pa shkaktuar dëme.",
+"longDesc": "Furça delikate prej druri Kirby me fije ultra të buta është projektuar për pastrim të kujdesshëm të dyshemeve prej druri të fortë, laminat dhe të lëmuara. Ajo heq pluhurin butësisht dhe është e pajtueshme me të gjitha modelet, duke siguruar një përfundim profesional në sipërfaqet premium.",
+"price": 2820,
+"discount": 0,
+"image": "../images_webp/extras/delikateChetka.webp"
+},
+{
+"shortName": "Pëlhurë me mikrofibër",
+"fullName": "Pëlhurë me mikrofibër Kirby",
+"category": "Pjesë këmbimi",
+"shortDesc": "Lustron dhe mbledh pluhurin pa lënë njolla në sipërfaqe të ndryshme.",
+"longDesc": "Pëlhura Kirby me mikrofibër thith pluhurin, lagështinë dhe vajrat nga dyshemetë, mobiljet dhe qelqi, duke i lënë sipërfaqet të pastra pa njolla ose kimikate. Shumëfunksionale dhe e qëndrueshme, mund të lahet në lavatriçe dhe ideale për përdorim të përditshëm dhe kujdes afatgjatë të sipërfaqeve.",
+"price": 610,
+"discount": 0,
+"image": "../images_webp/extras/mikrofiberKrpa.webp"
+},
+{
+"shortName": "Rrip",
+"fullName": "Rripi Kirby",
+"category": "Materiale të konsumueshme",
+"shortDesc": "Transferon energjinë nga motori te furça për performancë të qëndrueshme pastrimi.",
+"longDesc": "Rripi i transmisionit Kirby transferon energjinë nga motori te furça për pastrim efektiv. Zëvendësimi i tij kur konsumohet ndihmon në ruajtjen e performancës së makinës, instalohet lehtë dhe është i qëndrueshëm për përdorim të rëndë. I pajtueshëm me të gjitha modelet, ai e mban njësinë të funksionojë pa probleme dhe në mënyrë të besueshme.",
+"price": 200,
+"discount": 0,
+"image": "../images_webp/extras/remenche.webp"
+},
+{
+"shortName": "Universal Bag 6",
+"fullName": "Qese Filtri Universal (6 copë)",
+"category": "Materiale të konsumueshme",
+"shortDesc": "Qese filtri për reduktimin e alergjenëve (6 copë).",
+"longDesc": "Një zgjidhje praktike dhe efikase për mirëmbajtjen e higjienës së përditshme. Këto qese bllokojnë pluhurin, polenin dhe grimcat që mund të përhapen në ajër. Përdorimi i qeseve jo origjinale të filtrit mund të zvogëlojë efikasitetin, të dëmtojë njësinë dhe të lejojë që pluhuri të dalë. Qeset origjinale Kirby janë: të projektuara posaçërisht për sistemin; të testuara për cilësi dhe siguri; dhe të ndërtuara për të siguruar funksionimin e duhur.",
+"price": 2700,
+"discount": 0,
+"image": "../images_webp/extras/UniversalKesa6.webp"
+},
+{
+"shortName": "Çanti Universal 1",
+"fullName": "Qese Filtri Universal (1 copë)",
+"category": "Materiale të konsumueshme",
+"shortDesc": "Qese filtri për reduktimin e alergjenëve (1 copë).",
+"longDesc": "Një zgjidhje praktike dhe efikase për mirëmbajtjen e higjienës së përditshme. Këto qese bllokojnë pluhurin, polenin dhe grimcat që mund të përhapen në ajër. Përdorimi i qeseve jo origjinale të filtrit mund të zvogëlojë efikasitetin, të dëmtojë njësinë dhe të lejojë që pluhuri të dalë. Qeset origjinale Kirby janë: të projektuara posaçërisht për sistemin; të testuara për cilësi dhe siguri; dhe të ndërtuara për të siguruar funksionimin e duhur.",
+"price": 450,
+"discount": 0,
+"image": "../images_webp/extras/UniversalKesa1.png"
+},
+{
+"shortName": "HEPA Plus Bag 6",
+"fullName": "Qese Filtri HEPA Plus (6 copë)",
+"category": "Materiale të konsumueshme",
+"shortDesc": "Qese filtri HEPA me mikroalergjenë (6 copë).",
+"longDesc": "Filtrim maksimal për sistemin tuaj Kirby. Teknologjia HEPA bllokon pluhurin, polenin, qimet e kafshëve shtëpiake dhe mikro-pjesëzat, duke i penguar ato të rihyjnë në ajër. Përdorimi i qeseve jo origjinale të filtrit mund të zvogëlojë efikasitetin, të dëmtojë njësinë dhe të lejojë që pluhuri të dalë. Qeset origjinale Kirby janë: të projektuara posaçërisht për sistemin; të testuara për cilësi dhe siguri; dhe të ndërtuara për të siguruar funksionimin e duhur.",
+"price": 3000,
+"discount": 0,
+"image": "../images_webp/extras/HEPAPlusKesa6.webp"
+},
+{
+"shortName": "HEPA Plus Bag 1",
+"fullName": "Qanse filtri HEPA Plus (1 copë)",
+"category": "Materiale të konsumueshme",
+"shortDesc": "Qese filtri HEPA me mikroalergjenë (1 copë).",
+"longDesc": "Filtrim maksimal për sistemin tuaj Kirby. Teknologjia HEPA bllokon pluhurin, polenin, qimet e kafshëve shtëpiake dhe mikro-pjesëzat, duke i penguar ato të rihyjnë në ajër. Përdorimi i qeseve jo origjinale të filtrit mund të zvogëlojë efikasitetin, të dëmtojë njësinë dhe të lejojë që pluhuri të dalë. Qeset origjinale Kirby janë: të projektuara posaçërisht për sistemin; të testuara për cilësi dhe siguri; dhe të ndërtuara për të siguruar funksionimin e duhur.",
+"price": 500,
+"discount": 0,
+"image": "../images_webp/extras/HEPAPlusKesa1.png"
+}
+]
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="al">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Informacion mbi garancinë dhe të drejtat e blerësit.">
+  <title>KIRBY | Garancia</title>
+  <link href="../output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gidole&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4baf646c88.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://gidole.github.io/GidoleFont/gidoleFont.css">
+  <link rel="icon" type="image/png" href="../images_webp/logoW.webp">
+  <style>
+    @import url('https://gidole.github.io/GidoleFont/gidoleFont.css');
+    .font-gidole { font-family: 'Gidole', sans-serif !important; }
+    .reveal-letters span { opacity: 0; transform: translateY(20px); display: inline-block; transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal-visible span { opacity: 1; transform: translateY(0); }
+    #infoDropdownMenu { -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); }
+    #infoChevron, #langChevron { display: inline-block; opacity: 0; transform: rotate(0deg); transition: transform .25s ease, opacity .15s ease; }
+    #infoDropdownButton:hover #infoChevron, #langDropdownButton:hover #langChevron { opacity: 1; }
+    #infoChevron.rotated, #langChevron.rotated { transform: rotate(180deg); }
+    #mobileInfoChevron { display: inline-block; transition: transform .25s ease; }
+    #mobileInfoChevron.rotated { transform: rotate(180deg); }
+    #mobileInfoDropdownMenu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    #mobileInfoDropdownMenu.open { max-height: 500px; }
+    #mobileLangDropdownMenu { max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(-6px) scaleY(0.98); transform-origin: top; transition: max-height .28s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1); }
+    #mobileLangDropdownMenu.open { max-height: 240px; opacity: 1; visibility: visible; transform: translateY(0) scaleY(1); }
+    #triggeredMenu { max-height: 0; overflow: hidden; opacity: 0; transform: translateY(-8px); transition: max-height .32s ease, opacity .22s ease, transform .26s cubic-bezier(.2,.9,.2,1); }
+    #triggeredMenu.open { max-height: 800px; opacity: 1; transform: translateY(0); }
+    #mobileNav.mobile-open { background-color: rgba(0,0,0,0.25) !important; }
+    #section-progress-container { position: fixed; bottom: 0; left: 0; width: 100%; height: 4px; background: rgba(255,255,255,0.40); z-index: 9999; pointer-events: none; }
+    #section-progress-bar { width: 0%; height: 100%; background: #fff; transition: width 100ms linear; }
+  </style>
+</head>
+<body class="overflow-x-hidden font-gidole bg-[#484848] w-full relative">
+  <div id="nav-container"></div>
+  <div id="mobile-nav-container"></div>
+
+  <div id="desktopNavSpacer" class="w-full hidden lg:block my-[1.5%]">
+    <div class="w-full h-[10vh] max-h-[110px]"></div>
+  </div>
+  <div id="mobileNavSpacer" class="py-[2vh] block lg:hidden">
+    <div class="w-full py-[5%] md:py-[3%]">
+      <div class="w-full h-[28px] xs:h-[32px] md:h-[35px]"></div>
+    </div>
+  </div>
+
+  <main class="w-full px-[5%] bg-gradient-to-b from-transparent to-black/50">
+    <div class="page-content mx-auto text-white/90">
+      <div class="xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-white/70 text-sm xs:text-lg md:text-xl xl:text-2xl lg:px-[2%]">
+        <br><p class="text-2xl xs:text-4xl md:text-5xl xl:text-6xl font-black text-white">Garancia</p><br><br>
+      
+        <p class="text-white">KUSHTET E GARANCISË</p><br>
+      
+        <p>Kompania “VINKOM DOOEL” – Shkup, lëshuesi i certifikatës së garancisë, garanton se produkti do të funksionojë siç duhet dhe do ta përmbushë qëllimin e tij nëse respektohen udhëzimet për përdorim.</p><br>
+      
+        <br><p class="text-white">PERIUDHA E GARANCISË</p><br>
+      
+        <p>Garancia është e vlefshme nga data e shitjes dhe e verifikimit të certifikatës së garancisë dhe zgjat 12 muaj për përdorim komercial dhe 36 muaj për përdorim personal. Lëshuesi i garancisë merr përsipër që gjatë periudhës së garancisë: <br>- Të eliminojë pa pagesë të gjitha defektet dhe të zëvendësojë pjesët për të cilat konstatohet se kanë defekte të prodhimit ose të montimit. <br>- Të kryejë të gjitha riparimet e pajisjes brenda 10 ditëve nga data e njoftimit me shkrim për defektin. Nëse riparimi nuk kryhet brenda këtij afati, periudha e garancisë do të zgjatet për aq ditë sa është tejkaluar afati i riparimit.<br>Nëse pajisja nuk riparohet brenda 20 ditëve ose defekti nuk mund të eliminohet, përdoruesi ka të drejtë të kërkojë zëvendësimin e pajisjes. Transporti dhe vënia në funksion e produktit KIRBY kryhen me shpenzimet e garantuesit.</p><br>
+      
+        <br><p class="text-white">Nga detyrimet e garancisë përjashtohen:</p><br>
+      
+        <p>- Pjesët që janë pjesë e mirëmbajtjes së rregullt të pajisjes dhe që, për nga natyra e tyre, konsumohen dhe zëvendësohen me të reja (rripi, llamba, qeset prej letre, fijet e furçës, rrotat e pasme etj.).<br>- Riparimi i një pajisjeje nga e cila është hequr numri i serisë ose shënimi me datën e prodhimit të pjesëve të instaluara.<br>- Defektet e shkaktuara nga mosrespektimi i udhëzimeve për përdorim dhe mirëmbajtje ose nga përdorimi i materialeve harxhuese dhe mjeteve të papërshtatshme.<br>- Defektet e shkaktuara nga dëmtimet mekanike (turbina, zorra, tubat etj.).</p><br>
+      
+        <br><p class="text-white">Garancia bëhet e pavlefshme</p><br>
+      
+        <p>- Nëse konstatohet se vënia në funksion ose servisimi është kryer nga një person i paautorizuar ose nëse në pajisje është instaluar një pjesë jo origjinale.<br>- Nëse konstatohet se pajisja është blerë nga një distributor i paautorizuar, është rishitur ose është siguruar në mënyrë tjetër në kundërshtim me kushtet e garancisë.</p>
+      
+        <br><p>Garancia dëshmohet me një kopje të certifikatës së garancisë të lëshuar nga kompania KIRBY.</p>
+      </div>
+    </div>
+  </main>
+
+    <div class="w-full h-[16vh] bg-gradient-to-b from-black/50 to-black"></div>
+
+  <div id="cookie-container"></div>
+  <div id="cart-badge-container"></div>
+
+  <div id="footer-container"></div>
+
+  
+
+  
+
+  <script>
+    (function () {
+      const targetSection = document.querySelector('.page-content');
+      if (!targetSection) return;
+
+      const container = document.createElement('div');
+      container.id = 'section-progress-container';
+      const bar = document.createElement('div');
+      bar.id = 'section-progress-bar';
+      container.appendChild(bar);
+      document.body.appendChild(container);
+
+      function updateProgress() {
+        const sectionTop = targetSection.getBoundingClientRect().top + window.scrollY;
+        const sectionHeight = targetSection.offsetHeight;
+        const maxScroll = Math.max(1, sectionHeight - window.innerHeight);
+        const scrolled = window.scrollY - sectionTop;
+        const percent = Math.max(0, Math.min(100, (scrolled / maxScroll) * 100));
+        bar.style.width = percent + '%';
+      }
+
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      window.addEventListener('resize', updateProgress);
+      updateProgress();
+    })();
+  </script>
+
+  <script src="../cookie.js"></script>
+  <script src="../assets/js/includes.js"></script>
+</body>
+</html>

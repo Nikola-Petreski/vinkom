@@ -1,0 +1,34 @@
+[
+
+    {
+        "slide": 1,
+        "image": "../images_webp/carousel/rand2.webp",
+        "h": "Pastrim i Thellë",
+        "p": "Kirby heq papastërtinë e fshehur thellë brenda qilimave tuaj, aty ku fshesat me korrent të zakonshme nuk mund të arrijnë."
+    },
+    {
+        "slide": 2,
+        "image": "../images_webp/carousel/rand3.webp",
+        "h": "Fuqi dhe Kontroll, Pa Mundim",
+        "p": "Lëviz me lehtësi duke përdorur asistencën automatike me energji dhe lartësinë e rregullueshme të pastrimit."
+    },
+    {
+        "slide": 3,
+        "image": "../images_webp/carousel/rand4.webp",
+        "h": "Një makinë për çdo dhomë",
+        "p": "Transformohet nga një fshesë me korrent në një pastrues shampoje, pastrues dyshemeje dhe pastrues mobiljesh."
+    },
+    {
+        "slide": 4,
+        "image": "../images_webp/carousel/rand1.webp",
+        "h": "Merr frymë më pastër, jeto më mirë",
+        "p": "Sistemi HEPA kap 99.97% të grimcave deri në 0.3 mikronë - pluhur, polen dhe alergjenë të kafshëve shtëpiake."
+    },
+    {
+        "slide": 5,
+        "image": "../images_webp/carousel/rand5.webp",
+        "h": "Ndërto për një jetë të tërë",
+        "p": "Prodhuar në SHBA nga alumini i derdhur, me një program rindërtimi gjatë gjithë jetës."
+    }
+]
+

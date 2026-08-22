@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="al">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thank you for your question. Our team will contact you soon with the answer.">
-    <title>Kirby | Question Send</title>
+    <meta name="description" content="Faleminderit! Prezantimi juaj u rezervua me sukses. Prisni konfirmim dhe informacione të tjera së shpejti.">
+    <title>KIRBY | Prezantim i rezervuar</title>
     <link href="../output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +30,7 @@
         }
 
     </style>
+</head>
         <style>
 .reveal-letters span {
     opacity: 0;
@@ -120,9 +121,9 @@
 #mobileNav.mobile-open {
     background-color: rgba(0,0,0,0.25) !important;
 }
-</style>
+        </style>
 </head>
-<body class="overflow-x-hidden font-gidole bg-[#484848]">
+<body class="overflow-x-hidden font-gidole bg-[#484848] max-w-[1920px] mx-auto">
 
     <div id="nav-container"></div>
 
@@ -132,10 +133,8 @@
     <div id="desktopNavSpacer" class="w-full hidden lg:block my-[1.5%]"><div class="w-full h-[10vh] max-h-[110px]"></div></div>
     <div id="mobileNavSpacer" class="py-[2vh] block lg:hidden"><div class="w-full py-[5%] md:py-[3%]"><div class="w-full h-[28px] xs:h-[32px] md:h-[35px]"></div></div></div>
 
-
-    
         <script>
-        (function(){
+(function(){
     const button = document.getElementById('infoDropdownButton');
     const menu = document.getElementById('infoDropdownMenu');
     const chevron = document.getElementById('infoChevron');
@@ -290,55 +289,73 @@
         }
     });
 })();
+</script>
 
-(function(){
+    <script>
+    (function(){
         const nav = document.getElementById('nav');
         const spacer = document.getElementById('nav-spacer');
         if(!nav) return;
 
+        // ensure smooth transition
         nav.style.transition = nav.style.transition || 'transform 360ms cubic-bezier(0.2,0,0.2,1), opacity 300ms linear backdrop-filter 300ms ease';
         nav.style.willChange = 'transform, opacity';
         nav.style.transform = nav.style.transform || 'translateY(0)';
         nav.style.opacity = nav.style.opacity || '1';
 
+        // compute and set spacer height (px) so layout doesn't jump
         function recompute(){
-                try{
-                        const h = Math.ceil(nav.getBoundingClientRect().height);
-                        if(spacer) spacer.style.height = h + 'px';
-                }catch(e){}
+            try{
+                const h = Math.ceil(nav.getBoundingClientRect().height);
+                if(spacer) spacer.style.height = h + 'px';
+            }catch(e){}
         }
         recompute();
         window.addEventListener('resize', recompute, {passive:true});
 
-        let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+        let ticking = false;
 
-        window.addEventListener('scroll', function() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                if (scrollTop > lastScrollTop + 6) {
-                        nav.style.transform = 'translateY(-' + (nav.offsetHeight + 4) + 'px)';
-                        nav.style.opacity = '0';
-                } else if (scrollTop < lastScrollTop - 6) {
-                        nav.style.transform = 'translateY(0)';
-                        nav.style.opacity = '1';
-                } else {
-                        nav.style.transform = 'translateY(0)';
-                }
-                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-        });
-})();
-        </script>
+        function hideNav(){
+            const h = Math.ceil(nav.getBoundingClientRect().height) + 4;
+            nav.style.transform = 'translateY(-' + h + 'px)';
+            nav.style.opacity = '0';
+        }
+        function showNav(){
+            nav.style.transform = 'translateY(0)';
+            nav.style.opacity = '1';
+        }
+
+        function onScroll(){
+            const current = window.pageYOffset || document.documentElement.scrollTop;
+            if(current > lastScroll + 6){
+                hideNav();
+            } else if(current < lastScroll - 6){
+                showNav();
+            }
+            lastScroll = current <= 0 ? 0 : current;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function(){
+            if(!ticking){ window.requestAnimationFrame(onScroll); ticking = true; }
+        }, {passive:true});
+    })();
+
+    </script>
+
 
     <div class="w-full px-[5%]">
         <div class="w-full flex flex-col lg:flex-row justify-center sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-lg xs:text-2xl md:text-3xl lg:text-sm xl:text-base 2xl:text-lg 3xl:text-2xl">
             <div class="w-full lg:w-1/2 max-w-[1024px] px-[10%] py-[10%] lg:p-[5%] bg-white/70 rounded-t-xl lg:rounded-tr-none lg:rounded-bl-xl gap-6 flex flex-col">
-                <p class="text-2xl xs:text-4xl md:text-5xl lg:text-4xl 2xl:text-5xl 3xl:text-6xl font-black">You have succesfully send a question.</p>
-                <p class="text-black/70 text-base xs:text-lg md:text-xl lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl">Our team will contact you soon with all the information. In the meantime, discover useful tips for caring, maintaining, and using your Kirby on our
+                <p class="text-2xl xs:text-4xl md:text-5xl lg:text-4xl 2xl:text-5xl 3xl:text-6xl font-black">Jeni tashmë një hap më pranë një shtëpie më të pastër.</p>
+                <p class="text-black/70 text-base xs:text-lg md:text-xl lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl">Rezervimi i prezantimit u krye me sukses! Faleminderit për kohën tuaj. Do t'ju kontaktojmë për të konfirmuar prezantimin dhe detajet. Ndërkohë, zbuloni këshilla të dobishme për kujdesin dhe përdorimin e Kirby-t në
                     <a href="blog.html" class="text-black">blog</a>,
-                    or explore our
+                    ose eksploroni
                     <a href="models.html" class="text-black">models</a>
                     and
-                    <a class="text-black" href="extras.html">accessories</a>.
-                    You will be redirected to the Home Page shortly.</p>
+                    <a class="text-black" href="extras.html">products</a>.
+                    Së shpejti do të ridrejtoheni në faqen kryesore.</p>
             </div>
             <div class="w-full lg:w-1/2 max-w-[1024px] px-[10%] lg:px-[5%] bg-gradient-to-b lg:bg-gradient-to-r flex justify-center items-center from-white/70 to-transparent rounded-b-xl lg:rounded-bl-none lg:rounded-tr-xl">
                 <img class="w-full" src="../images_webp/logoB.webp" alt="">
@@ -360,7 +377,7 @@
     </script>
 
     
-    
+
 <script src="../cookie.js"></script>
 
   
