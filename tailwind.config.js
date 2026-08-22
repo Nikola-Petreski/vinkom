@@ -5,7 +5,8 @@ module.exports = {
     "./*.js",
     "./assets/**/*.{js,html}",
     "./includes/**/*.{html,js}",
-    "./en/**/*.{html,js}"
+    "./en/**/*.{html,js}",
+    "./al/**/*.{html,js}"
   ],
   theme: {
     extend: {
