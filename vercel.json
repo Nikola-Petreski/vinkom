@@ -1,0 +1,22 @@
+{
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/al/(.*)",
+      "dest": "/al/404.html",
+      "status": 404
+    },
+    {
+      "src": "/en/(.*)",
+      "dest": "/en/404.html",
+      "status": 404
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/404.html",
+      "status": 404
+    }
+  ]
+}
