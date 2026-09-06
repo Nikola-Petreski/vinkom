@@ -53,16 +53,6 @@
     "image": "../images_webp/extras/predtretmanZaPlochki.webp"
   },
   {
-    "shortName": "Pet Stain Cleaner",
-    "fullName": "Pet Stain and Odor Remover Carpet Cleaner",
-    "category": "Cleaning Products",
-    "shortDesc": "Kirby enzyme-based cleaner for removing stains and odors from pet urine and messes on fabric.",
-    "longDesc": "Kirby pet cleaner is specially designed for deep cleaning of stains and odors caused by dogs and cats. The enzyme formula effectively breaks down urine, vomit, and hair residue on carpets, upholstery, and fabric. Lavender scent provides a fresh, pleasant atmosphere without masking odors. It leaves no sticky residue and is safe for use with Kirby systems. Regular use helps maintain a hygienic, clean, and comfortable home for the whole family.",
-    "price": 1250,
-    "discount": 0,
-    "image": "../images_webp/extras/sredstvoZaMilenici.webp"
-  },
-  {
     "shortName": "Hard Floors",
     "fullName": "Hard Floor Cleaner",
     "category": "Cleaning Products",
@@ -131,16 +121,6 @@
     "price": 1430,
     "discount": 0,
     "image": "../images_webp/extras/sjajZaPod.webp"
-  },
-  {
-    "shortName": "Kirby Foam",
-    "fullName": "Kirby Foam Carpet and Fabric Cleaner",
-    "category": "Cleaning Products",
-    "shortDesc": "Kirby dry foam for quick refresh of rugs and upholstery without using water.",
-    "longDesc": "Kirby Foam is a dry-foam carpet and fabric cleaner designed for quick, practical refresh of rugs, upholstery, and furniture. It penetrates fibers and absorbs dust and unpleasant odors without soaking the surface or requiring a long drying time. It is ideal for use between deep cleanings or when moisture is undesirable. It is easy to apply with Kirby tools and leaves no residue after use. It delivers a clean, fresh look and is suitable for everyday home hygiene.",
-    "price": 720,
-    "discount": 0,
-    "image": "../images_webp/extras/foam.webp"
   },
   {
     "shortName": "Tile Kit",

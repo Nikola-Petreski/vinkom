@@ -53,16 +53,6 @@
 "image": "../images_webp/extras/predtretmanZaPlochki.webp"
 },
 {
-"shortName": "Spot Remover",
-"fullName": "Pastrues për heqjen e njollave dhe aromave të kafshëve shtëpiake",
-"category": "Produkte pastrimi",
-"shortDesc": "Pastrues me bazë enzimash Kirby për heqjen e njollave dhe aromave nga urina e kafshëve shtëpiake dhe rrëmujës në pëlhurë.",
-"longDesc": "Pastruesi për kafshë shtëpiake Kirby është projektuar posaçërisht për pastrim të thellë të njollave dhe aromave të shkaktuara nga qentë dhe macet. Formula enzimatike zbërthen në mënyrë efektive urinën, të vjellat dhe mbetjet e qimeve në qilima, tapiceri dhe pëlhura. Aroma e livandos ofron një atmosferë të freskët dhe të këndshme pa maskuar aromat. Nuk lë mbetje ngjitëse dhe është e sigurt për përdorim me sistemet Kirby. Përdorimi i rregullt ndihmon në ruajtjen e një shtëpie higjienike, të pastër dhe të rehatshme për të gjithë familjen.",
-"price": 1250,
-"discount": 0,
-"image": "../images_webp/extras/sredstvoZaMilenici.webp"
-},
-{
 "shortName": "Hard Floor Cleaner",
 "fullName": "Pastrues dyshemesh të forta",
 "category": "Produkte pastrimi",
@@ -131,16 +121,6 @@
 "price": 1430,
 "discount": 0,
 "image": "../images_webp/extras/sjajZaPod.webp"
-},
-{
-"shortName": "Kirby Foam",
-"fullName": "Pastrues Qilimash dhe Pëlhurash me Shkumë Kirby",
-"category": "Produkte pastrimi",
-"shortDesc": "Shkumë e thatë Kirby për rifreskim të shpejtë të qilimave dhe tapicerive pa përdorur ujë.",
-"longDesc": "Kirby Foam është një pastrues qilimash dhe pëlhurash me shkumë të thatë, i projektuar për rifreskim të shpejtë dhe praktik të qilimave, tapicerive dhe mobiljeve. Ai depërton në fibra dhe thith pluhurin dhe aromat e pakëndshme pa e lagur sipërfaqen ose pa kërkuar një kohë të gjatë tharjeje. Është ideal për përdorim midis pastrimeve të thella ose kur lagështia është e padëshirueshme. Aplikohet lehtë me mjetet Kirby dhe nuk lë mbetje pas përdorimit. Ofron një pamje të pastër dhe të freskët dhe është i përshtatshëm për higjienën e përditshme në shtëpi.",
-"price": 720,
-"discount": 0,
-"image": "../images_webp/extras/foam.webp"
 },
 {
 "shortName": "Tile & Grout Kit",
