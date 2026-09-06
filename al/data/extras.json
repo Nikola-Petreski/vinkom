@@ -2,16 +2,8 @@
 {
 "shortName": "Avalir Platinum",
 "fullName": "Kirby Avalir Platinum",
-"category": [
-"Materiale të konsumueshme",
-"Pjesë këmbimi",
-"Produkte pastrimi"
-],
-"categories": [
-"Materiale të konsumueshme",
-"Pjesë këmbimi",
-"Produkte pastrimi"
-],
+"category": [],
+"categories": [],
 "shortDesc": "Kirby Avalir Platinum me funksionim të qetë dhe 15 aksesorë të specializuar pastrimi.",
 "longDesc": "Kirby Avalir Platinum me funksionim të qetë dhe <a href=\"platinum.html#attachment-toggle-1\" class=\"text-white underline\">15 pajisje pastrimi të specializuara</a>. I njohur për cilësinë, sigurinë dhe performancën, Kirby ka ofruar pastrim të thellë për më shumë se 110 vjet. Avalir Platinum i ri me teknologji të reduktimit të zhurmës ofron performancë premium me funksionim më të qetë dhe më efikas. Me izolim të përparuar të zhurmës dhe një motor të ri, funksionon në qetësi pa sakrifikuar fuqinë. Më shumë sesa një fshesë me korrent, Kirby shndërrohet lehtësisht në një pastrues qilimash, pastrues pllakash, pastrues druri dhe shumë më tepër.",
 "price": 181425,
@@ -258,7 +250,7 @@
 "longDesc": "Pllaka e poshtme Kirby është montuar në furçën e dyshemesë së fortë dhe ofron pastrim të butë por efektiv në pllaka, vinil dhe laminat pa lënë shenja. E bërë nga material i qëndrueshëm, rezistent ndaj konsumimit dhe e lehtë për t'u zëvendësuar. Ideale për mirëmbajtje të përditshme pa rrezikuar dëmtimin e sipërfaqeve të ndjeshme.",
 "price": 850,
 "discount": 0,
-"image": "../images_webp/extras/podloshka.webp"
+"image": "../images_webp/extras/podloshka.png"
 },
 {
 "shortName": "Rrotat e përparme",

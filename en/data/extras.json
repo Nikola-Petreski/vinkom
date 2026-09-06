@@ -2,16 +2,8 @@
   {
     "shortName": "Avalir Platinum",
     "fullName": "Kirby Avalir Platinum",
-    "category": [
-      "Consumables",
-      "Spare Parts",
-      "Cleaning Products"
-    ],
-    "categories": [
-      "Consumables",
-      "Spare Parts",
-      "Cleaning Products"
-    ],
+    "category": [],
+    "categories": [],
     "shortDesc": "Kirby Avalir Platinum with quiet operation and 15 specialized cleaning attachments.",
     "longDesc": "Kirby Avalir Platinum with quiet operation and <a href=\"platinum.html#attachment-toggle-1\" class=\"text-white underline\">15 specialized cleaning attachments</a>. Known for quality, safety, and performance, Kirby has delivered deep cleaning for more than 110 years. The new Avalir Platinum with sound-reduction technology delivers premium performance with quieter, more efficient operation. With advanced sound insulation and a new motor, it runs quietly without sacrificing power. More than a vacuum, Kirby easily transforms into a carpet cleaner, tile cleaner, hardwood polisher, and much more.",
     "price": 181425,
@@ -258,7 +250,7 @@
     "longDesc": "Kirby bottom plate is mounted on the hard-floor brush and provides soft but effective cleaning on tile, vinyl, and laminate without leaving marks. Made from durable, wear-resistant material and easy to replace. Ideal for daily maintenance without risking damage to sensitive surfaces.",
     "price": 850,
     "discount": 0,
-    "image": "../images_webp/extras/podloshka.webp"
+    "image": "../images_webp/extras/podloshka.png"
   },
   {
     "shortName": "Front Wheels",

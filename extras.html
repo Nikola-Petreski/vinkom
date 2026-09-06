@@ -705,7 +705,7 @@
 
       let filtered = allExtras.filter(e => {
         const categories = getCategories(e);
-        return e.fullName.toLowerCase().includes(searchTerm) &&
+        return [e.fullName, e.secondaryName].some(name => name?.toLowerCase().includes(searchTerm)) &&
           (category === 'all' || categories.includes(category));
       });
 
