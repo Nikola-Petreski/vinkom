@@ -98,7 +98,7 @@ function addProductToCart(product) {
     if (cart.length >= 10) {
       return false;
     }
-    cart.push({ id: Date.now(), name: product.name, price: product.price, qty: 1, image: product.image });
+    cart.push({ id: Date.now(), productId: product.productId, name: product.name, price: product.price, qty: 1, image: product.image });
   }
   saveCart(cart);
   updateCartBadge();
@@ -150,6 +150,7 @@ function initializeCart() {
     const priceMatches = priceElement.textContent.match(/\d[\d.]*/g) || [];
     const price = parseInt((priceMatches.at(-1) || '0').replace(/\./g, ''), 10) || 0;
     addProductToCart({
+      productId: window.currentModalProduct ? window.currentModalProduct.id : undefined,
       name: nameElement.textContent.trim(),
       price,
       image: imageElement ? imageElement.src : ''

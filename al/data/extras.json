@@ -1,5 +1,6 @@
 [
 {
+"id": "291024",
 "shortName": "Avalir Platinum",
 "fullName": "Kirby Avalir Platinum",
 "category": [],
@@ -13,6 +14,7 @@
 "featured": true
 },
 {
+"id": "25257EUG",
 "shortName": "Carpet Shampoo 1L",
 "fullName": "Shampo 1 litër",
 "category": "Produkte pastrimi",
@@ -23,6 +25,7 @@
 "image": "../images_webp/extras/shampon1l.webp"
 },
 {
+"id": "2528EUG",
 "shortName": "Carpet Shampoo 1G",
 "fullName": "Shampo 1 Galon (3,785 ml)",
 "category": "Produkte pastrimi",
@@ -33,6 +36,7 @@
 "image": "../images_webp/extras/shampon1Galon.webp"
 },
 {
+"id": "91PNG",
 "shortName": "HomeFresh Freshener",
 "fullName": "Aromatizues për shtëpie",
 "category": "Produkte pastrimi",
@@ -43,6 +47,7 @@
 "image": "../images_webp/extras/osvezhuvachNaDomot.webp"
 },
 {
+"id": "91PNG",
 "shortName": "Tile Pre-Treat",
 "fullName": "Para-trajtim për pllaka dhe llaç",
 "category": "Produkte pastrimi",
@@ -53,6 +58,7 @@
 "image": "../images_webp/extras/predtretmanZaPlochki.webp"
 },
 {
+"id": "352715",
 "shortName": "Hard Floor Cleaner",
 "fullName": "Pastrues dyshemesh të forta",
 "category": "Produkte pastrimi",
@@ -63,6 +69,7 @@
 "image": "../images_webp/extras/tvrdiPovrshini880.webp"
 },
 {
+"id": "25257EUG",
 "shortName": "Tile&Grout Cleaner",
 "fullName": "Pastrues pllakash dhe llaçi",
 "category": "Produkte pastrimi",
@@ -73,6 +80,7 @@
 "image": "../images_webp/extras/plochkiIFugi.webp"
 },
 {
+"id": "2452",
 "shortName": "Shapoo Pre-Treat",
 "fullName": "Para-trajtim me shampo për qilima",
 "category": "Produkte pastrimi",
@@ -83,6 +91,7 @@
 "image": "../images_webp/extras/predtretmanZaTepisi.webp"
 },
 {
+"id": "352815",
 "shortName": "Hard Floor Concentrate",
 "fullName": "Koncentrat për Pastrues Dyshemesh të Forta",
 "category": "Produkte pastrimi",
@@ -93,6 +102,7 @@
 "image": "../images_webp/extras/koncetratZaPodovi.webp"
 },
 {
+"id": "2409ЕU",
 "shortName": "Lickity Split",
 "fullName": "Ndarja e Lickity",
 "category": "Produkte pastrimi",
@@ -103,6 +113,7 @@
 "image": "../images_webp/extras/lickitySplit.webp"
 },
 {
+"id": "2578UKG",
 "shortName": "OXY Additive",
 "fullName": "Shtesë për oksigjenin ndriçues",
 "category": "Produkte pastrimi",
@@ -113,6 +124,7 @@
 "image": "../images_webp/extras/OXYDamki.webp"
 },
 {
+"id": "25257EUG",
 "shortName": "Miracle Shine",
 "fullName": "Makarona për dysheme me shkëlqim të mrekullueshëm",
 "category": "Produkte pastrimi",
@@ -123,6 +135,7 @@
 "image": "../images_webp/extras/sjajZaPod.webp"
 },
 {
+"id": "237716",
 "shortName": "Tile & Grout Kit",
 "fullName": "Kit për pllaka dhe llaç",
 "category": "Pjesë këmbimi",
@@ -133,6 +146,7 @@
 "image": "../images_webp/extras/kompletZaPlochki.webp"
 },
 {
+"id": "308114",
 "shortName": "Lidhës",
 "fullName": "Lidhësi Kirby",
 "category": "Pjesë këmbimi",
@@ -143,6 +157,7 @@
 "image": "../images_webp/extras/konektorZaShamponer.webp"
 },
 {
+"id": "119096",
 "shortName": "Turbinë",
 "fullName": "Turbina Kirby",
 "category": "Pjesë këmbimi",
@@ -153,6 +168,7 @@
 "image": "../images_webp/extras/turbina.webp"
 },
 {
+"id": "210014",
 "shortName": "Lidhës tubi",
 "fullName": "Lidhësi i tubit Kirby",
 "category": "Pjesë këmbimi",
@@ -163,6 +179,7 @@
 "image": "../images_webp/extras/zadenPrikluchok.webp"
 },
 {
+"id": "556214",
 "shortName": "Rrotat e pasme",
 "fullName": "Rrotat e pasme Kirby",
 "category": "Pjesë këmbimi",
@@ -173,6 +190,7 @@
 "image": "../images_webp/extras/zadniTrkala.webp"
 },
 {
+"id": "293523",
 "shortName": "Furçë Zipp",
 "fullName": "Kirby Zipp Brush",
 "category": "Pjesë këmbimi",
@@ -183,6 +201,7 @@
 "image": "../images_webp/extras/zipChetka.webp"
 },
 {
+"id": "980614",
 "shortName": "Kabllo",
 "fullName": "Kordi Kirby",
 "category": "Pjesë këmbimi",
@@ -193,6 +212,7 @@
 "image": "../images_webp/extras/kabel.webp"
 },
 {
+"id": "304712",
 "shortName": "Tabela e mbeturinave",
 "fullName": "Tabaku i ujit Kirby",
 "category": "Pjesë këmbimi",
@@ -203,6 +223,7 @@
 "image": "../images_webp/extras/kadichka.webp"
 },
 {
+"id": "188906",
 "shortName": "Mini Emptor",
 "fullName": "Kirby Mini Emptor",
 "category": "Pjesë këmbimi",
@@ -213,6 +234,7 @@
 "image": "../images_webp/extras/miniEmptor.webp"
 },
 {
+"id": "190014",
 "shortName": "Çanta e Jashtme",
 "fullName": "Çanta e jashtme Kirby",
 "category": "Pjesë këmbimi",
@@ -223,6 +245,7 @@
 "image": "../images_webp/extras/vrekja.webp"
 },
 {
+"id": "216212S",
 "shortName": "Pllaka e poshtme",
 "fullName": "Pllaka e poshtme metalike Kirby",
 "category": "Pjesë këmbimi",
@@ -233,6 +256,7 @@
 "image": "../images_webp/extras/podloshka.png"
 },
 {
+"id": "131914",
 "shortName": "Rrotat e përparme",
 "fullName": "Rrotat e përparme Kirby",
 "category": "Pjesë këmbimi",
@@ -243,6 +267,7 @@
 "image": "../images_webp/extras/predniTrkala.webp"
 },
 {
+"id": "224014",
 "shortName": "Shkopi zgjatues",
 "fullName": "Shkopi i zgjerimit Kirby",
 "category": "Pjesë këmbimi",
@@ -253,6 +278,7 @@
 "image": "../images_webp/extras/prodolzhnaCevka.webp"
 },
 {
+"id": "223614",
 "shortName": "Tubi i vakumit",
 "fullName": "Tubi i vakumit Kirby",
 "category": "Pjesë këmbimi",
@@ -263,6 +289,7 @@
 "image": "../images_webp/extras/crevo.webp"
 },
 {
+"id": "225114",
 "shortName": "Rregullatori i ajrit",
 "fullName": "Rregullatori i rrjedhjes së ajrit",
 "category": "Pjesë këmbimi",
@@ -273,6 +300,7 @@
 "image": "../images_webp/extras/regulatorZaVozduh.webp"
 },
 {
+"id": "306714",
 "shortName": "Depozita e shamponit",
 "fullName": "Kirby Shampooer Tank",
 "category": "Pjesë këmbimi",
@@ -283,6 +311,7 @@
 "image": "../images_webp/extras/rezervoarZaShamponer.webp"
 },
 {
+"id": "307581",
 "shortName": "Filtri i rezervuarit",
 "fullName": "Sfungjeri i filtrit të rezervuarit",
 "category": "Pjesë këmbimi",
@@ -293,6 +322,7 @@
 "image": "../images_webp/extras/sitoZaFilter.webp"
 },
 {
+"id": "214114",
 "shortName": "Hundë shërbimi",
 "fullName": "Gryka e Shërbimeve Kirby",
 "category": "Pjesë këmbimi",
@@ -303,6 +333,7 @@
 "image": "../images_webp/extras/timarChetka.webp"
 },
 {
+"id": "308012",
 "shortName": "Tubi i rezervuarit",
 "fullName": "Shampooer Tank Hose",
 "category": "Pjesë këmbimi",
@@ -313,6 +344,7 @@
 "image": "../images_webp/extras/crevoZaShamponer.webp"
 },
 {
+"id": "190384",
 "shortName": "Tub qeseje",
 "fullName": "Tubi Kirby Bag",
 "category": "Pjesë këmbimi",
@@ -323,6 +355,7 @@
 "image": "../images_webp/extras/crnoCrevo.webp"
 },
 {
+"id": "212414",
 "shortName": "Furçë për tapiceri",
 "fullName": "Furça Kirby për tapiceri",
 "category": "Pjesë këmbimi",
@@ -333,6 +366,7 @@
 "image": "../images_webp/extras/cetkaZaMebel.webp"
 },
 {
+"id": "218414",
 "shortName": "Furçë pluhuri",
 "fullName": "Furça Kirby për pluhurosje",
 "category": "Pjesë këmbimi",
@@ -343,6 +377,7 @@
 "image": "../images_webp/extras/chetkaZaPrav.webp"
 },
 {
+"id": "220189",
 "shortName": "Furçë Zëvendësuese",
 "fullName": "Zëvendësim për furçën e pluhurit",
 "category": "Pjesë këmbimi",
@@ -353,6 +388,7 @@
 "image": "../images_webp/extras/zamenaZaChetka.webp"
 },
 {
+"id": "210814",
 "shortName": "Furçë për Tavanin",
 "fullName": "Furçë për Tavan dhe Mur",
 "category": "Pjesë këmbimi",
@@ -363,6 +399,7 @@
 "image": "../images_webp/extras/chetkaZaTavan.webp"
 },
 {
+"id": "305714",
 "shortName": "Rrotull furçe për pllaka",
 "fullName": "Rrotull me furçë për pllaka dhe llaç",
 "category": "Pjesë këmbimi",
@@ -373,6 +410,7 @@
 "image": "../images_webp/extras/chetkaZaShamponer.webp"
 },
 {
+"id": "250214",
 "shortName": "Shampo portative",
 "fullName": "Shampo portative Kirby",
 "category": "Pjesë këmbimi",
@@ -383,6 +421,7 @@
 "image": "../images_webp/extras/shpritzPishtol.webp"
 },
 {
+"id": "152502",
 "shortName": "Rrotull me furçë",
 "fullName": "Rrotull furçe Kirby",
 "category": "Pjesë këmbimi",
@@ -393,6 +432,7 @@
 "image": "../images_webp/extras/drvenaChetka.webp"
 },
 {
+"id": "159398",
 "shortName": "Furçë delikate",
 "fullName": "Rrotull furçe Kirby delikate",
 "category": "Pjesë këmbimi",
@@ -403,6 +443,7 @@
 "image": "../images_webp/extras/delikateChetka.webp"
 },
 {
+"id": "243203",
 "shortName": "Pëlhurë me mikrofibër",
 "fullName": "Pëlhurë me mikrofibër Kirby",
 "category": "Pjesë këmbimi",
@@ -413,6 +454,7 @@
 "image": "../images_webp/extras/mikrofiberKrpa.webp"
 },
 {
+"id": "301291",
 "shortName": "Rrip",
 "fullName": "Rripi Kirby",
 "category": "Materiale të konsumueshme",
@@ -423,6 +465,7 @@
 "image": "../images_webp/extras/remenche.webp"
 },
 {
+"id": "20481U",
 "shortName": "Universal Bag 6",
 "fullName": "Qese Filtri Universal (6 copë)",
 "category": "Materiale të konsumueshme",
@@ -433,6 +476,7 @@
 "image": "../images_webp/extras/UniversalKesa6.webp"
 },
 {
+"id": "20481U",
 "shortName": "Çanti Universal 1",
 "fullName": "Qese Filtri Universal (1 copë)",
 "category": "Materiale të konsumueshme",
@@ -443,6 +487,7 @@
 "image": "../images_webp/extras/UniversalKesa1.png"
 },
 {
+"id": "204814",
 "shortName": "HEPA Plus Bag 6",
 "fullName": "Qese Filtri HEPA Plus (6 copë)",
 "category": "Materiale të konsumueshme",
@@ -453,6 +498,7 @@
 "image": "../images_webp/extras/HEPAPlusKesa6.webp"
 },
 {
+"id": "204814",
 "shortName": "HEPA Plus Bag 1",
 "fullName": "Qanse filtri HEPA Plus (1 copë)",
 "category": "Materiale të konsumueshme",

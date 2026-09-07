@@ -1,5 +1,6 @@
 [
   {
+    "id": "291024",
     "shortName": "Avalir Platinum",
     "fullName": "Kirby Avalir Platinum",
     "category": [],
@@ -13,6 +14,7 @@
     "featured": true
   },
   {
+    "id": "25257EUG",
     "shortName": "Shampoo 1L",
     "fullName": "Shampoo 1 Liter",
     "category": "Cleaning Products",
@@ -23,6 +25,7 @@
     "image": "../images_webp/extras/shampon1l.webp"
   },
   {
+    "id": "2528EUG",
     "shortName": "Shampoo 1G",
     "fullName": "Shampoo 1 Galon (3,785 ml)",
     "category": "Cleaning Products",
@@ -33,6 +36,7 @@
     "image": "../images_webp/extras/shampon1Galon.webp"
   },
   {
+    "id": "91PNG",
     "shortName": "Home Fresheners",
     "fullName": "Home Fresheners",
     "category": "Cleaning Products",
@@ -43,6 +47,7 @@
     "image": "../images_webp/extras/osvezhuvachNaDomot.webp"
   },
   {
+    "id": "91PNG",
     "shortName": "Tile Pre-Treat",
     "fullName": "Tile & Grout Pre-Treat",
     "category": "Cleaning Products",
@@ -53,6 +58,7 @@
     "image": "../images_webp/extras/predtretmanZaPlochki.webp"
   },
   {
+    "id": "352715",
     "shortName": "Hard Floors",
     "fullName": "Hard Floor Cleaner",
     "category": "Cleaning Products",
@@ -63,6 +69,7 @@
     "image": "../images_webp/extras/tvrdiPovrshini880.webp"
   },
   {
+    "id": "25257EUG",
     "shortName": "Tile Cleaner",
     "fullName": "Tile & Grout Cleaner",
     "category": "Cleaning Products",
@@ -73,6 +80,7 @@
     "image": "../images_webp/extras/plochkiIFugi.webp"
   },
   {
+    "id": "2452",
     "shortName": "Carpet Pre-treat",
     "fullName": "Carpet Shampoo Pre-treat",
     "category": "Cleaning Products",
@@ -83,6 +91,7 @@
     "image": "../images_webp/extras/predtretmanZaTepisi.webp"
   },
   {
+    "id": "352815",
     "shortName": "Hard Floor Concentrate",
     "fullName": "Hard Floor Cleaner Concentrate",
     "category": "Cleaning Products",
@@ -93,6 +102,7 @@
     "image": "../images_webp/extras/koncetratZaPodovi.webp"
   },
   {
+    "id": "2409ЕU",
     "shortName": "Lickity Split",
     "fullName": "Lickity Split",
     "category": "Cleaning Products",
@@ -103,6 +113,7 @@
     "image": "../images_webp/extras/lickitySplit.webp"
   },
   {
+    "id": "2578UKG",
     "shortName": "OXY Additive",
     "fullName": "Brightening Oxygen Additive",
     "category": "Cleaning Products",
@@ -113,6 +124,7 @@
     "image": "../images_webp/extras/OXYDamki.webp"
   },
   {
+    "id": "25257EUG",
     "shortName": "Miracle Shine",
     "fullName": "Miracle Shine Floor Polish",
     "category": "Cleaning Products",
@@ -123,6 +135,7 @@
     "image": "../images_webp/extras/sjajZaPod.webp"
   },
   {
+    "id": "237716",
     "shortName": "Tile Kit",
     "fullName": "Tile & Grout Kit",
     "category": "Spare Parts",
@@ -133,6 +146,7 @@
     "image": "../images_webp/extras/kompletZaPlochki.webp"
   },
   {
+    "id": "308114",
     "shortName": "Connector",
     "fullName": "Kirby Connector",
     "category": "Spare Parts",
@@ -143,6 +157,7 @@
     "image": "../images_webp/extras/konektorZaShamponer.webp"
   },
   {
+    "id": "119096",
     "shortName": "Turbine",
     "fullName": "Kirby Turbine",
     "category": "Spare Parts",
@@ -153,6 +168,7 @@
     "image": "../images_webp/extras/turbina.webp"
   },
   {
+    "id": "210014",
     "shortName": "Hose Connector",
     "fullName": "Kirby Hose Connector",
     "category": "Spare Parts",
@@ -163,6 +179,7 @@
     "image": "../images_webp/extras/zadenPrikluchok.webp"
   },
   {
+    "id": "556214",
     "shortName": "Back Wheels",
     "fullName": "Kirby Back Wheels",
     "category": "Spare Parts",
@@ -173,6 +190,7 @@
     "image": "../images_webp/extras/zadniTrkala.webp"
   },
   {
+    "id": "293523",
     "shortName": "Zipp Brush",
     "fullName": "Kirby Zipp Brush",
     "category": "Spare Parts",
@@ -183,6 +201,7 @@
     "image": "../images_webp/extras/zipChetka.webp"
   },
   {
+    "id": "980614",
     "shortName": "Cord",
     "fullName": "Kirby Cord",
     "category": "Spare Parts",
@@ -193,6 +212,7 @@
     "image": "../images_webp/extras/kabel.webp"
   },
   {
+    "id": "304712",
     "shortName": "Waste Tray",
     "fullName": "Kirby Wate Tray",
     "category": "Spare Parts",
@@ -203,6 +223,7 @@
     "image": "../images_webp/extras/kadichka.webp"
   },
   {
+    "id": "188906",
     "shortName": "Mini Emptor",
     "fullName": "Kirby Mini Emptor",
     "category": "Spare Parts",
@@ -213,6 +234,7 @@
     "image": "../images_webp/extras/miniEmptor.webp"
   },
   {
+    "id": "190014",
     "shortName": "Outer Bag",
     "fullName": "Kirby Outer Bag",
     "category": "Spare Parts",
@@ -223,6 +245,7 @@
     "image": "../images_webp/extras/vrekja.webp"
   },
   {
+    "id": "216212S",
     "shortName": "Bottom Plate",
     "fullName": "Kirby Metal Bottom Plate",
     "category": "Spare Parts",
@@ -233,6 +256,7 @@
     "image": "../images_webp/extras/podloshka.png"
   },
   {
+    "id": "131914",
     "shortName": "Front Wheels",
     "fullName": "Kirby Front Wheels",
     "category": "Spare Parts",
@@ -243,6 +267,7 @@
     "image": "../images_webp/extras/predniTrkala.webp"
   },
   {
+    "id": "224014",
     "shortName": "Extension Wand",
     "fullName": "Kirby Extension Wand",
     "category": "Spare Parts",
@@ -253,6 +278,7 @@
     "image": "../images_webp/extras/prodolzhnaCevka.webp"
   },
   {
+    "id": "223614",
     "shortName": "Vacuum Hose",
     "fullName": "Kirby Vacuum Hose",
     "category": "Spare Parts",
@@ -263,6 +289,7 @@
     "image": "../images_webp/extras/crevo.webp"
   },
   {
+    "id": "225114",
     "shortName": "Air Regulator",
     "fullName": "Airflow Regulator",
     "category": "Spare Parts",
@@ -273,6 +300,7 @@
     "image": "../images_webp/extras/regulatorZaVozduh.webp"
   },
   {
+    "id": "306714",
     "shortName": "Shampooer Tank",
     "fullName": "Kirby Shampooer Tank",
     "category": "Spare Parts",
@@ -283,6 +311,7 @@
     "image": "../images_webp/extras/rezervoarZaShamponer.webp"
   },
   {
+    "id": "307581",
     "shortName": "Tank Filter",
     "fullName": "Tank Filter Sponge",
     "category": "Spare Parts",
@@ -293,6 +322,7 @@
     "image": "../images_webp/extras/sitoZaFilter.webp"
   },
   {
+    "id": "214114",
     "shortName": "Utility Nozzle",
     "fullName": "Kirby Utility Nozzle",
     "category": "Spare Parts",
@@ -303,6 +333,7 @@
     "image": "../images_webp/extras/timarChetka.webp"
   },
   {
+    "id": "308012",
     "shortName": "Tank Hose",
     "fullName": "Shampooer Tank Hose",
     "category": "Spare Parts",
@@ -313,6 +344,7 @@
     "image": "../images_webp/extras/crevoZaShamponer.webp"
   },
   {
+    "id": "190384",
     "shortName": "Bag Hose",
     "fullName": "Kirby Bag Hose",
     "category": "Spare Parts",
@@ -323,6 +355,7 @@
     "image": "../images_webp/extras/crnoCrevo.webp"
   },
   {
+    "id": "212414",
     "shortName": "Upholstery Brush",
     "fullName": "Kirby Upholstery Brush",
     "category": "Spare Parts",
@@ -333,6 +366,7 @@
     "image": "../images_webp/extras/cetkaZaMebel.webp"
   },
   {
+    "id": "218414",
     "shortName": "Duster Brush",
     "fullName": "Kirby Duster Brush",
     "category": "Spare Parts",
@@ -343,6 +377,7 @@
     "image": "../images_webp/extras/chetkaZaPrav.webp"
   },
   {
+    "id": "220189",
     "shortName": "Replacement Brush",
     "fullName": "Replacement for Duster Brush",
     "category": "Spare Parts",
@@ -353,6 +388,7 @@
     "image": "../images_webp/extras/zamenaZaChetka.webp"
   },
   {
+    "id": "210814",
     "shortName": "Ceiling Brush",
     "fullName": "Ceiling and Wall Brush",
     "category": "Spare Parts",
@@ -363,6 +399,7 @@
     "image": "../images_webp/extras/chetkaZaTavan.webp"
   },
   {
+    "id": "305714",
     "shortName": "Tile Brush Roll",
     "fullName": "Tile & Grout Brush Roll",
     "category": "Spare Parts",
@@ -373,6 +410,7 @@
     "image": "../images_webp/extras/chetkaZaShamponer.webp"
   },
   {
+    "id": "250214",
     "shortName": "Portable Shampooer",
     "fullName": "Kirby Portable Shampooer",
     "category": "Spare Parts",
@@ -383,6 +421,7 @@
     "image": "../images_webp/extras/shpritzPishtol.webp"
   },
   {
+    "id": "152502",
     "shortName": "Brush Roll",
     "fullName": "Kirby Brush Roll",
     "category": "Spare Parts",
@@ -393,6 +432,7 @@
     "image": "../images_webp/extras/drvenaChetka.webp"
   },
   {
+    "id": "159398",
     "shortName": "Delicate Brush",
     "fullName": "Kirby Delicate Brush Roll",
     "category": "Spare Parts",
@@ -403,6 +443,7 @@
     "image": "../images_webp/extras/delikateChetka.webp"
   },
   {
+    "id": "243203",
     "shortName": "Microfiber Cloth",
     "fullName": "Kirby Microfiber Cloth",
     "category": "Spare Parts",
@@ -413,6 +454,7 @@
     "image": "../images_webp/extras/mikrofiberKrpa.webp"
   },
   {
+    "id": "301291",
     "shortName": "Belt",
     "fullName": "Kirby Belt",
     "category": "Consumables",
@@ -423,6 +465,7 @@
     "image": "../images_webp/extras/remenche.webp"
   },
   {
+    "id": "20481U",
     "shortName": "Universal Bag 6",
     "fullName": "Universal Filter Bags (6 pieces)",
     "category": "Consumables",
@@ -433,6 +476,7 @@
     "image": "../images_webp/extras/UniversalKesa6.webp"
   },
   {
+    "id": "20481U",
     "shortName": "Universal Bag 1",
     "fullName": "Universal Filter Bag (1 piece)",
     "category": "Consumables",
@@ -443,6 +487,7 @@
     "image": "../images_webp/extras/UniversalKesa1.png"
   },
   {
+    "id": "204814",
     "shortName": "HEPA Plus Bag 6",
     "fullName": "HEPA Plus Filter Bag (6 pieces)",
     "category": "Consumables",
@@ -453,6 +498,7 @@
     "image": "../images_webp/extras/HEPAPlusKesa6.webp"
   },
   {
+    "id": "204814",
     "shortName": "HEPA Plus Bag 1",
     "fullName": "HEPA Plus Filter Bag (1 piece)",
     "category": "Consumables",

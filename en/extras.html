@@ -306,7 +306,7 @@
     const modalDesc = document.getElementById('modal-desc');
     const modalPrice = document.getElementById('modal-price');
     const closeModal = document.getElementById('close-modal');
-    let currentModalProduct = null;
+    window.currentModalProduct = null;
     let currentModalVersionIndex = 0;
 
     function getCategories(product) {
@@ -326,7 +326,7 @@
       const version = modalVersions && modalVersions[versionIndex]
         ? modalVersions[versionIndex]
         : getCardVersion(extra);
-      currentModalProduct = extra;
+      window.currentModalProduct = extra;
       currentModalVersionIndex = versionIndex;
 
       modalTitle.textContent = version.name || extra.fullName;
@@ -651,7 +651,7 @@
       // Add event listener to view more button
       const viewMoreBtn = card.querySelector('.view-more-btn');
       viewMoreBtn.addEventListener('click', () => {
-        currentModalProduct = extra;
+        window.currentModalProduct = extra;
         currentModalVersionIndex = 0;
         renderModalVersion(extra, 0);
         productModal.classList.remove('hidden');
