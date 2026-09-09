@@ -236,11 +236,22 @@
   {
     "id": "190014",
     "shortName": "Outer Bag",
-    "fullName": "Kirby Outer Bag",
+    "fullName": "Outer Bag for G3 through Avalir models",
     "category": "Spare Parts",
-    "shortDesc": "Kirby outer bag provides effective filtration for clean air and HEPA performance.",
-    "longDesc": "Kirby outer bag is a key filter for trapping debris and releasing clean air while achieving HEPA-level filtration. Durable for repeated cleaning cycles, regular replacement prevents clogging and helps maintain suction power. Ideal for allergy-sensitive homes and optimal machine performance.",
+    "shortDesc": "Kirby outer bag for G3 through Avalir models provides effective filtration and HEPA-level performance.",
+    "longDesc": "The Kirby outer bag is intended for G3, G4, G5, G6, Sentria, Sentria II, Diamond Edition, Ultimate G, and Avalir models. It is a key filter for trapping debris and releasing clean air. Durable for repeated cleaning cycles, regular replacement prevents clogging and helps maintain suction power. Ideal for reliable filtration and optimal performance.",
     "price": 4290,
+    "discount": 0,
+    "image": "../images_webp/extras/vrekja.png"
+  },
+  {
+    "id": "190014",
+    "shortName": "Outer Bag",
+    "fullName": "Kirby Outer Bag for Avalir 2 and Avalir Platinum",
+    "category": "Spare Parts",
+    "shortDesc": "Kirby sound-dampening outer bag for Avalir 2 and Avalir Platinum with effective filtration and quieter operation.",
+    "longDesc": "The Kirby outer bag for Avalir 2 and Avalir Platinum features a sound-dampening layer that reduces operating noise. It provides effective filtration, cleaner air, and strong suction during every cleaning session. Durable for repeated use, regular replacement helps prevent clogging and keeps your Kirby quieter and performing efficiently.",
+    "price": 8000,
     "discount": 0,
     "image": "../images_webp/extras/vrekja.webp"
   },

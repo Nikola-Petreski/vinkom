@@ -236,11 +236,22 @@
 {
 "id": "190014",
 "shortName": "Çanta e Jashtme",
-"fullName": "Çanta e jashtme Kirby",
+"fullName": "Çantë e jashtme për modelet G3 deri në Avalir",
 "category": "Pjesë këmbimi",
-"shortDesc": "Qesja e jashtme Kirby siguron filtrim efektiv për ajër të pastër dhe performancë HEPA.",
-"longDesc": "Qesja e jashtme Kirby është një filtër kyç për bllokimin e mbeturinave dhe lëshimin e ajrit të pastër, duke arritur filtrim në nivelin HEPA. E qëndrueshme për cikle të përsëritura pastrimi, zëvendësimi i rregullt parandalon bllokimin dhe ndihmon në ruajtjen e fuqisë së thithjes. Ideale për shtëpitë e ndjeshme ndaj alergjive dhe performancë optimale të makinës.",
+"shortDesc": "Çanta e jashtme Kirby për modelet G3 deri në Avalir siguron filtrim efikas dhe performancë në nivelin HEPA.",
+"longDesc": "Çanta e jashtme Kirby është e destinuar për modelet G3, G4, G5, G6, Sentria, Sentria II, Diamond Edition, Ultimate G dhe Avalir. Ajo është një filtër kyç për bllokimin e mbeturinave dhe lëshimin e ajrit të pastër. E qëndrueshme për cikle të përsëritura pastrimi, zëvendësimi i rregullt parandalon bllokimin dhe ndihmon në ruajtjen e fuqisë së thithjes. Ideale për filtrim të besueshëm dhe performancë optimale.",
 "price": 4290,
+"discount": 0,
+"image": "../images_webp/extras/vrekja.png"
+},
+{
+"id": "190014",
+"shortName": "Çanta e Jashtme",
+"fullName": "Çantë e jashtme Kirby për Avalir 2 dhe Avalir Platinum",
+"category": "Pjesë këmbimi",
+"shortDesc": "Çantë e jashtme Kirby me shtresë reduktuese të zhurmës për Avalir 2 dhe Avalir Platinum, me filtrim efikas dhe punë më të qetë.",
+"longDesc": "Çanta e jashtme Kirby për Avalir 2 dhe Avalir Platinum ka një shtresë që redukton zhurmën gjatë funksionimit. Ajo siguron filtrim efikas, ajër më të pastër dhe thithje të fortë gjatë çdo pastrimi. E qëndrueshme për përdorim të përsëritur, zëvendësimi i rregullt parandalon bllokimin dhe ndihmon që Kirby të punojë më qetë dhe me efikasitet.",
+"price": 8000,
 "discount": 0,
 "image": "../images_webp/extras/vrekja.webp"
 },
