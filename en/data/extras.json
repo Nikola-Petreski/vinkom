@@ -183,8 +183,8 @@
     "shortName": "Back Wheels",
     "fullName": "Kirby Back Wheels",
     "category": "Spare Parts",
-    "shortDesc": "Kirby rear wheels for smooth movement on Generation and Sentria models (2-piece set).",
-    "longDesc": "Kirby rear wheels (set of 2) fit Generation, Sentria, and Avalir models and are removed with a flathead and snap ring tool. Replacing worn wheels improves stability on carpet and hard floors and are available in different colors. Built for long service life, they make maneuvering large areas easier and more controlled.",
+    "shortDesc": "Kirby rear wheels for smooth movement of the Kirby system (2-piece set).",
+    "longDesc": "Kirby rear wheels (set of 2). Replacing worn wheels improves stability while moving across carpets and hard floors. Durable for long-term use, they make maneuvering during cleaning easier.",
     "price": 850,
     "discount": 0,
     "image": "../images_webp/extras/zadniTrkala.webp"
@@ -216,8 +216,8 @@
     "shortName": "Waste Tray",
     "fullName": "Kirby Wate Tray",
     "category": "Spare Parts",
-    "shortDesc": "Kirby tray ensures even shampoo dispensing without leaks or excessive consumption.",
-    "longDesc": "Kirby shampooer tray is a durable container designed for precise storage and distribution of shampoo during deep carpet cleaning. Easy to attach and remove, it prevents leakage and allows economical use. Compatible with Avalir systems, it is essential for optimal results without interruption.",
+    "shortDesc": "Kirby tray collects the dirt separated from carpets by the brush during shampooing.",
+    "longDesc": "The Kirby shampooer tray fits beneath the rotating brush and collects the dirt and debris separated from carpet fibers during cleaning. This keeps dirty water and debris from returning to the carpet and leaves them in the tray for easy removal. Easy to remove, empty, and reinstall. Compatible with Kirby shampoo systems, it is essential for efficient and hygienic carpet cleaning.",
     "price": 1870,
     "discount": 0,
     "image": "../images_webp/extras/kadichka.webp"
@@ -227,8 +227,8 @@
     "shortName": "Mini Emptor",
     "fullName": "Kirby Mini Emptor",
     "category": "Spare Parts",
-    "shortDesc": "Kirby Mini Emptor allows precise cleaning of tight spaces, stairs, and furniture through the hose.",
-    "longDesc": "Kirby Mini Emptor is a compact hose attachment designed to remove dust from corners, stairs, upholstery, and hard-to-reach areas. Easy to handle and control, it delivers strong, continuous suction without strain. Compatible with all Kirby models, it is ideal for detailed home hygiene maintenance.",
+    "shortDesc": "Kirby Mini Emptor holds larger debris and directs fine particles into the outer bag.",
+    "longDesc": "Kirby Mini Emptor is the connecting part between the unit motor and the outer dust bag. It holds larger pieces of debris collected during cleaning while fine dust and particles continue into the filter bag. This helps prevent system clogging and supports longer, more efficient operation. Durable for daily use, it provides a secure, airtight connection without dust leakage. Compatible with all Kirby models, it is essential for proper debris collection.",
     "price": 2920,
     "discount": 0,
     "image": "../images_webp/extras/miniEmptor.webp"
@@ -271,8 +271,8 @@
     "shortName": "Front Wheels",
     "fullName": "Kirby Front Wheels",
     "category": "Spare Parts",
-    "shortDesc": "Kirby front wheels provide better mobility and stability on Generation and Sentria models.",
-    "longDesc": "Kirby front wheels are compatible with Generation, Sentria, and Avalir models and can be removed with a standard flathead screwdriver. Replacing worn wheels greatly improves stability and maneuverability on carpets and hard floors. Available in several colors and made from durable material for long life. Ideal for easier cleaning of large spaces without snagging or instability.",
+    "shortDesc": "Kirby front wheels provide improved mobility and stability.",
+    "longDesc": "Kirby front wheels are compatible replacement wheels that are easy to remove. They replace worn wheels and significantly improve the unit's stability and maneuverability on carpets and hard floors. Made from durable material for long-term use. Ideal for easier cleaning of large spaces without snagging or instability.",
     "price": 800,
     "discount": 0,
     "image": "../images_webp/extras/predniTrkala.webp"
@@ -349,7 +349,7 @@
     "fullName": "Shampooer Tank Hose",
     "category": "Spare Parts",
     "shortDesc": "Kirby shampooer hose allows stable, flexible transfer of shampoo during cleaning.",
-    "longDesc": "Kirby shampooer hose is a flexible, durable tube designed to transfer shampoo and water during deep cleaning of carpets and upholstery. It is designed to prevent twisting and leaks, allowing safe and uninterrupted operation. Easy to handle in various positions, it makes cleaning large areas much easier. Compatible with Avalir systems, it ensures consistent pressure and even liquid distribution.",
+    "longDesc": "Kirby shampooer hose is a flexible, durable tube designed to transfer Kirby foam from the shampooer canister to the tray. It is designed to prevent twisting and leaks, allowing safe and uninterrupted operation. Easy to handle in various positions, it makes cleaning large areas much easier. Compatible with Kirby systems, it provides stable pressure and even foam distribution.",
     "price": 740,
     "discount": 0,
     "image": "../images_webp/extras/crevoZaShamponer.webp"
@@ -371,7 +371,7 @@
     "fullName": "Kirby Upholstery Brush",
     "category": "Spare Parts",
     "shortDesc": "Kirby upholstery brush gently removes dust and fibers from furniture without damage.",
-    "longDesc": "Kirby upholstery brush is specially designed with soft bristles for gentle but effective cleaning of furniture, cushions, and textiles. It removes dust, fibers, and small debris without scratching or creating static. It attaches easily to the hose and allows precise control during use. Compatible with all Kirby systems, it is ideal for regular maintenance and keeping furniture looking fresh.",
+    "longDesc": "Kirby upholstery brush is specially designed with soft bristles for gentle but effective cleaning of furniture, cushions, and textiles. It removes surface dust, fibers, and small debris without scratching or creating static. It attaches easily to the hose and allows precise control during use. Compatible with all Kirby systems, it is ideal for regular maintenance and keeping furniture looking fresh.",
     "price": 700,
     "discount": 0,
     "image": "../images_webp/extras/cetkaZaMebel.webp"
@@ -400,11 +400,11 @@
   },
   {
     "id": "210814",
-    "shortName": "Ceiling Brush",
-    "fullName": "Ceiling and Wall Brush",
+    "shortName": "Wall Brush",
+    "fullName": "Kirby Wall Brush",
     "category": "Spare Parts",
-    "shortDesc": "Kirby ceiling brush makes cleaning high surfaces and corners easy without a ladder.",
-    "longDesc": "Kirby ceiling brush is designed with an extended shape and soft bristles for effective removal of dust, cobwebs, and dirt from ceilings, fans, and high corners. It allows safe cleaning without the need for a ladder or risk of injury. It is easy to maneuver and absorbs dust without scattering it. Compatible with all Kirby models via the hose, it is ideal for routine upkeep of high areas in the home.",
+    "shortDesc": "Kirby wall brush makes cleaning high surfaces and corners easy.",
+    "longDesc": "Kirby wall brush is designed with an extended shape and soft bristles for effective removal of built-up dust, cobwebs, and dirt from walls, ceilings, high cabinets, and beneath beds. It is easy to maneuver and absorbs dust without scattering it. Compatible with all Kirby models via the hose, it is ideal for regular maintenance of walls and high, hard-to-reach surfaces in the home.",
     "price": 1060,
     "discount": 0,
     "image": "../images_webp/extras/chetkaZaTavan.webp"
@@ -415,7 +415,7 @@
     "fullName": "Tile & Grout Brush Roll",
     "category": "Spare Parts",
     "shortDesc": "Kirby shampoo brush roll allows even shampoo application and deep carpet cleaning.",
-    "longDesc": "Kirby shampoo brush roll is designed to combine brushing and even distribution of shampoo for deep cleaning of carpets and fabrics. The rotating mechanism penetrates fibers, softens stains, and allows more effective dirt removal. Compatible with Avalir systems and durable for regular professional use, it delivers clean results without residue and with efficient product usage.",
+    "longDesc": "Kirby shampoo brush roll is designed for even application of Kirby foam and washing carpets. The rotating mechanism penetrates fibers, softens stains, and allows more effective dirt removal. Compatible with all Kirby systems and durable for regular professional use, it delivers clean results without residue and with efficient product usage.",
     "price": 3200,
     "discount": 0,
     "image": "../images_webp/extras/chetkaZaShamponer.webp"
@@ -426,7 +426,7 @@
     "fullName": "Kirby Portable Shampooer",
     "category": "Spare Parts",
     "shortDesc": "Precise spraying of shampoo or water with easy trigger control for targeted cleaning.",
-    "longDesc": "Kirby portable shampooer allows controlled application of shampoo, water, or cleaning solution to carpets and fabrics without overusing product. Easy and comfortable to handle, it is compatible with the Avalir system, durable for everyday use, and ideal for spot treatment or preparing surfaces.",
+    "longDesc": "Kirby spray gun allows controlled application of Kirby foam to upholstered furniture without overusing product. Easy and comfortable to handle, it is compatible with all Kirby systems, durable for everyday use, and ideal for dry cleaning.",
     "price": 1410,
     "discount": 0,
     "image": "../images_webp/extras/shpritzPishtol.webp"
@@ -437,7 +437,7 @@
     "fullName": "Kirby Brush Roll",
     "category": "Spare Parts",
     "shortDesc": "Classic brush with natural fibers for gentle cleaning of hard floors.",
-    "longDesc": "Kirby wooden brush with natural fibers effectively removes dust and grime from hard floors and surfaces on older models without scratching. Durable and compatible with Generation series units, it is ideal for long-term maintenance of clean surfaces.",
+    "longDesc": "Kirby wooden brush with natural fibers effectively removes dust and grime from floor coverings and mattresses without scratching. Durable and compatible with all Kirby models, it is ideal for long-term maintenance of clean surfaces.",
     "price": 3300,
     "discount": 0,
     "image": "../images_webp/extras/drvenaChetka.webp"
@@ -448,7 +448,7 @@
     "fullName": "Kirby Delicate Brush Roll",
     "category": "Spare Parts",
     "shortDesc": "Soft brush for delicate floors without causing damage.",
-    "longDesc": "Kirby delicate wooden brush with ultra-soft bristles is designed for careful cleaning of hardwood, laminate, and polished floors. It removes dust gently and is compatible with all models, ensuring a professional finish on premium surfaces.",
+    "longDesc": "Kirby delicate wooden brush with ultra-soft bristles is designed for careful cleaning of sensitive floor coverings. It removes dust gently and is compatible with all models, ensuring a professional finish on premium surfaces.",
     "price": 2820,
     "discount": 0,
     "image": "../images_webp/extras/delikateChetka.webp"
