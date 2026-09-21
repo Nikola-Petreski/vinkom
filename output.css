@@ -1424,6 +1424,10 @@ video {
   max-width: 90%;
 }
 
+.max-w-\[95\%\] {
+  max-width: 95%;
+}
+
 .max-w-max {
   max-width: -moz-max-content;
   max-width: max-content;
@@ -4451,6 +4455,10 @@ video {
     max-width: 65%;
   }
 
+  .xl\:max-w-\[70\%\] {
+    max-width: 70%;
+  }
+
   .xl\:max-w-\[75\%\] {
     max-width: 75%;
   }
@@ -4708,6 +4716,10 @@ video {
 
   .\32xl\:max-w-\[50\%\] {
     max-width: 50%;
+  }
+
+  .\32xl\:max-w-\[55\%\] {
+    max-width: 55%;
   }
 
   .\32xl\:max-w-\[70\%\] {
@@ -4989,6 +5001,10 @@ video {
 
   .\33xl\:max-w-\[60\%\] {
     max-width: 60%;
+  }
+
+  .\33xl\:max-w-\[65\%\] {
+    max-width: 65%;
   }
 
   .\33xl\:max-w-\[80\%\] {

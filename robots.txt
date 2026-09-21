@@ -4,6 +4,16 @@ Disallow: /thankyouFAQ.html
 Disallow: /thankyouSell.html
 Disallow: /thankyouSub.html
 Disallow: /thankyoutradeIn.html
+Disallow: /en/thankyouBook.html
+Disallow: /en/thankyouExtras.html
+Disallow: /en/thankyouFAQ.html
+Disallow: /en/thankyouSub.html
+Disallow: /en/thankyoutradeIn.html
+Disallow: /al/thankyouBook.html
+Disallow: /al/thankyouExtras.html
+Disallow: /al/thankyouFAQ.html
+Disallow: /al/thankyouSub.html
+Disallow: /al/thankyoutradeIn.html
 Disallow: /includes/
 Disallow: /data/
 Disallow: /node_modules/
