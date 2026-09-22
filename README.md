@@ -43,7 +43,6 @@ Open the site in a browser (e.g., `file://` or via a simple local static server)
 
 **Notes & next steps**
 - Contact email in footer: `customercare@vinkom.com.mk`.
-- If you want a bilingual README (Macedonian + English) or CI to build `output.css` automatically, tell me and I can add it.
 
 -----
 _README updated: provides project overview, dev commands, and where to edit content._

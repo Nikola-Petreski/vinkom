@@ -3,7 +3,8 @@
     "tailwindcss": "^3.4.18"
   },
   "scripts": {
-    "dev": "tailwindcss -i input.css -o output.css --watch"
+    "build": "node build-partials.js",
+    "dev": "node build-partials.js && tailwindcss -i input.css -o output.css --watch"
   },
   "dependencies": {
     "sharp": "^0.34.5"

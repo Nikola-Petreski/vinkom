@@ -119,9 +119,116 @@
 </head>
 <body class="overflow-x-hidden font-gidole bg-[#484848] w-full">
 
-    <div id="nav-container"></div>
+    <style>
+  #infoDropdownButton.active {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  #userDropdownButton.active {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  i {
+    transition: transform 0.3s ease;
+  }
+  i.rotated {
+    transform: rotate(180deg);
+  }
+  #infoChevron,
+  #userChevron {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline !important;
+  }
+</style>
 
-    <div id="mobile-nav-container"></div>
+<div id="nav"
+  class="w-full h-[9vh] xl:h-[10vh] max-h-[110px] rounded-lg flex justify-between items-center bg-transparent hover:bg-black/40 backdrop-blur-sm hover:backdrop-blur-lg my-[1.5%] px-[1%] xl:px-[1%] 2xl:px-[2%] text-[#c1c1c1] fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden lg:flex xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto">
+  <a id="logo" href="index.html" class="w-[20%] xl:w-[22%] h-full text-start flex items-center justify-start"><img src="../logos/LOGO ZAEDNO7.png" class="h-[60%] w-auto object-contain"></a>
+  <div class="flex items-center justify-center w-[65%] xl:w-[55%] text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
+    <a href="platinum.html" class="hover:text-white px-2 transition-all duration-300">Platinum</a>
+    <a href="extras.html" class="hover:text-white px-2 transition-all duration-300">Produkte</a>
+    <div class="relative">
+      <button id="infoDropdownButton" type="button" aria-expanded="false" class="flex px-2 py-2 rounded-t-xl items-center bg-transparent hover:text-white transition-all duration-300 text-nowrap gap-0.5">Qendra e Njohurive<span class="pb-[4px]"></span><i id="infoChevron" class="fa-solid fa-chevron-down text-[10px] xl:text-xs"></i></button>
+      <div id="infoDropdownMenu" class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-0 transition-all duration-300 ease-out z-50 flex flex-col shadow-2xl shadow-black w-full">
+        <a href="howTo.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Video me udhëzime</a>
+        <a href="tips.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Këshilla</a>
+        <a href="blog.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Blog</a>
+        <a href="faq.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap  rounded-b-xl pb-2">Pyetje të shpeshta</a>
+      </div>
+    </div>
+    <div class="relative">
+      <button id="userDropdownButton" type="button" aria-expanded="false" class="flex px-2 py-2 rounded-t-xl items-center bg-transparent hover:text-white transition-all duration-300 text-nowrap gap-0.5">Mbështetja e Pronarit<span class="pb-[4px]"></span><i id="userChevron" class="fa-solid fa-chevron-down text-[10px] xl:text-xs"></i></button>
+      <div id="userDropdownMenu"
+        class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-0 transition-all duration-300 ease-out z-50 flex flex-col shadow-2xl shadow-black w-full">
+        <a href="models.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Modele më të hershme</a>
+        <a href="manuals.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap">Manualet</a>
+        <a href="warranty.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap pb-2">Garancia</a>
+        <a href="service.html" class="block px-2 py-1 hover:text-white bg-black/80 transition-all duration-300 text-nowrap rounded-b-xl">Shërbim</a>
+      </div>
+    </div>
+    <a href="aboutus.html" class="hover:text-white px-2 transition-all duration-300">Rreth Nesh</a>
+  </div>
+  <div class="flex items-center justify-end rounded-full w-[18%] xl:w-[22%] 2xl:w-[22%] 3xl: gap-1 3xl:gap-2 text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl">
+    <a href="tradeIn.html" class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent justify-center items-center hover:bg-black/50 hidden xl:flex">&nbsp;Shkëmbim&nbsp;</a>
+    <a href="book.html" class="transition-all py-[1%] duration-500 rounded-xl text-nowrap text-white bg-transparent flex justify-center items-center hover:bg-black/50">&nbsp;Prezantimi i Librit&nbsp;</a>
+    <div class="relative w-[23px] 2xl:h-[25px] 2xl:w-[25px] 3xl:w-[28px] h-[23px] 3xl:h-[28px]">
+      <button id="langDropdownButton" type="button" aria-expanded="false" data-current-lang-flag class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap">
+        <img src="../flags/albania.png" class="h-[23px] w-[23px] 2xl:h-[25px] 2xl:w-[25px] 3xl:h-[28px] 3xl:w-[28px] object-cover rounded-full">
+      </button>
+      <div id="langDropdownMenu" class="absolute bg-transparent rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col gap-1.5 py-1.5">
+        <a href="#" data-lang-link="en" class="flex items-center justify-center rounded-t-xl hover:text-white transition-all duration-300 p-0"><img src="../flags/britain.png" class="h-[23px] w-[23px] 2xl:h-[25px] 2xl:w-[25px] 3xl:h-[28px] 3xl:w-[28px] rounded-full object-cover flex-shrink-0"></a>
+        <a href="#" data-lang-link="mk" class="flex items-center justify-center rounded-b-xl hover:text-white transition-all duration-300 p-0"><img src="../flags/macedonia.png" class="h-[23px] w-[23px] 2xl:h-[25px] 2xl:w-[25px] 3xl:h-[28px] 3xl:w-[28px] rounded-full object-cover flex-shrink-0"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div id="mobileNav" class="fixed top-[2vh] left-1/2 -translate-x-1/2 z-[9990] lg:hidden w-[90vw] text-white backdrop-blur-3xl p-[5%] md:p-[3%] flex-col rounded-xl bg-black/25 xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691px]">
+  <style>
+    #mobileUserChevron { display: inline-block; transition: transform .25s ease; }
+    #mobileUserChevron.rotated { transform: rotate(180deg); }
+    #mobileUserDropdownMenu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    #mobileUserDropdownMenu.open { max-height: 500px; }
+  </style>
+  <div id="mainMenu" class="flex justify-between items-center">
+    <div class="relative">
+          <button id="mobileLangDropdownButton" type="button" aria-expanded="false" data-current-lang-flag class="flex rounded-t-xl items-center gap-1 bg-transparent hover:text-white transition-all duration-300 text-nowrap text-white">
+            <img src="../flags/albania.png" class="h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px] rounded-full">
+        </button>
+          <div id="mobileLangDropdownMenu" class="absolute bg-transparent text-base lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 flex flex-col">
+            <a href="#" data-lang-link="en" class="block hover:text-white transition-all duration-300 py-2 xs:py-3 md:py-4"><img src="../flags/britain.png" class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
+            <a href="#" data-lang-link="mk" class="block hover:text-white transition-all duration-300"><img src="../flags/macedonia.png" class="rounded-full h-[28px] w-[28px] xs:h-[32px] xs:w-[32px] md:h-[35px] md:w-[35px]"></a>
+        </div>
+    </div>
+    <a href="index.html" class="max-w-[40%] h-full"><img src="../logos/LOGO ZAEDNO7.png" class="h-full"></a>
+    <button id="mobileMenuToggle" class="text-white"><i class="fa-solid fa-bars text-[20px] md:text-[30px]"></i></button>
+  </div>
+  <div id="triggeredMenu" class="flex flex-col gap-[1vh] w-full justify-center items-center text-lg md:text-xl">
+    <a href="index.html"    class="text-center pt-[1vh]">Shtëpi</a>
+    <a href="platinum.html" class="text-center">Platinum</a>
+    <a href="extras.html"   class="text-center">Produkte</a>
+    <a href="book.html"     class="text-center">Prezantimi i Librit</a>
+    <a href="tradeIn.html"  class="text-center">Shkëmbim</a>
+    <a href="aboutus.html"  class="text-center">Rreth Nesh</a>
+    <div class="">
+        <button id="mobileInfoDropdownButton" type="button" aria-expanded="false" class=" text-white">Qendra e Njohurive &nbsp;<span class=""><i id="mobileInfoChevron" class="fa-solid fa-chevron-down text-sm"></i></span></button>
+        <div id="mobileInfoDropdownMenu" class="flex flex-col max-h-0 overflow-hidden text-base md:text-lg pl-[1vh]">
+            <a href="howTo.html" class="text-white/70 transition-all duration-300">Video me udhëzime</a>
+            <a href="tips.html"  class="text-white/70 transition-all duration-300">Këshilla</a>
+            <a href="blog.html"  class="text-white/70 transition-all duration-300">Blog</a>
+            <a href="faq.html"   class="text-white/70 transition-all duration-300">FAQ</a>
+        </div>
+    </div>
+    <div class="">
+      <button id="mobileUserDropdownButton" type="button" aria-expanded="false" class=" text-white">Mbështetja e Pronarëve&nbsp;<span class=""><i id="mobileUserChevron" class="fa-solid fa-chevron-down text-sm"></i></span></button>
+      <div id="mobileUserDropdownMenu" class="flex flex-col max-h-0 overflow-hidden text-base md:text-lg pl-[1vh]">
+        <a href="models.html"  class="text-white/70 transition-all duration-300">Modele më të hershme</a>
+        <a href="manuals.html" class="text-white/70 transition-all duration-300">Manualet</a>
+        <a href="warranty.html" class="text-white/70 transition-all duration-300">Garancia</a>
+        <a href="service.html" class="text-white/70 transition-all duration-300">Shërbim</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
     <div id="desktopNavSpacer" class="w-full hidden lg:block my-[1.5%]"><div class="w-full h-[10vh] max-h-[110px]"></div></div>
@@ -363,9 +470,102 @@
     <div class="w-full h-[16vh] bg-gradient-to-b from-[#484848] to-black"></div>
 
     <div id="cookie-container"></div>
-    <div id="cart-badge-container"></div>
+    <div class="fixed bottom-[5%] left-[5%] z-[10060]">
+  <div class="relative inline-block">
+    <p id="cartBadge" class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] sm:text-xs md:text-base lg:text-[12px] xl:text-xs rounded-full px-2 py-1 leading-none">0</p>
+    <a id="checkOutBtn" href="checkOut.html" class="group flex items-center bg-[#484848] hover:bg-[#303030] transition-all duration-300 border border-white text-white rounded-full py-1 px-2 xs:py-2 xs:px-3 md:py-4 md:px-4 lg:py-2 lg:px-3 text-lg xs:text-2xl md:text-3xl lg:text-xl 2xl:text-2xl gap-0 hover:gap-1 overflow-hidden">
+      <i class="fa-solid fa-basket-shopping"></i>
+      <p id="cartLabel" class="opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-xs transition-all duration-300 whitespace-nowrap"> Shportë</p>
+      <p id="cartAddedMessage" class="max-w-0 opacity-0 overflow-hidden transition-all duration-300 whitespace-nowrap pointer-events-none"> Shtuar në shportë</p>
+    </a>
+  </div>
+</div>
 
-    <div id="footer-container"></div>
+    <div class="px-[5%] w-full bg-black">
+    <div id="footer" class="w-full flex flex-col-reverse lg:flex-row justify-between items-center py-[6%] xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto text-lg xs:text-2xl md:text-3xl lg:text-xs xl:text-base 2xl:text-lg 3xl:text-2xl">
+        <div class="flex flex-col w-full lg:w-1/4 text-white gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-500 px-[2%] py-[1%] my-[5%] lg:my-0">
+            <a href="index.html" class="text-white/70 hover:text-white transition-all duration-300">Shtëpi</a>
+            <a href="platinum.html" class="text-white/70 hover:text-white transition-all duration-300">Platinum</a>
+            <a href="extras.html" class="text-white/70 hover:text-white transition-all duration-300">Produkte</a>
+            <a href="howTo.html" class="text-white/70 hover:text-white transition-all duration-300">Video me udhëzime</a>
+            <a href="tips.html" class="text-white/70 hover:text-white transition-all duration-300">Këshilla</a>
+            <a href="blog.html" class="text-white/70 hover:text-white transition-all duration-300">Blog</a>
+            <a href="faq.html" class="text-white/70 hover:text-white transition-all duration-300">FAQ</a>
+            <a href="aboutus.html" class="text-white/70 hover:text-white transition-all duration-300">Rreth Nesh</a>
+        </div>
+        <div class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
+            <a href="models.html" class="text-white/70 hover:text-white transition-all duration-300">Modele më të hershme</a>
+            <a href="manuals.html" class="text-white/70 hover:text-white transition-all duration-300">Manualet</a>
+            <a href="warranty.html" class="text-white/70 hover:text-white transition-all duration-300">Garancia</a>
+            <a href="service.html" class="text-white/70 hover:text-white transition-all duration-300">Shërbim</a>
+            <a href="tradeIn.html" class="text-white/70 hover:text-white transition-all duration-300">Shkëmbim</a>
+            <a href="book.html" class="text-white/70 hover:text-white transition-all duration-300">Prezantimi i Librit</a>
+            <a href="termsAndConditions.html" class="text-white/70 hover:text-white transition-all duration-300">Kushtet dhe Rregullat</a>
+            <a href="privacyPolicy.html" class="text-white/70 hover:text-white transition-all duration-300">Politika e Privatësisë</a>
+        </div>
+        <div class="flex flex-col w-full lg:w-1/4 gap-5 justify-center border-l-2 border-white/70 lg:border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
+            <a href="https://www.facebook.com/p/Vinkom-Dooel-Kirby-100057307614536/?locale=mk_MK" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-600 fa-brands fa-facebook"></i>Facebook</a>
+            <a href="https://www.instagram.com/vinkom_dooelkirby/" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-pink-600 fa-brands fa-instagram"></i>Instagram</a>
+            <a href="https://www.youtube.com/@kirbyvacuums" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-red-600 fa-brands fa-youtube"></i>YouTube</a>
+            <a href="https://www.linkedin.com/company/vinkom-dooel/" class="hover:text-white transition-all duration-300 flex items-center gap-[2vw] lg:gap-[1vw] text-white/70"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-4 2xl:w-6 3xl:w-7 transition-all duration-300 hover:text-blue-500 fa-brands fa-linkedin"></i>LinkedIn</a>
+            <a href="mailto:customercare@vinkom.com.mk" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-envelope hover:text-yellow-500 transition-all duration-300"></i>customercare@vinkom.com.mk</a>
+            <a href="tel:+38922461144" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-phone hover:text-green-500 transition-all duration-300"></i>02 246 1144</a>
+            <a href="tel:+38970383953" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-mobile-screen-button"></i>070 383 953</a>
+            <a target="_blank" href="https://www.google.com/maps?q=42.0085833,21.3672778" class="flex gap-[2vw] lg:gap-[1vw] items-center text-white/70 hover:text-white transition-all duration-300"><i class="text-2xl xs:text-3xl lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl w-7 lg:w-3 2xl:w-5 3xl:w-6 fa-solid fa-location-dot hover:text-red-500 transition-all duration-300 "></i>Partzanski Odredi 165</a>
+        </div>
+        <div class="flex flex-col w-full lg:w-1/4 text-white gap-3 justify-center border-l-2 border-transparent hover:border-white transition-all duration-300 px-[2%] py-[1%] my-[5%] lg:my-0">
+            <h1 class="text-white text-4xl sm:text-5xl lg:text-2xl xl:text-4xl 3xl:text-5xl">Merrni të rejat më të fundit</h1>
+            <p class="text-white/70 text-base xs:text-2xl md:text-3xl lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl">Regjistrohuni për lajme, këshilla dhe oferta ekskluzive që vijnë direkt në kutinë tuaj postare.</p>
+            <div class="flex gap-2">
+                <form id="subscribeForm" action="https://api.web3forms.com/submit" method="POST" class="w-full flex flex-row lg:flex-col xl:flex-row gap-2 items-center text-base lg:text-sm">
+                    <input type="hidden" name="access_key" value="6c1d84bc-0208-463a-9f71-e42b2b89ca44">
+                    <input type="hidden" name="subject" value="Претплата АЛ - Претплата на корисник">
+                    <input id="subscribeEmail" type="email" name="email" required placeholder="E-mail" class="outline-none w-[69%] lg:w-full xl:w-[69%] border border-white/70 rounded-xl px-[4%] py-[3%] bg-transparent text-white my-[5%] lg:my-0"/>      
+                    <button type="submit" class="outline-none w-[29%] lg:w-full xl:w-[69%]  border border-white/70 rounded-xl px-[3%] py-[3%] bg-transparent text-white/70 hover:bg-white/70 hover:text-white transition-all duration-300 my-[5%] lg:my-0">Dorëzoj</button>
+                </form>
+            </div>
+            <script>
+                function attachSubscribeFormListener() {
+                    const subscribeForm = document.getElementById('subscribeForm');
+                    if (!subscribeForm) {
+                        setTimeout(attachSubscribeFormListener, 100);
+                        return;
+                    }
+                    
+                    subscribeForm.addEventListener('submit', async function(event) {
+                        event.preventDefault();
+                        
+                        const formData = new FormData(subscribeForm);
+                        
+                        try {
+                            const response = await fetch(subscribeForm.action, {
+                                method: 'POST',
+                                body: formData,
+                            });
+                            
+                            const result = await response.json();
+                            if (response.ok && result.success) {
+                                window.location.href = 'https://vinkom.com.mk/al/thankyouSub.html';
+                                return;
+                            }
+                            
+                            console.error('Web3Forms submission failed', result);
+                            alert('Request Failed. Please Try Again.');
+                        } catch (error) {
+                            console.error('Web3Forms submission error', error);
+                            alert('Request Failed. Please Try Again.');
+                        }
+                    });
+                }
+                attachSubscribeFormListener();
+            </script>
+        </div>
+    </div>
+</div>
+
+<div class="w-full bg-black px-[5%]">
+    <img src="../images_webp/footer.webp" loading="lazy" class="w-full xs:max-w-[540px] sm:max-w-[576px] md:max-w-[691.2px] lg:max-w-[921.6px] xl:max-w-[1152px] 2xl:max-w-[1382.4px] 3xl:max-w-[1728px] mx-auto flex flex-col justify-center items-center" alt="">
+</div>
 
     <script>
         let allModels = [];
