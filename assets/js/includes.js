@@ -80,7 +80,9 @@ function executeFooterScripts(container) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function initializeBakedPartials() {
+  initLocaleSwitching();
+
   const currentPath = window.location.pathname;
   const isEnglish = currentPath.includes('/en/');
   const isAlbanian = currentPath.includes('/al/');
@@ -96,23 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
   cartScript.src = basePath + 'assets/js/cart-logic.js';
   cartScript.onload = () => {
     if (typeof initializeCart === 'function') initializeCart();
+    if (typeof updateCartBadge === 'function') updateCartBadge();
   };
   document.head.appendChild(cartScript);
-
-  // Fetch cart badge
-  fetch(includesPath + "cart-badge.html")
-    .then(res => {
-      if (!res.ok) throw new Error("Failed to load cart badge");
-      return res.text();
-    })
-    .then(html => {
-      const container = document.getElementById("cart-badge-container");
-      if (container) {
-        container.innerHTML = html;
-        updateCartBadge();
-      }
-    })
-    .catch(err => console.warn("Error loading cart badge:", err));
 
   // Fetch cookie banner
   fetch(includesPath + "cookie-banner.html")
@@ -131,56 +119,9 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(err => console.warn("Error loading cookie banner:", err));
 
-  // Fetch nav
-  fetch(includesPath + "nav.html")
-    .then(res => {
-      if (!res.ok) throw new Error("Failed to load nav");
-      return res.text();
-    })
-    .then(html => {
-      const container = document.getElementById("nav-container");
-      if (container) {
-        container.innerHTML = html;
-        initLocaleSwitching();
-        // Initialize nav scripts
-        initNavScripts();
-      }
-    })
-    .catch(err => console.warn("Error loading nav:", err));
+}
 
-  // Fetch mobile nav
-  fetch(includesPath + "mobileNav.html")
-    .then(res => {
-      if (!res.ok) throw new Error("Failed to load mobileNav");
-      return res.text();
-    })
-    .then(html => {
-      const container = document.getElementById("mobile-nav-container");
-      if (container) {
-        container.innerHTML = html;
-        initLocaleSwitching();
-        // Initialize mobile nav scripts
-        initMobileNavScripts();
-      }
-    })
-    .catch(err => console.warn("Error loading mobileNav:", err));
-
-  // Fetch footer
-  fetch(includesPath + "footer.html")
-    .then(res => {
-      if (!res.ok) throw new Error("Failed to load footer");
-      return res.text();
-    })
-    .then(html => {
-      const container = document.getElementById("footer-container");
-      if (container) {
-        container.innerHTML = html;
-        // Execute scripts in the injected HTML
-        executeFooterScripts(container);
-      }
-    })
-    .catch(err => console.warn("Error loading footer:", err));
-});
+initializeBakedPartials();
 
 // Initialize nav functionality
 function initNavScripts() {
