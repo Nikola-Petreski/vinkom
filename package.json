@@ -4,8 +4,8 @@
   },
   "scripts": {
     "prebuild": "node build-partials.js && node build-seo.js",
-    "build": "tailwindcss -i input.css -o output.css",
-    "dev": "node build-partials.js && tailwindcss -i input.css -o output.css --watch"
+    "build": "node ./node_modules/tailwindcss/lib/cli.js -i input.css -o output.css",
+    "dev": "node build-partials.js && node ./node_modules/tailwindcss/lib/cli.js -i input.css -o output.css --watch"
   },
   "dependencies": {
     "sharp": "^0.34.5"
