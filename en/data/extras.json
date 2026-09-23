@@ -7,7 +7,7 @@
     "categories": [],
     "shortDesc": "Kirby Avalir Platinum with quiet operation and 15 specialized cleaning attachments.",
     "longDesc": "Kirby Avalir Platinum with quiet operation and <a href=\"platinum.html#attachment-toggle-1\" class=\"text-white underline\">15 specialized cleaning attachments</a>. Known for quality, safety, and performance, Kirby has delivered deep cleaning for more than 110 years. The new Avalir Platinum with sound-reduction technology delivers premium performance with quieter, more efficient operation. With advanced sound insulation and a new motor, it runs quietly without sacrificing power. More than a vacuum, Kirby easily transforms into a carpet cleaner, tile cleaner, hardwood polisher, and much more.",
-    "price": 181425,
+    "price": 153135,
     "discount": 0,
     "image": "../images_webp/extras/avalirPlatinum.webp",
     "modalImage": "../images_webp/extras/avalirPlatinumVacuum.webp",
@@ -518,5 +518,29 @@
     "price": 500,
     "discount": 0,
     "image": "../images_webp/extras/HEPAPlusKesa1.png"
+  },
+  {
+    "id": "",
+    "shortName": "Shampooer",
+    "fullName": "Multi Surface Shampoo System",
+    "secondaryName": "shamponer",
+    "category": "Spare Parts",
+    "shortDesc": "Kirby shampooer system for shampooing carpets and hard floors.",
+    "longDesc": "The Kirby multi-surface shampoo system enables deep carpet shampooing, gentle cleaning of wooden floors and linoleum, and tile and grout cleaning, all with one attachment.",
+    "price": 22140,
+    "discount": 0,
+    "image": "../images_webp/extras/msss.jpg"
+  },
+  {
+    "id": "",
+    "shortName": "Turbo Sander",
+    "fullName": "Kirby Turbo Sander",
+    "secondaryName": "turbo sander",
+    "category": "Spare Parts",
+    "shortDesc": "Motorless Kirby sander powered by suction airflow for wood and tile surfaces.",
+    "longDesc": "The Kirby turbo sander operates solely on airflow without its own motor. It is ideal for gently sanding wooden surfaces and cleaning tiles. It is not recommended for plaster or cement because of the risk of damage.",
+    "price": 9225,
+    "discount": 0,
+    "image": "../images_webp/extras/turboSander.webp"
   }
 ]

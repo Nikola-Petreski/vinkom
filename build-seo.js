@@ -10,6 +10,15 @@ const pageDirs = [
 ];
 
 const metadataMarker = /\n?\s*<!-- SEO metadata -->[\s\S]*?<!-- End SEO metadata -->\n?/i;
+const googleTag = `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2THZBHNVLC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2THZBHNVLC');
+</script>`;
 const socialProfiles = [
   'https://www.facebook.com/p/Vinkom-Dooel-Kirby-100057307614536/?locale=mk_MK',
   'https://www.instagram.com/vinkom_dooelkirby/',
@@ -114,9 +123,11 @@ function main() {
       const original = fs.readFileSync(filePath, 'utf8');
       const withoutMetadata = original.replace(metadataMarker, '\n');
       const metadata = buildMetadata(pageDir, filePath, withoutMetadata);
-      const updated = /<\/head>/i.test(withoutMetadata)
-        ? withoutMetadata.replace(/<\/head>/i, `${metadata}</head>`)
-        : withoutMetadata.replace(/<body\b/i, `${metadata}</head>\n\n<body`);
+      const withoutGoogleTag = withoutMetadata.replace(/\s*<!-- Google tag \(gtag\.js\) -->[\s\S]*?<script>[\s\S]*?<\/script>\s*/i, '');
+      const withGoogleTag = withoutGoogleTag.replace(/<head\s*>/i, `<head>\n${googleTag}\n`);
+      const updated = /<\/head>/i.test(withGoogleTag)
+        ? withGoogleTag.replace(/<\/head>/i, `${metadata}</head>`)
+        : withGoogleTag.replace(/<body\b/i, `${metadata}</head>\n\n<body`);
       if (updated === withoutMetadata) {
         throw new Error(`Missing </head> or <body> in ${path.relative(rootDir, filePath)}`);
       }

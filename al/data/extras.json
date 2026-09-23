@@ -7,7 +7,7 @@
 "categories": [],
 "shortDesc": "Kirby Avalir Platinum me funksionim të qetë dhe 15 aksesorë të specializuar pastrimi.",
 "longDesc": "Kirby Avalir Platinum me funksionim të qetë dhe <a href=\"platinum.html#attachment-toggle-1\" class=\"text-white underline\">15 pajisje pastrimi të specializuara</a>. I njohur për cilësinë, sigurinë dhe performancën, Kirby ka ofruar pastrim të thellë për më shumë se 110 vjet. Avalir Platinum i ri me teknologji të reduktimit të zhurmës ofron performancë premium me funksionim më të qetë dhe më efikas. Me izolim të përparuar të zhurmës dhe një motor të ri, funksionon në qetësi pa sakrifikuar fuqinë. Më shumë sesa një fshesë me korrent, Kirby shndërrohet lehtësisht në një pastrues qilimash, pastrues pllakash, pastrues druri dhe shumë më tepër.",
-"price": 181425,
+"price": 153135,
 "discount": 0,
 "image": "../images_webp/extras/avalirPlatinum.webp",
 "modalImage": "../images_webp/extras/avalirPlatinumVacuum.webp",
@@ -518,6 +518,30 @@
 "price": 500,
 "discount": 0,
 "image": "../images_webp/extras/HEPAPlusKesa1.png"
+},
+{
+"id": "",
+"shortName": "Shamponer",
+"fullName": "Sistem shamponimi për shumë sipërfaqe",
+"secondaryName": "shamponer",
+"category": "Pjesë këmbimi",
+"shortDesc": "Shamponeri Kirby për larjen me shampo të qilimave dhe dyshemeve të forta.",
+"longDesc": "Sistemi Kirby për shamponim të shumë sipërfaqeve mundëson larjen e thellë me shampo të qilimave, larjen e butë të dyshemeve prej druri dhe linoleumit, si dhe pastrimin e pllakave dhe llaçit, të gjitha me një aksesor.",
+"price": 22140,
+"discount": 0,
+"image": "../images_webp/extras/msss.jpg"
+},
+{
+"id": "",
+"shortName": "Turbo Sander",
+"fullName": "Turbo Sander Kirby",
+"secondaryName": "turbo sander",
+"category": "Pjesë këmbimi",
+"shortDesc": "Lëmues Kirby pa motor që punon me rrjedhën e ajrit të thithjes, për dru dhe pllaka.",
+"longDesc": "Lëmuesi turbo Kirby punon vetëm me rrjedhën e ajrit, pa motorin e vet, dhe është ideal për lëmim të butë të sipërfaqeve prej druri dhe pastrimin e pllakave. Nuk rekomandohet për suva ose çimento për shkak të rrezikut të dëmtimit.",
+"price": 9225,
+"discount": 0,
+"image": "../images_webp/extras/turboSander.webp"
 }
 ]
 
