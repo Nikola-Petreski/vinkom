@@ -194,8 +194,8 @@
 "shortName": "Furçë Zipp",
 "fullName": "Kirby Zipp Brush",
 "category": "Pjesë këmbimi",
-"shortDesc": "Furçë me ajër Kirby Zippbrush për pastrimin e tapicerive, pëlhurave dhe qimeve të kafshëve shtëpiake.",
-"longDesc": "Kirby Zippbrush është një furçë me motor me ajër për qilima, tapiceri, mobilje dhe qime kafshësh shtëpiake, me rrotullim nga njëra anë në tjetrën për heqjen maksimale të papastërtive. Ajo lidhet me tubin dhe është ideale për pastrimin e tapicerive. E përputhshme me të gjitha modelet Kirby për higjienë të thellë në shtëpi me kafshët shtëpiake.",
+"shortDesc": "Furçë Kirby Zippbrush për pastrimin e tapicerive, jastekeve dhe qimeve të kafshëve.",
+"longDesc": "Kirby Zippbrush është një furçë rrotulluese për pastrim të thellë të qilimave, tapicerive, jastekeve dhe qimeve të kafshëve, me rrotullim të plotë për heqjen maksimale të papastërtisë. Ajo lidhet me tubin dhe është ideale për përdorim të përditshëm. E pajtueshme me të gjitha modelet Kirby për higjienë të thellë në shtëpi me kafshë.",
 "price": 6150,
 "discount": 0,
 "image": "../images_webp/extras/zipChetka.webp"
@@ -260,8 +260,8 @@
 "shortName": "Pllaka e poshtme",
 "fullName": "Pllaka e poshtme metalike Kirby",
 "category": "Pjesë këmbimi",
-"shortDesc": "Pllaka e poshtme Kirby lejon pastrim të butë në dysheme të forta pa gërvishtje.",
-"longDesc": "Pllaka e poshtme Kirby është montuar në furçën e dyshemesë së fortë dhe ofron pastrim të butë por efektiv në pllaka, vinil dhe laminat pa lënë shenja. E bërë nga material i qëndrueshëm, rezistent ndaj konsumimit dhe e lehtë për t'u zëvendësuar. Ideale për mirëmbajtje të përditshme pa rrezikuar dëmtimin e sipërfaqeve të ndjeshme.",
+"shortDesc": "Pllaka e poshtme Kirby lejon lëvizje të qetë në dysheme të forta pa gërvishtje.",
+"longDesc": "Pllaka e poshtme Kirby montohet në furçën e dyshemesë së fortë dhe siguron lëvizje të qetë dhe efektive mbi pllaka, vinil dhe laminat pa lënë shenja. E bërë nga material i qëndrueshëm, rezistent ndaj konsumimit dhe e lehtë për t'u zëvendësuar, është ideale për mirëmbajtje të përditshme pa rrezikuar dëmtimin e sipërfaqeve të ndjeshme.",
 "price": 850,
 "discount": 0,
 "image": "../images_webp/extras/podloshka.png"
@@ -425,8 +425,8 @@
 "shortName": "Shampo portative",
 "fullName": "Shampo portative Kirby",
 "category": "Pjesë këmbimi",
-"shortDesc": "Spërkatje precize e shampos ose ujit me kontroll të lehtë të shkrehësit për pastrim të synuar.",
-"longDesc": "Pistoleta spërkatëse Kirby lejon aplikimin e kontrolluar të shkumës Kirby në mobiljet e veshura me tapiceri pa e tepruar me produktin. E lehtë dhe e rehatshme për t’u përdorur, është e pajtueshme me të gjitha sistemet Kirby, e qëndrueshme për përdorim të përditshëm dhe ideale për larje kimike.",
+"shortDesc": "Shpric-pishtol për aplikimin e shkumës Kirby, i lehtë për përdorim me trigger.",
+"longDesc": "Pistoleta spërkatëse Kirby lejon aplikimin e barabartë të shkumës Kirby gjatë pastrimit të tapicerive pa përdorur tepër produkt. E lehtë dhe e rehatshme për t’u përdorur, është e pajtueshme me të gjitha sistemet Kirby, e qëndrueshme për përdorim të përditshëm dhe ideale për pastrim kimik.",
 "price": 1410,
 "discount": 0,
 "image": "../images_webp/extras/shpritzPishtol.webp"
@@ -437,7 +437,7 @@
 "fullName": "Rrotull furçe Kirby",
 "category": "Pjesë këmbimi",
 "shortDesc": "Furçë klasike me fibra natyrale për pastrim të butë të dyshemeve të forta.",
-"longDesc": "Furça prej druri Kirby me fibra natyrale largon në mënyrë efektive pluhurin dhe papastërtinë nga mbulesat e dyshemesë dhe dyshekët pa i gërvishtur. E qëndrueshme dhe e pajtueshme me të gjitha modelet Kirby, është ideale për mirëmbajtjen afatgjatë të sipërfaqeve të pastra.",
+"longDesc": "Furça prej druri Kirby me fibra natyrale largon butësisht pluhurin dhe papastërtitë nga mbulesat e dyshemesë dhe dyshekët pa i gërvishtur. E qëndrueshme dhe e pajtueshme me të gjitha modelet Kirby, është ideale për mirëmbajtjen afatgjatë të sipërfaqeve të pastra.",
 "price": 3300,
 "discount": 0,
 "image": "../images_webp/extras/drvenaChetka.webp"
@@ -447,8 +447,8 @@
 "shortName": "Furçë delikate",
 "fullName": "Rrotull furçe Kirby delikate",
 "category": "Pjesë këmbimi",
-"shortDesc": "Furçë e butë për dysheme delikate pa shkaktuar dëme.",
-"longDesc": "Furça delikate prej druri Kirby me fije ultra të buta është projektuar për pastrim të kujdesshëm të mbulesave të ndjeshme të dyshemesë. Ajo heq pluhurin butësisht dhe është e pajtueshme me të gjitha modelet, duke siguruar një përfundim profesional në sipërfaqet premium.",
+"shortDesc": "Furçë e butë për mbulesa të ndjeshme të dyshemesë pa shkaktuar dëme.",
+"longDesc": "Furça delikate prej druri Kirby me fije ultra të buta është projektuar për pastrim të butë të mbulesave të ndjeshme të dyshemesë, qilimave të mëndafshit dhe sipërfaqeve të ngjashme. Ajo heq pluhurin butësisht dhe është e pajtueshme me të gjitha modelet, duke siguruar një përfundim profesional në sipërfaqet luksoze.",
 "price": 2820,
 "discount": 0,
 "image": "../images_webp/extras/delikateChetka.webp"
@@ -469,7 +469,7 @@
 "shortName": "Rrip",
 "fullName": "Rripi Kirby",
 "category": "Materiale të konsumueshme",
-"shortDesc": "Transferon energjinë nga motori te furça për performancë të qëndrueshme pastrimi.",
+"shortDesc": "Rrip për lëvizjen e furçës druri rrotulluese gjatë pastrimit.",
 "longDesc": "Rripi i transmisionit Kirby transferon energjinë nga motori te furça për pastrim efektiv. Zëvendësimi i tij kur konsumohet ndihmon në ruajtjen e performancës së makinës, instalohet lehtë dhe është i qëndrueshëm për përdorim të rëndë. I pajtueshëm me të gjitha modelet, ai e mban njësinë të funksionojë pa probleme dhe në mënyrë të besueshme.",
 "price": 200,
 "discount": 0,
@@ -520,7 +520,7 @@
 "image": "../images_webp/extras/HEPAPlusKesa1.png"
 },
 {
-"id": "",
+"id": "295023",
 "shortName": "Shamponer",
 "fullName": "Sistem shamponimi për shumë sipërfaqe",
 "secondaryName": "shamponer",
@@ -532,7 +532,7 @@
 "image": "../images_webp/extras/msss.jpg"
 },
 {
-"id": "",
+"id": "293223",
 "shortName": "Turbo Sander",
 "fullName": "Turbo Sander Kirby",
 "secondaryName": "turbo sander",

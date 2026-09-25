@@ -194,8 +194,8 @@
     "shortName": "Zipp Brush",
     "fullName": "Kirby Zipp Brush",
     "category": "Spare Parts",
-    "shortDesc": "Kirby Zippbrush air-powered brush for cleaning upholstery, fabrics, and pet hair.",
-    "longDesc": "Kirby Zippbrush is an air-powered motorized brush for carpets, upholstery, furniture, and pet hair, with side-to-side rotation for maximum dirt removal. It connects to the hose and is ideal for upholstery cleaning. Compatible with all Kirby models for deep home hygiene with pets.",
+    "shortDesc": "Kirby Zippbrush brush for cleaning upholstery, cushions, and pet hair.",
+    "longDesc": "Kirby Zippbrush is a rotating brush for deep cleaning of carpets, upholstery, cushions, and pet hair, with full rotation for maximum dirt removal. It connects to the hose and is ideal for everyday use. Compatible with all Kirby models for deep hygiene in pet-friendly homes.",
     "price": 6150,
     "discount": 0,
     "image": "../images_webp/extras/zipChetka.webp"
@@ -260,8 +260,8 @@
     "shortName": "Bottom Plate",
     "fullName": "Kirby Metal Bottom Plate",
     "category": "Spare Parts",
-    "shortDesc": "Kirby bottom plate allows gentle cleaning on hard floors without scratching.",
-    "longDesc": "Kirby bottom plate is mounted on the hard-floor brush and provides soft but effective cleaning on tile, vinyl, and laminate without leaving marks. Made from durable, wear-resistant material and easy to replace. Ideal for daily maintenance without risking damage to sensitive surfaces.",
+    "shortDesc": "Kirby bottom plate allows smooth movement on hard floors without scratching.",
+    "longDesc": "Kirby bottom plate is installed on the hard-floor brush and ensures smooth, effective movement over tile, vinyl, and laminate without leaving marks. Made from durable, wear-resistant material and easy to replace, it is ideal for daily maintenance without risking damage to sensitive surfaces.",
     "price": 850,
     "discount": 0,
     "image": "../images_webp/extras/podloshka.png"
@@ -425,8 +425,8 @@
     "shortName": "Portable Shampooer",
     "fullName": "Kirby Portable Shampooer",
     "category": "Spare Parts",
-    "shortDesc": "Precise spraying of shampoo or water with easy trigger control for targeted cleaning.",
-    "longDesc": "Kirby spray gun allows controlled application of Kirby foam to upholstered furniture without overusing product. Easy and comfortable to handle, it is compatible with all Kirby systems, durable for everyday use, and ideal for dry cleaning.",
+    "shortDesc": "Foam sprayer for applying Kirby foam; easy to use with a trigger.",
+    "longDesc": "The Kirby spray gun allows even application of Kirby foam during upholstery cleaning without overuse. Easy and comfortable to handle, it is compatible with all Kirby systems, durable for everyday use, and ideal for chemical cleaning.",
     "price": 1410,
     "discount": 0,
     "image": "../images_webp/extras/shpritzPishtol.webp"
@@ -437,7 +437,7 @@
     "fullName": "Kirby Brush Roll",
     "category": "Spare Parts",
     "shortDesc": "Classic brush with natural fibers for gentle cleaning of hard floors.",
-    "longDesc": "Kirby wooden brush with natural fibers effectively removes dust and grime from floor coverings and mattresses without scratching. Durable and compatible with all Kirby models, it is ideal for long-term maintenance of clean surfaces.",
+    "longDesc": "Kirby wooden brush with natural fibers gently removes dust and dirt from floor coverings and mattresses without scratching. Durable and compatible with all Kirby models, it is ideal for long-term maintenance of clean surfaces.",
     "price": 3300,
     "discount": 0,
     "image": "../images_webp/extras/drvenaChetka.webp"
@@ -447,8 +447,8 @@
     "shortName": "Delicate Brush",
     "fullName": "Kirby Delicate Brush Roll",
     "category": "Spare Parts",
-    "shortDesc": "Soft brush for delicate floors without causing damage.",
-    "longDesc": "Kirby delicate wooden brush with ultra-soft bristles is designed for careful cleaning of sensitive floor coverings. It removes dust gently and is compatible with all models, ensuring a professional finish on premium surfaces.",
+    "shortDesc": "Soft brush for delicate floor coverings without causing damage.",
+    "longDesc": "Kirby delicate wooden brush with ultra-soft bristles is designed for gentle cleaning of sensitive floor coverings, silk carpets, and similar surfaces. It removes dust gently and is compatible with all models, ensuring a professional finish on luxury surfaces.",
     "price": 2820,
     "discount": 0,
     "image": "../images_webp/extras/delikateChetka.webp"
@@ -469,7 +469,7 @@
     "shortName": "Belt",
     "fullName": "Kirby Belt",
     "category": "Consumables",
-    "shortDesc": "Transfers power from the motor to the brush for consistent cleaning performance.",
+    "shortDesc": "Belt for driving the rotating wooden brush during cleaning.",
     "longDesc": "Kirby drive belt transfers power from the motor to the brush for effective cleaning. Replacing it when worn helps maintain the machine?s performance, installs easily, and is durable for heavy use. Compatible with all models, it keeps the unit operating smoothly and reliably.",
     "price": 200,
     "discount": 0,
@@ -520,7 +520,7 @@
     "image": "../images_webp/extras/HEPAPlusKesa1.png"
   },
   {
-    "id": "",
+    "id": "295023",
     "shortName": "Shampooer",
     "fullName": "Multi Surface Shampoo System",
     "secondaryName": "shamponer",
@@ -532,7 +532,7 @@
     "image": "../images_webp/extras/msss.jpg"
   },
   {
-    "id": "",
+    "id": "293223",
     "shortName": "Turbo Sander",
     "fullName": "Kirby Turbo Sander",
     "secondaryName": "turbo sander",
